@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" lang="en">
+	<meta name="description" content="Rebranding Tunnelblick - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+	<meta name="referrer" content="never">
+	<title>Rebranding Tunnelblick - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+	<link rel="stylesheet" type="text/css"  href="common/style.v5.css">
+	<link rel="icon"       type="image/png" href="common/favicon.v1.png">
+</head>
+
+<body>
+
+<div class="heading">
+	<table>
+		<tr>
+			<td><a href="/"><img src="common/tb-icon-64x64.v1.png" alt="" width="64" height="64"></a></td>
+			<td class="heading1">Tunnelblick</td>
+			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading3">
+                <a href="cLocalizeTranslate.html">We need translators for several languages&hellip;</a><br>
+            </td>
+		</tr>
+	</table>
+</div>
+
+
+<div class="topnav">
+<table class="topnav"><tbody><tr>
+	<td class="topnav-normal"   ><a href="index.html"      class="topnav">Home</a></td>
+	<td class="topnav-normal"   ><a href="downloads.html"  class="topnav">Downloads</a></td>
+	<td class="topnav-normal"   ><a href="support.html"    class="topnav">Support</a></td>
+	<td class="topnav-highlight"><a href="documents.html"  class="topnav">Documents</a></td>
+	<td class="topnav-normal"   ><a href="issues.html"     class="topnav">Issues</a></td>
+	<td class="topnav-normal"   ><a href="source.html"     class="topnav">Source</a></td>
+	<td class="topnav-normal"   ><a href="contribute.html" class="topnav">Contribute</a></td>
+	<td class="topnav-normal"   ><a href="reachus.html"    class="topnav">Contact</a></td>
+	<td class="topnav-padding"  ></td>
+</tbody></table>
+</div>
+
+
+
+<div class="content">
+<div class="content-cRebranding">
+<table class="documents">
+  <tr>
+    <td class="documents-left">
+
+
+
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="cFAQ.html">FAQ</a></p>
+
+<p><strong><a href="https://groups.google.com/forum/#&#33;forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="cBeforeYouPost.html">Read Before You Post</a></p>
+
+
+
+    </td>
+    <td class="documents-right">
+    
+
+
+<h1 id="rebranding-tunnelblick">Rebranding Tunnelblick</h1>
+<p>Note 1: There is an alternate method of distributing Tunnelblick that allows configurations to be automatically installed when Tunnelblick is installed and updated from your web server but does not require rebranding and uses the standard, digitally-signed Tunnelblick application. See <a href="cAutoInstall.html">Auto-Install Configurations</a> and <a href="cUpdatableConfigurations.html">Updatable Configurations</a>.</p>
+<p>Note 2: There is a discussion <a href="https://groups.google.com/d/msg/tunnelblick-discuss/PuGg6RJH1og/xAZko1IjAR8J">here</a> that contains some additional information for rebranding and building Tunnelblick, but note that it is older than this page.</p>
+<p>After Tunnelblick 3.3beta21, &quot;Deployed&quot; versions of Tunnelblick must be &quot;rebranded&quot; with a different name. This is done to make sure that different versions of Tunnelblick on one computer do not interfere with each other.</p>
+<p>Creating a Deployed Tunnelblick without rebranding (by removing the source code that checks for rebranding) can cause unpredictable behavior, may be less secure, can lead to problems with updating, and can interfere with other installations of Tunnelblick on the same computer. Please don't do it!</p>
+<p>To rebrand Tunnelblick you need to be able to build Tunnelblick from the source (see <a href="cBuild.html">Building from Source</a>). That requires Xcode 3.2.2 running on OS X 10.6.8. Here are step-by-step instructions for rebranding:</p>
+<p>First, make sure there are NO SPACES in the path to the source.</p>
+<p>Next, edit the source code as follows:</p>
+<p>Start Xcode 3.2.2 on Snow Leopard by double-clicking Tunnelblick.xcodeproj.</p>
+<p>Click on the disclosure triangle to the left of the &quot;Resources&quot; folder in the left-most column to expand &quot;Resources&quot;</p>
+<p>Click on &quot;Info.plist&quot; under &quot;Resources&quot; to select it.</p>
+<p>In the right-most column in the document in the right side, change &quot;net.tunnelblick.tunnelblick&quot; to something that doesn't include &quot;net.tunnelblick&quot; — something like &quot;com.YOUR_COMPANY_NAME.NEWPROJECTNAME.deployed-application&quot;</p>
+<p>In the right-most column in the document in the right side, change &quot;<a href="https://www.tunnelblick.net/appcast.rss" class="uri">https://www.tunnelblick.net/appcast.rss</a>&quot; to something that doesn't include &quot;tunnelblick.net&quot;. It should be the URL for an &quot;appcast.rss&quot; used by the Sparkle updater module of Tunnelblick to check for available updates. See the <a href="https://sparkle-project.org">Sparkle</a> documentation for details on the contents of &quot;appacast.rss&quot;. (If you override this setting with a forced-preference for &quot;updateURL&quot;, that URL cannot contain &quot;tunnelblick.net&quot; either.)</p>
+<p>Quit Xcode, saving all changes (it is important to quit the PROGRAM completely, not just close all the windows)</p>
+<p>Start Xcode 3.2.2 on Snow Leopard by double-clicking Tunnelblick.xcodeproj.</p>
+<p>Click on &quot;Tunnelbick&quot; at the top of the list in the left-most column to select it</p>
+<p>Project | Rename<br><br />
+ (wait for it to fill in the big box; there will be four items to change (for r3000, which is build 4000))</p>
+<p>Rename project to: NEWPROJECTNAME<br><br />
+ Click &quot;Rename&quot;</p>
+<p>(wait for it to finish)<br><br />
+ Click &quot;OK&quot;</p>
+<p>Close the window</p>
+<p>If Xcode says it failed to save NEWPROJECTNAME.xcodeproj, click &quot;Close&quot;</p>
+<p>If an alert window pops up, click &quot;Save&quot;</p>
+<p>Quit Xcode (it is important to quit the PROGRAM completely, not just close all the windows)</p>
+<p>Remove ....../tunnelblick/build/Tunnelblick.build</p>
+<p>Double-click NEWPROJECTNAME.xcodeproj.</p>
+<p>In left pane, collapse Classes, Other Sources, and Resources, and then select all three.</p>
+<p>Edit | Find | Find in Project (opens &quot;Project Find&quot; window)</p>
+<p>Find: Tunnelblick<br><br />
+ Replace: NEWPROJECTNAME<br><br />
+ In Selected Project Items<br><br />
+ Textual<br><br />
+ Contains<br><br />
+ Un-check Ignore case<br><br />
+ Click &quot;Find&quot;</p>
+<p>(wait, it should find 12,035 occurrences (for r3000, which is build 4000))<br><br />
+ Click &quot;Replace&quot;</p>
+<p>Do you really want to replace 12,035 (of 12,035)...<br><br />
+ Click &quot;Replace&quot;</p>
+<p>(wait for it to finish)<br><br />
+ Quit Xcode, saving all changes (it is important to quit the PROGRAM completely, not just close all the windows).</p>
+<p>When rebranding Tunnelblick build 3957 and higher, also change the bundle identifier globally:</p>
+<p>Double-click NEWPROJECTNAME.xcodeproj</p>
+<p>In left pane, collapse and highlight Classes, Other Sources, and Resources</p>
+<p>Edit | Find | Find in Project (opens &quot;Project Find&quot; window)</p>
+<p>Find: net.tunnelblick.tunnelblick<br><br />
+ Replace: YOUR_OWN_BUNDLE_IDENTIFIER <em>(such as &quot;com.example.mac-vpn-client&quot;)</em><br><br />
+ In Selected Project Items<br><br />
+ Textual<br><br />
+ Contains<br><br />
+ Un-check Ignore case<br><br />
+ Click &quot;Find&quot;</p>
+<p>(wait, it should get 108 occurrences (for r3000, which is build 4000))<br><br />
+ Click &quot;Replace&quot;</p>
+<p>Do you really want to replace 108 (of 108)...<br><br />
+ Click &quot;Replace&quot;</p>
+<p>(wait for it to finish)<br><br />
+ Quit Xcode, saving all changes (it is important to quit the PROGRAM completely, not just close all the windows).</p>
+<p>Deal with Sparkle update signatures (see <a href="cDigitalSignatures.html">Digital Signatures</a>):</p>
+<ul>
+<li>If you are signing the Sparkle updates, replace ....../tunnelblick/dsa_pub.pem file with your own file.</li>
+<li>If you are not signing the Sparkle updates, remove the &quot;SUPublicDSAKeyFile&quot; entry from ....../tunnelblick/Info.plist.<br />
+Finally, if you are not signing the application yourself, after you have built the rebranded application, copy &quot;tun-signed.kext&quot; and &quot;tap-signed.kext&quot; from the latest beta version of Tunnelblick into your application's &quot;Contents/Resources&quot; folder.</li>
+</ul>
+
+
+
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+
+
+
+<div class="bottom-translation">
+  <span title="view in German or another language using Google Translate">               <a lang="de"      class="bottom-translation" href="/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcRebranding.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;         </a></span>
+  <span title="view in French or another language using Google Translate">               <a lang="fr"      class="bottom-translation" href="/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcRebranding.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;        </a></span>
+  <span title="view in Chinese (simplified) or another language using Google Translate"> <a lang="zh-Hans" class="bottom-translation" href="/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcRebranding.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp; </a></span>
+  <span title="view in Russian or another language using Google Translate">              <a lang="ru"      class="bottom-translation" href="/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcRebranding.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;         </a></span>
+  <span title="view in Spanish or another language using Google Translate">              <a lang="es"      class="bottom-translation" href="/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcRebranding.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;         </a></span>
+  <span title="view in Japanese or another language using Google Translate">             <a lang="ja"      class="bottom-translation" href="/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcRebranding.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;           </a></span>
+  <span title="view in Italian or another language using Google Translate">              <a                class="bottom-translation" href="/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcRebranding.html&amp;sandbox=1">&nbsp;&nbsp;&hellip;&nbsp;&nbsp;        </a></span>
+</div>
+<div class="bottom-copyright">
+  Copyright &copy; 2015-2017 by The Tunnelblick Project.&nbsp;&nbsp;
+</div>
+</body>
+</html>

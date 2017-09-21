@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" lang="en">
+	<meta name="description" content="Using Scripts - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+	<meta name="referrer" content="never">
+	<title>Using Scripts - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+	<link rel="stylesheet" type="text/css"  href="common/style.v5.css">
+	<link rel="icon"       type="image/png" href="common/favicon.v1.png">
+</head>
+
+<body>
+
+<div class="heading">
+	<table>
+		<tr>
+			<td><a href="/"><img src="common/tb-icon-64x64.v1.png" alt="" width="64" height="64"></a></td>
+			<td class="heading1">Tunnelblick</td>
+			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading3">
+                <a href="cLocalizeTranslate.html">We need translators for several languages&hellip;</a><br>
+            </td>
+		</tr>
+	</table>
+</div>
+
+
+<div class="topnav">
+<table class="topnav"><tbody><tr>
+	<td class="topnav-normal"   ><a href="index.html"      class="topnav">Home</a></td>
+	<td class="topnav-normal"   ><a href="downloads.html"  class="topnav">Downloads</a></td>
+	<td class="topnav-normal"   ><a href="support.html"    class="topnav">Support</a></td>
+	<td class="topnav-highlight"><a href="documents.html"  class="topnav">Documents</a></td>
+	<td class="topnav-normal"   ><a href="issues.html"     class="topnav">Issues</a></td>
+	<td class="topnav-normal"   ><a href="source.html"     class="topnav">Source</a></td>
+	<td class="topnav-normal"   ><a href="contribute.html" class="topnav">Contribute</a></td>
+	<td class="topnav-normal"   ><a href="reachus.html"    class="topnav">Contact</a></td>
+	<td class="topnav-padding"  ></td>
+</tbody></table>
+</div>
+
+
+
+<div class="content">
+<div class="content-cUsingScripts">
+<table class="documents">
+  <tr>
+    <td class="documents-left">
+
+
+
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="cFAQ.html">FAQ</a></p>
+
+<p><strong><a href="https://groups.google.com/forum/#&#33;forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="cBeforeYouPost.html">Read Before You Post</a></p>
+
+
+
+    </td>
+    <td class="documents-right">
+    
+
+
+<h1 id="using-scripts">Using Scripts</h1>
+<p class=toc>On This Page<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tunnelblick-vpn-configuration-scripts">Tunnelblick VPN Configuration scripts</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#openvpn-scripts">OpenVPN scripts</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#other-scripts-and-executable-files">Other Scripts and Executable Files</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#script-execution-order">Script Execution Order</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#environment-variables">Environment Variables</a><br>
+</p> 
+<p><strong><span class="red">Most Tunnelblick users do not need to use the information on this page; Tunnelblick uses scripts automatically.</span></strong></p>
+<p><strong>All scripts are run as root</strong> so they can make network configuration changes; thus caution is advised when modifying these scripts or using customized scripts.</p>
+<p>This document is about the scripts that Tunnelblick uses. Some are built into Tunnelblick; some are optional and may be supplied by whoever sets up a configuration. Tunnelblick itself may be accessed fromAppleScripts; see <a href="cAppleScriptSupport.html">AppleScript Support</a>.</p>
+<p>Tunnelblick uses four types of scripts: Tunnelblick VPN Configuration scripts, OpenVPN scripts, the leasewatch script, and executable files (which may be scripts).</p>
+<h2 id="tunnelblick-vpn-configuration-scripts">Tunnelblick VPN Configuration scripts</h2>
+<p>Tunnelblick VPN Configuration scripts are shell scripts that are run by Tunnelblick at particular points in the connection process.</p>
+<ul>
+<li>They are only available in <a href="cConfigT.html">Tunnelblick VPN Configurations</a> (available in Tunnelblick 3.1beta06 or later).</li>
+<li>Tunnelblick does not include any of these scripts; see the <a href="downloads.html">Downloads page</a> for user-contributed scripts.</li>
+<li>They may be used in special circumstances — for example, to make modifications to the network configuration when a tunnel is active.</li>
+<li>The scripts are not run unless Tunnelblick is running, which may or may not be the case for 'connect when computer starts' configurations.</li>
+<li>The scripts are run as &quot;root&quot;. (But <a href="#environment-variables">environment variables</a> include the actual user's username.)</li>
+<li>The following scripts may be used (they must have these exact names):</li>
+<li><strong>pre-connect.sh</strong> is executed before Tunnelblick would unload and/or load the tun or tap kexts (whether or not any unload or load takes place).</li>
+<li><strong>post-tun-tap-load.sh</strong> is executed after Tunnelblick unloads and/or loads the tun or tap kexts (whether or not any unload or load takes place). Thus, the script is executed immediately before starting OpenVPN.</li>
+<li><strong>connected.sh</strong> is executed when a configuration connects.</li>
+<li><strong>reconnecting.sh</strong> is executed when OpenVPN loses the VPN connection and is trying to reconnect.</li>
+<li><strong>post-disconnect.sh</strong> is executed after OpenVPN has closed the connection.</li>
+</ul>
+<p>The scripts will be executed automatically if they are included in the Tunnelblick VPN Configuration (&quot;.tblk&quot;).</p>
+<h2 id="openvpn-scripts">OpenVPN scripts</h2>
+<p>OpenVPN scripts are scripts run by OpenVPN directly. Scripts referred to in the OpenVPN configuration file may be included in a Tunnelblick VPN configuration; use filenames without any path information to refer to them in the OpenVPN configuration file. These scripts include:</p>
+<ul>
+<li><strong>up</strong> is executed after TCP/UDP socket bind and TUN/TAP open.</li>
+<li><strong>tls-verify</strong> is executed when we have a still untrusted remote peer.</li>
+<li><strong>ipchange</strong> is executed after connection authentication, or remote IP address change.</li>
+<li><strong>client-connect</strong> is executed in --mode server mode immediately after client authentication.</li>
+<li><strong>route-up</strong> is executed after connection authentication, either immediately after, or some number of seconds after as defined by the --route-delay option.</li>
+<li><strong>route-pre-down</strong> is executed right before the routes are removed.</li>
+<li><strong>client-disconnect</strong> is executed in --mode server mode on client instance shutdown.</li>
+<li><strong>down</strong> is executed after TCP/UDP and TUN/TAP close.</li>
+<li><strong>learn-address</strong> is executed in --mode server mode whenever an IPv4 address/route or MAC address is added to OpenVPN's internal routing table.</li>
+<li><strong>auth-user-pass-verify</strong> is executed in --mode server mode on new client connections, when the client is still untrusted.<br />
+ Note that these scripts may have any name; the script name is given as a parameter of the corresponding OpenVPN option. For example, &quot;route-pre-down foo.bar&quot; tells OpenVPN to run the script &quot;foo.bar&quot; during the disconnection process, immediately before the routes are removed.</li>
+</ul>
+<p>(Many if not all of the OpenVPN options actually accept a command line, which may include any valid commands, not a script name, but typically they just name a script to be executed.)</p>
+<p>Tunnelblick tells OpenVPN to run Tunnelblick's standard &quot;up&quot; and &quot;down&quot; scripts if Tunnelblick's &quot;Set DNS/WINS&quot; is set to anything other than &quot;Do not set nameserver&quot;. In that situation, any &quot;up&quot; or &quot;down&quot; options in the configuration file will be ignored.</p>
+<p>The standard client up- and down- scripts Tunnelblick provides are shell scripts that are run by OpenVPN immediately after connecting, and immediately after disconnecting, respectively.</p>
+<ul>
+<li>The scripts are run only when a &quot;Set nameserver&quot; option is selected in the configuration's Settings tab.</li>
+<li>To run the scripts, Tunnelblick passes OpenVPN &quot;--up&quot;, &quot;--down&quot; options. This means that any &quot;up&quot; or &quot;down&quot; options specified in the OpenVPN configuration file are ignored. To use your own custom scripts from within the configuration file, select &quot;Do not set nameserver&quot;.</li>
+<li>Tunnelblick includes a standard up script and a standard down script (client.up.tunnelblick.sh and client.down.tunnelblick.sh, respectively) that are used if no other scripts are present. They are located in Tunnelblick.app/Contents/Resources. The scripts save the current DNS configuration and accept &quot;pushed&quot; configurations from the VPN server when the VPN is connected, and restore the DNS configurations when the VPN is disconnected. If &quot;Monitor connection&quot; is checked, the up script sets up to run the leasewatch script when a network configuration change is detected.</li>
+<li>The up and down scripts may be called with optional arguments (before the standard OpenVPN-supplied arguments) that are prefixed by a '-'. The arguments are:
+<ul>
+<li>-m to monitor the network configuration (reflects the 'Monitor connection' checkbox);</li>
+<li>-w to cause restoration of expected WINS configuration if it changes to the pre-VPN configuration (via DHCP renewal, for example); and</li>
+<li>-d to cause restoration of expected DNS configuration if it changes to the pre-VPN configuration (via DHCP renewal, for example).</li>
+</ul></li>
+<li>The -w and -d options are specified if the boolean Tunnelblick preferences '-doNotRestoreOnDnsReset' and/or '-doNotRestoreOnWinsReset' are TRUE.</li>
+<li>In a <a href="cCusDeployed.html">&quot;Deployed&quot; version</a> of Tunnelblick, the standard scripts may be overridden by including &quot;up.tunnelblick.sh&quot; and &quot;down.tunnelblick.sh&quot; scripts in Tunnelblick.app/Contents/Resources/Deploy.</li>
+<li>The standard scripts and Deployed scripts may be overridden by including &quot;up.tunnelblick.sh&quot;, &quot;down.tunnelblick.sh&quot;, and &quot;route-pre-down.tunnelblick.sh&quot; scripts in a <a href="cConfigT.html">Tunnelblick VPN Configuration</a>.</li>
+<li>For backward compatibility, deprecated scripts named &quot;up.sh&quot;, &quot;down.sh&quot;, &quot;nomonitor.up.sh&quot;, &quot;nomonitor.down.sh&quot; will override any other scripts.</li>
+</ul>
+<h2 id="other-scripts-and-executable-files">Other Scripts and Executable Files</h2>
+<p>Tunnelblick uses other scripts, too:</p>
+<p><strong>leasewatch</strong> is a script that is run when a VPN is connected, &quot;Monitor connections&quot; is checked for the configuration, and a network configuration change is detected. It ignores the change, restarts the connection, or restores the VPN's DNS and WINS configuration as appropriate. It is located in Tunnelblick.app/Contents/Resources/leasewatch.</p>
+<p><strong>Executable files</strong>, which may be scripts, are files in /Deploy/Menu (see <a href="cCusDeployed.html">Deploying Tunnelblick</a>) which are executed when Tunnelblick launches, when a connection is made, or when the user clicks on additional menu commands. See <a href="cCusDeployed.html#additional-menu-commands-and-programs">Additional Menu Commands and Programs</a> for details.</p>
+<h2 id="script-execution-order">Script Execution Order</h2>
+<p>Tunnelblick VPN Configuration scripts and -up and -down scripts are executed as follows:</p>
+<ol>
+<li>USER ASKS for connection (or one is started by 'connect on launch')</li>
+<li>pre-connect.sh will run before attempting to make a connection</li>
+<li>post-tun-tap-load.sh will run after the tun/tap kext is loaded (or would have been loaded)</li>
+<li>up script will run at the end of the connection process</li>
+<li>connect.sh will run if/when the connection is successfully made</li>
+<li>If OpenVPN detects a problem and attempts to reconnect:</li>
+</ol>
+<ul>
+<li>reconnect.sh will run</li>
+<li>If the OpenVPN '--persist-tun' option is not specified, down script will run at the start of the reconnection process</li>
+<li>If the OpenVPN '--persist-tun' option is not specified, up script wil be run at the end of the reconnection process</li>
+</ul>
+<ol>
+<li>connect.sh will run each time (if any) a reconnection attempt is successful</li>
+<li>USER ASKS for connection to be terminated (or quits Tunnelblicks and it isn't a 'when computer starts' configuration)</li>
+<li>down script is run</li>
+<li>post-disconnect.sh will run after disconnecting</li>
+</ol>
+<p>Notes:</p>
+<ul>
+<li>A reconnect attempt does NOT trigger the pre-connect.sh/post-disconnect.sh sequence.</li>
+<li>The order of execution of the up script and the connected.sh script is undefined.</li>
+<li>The order of execution of the down script and the post-disconnect.sh script is undefined.</li>
+<li>The order of execution of the down and up scripts and the reconnecting.sh script is undefined.</li>
+</ul>
+<h2 id="environment-variables">Environment Variables</h2>
+<p>Tunnelblick VPN Configuration scripts inherit the environment variables from Tunnelblick itself. By default (on OS X 10.8 &quot;Mountain Lion&quot;), they are:</p>
+<pre><code> SHELL=/bin/bash
+ TMPDIR=/var/folders/***
+ Apple_PubSub_Socket_Render=/tmp/***
+ USER=***
+ COMMAND_MODE=unix2003
+ SSH_AUTH_SOCK=/tmp/launch-OVkVOl/Listeners
+ __CF_USER_TEXT_ENCODING=0x1F5:0:0
+ PATH=/usr/bin:/bin:/usr/sbin:/sbin
+ PWD=/private/tmp
+ SHLVL=1
+ HOME=/Users/***
+ LOGNAME=***
+ DISPLAY=/tmp/***
+ _=/usr/bin/env</code></pre>
+<p>(where &quot;<code>**``**``*</code>&quot; indicates information that varies from login to login or user to user.)</p>
+<p>OpenVPN scripts have environment variables set up as specified in the <a href="https://community.openvpn.net/openvpn/wiki/Openvpn22ManPage">OpenVPN 2.2 man page</a> or the <a href="https://community.openvpn.net/openvpn/wiki/Openvpn23ManPage">OpenVPN 2.3 man page</a>.</p>
+
+
+
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+
+
+
+<div class="bottom-translation">
+  <span title="view in German or another language using Google Translate">               <a lang="de"      class="bottom-translation" href="/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUsingScripts.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;         </a></span>
+  <span title="view in French or another language using Google Translate">               <a lang="fr"      class="bottom-translation" href="/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUsingScripts.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;        </a></span>
+  <span title="view in Chinese (simplified) or another language using Google Translate"> <a lang="zh-Hans" class="bottom-translation" href="/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUsingScripts.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp; </a></span>
+  <span title="view in Russian or another language using Google Translate">              <a lang="ru"      class="bottom-translation" href="/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUsingScripts.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;         </a></span>
+  <span title="view in Spanish or another language using Google Translate">              <a lang="es"      class="bottom-translation" href="/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUsingScripts.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;         </a></span>
+  <span title="view in Japanese or another language using Google Translate">             <a lang="ja"      class="bottom-translation" href="/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUsingScripts.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;           </a></span>
+  <span title="view in Italian or another language using Google Translate">              <a                class="bottom-translation" href="/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUsingScripts.html&amp;sandbox=1">&nbsp;&nbsp;&hellip;&nbsp;&nbsp;        </a></span>
+</div>
+<div class="bottom-copyright">
+  Copyright &copy; 2015-2017 by The Tunnelblick Project.&nbsp;&nbsp;
+</div>
+</body>
+</html>

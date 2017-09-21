@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" lang="en">
+	<meta name="description" content="Translating HTML - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+	<meta name="referrer" content="never">
+	<title>Translating HTML - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+	<link rel="stylesheet" type="text/css"  href="common/style.v5.css">
+	<link rel="icon"       type="image/png" href="common/favicon.v1.png">
+</head>
+
+<body>
+
+<div class="heading">
+	<table>
+		<tr>
+			<td><a href="/"><img src="common/tb-icon-64x64.v1.png" alt="" width="64" height="64"></a></td>
+			<td class="heading1">Tunnelblick</td>
+			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading3">
+                <a href="cLocalizeTranslate.html">We need translators for several languages&hellip;</a><br>
+            </td>
+		</tr>
+	</table>
+</div>
+
+
+<div class="topnav">
+<table class="topnav"><tbody><tr>
+	<td class="topnav-normal"   ><a href="index.html"      class="topnav">Home</a></td>
+	<td class="topnav-normal"   ><a href="downloads.html"  class="topnav">Downloads</a></td>
+	<td class="topnav-normal"   ><a href="support.html"    class="topnav">Support</a></td>
+	<td class="topnav-highlight"><a href="documents.html"  class="topnav">Documents</a></td>
+	<td class="topnav-normal"   ><a href="issues.html"     class="topnav">Issues</a></td>
+	<td class="topnav-normal"   ><a href="source.html"     class="topnav">Source</a></td>
+	<td class="topnav-normal"   ><a href="contribute.html" class="topnav">Contribute</a></td>
+	<td class="topnav-normal"   ><a href="reachus.html"    class="topnav">Contact</a></td>
+	<td class="topnav-padding"  ></td>
+</tbody></table>
+</div>
+
+
+
+<div class="content">
+<div class="content-cTranslatingHtml">
+<table class="documents">
+  <tr>
+    <td class="documents-left">
+
+
+
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="cFAQ.html">FAQ</a></p>
+
+<p><strong><a href="https://groups.google.com/forum/#&#33;forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="cBeforeYouPost.html">Read Before You Post</a></p>
+
+
+
+    </td>
+    <td class="documents-right">
+    
+
+
+<h1 id="translating-html">Translating HTML</h1>
+<p class=toc>On This Page<br>
+</p> 
+<ul>
+<li><p>This document describes how to translate HTML strings that are used in Tunnelblick.</p></li>
+<li><p>For an overview of how Tunnelblick is localized, see <a href="cLocalizeTranslate.html">Tunnelblick Localization</a>.</p></li>
+</ul>
+<hr />
+<p>Tunnelblick has a popup help feature that pops up a window containing information about a specific setting or feature.</p>
+<p>The strings for these popups are written in <a href="https://en.wikipedia.org/wiki/HTML">HTML</a> so they can include formatting and images. This allows popups like this one for the &quot;Place near the Spotlight icon&quot; checkbox:</p>
+<p><img src="/images/cTranslatingHtml-popup-2016-07-14.png" alt="window showing bold and normal text interspersed with images"></p>
+<p>HTML strings contain &quot;tags&quot; that cause the text to be formatted or to include images. The string for the above popup is:</p>
+<pre><code>    &lt;p&gt;&lt;strong&gt;When checked&lt;/strong&gt;, the Tunnelblick icon is positioned near the Spotlight icon:&lt;/p&gt;
+    &lt;p&gt;%@&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;When not checked&lt;/strong&gt;, the Tunnelblick icon is positioned normally:&lt;/p&gt;
+    &lt;p&gt;%@&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;This checkbox is disabled&lt;/strong&gt; on macOS Sierra because it is not needed,
+    and on systems for which it is known to cause problems.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=\&quot;https://tunnelblick.net/cAppInfoPlaceNearSpotLightIconCheckbox.html\&quot;&gt;More info&lt;/a&gt;&lt;/p&gt;</code></pre>
+<p>The &quot;context&quot; shown in Crowdin is</p>
+<blockquote>HTML info for the 'Place near Spotlight icon' checkbox. The two '%@' are replaced by 
+ images of the menu bar showing the position of the Tunnelblick icon.</blockquote>
+<p>Each tag starts with a greater-than character (&quot;&lt;&quot;) and ends with a less-than character (&quot;&gt;&quot;).</p>
+<p>Tags usually come in pairs, to mark the start and end of some kind of formatting. Tags in the above string include:</p>
+<ul>
+<li>&quot;<code>&lt;p\&gt;</code>&quot; and &quot;<code>&lt;/p\&gt;</code>&quot;: Start and end a paragraph.</li>
+<li>&quot;<code>&lt;strong&gt;</code>&quot; and &quot;<code>&lt;/strong&gt;</code>&quot;: Start and end bold text.</li>
+</ul>
+<p>The &quot;a&quot; tag is similar, but a bit more complicated:</p>
+<ul>
+<li>&quot;<code>&lt;a href=&quot;https://tunnelblick.net/cAppInfoPlaceNearSpotLightIconCheckbox.html&quot;&gt;More info&lt;/a&gt;</code>&quot;</li>
+</ul>
+<p>means that the text &quot;More info&quot; should be displayed as a link to the web page at <a href="https://tunnelblick.net/cAppInfoPlaceNearSpotLightIconCheckbox.html">https://tunnelblick.net/cAppInfoPlaceNearSpotLightIconCheckbox.html</a>.</p>
+<p>As described in the Crowdin &quot;context&quot;, the two &quot;%@&quot; in the HTML string will be replaced by images. (To ensure proper spacing, images are placed within paragraphs.)</p>
+<p>When you translate an HTML string, <strong>DO NOT TRANSLATE OR CHANGE THE TAGS THEMSELVES</strong>. Only translate the text between the tags. So in the above example, you would be translating the following as if they were separate strings:</p>
+<pre><code>&quot;When checked&quot;
+&quot;, the Tunnelblick icon is positioned near the Spotlight icon:&quot;
+&quot;When not checked&quot;
+&quot;, the Tunnelblick icon is positioned normally:&quot;
+&quot;This checkbox is disabled&quot;
+&quot; on macOS Sierra because it is not needed, and on systems for which it is known to cause problems.&quot;
+&quot;More info&quot;</code></pre>
+<p>&quot;When checked&quot;, &quot;When not checked&quot;, and &quot;This checkbox is disabled&quot; will all be displayed as bold text; the rest of the text will be shown normally.</p>
+<p>Of course, a proper translation of the HTML string may require rearranging the tags and the rest of the text.</p>
+
+
+
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+
+
+
+<div class="bottom-translation">
+  <span title="view in German or another language using Google Translate">               <a lang="de"      class="bottom-translation" href="/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcTranslatingHtml.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;         </a></span>
+  <span title="view in French or another language using Google Translate">               <a lang="fr"      class="bottom-translation" href="/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcTranslatingHtml.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;        </a></span>
+  <span title="view in Chinese (simplified) or another language using Google Translate"> <a lang="zh-Hans" class="bottom-translation" href="/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcTranslatingHtml.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp; </a></span>
+  <span title="view in Russian or another language using Google Translate">              <a lang="ru"      class="bottom-translation" href="/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcTranslatingHtml.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;         </a></span>
+  <span title="view in Spanish or another language using Google Translate">              <a lang="es"      class="bottom-translation" href="/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcTranslatingHtml.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;         </a></span>
+  <span title="view in Japanese or another language using Google Translate">             <a lang="ja"      class="bottom-translation" href="/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcTranslatingHtml.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;           </a></span>
+  <span title="view in Italian or another language using Google Translate">              <a                class="bottom-translation" href="/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcTranslatingHtml.html&amp;sandbox=1">&nbsp;&nbsp;&hellip;&nbsp;&nbsp;        </a></span>
+</div>
+<div class="bottom-copyright">
+  Copyright &copy; 2015-2017 by The Tunnelblick Project.&nbsp;&nbsp;
+</div>
+</body>
+</html>

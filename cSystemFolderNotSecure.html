@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" lang="en">
+	<meta name="description" content="System Folder Security - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+	<meta name="referrer" content="never">
+	<title>System Folder Security - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+	<link rel="stylesheet" type="text/css"  href="common/style.v5.css">
+	<link rel="icon"       type="image/png" href="common/favicon.v1.png">
+</head>
+
+<body>
+
+<div class="heading">
+	<table>
+		<tr>
+			<td><a href="/"><img src="common/tb-icon-64x64.v1.png" alt="" width="64" height="64"></a></td>
+			<td class="heading1">Tunnelblick</td>
+			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading3">
+                <a href="cLocalizeTranslate.html">We need translators for several languages&hellip;</a><br>
+            </td>
+		</tr>
+	</table>
+</div>
+
+
+<div class="topnav">
+<table class="topnav"><tbody><tr>
+	<td class="topnav-normal"   ><a href="index.html"      class="topnav">Home</a></td>
+	<td class="topnav-normal"   ><a href="downloads.html"  class="topnav">Downloads</a></td>
+	<td class="topnav-normal"   ><a href="support.html"    class="topnav">Support</a></td>
+	<td class="topnav-highlight"><a href="documents.html"  class="topnav">Documents</a></td>
+	<td class="topnav-normal"   ><a href="issues.html"     class="topnav">Issues</a></td>
+	<td class="topnav-normal"   ><a href="source.html"     class="topnav">Source</a></td>
+	<td class="topnav-normal"   ><a href="contribute.html" class="topnav">Contribute</a></td>
+	<td class="topnav-normal"   ><a href="reachus.html"    class="topnav">Contact</a></td>
+	<td class="topnav-padding"  ></td>
+</tbody></table>
+</div>
+
+
+
+<div class="content">
+<div class="content-cSystemFolderNotSecure">
+<table class="documents">
+  <tr>
+    <td class="documents-left">
+
+
+
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="cFAQ.html">FAQ</a></p>
+
+<p><strong><a href="https://groups.google.com/forum/#&#33;forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="cBeforeYouPost.html">Read Before You Post</a></p>
+
+
+
+    </td>
+    <td class="documents-right">
+    
+
+
+<h1 id="system-folder-security">System Folder Security</h1>
+<p>One aspect of computer security is the security of system files and folders — files and folders created by OS X to run your computer. The security is primarily controlled by the ownership and permissions of the files and folders that make up OS X and the applications and data on your computer.</p>
+<p>Tunnelblick checks the security of itself and of the parts of OS X that it uses. That sometimes results in Tunnelblick complaining that a system folder is not secure, and refusing to connect a VPN. For example, you might see the following message after launching Tunnelblick:</p>
+<p><img src="https://www.tunnelblick.net/images/ApplicationsFolderNotSecure.png" width="50%" alt="window with title 'System Requirements Not Met' and 'Help', 'Continue', and 'Quit' buttons"><br></p>
+<p>Other problems with system folder security may only appear when you try to connect to a VPN.</p>
+<p>Tunnelblick repairs the security of all of its own files and folders, but does not repair files and folders that it does not create, such as system folders.</p>
+<h3 id="how-system-folders-become-insecure">How System Folders Become Insecure</h3>
+<p>System folders are secure when OS X is installed, and usually only become insecure as the result of a program installer behaving improperly. System folders could become insecure because of malware, but that is rare:</p>
+<ul>
+<li>In May 2014, Apple's iTunes 11.2 update caused each system boot to set insecure permissions on /Users and /Users/Shared. This was corrected in iTunes 11.2.1.</li>
+<li>There are reports that someMacPorts installers makes /usr insecure, and that some SPSS and xQuartz installers and some player application installers for Vulkano streaming video make /Applications insecure.</li>
+</ul>
+<h3 id="repairing-system-folder-security">Repairing System Folder Security</h3>
+<p>On OS X 10.6 - 10.10, the ownership and permissions of system folders can be repaired by using the &quot;Disk Utility&quot; application (/Applications/Utilities/Disk Utility). Select the boot volume in the list on the left, and click on &quot;Repair Disk Permissions&quot;.</p>
+<p>On OS X 10.11, some system folders are protected by &quot;System Integrity Protection&quot;. However, other folders are not, and the &quot;Disk Utility&quot; does not include &quot;Repair Disk Permissions&quot;.</p>
+<p>Disk Utility in OS X 10.5 and lower does not fix the ownership and permissions of system folders; they must be repaired manually using the Terminal application (/Applications/Utilities/Terminal).</p>
+<h3 id="correct-system-folder-ownership-and-permissions">Correct System Folder Ownership and Permissions</h3>
+<p>System folder ownership and permissions vary from folder to folder and from one version of OS X to another. The following table lists the standard (secure) ownership and permissions for selected system folders under various versions of OS X.</p>
+<p><strong>For OS X 10.11:</strong></p>
+<table border="1">
+<tr><td> Folder                                   </td><td> Owner  </td><td> Group </td><td> Permissions </td><td> Octal </td><td>Terminal command to repair                                                                            </td></tr>
+<tr><td> /Applications                            </td><td> root   </td><td> admin </td><td> rwxrwxr-x   </td><td> 0775  </td><td> sudo chown root:admin /Applications; sudo chmod 0775 /Applications                                   </td></tr>
+<tr><td> /Library                                 </td><td> root   </td><td> wheel </td><td> rwxr-xr-x   </td><td> 0755  </td><td> sudo chown root:wheel /Library; sudo chmod 0755 /Library                                             </td></tr>
+<tr><td> /Library/Application Support             </td><td> root   </td><td> admin </td><td> rwxr-xr-x   </td><td> 0755  </td><td> sudo chown root:admin /Library/Application\ Support; sudo chmod 0755 /Library/Application\ Support   </td></tr>
+<tr><td> /Users                                   </td><td> root   </td><td> admin </td><td> rwxr-xr-x   </td><td> 0755  </td><td> sudo chown root:admin /Users; sudo chmod 0755 /Users                                                 </td></tr>
+<tr><td> /usr                                     </td><td> root   </td><td> wheel </td><td> rwxr-xr-x   </td><td> 0755  </td><td> sudo chown root:wheel /usr; sudo chmod 0755 /usr                                                     </td></tr>
+<tr><td> /usr/bin                                 </td><td> root   </td><td> wheel </td><td> rwxr-xr-x   </td><td> 0755  </td><td> sudo chown root:wheel /usr; sudo chmod 0755 /usr/bin                                                 </td></tr>
+</table>
+<p><strong>For OS X 10.7 - 10.10: <span class="red">Use &quot;Repair Disk Permissions&quot; in Disk Utility</span></strong></p>
+<table border="1">
+<tr><td> Folder                                   </td><td> Owner  </td><td> Group </td><td> Permissions </td><td> Octal </td></tr>
+<tr><td> /Applications                            </td><td> root   </td><td> admin </td><td> rwxrwxr-x   </td><td> 0775  </td></tr>
+<tr><td> /Library                                 </td><td> root   </td><td> wheel </td><td> rwxr-xr-x   </td><td> 0755  </td></tr>
+<tr><td> /Library/Application Support             </td><td> root   </td><td> admin </td><td> rwxr-xr-x   </td><td> 0755  </td></tr>
+<tr><td> /Users                                   </td><td> root   </td><td> admin </td><td> rwxr-xr-x   </td><td> 0755  </td></tr>
+<tr><td> /usr                                     </td><td> root   </td><td> wheel </td><td> rwxr-xr-x   </td><td> 0755  </td></tr>
+<tr><td> /usr/bin                                 </td><td> root   </td><td> wheel </td><td> rwxr-xr-x   </td><td> 0755  </td></tr>
+</table>
+<p><strong>For OS X 10.6: <span class="red">Use &quot;Repair Disk Permissions&quot; in Disk Utility</span></strong></p>
+<table border="1">
+<tr><td> Folder                                   </td><td> Owner  </td><td> Group </td><td> Permissions </td><td> Octal </td></tr>
+<tr><td> /Applications                            </td><td> root   </td><td> admin </td><td> rwxrwxr-x   </td><td> 0775  </td></tr>
+<tr><td> /Library                                 </td><td> root   </td><td> wheel </td><td> rwxr-xr-t   </td><td> 1755  </td></tr>
+<tr><td> /Library/Application Support             </td><td> root   </td><td> admin </td><td> rwxr-xr-x   </td><td> 0755  </td></tr>
+<tr><td> /Users                                   </td><td> root   </td><td> admin </td><td> rwxrwxr-x   </td><td> 0775  </td></tr>
+<tr><td> /usr                                     </td><td> root   </td><td> wheel </td><td> rwxr-xr-x   </td><td> 0755  </td></tr>
+<tr><td> /usr/bin                                 </td><td> root   </td><td> wheel </td><td> rwxr-xr-x   </td><td> 0755  </td></tr>
+</table>
+<p><strong>For OS X 10.5:</strong></p>
+<table border="1">
+<tr><td> Folder                                   </td><td> Owner  </td><td> Group </td><td> Permissions </td><td> Octal </td><td>Terminal command to repair                                                                            </td></tr>
+<tr><td> /Applications                            </td><td> root   </td><td> admin </td><td> rwxrwxr-x   </td><td> 0775  </td><td> sudo chown root:admin /Applications; sudo chmod 0775 /Applications                                   </td></tr>
+<tr><td> /Library                                 </td><td> root   </td><td> admin </td><td> rwxrwxr-t   </td><td> 1775  </td><td> sudo chown root:admin /Library; sudo chmod 1775 /Library                                             </td></tr>
+<tr><td> /Library/Application Support             </td><td> root   </td><td> wheel </td><td> rwxr-xr-x   </td><td> 0755  </td><td> sudo chown root:wheel /Library/Application\ Support; sudo chmod 0755 /Library/Application\ Support   </td></tr>
+<tr><td> /Users                                   </td><td> root   </td><td> admin </td><td> rwxrwxr-x   </td><td> 0775  </td><td> sudo chown root:admin /Users; sudo chmod 0775 /Users                                                 </td></tr>
+<tr><td> /usr                                     </td><td> root   </td><td> wheel </td><td> rwxr-xr-x   </td><td> 0755  </td><td> sudo chown root:wheel /usr; sudo chmod 0755 /usr                                                     </td></tr>
+<tr><td> /usr/bin                                 </td><td> root   </td><td> wheel </td><td> rwxr-xr-x   </td><td> 0755  </td><td> sudo chown root:wheel /usr; sudo chmod 0755 /usr/bin                                                 </td></tr>
+</table>
+<p><strong>For OS X 10.4:</strong></p>
+<table border="1">
+<tr><td> Folder                                   </td><td> Owner  </td><td> Group </td><td> Permissions </td><td> Octal </td><td>Terminal command to repair                                                                            </td></tr>
+<tr><td> /Applications                            </td><td> root   </td><td> admin </td><td> rwxrwxr-x   </td><td> 0775  </td><td> sudo chown root:admin /Applications; sudo chmod 0775 /Applications                                   </td></tr>
+<tr><td> /Library                                 </td><td> root   </td><td> admin </td><td> rwxrwxr-t   </td><td> 1775  </td><td> sudo chown root:admin /Library; sudo chmod 1775 /Library                                             </td></tr>
+<tr><td> /Library/Application Support             </td><td> root   </td><td> admin </td><td> rwxr-xr-x   </td><td> 0755  </td><td> sudo chown root:wheel /Library/Application\ Support; sudo chmod 0755 /Library/Application\ Support   </td></tr>
+<tr><td> /Users                                   </td><td> root   </td><td> admin </td><td> rwxrwxr-t   </td><td> 1775  </td><td> sudo chown root:admin /Users; sudo chmod 1775 /Users                                                 </td></tr>
+<tr><td> /usr                                     </td><td> root   </td><td> wheel </td><td> rwxr-xr-x   </td><td> 0755  </td><td> sudo chown root:wheel /usr; sudo chmod 0755 /usr                                                     </td></tr>
+<tr><td> /usr/bin                                 </td><td> root   </td><td> wheel </td><td> rwxr-xr-x   </td><td> 0755  </td><td> sudo chown root:wheel /usr/bin; sudo chmod 0755 /usr/bin                                             </td></tr>
+</table>
+
+
+
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+
+
+
+<div class="bottom-translation">
+  <span title="view in German or another language using Google Translate">               <a lang="de"      class="bottom-translation" href="/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcSystemFolderNotSecure.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;         </a></span>
+  <span title="view in French or another language using Google Translate">               <a lang="fr"      class="bottom-translation" href="/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcSystemFolderNotSecure.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;        </a></span>
+  <span title="view in Chinese (simplified) or another language using Google Translate"> <a lang="zh-Hans" class="bottom-translation" href="/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcSystemFolderNotSecure.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp; </a></span>
+  <span title="view in Russian or another language using Google Translate">              <a lang="ru"      class="bottom-translation" href="/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcSystemFolderNotSecure.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;         </a></span>
+  <span title="view in Spanish or another language using Google Translate">              <a lang="es"      class="bottom-translation" href="/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcSystemFolderNotSecure.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;         </a></span>
+  <span title="view in Japanese or another language using Google Translate">             <a lang="ja"      class="bottom-translation" href="/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcSystemFolderNotSecure.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;           </a></span>
+  <span title="view in Italian or another language using Google Translate">              <a                class="bottom-translation" href="/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcSystemFolderNotSecure.html&amp;sandbox=1">&nbsp;&nbsp;&hellip;&nbsp;&nbsp;        </a></span>
+</div>
+<div class="bottom-copyright">
+  Copyright &copy; 2015-2017 by The Tunnelblick Project.&nbsp;&nbsp;
+</div>
+</body>
+</html>

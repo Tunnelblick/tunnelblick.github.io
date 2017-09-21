@@ -1,0 +1,323 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" lang="en">
+	<meta name="description" content="Updatable Tunnelblick VPN Configurations - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+	<meta name="referrer" content="never">
+	<title>Updatable Tunnelblick VPN Configurations - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+	<link rel="stylesheet" type="text/css"  href="common/style.v5.css">
+	<link rel="icon"       type="image/png" href="common/favicon.v1.png">
+</head>
+
+<body>
+
+<div class="heading">
+	<table>
+		<tr>
+			<td><a href="/"><img src="common/tb-icon-64x64.v1.png" alt="" width="64" height="64"></a></td>
+			<td class="heading1">Tunnelblick</td>
+			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading3">
+                <a href="cLocalizeTranslate.html">We need translators for several languages&hellip;</a><br>
+            </td>
+		</tr>
+	</table>
+</div>
+
+
+<div class="topnav">
+<table class="topnav"><tbody><tr>
+	<td class="topnav-normal"   ><a href="index.html"      class="topnav">Home</a></td>
+	<td class="topnav-normal"   ><a href="downloads.html"  class="topnav">Downloads</a></td>
+	<td class="topnav-normal"   ><a href="support.html"    class="topnav">Support</a></td>
+	<td class="topnav-highlight"><a href="documents.html"  class="topnav">Documents</a></td>
+	<td class="topnav-normal"   ><a href="issues.html"     class="topnav">Issues</a></td>
+	<td class="topnav-normal"   ><a href="source.html"     class="topnav">Source</a></td>
+	<td class="topnav-normal"   ><a href="contribute.html" class="topnav">Contribute</a></td>
+	<td class="topnav-normal"   ><a href="reachus.html"    class="topnav">Contact</a></td>
+	<td class="topnav-padding"  ></td>
+</tbody></table>
+</div>
+
+
+
+<div class="content">
+<div class="content-cUpdatableConfigurations">
+<table class="documents">
+  <tr>
+    <td class="documents-left">
+
+
+
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="cFAQ.html">FAQ</a></p>
+
+<p><strong><a href="https://groups.google.com/forum/#&#33;forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="cBeforeYouPost.html">Read Before You Post</a></p>
+
+
+
+    </td>
+    <td class="documents-right">
+    
+
+
+<h1 id="updatable-tunnelblick-vpn-configurations">Updatable Tunnelblick VPN Configurations</h1>
+<p class=toc>On This Page<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#updatable-configurations">Updatable Configurations</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#what-makes-a-configuration-updatable">What Makes a Configuration Updatable</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#nested-configurations">Nested Configurations</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#the-update-server">The Update Server</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#the-appcast">The Appcast</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#update-notes">Update Notes</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#https-and-digital-signatures">https: and Digital Signatures</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#signing-the-appcast-and-update">Signing the Appcast and Update</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#debugging-configuration-updates">Debugging Configuration Updates</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#sample-updatable-configuration">Sample Updatable Configuration</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#more-information">More Information</a><br>
+</p> 
+<h2 id="updatable-configurations">Updatable Configurations</h2>
+<p>A Tunnelblick VPN Configuration (&quot;Configuration&quot;) can be updated the same way that the Tunnelblick application itself is updated. Because a Configuration can contain any number of Configurations within it, you can have a single Configuration that updates all of your VPN configurations at once.</p>
+<p>Combined with <a href="cAutoInstall.html">automatic installation</a>, this allows you to distribute Tunnelblick to your users with configurations that are updated separately from the program. You do not need to rebrand Tunnelblick, or build it from source — you can use the standard Tunnelblick application.</p>
+<p>By adding a few entries to a Configuration's Info.plist file, a Configuration will become &quot;updatable&quot;. When launched, and periodically afterward, Tunnelblick will check a webpage for information about updates to the configuration. If a new version of the Configuration is available, the user will be asked for permission to update it. If granted, the new configuration will be installed and available for use immediately, without relaunching Tunnelblick.</p>
+<p>Configuration updates are handled by <a href="https://sparkle-project.org">Sparkle Updater</a>, just like Tunnelblick updates. (Sparkle is built into Tunnelblick.)</p>
+<p>In addition to the Configuration itself, you must provide an update server — a web server with the update information.</p>
+<h2 id="what-makes-a-configuration-updatable">What Makes a Configuration Updatable</h2>
+<p>To be updatable, a Configuration must contain an <a href="cPkgs.html#info.plist">Info.plist</a>, and the Info.plist must include the following entries:</p>
+<ul>
+<li><strong>CFBundleIdentifier</strong>, a string containing a reverse-domain uniquely identifying the Configuration. For example, &quot;com.example.tunnelblick.updatable-configurations.001&quot;.</li>
+<li><strong>CFBundleVersion</strong>, a string containing a version number consisting only of the digits 0-9 and periods. For example, &quot;1.0&quot;, &quot;1.3.1&quot;, etc.</li>
+<li><strong>TBPackageVersion</strong>, a string &quot;1&quot;. (This is required in any Configuration Info.plist, whether or not it is updatable.)</li>
+<li><strong>SUFeedURL</strong>, a string with the URL for the &quot;appcast&quot; that gives information about updates to the Configuration. For example, <code>&quot;https://example.com/tunnelblick/configs/001/appcast.rss&quot;</code>. If this is not an &quot;https:&quot; URL, the SUPublicDSAKeyFile entry and associated file are required.</li>
+<li><strong>SUPublicDSAKeyFile</strong>: The filename and extension of a file containing the public DSA key. This key and file are required. The file must be contained in the Configuration, either directly in the .tblk, or in the .tblk/Contents/Resources folder. See <a href="#Signing_the_Update">Signing the Update</a> and <a href="Signing_the_Appcast.html">Signing the Appcast</a>.</li>
+</ul>
+<p>Optional Info.plist entries include those normally allowed in the Info.plist of a Configuration — <strong>TBReplaceIdentical</strong>, <strong>TBSharePackage</strong>, etc.</p>
+<p>There are two optional Info.plist entries that are used only for updatable configurations:</p>
+<p><strong>TBKeepExistingFilesList</strong>. This allows an update to omit files such as per-user key files that are different for each user and which already exists in the original Configuration that is installed on user's computer. This should be an array of filenames. Each filename is the name of a file that exists in the original Configuration (the one being replaced with an updated version) and that should be kept as it is and not updated. (Note: the updated file should not be included in the updated version.) Each &quot;filename&quot; may include a single asterisk (&quot;<code>*</code>&quot;) character, which will match any number (including zero) of any character in a filename. For example:</p>
+<ul>
+<li><strong><code>*</code></strong> matches any filename</li>
+<li><strong><code>abc*</code></strong> matches any filename which starts with abc (e.g. &quot;abc&quot;, &quot;abcd&quot;, &quot;abc.def.ghi.key&quot;, etc.)</li>
+<li><strong><code>abc*def.key</code></strong> matches any filename that starts with &quot;abc&quot; and ends with &quot;def.key&quot; (e.g. &quot;abcdef.key&quot;, &quot;abc.user12345.private.def.key&quot;, etc.</li>
+</ul>
+<p><strong>TBAppcastRequiresDSASignature</strong>. If true, update appcasts must be signed with a DSA signature (see <a href="#Signing_the_Appcast%20and_Update">Signing the Appcast and Update</a>). If false or not present, appcasts do not need to be signed.</p>
+<p>The other optional Info.plist entries for an updatable Configuration are all <a href="https://sparkle-project.org">Sparkle Updater</a> entries. (Please note that Tunnelblick uses a customized version of Sparkle so some features in newer versions of Sparkle may not be available.) Here are comments on some entries:</p>
+<ul>
+<li><strong>SUScheduledCheckInterval</strong>: The time, in seconds, between checks. Minimum of 60; default is 3600 (one hour).</li>
+<li><strong>SUAllowsAutomaticUpdates</strong>: If present, must be a binary &quot;NO&quot;.</li>
+<li><strong>SUEnableAutomaticChecks</strong>: If present, must be a binary &quot;NO&quot;.</li>
+<li><strong>SUEnableSystemProfiling</strong>: If present, must be a binary &quot;NO&quot;.</li>
+<li><strong>SUShowReleaseNotes</strong>: If present, must be a binary &quot;YES&quot;.<br />
+(Some of these &quot;must be&quot; restrictions may be relaxed in a later version of Tunnelblick.)</li>
+</ul>
+<h2 id="nested-configurations">Nested Configurations</h2>
+<p>An updatable configuration should be constructed using &quot;nested&quot; configurations, that is, as VPN configurations inside the updatable configuration. A typical updatable configuration might have a structure like this, all inside <em>Name for the updatable configuration</em>.tblk:</p>
+<ul>
+<li>Info.plist</li>
+<li>dsa_pub.pem <em>(recommended; not required)</em></li>
+<li><em>Name for VPN configuration #1</em>.tblk
+<ul>
+<li>Info.plist</li>
+<li><em>This name is ignored</em>.ovpn <em>-- the OpenVPN configuration file for VPN configuration #1</em></li>
+<li>client.crt</li>
+<li>client.key</li>
+<li><em>(other files such as CA certificates, scripts, etc.)</em></li>
+</ul></li>
+<li><em>Name for VPN configuration #2</em>.tblk
+<ul>
+<li>Info.plist</li>
+<li><em>This name is ignored, too</em>.ovpn <em>-- the OpenVPN configuration file for VPN configuration #2</em></li>
+<li>client.crt</li>
+<li>client.key</li>
+<li><em>(other files such as CA certificates, scripts, etc.)</em></li>
+</ul></li>
+</ul>
+<p>The Info.plist of the nested configurations must include a CFBundleIdentifier which is distinct from the CFBundleIdentifier for the outer configuration, and must also include a CFBundleVersion entry, along with a TBPackageVersion entry.</p>
+<h2 id="the-update-server">The Update Server</h2>
+<p>The update mechanism uses a web server to provide update information. Minimally, that web server serves an &quot;appcast&quot; and,<br />
+for each available update:</p>
+<ul>
+<li>The release notes: An html page which is displayed to the user when the update is available.</li>
+<li>The updated configuration: A .zip or .dmg file of the updated Configuration, suitable for downloading.</li>
+</ul>
+<p>Note that the release notes may be omitted if they are imbedded in the appcast.</p>
+<h2 id="the-appcast">The Appcast</h2>
+<p>The appcast is an XML file that contains information about each available update, including:</p>
+<ul>
+<li>The conditions under which the update is considered appropriate.</li>
+<li>Either the URL for the &quot;release notes&quot; page or the contents of the &quot;release notes&quot; page.</li>
+<li>The URL for the updated configuration.</li>
+</ul>
+<p>Here is a sample appcast.rss:</p>
+<pre><code>&lt;rss version=&quot;2.0&quot; xmlns:sparkle=&quot;https://sparkle-project.org/xml-namespaces/sparkle&quot;
+                   xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;&gt;
+    &lt;channel&gt;
+        &lt;title&gt;Configuration appcast&lt;/title&gt;
+        &lt;link&gt;https://www.example.com/tunnelblick/configurations/001/appcast.rss&lt;/link&gt;
+        &lt;description&gt;Most recent changes with links to updates.&lt;/description&gt;
+        &lt;language&gt;en&lt;/language&gt;
+        &lt;item&gt;
+            &lt;title&gt;Latest VPN Configurations (Recommended for all users)&lt;/title&gt;
+            &lt;sparkle:releaseNotesLink&gt;
+                https://www.example.com/tunnelblick/configurations/001/UpdateNotes.html
+            &lt;/sparkle:releaseNotesLink&gt;
+            &lt;pubDate&gt;Mon,  14 Jul 2014 14:55:20 -0400&lt;/pubDate&gt;
+            &lt;enclosure
+                url=&quot;https://www.example.com/tunnelblick/configurations/001/configurations.zip&quot;
+                sparkle:version=&quot;1.2.3&quot;
+                sparkle:shortVersionString=&quot;VPN Configurations 1.2.3&quot;
+                sparkle:dsaSignature=&quot;MCwCFE6twQrvEOeFyXLMCJsClV2tM7RGAhQ53VjexE4Gf0SSswNUSMkg3UeXZg==&quot;
+                type=&quot;application/octet-stream&quot;
+            /&gt;
+        &lt;/item&gt;
+    &lt;/channel&gt;
+&lt;/rss&gt;</code></pre>
+<p>Notes on the appcast entries:</p>
+<p><strong><code>&lt;title&gt;</code></strong> and <strong><code>&lt;description&gt;</code></strong></p>
+<p>The title and description entries are not shown to the user during the update process; they appear if you go to the page in an .rss browser.</p>
+<p><strong><code>&lt;link&gt;https://www.example.com/tunnelblick/configurations/001/appcast.rss&lt;/link&gt;</code></strong></p>
+<p>The URL of the appcast.rss itself.</p>
+<p><strong><code>https://www.example.com/tunnelblick/configurations/001/UpdateNotes.html</code></strong></p>
+<p>The URL of the page that is presented to the user to explain the update.</p>
+<p><strong><code>&lt;pubDate&gt;Mon,  14 Jul 2014 14:55:20 -0400&lt;/pubDate&gt;</code></strong></p>
+<p>The date that the update was published.</p>
+<p><strong><code>url=&quot;https://www.example.com/tunnelblick/configurations/001/configurations.zip&quot;</code></strong></p>
+<p>The URL of the update itself — a .zip or .dmg file that contains the updated .tblk.</p>
+<p><strong><code>sparkle:version=&quot;1.2.3&quot;</code></strong></p>
+<p>The machine-readable version number of the update. Consists of one, two, or three numbers separated by periods. This is compared to the CFBundleIdentifier in the user's configuration to determine if the update is newer or not. <em>This should be the same as the CFBundleVersion in the Info.plist in the updated Configuration in the .zip or .dmg file.</em></p>
+<p><strong><code>sparkle:shortVersionString=&quot;VPN Configurations 1.2.3&quot;</code></strong></p>
+<p>The human-readable version number. This is what is presented to the user.</p>
+<p><strong><code>sparkle:dsaSignature=&quot;MCwCFE6twQrvEOeFyXLMCJsClV2tM7RGAhQ53VjexE4Gf0SSswNUSMkg3UeXZg==&quot;</code></strong></p>
+<p>The DSA signature of the update file. (The signature of the .zip or .dmg file.)</p>
+<h2 id="update-notes">Update Notes</h2>
+<p>The update notes are an HTML file that is presented to the user when an update is available.</p>
+<p>Note that the contents of the file can be imbedded in the appcast (see the Sparkle documentation).</p>
+<p>Here is the sample update notes file for Tunnelblick release 3.4beta30:</p>
+<pre><code>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;
+                      &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv=&quot;Content-type&quot; content=&quot;text/html;charset=UTF-8&quot;&gt;
+    &lt;title&gt;Update Notes - Tunnelblick version 3.4beta30&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+      &lt;strong&gt;Changes since 3.4beta28:&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;Includes major enhancements to installing configurations.&lt;/strong&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;Includes LZO version 2.08.&lt;/strong&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;Changes many warning dialogs.&lt;/strong&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;Fixes several problems.&lt;/strong&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    Details are in the &lt;a href=&quot;cRlsNotes&quot;&gt;Release Notes&lt;/a&gt;&lt;br&gt;&lt;br&gt;
+    &lt;hr&gt;
+    &lt;strong&gt;Please Note:&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Disconnect all configurations before updating.&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;You will not be able to use Tunnelblick after updating without
+       providing a computer administrator&#39;s username and password twice: once to
+       remove the old version, and once to secure the new version.&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h2 id="https-and-digital-signatures">https: and Digital Signatures</h2>
+<p>It is advisable to use https: for all update transactions, and to sign appcast and update files (.dmg files). If the updates are not done using https:, you <strong>must</strong> sign the appcast and the update.</p>
+<p>Release notes for updates cannot be signed; to secure them you should imbed the release notes in the appcast using CDATA. To do that, replace</p>
+<pre><code>            &lt;sparkle:releaseNotesLink&gt;
+                https://www.example.com/tunnelblick/configurations/001/UpdateNotes.html
+            &lt;/sparkle:releaseNotesLink&gt;</code></pre>
+<p>with</p>
+<pre><code>            &lt;description&gt;
+                &lt;![CDATA[]]&gt;
+            &lt;/description&gt;</code></pre>
+<p>and insert your release notes (an HTML fragement or an entire document including a &quot;doctype&quot; statement) between the <code>&lt;![CDATA[</code> and the <code>]]&gt;</code>.</p>
+<p>For more information about signing the appcast and update, see <a href="#Signing_the_Appcast_and_Update">Signing the Appcast</a>.</p>
+<p>For more information on updates generally, see the <a href="https://sparkle-project.org">Sparkle Updater</a> documentation.</p>
+<p>Also, note that</p>
+<ul>
+<li>The digital signature is computed from the .zip or .dmg file, not the .tblk.; and</li>
+<li>The digital signature has nothing to do with the digital signature that applications on OS X and macOS use.</li>
+</ul>
+<h2 id="signing-the-appcast-and-update">Signing the Appcast and Update</h2>
+<p>To enhance security, Tunnelblick uses a modified version of Sparkle Updater that <strong>requires</strong> that appcasts be signed if the &quot;TBAppcastRequiresDSASignature&quot; is TRUE in the configuration's Info.plist. Although you do not need to include &quot;TBAppcastRequiresDSASignature&quot;, you are strongly encouraged to do so. As of version 3.7.0beta01, Tunnelblick includes three scripts to aid this process:</p>
+<ul>
+<li>'updates_sign_with_v2_signature', which can be used to sign appcasts or release notes</li>
+<li>'updates_create_signature', which creates a signature for updates (.dmg or .zip files)</li>
+<li>'updates_generate_keys', which generates public and private keys for signing updates and appcasts</li>
+</ul>
+<p>These scripts are included in the source code in the 'tunnelblick' folder, and in the Tunnelblick application in the 'Contents/Resources' folder.</p>
+<p><strong>Important note: If an appcast, release notes, or update is modified, it must be signed again or a new signature created.</strong></p>
+<p>The following assumes that Tunnelblick 3.6.10beta05 or higher is installed.</p>
+<p>The first step, <strong>done only once</strong>, is to generate public and private keys for signing. Create a folder to hold the keys, and then run the following command in Terminal:</p>
+<pre><code>/Applications/Tunnelblick.app/Contents/Resources/updates_generate_keys  FOLDER</code></pre>
+<p>where FOLDER is the path to the folder in which the keys will be created.</p>
+<p>To sign an appcast, use the following Terminal command:</p>
+<pre><code>/Applications/Tunnelblick.app/Contents/Resources/updates_sign_with_v2_signature      KEY      APPCAST LIFETIME  [START-DATE    [START-TIME] ]</code></pre>
+<p>where</p>
+<ul>
+<li>KEY is the path to the private key to be used to sign the appcast, and</li>
+<li>APPCAST is the path to the appcast to be signed.</li>
+<li>LIFETIME is the number of days for which the appcast is valid</li>
+<li>START-DATE and START-TIME are the starting date and time that the appcast is valid. (Defaults to the current date/time if not provided.)</li>
+</ul>
+<p>&quot;Signing&quot; an appcast causes two HTML comments to be inserted at the start of the appcast, or replaced if they already exist. That is, it <strong>modifies</strong> the appcast.</p>
+<p>To obtain a signature for an update, use the following Terminal command:</p>
+<pre><code>/Applications/Tunnelblick.app/Contents/Resources/updates_create_signature      KEY      FILE</code></pre>
+<p>where</p>
+<ul>
+<li>KEY is the path to the private key to be used to create the signature, and</li>
+<li>FILE is the path to the file whose signature is to be obtained</li>
+</ul>
+<p>The signature so obtained does not modify the update, but is inserted in the appcast's &quot;sparkle:dsaSignature&quot; field.</p>
+<h2 id="debugging-configuration-updates">Debugging Configuration Updates</h2>
+<p>Debugging updates is difficult partly because there are so many parts to the update and partly because Sparkle's error messages don't usually say what is wrong. Here are some hints:</p>
+<ul>
+<li><p>First, make sure that your initial configuration installs correctly by dropping it on the Tunnelblick icon in the menu bar. Then make sure that your updated configuration installs properly (replacing the original) by dropping it on the Tunnelblick icon in the menu bar. Because the update process simulates a double-click on the update, these installs must work before updates will work. Making sure that the initial and update configurations work as configurations themselves, before trying to use them as updatable configurations will help isolate problems.</p></li>
+<li><p>Copy/paste the following command into Terminal to set a Tunnelblick preference which will add debugging info to the Console log:<br />
+ <em>defaults write net.tunnelblick.tunnelblick DB-UC -bool yes</em><br />
+ To remove the preference, copy/paste:<br />
+ <em>defaults delete net.tunnelblick.tunnelblick DB-UC</em><br />
+ The debugging information includes a lot of entries that are about the internal procedures that Tunnelblick uses to implement updatable configurations; most of these can be ignored.</p></li>
+<li><p>Use the &quot;Check Now&quot; button on the &quot;Preferences&quot; panel of the &quot;VPN Details&quot; window to test for updates. Although Tunnelblick will check for updates when it is launched, when doing that update check Sparkle will ignore errors and not complain about them. If you do a &quot;Check Now&quot; check, you will get a window saying the item is up-to-date, a window offering an update, or a window indicating that an error occurred. Note: &quot;Check Now&quot; will first do a check for updates to the Tunnelblick application, and after you click &quot;OK&quot; to acknowledge that you have received that, it will check for configuration updates.</p></li>
+<li><p>After you have installed a Configuration which is updatable, there should be a folder in /Library/Application Support/Tunnelblick/Tblks named &quot;xxx.yyy.zzz_nn&quot;, where &quot;xxx.yyy.zzz&quot; is the CFBundleIdentifier for the updatable .tblk and &quot;nnn&quot; is a number. That folder contains a &quot;stub&quot; .tblk which contains only a Contents folder which contains a copy of the Info.plist for the updatable .tblk, and (if a DSA signature file was specified with <strong>SUPublicDSAKeyFile</strong>), a &quot;Resources&quot; folder with the DSA signature file. If the xxx.yyy.zzz.tblk_nnn is not present, Tunnelblick did not recognize that the configuration was updatable.</p></li>
+<li><p>A Console log entry like <code>DB-UC: Copied updatable configuration 'com.example.config.001.tblk' to local user folder</code> should appear when Tunnelblick launches. (It means the corresponding folder in /Library/Application Support/Tunnelblick/Tblks was found.)</p></li>
+<li><p>A Console log entry like <code>DB-UC: Delaying start of update check for configuration set com.example.config.001</code> may appear when Tunnelblick launches. It is normal — update checks for configurations are delayed until after the update check for the Tunnelblick application.</p></li>
+<li><p>A Console log entry like <code>DB-UC: Starting update check without UI for configuration 'com.example.config.001'; URL = https://example.com/config.001/appcast.rss</code> should appear when Tunnelblick launches. It indicates the start of a silent update check (&quot;without UI&quot; means &quot;without user interface&quot;).</p></li>
+<li><p>A Console log entry like <code>DB-UC: cfgUpdater 0x8a377b0: didFinishLoadingAppcast</code> means that Sparkle successfully found and downloaded the appcast for a configuration from the website. If no error messages from Sparkle appear following this, it means that the version number in the appcast was not higher than the version number in the Configuration that is installed (i.e., the version number in the Info.plist in /Library/Application Support/Tunnelblick/Tblks/xxx.yyy.zzz.tblk).</p></li>
+</ul>
+<h2 id="sample-updatable-configuration">Sample Updatable Configuration</h2>
+<p>A sample updatable configuration with notes and instructions and which can be used &quot;live&quot;, may be downloaded from <a href="https://tunnelblick.net/updatable-configs/Updatable-configuration-example-signed.zip">https://tunnelblick.net/updatable-configs/Updatable-configuration-example-signed.zip</a>.</p>
+<h2 id="more-information">More Information</h2>
+<p>For more information about the update process or these files, see the <a href="https://sparkle-project.org">Sparkle Updater website</a>. Note that Tunnelblick uses a patched version of Sparkle and that at any particular time, may not be using the latest version of Sparkle.</p>
+
+
+
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+
+
+
+<div class="bottom-translation">
+  <span title="view in German or another language using Google Translate">               <a lang="de"      class="bottom-translation" href="/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;         </a></span>
+  <span title="view in French or another language using Google Translate">               <a lang="fr"      class="bottom-translation" href="/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;        </a></span>
+  <span title="view in Chinese (simplified) or another language using Google Translate"> <a lang="zh-Hans" class="bottom-translation" href="/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp; </a></span>
+  <span title="view in Russian or another language using Google Translate">              <a lang="ru"      class="bottom-translation" href="/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;         </a></span>
+  <span title="view in Spanish or another language using Google Translate">              <a lang="es"      class="bottom-translation" href="/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;         </a></span>
+  <span title="view in Japanese or another language using Google Translate">             <a lang="ja"      class="bottom-translation" href="/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;           </a></span>
+  <span title="view in Italian or another language using Google Translate">              <a                class="bottom-translation" href="/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;&hellip;&nbsp;&nbsp;        </a></span>
+</div>
+<div class="bottom-copyright">
+  Copyright &copy; 2015-2017 by The Tunnelblick Project.&nbsp;&nbsp;
+</div>
+</body>
+</html>

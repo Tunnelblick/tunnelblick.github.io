@@ -1,0 +1,312 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" lang="en">
+	<meta name="description" content="Preferences for version 3.3 - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+	<meta name="referrer" content="never">
+	<title>Preferences for version 3.3 - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+	<link rel="stylesheet" type="text/css"  href="common/style.v5.css">
+	<link rel="icon"       type="image/png" href="common/favicon.v1.png">
+</head>
+
+<body>
+
+<div class="heading">
+	<table>
+		<tr>
+			<td><a href="/"><img src="common/tb-icon-64x64.v1.png" alt="" width="64" height="64"></a></td>
+			<td class="heading1">Tunnelblick</td>
+			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading3">
+                <a href="cLocalizeTranslate.html">We need translators for several languages&hellip;</a><br>
+            </td>
+		</tr>
+	</table>
+</div>
+
+
+<div class="topnav">
+<table class="topnav"><tbody><tr>
+	<td class="topnav-normal"   ><a href="index.html"      class="topnav">Home</a></td>
+	<td class="topnav-normal"   ><a href="downloads.html"  class="topnav">Downloads</a></td>
+	<td class="topnav-normal"   ><a href="support.html"    class="topnav">Support</a></td>
+	<td class="topnav-highlight"><a href="documents.html"  class="topnav">Documents</a></td>
+	<td class="topnav-normal"   ><a href="issues.html"     class="topnav">Issues</a></td>
+	<td class="topnav-normal"   ><a href="source.html"     class="topnav">Source</a></td>
+	<td class="topnav-normal"   ><a href="contribute.html" class="topnav">Contribute</a></td>
+	<td class="topnav-normal"   ><a href="reachus.html"    class="topnav">Contact</a></td>
+	<td class="topnav-padding"  ></td>
+</tbody></table>
+</div>
+
+
+
+<div class="content">
+<div class="content-cz33Prefs">
+<table class="documents">
+  <tr>
+    <td class="documents-left">
+
+
+
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="cFAQ.html">FAQ</a></p>
+
+<p><strong><a href="https://groups.google.com/forum/#&#33;forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="cBeforeYouPost.html">Read Before You Post</a></p>
+
+
+
+    </td>
+    <td class="documents-right">
+    
+
+
+<h1 id="preferences-for-version-3.3">Preferences for version 3.3</h1>
+<p class=toc>On This Page<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#overview">Overview</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#preferences-in-the-vpn-details-window">Preferences in the &quot;VPN Details&quot; Window</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#configuration-settings-in-the-vpn-details-window">Configuration Settings in the &quot;VPN Details&quot; Window</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#modifying-preferences-that-are-not-in-the-vpn-details-window">Modifying Preferences That are Not in the &quot;VPN Details&quot; window</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#preferences-that-control-what-tunnelblick-does">Preferences That Control What Tunnelblick Does</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#preferences-that-control-what-the-user-sees">Preferences That Control What The User Sees</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#preferences-that-control-updates">Preferences That Control Updates</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#preferences-that-are-set-by-the-user-in-a-check-box">Preferences That are Set by the User in a Check Box</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#per-configuration-settings">Per-Configuration Settings</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#preferences-that-tunnelblick-uses-internally">Preferences That Tunnelblick Uses Internally</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#sparkle-updater-preferences">Sparkle Updater Preferences</a><br>
+</p> 
+<h2 id="overview">Overview</h2>
+<p>Tunnelblick uses preferences to store user-specified settings for the program and for configurations.</p>
+<p>Tunnelblick's preferences for a user are stored in <code>~/Library/Preferences/net.tunnelblick.tunnelblick.plist</code>.</p>
+<p>Note: Tunnelblick's settings for each configuration are stored as Mac OS X preferences. This document includes both Tunnelblick preferences and configuration settings.</p>
+<p>Note: In Tunnelblick 3.2beta10 and earlier, preferences are stored in <code>~/Library/Preferences/com.openvpn.tunnelblick.plist</code>.</p>
+<p>If Tunnelblick.app contains a <code>Contents/Resources/Deploy/forced-preferences.plist</code> file, then preferences in that file override the corresponding preferences in the <code>com.openvpn.tunnelblick.plist</code> file. This overriding is called &quot;forcing&quot; the preference and such preferences are said to be &quot;forced preferences&quot;.</p>
+<p>Per-configuration preferences can be applied to all configurations by using &quot;<code>**</code>&quot; as the configuration name (see <a href="#per-configuration-settings">Per-Configuration Settings</a>). If a configuration has its own preference corresponding to a &quot;<code>**</code>&quot;preferences, the configuration's own preference will override the &quot;<code>**</code>&quot; preference. <em>NOTE: Prior to Tunnelblick 3.4beta10, only forced preferences may contain a &quot;<code>**</code>&quot;.</em></p>
+<p>Forced preferences will override normal preferences. See <a href="cCusDeployed.html">Deploying Tunnelblick</a> for more details about Deployed configurations and forced preferences.</p>
+<p>When using a <a href="cConfigT.html">Tunnelblick VPN Configuration</a>, it may contain preferences in its Info.plist. Values of those preferences are used if the user has not specified different values. The use may also change the values after they are loaded from Info.plist.</p>
+<p>Note: some preferences are stored as the opposite of the state of the corresponding check box: For example, the <strong><em>config-name</em>-notMonitoringConnection</strong> preference is the opposite of the &quot;Monitor Connection&quot; check box</p>
+<h2 id="preferences-in-the-vpn-details-window">Preferences in the &quot;VPN Details&quot; Window</h2>
+<p>Most program preferences may be modified in the &quot;Preferences&quot; section of the &quot;VPN Details&quot; window.</p>
+<h2 id="configuration-settings-in-the-vpn-details-window">Configuration Settings in the &quot;VPN Details&quot; Window</h2>
+<p>Configuration settings are implemented as preferences. Most may be modifed on the &quot;Settings&quot; tab of the &quot;VPN Details&quot; window. See <a href="#per-configuration-settings">Per-Configuration Settings</a>.</p>
+<h2 id="modifying-preferences-that-are-not-in-the-vpn-details-window">Modifying Preferences That are Not in the &quot;VPN Details&quot; window</h2>
+<p>All other preferences can be modified by</p>
+<ul>
+<li>Forcing them (see <a href="cCusDeployed.html">&quot;Deployed&quot; Versions</a>).</li>
+<li>Modifying them in the preferences file using Apple's &quot;Property List Editor.app&quot;. “Property List Editor.app” is a small part of the free <a href="http://developer.apple.com/technology/Xcode.html">Developer Tools</a> available from Apple (a free Apple Developer Connection membership is required). The Developer Tools are a very large (over 900MB download) suite of programs for developing software for Macs. The Developer Tools installs Property List Editor.app in /Developer/Applications/Utilities.</li>
+<li><p>Modifying them by using the &quot;defaults&quot; commands in Terminal.app. For example, to disable the display of the duration of connections in the VPN Details window, use<br />
+ <code>defaults    write    net.tunnelblick.tunnelblick &quot;showConnectedDurations&quot;    -bool    no</code></p>
+<p>or, for Tunnelblick 3.2beta10 and earlier, use<br />
+ <code>defaults    write    com.openvpn.tunnelblick &quot;showConnectedDurations&quot;    -bool    no</code></p></li>
+</ul>
+<h2 id="preferences-that-control-what-tunnelblick-does">Preferences That Control What Tunnelblick Does</h2>
+<ul>
+<li><strong>placeIconInStandardPositionInStatusBar</strong> (Boolean): If set, the Tunnelblick icon will be positioned normally, to the left of the other icons at the time Tunnelblick is started. If cleared or not present, the Tunnelblick icon will be placed between the time display and the Spotlight icon. The default is not present.</li>
+<li><strong>doNotMonitorConfigurationFolder</strong> (Boolean): If set, Tunnelblick does not monitor the ~/Library/Application Support/Tunnelblick/Configurations folder for changes to configuration files. If cleared or not present, Tunnelblick monitors the folder and reacts appropriately to configuration files that are added or removed. If set, Tunnelblick must be restarted before showing added or removed configurations. The default is not present.</li>
+<li><strong>doNotLaunchOnLogin</strong> (Boolean): If set when Tunnelblick launches, Tunnelblick will not launch on the next login after the next logout, restart, shutdown, or crash occurs. If cleared or not present, Tunnelblick will launch on login if it was running on logout, restart, shut down, or crash. The default is not present.</li>
+<li><strong>onlyAdminsCanUnprotectConfigurationFiles</strong> (Boolean): If set, the user will be warned that they will only be allowed to examine configuration files when using the &quot;Edit Configuration&quot; button on OS X 10.4 (Tiger) or 10.5 (Leopard) and will be unable to modify them. If cleared or not present, the user will be asked if they wish to unprotect the configuration file before editing it on Tiger or Leopard. On OS X 10.6 (Snow Leopard), this preference is ignored. On Tiger and Leopard, <code>TextEdit</code> will be unable to save a modified configuration file that is protected; on Leopard, <code>TextEdit</code> will silently unprotect the configuration file if it is saved after being modified. The default is not present.</li>
+<li><strong>openvpnVersion</strong> (String): Specifies what version of OpenVPN to use. If not set, uses the earliest OpenVPN version that is available. If set to &quot;-&quot; (hyphen), uses the latest version of OpenVPN that is available. If set to a version number (for example, &quot;2.2.1&quot;), specifies a specific version of OpenVPN that should be used. This preference applies to all configurations that do not have a configuration-specific &quot;-openvpnVersion&quot; preference. (<span class="red">DEPRECATED</span> as of 3.4beta14.)</li>
+<li><strong>standardApplicationPath</strong> (String): If present, the absolute path for the folder in which Tunnelblick is to be installed when installing Tunnelblick by double-clicking the icon in a downloaded disk image. If not present or empty, Tunnelblick will be installed in <code>/Applications</code>. The string may include a &quot;~&quot;, which will be expanded appropriately to allow installation somewhere in the user's home folder. Default is not present.</li>
+<li><strong>doNotCreateLaunchTunnelblickLinkinConfigurations</strong> (Boolean): If set, no link will be created. If cleared or not present, Tunnelblick will create a link to itself in the <code>~/Library/Application Support/Tunnelblick/Configurations</code> folder each time it is started. The default is to create the link.</li>
+<li><strong>useShadowConfigurationFiles</strong> (Boolean): If set, Tunnelblick will create and use &quot;shadow copies&quot; of configuration files on the local hard drive in a subfolder of <code>/Library/Application Support/Tunnelblick</code>. If cleared or not present, the original of each configuration file will be used. Configuration files must be owned by root and have permissions of &quot;644&quot; for security; if the configuration file is on a volume which does not allow this ownership and permissions, shadow copies must be used so the copies can be given the proper ownership and permissions. This happens automatically when the home folder is located on a network volume; it is not necessary to use this preference only when the home folder is on a non-network volume which doesn't allow the required ownership and permissions. The default is not present.</li>
+<li><strong>usePrivateConfigurationsWithDeployedOnes</strong> and <strong>useSharedConfigurationsWithDeployedOnes</strong> are booleans which may be used in a Deployed version of Tunnelblick (see <a href="cCusDeployed.html">Deploying Tunnelblick</a>) to allow simultaneous display of configurations from the Private (~/Library/Application Support/Tunnelblick/Configurations) and Shared (/Library/Application Support/Tunnelblick/Shared) folders, respectively. These preferences must be forced — they will be ignored if they are not forced.</li>
+<li><strong>hookupTimeout</strong> (Number): The number of seconds that Tunnelblick should use trying to associate Tunnelblick VPN Configurations with OpenVPN processes that were running when Tunnelblick was launched. If zero, Tunnelblick will keep trying until it is closed.</li>
+<li><strong>openvpnTerminationInterval</strong> (Number): The number of seconds that Tunnelblick waits between SIGTERMs to an OpenVPN process that it is trying to disconnect. If zero, Tunnelblick will issue only one request.</li>
+<li><strong>openvpnTerminationTimeout</strong> (Number): The number of seconds that Tunnelblick should wait before considering a non-responsive OpenVPN connection to be closed. If zero, Tunnelblick will not consider the connection closed until the process exits.</li>
+<li><strong>maxLogDisplaySize</strong> (Number): The maximum number of characters that Tunnelblick should allow in the display of the log. If less than 10,000, Tunnelblick will use the default value of 100,000.</li>
+<li><strong>delayToShowStatistics</strong> (Number): Delay in seconds before showing the notification windows when the pointer (mouse) is over the Tunnelblick icon.</li>
+<li><strong>delayToHideStatistics</strong> (Number): Delay in seconds before hiding the notification windows when when the pointer (mouse) is no longer over the Tunnelblick icon or a notification window.</li>
+<li><strong>statisticsRateTimeInterval</strong> (Number): The number of seconds over which rate statistics are smoothed for display in the notification window.</li>
+<li><strong>notificationLog</strong> (Boolean): If set, all OS X notifications will be logged. (Used for debugging Tunnelblick.)</li>
+<li><strong>timeoutForIPAddressCheckBeforeConnection</strong> (Number): The number of seconds for which Tunnelblick will try to check the computer's apparent public IP address before attempting to make a VPN connection.</li>
+<li><strong>timeoutForIPAddressCheckAfterConnection</strong> (Number): The number of seconds for which Tunnelblick will try to check the computer's apparent public IP address after making a VPN connection.</li>
+<li><strong>timeoutForIPAddressCheckAfterSleeping</strong> (Number): The number of seconds for which Tunnelblick will try to check the computer's apparent public IP address after waking from computer sleep.</li>
+<li><strong>delayBeforeReconnectingAfterSleep</strong> (Number): The number of seconds for which Tunnelblick will wait after waking from computer sleep before attempting to reconnect configurations which were disconnected when the computer went to sleep if IP address checking is not enabled.</li>
+<li><strong>delayBeforeReconnectingAfterSleepAndIpaFetchError</strong> (Number): The number of seconds for which Tunnelblick will wait after waking from computer sleep before attempting to reconnect configurations which were disconnected when the computer went to sleep if IP address checking caused an error.</li>
+<li><strong>notOKToCheckThatIPAddressDidNotChangeAfterConnection</strong> (Boolean): If set, the user has not given permission for Tunnelblick to access tunnelblick.net to determine the computer's apparent public IP address. If cleared or not present, the user has given Tunnelblick permission to do so. (<span class="red">DEPRECATED</span> as of 3.4beta14.)</li>
+<li><strong>managmentPortStartingPortNumber</strong> (Number): The port number (from 1 to 65535) of the port to use as a management port to communicate between Tunnelblick and OpenVPN. If the port is not available, successive port numbers will be tried. The default is 1337.</li>
+</ul>
+<h2 id="preferences-that-control-what-the-user-sees">Preferences That Control What The User Sees</h2>
+<ul>
+<li><strong>menuIconSet</strong> (String): If set, specifies the name of the folder of icons that Tunnelblick should use to display the connection status in the status bar (usually, near the Spotlight icon). The default is &quot;TunnelBlick.TBMenuIcons&quot;. The folder may appear in several locations; see <a href="cIconAnimation.html">Icon Animation</a>.</li>
+<li><strong>doNotShowOutlineViewOfConfigurations</strong> (Boolean): If set or if running on OS X 10.5 (&quot;Leopard&quot;) or earlier, the contents of configuration folders in the &quot;Configurations&quot; panel will always be shown. If cleared or not present and running on OS X 10.6 (&quot;Snow Leopard&quot;) or later, the contents of configuration folders can be hidden or shown by clicking on the disclosure triangle next to the name of the folder. The default is not present.</li>
+<li><strong>doNotShowConnectionSubmenus</strong> (Boolean): If set, each configuration is shown as a single menu item even if it is in a subfolder. (It is shown as &quot;Connect folder1/folder2/config&quot;.). If cleared or not present, configurations in subfolders display only the subfolder name, and reveal contents of the subfolder only when moused-over. The default is not present.</li>
+<li><strong>doNotShowCheckForUpdatesNowMenuItem</strong> (Boolean): If set, the &quot;Check for Updates Now&quot; item on the &quot;Options...&quot; submenu will not be displayed. If cleared or not present, the item will be displayed. The default is not present.</li>
+<li><strong>doNotShowAddConfigurationMenuItem</strong> (Boolean): If set, the &quot;Add a Configuration...&quot; item on the &quot;Options...&quot; submenu will not be displayed. If cleared or not present, the item will be displayed. The default is not present.</li>
+<li><strong>doNotShowVpnDetailsMenuItem</strong> (Boolean): The default is not present.</li>
+<li><strong>doNotShowSuggestionOrBugReportMenuItem</strong> (Boolean): The default is not present.</li>
+<li><strong>doNotShowNotificationWindowOnMouseover</strong> (Boolean): The default is not present.</li>
+<li><strong>disableAdvancedButton</strong> (Boolean): The default is not present.</li>
+<li><strong>disableCheckNowButton</strong> (Boolean): The default is not present.</li>
+<li><strong>disableResetDisabledWarningsButton</strong> (Boolean): The default is not present.</li>
+<li><strong>disableCopyLogToClipboardButton</strong> (Boolean): The default is not present.</li>
+<li><strong>disableAddConfigurationButton</strong> (Boolean): If set, disables the '+' button. The default is not present.</li>
+<li><strong>disableRemoveConfigurationButton</strong> (Boolean): If set, disables the '-' button. The default is not present.</li>
+<li><strong>disableWorkOnConfigurationButton</strong> (Boolean): If set, disables the 'gear' button. The default is not present.</li>
+<li><strong>disableRenameConfigurationMenuItem</strong> (Boolean): The default is not present.</li>
+<li><strong>disableDuplicateConfigurationMenuItem</strong> (Boolean): The default is not present.</li>
+<li><strong>disableMakeConfigurationPrivateOrSharedMenuItem</strong> (Boolean): The default is not present.</li>
+<li><strong>disableExamineOpenVpnConfigurationFileMenuItem</strong> (Boolean): The default is not present.</li>
+<li><strong>disableShowOpenVpnLogInFinderMenuItem</strong> (Boolean): The default is not present.</li>
+<li><strong>disableDeleteConfigurationCredentialsInKeychainMenuItem</strong> (Boolean): The default is not present.</li>
+<li><strong>showConnectedDurations</strong> (Boolean): If set, the time that a configuration has been connected is displayed in the &quot;VPN Details&quot; window. If cleared, the time is not displayed. The default is set.</li>
+<li><strong>maximumNumberOfTabs</strong> (Number): (This preference is not used in Tunnelblick 3.2beta16 and later.) The maximum number of configurations that Tunnelblick will display in tabs (in the VPN Details window). If there are more than this many configurations, Tunnelblick will display them in a list on the left side of the VPN Details window.</li>
+<li><strong>connectionWindowDisplayCriteria</strong> (String): This controls the Notification Window display. It should have one of the following values (without the quote marks): &quot;neverShow&quot;, &quot;showWhenConnecting&quot;, or &quot;showWhenChanges&quot;. The default is &quot;showWhenConnecting&quot;.</li>
+<li><strong>welcomeURL</strong> (String): The URL for a web page that will be displayed as a welcome screen if no ...Tunnelblick.app/Contents/Resources/Deploy/Welcome/index.html file exists.</li>
+<li><strong>welcomeWidth</strong> (Number): The width of welcome display (defaults to 500 pixels).</li>
+<li><strong>welcomeHeight</strong> (Number): The height of welcome display (defaults to 500 pixels).</li>
+<li><strong>doNotShowWelcomeDoNotShowAgainCheckbox</strong> (Boolean): If present and true, the 'Do not show again' checkbox is not displayed on the welcome screen. The default is not present.</li>
+<li><strong>skipWelcomeScreen</strong> (Boolean): If present and true, the welcome screen is not displayed. The default is not present.</li>
+<li><strong>doNotShowDisconnectedNotificationWindows</strong> (Boolean): If present and true, notification (status) windows will not be displayed for configurations that are disconnected. The default is not present.</li>
+<li><p><strong>statusDisplayNumber</strong> (Number): If present and nonzero, a display number (generated by OS X) specifying on which display notification windows should be displayed. The default is not present, which causes notification windows to be displayed on the largest screen.</p>
+<h2 id="preferences-that-control-updates">Preferences That Control Updates</h2></li>
+<li><strong>updateAutomatically</strong> (Boolean): If set, when Tunnelblick detects an update it will be downloaded and installed automatically. If cleared or not present, the user will be asked This preference may ONLY be forced; the user's normal preference is ignored because it can be changed at any time by a Sparkle check box. The default is not present.</li>
+<li><strong>updateCheckAutomatically</strong> (Boolean): If set, Tunnelblick checks for updates each time it is launched, and periodically thereafter. If cleared or not present, no checking is done. There is no default value; the user is asked if they want to enable automatic updates the first time Tunnelblick is launched and whenever the information that Tunnelblick sends when checking for an update changes (so the user can decide whether or not to include the information).</li>
+<li><strong>updateCheckInterval</strong> (String or Number): If set, the number of seconds between automatic checks for updates. If not present or empty, the default time (86,400 seconds = 24 hours) is used. If a time less than 3600 seconds (one hour) is specified, it will be changed to 3600 seconds. The default is not present.</li>
+<li><strong>updateFeedURL</strong> (String): If present, the URL to check for updates. If not present or blank, &quot;<a href="https://tunnelblick.net/appcast.rss" class="uri">https://tunnelblick.net/appcast.rss</a>&quot; (for Tunnelblick 3.0b24 and earlier) or &quot;<a href="https://tunnelblick.net/updates/update.php" class="uri">https://tunnelblick.net/updates/update.php</a>&quot; is used. This preference may ONLY be forced; the user's normal preference is ignored for security reasons. The default is not present.</li>
+<li><strong>updateSendProfileInfo</strong> (Boolean): If set, Tunnelblick will send &quot;system profile&quot; information to the Tunnelblick website when checking for updates. If cleared or not present, no such profile information will be sent when checking for updates. There is no default value; when the user is asked if they want to enable automatic updates the first time Tunnelblick is launched and whenever the information the profile information changes, a check box allows the user to set or clear this value.</li>
+<li><strong>updateSigned</strong> (Boolean): If set, forces Tunnelblick to update to a digitally signed version (see <a href="cDigitalSignatures.html">Tunnelblick and Digital Signatures</a>). If cleared or not present, Tunnelblick will choose a signed or unsigned version as appropriate. The default is not present.</li>
+<li><strong>updateUnsigned</strong> (Boolean): If set, forces Tunnelblick to update to a version that is <em>not</em> digitally signed (see <a href="cDigitalSignatures.html">Tunnelblick and Digital Signatures</a>). If cleared or not present, Tunnelblick will choose a signed or unsigned version as appropriate. The default is not present.</li>
+<li><strong>onlyAdminCanUpdate</strong> (Boolean): If set, update checking will be disabled unless the logged-in user is a member of the &quot;administrator&quot; group. If cleared or not present, update checking will be performed even if the user is not a member of the &quot;administrator&quot; gouger. After an update, an administrator username/password will be required to run Tunnelblick (so the new copy can secure itself). The default is not present.</li>
+<li><strong>updateUUID</strong>: This is an anonymous, unique ID string. If updateSendProfileInfo is set, this string is sent to the Tunnelblick update website when checking for updates. It allows the website to count the number of unique Tunnelblick users.</li>
+<li><p><strong>doNotUnrebrandLicenseDescription</strong>: (Boolean): If set, skips the un-rebranding of the license description that appears in the Info panel. If cleared or not present, the un-rebranding will be undone although the rebranded name will be presented. Default is not present.</p>
+<h2 id="preferences-that-are-set-by-the-user-in-a-check-box">Preferences That are Set by the User in a Check Box</h2></li>
+</ul>
+<p>Most of Tunnelblick's warning messages include a &quot;Do not warn about this again&quot; check box. Checking the check box sets the corresponding preference.</p>
+<ul>
+<li><strong>skipWarningAboutReprotectingConfigurationFile</strong> (Boolean): If set, Tunnelblick on Snow Leopard will not warn the user that any changes made to a configuration file will require an administrator username/password before the changed configuration can be used. If cleared or not present, the warning will be displayed. Default is not present.</li>
+<li><strong>skipWarningAboutSimultaneousConnections</strong> (Boolean): If set, Tunnelblick will not warn the user when a user tries to connect and there is at least one existing connection. If cleared or not present, the warning will be displayed. Default is not present.</li>
+<li><strong>skipWarningThatCannotModifyConfigurationFile</strong> (Boolean): If set, Tunnelblick on Tiger or Leoaprd will not warn the user that any changes made to a configuration file will not be able to be saved. If cleared or not present, the warning will be displayed. Default is not present.</li>
+<li><strong>skipWarningThatNameChangeDisabledUpdates</strong> (Boolean): If set Tunnelblick will warn that an update will fail if the name of Tunnelblick.app has been changed by the user. If cleared or not present, the warning will be displayed. Default is not present.</li>
+<li><strong>skipWarningAboutNonAdminUpdatingTunnelblick</strong> (Boolean): If set, Tunnelblick will not warn a non-administrator user that an update will require an administrator username/password before the changed updated application can be used. If cleared or not present, the warning will be displayed. Default is not present.</li>
+<li><strong>skipWarningAboutUnknownOpenVpnProcesses</strong> (Boolean): If set, Tunnelblick will not warn about OpenVPN processes that it cannot associate with a Tunnelblick VPN Connection.</li>
+<li><strong>skipWarningThatIPAddressDidNotChangeAfterConnection</strong> (Boolean): If set, Tunnelblick will not warn that the computer's apparent public IP address did not change after making a VPN connection. If this warning is skipped, Tunnelblick will not attempt to access tunnelblick.net before or after a VPN connection is made.</li>
+<li><strong>skipWarningThatDNSIsNotWorking</strong> (Boolean): If set, Tunnelblick will not warn about DNS not appearing to work after a VPN connection has been made.</li>
+<li><strong>skipWarningThatInternetIsNotReachable</strong> (Boolean): If set, Tunnelblick will not warn about the Internet appearing to be unreachable after a VPN connection has been made.</li>
+<li><strong>skipWarningAboutIgnoredConfigurations</strong> is a boolean which controls display of the warning that one or more configurations are being ignored. Configurations are ignored if there are higher priority configurations with the same name. Priorities are, from highest to lowest:
+<ol>
+<li>Deployed .tlbk configurations</li>
+<li>Deployed .ovpn and .conf configurations</li>
+<li>Shared .tblk configurations</li>
+<li>Private .tblk configurations</li>
+<li>Private .ovpn and .conf configurations</li>
+</ol></li>
+</ul>
+<h2 id="per-configuration-settings">Per-Configuration Settings</h2>
+<p><strong>The following preferences must each be prefixed by the name of the configuration</strong> as it is displayed when you click the Tunnelblick icon or in the VPN Details window. (Usually that is the name of the configuration file without the extension, but it can be different if you have configurations in subfolders.) For example, if a configuration is named &quot;xyz&quot;, the preferences would be named &quot;xyzautoConnect&quot;, &quot;xyz-keychainHasUsernameAndPassword&quot;, etc.</p>
+<p>If you wish a forced preference to be used for all configurations, use an asterisk (&quot;<code>**</code>&quot;) instead of the name of the configuration. This will cause it to be used for all configurations except those that have a specific forced preference. For example, if there is a forced &quot;<code>**</code>useDNS&quot; preference and a forced &quot;XYZuseDNS&quot; preference, the forced preference will be used for all configurations except the configuration named &quot;XYZ&quot;. <em>Note that ordinary users can rename private configurations, which means that the user could rename the private configuration named &quot;XYZ&quot; and it would no longer use the specific &quot;XYZ-useNDS&quot; forced preference. Shared and Deployed configurations can not be renamed except by a computer administrator.</em></p>
+<ul>
+<li><strong>autoConnect</strong> (Boolean): If set, Tunnelblick will connect using the configuration when it Tunnelblick is launched if the -onSystemStart preference is not present or is false, or when the computer starts if the -onSystemStart preference is true. If cleared or not present, the user must connect manually. The user may specify this using the &quot;Connect&quot; selection on the &quot;VPN Details&quot; &quot;Settings&quot; tab for the configuration. The default is not present.</li>
+<li><strong>-onSystemStart</strong> (Boolean): If set and autoConnect is also set, the configuration will be connected when the computer starts instead of when Tunnelblick launches. The default is not present (check box not checked). The user may set this by selecting the &quot;when computer starts&quot; radio button in the VPN Details window.</li>
+<li><strong>useDNS</strong> (Number): Determines if Tunnelblick will use scripts before and after a connection is made and if so, which scripts. Which scripts depend on the value: 1 uses the standard scripts to save and restore the computer's DNS and WINS settings, 2 uses the scripts provided in Tunnelblick 3.0b10, 3 uses scripts from <a href="http://openvpn.net/archive/openvpn-users/2006-10/msg00120.html" class="uri">http://openvpn.net/archive/openvpn-users/2006-10/msg00120.html</a>. If 0 or not present, no scripts are run by Tunnelblick (the user may specify scripts in the configuration file). The user may specify this by setting &quot;Set Nameserver&quot; on the &quot;VPN Details&quot; &quot;Settings&quot; tab for the configuration. The default is 1. Note: if this value is non-zero, any &quot;up&quot; and &quot;down&quot; options in the configuration file will be ignored.</li>
+<li><strong>-openvpnVersion</strong> (String, <em>available only in Tunnelblick 3.4beta14 and later</em>): Specifies what version of OpenVPN to use to connect the configuration. If set to &quot;-&quot;, uses the latest version of OpenVPN that is available. If set to a version number (for example, &quot;2.2.1&quot;), specifies the specific version of OpenVPN that should be used. If not set, the application-wide &quot;openvpnVersion&quot; preference will be used to determine which version of OpenVPN to use. (If neither preference is set, the earliest version of OpenVPN will be used.)</li>
+<li><strong>-loadTun</strong> (String, <em>available only in Tunnelblick 3.4beta14 and later</em>): Specifies if Tunnelblick should load the tun kext (device driver). If 'always', the driver will always be loaded before connecting. If 'never', the driver will never be loaded before connecting. If not set, Tunnelblick will examine the configuration file to determine whether or not to load the tun kext. The driver will be unloaded when the connection is closed unless it is in use by another configuration.</li>
+<li><strong>-loadTap</strong> (String, <em>available only in Tunnelblick 3.4beta14 and later</em>): Specifies if Tunnelblick should load the tap kext (device driver). If 'always', the driver will always be loaded before connecting. If 'never', the driver will never be loaded before connecting. If not set, Tunnelblick will examine the configuration file to determine whether or not to load the driver. The driver will be unloaded when the connection is closed unless it is in use by another configuration.</li>
+<li><strong>-notOKToCheckThatIPAddressDidNotChangeAfterConnection</strong> (Boolean): If set, will check the computer's apparent public IP address before and after connecting. If cleared or not present, no checking will be done.</li>
+<li><strong>-notMonitoringConnection</strong> (Boolean): If cleared or not present, Tunnelblick will monitor the network and restart the connection if changes to the network DNS or WINS configurations are detected. If set, no monitoring will be done. The user may specify this using the &quot;Monitor Connection&quot; check box on the &quot;VPN Details&quot; &quot;Settings&quot; tab for the configuration. This preference is ignored, and the check box is disabled, if the &quot;useDNS&quot; preference is not set to 1 (i.e., the &quot;Set Nameserver&quot; is not specified). The default is cleared (check box checked).</li>
+<li><strong>-doNotRestoreOnDnsReset</strong> and <strong>-doNotRestoreOnWinsReset</strong> (Boolean): If set, a DHCP renew which restores the original, pre-VPN DNS or WINS information will restart the connection. If cleared or not present, the post-VPN information will replace the DHCP-supplied information. The default is not present.</li>
+<li><strong>-doNotDisconnectOnFastUserSwitch</strong> (Boolean): If set, Tunnelblick will not disconnect the configuration when the user is switched out. If cleared or not present, when the user is switched out using OS X's Fast User Switching, Tunnelblick will disconnect the configuration if it is not set to connect &quot;when computer starts&quot;. The default is not present. Only available in Tunnelblick 3.2beta04 and later.</li>
+<li><strong>-doNotReconnectOnFastUserSwitch</strong> (Boolean): If set, Tunnelblick will not attempt to reconnect the configuration when the user is switched back in. If cleared or not present, when the user is switched in, Tunnelblick will attempt to reconnect the configuration if it is not set to connect &quot;when computer starts&quot;. The default is not present. Only available in Tunnelblick 3.2beta04 and later.</li>
+<li><strong>-doNotDisconnectOnSleep</strong> (Boolean): If set, Tunnelblick will not disconnect the configuration when the computer goes to sleep. If cleared or not present, when the computer goes to sleep, Tunnelblick will disconnect the configuration if it is not set to connect &quot;when computer starts&quot;. The default is not present. Only available in Tunnelblick 3.4beta18 and later.</li>
+<li><strong>-doNotReconnectOnWakeFromSleep</strong> (Boolean): If set, Tunnelblick will not attempt to reconnect the configuration when the computer wakes from sleep. If cleared or not present, when the computer wakes up, Tunnelblick will attempt to reconnect the configuration if it is not set to connect &quot;when computer starts&quot;. The default is not present.</li>
+<li><strong>-doNotFlushCache</strong> (Boolean): If set, Tunnelblick will not flush the DNS cache after a connection is established and after it is disconnected. <em>Note: if this is not set (the default), under some circumstances, traffic between two computers on a LAN may be routed through a bridged VPN. See <a href="https://code.google.com/p/tunnelblick/issues/detail?id=154#c10">Issue 154 comment 10</a>.</em></li>
+<li><strong>-useDownRootPlugin</strong> (Boolean): If set, Tunnelblick will use its built-in &quot;openvpn-down-root.so&quot; plugin to allow the configuration file to use the &quot;user&quot; and &quot;group&quot; options to stop running the OpenVPN process as root once a connection has been established (as a security measure). See <a href="czUsing.html">Using Tunnelblick</a> for details. The default is not present.</li>
+<li><strong>-keychainHasPrivateKey</strong> (Boolean): If set, the user's Keychain contains the connection's private key, and Tunnelblick will use it when needed without interacting with the user. If cleared or not present, the user will be asked for the private key if the connection requires it. This preference is set when the user checks the &quot;Save to Keychain&quot; check box on the dialog which asks for the private key. If this preference is forced, it has a special meaning: the check box is not displayed, the private key is not stored in the user's Keychain, and the user is asked each time the connection requires it. The default is not present.</li>
+<li><strong>-keychainHasUsernameAndPassword</strong> (Boolean): If set, the user's Keychain contains the connection's username and password, and Tunnelblick will use them when needed without interacting with the user. If cleared or not present, the user will be asked for the username and password if the connection requires it. This preference is set when the user checks the &quot;Save to Keychain&quot; check box on the dialog which asks for the username and password. If this preference is forced, it has a special meaning: the check box is not displayed, the username and password are not stored in the user's Keychain, and the user is asked each time the connection requires them. The default is not present.</li>
+<li><strong>-doNotParseConfigurationFile</strong> (Boolean): If set, Tunnelblick will not parse the configuration file for 'dev tun', 'dev tap', 'user', and 'group' options, and both tun and tap kexts will be loaded when making a VPN connection.</li>
+<li><strong>-skipWarningAboutDownroot</strong> (Boolean): If set, the warning about 'user' and/or 'group' options requiring the use of the 'openvpn-down-root.so' plugin will be disabled.</li>
+<li><strong>-disableEditConfiguration</strong> (Boolean): (This preference is not used in Tunnelblick 3.2beta16 and later.) If set, the &quot;Edit Configuration&quot; button on the &quot;VPN Details&quot; window tab for the configuration will be dimmed and disabled. If cleared or not present, the button will be enabled. The default is not present.</li>
+<li><strong>-disableConnectButton</strong> (Boolean): If set, the &quot;Connect&quot; button will be disabled.</li>
+<li><strong>-disableDisconnectButton</strong> (Boolean): If set, the &quot;Disconnect&quot; button will be disabled.</li>
+<li><strong>-doNotLoadTapKext</strong> (Boolean): If set, the standard tap kext will not be loaded.</li>
+<li><strong>-doNotLoadTunKext</strong> (Boolean): If set, the standard tun kext will not be loaded.</li>
+<li><strong>-loadTapKext</strong> (Boolean): If set, the standard tap kext will be loaded.</li>
+<li><strong>-loadTunKext</strong> (Boolean): If set, the standard tun kext will be loaded.</li>
+<li><strong>-doNotShowOnTunnelblickMenu</strong> (Boolean): If set, the configuration will not be displayed in the Tunnelblick menu.</li>
+<li><strong>-prependDomainNameToSearchDomains</strong> (Boolean): If set, makes Tunnelblick add the domain name provided by OpenVPN to the start of the list of search domains if the search domains are not manually set.</li>
+<li><strong>-doNotUseDefaultDomain</strong> (Boolean): If cleared, a domain of 'openvpn' will be used if no domain is specified in the OpenVPN configuration or pushed by the OpenVPN server. If set, no default domain will be used. Cleared by default.</li>
+<li><strong>-useRouteUpInsteadOfUp</strong> (Boolean): If cleared, Tunnelblick will use the &quot;--up&quot; OpenVPN option to run the set DNS/WINS script before routing has been established. If set, Tunnelblick will use the &quot;--route-up&quot; OpenVPN option to run the set DNS/WINS script after routing has been established. (This is necessary in some situations.) Cleared by default.</li>
+<li><strong>-waitForDHCPInfoIfTap</strong> (Boolean): If set, the 'Set nameserver' script will wait for DHCP info from a TAP connection before returning to OpenVPN. If cleared, the script will return to OpenVPN immediately and process the DHCP info asynchronously.</li>
+</ul>
+<p>The following preferences control what Tunnelblick does when a network setting change occurs. They may have values of 'ignore', 'restore', or 'restart'. 'ignore' will cause the network change to be ignored; 'restore' will cause the network change to be reversed (the setting will be set to the post-VPN setting); and 'restart' will cause the connection to be restarted. They are usually set by controls on the &quot;While Connected&quot; tab of the &quot;Advanced&quot; settings window. They will be ignored (and the controls disabled) if the &quot;-leasewatchOptions&quot; preference is present.</p>
+<p>The following preferences control what happens when a setting changes to match the setting before the VPN was connected. All of them default to restore if not set.</p>
+<ul>
+<li><strong>-changeDNSServersAction</strong> (String, as described above)</li>
+<li><strong>-changeDomainAction</strong> (String, as described above)</li>
+<li><strong>-changeSearchDomainAction</strong> (String, as described above)</li>
+<li><strong>-changeWINSServersAction</strong> (String, as described above)</li>
+<li><strong>-changeNetBIOSNameAction</strong> (String, as described above)</li>
+<li><strong>-changeWorkgroupAction</strong> (String, as described above)</li>
+</ul>
+<p>The following preferences control what happens when a setting changes to something else. All of them default to restart if not set.</p>
+<ul>
+<li><strong>-changeOtherDNSServersAction</strong> (String, as described above)</li>
+<li><strong>-changeOtherDomainAction</strong> (String, as described above)</li>
+<li><strong>-changeOtherSearchDomainAction</strong> (String, as described above)</li>
+<li><strong>-changeOtherWINSServersAction</strong> (String, as described above)</li>
+<li><strong>-changeOtherNetBIOSNameAction</strong> (String, as described above)</li>
+<li><p><strong>-changeOtherWorkgroupAction</strong> (String, as described above)</p></li>
+<li><strong>-leasewatchOptions</strong> <span class="red">DEPRECATED</span> (String, available in Tunnelblick 3.2beta08 and later): If set, contains '-i' followed by letters indicating DNS/WINS changes that should be ignored. The default is not present. If not present and monitoring the connection, changes to the following parameters will be restored or cause a reconnection attempt:<br />
+-DomainName<br />
+-ServerAddresses<br />
+-SearchDomains
+<ul>
+<li>NetBIOSName</li>
+<li>Workgroup</li>
+<li>WINSAddresses</li>
+</ul>
+<p>To ignore changes to a parameter, use 'd', 'a', 's', 'n', 'g', and/or 'w', respectively after the '-i'.</p>
+<p>The -leasewatchOptions preference is deprecated because finer control may be asserted by using other preferences that are be set on the &quot;While Connected&quot; tab of the &quot;Advanced&quot; settings window.</p></li>
+</ul>
+<h2 id="preferences-that-tunnelblick-uses-internally">Preferences That Tunnelblick Uses Internally</h2>
+<ul>
+<li><strong>haveDealtWithSparkle1dot5b6</strong> (Boolean): If set, Tunnelblick has reset the Sparkle Updater preferences for Sparkle version 1.5b6, so the user will be or has been asked about automatically checking for updates and including system profile information. If cleared, this has not been done yet. See the &quot;updateCheckAutomatically&quot; and &quot;updateSendProfileInfo&quot; preferences. The default is not present; Tunnelblick maintains this preference automatically. This preference is ignored if the &quot;updateCheckAutomatically&quot; and &quot;updateSendProfileInfo&quot; preferences are both forced (to any value).</li>
+<li><strong>detailsWindowFrame</strong>: The size and position of the &quot;OpenVPN Log” window when it was last closed.</li>
+<li><strong>detailsWindowFrameVersion</strong>: The version of Tunnelblick that saved the detailsWindowFrame preference.</li>
+<li><strong>askedUserIfOKToCheckThatIPAddressDidNotChangeAfterConnection</strong> (Boolean): If set, 6, Tunnelblick has asked the user for permission to check the computer's apparent IP address before and after making a VPN connection (which involves sending the IP address and port and Tunnelblick version number to tunnelblick.net). If cleared, this has not been done yet.</li>
+</ul>
+<h2 id="sparkle-updater-preferences">Sparkle Updater Preferences</h2>
+<p>All preferences starting with the letters &quot;SU&quot; are preferences used privately by Sparkle Updater (the program used for Tunnelblick's update mechanism). They cannot be forced and should not be modified. They include:</p>
+<ul>
+<li><strong>SUEnableAutomaticChecks</strong> (Boolean)</li>
+<li><strong>SUSendProfileInfo</strong> (Boolean)</li>
+<li><strong>SUAutomaticallyUpdate</strong> (Boolean)</li>
+<li><strong>SULastCheckTime</strong> (Date/time)</li>
+<li><strong>SULastProfileSubmissionDate</strong> (Date/time)</li>
+<li><strong>SUHasLaunchedBefore</strong> (Boolean)</li>
+</ul>
+
+
+
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+
+
+
+<div class="bottom-translation">
+  <span title="view in German or another language using Google Translate">               <a lang="de"      class="bottom-translation" href="/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2Fcz33Prefs.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;         </a></span>
+  <span title="view in French or another language using Google Translate">               <a lang="fr"      class="bottom-translation" href="/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2Fcz33Prefs.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;        </a></span>
+  <span title="view in Chinese (simplified) or another language using Google Translate"> <a lang="zh-Hans" class="bottom-translation" href="/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2Fcz33Prefs.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp; </a></span>
+  <span title="view in Russian or another language using Google Translate">              <a lang="ru"      class="bottom-translation" href="/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2Fcz33Prefs.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;         </a></span>
+  <span title="view in Spanish or another language using Google Translate">              <a lang="es"      class="bottom-translation" href="/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2Fcz33Prefs.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;         </a></span>
+  <span title="view in Japanese or another language using Google Translate">             <a lang="ja"      class="bottom-translation" href="/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2Fcz33Prefs.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;           </a></span>
+  <span title="view in Italian or another language using Google Translate">              <a                class="bottom-translation" href="/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2Fcz33Prefs.html&amp;sandbox=1">&nbsp;&nbsp;&hellip;&nbsp;&nbsp;        </a></span>
+</div>
+<div class="bottom-copyright">
+  Copyright &copy; 2015-2017 by The Tunnelblick Project.&nbsp;&nbsp;
+</div>
+</body>
+</html>

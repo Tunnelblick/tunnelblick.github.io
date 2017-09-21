@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" lang="en">
+	<meta name="description" content="Tunnelblick and Digital Signatures - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+	<meta name="referrer" content="never">
+	<title>Tunnelblick and Digital Signatures - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+	<link rel="stylesheet" type="text/css"  href="common/style.v5.css">
+	<link rel="icon"       type="image/png" href="common/favicon.v1.png">
+</head>
+
+<body>
+
+<div class="heading">
+	<table>
+		<tr>
+			<td><a href="/"><img src="common/tb-icon-64x64.v1.png" alt="" width="64" height="64"></a></td>
+			<td class="heading1">Tunnelblick</td>
+			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading3">
+                <a href="cLocalizeTranslate.html">We need translators for several languages&hellip;</a><br>
+            </td>
+		</tr>
+	</table>
+</div>
+
+
+<div class="topnav">
+<table class="topnav"><tbody><tr>
+	<td class="topnav-normal"   ><a href="index.html"      class="topnav">Home</a></td>
+	<td class="topnav-normal"   ><a href="downloads.html"  class="topnav">Downloads</a></td>
+	<td class="topnav-normal"   ><a href="support.html"    class="topnav">Support</a></td>
+	<td class="topnav-highlight"><a href="documents.html"  class="topnav">Documents</a></td>
+	<td class="topnav-normal"   ><a href="issues.html"     class="topnav">Issues</a></td>
+	<td class="topnav-normal"   ><a href="source.html"     class="topnav">Source</a></td>
+	<td class="topnav-normal"   ><a href="contribute.html" class="topnav">Contribute</a></td>
+	<td class="topnav-normal"   ><a href="reachus.html"    class="topnav">Contact</a></td>
+	<td class="topnav-padding"  ></td>
+</tbody></table>
+</div>
+
+
+
+<div class="content">
+<div class="content-cDigitalSignatures">
+<table class="documents">
+  <tr>
+    <td class="documents-left">
+
+
+
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="cFAQ.html">FAQ</a></p>
+
+<p><strong><a href="https://groups.google.com/forum/#&#33;forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="cBeforeYouPost.html">Read Before You Post</a></p>
+
+
+
+    </td>
+    <td class="documents-right">
+    
+
+
+<h1 id="tunnelblick-and-digital-signatures">Tunnelblick and Digital Signatures</h1>
+<p><strong><span class="red">Most Tunnelblick users do not need to use the information on this page. This page is primarily for those who create <a href="cCusDeployed.html">Deployed</a> versions of Tunnelblick.</span></strong></p>
+<h2 id="digital-signatures">Digital Signatures</h2>
+<p>Tunnelblick uses two different types of digital signatures:</p>
+<ul>
+<li><strong>Application signature</strong> Tunnelblick.app may be digitally signed by the Tunnelblick Project with the Project's OS X digital signature. The signature is used in OS X 10.5 (&quot;Leopard&quot;) and higher to allow an updated application with the same signature as the original application to access Keychain items created by the original application without OS X prompting the user for permission.</li>
+<li><strong>Update signature</strong> Updates to Tunnelblick are always digitally signed by the Tunnelblick Project. This is part of the update process, to ensure that updates to Tunnelblick are genuine and have not been tampered with or corrupted.</li>
+</ul>
+<h2 id="why-application-signatures-are-useful">Why Application Signatures Are Useful</h2>
+<p>If the user agrees, Tunnelblick stores usernames, passwords and passphrases for VPNs in the user's Keychain so that the user does not have to enter them each time a connection is made.</p>
+<p>For security reasons, OS X is careful when applications access the user's Keychain. Usually only the original application that created a Keychain item is allowed access to it. This means that when an application is updated, even though it has the same name, OS X will recognize that it is different and ask the user if the program may access the Keychain. In OS X 10.5 and higher, if the updated application is &quot;digitally signed&quot; by the same signer as the original application, OS X will allow it to access the Keychain without asking the user.</p>
+<p>Digital signatures are also used by the Gatekeeper on OS X 10.8 (&quot;Mountain Lion&quot;) and higher. By default, Gatekeeper allows the installation only of applications signed by developers recognized by Apple. Signed versions of Tunnelblick versions 3.3beta08 and higher are signed by such a developer so that they may be installed easily.</p>
+<h2 id="how-application-signatures-can-cause-problems-for-deployed-versions-of-tunnelblick">How Application Signatures Can Cause Problems for Deployed Versions of Tunnelblick</h2>
+<p>If an application is digitally signed, and a change is made to the application, the signature becomes invalid. That can cause problems for <a href="cCusDeployed.html">Deployed</a> versions of Tunnelblick, because the process of creating a Deployed version involves changing the application by adding a folder inside the application itself. If such a folder is added to a signed version of Tunnelblick, the signature becomes invalid. OS X 10.8 and higher will not allow the user to install Tunnelblick, and OS X 10.5 and higher will refuse the program access to it's Keychain items, without asking the user.</p>
+<p>The way to solve this problem is to add the folder to an <em>unsigned</em> version of Tunnelblick, then sign the unsigned, already modified Tunnelblick. That will give users the benefits of digital signatures. See <a href="cSigningTunnelblick.html">Signing Tunnelblick</a> for details on how to digitally sign Tunnelblick or a rebranded version of Tunnelblick.</p>
+
+
+
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+
+
+
+<div class="bottom-translation">
+  <span title="view in German or another language using Google Translate">               <a lang="de"      class="bottom-translation" href="/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcDigitalSignatures.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;         </a></span>
+  <span title="view in French or another language using Google Translate">               <a lang="fr"      class="bottom-translation" href="/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcDigitalSignatures.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;        </a></span>
+  <span title="view in Chinese (simplified) or another language using Google Translate"> <a lang="zh-Hans" class="bottom-translation" href="/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcDigitalSignatures.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp; </a></span>
+  <span title="view in Russian or another language using Google Translate">              <a lang="ru"      class="bottom-translation" href="/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcDigitalSignatures.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;         </a></span>
+  <span title="view in Spanish or another language using Google Translate">              <a lang="es"      class="bottom-translation" href="/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcDigitalSignatures.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;         </a></span>
+  <span title="view in Japanese or another language using Google Translate">             <a lang="ja"      class="bottom-translation" href="/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcDigitalSignatures.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;           </a></span>
+  <span title="view in Italian or another language using Google Translate">              <a                class="bottom-translation" href="/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcDigitalSignatures.html&amp;sandbox=1">&nbsp;&nbsp;&hellip;&nbsp;&nbsp;        </a></span>
+</div>
+<div class="bottom-copyright">
+  Copyright &copy; 2015-2017 by The Tunnelblick Project.&nbsp;&nbsp;
+</div>
+</body>
+</html>

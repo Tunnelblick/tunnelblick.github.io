@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" lang="en">
+	<meta name="description" content="Modifying the Tunnelblick Disk Image - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+	<meta name="referrer" content="never">
+	<title>Modifying the Tunnelblick Disk Image - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+	<link rel="stylesheet" type="text/css"  href="common/style.v5.css">
+	<link rel="icon"       type="image/png" href="common/favicon.v1.png">
+</head>
+
+<body>
+
+<div class="heading">
+	<table>
+		<tr>
+			<td><a href="/"><img src="common/tb-icon-64x64.v1.png" alt="" width="64" height="64"></a></td>
+			<td class="heading1">Tunnelblick</td>
+			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading3">
+                <a href="cLocalizeTranslate.html">We need translators for several languages&hellip;</a><br>
+            </td>
+		</tr>
+	</table>
+</div>
+
+
+<div class="topnav">
+<table class="topnav"><tbody><tr>
+	<td class="topnav-normal"   ><a href="index.html"      class="topnav">Home</a></td>
+	<td class="topnav-normal"   ><a href="downloads.html"  class="topnav">Downloads</a></td>
+	<td class="topnav-normal"   ><a href="support.html"    class="topnav">Support</a></td>
+	<td class="topnav-highlight"><a href="documents.html"  class="topnav">Documents</a></td>
+	<td class="topnav-normal"   ><a href="issues.html"     class="topnav">Issues</a></td>
+	<td class="topnav-normal"   ><a href="source.html"     class="topnav">Source</a></td>
+	<td class="topnav-normal"   ><a href="contribute.html" class="topnav">Contribute</a></td>
+	<td class="topnav-normal"   ><a href="reachus.html"    class="topnav">Contact</a></td>
+	<td class="topnav-padding"  ></td>
+</tbody></table>
+</div>
+
+
+
+<div class="content">
+<div class="content-cDmg">
+<table class="documents">
+  <tr>
+    <td class="documents-left">
+
+
+
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="cFAQ.html">FAQ</a></p>
+
+<p><strong><a href="https://groups.google.com/forum/#&#33;forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="cBeforeYouPost.html">Read Before You Post</a></p>
+
+
+
+    </td>
+    <td class="documents-right">
+    
+
+
+<h1 id="modifying-the-tunnelblick-disk-image">Modifying the Tunnelblick Disk Image</h1>
+<p>Starting with Build 1326, the build process for Tunnelblick specifies the view options, icon positions, and background image that the user sees upon opening Tunnelblick.dmg. These settings are contained in the &quot;tunnelblick/dmgFiles&quot; folder, which contains three items:</p>
+<ul>
+<li><p>The &quot;tunnelblick/dmgFiles/dotDS_Store&quot; file is a .DS_Store file copied from a volume which has view options, icon positions, and a background image set up the way we want the Tunnelblick .dmg to appear. The file is copied to the staging folder (&quot;/tunnelblick/build/Release/Tunnelblick&quot;), and the copy there is renamed &quot;.DS_Store&quot; and set to be invisible in the Finder, before the .dmg is created from the staging folder.</p></li>
+<li><p>The &quot;tunnelblick/dmgFiles/background&quot; folder contains the &quot;background.png&quot; file which is used as a background for the .dmg when it is opened in the Finder. The folder and its contents are copied to the staging folder, and the copy of the folder in the staging folder is set to be invisible in the Finder, before the .dmg is created from the staging folder.</p></li>
+<li><p>The &quot;background.rtf&quot; file is not used directly in the creation of the .dmg. Instead, it provides an easy way to create the text-based background image. It is an RTF document which can be easily edited inSimpleText. A screenshot of it can then taken to provide the &quot;background.png&quot; file that is used as a background image when the .dmg is opened in the Finder. This is done so that additional translations can be added, corrections made, etc. (Don't forget to turn off spell checking in SimpleText when taking the screenshot, so wavy red underlines don't appear in it!)</p></li>
+</ul>
+<h2 id="modifying-the-background-image">MODIFYING THE BACKGROUND IMAGE</h2>
+<p>To modify the background image, simply edit &quot;background.rtf&quot;, take a screenshot (using Command-Shift-4) starting from the upper-left corner of the editing window, rename the screenshot to &quot;background.png&quot;, and copy it into &quot;tunnelblick/dmgFiles/background&quot;, overwriting the old version.</p>
+<h2 id="addingremoving-content-or-modifying-the-layout-of-icons-or-view-options">ADDING/REMOVING CONTENT OR MODIFYING THE LAYOUT OF ICONS OR VIEW OPTIONS</h2>
+<p>Note: According to <a href="http://www.araelium.com/dmgcanvas" class="uri">http://www.araelium.com/dmgcanvas</a>:<br />
+ &quot;In Mac OS X Snow Leopard, disk images created with background images do not display properly on Mac OS X Leopard and earlier. This is because of a change in Finder itself that affects all disk images created on Snow Leopard.&quot;</p>
+<p>However, setting the size of the window on Tiger/Leopard doesn't set it for Snow Leopard. So you need to use both Tiger/Leopard and Snow Leopard to adjust everything the way you want it!</p>
+<p>Do the following <strong>in Leopard or Tiger</strong>:</p>
+<ol>
+<li>Use Disk Utility to convert Tunnelblick.dmg to a read/write image named &quot;TunnelblickRW.dmg&quot;. (&quot;Convert&quot; creates a new copy without disturbing the original.)</li>
+<li>Double-click the read-write image and then double-click the resulting Tunnelblick volume to open a window for it in the Finder.</li>
+<li>Manipulate the window to add or remove files, change view options and icon positions, etc. as desired.</li>
+<li>Close the window.</li>
+<li>Eject the Tunnelblick volume</li>
+<li>Log out and log back in again or restart your computer. (The logout/login or restart seems to be necessary to flush the Finder's cache of data to the the .DS_Store file on the volume.)</li>
+</ol>
+<p>Then, do the following <strong>in Snow Leopard:</strong></p>
+<ol>
+<li>Double-click the read-write image and then double-click the resulting Tunnelblick volume to open a window for it in the Finder.</li>
+<li>Manipulate the to resize it if necessary.</li>
+<li>Close the window.</li>
+<li>Eject the Tunnelblick volume</li>
+<li>Log out and log back in again or restart your computer. (The logout/login or restart seems to be necessary to flush the Finder's cache of data to the the .DS_Store file on the volume.)</li>
+<li>Use Disk Utility to convert TunnelblickRW.dmg to a &quot;compressed&quot; disk image named &quot;TunnelblickC.dmg&quot;.</li>
+<li>Double-click Tunnelblick.dmg and verify that the window layout, view options, etc. are as desired.</li>
+<li><p>Use the following Terminal commands to (A) copy the volume's .DS_Store file and (B) make it visible. (Tip: drag and drop an item's icon from a Finder window to anywhere in the Terminal window to insert the absolute path to that item, followed by a space, at the Terminal window's insertion point.)</p>
+<p><code>cp -p /Volumes/Tunnelblick/.DS_Store</code> <em>path-to-dmgFiles/dotDS_Store</em></p>
+<p><code>setfile -a v</code> <em>path-to-dmgFiles/dotDS_Store</em></p></li>
+</ol>
+<p>Example assuming the source code is in a folder named &quot;TB&quot; in a user's Documents folder:</p>
+<pre><code>  `cp   -p   /Volumes/Tunnelblick/.DS_Store   /Users/joe/Documents/TB/tunnelblick/dmgFiles/dotDS_Store`
+
+  `setfile   -a   v   /Users/joe/Documents/TB/tunnelblick/dmgFiles/dotDS_Store`</code></pre>
+<p>Note: The 'setfile' command is part of Apple's Developer Tools (see <a href="cBuild.html">Building from Source</a>).</p>
+
+
+
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+
+
+
+<div class="bottom-translation">
+  <span title="view in German or another language using Google Translate">               <a lang="de"      class="bottom-translation" href="/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcDmg.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;         </a></span>
+  <span title="view in French or another language using Google Translate">               <a lang="fr"      class="bottom-translation" href="/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcDmg.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;        </a></span>
+  <span title="view in Chinese (simplified) or another language using Google Translate"> <a lang="zh-Hans" class="bottom-translation" href="/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcDmg.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp; </a></span>
+  <span title="view in Russian or another language using Google Translate">              <a lang="ru"      class="bottom-translation" href="/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcDmg.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;         </a></span>
+  <span title="view in Spanish or another language using Google Translate">              <a lang="es"      class="bottom-translation" href="/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcDmg.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;         </a></span>
+  <span title="view in Japanese or another language using Google Translate">             <a lang="ja"      class="bottom-translation" href="/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcDmg.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;           </a></span>
+  <span title="view in Italian or another language using Google Translate">              <a                class="bottom-translation" href="/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcDmg.html&amp;sandbox=1">&nbsp;&nbsp;&hellip;&nbsp;&nbsp;        </a></span>
+</div>
+<div class="bottom-copyright">
+  Copyright &copy; 2015-2017 by The Tunnelblick Project.&nbsp;&nbsp;
+</div>
+</body>
+</html>

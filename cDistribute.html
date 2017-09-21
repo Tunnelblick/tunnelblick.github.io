@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" lang="en">
+	<meta name="description" content="Distributing Tunnelblick - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+	<meta name="referrer" content="never">
+	<title>Distributing Tunnelblick - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+	<link rel="stylesheet" type="text/css"  href="common/style.v5.css">
+	<link rel="icon"       type="image/png" href="common/favicon.v1.png">
+</head>
+
+<body>
+
+<div class="heading">
+	<table>
+		<tr>
+			<td><a href="/"><img src="common/tb-icon-64x64.v1.png" alt="" width="64" height="64"></a></td>
+			<td class="heading1">Tunnelblick</td>
+			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading3">
+                <a href="cLocalizeTranslate.html">We need translators for several languages&hellip;</a><br>
+            </td>
+		</tr>
+	</table>
+</div>
+
+
+<div class="topnav">
+<table class="topnav"><tbody><tr>
+	<td class="topnav-normal"   ><a href="index.html"      class="topnav">Home</a></td>
+	<td class="topnav-normal"   ><a href="downloads.html"  class="topnav">Downloads</a></td>
+	<td class="topnav-normal"   ><a href="support.html"    class="topnav">Support</a></td>
+	<td class="topnav-highlight"><a href="documents.html"  class="topnav">Documents</a></td>
+	<td class="topnav-normal"   ><a href="issues.html"     class="topnav">Issues</a></td>
+	<td class="topnav-normal"   ><a href="source.html"     class="topnav">Source</a></td>
+	<td class="topnav-normal"   ><a href="contribute.html" class="topnav">Contribute</a></td>
+	<td class="topnav-normal"   ><a href="reachus.html"    class="topnav">Contact</a></td>
+	<td class="topnav-padding"  ></td>
+</tbody></table>
+</div>
+
+
+
+<div class="content">
+<div class="content-cDistribute">
+<table class="documents">
+  <tr>
+    <td class="documents-left">
+
+
+
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="cFAQ.html">FAQ</a></p>
+
+<p><strong><a href="https://groups.google.com/forum/#&#33;forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="cBeforeYouPost.html">Read Before You Post</a></p>
+
+
+
+    </td>
+    <td class="documents-right">
+    
+
+
+<h1 id="distributing-tunnelblick">Distributing Tunnelblick</h1>
+<p>Tunnelblick is free software made available under the <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU General Public License, version 2</a> and may be distributed only in accordance with the terms of that license.</p>
+<hr />
+<p><strong>An easy way to distribute Tunnelblick to multiple clients or servers is to distribute your configurations bundled together with Tunnelblick</strong>. Your configurations will be installed automatically when the user installs the Tunnelblick application and can be automatically updated from your webserver (see <a href="cUpdatableConfigurations.html">Updatable Configurations</a>).</p>
+<p>A simple way to do that is to:</p>
+<ul>
+<li>Create an empty folder.</li>
+<li>Copy Tunnelblick.app into the folder.</li>
+<li>Create a subfolder named &quot;.auto-install&quot; or &quot;auto-install&quot;.</li>
+<li>Copy your <a href="cPkgs.html">&quot;.tblk&quot; configuration files</a> into the subfolder.</li>
+<li>Control-click the outer folder and select &quot;Compress...&quot; (or compress the folder with any compression utility).<br />
+The resulting .zip file may be distributed to users. When the user double-clicks on the Tunnelblick icon in the expanded folder, the user will be asked for a computer administrator's username and password to install both the program and the configurations.</li>
+</ul>
+<p>For more details, see <a href="cPkgs.html">Tunnelblick VPN Configurations</a>, especially the <a href="cAutoInstall.html">Automatic Installation</a> and <a href="cPkgs.html#info.plist">Info.plist</a> sections. See <a href="cUpdatableConfigurations.html">Updatable Configurations</a> for information on creating and using configurations that can be automatically updated from your website.</p>
+<hr />
+<p><strong>You can also distribute configurations without Tunnelblick and have them installed by a simple double-click, or, on Tunnelblick 3.6.3beta02 and higher, install them by dropping them on the Tunnelblick icon in the menu bar.</strong></p>
+<p>To do this, your users must first download and install Tunnelblick. Then they can double-click one or more <a href="cPkgs.html">&quot;.tblk&quot; configuration files</a> to install them, or, on Tunnelblick 3.6.3beta02 and higher, install by dropping them on the Tunnelblick icon in the menu bar. You can <a href="cPkgs.html#nested-configurations">&quot;nest&quot;</a> configurations inside an outer configuration so that the user only needs to double-click it or (drop it on the icon) once to install all of the configurations.</p>
+<hr />
+<p><strong>A more complex way of distributing configurations along with Tunnelblick is to create a <a href="cCusDeployed.html">&quot;Deployed&quot; version</a> of Tunnelblick:</strong></p>
+<ul>
+<li>Deployed versions of Tunnelblick <strong>must be <a href="cBuild.html">built</a> from <a href="cRebranding.html">rebranded</a> source code</strong> and the rebranded source code must be made available to anyone to whom a binary is &quot;distributed&quot; as defined by the GPL.</li>
+<li>A &quot;Deployed&quot; version contains, within the Tunnelblick application itself, all of the configurations, certificates, keys, and scripts needed for the connection(s) that you wish to make available.</li>
+<li>A &quot;Deployed&quot; version can also contain &quot;forced&quot; preferences, which the user is not allowed to override, which can avoid problems caused by users inadvertently changing critical configuration parameters.</li>
+<li>Because a &quot;Deployed&quot; version contains the configurations within the program, when the program is updated, the configurations are updated.</li>
+<li>Any user of the computer can connect using the configuration(s).</li>
+</ul>
+
+
+
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+
+
+
+<div class="bottom-translation">
+  <span title="view in German or another language using Google Translate">               <a lang="de"      class="bottom-translation" href="/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcDistribute.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;         </a></span>
+  <span title="view in French or another language using Google Translate">               <a lang="fr"      class="bottom-translation" href="/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcDistribute.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;        </a></span>
+  <span title="view in Chinese (simplified) or another language using Google Translate"> <a lang="zh-Hans" class="bottom-translation" href="/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcDistribute.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp; </a></span>
+  <span title="view in Russian or another language using Google Translate">              <a lang="ru"      class="bottom-translation" href="/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcDistribute.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;         </a></span>
+  <span title="view in Spanish or another language using Google Translate">              <a lang="es"      class="bottom-translation" href="/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcDistribute.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;         </a></span>
+  <span title="view in Japanese or another language using Google Translate">             <a lang="ja"      class="bottom-translation" href="/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcDistribute.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;           </a></span>
+  <span title="view in Italian or another language using Google Translate">              <a                class="bottom-translation" href="/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcDistribute.html&amp;sandbox=1">&nbsp;&nbsp;&hellip;&nbsp;&nbsp;        </a></span>
+</div>
+<div class="bottom-copyright">
+  Copyright &copy; 2015-2017 by The Tunnelblick Project.&nbsp;&nbsp;
+</div>
+</body>
+</html>

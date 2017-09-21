@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" lang="en">
+	<meta name="description" content="Tunnelblick Launches at Startup (Login) - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+	<meta name="referrer" content="never">
+	<title>Tunnelblick Launches at Startup (Login) - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+	<link rel="stylesheet" type="text/css"  href="common/style.v5.css">
+	<link rel="icon"       type="image/png" href="common/favicon.v1.png">
+</head>
+
+<body>
+
+<div class="heading">
+	<table>
+		<tr>
+			<td><a href="/"><img src="common/tb-icon-64x64.v1.png" alt="" width="64" height="64"></a></td>
+			<td class="heading1">Tunnelblick</td>
+			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading3">
+                <a href="cLocalizeTranslate.html">We need translators for several languages&hellip;</a><br>
+            </td>
+		</tr>
+	</table>
+</div>
+
+
+<div class="topnav">
+<table class="topnav"><tbody><tr>
+	<td class="topnav-normal"   ><a href="index.html"      class="topnav">Home</a></td>
+	<td class="topnav-normal"   ><a href="downloads.html"  class="topnav">Downloads</a></td>
+	<td class="topnav-normal"   ><a href="support.html"    class="topnav">Support</a></td>
+	<td class="topnav-highlight"><a href="documents.html"  class="topnav">Documents</a></td>
+	<td class="topnav-normal"   ><a href="issues.html"     class="topnav">Issues</a></td>
+	<td class="topnav-normal"   ><a href="source.html"     class="topnav">Source</a></td>
+	<td class="topnav-normal"   ><a href="contribute.html" class="topnav">Contribute</a></td>
+	<td class="topnav-normal"   ><a href="reachus.html"    class="topnav">Contact</a></td>
+	<td class="topnav-padding"  ></td>
+</tbody></table>
+</div>
+
+
+
+<div class="content">
+<div class="content-cLaunchAtLogin">
+<table class="documents">
+  <tr>
+    <td class="documents-left">
+
+
+
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="cFAQ.html">FAQ</a></p>
+
+<p><strong><a href="https://groups.google.com/forum/#&#33;forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="cBeforeYouPost.html">Read Before You Post</a></p>
+
+
+
+    </td>
+    <td class="documents-right">
+    
+
+
+<h1 id="tunnelblick-launches-at-startup-login">Tunnelblick Launches at Startup (Login)</h1>
+<p><strong><big>This is related to <a href="cVpnDetailsAtLogin.html">VPN Details Windows Appears at Startup (Login)</a>.</big></strong></p>
+<p>Some users find that Tunnelblick runs when they don't expect it to or they don't want it to.</p>
+<p>That is probably because Tunnelblick does not use the standard macOS &quot;Open at Login&quot; (&quot;Login Items&quot;) mechanism to control its behavior. (See <a href="#why-and-how-tunnelblick-does-not-use-login-items">Why and How Tunnelblick Doesn't Use Login Items</a> below.)</p>
+<p>Instead, Tunnelblick is launched at login:</p>
+<ul>
+<li>If it was running when you last logged out; or</li>
+<li>If it detects a VPN either connected or in the process of connecting.</li>
+</ul>
+<p>On other words:</p>
+<ul>
+<li>If you quit Tunnelblick after using it, it should not launch when you next login or start your computer.</li>
+<li>If you leave Tunnelblick running, it will launch when you next login.</li>
+</ul>
+<p>If this is not the behavior you are experiencing, please see <a href="#troubleshooting">Troubleshooting</a> below or ask for help on the <a href="https://groups.google.com/forum/#!forum/tunnelblick-discuss">Tunnelblick Discussion Group</a>.</p>
+<h2 id="to-stop-tunnelblick-from-launching-on-login">To Stop Tunnelblick from Launching on Login</h2>
+<p>You cannot stop Tunnelblick from launching on login if it detects an active VPN on login unless you uninstall Tunnelblick (see <a href="#why-and-how-tunnelblick-does-not-use-login-items">Why and How Tunnelblick Doesn't Use Login Items</a> below for why).</p>
+<p>However, you can stop Tunnelblick from launching at login solely because it was running when you last logged out. To do that, copy/paste the following in /Applications/Utilities/Terminal, then press the enter/return key on the keyboard:</p>
+<pre><code>    defaults  write  net.tunnelblick.tunnelblick  doNotLaunchOnLogin  -bool  yes</code></pre>
+<p>To restore Tunnelblick's normal behavior, copy/paste the following, then press the enter/return key on the keyboard:</p>
+<pre><code>    defaults  delete  net.tunnelblick.tunnelblick  doNotLaunchOnLogin</code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>First, check to make sure you don't have a Tunnelblick &quot;Login Item&quot;.</p>
+<ol>
+<li>Go to System Preferences : Users &amp; Groups, select the user on the list on the left side of the window, then click on &quot;Login Items&quot; tab on the right side of the window.</li>
+<li>If you see Tunnelblick, click to select it, then click the minus sign (&quot;-&quot;) at the bottom of the list on the left side of the window.</li>
+</ol>
+<p>(Note that the checkbox next to the application name is for &quot;hiding&quot; the application after it launches -- it is <strong>not</strong> for making the application launch at login.)</p>
+<p>Second, check that you do not have an active VPN:</p>
+<ol>
+<li>Launch /Applications/Utilities/Activity Monitor.</li>
+<li>Click &quot;View&quot;, then &quot;All Processes&quot;.</li>
+<li>Click on the &quot;Process Name&quot; header to sort the list by process name.</li>
+</ol>
+<p>If you see a process named &quot;tunnelblick-helper&quot;, that indicates that a VPN is being connected. If you see a process named &quot;openvpn&quot;, it means that a VPN is being connected or is connected.</p>
+<p>If you don't have Tunnelblick login items, and you don't have a process named &quot;tunnelblick-helper&quot; or &quot;openvpn&quot;, ask for help on the <a href="https://groups.google.com/forum/#!forum/tunnelblick-discuss">Tunnelblick Discussion Group</a>. Please include the output of the following Terminal commands in your post (you can copy/paste; it all goes on one line):</p>
+<pre><code>ps -ef | grep -w openvpn | grep -v grep ; ps -ef | grep tunnelblick-helper | grep -v grep</code></pre>
+<h2 id="why-and-how-tunnelblick-does-not-use-login-items">Why and How Tunnelblick does not Use Login Items</h2>
+<p>Tunnelblick doesn't use &quot;Login Items&quot; because we think it is important that users are shown an indication that a VPN is active when they log in (if one is active, of course). The indication is that Tunnelblick launches, and that it displays a connecting or connected icon. A VPN may be active because a VPN configuration is set up to connect when the computer starts, or because a different user logs into the computer while another user has connected to a VPN, or because of a crash of Tunnelblick or one of its components, or for some other reason.</p>
+<p>To ensure that is done, the Tunnelblick installer sets up macOS to run <a href="https://github.com/Tunnelblick/Tunnelblick/blob/master/tunnelblick/launchAtLogin.sh">a very short script</a> once each time a user logs in. The script decides whether or not to launch Tunnelblick, does so if necessary, and then quits. The script has little impact on the time to startup or login (on a five-year-old MacBook Pro the script uses 0.293 seconds of CPU time and very little I/O).</p>
+<p>Another reason Tunnelblick doesn't use &quot;Login Items&quot; is that most users don't have Tunnelblick in the Dock (where it is easy to make it a Login Item by clicking &quot;Options&quot; : &quot;Open at Login&quot;). Instead, they leave Tunnelblick running all the time to make it easy to connect a VPN. When there is no active VPN, Tunnelblick uses few computer resources.</p>
+
+
+
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+
+
+
+<div class="bottom-translation">
+  <span title="view in German or another language using Google Translate">               <a lang="de"      class="bottom-translation" href="/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcLaunchAtLogin.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;         </a></span>
+  <span title="view in French or another language using Google Translate">               <a lang="fr"      class="bottom-translation" href="/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcLaunchAtLogin.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;        </a></span>
+  <span title="view in Chinese (simplified) or another language using Google Translate"> <a lang="zh-Hans" class="bottom-translation" href="/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcLaunchAtLogin.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp; </a></span>
+  <span title="view in Russian or another language using Google Translate">              <a lang="ru"      class="bottom-translation" href="/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcLaunchAtLogin.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;         </a></span>
+  <span title="view in Spanish or another language using Google Translate">              <a lang="es"      class="bottom-translation" href="/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcLaunchAtLogin.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;         </a></span>
+  <span title="view in Japanese or another language using Google Translate">             <a lang="ja"      class="bottom-translation" href="/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcLaunchAtLogin.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;           </a></span>
+  <span title="view in Italian or another language using Google Translate">              <a                class="bottom-translation" href="/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcLaunchAtLogin.html&amp;sandbox=1">&nbsp;&nbsp;&hellip;&nbsp;&nbsp;        </a></span>
+</div>
+<div class="bottom-copyright">
+  Copyright &copy; 2015-2017 by The Tunnelblick Project.&nbsp;&nbsp;
+</div>
+</body>
+</html>

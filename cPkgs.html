@@ -1,0 +1,271 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" lang="en">
+	<meta name="description" content="Tunnelblick VPN Configurations Details - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+	<meta name="referrer" content="never">
+	<title>Tunnelblick VPN Configurations Details - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+	<link rel="stylesheet" type="text/css"  href="common/style.v5.css">
+	<link rel="icon"       type="image/png" href="common/favicon.v1.png">
+</head>
+
+<body>
+
+<div class="heading">
+	<table>
+		<tr>
+			<td><a href="/"><img src="common/tb-icon-64x64.v1.png" alt="" width="64" height="64"></a></td>
+			<td class="heading1">Tunnelblick</td>
+			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading3">
+                <a href="cLocalizeTranslate.html">We need translators for several languages&hellip;</a><br>
+            </td>
+		</tr>
+	</table>
+</div>
+
+
+<div class="topnav">
+<table class="topnav"><tbody><tr>
+	<td class="topnav-normal"   ><a href="index.html"      class="topnav">Home</a></td>
+	<td class="topnav-normal"   ><a href="downloads.html"  class="topnav">Downloads</a></td>
+	<td class="topnav-normal"   ><a href="support.html"    class="topnav">Support</a></td>
+	<td class="topnav-highlight"><a href="documents.html"  class="topnav">Documents</a></td>
+	<td class="topnav-normal"   ><a href="issues.html"     class="topnav">Issues</a></td>
+	<td class="topnav-normal"   ><a href="source.html"     class="topnav">Source</a></td>
+	<td class="topnav-normal"   ><a href="contribute.html" class="topnav">Contribute</a></td>
+	<td class="topnav-normal"   ><a href="reachus.html"    class="topnav">Contact</a></td>
+	<td class="topnav-padding"  ></td>
+</tbody></table>
+</div>
+
+
+
+<div class="content">
+<div class="content-cPkgs">
+<table class="documents">
+  <tr>
+    <td class="documents-left">
+
+
+
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="cFAQ.html">FAQ</a></p>
+
+<p><strong><a href="https://groups.google.com/forum/#&#33;forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="cBeforeYouPost.html">Read Before You Post</a></p>
+
+
+
+    </td>
+    <td class="documents-right">
+    
+
+
+<h1 id="tunnelblick-vpn-configurations-details">Tunnelblick VPN Configurations Details</h1>
+<p class=toc>On This Page<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#introduction">Introduction</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#creation-and-modification">Creation and Modification</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#installation">Installation</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#automatic-installation">Automatic Installation</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#nested-configurations">Nested Configurations</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#format">Format</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#info.plist">Info.plist</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#preferences">Preferences</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#updown-scripts">Up/Down Scripts</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tunnelblick-scripts">Tunnelblick Scripts</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#cfbundleidentifier-conflicts">CFBundleIdentifier Conflicts</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#name-conflicts-during-installation">Name Conflicts During Installation</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#name-conflicts-after-installation">Name Conflicts After Installation</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#example-script-to-create-.tblks-with-ip-address-checking-disabled">Example Script to Create .tblks with IP Address Checking Disabled</a><br>
+</p> 
+<h2 id="introduction">Introduction</h2>
+<p>A Tunnelblick VPN Configuration (a &quot;Configuration&quot;) is a folder with an extension of .tblk that contains information about one or more VPN configurations.</p>
+<ul>
+<li>Configurations provide a convenient way to distribute VPN configurations separately from the Tunnelblick application itself.</li>
+<li>Configurations may be installed to be private to a single user or shared by all users of the computer.</li>
+<li>Configurations may be automatically installed when Tunnelblick is installed.</li>
+<li>Configurations may contain identification and version information to assist in version control.</li>
+<li>Configurations may contain scripts that are run at particular points in the connection process.</li>
+<li>Installing a Configuration requires a computer administrator username/password (as does Tunnelblick installation).</li>
+<li>The configuration file of a Configuration that is private may be edited. The configuration file of a Configuration that is shared may only be examined.</li>
+</ul>
+<p>Configurations are available in Tunnelblick 3.1 and up. Some features of Configurations described in this document may only be available on Tunnelblick 3.4beta30 and higher.</p>
+<p><strong>Configurations must be installed before they can be used.</strong> Install a Configuration by double-clicking it. (The Tunnelblick application must have been installed <em>before</em> the Configuration is double-clicked.) On Tunnelblick 3.6.3beta02 and higher, install a configuration by dropping it on the Tunnelblick icon in the menu bar.</p>
+<h2 id="creation-and-modification">Creation and Modification</h2>
+<p>See <a href="cConfigT.html#creating-and-installing-a-tunnelblick-vpn-configuration">Creating and Installing a Tunnelblick VPN Configuration</a> and <a href="cConfigT.html#modifying-a-tunnelblick-vpn-configuration">Modifying a Tunnelblick VPN Configuration</a>.</p>
+<h2 id="installation">Installation</h2>
+<p>A Configuration is installed by double-clicking it, or, on Tunnelblick 3.6.3beta02 and higher, install a configuration can be installed by dropping it on the Tunnelblick icon in the menu bar. A configuration can be installed automatically when Tunnelblick is installed from a disk image or a folder expanded from a .zip file (see <a href="cAutoInstall.html">Automatic Installation</a>).</p>
+<p>If there is only one OpenVPN configuration file inside a .tblk, a single Configuration will be installed and will have the name of the .tblk — the name of the configuration file will be ignored.</p>
+<p>If there is more than one OpenVPN configuration file inside a .tblk, a Configuration will be installed for each configuration file, and will have the name of the configuration file.</p>
+<p>When a Configuration is installed, it's contents are copied and arranged in a special way and the copy is secured by setting the ownership and permissions on the copy's contents.</p>
+<p>Unless specified otherwise in an <a href="#info.plist">Info.plist</a>, when a Configuration is installed the user will be asked whether the Configuration is to be shared or private (for only that user). Configurations to be shared are copied to <code>/Library/Application Support/Tunnelblick/Shared</code>; Configurations to be kept private are copied to <code>~/Library/Application Support/Tunnelblick/Configurations</code>.</p>
+<h2 id="automatic-installation">Automatic Installation</h2>
+<p>When Tunnelblick is installed by double-clicking a Tunnelblick.app that is not in /Applications, all Configurations in the &quot;auto-install&quot; and &quot;.auto-install&quot; folders that are in the same folder that contains the Tunnelblick.app being installed are installed (subject to <a href="cPkgs.html#cfbundleidentifier-conflicts">CFBundleIdentifier Conflicts</a> and <a href="cPkgs.html#name-conflicts-during-installation">Name Conflicts During Installation</a>).</p>
+<p>The &quot;auto-install&quot; and &quot;.auto-install&quot; folders can also contain a file named &quot;preferences.plist&quot;. It may contain a &quot;set-only-if-not-present&quot; key and/or a &quot;always-set&quot; key. The value for each key should be a dictionary containing preferences to be set under the specified conditions.</p>
+<p>Thus, one can construct a disk image (or a .zipped folder) which contains Tunnelblick.app and an &quot;auto-install&quot; folder containing configurations and preferences to be installed along with Tunnelblick.</p>
+<h2 id="nested-configurations">Nested Configurations</h2>
+<p>&quot;Nested&quot; Configurations make it easy to distribute many configurations in a single file.</p>
+<p>Configurations may be nested one level deep. That is, a Configuration may contain within it other Configurations (and may also contain OpenVPN configuration files that are not in a Configuration). When such a Configuration is installed, everything within it is installed. The Configurations within a Configuration may not themselves include Configurations, however — only one level of included Configurations is allowed.</p>
+<h2 id="format">Format</h2>
+<p>Tunnelblick Configurations are folders with an extension of &quot;.tblk&quot;. The extension causes OS X to treat the folder as a &quot;package&quot; — in most cases it is treated as if it were a single file. To look at the contents of a package (i.e. inside what was the folder), control-click or right-click the package and select &quot;Show Package Contents&quot;.</p>
+<p><strong>Before installation</strong>, a Tunnelblick VPN Configuration can contain files and folders including:</p>
+<ul>
+<li>An Info.plist file (see <a href="#info.plist">Info.plist</a>).</li>
+<li>One or more &quot;nested&quot; Tunnelblick VPN Configurations</li>
+<li>One or more OpenVPN configurations (files with .ovpn or .conf extensions).</li>
+<li>One or more key, certificate, or script files.</li>
+</ul>
+<p>If configurations are in subfolders, the structure of the subfolders will be replicated when the configurations are installed.</p>
+<p><strong>After installation</strong>, the contents of a Tunnelblick VPN Configuration are arranged as follows. Before installation all files can be arranged this way, or all files can be at the top level of the .tblk (that is, without the &quot;Contents/Resources&quot; structure).</p>
+<pre><code>    sample.tblk/
+        Contents/
+            (Optional) Info.plist
+            Resources/
+                config.ovpn, containing OpenVPN configuration information
+                (Optional) up/down scripts
+                (Optional) Tunnelblick scripts
+                (Optional, deprecated scripts) up.sh, down.sh, nomonitor.up.sh, and/or nomonitor.down.sh
+                (Optional) key, certificate, and/or other script files</code></pre>
+<h2 id="info.plist">Info.plist</h2>
+<p>Info.plist is optional. If it exists, it must be an <a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html">OS X property list</a> file, with keys from the following table. The only mandatory key is TBPackageVersion; all others are optional.</p>
+<table border="1px">
+<tr><td>Key</td><td>Description</td><td>Default</td><td>Examples</td></tr>
+<tr><td>CFBundleIdentifier (**case-insensitive**)</td><td>A string that uniquely identifies the configuration and the individual or organization distributing the Configuration.</td><td>(None)</td><td>com.example.tbconfigs.config27a</td></tr>
+<tr><td>CFBundleVersion </td><td>A string representing the version number that is used to determine later/earlier versions of the Configuration (see [CFBundleIdentifier Conflicts](cPkgs#cfbundleidentifier-conflicts)). The string must consist of a major version number, optionally followed by a decimal point and a minor version number, optionally followed by a decimal point and a bugfix version number</td><td>(None)</td><td>1.16.4</td></tr>
+<tr><td>CFBundleShortVersionString</td><td>A string to display as the version (in Get Info, for example)</td><td>(None)</td><td>1.6 Test 3</td></tr>
+<tr><td>TBPackageVersion (**required**)</td><td>A string with the Configuration version number</td><td>1</td><td>The string "1" (without the quotation marks)</td></tr>
+<tr><td>TBReplaceIdentical</td><td>A string specifying whether to install the Configuration over a Configuration with the same CFBundleIdentifier. Must be "yes", "no", "ask", or "force" (without the quotation marks)</td><td>ask</td><td>yes</td></tr>
+<tr><td>TBSharePackage</td><td>A string specifying whether to install the Configuration as shared or private, or to ask the user. Must be "shared", "private", or "ask" (without the quotation marks)</td><td>ask</td><td>ask</td></tr>
+<tr><td>TBKeepExistingFilesList</td><td>An array of filenames. Used for a configuration that is replacing an existing configuration. Each array entry is the filename (without path information) of a file that is not in the configuration being installed and which should be left as it is in the existing configuration that is being replaced. A single **`**`** character in the filename will match any number of any characters in the name. (Available in 3.4beta33 build 3908 and higher.)</td><td>(None)</td><td>client.key, client*.key, client.**</td></tr>
+<tr><td>TBPreference</td><td>See [Preferences](cPkgs#preferences)</td><td> </td><td>TBPreferenceuseDNS</td></tr>
+<tr><td>TBAlwaysSetPreference</td><td>See [Preferences](cPkgs#preferences)</td><td> </td><td>TBAlwaysSetPreferenceuseDNS</td></tr>
+<tr><td>TBUninstall</td><td>If present (with any value), the .tblk will be uninstalled</td><td> </td><td> </td></tr>
+</table>
+<h2 id="preferences">Preferences</h2>
+<p>A Configuration's Info.plist may also optionally contain entries (strings, numbers, and booleans) with keys that start with &quot;TBPreference&quot; or &quot;TBAlwaysSetPreference&quot;. The entries are preferences for the configuration. Each entry will be copied to the user's regular preferences each time Tunnelblick loads or uses the Configuration (when Tunnelblick is launched or the Configuration is installed or connected). &quot;TBPreference&quot; items are copied only if the preference is not already set, so they are for initial settings that a user is allowed to override. &quot;TBAlwaysSetPreference&quot; items always are copied, so the user is, in effect, not allowed to override them. When the entries are copied, &quot;TBPreference&quot; or &quot;TBAlwaysSetPreference&quot;is replaced with the display name of the Configuration. Note that the &quot;autoConnect&quot; option triggers a connection when Tunnelblick is started, so a configuration with &quot;TBPreferenceautoConnect&quot; is not connected automatically when it is installed, but is connected automatically the next time Tunnelblick is launched. <em>Note: &quot;TBAlwaysSetPreference&quot; is only available in Tunnelblick 3.3beta10 and later.</em></p>
+<p>In a Deployed version of Tunnelblick, the forced-preferences in Deploy will override any Configuration-specified preferences.</p>
+<h2 id="updown-scripts">Up/Down Scripts</h2>
+<p>If the Configuration contains up.tunnelblick.sh, down.tunnelblick.sh, up.sh, down.sh, nomonitor.up.sh, and/or nomonitor.down.sh, those scripts will be used instead of Tunnelblick's standard scripts, or scripts in Deploy, when connecting with the Configuration and &quot;Set nameserver&quot; is selected for the Configuration's configuration.</p>
+<p>For backward compatibility, scripts other than up.tunnelblick.sh and down.tunnelblick.sh will be used if they exist.</p>
+<p>In a Deployed version of Tunnelblick, a Configuration's up/down scripts will override the corresponding scripts in Deploy.</p>
+<h2 id="tunnelblick-scripts">Tunnelblick Scripts</h2>
+<p>If the Configuration includes pre-connect.sh, post-tun-tap-load.sh, connected.sh, reconnecting.sh, post-disconnect.sh scripts, they will be executed (as root) at the corresponding point in the connection process. This allows manipulation of kexts and/or the network configuration and user notification of events. (If the scripts load special kexts, you can use the &quot;-doNotLoadTapKext&quot; and &quot;-doNotLoadTunKext&quot; preferences to cause Tunnelblick to not try to load its own kexts.) post-tun-tap-load.sh, connected.sh, and reconnecting.sh are available in Tunnelblick 3.2beta02 and later only. See <a href="cUsingScripts.html">Using Scripts</a> for more details.</p>
+<h2 id="cfbundleidentifier-conflicts">CFBundleIdentifier Conflicts</h2>
+<p>On automatic or manual installation of a Configuration, if a Configuration with an identical CFBundleIdentifier is already installed:</p>
+<ul>
+<li>If the new Configuration's &quot;TBReplaceIdentical&quot; is &quot;no&quot;, the Configuration will not be installed.</li>
+<li>If the new Configuration's &quot;TBReplaceIdentical&quot; is &quot;yes&quot;, the existing Configuration will be replaced without notifying the user if it has an equal or higher &quot;CFBundleVersion&quot; than the existing installed Configuration. If it has a lower &quot;CFBundleVersion&quot;, the Configuration will not be installed.</li>
+<li>If the new Configuration's &quot;TBReplaceIdentical&quot; is &quot;force&quot;, the existing Configuration will be replaced without notifying the user.</li>
+<li>If the new Configuration's &quot;TBReplaceIdentical&quot; is &quot;ask&quot;, the existing Configuration will be replaced only after getting the user's consent.</li>
+</ul>
+<p>When an existing Configuration is replaced, the new copy takes the display name of the existing version, regardless of the name of the new Configuration. Thus, the new version will inherit the existing version's preferences and Keychain items.</p>
+<h2 id="name-conflicts-during-installation">Name Conflicts During Installation</h2>
+<p>If the display name of a Configuration is the same as the name of an existing .ovpn or .conf file or an existing Configuration that has a different CFBundleIdentifier, the user will be asked to rename the Configuration or cancel the installation.</p>
+<h2 id="name-conflicts-after-installation">Name Conflicts After Installation</h2>
+<p>Configurations are displayed from</p>
+<ul>
+<li>Tunnelblick.app/Contents/Resources/Deploy</li>
+<li>/Library/Application Support/Tunnelblick/Shared/*.tblk</li>
+<li>/Library/Application Support/Tunnelblick/Shared/<em>.ovpn and </em>.conf</li>
+<li>~/Library/Application Support/Tunnelblick/Configurations/*.tblk</li>
+<li>~/Library/Application Support/Tunnelblick/Configurations/<em>.ovpn and </em>.conf</li>
+</ul>
+<p>in that order. If a display name matches an earlier display name, the later configuration will be ignored and only the earlier display name will be displayed, making only the earlier configuration available.</p>
+<h2 id="example-script-to-create-.tblks-with-ip-address-checking-disabled">Example Script to Create .tblks with IP Address Checking Disabled</h2>
+<p>Below is a bash script that creates .tblks from OpenVPN configuration files. Each .tblk includes an Info.plist that disables IP address checking. (The script can be modified to set different preferences for the configuration so IP address checking is enabled, or to enable or disable some other feature.)</p>
+<p>The .tblks can be installed (as usual) by dragging/dropping them onto the Tunnelblick icon in the menu bar. They may be dragged/dropped individually or as a group.</p>
+<p>Or the .tblks can be copied into a folder, and the folder renamed with an extension of .tblk. That (outer) .tblk can be compressed and sent to users as a single .zip file. After decompressing the .zip file, users could then drag/drop the (outer) .tblk onto the Tunnelblick icon in the menu bar to install all of the configurations at once.</p>
+<p>(To create a subfolder structure to group configurations together, arrange the inner .tblks in folders as desired before renaming the outer folder to have a .tblk extension.)</p>
+<p>Note: the script looks long and complicated but almost all of it is dealing with the command line arguments. The part of the script that actually creates the .tblk are these three commands near the end, which create the .tblk, copy the OpenVPN file, and create the Info.plist.</p>
+<p>&quot;no_ipa_check.sh&quot;:</p>
+<pre><code>#! /bin/bash -e
+#
+# This script creates &quot;Tunnelblick VPN Configurations&quot; (.tblks) from OpenVPN configuration
+# files.
+#
+# Usage:
+#
+#       no_ipa_check.sh file [file]...
+#
+# Where each &quot;file&quot; is the path to an OpenVPN configuration file, which must have an
+# extension of &quot;.ovpn&quot; or &quot;.conf&quot;.
+#
+#
+# Each .tblk will include a copy of the OpenVPN configuration file and an Info.plist file
+# which specifies that Tunnelblick should not check for changes to the IP address after
+# connecting.
+#
+# Each .tblk has the same name as the OpenVPN configuration file it was created from but
+# has a &quot;.tblk&quot; extension.
+
+while [ $# -gt 0 ] ; do
+
+    filename=&quot;$(basename &quot;$1&quot;)&quot;
+    extension=&quot;${filename##*.}&quot;
+
+    if [ ! -f &quot;$1&quot; -o &quot;${extension}&quot; != &quot;ovpn&quot; -a &quot;${extension}&quot; != &quot;ovpn&quot; ] ; then
+        echo &quot;Creates Tunnelblick VPN Configurations which do not check for IP address changes.&quot;
+        echo &quot;Input files must be OpenVPN configuration files with extensions of &#39;.ovpn&#39; or &#39;.conf&#39;.&quot;
+        echo &quot;Usage:&quot;
+        echo &quot;    $(basename &quot;$0&quot;) file [file]...&quot;
+        exit 1
+    fi
+
+    no_extension=&quot;${filename%.*}&quot;
+    tblkpath=&quot;$(dirname &quot;$1&quot;)/${no_extension}.tblk&quot;
+
+    rm -f -r &quot;${tblkpath}&quot;
+
+    mkdir &quot;${tblkpath}&quot;
+
+    cp -p &quot;$1&quot; &quot;${tblkpath}&quot;
+
+    cat &lt;&lt; EOF &gt; &quot;${tblkpath}/Info.plist&quot;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;dict&gt;
+    &lt;key&gt;TBPackageVersion&lt;/key&gt;&lt;string&gt;1&lt;/string&gt;
+    &lt;key&gt;TBAlwaysSetPreference-notOKToCheckThatIPAddressDidNotChangeAfterConnection&lt;/key&gt;&lt;true/&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+EOF
+
+    shift
+
+done</code></pre>
+
+
+
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+
+
+
+<div class="bottom-translation">
+  <span title="view in German or another language using Google Translate">               <a lang="de"      class="bottom-translation" href="/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcPkgs.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;         </a></span>
+  <span title="view in French or another language using Google Translate">               <a lang="fr"      class="bottom-translation" href="/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcPkgs.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;        </a></span>
+  <span title="view in Chinese (simplified) or another language using Google Translate"> <a lang="zh-Hans" class="bottom-translation" href="/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcPkgs.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp; </a></span>
+  <span title="view in Russian or another language using Google Translate">              <a lang="ru"      class="bottom-translation" href="/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcPkgs.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;         </a></span>
+  <span title="view in Spanish or another language using Google Translate">              <a lang="es"      class="bottom-translation" href="/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcPkgs.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;         </a></span>
+  <span title="view in Japanese or another language using Google Translate">             <a lang="ja"      class="bottom-translation" href="/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcPkgs.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;           </a></span>
+  <span title="view in Italian or another language using Google Translate">              <a                class="bottom-translation" href="/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcPkgs.html&amp;sandbox=1">&nbsp;&nbsp;&hellip;&nbsp;&nbsp;        </a></span>
+</div>
+<div class="bottom-copyright">
+  Copyright &copy; 2015-2017 by The Tunnelblick Project.&nbsp;&nbsp;
+</div>
+</body>
+</html>

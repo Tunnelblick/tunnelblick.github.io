@@ -1,0 +1,304 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" lang="en">
+	<meta name="description" content="Deploying Tunnelblick - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+	<meta name="referrer" content="never">
+	<title>Deploying Tunnelblick - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+	<link rel="stylesheet" type="text/css"  href="common/style.v5.css">
+	<link rel="icon"       type="image/png" href="common/favicon.v1.png">
+</head>
+
+<body>
+
+<div class="heading">
+	<table>
+		<tr>
+			<td><a href="/"><img src="common/tb-icon-64x64.v1.png" alt="" width="64" height="64"></a></td>
+			<td class="heading1">Tunnelblick</td>
+			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading3">
+                <a href="cLocalizeTranslate.html">We need translators for several languages&hellip;</a><br>
+            </td>
+		</tr>
+	</table>
+</div>
+
+
+<div class="topnav">
+<table class="topnav"><tbody><tr>
+	<td class="topnav-normal"   ><a href="index.html"      class="topnav">Home</a></td>
+	<td class="topnav-normal"   ><a href="downloads.html"  class="topnav">Downloads</a></td>
+	<td class="topnav-normal"   ><a href="support.html"    class="topnav">Support</a></td>
+	<td class="topnav-highlight"><a href="documents.html"  class="topnav">Documents</a></td>
+	<td class="topnav-normal"   ><a href="issues.html"     class="topnav">Issues</a></td>
+	<td class="topnav-normal"   ><a href="source.html"     class="topnav">Source</a></td>
+	<td class="topnav-normal"   ><a href="contribute.html" class="topnav">Contribute</a></td>
+	<td class="topnav-normal"   ><a href="reachus.html"    class="topnav">Contact</a></td>
+	<td class="topnav-padding"  ></td>
+</tbody></table>
+</div>
+
+
+
+<div class="content">
+<div class="content-cCusDeployed">
+<table class="documents">
+  <tr>
+    <td class="documents-left">
+
+
+
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="cFAQ.html">FAQ</a></p>
+
+<p><strong><a href="https://groups.google.com/forum/#&#33;forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="cBeforeYouPost.html">Read Before You Post</a></p>
+
+
+
+    </td>
+    <td class="documents-right">
+    
+
+
+<h1 id="deploying-tunnelblick">Deploying Tunnelblick</h1>
+<p><strong>This document describes how to create a deployed version of Tunnelblick and was last modified 2010-02-23.</strong> It reflects the behavior of Tunnelblick built from the r412 source code.</p>
+<p><strong><span class="red">Tunnelblick versions 3.3beta22 and higher CANNOT BE CREATED THIS WAY AND DO NOT BEHAVE LIKE EARLIER VERSIONS!</span></strong></p>
+<p>Until this page is updated, please note that:</p>
+<ul>
+<li>Only <a href="cRebranding.html">&quot;rebranded&quot;</a> versions of Tunnelblick can be Deployed.</li>
+<li>All Deployed versions must contain all configurations. The Deploy folder is not restored from a backup if a &quot;plain&quot; (i.e. non-Deploy) copy is installed over, or updates, a Deployed version.</li>
+<li>Each configuration in /Deploy must be a Tunnelblick VPN Configuration (&quot;.tblk&quot;), and must be structured as described in the <a href="cPkgs.html#format">Format</a> section of the <a href="cPkgs.html">&quot;.tblk&quot; Details</a> page.</li>
+</ul>
+<hr />
+<p class=toc>On This Page<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#what-is-a-deployed-version">What is a Deployed Version?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#how-it-works">How it Works</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#backups-of-deploy">Backups of &quot;Deploy&quot;</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#signed-vs-unsigned-versions">Signed vs Unsigned Versions</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#additional-menu-commands-and-programs">Additional Menu Commands and Programs</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#example">Example</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#what-about-updates">What about Updates?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#forced-preferences">Forced Preferences</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#up-and-down-scripts">Up and Down Scripts</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#what-is-needed-to-make-a-deployed-version">What is Needed to Make a Deployed Version</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#how-to-make-a-deployed-version">How to Make a Deployed Version</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#how-to-use-a-deployed-version">How to Use a Deployed Version</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#creating-a-zip-file-for-deployment">Creating a zip File for Deployment</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#creating-a-dmg-file-for-deployment">Creating a dmg File for Deployment</a><br>
+</p> 
+<h2 id="what-is-a-deployed-version">What is a Deployed Version?</h2>
+<p>Note: There is an alternate method of distributing Tunnelblick that allows configurations to be automatically installed when Tunnelblick is installed and updated from your web server but does not require rebranding and uses the standard, digitally-signed Tunnelblick application. See <a href="cAutoInstall.html">Auto-Install Configurations</a> and <a href="cUpdatableConfigurations.html">Updatable Configurations</a>.</p>
+<p>A deployed version of Tunnelblick is a customized version of <code>Tunnelblick.app</code> which can include everything necessary to install and run Tunnelblick and connect to one or more VPNs. In particular, it may include one or more OpenVPN configuration files, and, usually, certificate and key files for authentication. It can also include shell scripts and text that will appear in Tunnelblick's &quot;about&quot; window, and can specify user preferences that are forced to particular values and are read-only.</p>
+<p>A Deployed version can specify additional commands and submenus to be added to the Tunnelblick menu, including specific programs to be run when a menu item is chosen. A Deployed version can also specify programs to be run at the end of the Tunnelblick launch process and/or before a connection is attempted. These features are described in <a href="#additional-menu-commands-and-programs">Additional Menu Commands and Programs</a>.</p>
+<p>Note: By default, deployed versions of Tunnelblick display only the deployed configurations. They do not display private or shared configurations. To display shared or private configurations, set the &quot;usePrivateConfigurationsWithDeployedOnes&quot; or &quot;useSharedConfigurationsWithDeployedOnes&quot; preferences to yes. (See <a href="cPreferences.html">Preferences</a>).</p>
+<h2 id="how-it-works">How it Works</h2>
+<p>You create a deployed version of Tunnelblick by putting a &quot;Deploy&quot; folder into the <code>Contents/Resources</code> folder of <code>Tunnelblick.app</code>. &quot;Deploy&quot; can contain any one or a combination of configuration files, certificate and key files, up/down scripts, and a &quot;forced-preferences.plist&quot; file. Since &quot;Deploy&quot; and its contents can not be modified by a non-administrator user, this is a secure way to ensure that your users do not tamper with any settings that you wish to protect.</p>
+<p>If <code>Contents/Resources/Deploy</code> exists, Tunnelblick's behavior changes:</p>
+<ul>
+<li>If &quot;Deploy&quot; contains one or more .conf or .ovpn files, Tunnelblick uses it, instead of <code>~/Library/Application Support/Tunnelblick/Configurations</code>, for configuration files. When a connection is attempted, the log entry that Tunnelblick puts in the &quot;VPN Details&quot; window will contain &quot;from Deploy&quot; if &quot;Deploy&quot; is being used for configuration files.</li>
+</ul>
+<p>Note: if configuration files are not in &quot;Deploy&quot;, their names may be changed by an unprivileged user. Any forced preferences for a configuration whose name has been changed will be ignored, because the forced preferences will be referring to the original configuration name.</p>
+<ul>
+<li>If &quot;Deploy&quot; contains certificate and key files, those files can be referenced from configuration files by using the name of the file (i.e., no path need be given).</li>
+<li>If &quot;Deploy&quot; contains up/down scripts with specific names (see <a href="#up-and-down-scripts">Up and Down Scripts</a>) and &quot;Set nameserver&quot; is selected, those scripts will automatically be used by Tunnelblick instead of the standard up/down scripts.</li>
+<li>If &quot;Deploy&quot; contains a &quot;forced-preferences.plist&quot; file, Tunnelblick will use the preferences in it to override corresponding preferences in the user's <code>~/Library/Preferences/com.openvpn.tunnelblick.plist</code>. See <a href="#forced-preferences">Forced Preferences</a> for details. See<a href="cPreferences.html">Preferences</a> for a list of all preferences.</li>
+<li>If &quot;Deploy&quot; contains a &quot;Menu&quot; folder, Tunnelblick will add entries in it to the Tunnelblick menu and/or use entries in it to run programs (see <a href="#additional-menu-commands-and-programs">Additional Menu Commands and Programs</a>.</li>
+<li>If &quot;Deploy&quot; contains an &quot;IconSets&quot; folder, Tunnelblick will search it for a set of images to use for animating the Tunnelbilck icon. See <a href="cIconAnimation.html">Icon Animation</a>.</li>
+</ul>
+<p>Certificate and key files may usually be referenced within a configuration file without path information:</p>
+<ul>
+<li>If &quot;Deploy&quot; contains <em>only</em> <code>**.conf</code>, <code>**.ovpn</code>, <code>**.up.sh</code>, <code>**.down.sh</code>, and <code>forced-preferences.plist</code> files, the <code>~/Library/Application Support/Tunnelblick/Configurations</code> folder will be used as the target of the OpenVPN <code>--cd</code> option, which means that files in that folder may be specified in the configuration file without path information — e.g., &quot;key xxx.key&quot;.</li>
+<li>If &quot;Deploy&quot; contains <em>any other files</em> (for example, <code>**.key</code> files), then &quot;Deploy&quot; will be used as the target of the OpenVPN <code>--cd</code> option, which means that files in &quot;Deploy&quot; may be specified in the configuration file without path information — e.g., &quot;key xxx.key&quot;.</li>
+</ul>
+<p>Each time Tunnelblick starts:</p>
+<ol>
+<li>If there is no <code>Contents/Resources/Deploy</code> folder and there is a backup folder for it, &quot;Deploy&quot; is restored from the backup without any user intervention. This happens when <code>Tunnelblick.app</code> is updated, either by the built-in update mechanism, or by reinstalling, upgrading, or downgrading Tunnelblick.</li>
+<li>If not already the owner, &quot;root&quot; is made the owner of everything in <code>Contents/Resources</code>, including &quot;Deploy&quot; and its contents, and of <code>Contents/Info.plist</code></li>
+<li>If not already set, the permissions of <code>Contents/Info.plist</code> and of all items within <code>Contents/Resources</code> are set to &quot;644&quot; (root can read/write, everyone else can read), except
+<ul>
+<li>The permissions of <code>openvpnstart</code> are set to 4111 (setuid, anyone can execute)</li>
+<li>The permissions of the standard up/down scripts, <code>installer</code>, <code>leasewatch</code>, and <code>openvpn</code> are set to 744</li>
+<li>The permissions of the <code>**.executable</code> files are set to 755</li>
+<li>The permissions of the following files in &quot;Deploy&quot; are given different permissions:</li>
+<li><code>**.cer</code>, <code>**.crt</code>, <code>**.der</code>, <code>**.key</code>, <code>**.p12</code>, <code>**.p7b</code>, <code>**.p7c</code>, <code>**.pem</code>, and <code>**.pfx</code> files are given permissions of &quot;600&quot; (root can read/write, nobody else can read)</li>
+<li><code>**.sh</code> files are given permissions of &quot;744&quot; (root can read/write/execute, everyone else can read)</li>
+</ul></li>
+<li>If any ownerships or permissions were changed, or if &quot;Deploy&quot; has just been restored, a new backup of &quot;Deploy&quot; is made. The backup is owned by root and has the same permissions as the original items in &quot;Deploy&quot; (as modified in 3, above).</li>
+</ol>
+<h2 id="backups-of-deploy">Backups of &quot;Deploy&quot;</h2>
+<p>Backups of &quot;Deploy&quot; are created in <code>/Library/Application Support/Tunnelblick/Backup/A/B/C/D/E.../TunnelblickBackup</code>, where <code>/A/B/C/D/E...</code> is the absolute path to <code>Tunnelblick.app</code> itself. For example, if <code>Tunnelblick.app</code> is located in <code>/Applications</code>, the Deploy backup would be stored in <code>/Library/Application Support/Tunnelblick/Backup/Applications/TunnelblickBackup</code>. This allows each copy of Tunnelblick on a computer to have its own backup. Up to three backups are kept for each copy of Tunnelblick: the current and previous Deploy, and Deploy at the time Tunnelblick was first run from it's current location.</p>
+<p>If <code>Tunnelblick.app</code> is moved, a new backup will be created for the new location the first time <code>Tunnelblick.app</code> is run in the new location. The old backup will continue to exist, however, this is not in itself a security risk because moving <code>Tunnelblick.app</code> (after it is first run and a backup of Deploy has been made) requires authorization by an administrator. It is suggested that any such move be followed by deletion of the backup, which also requires an administrator. Otherwise a fresh copy of Tunnelblick in the old position in the file hierarchy could be used to connect to the VPN because its &quot;Deploy&quot; folder would be &quot;recovered&quot; from the backup the first time it is run.</p>
+<p>If <code>Tunnelblick.app</code> is renamed (which, depending on where it is stored, may not require an administrator's username/password), the backup mechanism still works normally. Note: Tunnelblick disables updates if the app has been renamed.</p>
+<p>If two copies of <code>Tunnelblick.app</code> exist within the same folder in the filesystem hierarchy (with different names), they will use the same backup. This could lead to problems if one uses Deploy and the other doesn't, or if the contents of the &quot;Deploy&quot; folders are not identical. One way to have multiple Tunnelblicks in one folder without causing this problem is to locate the <code>Tunnelblick.app</code>s in different folders, but put aliases to each of them in the folder that is visible to the user. Multiple copies of <code>Tunnelblick.app</code> cannot be placed in the same folder without an administrator doing it, so this should not be a security risk.</p>
+<h2 id="signed-vs-unsigned-versions">Signed vs Unsigned Versions</h2>
+<p>A copy of Tunnelblick can be signed or unsigned. All non-Deployed versions of Tunnelblick should be signed versions, but signing interferes with some Deployed configurations. Use an unsigned version if users will be able to store usernames/passwords/passphrases in the Keychain and the Deploy folder is added after the Tunnelblick build process (which is where signing is usually done). See <a href="cDigitalSignatures.html">Tunnelblick and Digital Signatures</a> for details.</p>
+<h2 id="additional-menu-commands-and-programs">Additional Menu Commands and Programs</h2>
+<p>If the Deploy folder contains a &quot;Menu&quot; subfolder, it can contain items that will be added to the Tunnelblick menu (either as menu items or submenus) and programs that will be executed when Tunnelblick launches and before a connection is made.</p>
+<p>The “Menu” folder can contain zero or more additional items to be inserted into the Tunnelblick menu, immediately above the “Quit Tunnelblick” item.</p>
+<p>Each item in the Menu folder should be either a subfolder or an executable file with an .executable extension:</p>
+<ul>
+<li><p>If it is a subfolder, a submenu will be created with the subfolder's contents. The name of the subfolder will be used as the name of the submenu.</p></li>
+<li><p>If it is an executable file with extensions of “.runOnLaunch.executable&quot;, execution of the file will be started when Tunnelblick is launched, immediately before starting the processing of any “connect when Tunnelblick starts” configurations.</p></li>
+<li><p>If it is an executable file with extensions of “.runOnLaunch.wait.executable&quot;, the file will be executed to completion when Tunnelblick is launched, immediately before processing any “connect when Tunnelblick starts” configurations. If the file returns a status non-zero status code, the launch of Tunnelblick will be abandoned before any “connect when Tunnelblick starts” configurations are connected..</p></li>
+<li><p>If it is an executable file with extensions of “.runOnConnect.executable&quot;, execution of the file will be started when a connection attempt is made (either by the user or by a “connect when Tunnelblick launches” configurations, but not when a &quot;connect when the computer starts&quot; configuration).</p></li>
+<li><p>If it is an executable file with extensions of “.runOnConnect.wait.executable&quot;, the file will be executed to completion when a connection attempt is made (either by the user or by a “connect when Tunnelblick launches” configurations, but not when a &quot;connect when the computer starts&quot; configuration). If the file returns a status non-zero status code, the connection attempt will be abandoned.</p></li>
+<li><p>If it is an executable file with extensions of “.addToMenu.executable&quot;, a menu item will be created and the file will be executed when the user selects the menu item.</p></li>
+<li><p>If it is an executable file with extensions of “.addToMenu.wait.executable&quot;, a menu item will be created and the file will be executed when the user selects the menu item. Tunnelblick will not respond to further user input until the file returns control. (Traffic over connections may stall under certain circumstances while waiting for the file to return control.)</p></li>
+<li><p>If it is anything else, it will be ignored.</p></li>
+</ul>
+<p>Note: An &quot;executable&quot; file may be any executable file. The .executable extension is required so that Tunnelblick will set permissions on the file to allow it to be executed by the user. The file will be owned by root, with permissions of 755.</p>
+<p>The first “runOnLaunch” and “runOnConnect” files to be found will be the only ones processed. Care should be taken to name subfolders such that they are alphabetically after these files; otherwise the subfolder(s) will be processed first, and any “runOnLaunch” and “runOnConnect” file in them will be processed first and be used when Tunnelblick is launched or a connection is attempted.</p>
+<p>Items from the Menu folder (and any subfolders) will be listed on the menu in alphabetic order by filename.</p>
+<p>Names (of files used as menu commands and folders used as submenu names) are modified for display to the user in the menu as follows:</p>
+<ol>
+<li>Any “.executable” extension will be removed.</li>
+<li>Any “.wait” extension from the result will be removed.</li>
+<li>If the result contains an underscore (“*”), everything up to and including the underscore will be removed.</li>
+<li>The result will be localized using Tunnelblick's Localizable.strings files.</li>
+<li>The result will be displayed to the user.</li>
+</ol>
+<h3 id="example">Example</h3>
+<p>If /Contents/Resources/Deploy/Menu/ contains:<br><br />
+ 000*.runOnConnect.wait.executable<br><br />
+ 000_.runOnLaunch.wait.executable<br><br />
+ 001_First.addToMenu.executable<br><br />
+ 002_Second.addToMenu.wait.executable<br><br />
+ 003_Third.addToMenu.executable<br><br />
+ 004_Fourth/<br><br />
+ Sub-1.addToMenu.executable<br><br />
+ Sub-2.addToMenu.executable<br><br />
+ 005_Fifth.addToMenu.executable<br></p>
+<p>The bottom of the Tunnelblick menu will look like this:</p>
+<pre><code>    VPN Details
+        --------
+    Options
+        --------
+    First
+    Second
+    Third
+    Fourth &gt;
+        Sub-1
+        Sub-2
+    Fifth
+        --------
+    Quit Tunnelblick</code></pre>
+<p>In this example, the prefixes <code>001_</code>, <code>002_</code>, etc. specify the order in which the items will be listed, but are removed (along with the extensions) before being displayed to the user.</p>
+<p>If the appropriate Localizable.strings file contains<br />
+“First” = “XXXXX”<br />
+“Second” = “YYYYY”</p>
+<p>Then the bottom of the Tunnelblick menu will look like this:</p>
+<pre><code>    VPN Details
+        --------
+    Options
+        --------
+    XXXXX
+    YYYYY
+    Third
+    Fourth &gt;
+        Sub-1
+        Sub-2
+    Fifth
+        --------
+    Quit Tunnelblick</code></pre>
+<p>In addition to the menu commands and submenu added, the file <code>000_.runOnLaunch.wait.executable</code> will be run at the end of the Tunnelblick launch process. Because &quot;.wait&quot; is specified, Tunnelblick will wait until the program finishes and examine the program's exit status. If the exit status is zero, Tunnelblick will finish launching, including making and &quot;connect on launch&quot; connections. If the exit status is non-zero, Tunnelblick will terminate immediately without any indication to the user other than an entry in the Console log. Before each connection attempt (either automatic or user-initiated), <code>000_.runOnConnect.wait.executable</code> will be run before the connection is made. (It will be called with the same arguments used to run the openvpnstart program.) Because &quot;.wait&quot; is specified, Tunnelblick will wait until the program finishes and examine the program's exit status. If the exit status is zero, Tunnelblick will attempt to make the connection. If the exit status is non-zero, the connection will be abandoned without any indication to the user other than an entry in the Console log.</p>
+<h2 id="what-about-updates">What about Updates?</h2>
+<p>A version of Tunnelblick with &quot;Deploy&quot; will work with Tunnelblick's standard update process, either through the the built-in update mechanism, or by reinstalling, upgrading, or downgrading Tunnelblick. An update replaces <code>Tunnelblick.app</code> with a new copy without &quot;Deploy&quot;; however, when the updated program is first run, &quot;Deploy&quot; will be restored from the backup copy, and will then be used normally. Note: &quot;about.html&quot; is not included in standard Tunnelblick updates, so it will be lost when there is a standard update because it is not located in &quot;Deploy&quot;.</p>
+<h2 id="forced-preferences">Forced Preferences</h2>
+<p>Preferences in <code>Deploy/forced-preferences.plist</code> override the user's normal preferences located in <code>~/Library/Preferences/com.openvpn.tunnelblick.plist</code>. Wildcards can be used to simplify the specification of forced preferences for multiple configurations.</p>
+<p>Forced preferences are implemented as follows:</p>
+<ol>
+<li>If a forced preference has the same name as a normal preference, the forced preference is used instead of the normal preference.</li>
+<li>If a forced preference begins with an asterisk (&quot;<code>**</code>&quot;) and the rest of the forced preference matches the end of a normal preference, it is used instead of the normal preference.</li>
+<li>Otherwise the normal preference is used, or the default if there is no normal preference.</li>
+</ol>
+<p>A forced preference consisting only of an asterisk (&quot;<code>*</code>&quot;) will be ignored.</p>
+<p>For example, with forced preferences of <code>*useDNS</code>= TRUE and <code>config1useDNS</code> = FALSE, configuration <code>config1</code> will be forced to not use DNS, and all other configurations will be forced to use DNS. The user will not be able to change any <code>useDNS</code> preferences.</p>
+<p>Another example: forced preferences of <code>*ABCuseDNS</code>= TRUE, <code>*DEFuseDNS</code>= FALSE, configuration <code>configABC</code> will be forced to use DNS, and <code>configDEF</code> will be forced to not use DNS. The user will be able to change <code>useDNS</code> preferences for other configurations, if any.</p>
+<p>There are two <strong>exceptions</strong> to the way forced preferences work:</p>
+<ul>
+<li>All forced preferences with a key beginning with &quot;SU&quot; are ignored. These preferences are used privately by Sparkle Updater (which Tunnelblick uses to update itself), and should not be used. Tunnelblick provides preferences (which can be forced) which control the update process and override these Sparkle preferences.</li>
+<li>Forcing the <em>config-name</em>-keychainHasPrivateKey and <em>config-name</em>-keychainHasUsernameAndPassword preferences — regardless of value — prevent the user from storing or using passphrases, usernames, or passwords for that configuration in the Keychain. Dialog boxes will not include a &quot;Save to Keychain&quot; checkbox, and any passphrases, usernames, and passwords in the Keychain will be ignored.</li>
+</ul>
+<p>See<a href="cPreferences.html">Preferences</a> for a list of all preferences.</p>
+<h2 id="up-and-down-scripts">Up and Down Scripts</h2>
+<p>If &quot;Set nameserver&quot; is selected, <code>Tunnelblick.app</code> starts OpenVPN with the &quot;--up&quot; and &quot;--down&quot; options specifying scripts to be run after the tunnel is established and before it is torn down. The standard scripts are <code>Contents/Resources/client.up.osx.sh</code> and <code>Contents/Resources/client.down.osx.sh</code> if &quot;Monitor connection&quot; is checked, and <code>Contents/Resources/client.nomonitor.up.osx.sh</code> and <code>Contents/Resources/client.nomonitor.down.osx.sh</code> if &quot;Monitor connection&quot; is not checked.</p>
+<p>However, if <code>Contents/Resources/Deploy/</code><em><code>config-name</code></em><code>.up.sh</code>, <em><code>config-name</code></em><code>.down.sh</code>, <em><code>config-name</code></em><code>.nomonitor.up.sh</code>, or <em><code>config-name</code></em><code>.nomonitor.down.sh</code> exist, each will be used instead of the corresponding standard script.</p>
+<h2 id="what-is-needed-to-make-a-deployed-version">What is Needed to Make a Deployed Version</h2>
+<p>To make a deployed version of Tunnelblick, you need whatever is required to connect to your VPN.</p>
+<p>To be more specific, you need:<br />
+ - A copy of the Tunnelblick .dmg file with Tunnelblick version 3.0b22 or later. The latest version may be downloaded from <a href="https://tunnelblick.net">the Tunnelblick website</a>.<br />
+ - Use an unsigned version of the Tunnelblick .dmg if your users will store usernames/passwords/passphrases in the OS X Keychain; otherwise you may use and signed version.<br />
+ - Optional: one or more OpenVPN configuration files, with extensions of &quot;.ovpn&quot; or &quot;.conf&quot;.<br />
+ - Optional: certificate and key files for authentication.<br />
+ - Optional: shell script files, with extension &quot;.sh&quot;, if you do not use Tunnelblick's &quot;Set nameserver&quot; feature. If you have shell files, they must have an extension of &quot;sh&quot;; otherwise they will not have execute permissions.<br />
+ - Optional: &quot;about.html&quot; file, containing text that will be displayed in Tunnelblick's &quot;about&quot; window.<br />
+ - Optional: &quot;forced-preferences.plist&quot; file, containing user preferences that you wish to override.<br />
+ - Optional: other files that you want your configuration file or scripts to be able to use.</p>
+<h2 id="how-to-make-a-deployed-version">How to Make a Deployed Version</h2>
+<pre><code>1. Create a new folder on your Desktop and rename it &quot;Deploy&quot;
+1. Copy any of the optional files you wish to use into the &quot;Deploy&quot; folder
+1. Open the Tunnelblick .dmg file. A new Finder window will appear with (among other things) `Tunnelblick.app`
+1. Drag `Tunnelblick.app` to the Desktop (or some other place you will work with it). This is the copy you will modify to create your deployed version.
+1. Right-click on `Tunnelblick.app`, and click &quot;Show Package Contents&quot;. A new Finder window will appear with a folder &quot;Contents&quot;.
+1. Double-click on &quot;Contents&quot;. The window will change to show several items. One of them is a folder, &quot;Resources&quot;
+1. Option-drag your &quot;Deploy&quot; folder and drop it onto &quot;Resources&quot; to copy the folder into &quot;Resources&quot;
+1. If you have one, copy your &quot;about.html&quot; file into &quot;Resources&quot;
+1. Close the window that contains &quot;Resources&quot;</code></pre>
+<p>That's it! You are done! <code>Tunnelblick.app</code> has your new version of Tunnelblick with a &quot;Deploy&quot; folder containing everything that Tunnelblick needs for connection to your VPN.</p>
+<p>However, <strong>DO NOT RUN THIS COPY</strong>. Instead, make a copy of it and use the copy. When Tunnelblick is first run it makes changes to the ownership and permissions of parts of the application. That makes it inconvenient to copy, move, or modify the application after it has been run without entering administrator credentials, so keep a copy that has never been run.</p>
+<h2 id="how-to-use-a-deployed-version">How to Use a Deployed Version</h2>
+<p>Using a deployed version of Tunnelblick is the same as using a non-deployed version, except:</p>
+<ul>
+<li>You will not be asked for administrator credentials the first time you first connect to a VPN. (Because ownership and permissions on the configuration file(s) was secured the first time the deployed version of Tunnelblick was run on the computer.)</li>
+<li>Anyone with access to a deployed version of <code>Tunnelblick.app</code> can connect to its VPN(s). For example, if a deployed version of <code>Tunnelblick.app</code> is placed in /Applications, it can be accessed by any user of the computer, without requiring administrator credentials to set up secure configuration files in ~/Library/Application Support/Tunnelblick/Configurations — because ~/Library/Application Support/Tunnelblick/Configurations is not used and the configuration files are shared by all users with access to the application.</li>
+</ul>
+<h2 id="creating-a-zip-file-for-deployment">Creating a zip File for Deployment</h2>
+<p>To create a .zip file of your new version of Tunnelblick:<br />
+ 1. Right-click on your new version of Tunnelblick, and click &quot;Compress Tunnelblick.app&quot;<br />
+That's all. There is no step 2. Your .zip file has been created.</p>
+<h2 id="creating-a-dmg-file-for-deployment">Creating a dmg File for Deployment</h2>
+<pre><code>1. Create a new folder on your Desktop and rename it &quot;Tunnelblick&quot;
+1. Copy whatever you want to include in the .dmg file into the folder, including your new version of `Tunnelblick.app`
+1. Open `/Applications/Utilities/Disk Utility`
+1. Chose &quot;File&quot;, then &quot;New&quot;, then &quot;Disk Image from Folder&quot;
+1. Select the folder you set up in steps 1. and 2. and click the &quot;Image&quot; button
+1. Type a name for your .dmg file, and select a location in which to store it
+1. Select &quot;Image Format: compressed&quot;, and &quot;Encryption: none&quot;
+1. Click &quot;Save&quot;</code></pre>
+<p>Within a few moments, your .dmg file will be created.</p>
+
+
+
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+
+
+
+<div class="bottom-translation">
+  <span title="view in German or another language using Google Translate">               <a lang="de"      class="bottom-translation" href="/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcCusDeployed.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;         </a></span>
+  <span title="view in French or another language using Google Translate">               <a lang="fr"      class="bottom-translation" href="/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcCusDeployed.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;        </a></span>
+  <span title="view in Chinese (simplified) or another language using Google Translate"> <a lang="zh-Hans" class="bottom-translation" href="/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcCusDeployed.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp; </a></span>
+  <span title="view in Russian or another language using Google Translate">              <a lang="ru"      class="bottom-translation" href="/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcCusDeployed.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;         </a></span>
+  <span title="view in Spanish or another language using Google Translate">              <a lang="es"      class="bottom-translation" href="/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcCusDeployed.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;         </a></span>
+  <span title="view in Japanese or another language using Google Translate">             <a lang="ja"      class="bottom-translation" href="/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcCusDeployed.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;           </a></span>
+  <span title="view in Italian or another language using Google Translate">              <a                class="bottom-translation" href="/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcCusDeployed.html&amp;sandbox=1">&nbsp;&nbsp;&hellip;&nbsp;&nbsp;        </a></span>
+</div>
+<div class="bottom-copyright">
+  Copyright &copy; 2015-2017 by The Tunnelblick Project.&nbsp;&nbsp;
+</div>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" lang="en">
+	<meta name="description" content="Common Problems - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+	<meta name="referrer" content="never">
+	<title>Common Problems - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+	<link rel="stylesheet" type="text/css"  href="common/style.v5.css">
+	<link rel="icon"       type="image/png" href="common/favicon.v1.png">
+</head>
+
+<body>
+
+<div class="heading">
+	<table>
+		<tr>
+			<td><a href="/"><img src="common/tb-icon-64x64.v1.png" alt="" width="64" height="64"></a></td>
+			<td class="heading1">Tunnelblick</td>
+			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading3">
+                <a href="cLocalizeTranslate.html">We need translators for several languages&hellip;</a><br>
+            </td>
+		</tr>
+	</table>
+</div>
+
+
+<div class="topnav">
+<table class="topnav"><tbody><tr>
+	<td class="topnav-normal"   ><a href="index.html"      class="topnav">Home</a></td>
+	<td class="topnav-normal"   ><a href="downloads.html"  class="topnav">Downloads</a></td>
+	<td class="topnav-normal"   ><a href="support.html"    class="topnav">Support</a></td>
+	<td class="topnav-highlight"><a href="documents.html"  class="topnav">Documents</a></td>
+	<td class="topnav-normal"   ><a href="issues.html"     class="topnav">Issues</a></td>
+	<td class="topnav-normal"   ><a href="source.html"     class="topnav">Source</a></td>
+	<td class="topnav-normal"   ><a href="contribute.html" class="topnav">Contribute</a></td>
+	<td class="topnav-normal"   ><a href="reachus.html"    class="topnav">Contact</a></td>
+	<td class="topnav-padding"  ></td>
+</tbody></table>
+</div>
+
+
+
+<div class="content">
+<div class="content-cCommonProblems">
+<table class="documents">
+  <tr>
+    <td class="documents-left">
+
+
+
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="cFAQ.html">FAQ</a></p>
+
+<p><strong><a href="https://groups.google.com/forum/#&#33;forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="cBeforeYouPost.html">Read Before You Post</a></p>
+
+
+
+    </td>
+    <td class="documents-right">
+    
+
+
+<h1 id="common-problems">Common Problems</h1>
+<p class=toc>On This Page<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#its-complicated">It's complicated!</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#i-used-a-different-program-and-uninstalled-it-but-with-tunnelblick-all-i-can-see-are-my-old-configurations">I used a different program and uninstalled it, but with Tunnelblick all I can see are my old configurations!</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#how-can-you-tell-if-openvpn-connected-to-the-server-properly">How can you tell if OpenVPN connected to the server properly?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#if-openvpn-is-not-connected-to-the-server">If OpenVPN is not connected to the server</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#openvpn-connects-but-you-cant-surf-the-internet">OpenVPN Connects, but you can't surf the Internet</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#a-connection-is-established-but-drops-out-or-is-restarted-after-a-few-minutes-or-dns-stops-working-after-a-few-minutes">A connection is established, but drops out or is restarted after a few minutes, or DNS stops working after a few minutes</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#an-error-messages-says-to-see-details-in-the-console-log">An error messages says to see details in the Console Log</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#an-error-message-says-write-to-tuntap-inputoutput-error-code5">An error message says &quot;write to TUN/TAP : Input/output error (code=5)&quot;</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#an-error-message-says-tunnelblick-could-not-be-launched-because-of-a-problem-with-the-configuration.-please-examine-the-console-log-for-details.">An error message says &quot;Tunnelblick could not be launched because of a problem with the configuration. Please examine the Console Log for details.&quot;</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#an-error-message-says-you-have-tried-to-connect-using-a-configuration-file-that-is-the-same-as-the-sample-configuration-file-installed-by-tunnelblick">An error message says &quot;You have tried to connect using a configuration file that is the same as the sample configuration file installed by Tunnelblick&quot;</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#an-openvpn-log-entry-says-potential-route-subnet-conflict">An OpenVPN log entry says &quot;potential route subnet conflict&quot;</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#an-openvpn-log-entry-says-message-hash-algorithm-sha512-not-found-openssl">An OpenVPN log entry says &quot;Message hash algorithm 'SHA512' not found (OpenSSL)&quot;</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#an-openvpn-log-entry-says-cannot-allocate-tuntap-dev-dynamically">An OpenVPN log entry says &quot;Cannot allocate TUN/TAP dev dynamically&quot;</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#an-openvpn-log-entry-says-tunnelblick-openvpnstart-status-247-error-unable-to-load-tun-and-tap-kexts.-status-71">An OpenVPN log entry says &quot;Tunnelblick: openvpnstart status #247: Error: Unable to load tun and tap kexts. Status = 71&quot;</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#an-openvpn-log-entry-says-tunnelblick-openvpnstart-status-247-error-unable-to-load-net.tunnelblick.tun-andor-net.tunnelblick.tap-kexts-in-5-tries.-status-71">An OpenVPN log entry says &quot;Tunnelblick: openvpnstart status #247: Error: Unable to load net.tunnelblick.tun and/or net.tunnelblick.tap kexts in 5 tries. Status = 71&quot;</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#an-openvpn-log-entry-says-note-unable-to-redirect-default-gateway----cannot-read-current-default-gateway-from-system">An OpenVPN log entry says &quot;Note: unable to redirect default gateway -- Cannot read current default gateway from system&quot;</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#an-openvpn-log-entry-says-cannot-load-certificate-file-xxx.crt-error-02001002system-libraryfopenno-such-file-or-directory-error-20074002bio-routinesfile_ctrlsystem-lib-error140ad002ssl-routines">An OpenVPN log entry says &quot;Cannot load certificate file XXX.crt: error: 02001002:system library:fopen:No such file or directory: error: 20074002:BIO routines:FILE_CTRL:system lib: error:140AD002:SSL routines&quot;</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#an-openvpn-log-entry-says-tls-error-auth-usernamepassword-was-not-provided-by-peer">An OpenVPN log entry says &quot;TLS Error: Auth Username/Password was not provided by peer&quot;</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#an-openvpn-log-entry-says-script-failed-could-not-execute-external-program">An OpenVPN log entry says &quot;script failed: could not execute external program&quot;</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#cannot-empty-the-trash">Cannot Empty the Trash</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#i-am-repeatedly-asked-for-my-password-or-token-value-tunnelblick-3.6.9beta02-or-higher">I am repeatedly asked for my password or token value (Tunnelblick 3.6.9beta02 or higher)</a><br>
+</p> 
+<h2 id="its-complicated">It's complicated!</h2>
+<p>OpenVPN is such a powerful tool with so many options, and computer configurations are so varied, that it is impossible to have an exhaustive troubleshooting guide. This guide is meant for the most common setups, so if it doesn't apply to your situation, or doesn't help, ask the <a href="https://groups.google.com/forum/#&#33;forum/tunnelblick-discuss">Tunnelblick Discussion Group</a> or the <a href="https://lists.sourceforge.net/lists/listinfo/openvpn-users">OpenVPN users mailing list</a> for help.</p>
+<h2 id="i-used-a-different-program-and-uninstalled-it-but-with-tunnelblick-all-i-can-see-are-my-old-configurations">I used a different program and uninstalled it, but with Tunnelblick all I can see are my old configurations!</h2>
+<p>The different program (for example, Urban Shield) uses a customized version of Tunnelblick that makes backups of their configurations and restores them when Tunnelblick starts up, and also hides all other configurations. To solve this problem:</p>
+<ol>
+<li>Rename the /Library/Application Support/Tunnelblick folder to be named Tunnelblick.old. (This will hide the backup, so Tunnelblick doesn't see it and doesn't restore it.)</li>
+<li>Reinstall Tunnelblick from the .dmg (disk image)</li>
+</ol>
+<h2 id="how-can-you-tell-if-openvpn-connected-to-the-server-properly">How can you tell if OpenVPN connected to the server properly?</h2>
+<ol>
+<li>Click on the Tunnelblick icon at the top of the display.</li>
+<li>See what appears in the drop-down list for the configuration you are trying to troubleshoot:
+<ul>
+<li>If the entry shows <strong>Connect xyz</strong>, configuration xyz is <strong>not connected</strong> and Tunnelblick is not trying to connect</li>
+<li>If the entry shows <strong>√ Disconnect xyz</strong>, configuration xyz <strong>is connected</strong></li>
+<li>If the entry shows <strong>- Connect xyz</strong>, Tunnelblick is <strong>trying to connect</strong> configuration xyz</li>
+</ul></li>
+</ol>
+<h2 id="if-openvpn-is-not-connected-to-the-server">If OpenVPN is not connected to the server</h2>
+<p>If OpenVPN can't connect to the server, there should be one or more error messages in the OpenVPN log to indicate what the problem is. To see the OpenVPN log, click on the Tunnelblick icon, click on &quot;VPN Details&quot;, then click on the name of the configuration you are troubleshooting. The OpenVPN log is the large area of black text on a white background. (It contains messages from Tunnelblick in addition to the messages from OpenVPN.)</p>
+<p>Look at lines near the end of the log for an error message.</p>
+<h2 id="openvpn-connects-but-you-cant-surf-the-internet">OpenVPN Connects, but you can't surf the Internet</h2>
+<p>See <a href="cConnectedBut.html">Connects OK, But...</a>.</p>
+<h2 id="a-connection-is-established-but-drops-out-or-is-restarted-after-a-few-minutes-or-dns-stops-working-after-a-few-minutes">A connection is established, but drops out or is restarted after a few minutes, or DNS stops working after a few minutes</h2>
+<p>This can have several causes:</p>
+<ul>
+<li>Another computer on your network is attempting to connect to the VPN using the same credentials.</li>
+<li>You have a version of Tunnelblick earlier than 3.1beta04 and have both &quot;Set nameserver&quot; and &quot;Monitor connection&quot; checked. When DHCP is renewed, the changes can cause earlier versions of Tunnelblick to restart the connection. Update to the latest version of Tunnelblick.</li>
+<li>You have &quot;Monitor connection&quot; UNchecked. When DHCP is renewed, the change is ignored (because &quot;Monitor connection&quot; isn't checked) and the VPN-supplied DNS server is replaced with the DHCP-supplied server. Often a DHCP-supplied server will only respond to queries which originate within that network. Since the DNS queries originate from the VPN, which is outside of that network, the queries will not be answered. Update to the latest version of Tunnelblick and put a check next to &quot;Monitor network&quot;.</li>
+</ul>
+<h2 id="an-error-messages-says-to-see-details-in-the-console-log">An error messages says to see details in the Console Log</h2>
+<p>See <a href="cConsoleLog.html">The Console Log</a> for instructions on viewing the Console Log.</p>
+<h2 id="an-error-message-says-write-to-tuntap-inputoutput-error-code5">An error message says &quot;write to TUN/TAP : Input/output error (code=5)&quot;</h2>
+<p>OpenVPN may display a series of these messages when using a TAP connection. Although a few such messages are normal, if they continue to be displayed for more than a few seconds and the connection is never established, try to connect using &quot;Set nameserver (alternate 1)&quot; in Tunnelblick 3.2beta10 or later.</p>
+<h2 id="an-error-message-says-tunnelblick-could-not-be-launched-because-of-a-problem-with-the-configuration.-please-examine-the-console-log-for-details.">An error message says &quot;Tunnelblick could not be launched because of a problem with the configuration. Please examine the Console Log for details.&quot;</h2>
+<p>This is usually caused by a problem with the private configuration folder. (Tunnelblick sets this up, but if you accidentally delete a critical file or folder, this could happen.) The Console log will contain details about the specific problem. See <a href="cFileLocations.html">File Locations</a> for information about how the files and folders should be set up.</p>
+<p>(See <a href="cConsoleLog.html">The Console Log</a> for instructions on viewing the Console Log.)</p>
+<h2 id="an-error-message-says-you-have-tried-to-connect-using-a-configuration-file-that-is-the-same-as-the-sample-configuration-file-installed-by-tunnelblick">An error message says &quot;You have tried to connect using a configuration file that is the same as the sample configuration file installed by Tunnelblick&quot;</h2>
+<p>This means that you have tried to connect to a VPN without setting up a configuration file. Consult your network administrator or your VPN service provider to obtain configuration and other files or the information you need to modify the sample file. For more information, see <a href="cGettingVPNService.html">Getting VPN Service</a>.</p>
+<h2 id="an-openvpn-log-entry-says-potential-route-subnet-conflict">An OpenVPN log entry says &quot;potential route subnet conflict&quot;</h2>
+<p>This means that the remote network you are creating a VPN to has IP addresses that are also in your local LAN.</p>
+<p>The easiest way to fix this is usually to change the addresses of your local LAN. You do this by changing your router's configuration. For some routers you specify the first three numbers of the LAN (e.g. 192.168.77); in other routers you specify the address of the router itself (e.g. 192.168.77.1).</p>
+<p>After changing the LAN address, you should restart all computers (and other network devices including network printers), so they start using addresses in the new address range.</p>
+<p>Example:<br />
+ <code>WARNING: potential route subnet conflict between local LAN [192.168.1.0/255.255.255.0] and remote VPN [192.168.1.0/255.255.255.0]</code></p>
+<p>This means that both the remote network and your local network are using the 192.168.1.<code>**</code> range of IP addresses. So change your local network to use, for example, 192.168.5.<code>**</code>, or 192.168.23.<code>*</code>. If you get the same warning message, try another address range.</p>
+<h2 id="an-openvpn-log-entry-says-message-hash-algorithm-sha512-not-found-openssl">An OpenVPN log entry says &quot;Message hash algorithm 'SHA512' not found (OpenSSL)&quot;</h2>
+<p>Update to Tunnelblick 3.1beta14 or later.</p>
+<h2 id="an-openvpn-log-entry-says-cannot-allocate-tuntap-dev-dynamically">An OpenVPN log entry says &quot;Cannot allocate TUN/TAP dev dynamically&quot;</h2>
+<p>This problem indicates a problem with the tun/tap kexts.</p>
+<ul>
+<li>It could be caused (prior to Tunnelblick version 3.0b22), by trying to make a connection while running the Snow Leopard kernel in 64 bit mode. Update to the latest version to correct this problem.</li>
+<li>It can be caused by the following sequence in the configuration file:<br />
+dev-type tun<br><br />
+dev abcdefg<br />
+ and a workaround is to change to the single line<br />
+dev tun<br />
+ (or substitute &quot;tap&quot; for &quot;tun&quot; in the above if you are using the tap interface.)</li>
+<li>It can be caused by extra &quot;tun&quot; or &quot;tap&quot; kexts being loaded. See the following entry.</li>
+</ul>
+<h2 id="an-openvpn-log-entry-says-tunnelblick-openvpnstart-status-247-error-unable-to-load-tun-and-tap-kexts.-status-71">An OpenVPN log entry says &quot;Tunnelblick: openvpnstart status #247: Error: Unable to load tun and tap kexts. Status = 71&quot;</h2>
+<p>See the following entry.</p>
+<h2 id="an-openvpn-log-entry-says-tunnelblick-openvpnstart-status-247-error-unable-to-load-net.tunnelblick.tun-andor-net.tunnelblick.tap-kexts-in-5-tries.-status-71">An OpenVPN log entry says &quot;Tunnelblick: openvpnstart status #247: Error: Unable to load net.tunnelblick.tun and/or net.tunnelblick.tap kexts in 5 tries. Status = 71&quot;</h2>
+<p>This means that Tunnelblick was unable to load the tun and/or tap kexts (device drivers) it needs to make a VPN connection. Usually that is because there are incompatible kexts already loaded. Recent versions of Tunnelblick try to be &quot;good citizens&quot; by loading kexts only when needed, and unloading them when they are no longer needed. However, some other VPN clients (CiscoAnyConnect SSL VPN, for example) load their own, incompatible kexts when the computer is started and leave them loaded, whether or not a VPN connection is in use. (Some non-VPN software also loads incompatible kexts — for example, Pogoplug loads a &quot;com.pogoplug.xcetun&quot; tun kext which interferes with Tunnelblick's tun kext.)</p>
+<p>To find out if this is what is causing the problem, use the &quot;kextstat&quot; command in a Terminal window. It will list all of the loaded kexts. Usually the tun and/or tap kexts show up at or near the end of the list. Common tun/taps are:</p>
+<ul>
+<li>net.tunnelblick.tun and net.tunnelblick.tap: These are the kexts used by current versions of Tunnelblick. The appropriate one (tun or tap) is loaded when a connection is requested, and unloaded when it is disconnected.</li>
+<li>foo.tun and foo.tap: These are kexts for obsolete Cisco and Tunnelblick VPN clients (and some others), loaded when an older version of Tunnelblick is launched (and unloaded when the computer restarts). If Tunnelblick detects them, it will offer to unload them before connecting.</li>
+<li>com.cisco.cscotun: This is CiscoAnyConnect SSL VPN kext. Cisco's installer causes it to be loaded when the computer starts.</li>
+<li>com.viscosityvpn.Viscosity.tun and com.viscosityvpn.Viscosity.tap: These are kexts used by the Viscosity VPN client.</li>
+<li>com.pogoplug.xcetun: This kext is associated with Pogoplug.</li>
+<li>anchorfree.tun: This kext is associated withHotSpot Shield VPN.<br />
+But any non-Apple kext with &quot;tun&quot; or &quot;tap&quot; in its name is likely to be causing the problem.</li>
+</ul>
+<p>To unload kexts and allow Tunnelblick to load its own kexts, use the 'kextunload&quot; Terminal command to unload each loaded tun and tap kext individually. For example, to unload com.viscosityvpn.Viscosity.tun, type the following:</p>
+<p><code>sudo kextunload -b com.viscosityvpn.Viscosity.tun</code></p>
+<p>(The &quot;sudo&quot; is necessary because this command modifies the device driver. You will be asked for your administrator password, which will not appear (even as asterisks) when you type it.)</p>
+<p>If you find that restarting your computer reloads the kext you might need to find where it is being loaded from. Common locations are</p>
+<ul>
+<li>/Users/<em>your username</em>/Library/LaunchDaemons</li>
+<li>/Users/<em>your username</em>/Library/LaunchAgents</li>
+<li>/Library/LaunchDaemons</li>
+<li>/Library/LaunchAgents</li>
+<li>/System/Library/LaunchDaemons</li>
+<li>/System/Library/LaunchAgents</li>
+</ul>
+<p>There are a user-contributed scripts on the <a href="downloads.html">Downloads</a> page that will automatically unload the Cisco kext when Tunnelblick makes a connection, and reload the Cisco kext when the connection is disconnected.</p>
+<h2 id="an-openvpn-log-entry-says-note-unable-to-redirect-default-gateway----cannot-read-current-default-gateway-from-system">An OpenVPN log entry says &quot;Note: unable to redirect default gateway -- Cannot read current default gateway from system&quot;</h2>
+<p>There is a problem (in OS X and/or OpenVPN) which causes OpenVPN to be unable to read the default gateway when you try to connect OpenVPN through an existing PPP connection; here is a workaround:</p>
+<blockquote>
+<p>Create a ppp start-up script /etc/ppp/ip-up and add the following:</p>
+
+<code>
+#!/bin/sh<br>
+PATH=/sbin:/usr/sbin/:/usr/bin:/bin<br>
+gw=`ifconfig ppp0|grep inet| awk '{ print $4 }'`<br>
+route change default $gw -ifscope ppp0<br>
+</code>
+
+<p>Save the script and make it executable running <code>chmod a+x /etc/ppp/ip-up</code>.</p>
+
+<p>Please note that the above script was made for interface ppp0. If for any reason you have more/other, make the changes accordingly.</p>
+</blockquote>
+<h2 id="an-openvpn-log-entry-says-cannot-load-certificate-file-xxx.crt-error-02001002system-libraryfopenno-such-file-or-directory-error-20074002bio-routinesfile_ctrlsystem-lib-error140ad002ssl-routines">An OpenVPN log entry says &quot;Cannot load certificate file XXX.crt: error: 02001002:system library:fopen:No such file or directory: error: 20074002:BIO routines:FILE_CTRL:system lib: error:140AD002:SSL routines&quot;</h2>
+<p>Your certificate file (XXX.crt) was not found. Usually the file should be in the same folder as the configuration file, ~/Library/Tunnelblick/Configurations, not in a subfolder. For example, if the configuration file has a line such as<br />
+ cert abcde.crt<br />
+or<br />
+ ca abcde.crt<br />
+then the file abcde.crt should be in the same folder as the configuration. If the configuration file has a line such as<br />
+ cert xyz/abcde.crt<br />
+or<br />
+ ca xyz/abcde.crt<br />
+then the file abcde.crt should be in the xyz subfolder of the folder with the configuration.</p>
+<h2 id="an-openvpn-log-entry-says-tls-error-auth-usernamepassword-was-not-provided-by-peer">An OpenVPN log entry says &quot;TLS Error: Auth Username/Password was not provided by peer&quot;</h2>
+<p>Your client configuration file should include an &quot;auth-user-pass&quot; option.</p>
+<h2 id="an-openvpn-log-entry-says-script-failed-could-not-execute-external-program">An OpenVPN log entry says &quot;script failed: could not execute external program&quot;</h2>
+<p>An up or down script contains an error. Common causes:</p>
+<ul>
+<li>The use of a script file with Windows line breaks (CR-LF) instead of Unix/Mac line breaks (LF).</li>
+<li>The use of a script file that does not have execute permission for root.</li>
+<li>The use of a script file with syntax errors.</li>
+</ul>
+<h2 id="cannot-empty-the-trash">Cannot Empty the Trash</h2>
+<p>If you dragged an old copy of Tunnelblick to the Trash and now cannot empty the Trash and because Finder complains that something is &quot;in use&quot; (probably something named Sparkle.framework), try the following:</p>
+<p>Launch Terminal (in /Applications/Utilities).</p>
+<p>Copy/paste the following into Terminal:</p>
+<pre><code>cd ~/.Trash
+sudo find . -type l -delete</code></pre>
+<p>You will be asked for your password. Type it in (it will not show up as you type it) then press the &quot;enter/return&quot; key on the keyboard.</p>
+<p>Quit Terminal, then try to empty the Trash.</p>
+<h2 id="i-am-repeatedly-asked-for-my-password-or-token-value-tunnelblick-3.6.9beta02-or-higher">I am repeatedly asked for my password or token value (Tunnelblick 3.6.9beta02 or higher)</h2>
+<p>In Tunnelblick 3.6.9beta02, OpenVPN 2.3.13 is included. OpenVPN 2.3.13 contains a new measure to increase security and avoid <a href="https://sweet32.info/">SWEET32</a> attacks: the connection will be renegotiated every 64 MB for &quot;small block&quot; ciphers (including the default &quot;Blowfish&quot; cipher).</p>
+<p>For some OpenVPN setups that use &quot;small block&quot; ciphers and username/password authentication or two-factor authentication (2FA), this can be very annoying because the user will be asked to authenticate each time 64 MB has been transferred through the VPN.</p>
+<p>There are several ways to avoid the problem:</p>
+<ul>
+<li>Use OpenVPN 2.3.12. (Not a good long-term solution.)</li>
+<li>Use a cipher which is not a &quot;small block&quot; cipher. (This must be done on both OpenVPN client and OpenVPN server.)</li>
+<li>Use OpenVPN 2.4 and enable cipher negotiation. This must be done on both the server and client.</li>
+<li>For username/password authentication, have Tunnelblick save the username and password in the Keychain.</li>
+<li>For 2FA, do not use --auth-nocache, and use the --auth-token option in the client-connect and auth-user-pass-verify scripts on the server side to ask for 2FA once per session only.</li>
+</ul>
+<p>More information is available at <a href="https://community.openvpn.net/openvpn/wiki/SWEET32">OpenVPN and SWEET32</a>.</p>
+
+
+
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+
+
+
+<div class="bottom-translation">
+  <span title="view in German or another language using Google Translate">               <a lang="de"      class="bottom-translation" href="/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcCommonProblems.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;         </a></span>
+  <span title="view in French or another language using Google Translate">               <a lang="fr"      class="bottom-translation" href="/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcCommonProblems.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;        </a></span>
+  <span title="view in Chinese (simplified) or another language using Google Translate"> <a lang="zh-Hans" class="bottom-translation" href="/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcCommonProblems.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp; </a></span>
+  <span title="view in Russian or another language using Google Translate">              <a lang="ru"      class="bottom-translation" href="/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcCommonProblems.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;         </a></span>
+  <span title="view in Spanish or another language using Google Translate">              <a lang="es"      class="bottom-translation" href="/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcCommonProblems.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;         </a></span>
+  <span title="view in Japanese or another language using Google Translate">             <a lang="ja"      class="bottom-translation" href="/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcCommonProblems.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;           </a></span>
+  <span title="view in Italian or another language using Google Translate">              <a                class="bottom-translation" href="/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcCommonProblems.html&amp;sandbox=1">&nbsp;&nbsp;&hellip;&nbsp;&nbsp;        </a></span>
+</div>
+<div class="bottom-copyright">
+  Copyright &copy; 2015-2017 by The Tunnelblick Project.&nbsp;&nbsp;
+</div>
+</body>
+</html>

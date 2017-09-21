@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" lang="en">
+	<meta name="description" content="Tunnelblick and openvpn_xorpatch - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+	<meta name="referrer" content="never">
+	<title>Tunnelblick and openvpn_xorpatch - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+	<link rel="stylesheet" type="text/css"  href="common/style.v5.css">
+	<link rel="icon"       type="image/png" href="common/favicon.v1.png">
+</head>
+
+<body>
+
+<div class="heading">
+	<table>
+		<tr>
+			<td><a href="/"><img src="common/tb-icon-64x64.v1.png" alt="" width="64" height="64"></a></td>
+			<td class="heading1">Tunnelblick</td>
+			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading3">
+                <a href="cLocalizeTranslate.html">We need translators for several languages&hellip;</a><br>
+            </td>
+		</tr>
+	</table>
+</div>
+
+
+<div class="topnav">
+<table class="topnav"><tbody><tr>
+	<td class="topnav-normal"   ><a href="index.html"      class="topnav">Home</a></td>
+	<td class="topnav-normal"   ><a href="downloads.html"  class="topnav">Downloads</a></td>
+	<td class="topnav-normal"   ><a href="support.html"    class="topnav">Support</a></td>
+	<td class="topnav-highlight"><a href="documents.html"  class="topnav">Documents</a></td>
+	<td class="topnav-normal"   ><a href="issues.html"     class="topnav">Issues</a></td>
+	<td class="topnav-normal"   ><a href="source.html"     class="topnav">Source</a></td>
+	<td class="topnav-normal"   ><a href="contribute.html" class="topnav">Contribute</a></td>
+	<td class="topnav-normal"   ><a href="reachus.html"    class="topnav">Contact</a></td>
+	<td class="topnav-padding"  ></td>
+</tbody></table>
+</div>
+
+
+
+<div class="content">
+<div class="content-cOpenvpn_xorpatch">
+<table class="documents">
+  <tr>
+    <td class="documents-left">
+
+
+
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="cFAQ.html">FAQ</a></p>
+
+<p><strong><a href="https://groups.google.com/forum/#&#33;forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="cBeforeYouPost.html">Read Before You Post</a></p>
+
+
+
+    </td>
+    <td class="documents-right">
+    
+
+
+<h1 id="tunnelblick-and-openvpn_xorpatch">Tunnelblick and openvpn_xorpatch</h1>
+<p class=toc>On This Page<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#the-openvpn_xorpatch-controversy">The openvpn_xorpatch Controversy</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tunnelblicks-view">Tunnelblick's View</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#critical-warning">Critical Warning</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tunnelblick-modifications-to-the-patch">Tunnelblick Modifications to the Patch</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#scramble-option-syntax">Scramble Option Syntax</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#the-patch-as-modified-for-use-in-tunnelblick">The Patch as Modified for Use in Tunnelblick</a><br>
+</p> 
+<hr />
+<h2 id="the-openvpn_xorpatch-controversy">The openvpn_xorpatch Controversy</h2>
+<p>A <a href="https://github.com/clayface/openvpn_xorpatch/blob/master/openvpn_xor.patch">patch</a> to add a &quot;scramble&quot; option to OpenVPN was proposed in April, 2013. The option can be useful to avoid having OpenVPN traffic detected by monitoring or censoring mechanisms such as the Great Firewall of China. The option &quot;scrambles&quot; each buffer of traffic before it is sent between the OpenVPN client and server.</p>
+<p>However, the patch is controversial: it was not accepted as an addition to OpenVPN by the OpenVPN developers. There is a long <a href="https://forums.openvpn.net/viewtopic.php?f=15&amp;t=12605&amp;hilit=openvpn_xorpatch">discussion of the patch</a> on the OpenVPN Community Support Forum. The <a href="https://forums.openvpn.net/viewtopic.php?f=15&amp;t=12605&amp;hilit=openvpn_xorpatch&amp;sid=05c4d721ea2058ad1d2212e91bc3d897&amp;start=60#p49837">last post</a> is:</p>
+<blockquote>
+"We (OpenVPN developers) do not encourage people building their own versions of OpenVPN changing the wire-protocol like this, without the patch being through a proper patch review and having evaluated possible security risks related to such a change.<br><br>
+
+"And we especially discourage using such an approach when there exists a far better solution, used by the TOR community. It is called obfsproxy and can be used together with OpenVPN without needing any re-compilation of OpenVPN.<br><br>
+
+"For more information, have a look at these URLs<br>
+ http://community.openvpn.net/openvpn/wiki/TrafficObfuscation<br>
+ https://www.torproject.org/projects/obfsproxy.html.en<br><br>
+
+"To avoid confusing users further going for a possibly insecure setup , this thread will be locked now."
+</blockquote>
+<p>In December 2016, further discussion took place on the OpenVPN users mailing list. OpenVPN developers again explained why they do not want to include the patch in OpenVPN and discussed alternatives. See <a href="https://sourceforge.net/p/openvpn/mailman/openvpn-users/thread/DFBD5589-71CB-41CD-B7A7-F2A540380E33%40haloprivacy.com/#msg35560747">(https://sourceforge.net/p/openvpn/mailman/openvpn-users/thread/DFBD5589-71CB-41CD-B7A7-F2A540380E33%40haloprivacy.com/#msg35560747</a>.</p>
+<h2 id="tunnelblicks-view">Tunnelblick's View</h2>
+<p>Regardless of the OpenVPN developers decision not to include the patch in OpenVPN, the patch is attractive because it is so easy to implement: simply apply the patch to both the OpenVPN server and the OpenVPN client and add a single, identical option to the configuration files for each. Using obfsproxy is more complicated because it involves running another, separate program on both the server and the client.</p>
+<p>Because the patch is so easy to implement, the patch is included in all versions of OpenVPN that are included in Tunnelblick as of build 4420.</p>
+<h2 id="critical-warning">Critical Warning</h2>
+<p>The original post proposing the patch claims that using the patch is sufficient to secure communications and that no other encryption is necessary:</p>
+<blockquote>
+"With this obfuscate option, I think that it is ok to use "cipher none", because working out the method used would take a lot of cryptoanalysis. The obfuscate option is also much easier on the CPU than any cipher options This is incase you are using ddwrt or openwrt or have a low speed cpu."
+</blockquote>
+<p><strong>Do not take this advice!</strong> The obfuscation provided by this patch appears to be extremely rudimentary. Beware of cryptographic advice from amateur cryptographers!</p>
+<p>Large organizations have the ability and power to &quot;unscramble&quot; traffic and detect it as OpenVPN traffic, and the obfuscation provided by this patch is so rudimentary that relatively simple cryptanalysis will probably be able to unscramble the content, too.</p>
+<h2 id="tunnelblick-modifications-to-the-patch">Tunnelblick Modifications to the Patch</h2>
+<p>As the OpenVPN developers point out, the patch has never been through a thorough review for security, coding, etc. However, a Tunnelblick developer has reviewed the patch, found some problems, and modified it in Tunnelblick to resolve those problems. The problems that were found and fixed involved insufficient parameter validation, null pointer dereferences, division by zero errors, and a buffer overflow. Some defensive programming was also added to the modified version of the patch to increase its robustness.</p>
+<p>I invite anyone/everyone to review the patch and report any problems, either to the Tunnelblick Discussion Group or to <a href="reachus.html">the developers</a>. Details of the patch are below.</p>
+<h2 id="scramble-option-syntax">Scramble Option Syntax</h2>
+<p>Note: The &quot;scramble&quot; option and parameters in the server and client configuration files must match.</p>
+<p>scramble <em>xor_string</em><br><br />
+ scramble xormask <em>xor_string</em><br><br />
+ These options XOR the bytes in each buffer with <em>xor_string</em>.</p>
+<p>scramble reverse<br><br />
+ The &quot;reverse&quot; option reverses order of the bytes in each buffer (except that the first byte is unchanged). So &quot;abcde&quot; becomes &quot;aedcb&quot;.</p>
+<p>scramble xorptrpos<br><br />
+ The &quot;xorptrpos&quot; option XORs each byte of the buffer of traffic with the position in the buffer.</p>
+<p>scramble obfuscate <em>password</em><br><br />
+ The &quot;obfuscate&quot; option performs several of the above steps, using <em>password</em> as the <em>xor_string</em> in one of the steps.</p>
+<h2 id="the-patch-as-modified-for-use-in-tunnelblick">The Patch as Modified for Use in Tunnelblick</h2>
+<p>Tunnelblick's build process expands OpenVPN, applies patches, and then builds from the patched source code.</p>
+<p>In recent versions of Tunnelblick, the patch has been broken into five separate .diff files, with each .diff modifying a single file in the OpenVPN source code. (This is done to make it easier to modify the patch when the underlying OpenVPN source code is changed.)</p>
+<p>Files with patches for each particular version of OpenVPN are located in the Tunnelblick source code in a &quot;patches&quot; folder specific to that version of OpenVPN. The path to patches for OpenVPN version X.Y.Z would be</p>
+<p><code>.../third_party/sources/openvpn/X.Y.Z/patches</code></p>
+
+
+
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+
+
+
+<div class="bottom-translation">
+  <span title="view in German or another language using Google Translate">               <a lang="de"      class="bottom-translation" href="/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcOpenvpn_xorpatch.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;         </a></span>
+  <span title="view in French or another language using Google Translate">               <a lang="fr"      class="bottom-translation" href="/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcOpenvpn_xorpatch.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;        </a></span>
+  <span title="view in Chinese (simplified) or another language using Google Translate"> <a lang="zh-Hans" class="bottom-translation" href="/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcOpenvpn_xorpatch.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp; </a></span>
+  <span title="view in Russian or another language using Google Translate">              <a lang="ru"      class="bottom-translation" href="/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcOpenvpn_xorpatch.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;         </a></span>
+  <span title="view in Spanish or another language using Google Translate">              <a lang="es"      class="bottom-translation" href="/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcOpenvpn_xorpatch.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;         </a></span>
+  <span title="view in Japanese or another language using Google Translate">             <a lang="ja"      class="bottom-translation" href="/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcOpenvpn_xorpatch.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;           </a></span>
+  <span title="view in Italian or another language using Google Translate">              <a                class="bottom-translation" href="/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcOpenvpn_xorpatch.html&amp;sandbox=1">&nbsp;&nbsp;&hellip;&nbsp;&nbsp;        </a></span>
+</div>
+<div class="bottom-copyright">
+  Copyright &copy; 2015-2017 by The Tunnelblick Project.&nbsp;&nbsp;
+</div>
+</body>
+</html>

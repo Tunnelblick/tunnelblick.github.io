@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" lang="en">
+	<meta name="description" content="The Tunnelblick Log - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+	<meta name="referrer" content="never">
+	<title>The Tunnelblick Log - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+	<link rel="stylesheet" type="text/css"  href="common/style.v5.css">
+	<link rel="icon"       type="image/png" href="common/favicon.v1.png">
+</head>
+
+<body>
+
+<div class="heading">
+	<table>
+		<tr>
+			<td><a href="/"><img src="common/tb-icon-64x64.v1.png" alt="" width="64" height="64"></a></td>
+			<td class="heading1">Tunnelblick</td>
+			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading3">
+                <a href="cLocalizeTranslate.html">We need translators for several languages&hellip;</a><br>
+            </td>
+		</tr>
+	</table>
+</div>
+
+
+<div class="topnav">
+<table class="topnav"><tbody><tr>
+	<td class="topnav-normal"   ><a href="index.html"      class="topnav">Home</a></td>
+	<td class="topnav-normal"   ><a href="downloads.html"  class="topnav">Downloads</a></td>
+	<td class="topnav-normal"   ><a href="support.html"    class="topnav">Support</a></td>
+	<td class="topnav-highlight"><a href="documents.html"  class="topnav">Documents</a></td>
+	<td class="topnav-normal"   ><a href="issues.html"     class="topnav">Issues</a></td>
+	<td class="topnav-normal"   ><a href="source.html"     class="topnav">Source</a></td>
+	<td class="topnav-normal"   ><a href="contribute.html" class="topnav">Contribute</a></td>
+	<td class="topnav-normal"   ><a href="reachus.html"    class="topnav">Contact</a></td>
+	<td class="topnav-padding"  ></td>
+</tbody></table>
+</div>
+
+
+
+<div class="content">
+<div class="content-cOpenVPNLog">
+<table class="documents">
+  <tr>
+    <td class="documents-left">
+
+
+
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="cFAQ.html">FAQ</a></p>
+
+<p><strong><a href="https://groups.google.com/forum/#&#33;forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="cBeforeYouPost.html">Read Before You Post</a></p>
+
+
+
+    </td>
+    <td class="documents-right">
+    
+
+
+<h1 id="the-tunnelblick-log">The Tunnelblick Log</h1>
+<p>The Tunnelblick log is the record of output from OpenVPN for a connection. It includes entries from Tunnelblick giving additional information.</p>
+<p>*<span class="red"><strong>If you want help troubleshooting connection problems, please set the &quot;verb&quot; level in your configuration file to &quot;3&quot; before making a connection attempt.</strong></span></p>
+<p>You can set the &quot;verb&quot; level to &quot;3&quot; by adding the following line in your configuration file:</p>
+<pre><code> verb 3</code></pre>
+<p>If there is already such a line with a different number, just change the number. If there is already a line with a &quot;3&quot;, leave it alone.</p>
+<p>The level of detail about OpenVPN operations in the log is controlled by OpenVPN's &quot;verb&quot; option. The default (if no &quot;verb&quot; option appears in the configuration file) is &quot;verb 3&quot;. That usually provides sufficient information for finding problems, and does not log anything about ordinary traffic through the VPN, so it is the best choice. &quot;verb&quot; levels higher than 3 are usually not necessary, and &quot;verb&quot; levels 1 and 2 do not usually provide sufficient information to determine why a connection fails.</p>
+<p><strong>NOTE: Tunnelblick 3.3beta38 and higher will include the Tunnelblick log in the data copied to the Clipboard by the 'Copy Diagnostic Info to the Clipboard' button on the 'Settings' tab of the 'Configurations' panel of the 'VPN Details' window.</strong></p>
+<p>You can view the Tunnelblick log for a configuration as follows:</p>
+<ul>
+<li>Tunnelblick 3.2 and up:</li>
+</ul>
+<ol>
+<li>Click on the Tunnelblick icon at the top of the screen;</li>
+<li>Click &quot;VPN Details&quot;;</li>
+<li>Select the &quot;Configurations&quot; pane at the top;</li>
+<li>Select the configuration in the list on the left;</li>
+<li>To copy the log to the Clipboard, click the &quot;Copy Log to Clipboard&quot; button.</li>
+</ol>
+<ul>
+<li>Earlier versions of Tunnelblick:</li>
+</ul>
+<ol>
+<li>Click on the Tunnelblick icon at the top of the screen;</li>
+<li>Click &quot;Details&quot;;</li>
+<li>Select the &quot;Configurations&quot; pane at the top;</li>
+<li>Select the configuration in the list on the left or select the tab for the configuration;</li>
+<li>To copy the log to the Clipboard, type Command-A, then Command-C.</li>
+</ol>
+<p><strong>Tunnelblick adds information to the log</strong>:</p>
+<ul>
+<li><p>When started or when the log is cleared, Tunnelblick adds a line listing the versions of OS X, Tunnelblick, and OpenVPN.</p></li>
+<li><p>When a connection attempt is made, Tunnelblick adds details to the log about what Tunnelblick does (as opposed to what OpenVPN does).</p></li>
+<li><p>When OpenVPN notifies Tunnelblick that the connection is being terminated or restarted.</p></li>
+<li><p>When the computer's system configuration changes.</p></li>
+</ul>
+<p>Sometimes entries in the log (which are prefixed by the date and time) appear out of sequence. This is because the different programs writing to the log (Tunnelblick, OpenVPN, and scripts) buffer their output. In general, though, the dates and times listed are correct.</p>
+<p><strong>You may use the standard keyboard shortcuts</strong>:<br />
+||Command-C||Copy||<br />
+||Command-X||Cut||<br />
+||Command-V||Paste||<br />
+||Command-A||Select all the text in the log||<br />
+||Command-M||Minimize the window to the dock||<br />
+||Command-W||Close the window||<br />
+||Command-Q||Quit Tunnelblick||</p>
+
+
+
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+
+
+
+<div class="bottom-translation">
+  <span title="view in German or another language using Google Translate">               <a lang="de"      class="bottom-translation" href="/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcOpenVPNLog.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;         </a></span>
+  <span title="view in French or another language using Google Translate">               <a lang="fr"      class="bottom-translation" href="/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcOpenVPNLog.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;        </a></span>
+  <span title="view in Chinese (simplified) or another language using Google Translate"> <a lang="zh-Hans" class="bottom-translation" href="/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcOpenVPNLog.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp; </a></span>
+  <span title="view in Russian or another language using Google Translate">              <a lang="ru"      class="bottom-translation" href="/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcOpenVPNLog.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;         </a></span>
+  <span title="view in Spanish or another language using Google Translate">              <a lang="es"      class="bottom-translation" href="/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcOpenVPNLog.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;         </a></span>
+  <span title="view in Japanese or another language using Google Translate">             <a lang="ja"      class="bottom-translation" href="/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcOpenVPNLog.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;           </a></span>
+  <span title="view in Italian or another language using Google Translate">              <a                class="bottom-translation" href="/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcOpenVPNLog.html&amp;sandbox=1">&nbsp;&nbsp;&hellip;&nbsp;&nbsp;        </a></span>
+</div>
+<div class="bottom-copyright">
+  Copyright &copy; 2015-2017 by The Tunnelblick Project.&nbsp;&nbsp;
+</div>
+</body>
+</html>

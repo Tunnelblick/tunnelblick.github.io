@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" lang="en">
+	<meta name="description" content="Converting a Deployed Version of Tunnelblick to a regular Version - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+	<meta name="referrer" content="never">
+	<title>Converting a Deployed Version of Tunnelblick to a regular Version - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+	<link rel="stylesheet" type="text/css"  href="common/style.v5.css">
+	<link rel="icon"       type="image/png" href="common/favicon.v1.png">
+</head>
+
+<body>
+
+<div class="heading">
+	<table>
+		<tr>
+			<td><a href="/"><img src="common/tb-icon-64x64.v1.png" alt="" width="64" height="64"></a></td>
+			<td class="heading1">Tunnelblick</td>
+			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading3">
+                <a href="cLocalizeTranslate.html">We need translators for several languages&hellip;</a><br>
+            </td>
+		</tr>
+	</table>
+</div>
+
+
+<div class="topnav">
+<table class="topnav"><tbody><tr>
+	<td class="topnav-normal"   ><a href="index.html"      class="topnav">Home</a></td>
+	<td class="topnav-normal"   ><a href="downloads.html"  class="topnav">Downloads</a></td>
+	<td class="topnav-normal"   ><a href="support.html"    class="topnav">Support</a></td>
+	<td class="topnav-highlight"><a href="documents.html"  class="topnav">Documents</a></td>
+	<td class="topnav-normal"   ><a href="issues.html"     class="topnav">Issues</a></td>
+	<td class="topnav-normal"   ><a href="source.html"     class="topnav">Source</a></td>
+	<td class="topnav-normal"   ><a href="contribute.html" class="topnav">Contribute</a></td>
+	<td class="topnav-normal"   ><a href="reachus.html"    class="topnav">Contact</a></td>
+	<td class="topnav-padding"  ></td>
+</tbody></table>
+</div>
+
+
+
+<div class="content">
+<div class="content-cCvtDeployed">
+<table class="documents">
+  <tr>
+    <td class="documents-left">
+
+
+
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="cFAQ.html">FAQ</a></p>
+
+<p><strong><a href="https://groups.google.com/forum/#&#33;forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="cBeforeYouPost.html">Read Before You Post</a></p>
+
+
+
+    </td>
+    <td class="documents-right">
+    
+
+
+<h1 id="converting-a-deployed-version-of-tunnelblick-to-a-regular-version">Converting a Deployed Version of Tunnelblick to a regular Version</h1>
+<p class=toc>On This Page<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#why-you-may-want-to-do-this">Why You May Want to Do This</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#how-to-for-experts">How To for Experts</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#how-to-for-everyone-else">How To for Everyone Else</a><br>
+</p> 
+<hr />
+<h2 id="why-you-may-want-to-do-this">Why You May Want to Do This</h2>
+<p>The latest versions of Tunnelblick include important security changes. These changes modified the way that &quot;Deployed&quot; versions of Tunnelblick are created and are difficult for some VPN service providers to implement, so some of them continue to supply old &quot;Deployed&quot; versions to their users.</p>
+<p>If you are using such an older &quot;Deployed&quot; version of Tunnelblick, you may want to convert to using a non-Deployed version so that you can use the latest versions of Tunnelblick which include the security changes.</p>
+<p><em>Note: Installing a Deployed version of Tunnelblick will &quot;poison&quot; an already-installed &quot;regular&quot; version. If you do so, it will be necessary to follow these instructions again, especially the &quot;completely uninstall Tunnelblick&quot; part of the instructions.</em></p>
+<p>If you are a VPN service provider distributing older Deployed versions of Tunnelblick, you may want to update them or change to using &quot;automatically installed&quot; configurations with a regular version of Tunnelblick. See <a href="cDistribute.html">Distributing Tunnelblick</a> for details.</p>
+<hr />
+<h2 id="how-to-for-experts">How To for Experts</h2>
+<ol>
+<li>Copy (do not move)<br><strong>Tunnelblick.app/Contents/Resources/Deploy</strong><br>to the Desktop.<br></li>
+<li><a href="cUninstall.html">Completely uninstall Tunnelblick</a>.<br></li>
+<li>Install the latest version of Tunnelblick from <a href="downloads.html">Tunnelblick Downloads</a>. Launch Tunnelblick and proceed normally; quit when you are asked about configurations</li>
+<li>Copy the contents of the Deploy folder (not the folder itself) on the Desktop into<br> <strong>~/Library/Application Support/Tunnelblick/Configurations</strong> <em>(note the &quot;~&quot;)</em></li>
+<li>Launch Tunnelblick and allow the configurations to be converted.</li>
+<li>Enjoy!</li>
+</ol>
+<hr />
+<h2 id="how-to-for-everyone-else">How To for Everyone Else</h2>
+<p>You can use the following instructions to convert from using a Deployed version of Tunnelblick to using a &quot;regular&quot; version. These are extremely detailed, click-by-click instructions:</p>
+<ol>
+<li>Extract the configurations from the Deployed version of Tunnelblick and save them:</li>
+<li>Find the copy of Tunnelblick.app that you are using. It may be in /Applications, but older versions of Tunnelblick (before version 3.3beta22) can be installed anywhere.</li>
+<li>Control-click (hold down the &quot;control&quot; key on the keyboard and click) on Tunnelblick.app and select &quot;Show Package Contents&quot;. A new Finder window will appear with the single folder &quot;Contents&quot;.</li>
+<li>Double-click on &quot;Contents&quot;, and the window will change to include several items.</li>
+<li>Double-click on &quot;Resources&quot;, and the window will change to include many items (usually more than 70)</li>
+<li>Find the folder named &quot;Deploy&quot; and Option-drag it to an empty space on the Desktop (that is, drag the folder while holding down the &quot;option&quot; key). This will create a new copy of the folder on the Desktop.</li>
+<li>Completely uninstall Tunnelblick, <strong>using the instructions at <a href="cUninstall.html">Uninstalling Tunnelblick</a></strong>. <span class="red"><strong>&lt;== CRITICAL</strong></span></li>
+<li>Install a recent version of Tunnelblick:</li>
+<li>Download a new version of Tunnelblick from <a href="downloads.html">Tunnelblick Downloads</a>.</li>
+<li>Install it by double-clicking on the &quot;Tunnelblick.app&quot; icon. (Depending on your browser, you may need to find and double-click on the downloaded Tunnelblick.dmg file first.)</li>
+<li>When asked for your username and/or password, provide your computer administrator username/password, not your VPN password.</li>
+<li>Answer the questions about updating Tunnelblick and checking for IP address changes as you wish.</li>
+<li>Quit Tunnelblick when you are asked a question about configurations.</li>
+<li>Prepare to use the saved VPN configurations you saved in step 1.</li>
+<li>Open the user's &quot;Library/Application Support/Tunnelblick/Configurations&quot; folder:</li>
+<li>Open a new Finder window.</li>
+<li>Hold down the &quot;option&quot; key on the keyboard and click on the &quot;Go&quot; menu item. Keeping the &quot;option&quot; key held down, click on &quot;Library&quot;, then release the &quot;option&quot; key. The Finder window will change to show the &quot;Library&quot; folder.</li>
+<li>Double-click the &quot;Application Support&quot; folder.</li>
+<li>Double-click the &quot;Tunnelblick folder&quot;.</li>
+<li>Double-click the &quot;Configurations&quot; folder. The window should be empty because there are no configurations.</li>
+<li>Double-click the &quot;Deploy&quot; folder on your Desktop. A Finder window will appear with the files and folders that contain your VPN configurations.</li>
+<li>Option-drag everything in that window to the empty &quot;Configurations&quot; Finder window.</li>
+<li>Convert the OpenVPN configurations to be Tunnelblick VPN Configurations:</li>
+<li>Launch Tunnelblick. You will be asked if you want to convert the configurations. Click the button to &quot;Convert&quot;.</li>
+<li>(There is no step 2!)</li>
+<li>Enjoy!</li>
+</ol>
+
+
+
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+
+
+
+<div class="bottom-translation">
+  <span title="view in German or another language using Google Translate">               <a lang="de"      class="bottom-translation" href="/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcCvtDeployed.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;         </a></span>
+  <span title="view in French or another language using Google Translate">               <a lang="fr"      class="bottom-translation" href="/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcCvtDeployed.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;        </a></span>
+  <span title="view in Chinese (simplified) or another language using Google Translate"> <a lang="zh-Hans" class="bottom-translation" href="/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcCvtDeployed.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp; </a></span>
+  <span title="view in Russian or another language using Google Translate">              <a lang="ru"      class="bottom-translation" href="/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcCvtDeployed.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;         </a></span>
+  <span title="view in Spanish or another language using Google Translate">              <a lang="es"      class="bottom-translation" href="/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcCvtDeployed.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;         </a></span>
+  <span title="view in Japanese or another language using Google Translate">             <a lang="ja"      class="bottom-translation" href="/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcCvtDeployed.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;           </a></span>
+  <span title="view in Italian or another language using Google Translate">              <a                class="bottom-translation" href="/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcCvtDeployed.html&amp;sandbox=1">&nbsp;&nbsp;&hellip;&nbsp;&nbsp;        </a></span>
+</div>
+<div class="bottom-copyright">
+  Copyright &copy; 2015-2017 by The Tunnelblick Project.&nbsp;&nbsp;
+</div>
+</body>
+</html>
