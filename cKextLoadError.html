@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" lang="en">
+	<meta name="description" content="Errors Loading Kexts (Device Drivers) - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+	<meta name="referrer" content="never">
+	<title>Errors Loading Kexts (Device Drivers) - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+	<link rel="stylesheet" type="text/css"  href="/common/style.v5.css">
+	<link rel="icon"       type="image/png" href="/common/favicon.v1.png">
+</head>
+
+<body>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2017-10-19 18:55:38 UTC</font></td></tr></table></center>
+
+<div class="heading">
+	<table>
+		<tr>
+			<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
+			<td class="heading1">Tunnelblick</td>
+			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading3">
+                <a href="/cLocalizeTranslate.html">We need translators for several languages&hellip;</a><br>
+            </td>
+		</tr>
+	</table>
+</div>
+
+
+<div class="topnav">
+<table class="topnav"><tbody><tr>
+	<td class="topnav-normal"   ><a href="/index.html"      class="topnav">Home</a></td>
+	<td class="topnav-normal"   ><a href="/downloads.html"  class="topnav">Downloads</a></td>
+	<td class="topnav-normal"   ><a href="/support.html"    class="topnav">Support</a></td>
+	<td class="topnav-highlight"><a href="/documents.html"  class="topnav">Documents</a></td>
+	<td class="topnav-normal"   ><a href="/issues.html"     class="topnav">Issues</a></td>
+	<td class="topnav-normal"   ><a href="/source.html"     class="topnav">Source</a></td>
+	<td class="topnav-normal"   ><a href="/contribute.html" class="topnav">Contribute</a></td>
+	<td class="topnav-normal"   ><a href="/reachus.html"    class="topnav">Contact</a></td>
+	<td class="topnav-padding"  ></td>
+</tbody></table>
+</div>
+
+
+
+<div class="content">
+<div class="content-cKextLoadError">
+<table class="documents">
+  <tr>
+    <td class="documents-left">
+
+
+
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="/cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="/czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="/cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="/cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="/cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="/cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="/cFAQ.html">FAQ</a></p>
+
+<p><strong><a href="https://groups.google.com/forum/#&#33;forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="/cBeforeYouPost.html">Read Before You Post</a></p>
+
+
+
+    </td>
+    <td class="documents-right">
+    
+
+
+<h1 id="errors-loading-kexts-device-drivers">Errors Loading Kexts (Device Drivers)</h1>
+<p>If you see the following:</p>
+<p><strong>Tunnelblick was not able to load a device driver (kext) that is needed to connect...</strong></p>
+<p>There are two likely reasons:</p>
+<hr>
+<p>If you are using macOS High Sierra, you may not have allowed Tunnelblick to load the kext. See <a href="cKextLoadErrorHighSierra.html">Errors Loading Kexts (Device Drivers) on macOS High Sierra (10.13)</a>;</p>
+<hr>
+<p>There may be incompatible kexts already loaded. Recent versions of Tunnelblick try to be &quot;good citizens&quot; by loading kexts only when needed, and unloading them when they are no longer needed. However, some other VPN clients (CiscoAnyConnect SSL VPN, for example) load their own, incompatible kexts when the computer is started and leave them loaded, whether or not a VPN connection is in use. (Some non-VPN software also loads incompatible kexts — for example, Pogoplug loads a &quot;com.pogoplug.xcetun&quot; tun kext which interferes with Tunnelblick's tun kext.)</p>
+<p>To find out if this is what is causing the problem, use the &quot;kextstat&quot; command in a Terminal window. It will list all of the loaded kexts. Usually the tun and/or tap kexts show up at or near the end of the list. Common tun/taps are:</p>
+<ul>
+<li>net.tunnelblick.tun and net.tunnelblick.tap: These are the kexts used by current versions of Tunnelblick. The appropriate one (tun or tap) is loaded when a connection is requested, and unloaded when it is disconnected.</li>
+<li>foo.tun and foo.tap: These are kexts for obsolete Cisco and Tunnelblick VPN clients (and some others), loaded when a very version of Tunnelblick is launched (and unloaded when the computer restarts). If Tunnelblick detects them, it will offer to unload them before connecting.</li>
+<li>com.cisco.cscotun: This is CiscoAnyConnect SSL VPN kext. Cisco's installer causes it to be loaded when the computer starts.</li>
+<li>com.viscosityvpn.Viscosity.tun and com.viscosityvpn.Viscosity.tap: These are kexts used by the Viscosity VPN client.</li>
+<li>com.pogoplug.xcetun: This kext is associated with Pogoplug.</li>
+<li>anchorfree.tun: This kext is associated withHotSpot Shield VPN.<br />
+But any non-Apple kext with &quot;tun&quot; or &quot;tap&quot; in its name is likely to be causing the problem.</li>
+</ul>
+<p>To unload kexts and allow Tunnelblick to load its own kexts, use the 'kextunload&quot; Terminal command to unload each loaded tun and tap kext individually. For example, to unload com.viscosityvpn.Viscosity.tun, type the following:</p>
+<p><code>sudo kextunload -b com.viscosityvpn.Viscosity.tun</code></p>
+<p>(The &quot;sudo&quot; is necessary because this command modifies the loading of a device driver. You will be asked for your administrator password, which will not appear (even as asterisks) when you type it.)</p>
+<p>If you find that restarting your computer reloads the kext you might need to find where it is being loaded from. Common locations are</p>
+<ul>
+<li>/Users/<em>your username</em>/Library/LaunchDaemons</li>
+<li>/Users/<em>your username</em>/Library/LaunchAgents</li>
+<li>/Library/LaunchDaemons</li>
+<li>/Library/LaunchAgents</li>
+<li>/System/Library/LaunchDaemons</li>
+<li>/System/Library/LaunchAgents</li>
+</ul>
+<p>There are a user-contributed scripts on the <a href="downloads.html">Downloads</a> page that will automatically unload the Cisco kext when Tunnelblick makes a connection, and reload the Cisco kext when the connection is disconnected.</p>
+
+
+
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+
+
+
+<div class="bottom-translation">
+  <span title="view in German or another language using Google Translate">               <a lang="de"      class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcKextLoadError.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;         </a></span>
+  <span title="view in French or another language using Google Translate">               <a lang="fr"      class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcKextLoadError.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;        </a></span>
+  <span title="view in Chinese (simplified) or another language using Google Translate"> <a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcKextLoadError.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp; </a></span>
+  <span title="view in Russian or another language using Google Translate">              <a lang="ru"      class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcKextLoadError.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;         </a></span>
+  <span title="view in Spanish or another language using Google Translate">              <a lang="es"      class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcKextLoadError.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;         </a></span>
+  <span title="view in Japanese or another language using Google Translate">             <a lang="ja"      class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcKextLoadError.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;           </a></span>
+  <span title="view in Italian or another language using Google Translate">              <a                class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcKextLoadError.html&amp;sandbox=1">&nbsp;&nbsp;&hellip;&nbsp;&nbsp;        </a></span>
+</div>
+<div class="bottom-copyright">
+  Copyright &copy; 2015-2017 by The Tunnelblick Project.&nbsp;&nbsp;
+</div>
+</body>
+</html>

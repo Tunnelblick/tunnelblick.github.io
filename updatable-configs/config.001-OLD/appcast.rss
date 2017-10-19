@@ -1,4 +1,3 @@
-<!-- Tunnelblick DSA Signature v1 MCwCFCTNJ9yMHRxSu5DF5Kj7IYDMwdTDAhQ7iscqZygZ4s1oWqxCnp7TlpajRg== -->
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
 	<channel>
 		<title>Tunnelblick configuration appcast</title>
@@ -15,7 +14,6 @@
 				url="https://www.tunnelblick.net/updatable-configs/config.001/Updatable Config 001.tblk.zip"
 				sparkle:version="1.0.1"
 				sparkle:shortVersionString="version 1.0.1"
-				sparkle:dsaSignature="MCwCFH2uo3fXQRZ5NYNGqxaA1WR04C2yAhROkR/c+k5rVz+qmH30H0r1bsAgUw=="
 				type="application/octet-stream" />
 		</item>
 	</channel>
