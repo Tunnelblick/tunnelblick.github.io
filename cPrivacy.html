@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2017-10-19 18:55:38 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2017-11-03 04:16:01 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
@@ -127,8 +127,8 @@
 <p>When Tunnelblick or updates to Tunnelblick are installed, Tunnelblick attempts to access tunnelblick.net so a count of the number of Tunnelblick installations can be maintained. (The access attempt does not require a response.)</p>
 <h3 id="internet-access-during-a-check-for-updates">Internet Access During a Check for Updates</h3>
 <p>When checking for updates, Tunnelblick contacts the tunnelblick.net web server. Tunnelblick uses encrypted https: connections to provide security and privacy, but the fact that tunnelblick.net was accessed is available to any eavesdropper. That may be avoided by only doing checks for updates manually when connected to a properly configured VPN (which, as described above, should hide from local eavesdroppers the fact that tunnelblick.net was accessed).</p>
-<p>The setting that controls whether Tunnelblick checks for updates <em>automatically</em> (when launched and every 24 hours thereafter, even if no VPN is connected) is the &quot;Check for updates automatically&quot; checkbox on Tunnelblick's &quot;Preferences&quot; panel.</p>
-<p>That panel also has an &quot;Include anonymous profile information&quot; checkbox. If checked, sometimes when checking for updates Tunnelblick will send information to tunnelblick.net about what version of OS X is being used. Tunnelblick does not send anything which identifies users of your computer (but see <a href="#tunnelblick.net-privacy">tunnelblick.net Privacy</a>, below).</p>
+<p>The setting that controls whether Tunnelblick checks for updates <em>automatically</em> (when launched and every 24 hours thereafter while Tunnelblick is running, even if no VPN is connected) is the &quot;Check for updates automatically&quot; checkbox on Tunnelblick's &quot;Preferences&quot; panel.</p>
+<p>That panel may also have an &quot;Include anonymous profile information&quot; checkbox. If checked, sometimes when checking for updates Tunnelblick will send information to tunnelblick.net about what version of OS X is being used. Tunnelblick does not send anything which identifies users of your computer (but see <a href="#tunnelblick.net-privacy">tunnelblick.net Privacy</a>, below). If the checkbox is not present, no such information will be sent.</p>
 <h3 id="internet-access-during-a-check-for-a-secure-connection-and-diagnose-problems">Internet Access During a Check for a Secure Connection and Diagnose Problems</h3>
 <p>Each Tunnelblick configuration has a setting to &quot;Check if the apparent public IP address changed after connecting&quot;. If checked, Tunnelblick will send a request to the tunnelblick.net web server before the configuration is connected and will send another request after it is connected. These requests are usually done via https:, however:</p>
 <ul>
@@ -169,7 +169,7 @@
 <li>The version of Tunnelblick</li>
 </ul>
 <h3 id="cookies">Cookies</h3>
-<p>When the Tunnelblick website is protected by Cloudflare, the Tunnelblick website may use cookies; these cookies are not used by the Tunnelblick website and you may delete or block them at any time.</p>
+<p>When the Tunnelblick website is protected by Cloudflare, Cloudflare may store cookies for tunnelblick.net on your computer; these cookies are not used by the Tunnelblick website and you may delete or block them at any time.</p>
 
 
 

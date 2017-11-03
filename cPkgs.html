@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2017-10-19 18:55:38 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2017-11-03 04:16:01 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
@@ -111,7 +111,7 @@
 <p>When a Configuration is installed, it's contents are copied and arranged in a special way and the copy is secured by setting the ownership and permissions on the copy's contents.</p>
 <p>Unless specified otherwise in an <a href="#info.plist">Info.plist</a>, when a Configuration is installed the user will be asked whether the Configuration is to be shared or private (for only that user). Configurations to be shared are copied to <code>/Library/Application Support/Tunnelblick/Shared</code>; Configurations to be kept private are copied to <code>~/Library/Application Support/Tunnelblick/Configurations</code>.</p>
 <h2 id="automatic-installation">Automatic Installation</h2>
-<p>When Tunnelblick is installed by double-clicking a Tunnelblick.app that is not in /Applications, all Configurations in the &quot;auto-install&quot; and &quot;.auto-install&quot; folders that are in the same folder that contains the Tunnelblick.app being installed are installed (subject to <a href="cPkgs.html#cfbundleidentifier-conflicts">CFBundleIdentifier Conflicts</a> and <a href="cPkgs.html#name-conflicts-during-installation">Name Conflicts During Installation</a>).</p>
+<p>When Tunnelblick is installed by double-clicking a Tunnelblick.app that is not in /Applications, all .tblk Configurations in the &quot;auto-install&quot; and &quot;.auto-install&quot; folders that are in the same folder that contains the Tunnelblick.app being installed are installed (subject to <a href="cPkgs.html#cfbundleidentifier-conflicts">CFBundleIdentifier Conflicts</a> and <a href="cPkgs.html#name-conflicts-during-installation">Name Conflicts During Installation</a>).</p>
 <p>The &quot;auto-install&quot; and &quot;.auto-install&quot; folders can also contain a file named &quot;preferences.plist&quot;. It may contain a &quot;set-only-if-not-present&quot; key and/or a &quot;always-set&quot; key. The value for each key should be a dictionary containing preferences to be set under the specified conditions.</p>
 <p>Thus, one can construct a disk image (or a .zipped folder) which contains Tunnelblick.app and an &quot;auto-install&quot; folder containing configurations and preferences to be installed along with Tunnelblick.</p>
 <h2 id="nested-configurations">Nested Configurations</h2>
