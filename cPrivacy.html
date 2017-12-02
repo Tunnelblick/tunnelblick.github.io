@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2017-11-10 13:13:43 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2017-12-02 03:26:43 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
@@ -80,9 +80,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#vpns-and-location-spoofing">VPNs and Location Spoofing</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#vpns-and-eavesdropping-and-man-in-the-middle-attacks">VPNs and Eavesdropping and Man-in-the-Middle Attacks</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#tunnelblick-privacy">Tunnelblick Privacy</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#internet-access-during-installations-and-updates">Internet Access During Installations and Updates</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#internet-access-during-a-check-for-updates">Internet Access During a Check for Updates</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#internet-access-during-a-check-for-a-secure-connection-and-diagnose-problems">Internet Access During a Check for a Secure Connection and Diagnose Problems</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#internet-access-during-a-check-for-a-ip-address-changes">Internet Access During a Check for a IP Address Changes</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#tunnelblick.net-privacy">tunnelblick.net Privacy</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#logging">Logging</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#cookies">Cookies</a><br>
@@ -115,29 +114,25 @@
 <p>Note: Sufficiently powerful organizations could circumvent your https: encryption by spoofing security certificates.</p>
 <hr />
 <h2 id="tunnelblick-privacy">Tunnelblick Privacy</h2>
-<p>In addition to using OpenVPN to access the Internet to set up, maintain, and tear down a VPN connection, Tunnelblick may access the Internet for three other purposes:</p>
+<p>In addition to using OpenVPN to access the Internet to set up, maintain, and tear down a VPN connection, Tunnelblick may access the Internet for two other purposes:</p>
 <ul>
-<li>During installations and updates, so a count of Tunnelblick installations can be maintained;</li>
 <li>During normal operation, to check for updates; and</li>
 <li>During normal operation, to check for a secure connection and help diagnose problems.</li>
 </ul>
-<p>Tunnelblick performs these activities by accessing tunnelblick.net, and the tunnelblick.net web server keeps logs (as do most web servers) as described in <a href="#tunnelblick.net-privacy">tunnelblick.net Privacy</a>. <strong>However, no personally identifiable information (other than the IP address) is kept.</strong></p>
-<p>Tunnelblick asks for permission for the normal operation activities when first launched. The permissions may be modified any other time by changing the appropriate individual Tunnelblick setting. You may inhibit both activities at once (regardless of the individual setting) by putting a check in the &quot;Inhibit automatic update checking and IP Address checking&quot; checkbox on the &quot;Preferences&quot; panel of Tunnelblick's &quot;VPN Details&quot; window.</p>
-<h3 id="internet-access-during-installations-and-updates">Internet Access During Installations and Updates</h3>
-<p>When Tunnelblick or updates to Tunnelblick are installed, Tunnelblick attempts to access tunnelblick.net so a count of the number of Tunnelblick installations can be maintained. (The access attempt does not require a response.)</p>
+<p>Tunnelblick performs these activities by accessing tunnelblick.net, and the tunnelblick.net web server keeps logs (as do most web servers) as described in <a href="#tunnelblick.net-privacy">tunnelblick.net Privacy</a>. <strong>However, no personally identifiable information other than the IP address is kept.</strong></p>
+<p>Tunnelblick asks for permission for these activities when first launched. The permissions may be modified any other time by changing the appropriate individual Tunnelblick setting. You may inhibit both activities at once (regardless of the individual setting) by putting a check in the &quot;Inhibit automatic update checking and IP Address checking&quot; checkbox on the &quot;Preferences&quot; panel of Tunnelblick's &quot;VPN Details&quot; window.</p>
 <h3 id="internet-access-during-a-check-for-updates">Internet Access During a Check for Updates</h3>
 <p>When checking for updates, Tunnelblick contacts the tunnelblick.net web server. Tunnelblick uses encrypted https: connections to provide security and privacy, but the fact that tunnelblick.net was accessed is available to any eavesdropper. That may be avoided by only doing checks for updates manually when connected to a properly configured VPN (which, as described above, should hide from local eavesdroppers the fact that tunnelblick.net was accessed).</p>
 <p>The setting that controls whether Tunnelblick checks for updates <em>automatically</em> (when launched and every 24 hours thereafter while Tunnelblick is running, even if no VPN is connected) is the &quot;Check for updates automatically&quot; checkbox on Tunnelblick's &quot;Preferences&quot; panel.</p>
-<p>That panel may also have an &quot;Include anonymous profile information&quot; checkbox. If checked, sometimes when checking for updates Tunnelblick will send information to tunnelblick.net about what version of OS X is being used. Tunnelblick does not send anything which identifies users of your computer (but see <a href="#tunnelblick.net-privacy">tunnelblick.net Privacy</a>, below). If the checkbox is not present, no such information will be sent.</p>
-<h3 id="internet-access-during-a-check-for-a-secure-connection-and-diagnose-problems">Internet Access During a Check for a Secure Connection and Diagnose Problems</h3>
+<h3 id="internet-access-during-a-check-for-a-ip-address-changes">Internet Access During a Check for a IP Address Changes</h3>
 <p>Each Tunnelblick configuration has a setting to &quot;Check if the apparent public IP address changed after connecting&quot;. If checked, Tunnelblick will send a request to the tunnelblick.net web server before the configuration is connected and will send another request after it is connected. These requests are usually done via https:, however:</p>
 <ul>
-<li>The fact that tunnelblick.net was accessed is available to any eavesdropper because the first request is made before a VPN connection has been established;</li>
-<li>If an https: connection is not available after connection, Tunnelblick attempts an http: connection using tunnelblick.net's IP address (not its name);</li>
+<li>The fact that tunnelblick.net was accessed is available to any eavesdropper because the first request is made before a VPN connection has been established; and</li>
+<li>If an https: connection is not available after connection, Tunnelblick attempts an http: connection using tunnelblick.net's IP address (not its name)</li>
 </ul>
 <hr />
 <h2 id="tunnelblick.net-privacy">tunnelblick.net Privacy</h2>
-<p>tunnelblick.net is used for four purposes: as a website, to count Tunnelblick installations, to service update requests from the Tunnelblick application, and to service IP address check requests from the Tunnelblick application. Update and address check requests may be disabled at any time on the &quot;Preferences&quot; panel of Tunnelblick's &quot;VPN Details&quot; window, or may be controlled individually on the &quot;Preferences&quot; panel and the &quot;Advanced&quot; settings window.</p>
+<p>tunnelblick.net is used for three purposes: as a website, to service update requests from the Tunnelblick application, and to service IP address check requests from the Tunnelblick application.</p>
 <h3 id="logging">Logging</h3>
 <p>All accesses to tunnelblick.net are logged, as is common for websites. The logs are kept by the company that provides hosting services to tunnelblick.net. That company does not provide a way to disable logging or delete logs, and it keeps the logs for several years. The logs are also saved and analyzed by Tunnelblick developers to obtain information about what webpages are popular, which versions of Tunnelblick are being used, etc. Log entries for each access to tunnelblick.net consist of:</p>
 <ul>
@@ -150,11 +145,10 @@
 <li>&quot;Referer&quot; (sic) supplied by the browser, the URL of the page that requested the resource</li>
 <li>&quot;User agent&quot; supplied by the browser (e.g. <em>&quot;Mozilla/5.0 (Macintosh; Intel Mac OS 10_10_4) AppleWebKit/600.7.12 (KHTML, like Gecko)&quot;</em> or <em>&quot;Tunnelblick/3.5.3 (build 4270.4371) Sparkle/4270.4371&quot;</em>).</li>
 </ul>
-<p>Tunnelblick's downloads are hosted by GitHub. GitHub also logs common information; see the <a href="https://help.github.com/articles/github-privacy-statement/">GitHub Privacy Statement</a>.</p>
+<p>Tunnelblick's downloads are hosted by GitHub. GitHub also logs this information; see the <a href="https://help.github.com/articles/github-privacy-statement/">GitHub Privacy Statement</a>.</p>
 <p>Tunnelblick's non-English language pages are served by Google Translate, which also logs common information; see the <a href="https://www.google.com/intl/en/policies/privacy/">Google Privacy Policy</a>.</p>
 <p><a href="cNews.html#2017-10-03">At times the Tunnelblick website is protected from attack by Cloudflare</a>. This protection may be turned on or off without notice. Cloudflare does its own logging of DNS requests and requests to the Tunnelblick website, in addition to any logging done by Tunnelblick's host provider. See <a href="https://blog.cloudflare.com/what-cloudflare-logs/">What Cloudflare Logs</a> for details.</p>
 <p><strong><em>Website access</em></strong>: tunnelblick.net does not use Javascript, other client-side scripting, plugins, trackers, beacons, or web bugs, does not collect information (other than the log information described above), does not carry advertising, and does not store cookies or any other data on your computer (except as noted in <a href="#Cookies">Cookies</a>, below). You may be able to use your browser's &quot;private&quot; or &quot;incognito&quot; mode to keep it from caching site content or browser history.</p>
-<p><strong><em>Counting Tunnelblick installations</em></strong>: When Tunnelblick is installed, and when updates include a change to the terms under which it is provided, Tunnelblick may attempt to access tunnelblick.net to help maintain a count of the number of Tunnelblick installations. In addition to the information described in <a href="#Logging">Logging</a>, above, Tunnelblick may also provide information to tunnelblick.net about the version of Tunnelblick being installed or updated and what other actions (checking for updates and/or checking for IP address changes) the user has chosen to allow. Other than the IP address, no personally identifiable information is sent. Whether or not the attempt to access Tunnelblick.net is successful, Tunnelblick continues with the installation or update.</p>
 <p><strong><em>Update check requests</em></strong> send the following information to tunnelblick.net via https:</p>
 <ul>
 <li>The apparent public IP address and port of the computer (or the router the computer uses to connect to the Internet)</li>
