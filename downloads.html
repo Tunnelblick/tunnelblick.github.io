@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2017-12-07 19:20:27 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2017-12-30 09:48:41 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
@@ -83,7 +83,7 @@
 
 <!-- TUNNELBLICK_PREP_BREAK -->
 
-<strong><a href="https://github.com/Tunnelblick/Tunnelblick/releases/download/v3.7.5beta04/Tunnelblick_3.7.5beta04_build_4970.dmg">Tunnelblick 3.7.5beta04</a></strong> (build 4970, <span style="font-size:small;">OS X 10.7.5+, Intel-64 only</span>) released 2017-12-07 <a href="cRlsNotes.html">Release Notes</a><br><span class="small">SHA1:&nbsp;3744b42404ac2ddd3b555f3ebd93a0ccdd57a308 MD5:&nbsp;9f072cccbeddde53c9c398c675240567</span><br><span class="small">SHA256:&nbsp;0ac4a95ccd66622f5e53907ca4ac71b012af46efbf3ca10ed6bd34438c1bd131</span>
+<strong><a href="https://github.com/Tunnelblick/Tunnelblick/releases/download/v3.7.5beta05/Tunnelblick_3.7.5beta05_build_4980.dmg">Tunnelblick 3.7.5beta05</a></strong> (build 4980, <span style="font-size:small;">OS X 10.7.5+, Intel-64 only</span>) released 2017-12-30 <a href="cRlsNotes.html">Release Notes</a><br><span class="small">SHA1:&nbsp;ebcf9daf10700604e7c8ee9d60426e865fda46ae MD5:&nbsp;00ebdef5ac901a0b1d8eefb508fa326d</span><br><span class="small">SHA256:&nbsp;c9a748a0218659ce7ed182104a8284e9634d25a0a50b03fade832625b9b1b799</span><br><span class="small"><a href="/signatures/Tunnelblick_3.7.5beta05_build_4980.dmg.asc">GnuPG v2 signature</a></span>
 <!-- TUNNELBLICK_PREP_BREAK -->
 
     </td>
@@ -98,7 +98,7 @@
 
 <!-- TUNNELBLICK_PREP_BREAK -->
 
-<strong><a href="https://github.com/Tunnelblick/Tunnelblick/releases/download/v3.7.4b/Tunnelblick_3.7.4b_build_4921.dmg">Tunnelblick 3.7.4b</a></strong> (build 4921, <span style="font-size:small;">OS X 10.7.5+, Intel-64 only</span>) released 2017-12-07 <a href="cRlsNotes.html">Release Notes</a><br><span class="small">SHA1:&nbsp;89b6dc6e9865b456ffbf05e5b38dcb146a2f31fd MD5:&nbsp;a7a355e0073a9c8f0ecfa6fc94a1c4df</span><br><span class="small">SHA256:&nbsp;3963a2588d1fcbfbc627a5c7b8ce0242c2b36dc4cd3fc1ae83f12dd32c0dfca8</span>
+<strong><a href="https://github.com/Tunnelblick/Tunnelblick/releases/download/v3.7.4b/Tunnelblick_3.7.4b_build_4921.dmg">Tunnelblick 3.7.4b</a></strong> (build 4921, <span style="font-size:small;">OS X 10.7.5+, Intel-64 only</span>) released 2017-12-07 <a href="cRlsNotes.html">Release Notes</a><br><span class="small">SHA1:&nbsp;89b6dc6e9865b456ffbf05e5b38dcb146a2f31fd MD5:&nbsp;a7a355e0073a9c8f0ecfa6fc94a1c4df</span><br><span class="small">SHA256:&nbsp;3963a2588d1fcbfbc627a5c7b8ce0242c2b36dc4cd3fc1ae83f12dd32c0dfca8</span><br><span class="small"><a href="/signatures/Tunnelblick_3.7.4b_build_4921.dmg.asc">GnuPG v2 signature</a></span>
 <!-- TUNNELBLICK_PREP_BREAK -->
 
     </td>
@@ -137,12 +137,22 @@
 </table>
 <hr>
 <h2 id="verifying-downloads">Verifying Downloads</h2>
-<p>You should verify all downloads. Even though https:, the .dmg format, and the application's OS X digital signature provide some protection, they can be circumvented. Comparing the SHA256, SHA1, and MD5 hashes of your downloaded file with the official published ones will provide additional assurance that the download is legitimate and has not been modified.</p>
+<p>You should verify all downloads. Even though https:, the .dmg format, and the application's OS X digital signature provide some protection, they can be circumvented.</p>
+<p><strong>Verifying Hashes</strong></p>
+<p>Comparing the SHA256, SHA1, and MD5 hashes of your downloaded file with the official published ones will provide additional assurance that the download is legitimate and has not been modified. You can compare the hashes with programs included with macOS without the need to install additional software.</p>
 <p>To compute the hashes of a file you've downloaded, type the following into /Applications/Utilities/Terminal:</p>
 <p>          <span class="monospaced">shasum -a 256</span> <em>path-to-the-file</em><br>          <span class="monospaced">openssl sha1 </span> <em>path-to-the-file</em><br>          <span class="monospaced">openssl md5</span> <em>path-to-the-file</em></p>
 <p>Then compare the computed hashes with the values shown near the link for the downloaded file.</p>
 <p>(Don't type '<em>path-to-the-file</em>' &mdash; type the path to the file, that is, the sequence of folders that contain the file plus the file name (e.g. /Users/janedoe/Desktop/Tunnelblick_3.7.2a_build_4851.dmg). An easy way to get it into Terminal is to drag/drop the file anywhere in the Terminal window. The pointer will turn into a green and white plus sign ("+"_) to indicate the path will be dropped. So you would type '<span class="monospaced">shasum -a 256 </span>' &mdash; with a space at the end &mdash; and then drag/drop the disk image file anywhere in the Terminal window.)</p>
-<p>For additional assurance that the hashes on this site have not been compromised, the hashes are also available in the description of each "Release" on <a href="https://github.com/Tunnelblick/Tunnelblick/releases">Tunnelblick's GitHub site</a>, which is hosted and administered separately from this site.</p>
+<p>For additional assurance that the hashes displayed on this site have not been compromised, the hashes are also available in the description of each "Release" on <a href="https://github.com/Tunnelblick/Tunnelblick/releases">Tunnelblick's GitHub site</a>, which is hosted and administered separately from this site.</p>
+<p><strong>Verifying GnuPG Signatures</strong></p>
+<p>Recent Tunnelblick disk images are also signed with <a href="https://www.gnupg.org/">GnuPG version 2</a>.</p>
+<p>To <strong><em>prepare</em></strong> for verifying signatures, you should download and install GnuPG 2.2.3 or higher, and then add the <a href="https://tunnelblick.net/TunnelblickSecurityPublicKey.asc">Tunnelblick Security GnuPG public key</a> (key ID DC6FD12C, fingerprint B4D9 6F0D 6A58 E335 A0F4 923A 2FF3 A2B2 DC6F D12C) to your trusted GnuPG keyring by typing the following into /Applications/Utilities/Terminal:</p>
+<p>          <span class="monospaced">gpg --import TunnelblickSecurityPublicKey.asc</span>.</p>
+<p>To verify the signature of a file, download the corresponding signature file and then type the following into /Applications/Utilities/Terminal:</p>
+<p>          <span class="monospaced">gpg --verify <em>path-to-the-signature-file</em> <em>path-to-the-disk-image-file</em></span></p>
+<p>The result should be similar to the following:</p>
+<p>          <span class="monospaced">gpg: Signature made Sat Dec 16 19:17:03 2017 EST</span><br>          <span class="monospaced">gpg: using RSA key B4D96F0D6A58E335A0F4923A2FF3A2B2DC6FD12C</span><br>          <span class="monospaced">gpg: Good signature from &quot;Tunnelblick Security &lt;tunnelblicksecurity@protonmail.com&gt;&quot; [ultimate]</span></p>
 <hr>
 <h2 id="user-contributions">User Contributions</h2>
 <p>These downloads have been contributed by users and usually help deal with special circumstances. They are not endorsed or checked by the Tunnelblick project, and you use them at your own risk. To contribute a download, <a href="reachus.html">send it to the developers</a> or post it on the <a href="https://groups.google.com/forum/#&#33;forum/tunnelblick-discuss">Tunnelblick Discussion Group</a>.</p>
