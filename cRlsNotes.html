@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-02-01 18:47:27 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-02-15 22:40:56 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
@@ -84,6 +84,21 @@
 
 
 
+<p><strong>3.7.5beta06 build 5000 (2018-02-15)</strong></p>
+<ul>
+<li>Does better selection of the OpenVPN version to be used when connecting.</li>
+<li>Launches Tunnelblick at login if network access was disabled by Tunnelblick.</li>
+<li>Notifies the user that network access has been disabled when connecting.</li>
+<li>Does not use DHCP for tap connections if an IP address is detected (thanks to mpsrig).</li>
+<li>Includes OpenVPN 2.4.4, 2.3.18, and git master 5a0e82c dated 2018-02-14. (The git master version is linked only with OpenSSL; a version with LibreSSL is available for the other versions.)</li>
+<li>Adds DNS servers common in China to the list of free public DNS servers (thanks to JLHwung).</li>
+<li>Adds support for LibreSSL to easy-rsa version 2.</li>
+<li>Replaces lz4 version 1.7.5 with version 1.8.1.2.</li>
+<li>Adds and updates translations.</li>
+<li>Fixes problems with waking from sleep, switching users, and shutting down Tunnelblick.</li>
+<li>Fixes problems that caused 'fatal error 13'.</li>
+</ul>
+<hr />
 <p><strong>3.7.5beta05 build 4980 (2017-12-30)</strong></p>
 <ul>
 <li>Selects the closest match if Tunnelblick doesn't include the version of OpenVPN specified by the user.</li>
