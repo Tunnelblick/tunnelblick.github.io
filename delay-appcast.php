@@ -5,13 +5,13 @@
 
  Usage:
 
-        delay_appcast_warning.php
+        delay_appcast.php
 
 */
 
     $delay = 25; // integer seconds to delay
 
-    $target = 'updates/3.7.5/ddos-appcast-v2.rss'; // path without "https://tunnelblick.net/" prefix
+    $target = 'updates/3.7.5a/appcast-v2.rss'; // path without "https://tunnelblick.net/" prefix
 
 
     // Delay

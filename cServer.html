@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-03-28 12:12:49 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-04-26 18:13:19 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
@@ -74,23 +74,19 @@
 
 
 <h1 id="using-tunnelblick-as-a-vpn-server">Using Tunnelblick as a VPN Server</h1>
-<p>All versions of Tunnelblick allow use of OpenVPN as a server or client (which is determined by the OpenVPN configuration file), but before Tunnelblick version 3.1beta02:</p>
+<p>Note: Although Tunnelblick <em>can</em> be used to control an OpenVPN server, it is most useful when there will be only one type of user of the server. There are programs specifically written for controlling OpenVPN servers which allow you to control individual users of the server and contain many server-specific functions that are not included in Tunnelblick.</p>
+<p>All versions of Tunnelblick allow the use of OpenVPN as a server:</p>
 <ul>
-<li>Tunnelblick could only start OpenVPN when a user was logged in and launched Tunnelblick; and</li>
-<li>When the user quit Tunnelblick or logged out, OpenVPN would be shut down.</li>
+<li>An OpenVPN server (or client) can be started when the computer starts and keep running until the computer shuts down.</li>
+<li>Tunnelblick may be used to start or stop the OpenVPN server (or client) to edit the configuration file.</li>
 </ul>
-<p>Tunnelblick version 3.1beta02 and higher are much more flexible:</p>
-<ul>
-<li>An OpenVPN server or client can be started when the computer starts and keep running until the computer shuts down.</li>
-<li>Tunnelblick may be used to start or stop the OpenVPN server or client or to edit the configuration file.</li>
-</ul>
-<p>To start a connection (either a client or server) when the computer starts:</p>
+<p>To start OpenVPN (either a client or server) when the computer starts:</p>
 <ol>
-<li>Share the connection (or make it <a href="cCusDeployed.html">Deployed</a>). To share a connection, click the &quot;Share configuration&quot; button on the &quot;VPN Details&quot; window.</li>
-<li>Once a configuration is shared, put a check in the &quot;automatically connect&quot; checkbox, and select &quot;when computer starts&quot;. The next time the computer is started, the connection will be made even before anyone logs in. You can also start the connection without restarting the computer by clicking the &quot;Connect&quot; button.</li>
+<li>Share the configuration (or make it <a href="cCusDeployed.html">Deployed</a>).</li>
+<li>Once a configuration is shared, set it to connect &quot;When computer starts&quot;. The next time the computer is started, the configuration will be connected even before anyone logs in. You can also connect the configuration using Tunnelblick without restarting the computer .</li>
 </ol>
-<p>Whenever you quit Tunnelblick (or log out, which causes Tunnelblick to quit), it will keep any connections with &quot;when computer starts&quot; selected, but close all other connections (if any).</p>
-<p>(To edit the configuration file, the configuration must first be disconnected and made private. Then, after editing, make the configuration shared and connect it.)</p>
+<p>Whenever you quit Tunnelblick (or you log out, which causes Tunnelblick to quit), Tunnelblick will leave &quot;when computer starts&quot; configurations connected, but close all other configurations that are connected.</p>
+<p>To edit the configuration file, the configuration must first be disconnected and made private. Then, after editing, make the configuration shared and connect it.</p>
 
 
 

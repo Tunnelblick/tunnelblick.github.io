@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-03-28 12:12:49 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-04-26 18:13:19 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
@@ -75,49 +75,19 @@
 
 <h1 id="the-tunnelblick-log">The Tunnelblick Log</h1>
 <p>The Tunnelblick log is the record of output from OpenVPN for a connection. It includes entries from Tunnelblick giving additional information.</p>
-<p>*<span class="red"><strong>If you want help troubleshooting connection problems, please set the &quot;verb&quot; level in your configuration file to &quot;3&quot; before making a connection attempt.</strong></span></p>
-<p>You can set the &quot;verb&quot; level to &quot;3&quot; by adding the following line in your configuration file:</p>
-<pre><code> verb 3</code></pre>
-<p>If there is already such a line with a different number, just change the number. If there is already a line with a &quot;3&quot;, leave it alone.</p>
+<p><span class="red"><strong>If you want help troubleshooting connection problems, please set the &quot;verb&quot; level in your configuration file to &quot;3&quot; before making a connection attempt.</strong></span></p>
 <p>The level of detail about OpenVPN operations in the log is controlled by OpenVPN's &quot;verb&quot; option. The default (if no &quot;verb&quot; option appears in the configuration file) is &quot;verb 3&quot;. That usually provides sufficient information for finding problems, and does not log anything about ordinary traffic through the VPN, so it is the best choice. &quot;verb&quot; levels higher than 3 are usually not necessary, and &quot;verb&quot; levels 1 and 2 do not usually provide sufficient information to determine why a connection fails.</p>
-<p><strong>NOTE: Tunnelblick 3.3beta38 and higher will include the Tunnelblick log in the data copied to the Clipboard by the 'Copy Diagnostic Info to the Clipboard' button on the 'Settings' tab of the 'Configurations' panel of the 'VPN Details' window.</strong></p>
 <p>You can view the Tunnelblick log for a configuration as follows:</p>
-<ul>
-<li>Tunnelblick 3.2 and up:</li>
-</ul>
 <ol>
 <li>Click on the Tunnelblick icon at the top of the screen;</li>
 <li>Click &quot;VPN Details&quot;;</li>
-<li>Select the &quot;Configurations&quot; pane at the top;</li>
-<li>Select the configuration in the list on the left;</li>
-<li>To copy the log to the Clipboard, click the &quot;Copy Log to Clipboard&quot; button.</li>
+<li>Select the large &quot;Configurations&quot; button at the top;</li>
+<li>Select the configuration in the list on the left; and</li>
+<li>Select the &quot;Log&quot; tab on the right.</li>
 </ol>
-<ul>
-<li>Earlier versions of Tunnelblick:</li>
-</ul>
-<ol>
-<li>Click on the Tunnelblick icon at the top of the screen;</li>
-<li>Click &quot;Details&quot;;</li>
-<li>Select the &quot;Configurations&quot; pane at the top;</li>
-<li>Select the configuration in the list on the left or select the tab for the configuration;</li>
-<li>To copy the log to the Clipboard, type Command-A, then Command-C.</li>
-</ol>
-<p><strong>Tunnelblick adds information to the log</strong>:</p>
-<ul>
-<li><p>When started or when the log is cleared, Tunnelblick adds a line listing the versions of OS X, Tunnelblick, and OpenVPN.</p></li>
-<li><p>When a connection attempt is made, Tunnelblick adds details to the log about what Tunnelblick does (as opposed to what OpenVPN does).</p></li>
-<li><p>When OpenVPN notifies Tunnelblick that the connection is being terminated or restarted.</p></li>
-<li><p>When the computer's system configuration changes.</p></li>
-</ul>
-<p>Sometimes entries in the log (which are prefixed by the date and time) appear out of sequence. This is because the different programs writing to the log (Tunnelblick, OpenVPN, and scripts) buffer their output. In general, though, the dates and times listed are correct.</p>
-<p><strong>You may use the standard keyboard shortcuts</strong>:<br />
-||Command-C||Copy||<br />
-||Command-X||Cut||<br />
-||Command-V||Paste||<br />
-||Command-A||Select all the text in the log||<br />
-||Command-M||Minimize the window to the dock||<br />
-||Command-W||Close the window||<br />
-||Command-Q||Quit Tunnelblick||</p>
+<p>Sometimes entries in the log (which are prefixed by the date and time) may appear out of sequence. This is because the different programs writing to the log (Tunnelblick, OpenVPN, and scripts) buffer their output. In general, though, the dates and times listed are correct.</p>
+<p><strong>When viewing the log, you may use the following standard keyboard shortcuts</strong>:</p>
+<p>Command-C: Copy<br>Command-A: Select all the text in the log<br>Command-P: Print the log</p>
 
 
 

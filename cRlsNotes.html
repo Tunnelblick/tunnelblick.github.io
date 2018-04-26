@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-03-28 12:12:49 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-04-26 18:13:19 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
@@ -85,9 +85,25 @@
 
 
 
+<p><strong>3.7.6beta04 build 5050 (2018-04-26) </strong></p>
+<ul>
+<li>Includes OpenVPN 2.4.6 and 2.5 git master 1394192 (and 2.3.18).</li>
+<li>Requires full App Transport Security.</li>
+<li>Speeds up menu display when there are hundreds or thousands of configurations.</li>
+<li>Uses a randomly-selected ephemeral port when connecting to OpenVPN management interfaces.</li>
+<li>Does not include tun and tap kexts that are no longer used. (Signed and unsigned tun and tap kexts are still included.)</li>
+<li>Ensures that user-mode scripts always use the system commands that were intended (root-mode scripts already did that).</li>
+<li>Patches OpenSSL 1.1.0h to avoid warnings about incorrect format characters.</li>
+<li>Fixes a problem that caused a warning about unknown OpenVPN options even when the options were being ignored by OpenVPN.</li>
+<li>Fixes a problem that caused the new apparent public IP address to show as 0.0.0.0 when DNS is not working.</li>
+<li>Fixes a problem that logged warnings that the 'maxConfigurationsForUncachedMenu' preference was unknown.</li>
+<li>Fixes a problem that generated V2 appcast signatures that could not be validated.</li>
+<li>Fixes a misleading message in the usage output of openvpnstart.</li>
+<li>Fixes several potential problems in scripts.</li>
+</ul>
+<hr />
 <p><strong>3.7.6beta03 build 5031 (2018-03-28) <span class='red'>(SECURITY UPDATE)</span></strong></p>
-<p>See <a href="https://www.openssl.org/news/secadv/20180327.txt">OpenSSL Security Advisory 27 March 2017</a> and<br />
-<a href="https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.7.1-relnotes.txt">LibreSSL 2.7.1 Release Notes</a>.</p>
+<p>See <a href="https://www.openssl.org/news/secadv/20180327.txt">OpenSSL Security Advisory 27 March 2017</a> and <a href="https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.7.1-relnotes.txt">LibreSSL 2.7.1 Release Notes</a>.</p>
 <ul>
 <li>Includes OpenVPN 2.3.18 with OpenSSL 1.0.2o and LibreSSL 2.7.1.</li>
 <li>Includes OpenVPN 2.4.5 with OpenSSL 1.1.0h and OpenSSL 1.0.2o.</li>
@@ -371,6 +387,19 @@
 
 
 
+<p><strong>1.10 build 5050 (2018-04-26)</strong></p>
+<ul>
+<li>Tunnelblick Uninstaller is now a 64-bit, Intel-only application for macOS 10.7.5 and higher only.</li>
+<li>Displays detailed log if user doesn't respond to success/failure dialog.</li>
+<li>Includes information about Tunnelblick login items and Tunnelblick items in the Dock.</li>
+<li>Logs activity to a temporary file to help debugging if the uninstaller crashes. (The file is deleted at the end of the uninstall process.)</li>
+<li>Fixes a problem that caused 'The command exited with a non-zero status' errors.</li>
+<li>Fixes a problem clearing users' user defaults cache.</li>
+<li>Fixes problems deleting files and folders when they have been locked.</li>
+<li>Fixes a problem detecting login items from old versions of Tunnelblick.</li>
+<li>Fixes several other potential problems.</li>
+</ul>
+<hr />
 
 <p><strong>Version 1.9 build 4990 (2018-01-31)</strong></p>
 <ul>

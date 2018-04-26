@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-03-28 12:12:49 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-04-26 18:13:19 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
@@ -104,16 +104,16 @@
 <h2 id="openvpn-scripts">OpenVPN scripts</h2>
 <p>OpenVPN scripts are scripts run by OpenVPN directly. Scripts referred to in the OpenVPN configuration file may be included in a Tunnelblick VPN configuration; use filenames without any path information to refer to them in the OpenVPN configuration file. These scripts include:</p>
 <ul>
-<li><strong>up</strong> is executed after TCP/UDP socket bind and TUN/TAP open.</li>
+<li><strong>up</strong> is executed after TCP/UDP socket bind and TUN/TAP open. It is executed before routing changes are made unless Tunnelblick's &quot;Set DNS after routes are set&quot; checkbox is checked. Timing also depends on the presence of an <code>--up-delay</code> option.</li>
 <li><strong>tls-verify</strong> is executed when we have a still untrusted remote peer.</li>
 <li><strong>ipchange</strong> is executed after connection authentication, or remote IP address change.</li>
-<li><strong>client-connect</strong> is executed in --mode server mode immediately after client authentication.</li>
-<li><strong>route-up</strong> is executed after connection authentication, either immediately after, or some number of seconds after as defined by the --route-delay option.</li>
+<li><strong>client-connect</strong> is executed in server mode immediately after client authentication.</li>
+<li><strong>route-up</strong> is executed after connection authentication, either immediately after, or some number of seconds after as defined by the <code>--route-delay</code> option.</li>
 <li><strong>route-pre-down</strong> is executed right before the routes are removed.</li>
-<li><strong>client-disconnect</strong> is executed in --mode server mode on client instance shutdown.</li>
-<li><strong>down</strong> is executed after TCP/UDP and TUN/TAP close.</li>
-<li><strong>learn-address</strong> is executed in --mode server mode whenever an IPv4 address/route or MAC address is added to OpenVPN's internal routing table.</li>
-<li><strong>auth-user-pass-verify</strong> is executed in --mode server mode on new client connections, when the client is still untrusted.<br />
+<li><strong>client-disconnect</strong> is executed in server mode on client instance shutdown.</li>
+<li><strong>down</strong> is executed after TCP/UDP and TUN/TAP close. (Timing depends on <code>--down-pre</code>.)</li>
+<li><strong>learn-address</strong> is executed in server mode whenever an IPv4 address/route or MAC address is added to OpenVPN's internal routing table.</li>
+<li><strong>auth-user-pass-verify</strong> is executed in server mode on new client connections, when the client is still untrusted.<br />
  Note that these scripts may have any name; the script name is given as a parameter of the corresponding OpenVPN option. For example, &quot;route-pre-down foo.bar&quot; tells OpenVPN to run the script &quot;foo.bar&quot; during the disconnection process, immediately before the routes are removed.</li>
 </ul>
 <p>(Many if not all of the OpenVPN options actually accept a command line, which may include any valid commands, not a script name, but typically they just name a script to be executed.)</p>
@@ -121,7 +121,7 @@
 <p>The standard client up- and down- scripts Tunnelblick provides are shell scripts that are run by OpenVPN immediately after connecting, and immediately after disconnecting, respectively.</p>
 <ul>
 <li>The scripts are run only when a &quot;Set nameserver&quot; option is selected in the configuration's Settings tab.</li>
-<li>To run the scripts, Tunnelblick passes OpenVPN &quot;--up&quot;, &quot;--down&quot; options. This means that any &quot;up&quot; or &quot;down&quot; options specified in the OpenVPN configuration file are ignored. To use your own custom scripts from within the configuration file, select &quot;Do not set nameserver&quot;.</li>
+<li>To run the scripts, Tunnelblick passes <code>--up</code> and <code>--down</code> options to OpenVPN. This means that any &quot;up&quot; or &quot;down&quot; options specified in the OpenVPN configuration file are ignored. To use your own custom scripts from within the configuration file, select &quot;Do not set nameserver&quot;.</li>
 <li>Tunnelblick includes a standard up script and a standard down script (client.up.tunnelblick.sh and client.down.tunnelblick.sh, respectively) that are used if no other scripts are present. They are located in Tunnelblick.app/Contents/Resources. The scripts save the current DNS configuration and accept &quot;pushed&quot; configurations from the VPN server when the VPN is connected, and restore the DNS configurations when the VPN is disconnected. If &quot;Monitor connection&quot; is checked, the up script sets up to run the leasewatch script when a network configuration change is detected.</li>
 <li>The up and down scripts may be called with optional arguments (before the standard OpenVPN-supplied arguments) that are prefixed by a '-'. The arguments are:
 <ul>
@@ -144,17 +144,11 @@
 <li>USER ASKS for connection (or one is started by 'connect on launch')</li>
 <li>pre-connect.sh will run before attempting to make a connection</li>
 <li>post-tun-tap-load.sh will run after the tun/tap kext is loaded (or would have been loaded)</li>
-<li>up script will run at the end of the connection process</li>
-<li>connect.sh will run if/when the connection is successfully made</li>
-<li>If OpenVPN detects a problem and attempts to reconnect:</li>
-</ol>
-<ul>
-<li>reconnect.sh will run</li>
-<li>If the OpenVPN '--persist-tun' option is not specified, down script will run at the start of the reconnection process</li>
-<li>If the OpenVPN '--persist-tun' option is not specified, up script wil be run at the end of the reconnection process</li>
-</ul>
-<ol>
-<li>connect.sh will run each time (if any) a reconnection attempt is successful</li>
+<li>up script will run near the end of the connection process</li>
+<li>connected.sh will run if/when the connection is successfully made</li>
+<li>If OpenVPN detects a problem and attempts to reconnect, reconnecting.sh will run.<br />
+ (If the OpenVPN <code>--persist-tun</code> option is not specified, a down script will run at the start of the reconnection process and an up script wil be run at the end of the reconnection process.)</li>
+<li>connected.sh will run each time (if any) a reconnection attempt is successful</li>
 <li>USER ASKS for connection to be terminated (or quits Tunnelblicks and it isn't a 'when computer starts' configuration)</li>
 <li>down script is run</li>
 <li>post-disconnect.sh will run after disconnecting</li>
@@ -164,7 +158,8 @@
 <li>A reconnect attempt does NOT trigger the pre-connect.sh/post-disconnect.sh sequence.</li>
 <li>The order of execution of the up script and the connected.sh script is undefined.</li>
 <li>The order of execution of the down script and the post-disconnect.sh script is undefined.</li>
-<li>The order of execution of the down and up scripts and the reconnecting.sh script is undefined.</li>
+<li>The order of execution of the down and up scripts and the reconnecting.sh script is undefined.<br />
+ (This applies when the OpenVPN <code>--persist-tun</code> option is not specified, see above.)</li>
 </ul>
 <h2 id="environment-variables">Environment Variables</h2>
 <p>Tunnelblick VPN Configuration scripts inherit the environment variables from Tunnelblick itself. By default (on OS X 10.8 &quot;Mountain Lion&quot;), they are:</p>

@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-03-28 12:12:49 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-04-26 18:13:19 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
@@ -126,8 +126,8 @@
 <h2 id="how-do-i-know-the-vpn-is-working">How do I know the VPN is working?</h2>
 <p>Tunnelblick indicates that the VPN is connected by showing the &quot;open&quot; tunnel in your menu bar (usually near the Spotlight icon).</p>
 <p><img src="/images/using-tunnelblick-open-2015-07-29.png" alt="close up view showing bold Tunnelblick icon in status bar"></p>
-<p>But whether all traffic will be directed through the VPN depends on the settings in the OpenVPN configuration file. If the &quot;redirect-gateway def1&quot; option appears, or Tunnelblick's &quot;Route all IPv4 traffic through the VPN&quot; is checked, then all IPv4 traffic should go through the VPN.</p>
-<p>An easy way to check if web traffic is going through the VPN is to go to <a href="http://whatismyipaddress.com" class="uri">http://whatismyipaddress.com</a> — it should give the IP address of the OpenVPN server, not the address of your (OpenVPN client) computer. If it doesn't, then check &quot;Route all IPv4 traffic through the VPN&quot; on the &quot;Settings&quot; tab of Tunnelblick's &quot;VPN Details&quot; window.</p>
+<p>But whether all IPv4 traffic will be directed through the VPN depends on the OpenVPN options when the VPN was established. If the &quot;redirect-gateways&quot; option appears in the OpenVPN configuration file or in options pushed by the server and accepted by the client, or Tunnelblick's &quot;Route all IPv4 traffic through the VPN&quot; is checked, then all IPv4 traffic should go through the VPN.</p>
+<p>An easy way to check if web traffic is going through the VPN is to put enable &quot;Check if the apparent public IP address changed after connecting&quot; for the configuration. If the IP address doesn't change, then check &quot;Route all IPv4 traffic through the VPN&quot;. Both of these checkboxes are on the &quot;Settings&quot; tab of Tunnelblick's &quot;VPN Details&quot; window. (Be sure to select all configurations that you want to change before making a change.)</p>
 <h2 id="what-if-the-internet-doesnt-work-after-i-make-a-connection">What if the Internet doesn't work after I make a connection?</h2>
 <p>See <a href="cConnectedBut.html">Connects to the VPN, but doesn't work</a>.</p>
 <h2 id="how-do-i-verify-a-download">How do I verify a download?</h2>
