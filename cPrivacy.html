@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-04-26 18:13:19 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-05-08 14:47:29 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
@@ -84,6 +84,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#internet-access-during-a-check-for-updates">Internet Access During a Check for Updates</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#internet-access-during-a-check-for-a-ip-address-changes">Internet Access During a Check for a IP Address Changes</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#tunnelblick.net-privacy">tunnelblick.net Privacy</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#general-data-protection-regulation-information">General Data Protection Regulation Information</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#logging">Logging</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#cookies">Cookies</a><br>
 </p> 
@@ -134,11 +135,13 @@
 <hr />
 <h2 id="tunnelblick.net-privacy">tunnelblick.net Privacy</h2>
 <p>tunnelblick.net is used for three purposes: as a website, to service update requests from the Tunnelblick application, and to service IP address check requests from the Tunnelblick application.</p>
+<h3 id="general-data-protection-regulation-information">General Data Protection Regulation Information</h3>
+<p>See <a href="https://tunnelblick.net/cGDPR.html">General Data Protection Regulation Information</a>.</p>
 <h3 id="logging">Logging</h3>
 <p>All accesses to tunnelblick.net are logged, as is common for websites. The logs are kept by the company that provides hosting services to tunnelblick.net. That company does not provide a way to disable logging or delete logs, and it keeps the logs for several years. The logs are also saved and analyzed by Tunnelblick developers to obtain information about what webpages are popular, which versions of Tunnelblick are being used, etc. Log entries for each access to tunnelblick.net consist of:</p>
 <ul>
 <li>Date and time of the request</li>
-<li>Public IP address to which the response is to be directed</li>
+<li>Public IP address to which the response is to be directed [1]</li>
 <li>Request type (e.g. <em>&quot;GET&quot;</em> or <em>&quot;POST&quot;</em>)</li>
 <li>Resource requested (e.g., <em>&quot;/downloads.html HTTP/1.1&quot;</em> or <em>&quot;/appcast-b.rss HTTP/1.1&quot;</em></li>
 <li>Result code (e.g., <em>&quot;200&quot;</em> — OK or <em>&quot;404&quot;</em> — not found)</li>
@@ -146,25 +149,26 @@
 <li>&quot;Referer&quot; (sic) supplied by the browser, the URL of the page that requested the resource</li>
 <li>&quot;User agent&quot; supplied by the browser (e.g. <em>&quot;Mozilla/5.0 (Macintosh; Intel Mac OS 10_10_4) AppleWebKit/600.7.12 (KHTML, like Gecko)&quot;</em> or <em>&quot;Tunnelblick/3.5.3 (build 4270.4371) Sparkle/4270.4371&quot;</em>).</li>
 </ul>
-<p>Tunnelblick's downloads are hosted by GitHub. GitHub also logs this information; see the <a href="https://help.github.com/articles/github-privacy-statement/">GitHub Privacy Statement</a>.</p>
-<p>Tunnelblick's non-English language pages are served by Google Translate, which also logs common information; see the <a href="https://www.google.com/intl/en/policies/privacy/">Google Privacy Policy</a>.</p>
+<p>[1] Public IP addresses may be considered &quot;Personal Information&quot; with respect to the Eurpean General Data Protection Regulation Information. See <a href="https://tunnelblick.net/cGDPR.html">General Data Protection Regulation Information</a> for details.</p>
+<p>Tunnelblick's downloads are hosted by GitHub and/or SourceForge, both of which may also log information. See the <a href="https://help.github.com/articles/github-privacy-statement/">GitHub Privacy Statement</a> and the <a href="https://slashdotmedia.com/privacy-statement/">SourceForge Media Privacy Policy</a> for details.</p>
+<p>Tunnelblick's non-English language pages are served by Google Translate, which also logs common information. See the <a href="https://www.google.com/intl/en/policies/privacy/">Google Privacy Policy</a> for details.</p>
 <p><a href="cNews.html#2017-10-03">At times the Tunnelblick website is protected from attack by Cloudflare</a>. This protection may be turned on or off without notice. Cloudflare does its own logging of DNS requests and requests to the Tunnelblick website, in addition to any logging done by Tunnelblick's host provider. See <a href="https://blog.cloudflare.com/what-cloudflare-logs/">What Cloudflare Logs</a> for details.</p>
-<p><strong><em>Website access</em></strong>: tunnelblick.net does not use Javascript, other client-side scripting, plugins, trackers, beacons, or web bugs, does not collect information (other than the log information described above), does not carry advertising, and does not store cookies or any other data on your computer (except as noted in <a href="#Cookies">Cookies</a>, below). You may be able to use your browser's &quot;private&quot; or &quot;incognito&quot; mode to keep it from caching site content or browser history.</p>
-<p><strong><em>Update check requests</em></strong> send the following information to tunnelblick.net via https:</p>
+<p><strong><em>Logging of website access</em></strong>: tunnelblick.net does not use Javascript, other client-side scripting, plugins, trackers, beacons, or web bugs, does not collect information (other than the log information described above), does not carry advertising, and does not store cookies or any other data on your computer (except as noted in <a href="#Cookies">Cookies</a>, below). You may be able to use your browser's &quot;private&quot; or &quot;incognito&quot; mode to keep it from caching site content or browser history.</p>
+<p><strong><em>Logging of Update check requests</em></strong> send the following information to tunnelblick.net via https:</p>
 <ul>
 <li>The apparent public IP address and port of the computer (or the router the computer uses to connect to the Internet)</li>
 <li>The version of Tunnelblick and the version of Sparkle (the update-checking portion of the program)</li>
 <li>If the user has agreed, some versions of Tunnelblick may also sometimes send the version of OS X that is being used, as described above</li>
 </ul>
-<p><strong><em>Update information requests</em></strong>: if an update is available, Tunnelblick will send a request to the tunnelblick.net website via https: for information about the update that is to be displayed to the user.</p>
-<p><strong><em>Update download requests</em></strong>: If an update is available and the user agrees, Tunnelblick will download the update via https: from <a href="https://github.com/Tunnelblick/Tunnelblick">GitHub</a>. GitHub commonly redirects downloads to amazonaws.com.</p>
-<p><strong><em>IP address check requests</em></strong> send the following information to the tunnelblick.net website via https:, falling back to http: if certain errors occur:</p>
+<p><strong><em>Logging of Update information requests</em></strong>: if an update is available, Tunnelblick will send a request to the tunnelblick.net website via https: for information about the update that is to be displayed to the user.</p>
+<p><strong><em>Logging of Update download requests</em></strong>: If an update is available and the user agrees, Tunnelblick will download the update via https: from <a href="https://github.com/Tunnelblick/Tunnelblick">GitHub</a>. GitHub commonly redirects downloads to amazonaws.com.</p>
+<p><strong><em>Logging of IP address check requests</em></strong> send the following information to the tunnelblick.net website via https:, falling back to http: if certain errors occur:</p>
 <ul>
 <li>The apparent public IP address and port of the computer (or the router the computer uses to connect to the Internet)</li>
 <li>The version of Tunnelblick</li>
 </ul>
 <h3 id="cookies">Cookies</h3>
-<p>When the Tunnelblick website is protected by Cloudflare, Cloudflare may store cookies for tunnelblick.net on your computer; these cookies are not used by the Tunnelblick website and you may delete or block them at any time.</p>
+<p>When the Tunnelblick website is <a href="https://tunnelblick.net/cNews.html#2017-10-03">protected by Cloudflare</a>, Cloudflare may store cookies for tunnelblick.net on your computer These cookies are not used by the Tunnelblick website and you may delete or block them at any time. See <a href="https://www.cloudflare.com/cookie-policy/">Cloudflare's Cookie Policy</a> for details.</p>
 
 
 
