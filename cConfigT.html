@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-05-08 14:47:29 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-06-09 16:25:14 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
@@ -91,50 +91,45 @@
 <p>Otherwise, continue!</p>
 <hr>
 <h2 id="setting-up-and-installing-configurations">Setting Up and Installing Configurations</h2>
-<p>It is not enough to install Tunnelblick: you also need to tell Tunnelblick <strong><em>how to connect</em></strong> to a VPN.</p>
+<p><strong>First, install Tunnelblick and launch it so it is running.</strong></p>
+<p>It is not enough to <strong>install</strong> Tunnelblick: you also need to tell Tunnelblick <strong><em>how to connect</em></strong> to a VPN.</p>
 <p>You tell Tunnelblick how to connect to a VPN with a configuration file.</p>
-<p><strong>If you already have configuration files</strong> you can install them by double-clicking them.</p>
+<p><strong>If you already have configuration files</strong> you can install them by dragging and dropping them onto the Tunnelblick icon in the menu bar.</p>
 <p>After installing your configurations, continue with <a href="#the-set-nameserver-check-box-and-dns-wins-settings">&quot;Set Nameserver&quot; Check Box and DNS &amp; WINS Settings</a>, below.</p>
 <hr>
 <p><strong>If you don't have configuration files or you want more information about them</strong> continue reading.</p>
 <p>Tunnelblick can use two types of configuration files:</p>
 <ul>
-<li><strong>Tunnelblick VPN Configurations.</strong> A Tunnelblick VPN Configuration contains all of the information Tunnelblick needs to connect to one or more VPNs. A Tunnelblick VPN Configuration contains one or more OpenVPN configuration files, and may contain key, certificate, and script files. Everything needed is contained within the Tunnelblick VPN Configuration. (Tunnelblick VPN Configurations are available only on Tunnelblick 3.1 and up.)</li>
-<li><strong>OpenVPN configuration files.</strong> These are plain text files with extensions of .ovpn or .conf. These files usually contain only the configuration information; keys and certificates are held in separate files. <strong>For more information about setting up Tunnelblick using OpenVPN configuration files, see <a href="cConfigO.html">Configuring OpenVPN</a>.</strong></li>
+<li><p><strong>Tunnelblick VPN Configurations.</strong> A Tunnelblick VPN Configuration contains all of the information Tunnelblick needs to connect to one or more VPNs. A Tunnelblick VPN Configuration contains one or more OpenVPN configuration files, and may contain key, certificate, and script files. Everything needed is contained within the Tunnelblick VPN Configuration. Tunnelblick VPN Configurations may also contain other information, including information about default preferences for the configuration and identification and version information for the configuration itself that make managing widespread distribution easier. For details, see <a href="cPkgs.html">Tunnelblick VPN Configurations Details</a>.</p></li>
+<li><p><strong>OpenVPN configuration files.</strong> These are plain text files with extensions of .ovpn or .conf. These files usually contain only the configuration information; keys and certificates may be held in separate files. When installed, they are converted to Tunnelblick VPN Configurations. <strong>For more information about setting up Tunnelblick using OpenVPN configuration files, see <a href="cConfigO.html">Configuring OpenVPN</a>.</strong></p></li>
 </ul>
-<p>Tunnelblick VPN Configurations may also contain other information, including information about default preferences for the configuration and identification and version information for the configuration itself that make managing widespread distribution easier. For details, see <a href="cPkgs.html">Tunnelblick VPN Configurations Details</a>.</p>
 <h3 id="converting-openvpn-configurations-to-tunnelblick-vpn-configurations">Converting OpenVPN Configurations to Tunnelblick VPN Configurations</h3>
-<p>Tunnelblick version 3.3beta22 and higher can convert OpenVPN configurations to Tunnelblick VPN Configurations. This is primarily used to transition to newer versions of Tunnelblick. When you launch Tunnelblick and have private OpenVPN configurations, Tunnelblick will offer to convert them to Tunnelblick VPN Configurations. Two important points:</p>
-<ul>
-<li>The OpenVPN configurations must be &quot;valid&quot; — that is, any key and certificate files that are referenced must exist; and</li>
-<li>Any OpenVPN configurations that are not converted are not available for use.</li>
-</ul>
-<p>(You can also double-click an OpenVPN configuration and it will be installed as a Tunnelblick VPN Configuration.)</p>
+<p>You can drag and drop OpenVPN configurations onto the Tunnelblick icon in the menu bar and they will be installed as Tunnelblick VPN Configurations.</p>
 <h3 id="creating-and-installing-a-tunnelblick-vpn-configuration">Creating and Installing a Tunnelblick VPN Configuration</h3>
 <p>To create a Tunnelblick VPN Configuration:</p>
 <ol>
 <li>Create a folder anywhere (on your Desktop works well);</li>
-<li>If you have only one OpenVPN configuration file, name the folder with the name you want the configuration known by in Tunnelblick. (Otherwise, each configuration will be known in Tunnelblick by the name of the OpenVPN configuration file that it uses);</li>
+<li>If you have only one OpenVPN configuration file, name the folder with the name you want the configuration known by in Tunnelblick. (Otherwise, each configuration will be known in Tunnelblick by the name of the OpenVPN configuration file that it is based on);</li>
 <li>Copy all the files related to the configuration(s) into the folder (see <a href="#files-contained-in-a-tunnelblick-vpn-configuration">Files Contained in a Tunnelblick VPN Configuration</a>, below);</li>
-<li>Add an extension of &quot;.tblk&quot; at the end of the folder name. When you do this the icon for folder will change into a Tunnelblick VPN Configuration.</li>
-<li>Double-click the folder's new icon to install it.</li>
+<li>Add an extension of &quot;.tblk&quot; at the end of the folder name. When you do this the icon for the folder will change to an icon for a Tunnelblick VPN Configuration.</li>
+<li>Drag and drop the folder's new icon onto the Tunnelblick icon in the menu bar to install it.</li>
 </ol>
-<p>When you double-click it, you will be asked if you want each configuration to be private or shared. A private configuration may only be used when you are logged onto the computer. A shared configuration may be used by anyone who is logged into the computer. If the name you have given conflicts with the name of an existing installed configuration, you will be given the opportunity to change the name.</p>
-<p>The process of installation will copy the .tblk to a special location on your computer (see <a href="cFileLocations.html">File Locations</a>) and make changes to it so it can be used securely. You can then delete the original .tblk you created, or move it somewhere convenient as a backup, or copy or move it to another computer and double-click it on that computer to install it. (The Tunnelblick program must be installed on any computer before you double-click a .tblk on that computer.)</p>
+<p>When you install, you will be asked if you want each configuration to be private or shared. A private configuration may only be used when you are logged onto the computer. A shared configuration may be used by anyone who is logged into the computer. If the name you have given conflicts with the name of an existing installed configuration, you will be given the opportunity to change the name.</p>
+<p>The process of installation will copy the .tblk to a special location on your computer (see <a href="cFileLocations.html">File Locations</a>) and make changes to it so it can be used securely. You can then delete the original .tblk you created, or move it somewhere convenient as a backup, or copy or move it to another computer and install it on that computer.</p>
 <p>That's it! You are done. The configuration(s) will be available immediately in Tunnelblick.</p>
 <h3 id="modifying-a-tunnelblick-vpn-configuration">Modifying a Tunnelblick VPN Configuration</h3>
 <p>You can modify a Tunnelblick VPN Configuration two ways:</p>
 <ul>
-<li>If you want to change the contents of the installed OpenVPN configuration file, you should select the configuration in Tunnelblick's VPN Details window, then click the &quot;gear&quot; button at the bottom of the list and select &quot;Edit OpenVPN Configuration File...&quot;. That will open the installed OpenVPN configuration file in TextEdit. Changes take effect as soon as the file is saved in TextEdit. Note that this does not modify your original .tblk; it modifies the installed copy only.</li>
+<li><p>If you want to change the contents of an installed OpenVPN configuration file that is installed as a Private configuration, you should select the configuration in Tunnelblick's VPN Details window, then click the &quot;gear&quot; button at the bottom of the list and select &quot;Edit OpenVPN Configuration File...&quot;. That will open the installed OpenVPN configuration file in TextEdit. Changes take effect as soon as the file is saved in TextEdit. Note that this does not modify your original .tblk; it modifies the installed copy only.</p></li>
+<li><p>You can't change the contents of an installed OpenVPN configuration file that is installed as a Shared configuration. (You can convert it to be a Private configuration, edit it, and then change it back to be Shared.)</p></li>
 <li>If you want to make other changes (to the key/certificate files, for example), you'll have to</li>
 </ul>
 <ol>
 <li>Modify your original .tblk to include the changes (rename it to not end in &quot;.tblk&quot;, then make the changes, then rename it to end in &quot;.tblk&quot; again);</li>
-<li>Delete the old configuration (select the configuration in Tunnelblick's VPN Details window, then click the &quot;-&quot; button at the bottom of the list); and</li>
-<li>Install the modified .tblk by double-clicking it.</li>
+<li>Drag and drop the modified .tblk onto the Tunnelblick icon in the menu bar to install it.</li>
 </ol>
 <h3 id="files-contained-in-a-tunnelblick-vpn-configuration">Files Contained in a Tunnelblick VPN Configuration</h3>
-<p>The files that should be contained in a Tunnelblick VPN Configuration (the &quot;files related to the connection&quot; in 3. above) should all be &quot;plain text&quot; files:</p>
+<p>The files that should be contained in a Tunnelblick VPN Configuration (the &quot;files related to the connection&quot; above) should all be &quot;plain text&quot; files:</p>
 <ul>
 <li>One or more OpenVPN configuration files (.ovpn or .conf files).</li>
 <li>Any certificate or key files for the configurations (.key, .crt, .pem, .cer, .der, .p12, .p7b, .p7c, and .pfx files); and</li>
@@ -145,15 +140,11 @@
 <p>If you are using DHCP, wish to use DNS and WINS servers at the far end of the tunnel when connected, and the VPN server you are connecting to &quot;pushes&quot; DNS and WINS settings to your client, select &quot;Set nameserver&quot;. (This is the situation for most users.)</p>
 <p>If you are using DHCP, wish to use your original DNS and WINS servers when connected, and the VPN server you are connecting to does not &quot;push&quot; DNS or WINS settings to your client, select &quot;Do not set nameserver&quot;.</p>
 <p>If you are using manual settings, different versions of OS X behave differently. This is due to a change in network behavior in Snow Leopard and is beyond the scope of this project to fix.</p>
+<p>If you're using Leopard (OS X 10.5) or Tiger (OS X 10.4), then it is possible to use the VPN-server-supplied DNS and WINS settings <strong>in addition to</strong> your manual settings by selecting &quot;Set nameserver&quot;. However, your manual settings will always take precedence over any VPN server-supplied settings. If &quot;Do not set nameserver&quot; is selected, you will continue to use only your manually-configured settings and any VPN server-supplied settings will be ignored. &quot;Take precedence&quot; means that the manual DNS server will be used for all DNS queries unless it fails to answer, in which case the VPN server-supplied DNS server will be used.</p>
+<p>If you are using Snow Leopard (OS X 10.6) or later, then your usual DNS and WINS settings will <strong>always</strong> be used, and no aggregation of configurations will be performed.</p>
 <ul>
-<li>If you're using Leopard (10.5) or Tiger (10.4), then it is possible to use the VPN-server-supplied DNS and WINS settings <strong>in addition to</strong> your manual settings by selecting &quot;Set nameserver&quot;. However, your manual settings will always take precedence over any VPN server-supplied settings. If &quot;Do not set nameserver&quot; is selected, you will continue to use only your manually-configured settings and any VPN server-supplied settings will be ignored. &quot;Take precedence&quot; means that the manual DNS server will be used for all DNS queries unless it fails to answer, in which case the VPN server-supplied DNS server will be used.</li>
-</ul>
-<p>*If you are using Snow Leopard (10.6), then your usual DNS and WINS settings will <strong>always</strong> be used, and no aggregation of configurations will be performed.</p>
-<ul>
-<li><p>If you set your DNS servers manually, then regardless of the state of &quot;Set nameserver&quot;, your manual DNS servers will always be the only ones used.</p></li>
-<li><p>If you set your Search Domain(s) manually, then regardless of the state of &quot;Set nameserver&quot;, your manual Search Domains will always be the only ones used.</p></li>
-<li><p>If you set your WINS servers manually, then regardless of the state of &quot;Set nameserver&quot;, your manual WINS servers will always be the only ones used.</p></li>
-<li><p>Each of these settings is independent of the others: if &quot;Set nameserver&quot; is selected, those settings not configured manually will be replaced by the settings obtained from the VPN server. If &quot;Do not set nameserver&quot; is selected, then as with Leopard/Tiger, no DNS/WINS settings will be applied.</p></li>
+<li><p>If you set your DNS servers manually, then regardless of the state of &quot;Set nameserver&quot;, your manual DNS servers, Search Domains, and WINS servers will always be the only ones used unless you set the configuration to &quot;Allow changes to manually-set network settings&quot;.</p></li>
+<li><p>Each of these settings is independent of the others: if &quot;Set nameserver&quot; is selected, those settings not configured manually will be replaced by the settings obtained from the VPN server. If &quot;Do not set nameserver&quot; is selected, then as with Leopard/Tiger, no DNS/WINS settings will be applied unless you set the configuration to &quot;Allow changes to manually-set network setttings&quot;.</p></li>
 </ul>
 <p><strong>If your situation is not described above</strong> (e.g., if you use manual DNS settings and wish to use DNS servers at the far end of a tunnel when connected, or you wish to use the OS X ability to use different nameservers for different domains), you must create your own up/down scripts and select &quot;Set nameserver&quot;.</p>
 <hr>
