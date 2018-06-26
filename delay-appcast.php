@@ -11,7 +11,7 @@
 
     $delay = 25; // integer seconds to delay
 
-    $target = 'updates/3.7.6/appcast-v2.rss'; // path without "https://tunnelblick.net/" prefix
+    $target = 'updates/3.7.6a/appcast-v2.rss'; // path without "https://tunnelblick.net/" prefix
 
 
     // Delay
