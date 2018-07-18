@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-06-26 11:09:33 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-07-18 11:43:58 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
@@ -85,7 +85,13 @@
 <li>Once a configuration is shared, set it to connect &quot;When computer starts&quot;. The next time the computer is started, the configuration will be connected even before anyone logs in. You can also connect the configuration using Tunnelblick without restarting the computer .</li>
 </ol>
 <p>Whenever you quit Tunnelblick (or you log out, which causes Tunnelblick to quit), Tunnelblick will leave &quot;when computer starts&quot; configurations connected, but close all other configurations that are connected.</p>
-<p>To edit the configuration file, the configuration must first be disconnected and made private. Then, after editing, make the configuration shared and connect it.</p>
+<h3 id="vpn-usernamepassword">VPN Username/Password</h3>
+<p>If an OpenVPN configuration requires a username/password, usually it includes &quot;auth-user-pass&quot; without a parameter, which directs OpenVPN to ask Tunnelblick for a username and password. Tunnelblick then either asks the user for them using a dialog box, or retrieves them from the currently-logged-in-user's Keychain (if the user had previously asked Tunnelblick to save them in the Keychain).</p>
+<p>That doesn't work for &quot;when computer starts&quot; configurations because no user is logged in. There's no way to display a dialog, and there is no Keychain available.</p>
+<p>However, you can change the OpenVPN configuration file so it <em>will</em> work. Change &quot;auth-user-pass&quot; to &quot;auth-user-pass abc.key&quot;, and include a plain-text &quot;abc.key&quot; file which contains the username on the first line and the password on the second line. In that situation OpenVPN obtains the username and password directly from the file, which works even if no user is logged in.</p>
+<p>Put the &quot;abc.key&quot; file and the modified OpenVPN configuration file in a folder along with any other files that are needed for the configuration. Rename the folder to be XXX.tblk (where XXX is the name you want for the VPN) and then drag/drop it onto the Tunnelblick icon in the menu bar to install it. Tunnelblick copies the folder and secures the abc.key file, so you should securely delete the folder so the username/password cannot be accessed by others.</p>
+<p>(You can choose any name for the &quot;abc&quot; part, but to ensure that the file is not visible to other users, it must have an extension of &quot;.key&quot;.)</p>
+<p><em>Tip: To edit the configuration file, the configuration must first be disconnected and made private. Then, after editing, make the configuration shared and connect it so that it will be secured.</em></p>
 
 
 
