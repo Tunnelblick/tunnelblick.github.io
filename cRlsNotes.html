@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-07-27 13:35:38 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-07-31 22:39:12 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
@@ -84,13 +84,16 @@
 
 
 
-<p><strong>3.7.7beta04 build 5112 (2018-07-27) </strong></p>
+<p><strong>3.7.7beta04 build 5120 (2018-07-31) </strong></p>
 <ul>
 <li>Allows scripts to control challenge/response (useful for <a href="https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm">TOTP</a> and other authentication devices). See <a href="cMultiFactorAuthentication.html">Multi-factor and Two-factor Authentication</a> for details.</li>
-<li>Includes OpenVPN git master 57d6f10 dated 2018-07-25, which includes (<a href="https://sourceforge.net/p/openvpn/mailman/openvpn-devel/thread/A7C436F7-%203B7C-44B4-B783-71B098AE2ABB%40sparklabs.com/#msg36373788">two</a> and <a href="https://sourceforge.net/p/openvpn/mailman/openvpn-devel/thread/777939F9-%20A753-4A66-B40E-1346AFD588DE%40sparklabs.com/#msg36373787">patches</a>] proposed to fix gateway and IPv6 problems.</li>
+<li>Includes OpenVPN git master 57d6f10 dated 2018-07-25, which includes two patches (<a href="https://sourceforge.net/p/openvpn/mailman/openvpn-devel/thread/A7C436F7-3B7C-44B4-B783-71B098AE2ABB%40sparklabs.com/#msg36373788">1</a> and <a href="https://sourceforge.net/p/openvpn/mailman/openvpn-devel/thread/777939F9-A753-4A66-B40E-1346AFD588DE%40sparklabs.com/#msg36373787">2</a>) that have been proposed to fix gateway and IPv6 problems.</li>
 <li>Uses non-modal windows for more activities.</li>
 <li>Allows OpenVPN's 'management' option in configuration files (but always overrides it).</li>
 <li>Improves error handling for extremely unlikely errors.</li>
+<li>Adds Cloudflare/APNIC DNS servers (IPv4 and IPv6, including 1.1.1.1) to the list of known public DNS providers.</li>
+<li>Includes updated translations.</li>
+<li>Complains if /tmp, /private, and /private/tmp are do not have the correct ownership and permissions.</li>
 <li>Fixes several problems with dynamic challenge/response.</li>
 <li>Fixes a problem and speeds up checking for apparent public IP address changes.</li>
 </ul>
