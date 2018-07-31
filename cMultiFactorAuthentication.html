@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" lang="en">
+	<meta name="description" content="Multi-factor and Two-factor Authentication - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+	<meta name="referrer" content="never">
+	<title>Multi-factor and Two-factor Authentication - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+	<link rel="stylesheet" type="text/css"  href="/common/style.v5.css">
+	<link rel="icon"       type="image/png" href="/common/favicon.v1.png">
+</head>
+
+<body>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-07-27 13:35:38 UTC</font></td></tr></table></center>
+
+<div class="heading">
+	<table>
+		<tr>
+			<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
+			<td class="heading1">Tunnelblick</td>
+			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading3">
+                <a href="/cLocalizeTranslate.html">We need translators for several languages&hellip;</a>
+            </td>
+		</tr>
+	</table>
+</div>
+
+
+<div class="topnav">
+<table class="topnav"><tbody><tr>
+	<td class="topnav-normal"   ><a href="/index.html"      class="topnav">Home</a></td>
+	<td class="topnav-normal"   ><a href="/downloads.html"  class="topnav">Downloads</a></td>
+	<td class="topnav-normal"   ><a href="/support.html"    class="topnav">Support</a></td>
+	<td class="topnav-highlight"><a href="/documents.html"  class="topnav">Documents</a></td>
+	<td class="topnav-normal"   ><a href="/issues.html"     class="topnav">Issues</a></td>
+	<td class="topnav-normal"   ><a href="/source.html"     class="topnav">Source</a></td>
+	<td class="topnav-normal"   ><a href="/contribute.html" class="topnav">Contribute</a></td>
+	<td class="topnav-normal"   ><a href="/reachus.html"    class="topnav">Contact</a></td>
+	<td class="topnav-padding"  ></td>
+</tbody></table>
+</div>
+
+
+
+<div class="content">
+<div class="content-cMultiFactorAuthentication">
+<table class="documents">
+  <tr>
+    <td class="documents-left">
+
+
+
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="/cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="/czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="/cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="/cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="/cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="/cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="/cFAQ.html">FAQ</a></p>
+
+<p><strong><a href="https://groups.google.com/forum/#&#33;forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="/cBeforeYouPost.html">Read Before You Post</a></p>
+
+
+
+    </td>
+    <td class="documents-right">
+    
+
+
+<h1 id="multi-factor-and-two-factor-authentication">Multi-factor and Two-factor Authentication</h1>
+<hr>
+<p><strong><a href="https://en.wikipedia.org/wiki/Multi-factor_authentication">Multi-factor authentication</a></strong> (&quot;MFA&quot;) is a method of confirming an identity by presenting two or more pieces of evidence (factors):</p>
+<ul>
+<li>Something the user knows</li>
+<li>Something the user has</li>
+<li>Something the user is</li>
+</ul>
+<p>A common form of multi-factor authentication is <strong>two-factor authentication</strong> (&quot;2FA&quot;), which requires two factors.</p>
+<p>OpenVPN and Tunnelblick support MFA by offering <strong>username/password authentication</strong> (which can prove the user knows something), and <strong>challenge/response authentication</strong> (which can prove the user has something or the user is something).</p>
+<hr>
+<h3 id="usernamepassword-authentication">Username/Password Authentication</h3>
+<p>Username/password authentication is done using scripts on the OpenVPN server combined with an '--auth-user-pass' option in an OpenVPN configuration file on the OpenVPN client.</p>
+<p>When connecting to a VPN, Tunnelblick displays a window that lets the user enter their username and password. They are sent to the OpenVPN server and if approved, the connection attempt continues.</p>
+<p>Checkboxes in the window allow the user to save the username or the username and password in the macOS Keychain. The saved credentials can be deleted by selecting the configuration in the list on the left side of the &quot;Configurations&quot; panel of Tunnelblick's &quot;VPN Details&quot; window, clicking the small &quot;gear&quot; icon underneath the list, and clicking &quot;Delete Configuration's Credentials in Keychain&quot;.</p>
+<hr>
+<h3 id="challengeresponse-authentication">Challenge/Response Authentication</h3>
+<p>OpenVPN and Tunnelblick support two different types of challenge/response authentication:</p>
+<p><strong>Static challenge/response</strong> authentication is done using scripts on the OpenVPN server combined with a '--static-challenge' option in the OpenVPN client's configuration file.</p>
+<p>The --static-challenge option should be included in the client OpenVPN configuration file as</p>
+<pre><code>static-challenge&amp;nbsp;&lt;text&gt;&amp;nbsp;&lt;echo&gt;`</code></pre>
+<p>where <code>&lt;text&gt;</code> is the text that is presented to the user, and <code>&lt;echo&gt;</code> is 0 to indicate that the user's response should not be echoed, or 1 to indicate the user's response should be echoed. (The <code>&lt;text&gt;</code> should be quoted if it contains spaces or other special characters.)</p>
+<p>After asking for the username/password window, Tunnelblick will display a separate window with the <code>&lt;text&gt;</code> and a place to type in a response. The username, password, and response are then sent to the OpenVPN server and if approved, the connection attempt is allowed to continue.</p>
+<p><strong>Dynamic challenge/response</strong> authentication is done using scripts on the OpenVPN server <em>without any changes to the OpenVPN client's configuration file.</em> The scripts send a specially-formatted error message which causes Tunnelblick to display a window with challenge text from the error message and a place to type in a response. The response is then sent to the OpenVPN server, and if approved, the connection is allowed to continue.</p>
+<p>The OpenVPN <a href="https://openvpn.net/index.php/open-source/documentation/miscellaneous/79-management-interface.html">Management Interface Notes</a> contain more information about challenge/response protocol; that document is also included in the OpenVPN source code.</p>
+<h3 id="hardware-tokens-and-biometric-devices">Hardware Tokens and Biometric Devices</h3>
+<p>Tunnelblick supports the use of hardware tokens and biometric devices by obtaining the response for a static or dynamic challenge from a script in a <a href="cConfigT.html">Tunnelblick VPN Configuration</a>. The script typically presents the challenge to a device and returns the device's response to Tunnelblick by writing it to stdout.</p>
+<p>The scripts must have specific names: &quot;static-challenge-response.user.sh&quot; and &quot;static-challenge-response.user.sh&quot;.</p>
+<p>The scripts are run as the user with a safe set of environment variables and with the following four arguments:</p>
+<ol>
+<li>The challenge string.</li>
+<li>The name of the configuration.</li>
+<li>The localized name of the configuration, which may be the same as the name.</li>
+<li>Either 'echo' or 'noecho' to indicate whether or not the response should be shown to the user.</li>
+</ol>
+<p><strong>If the script succeeds</strong> it should output the response to stdout (usually without a trailing newline character) and exit with an exit code of zero. No user interaction will take place.</p>
+<p><strong>If the script fails</strong>,** it should output an error message to stderr, and exit with an exit code of 1, 2, or 3:</p>
+<ul>
+<li><p>Exit code 1: The configuration is disconnected and Tunnelblick displays a window with the error message and an &quot;OK&quot; button.</p></li>
+<li><p>Exit code 2: The configuration is disconnected and Tunnelblick displays a window with the error message and &quot;OK&quot; and &quot;Retry&quot; buttons. If the user clicks &quot;Retry&quot;, Tunnelblick will attempt to connect to the VPN again after the disconnection is complete.</p></li>
+<li><p>Exit code 3: The configuration is disconnected and Tunnelblick displays a window with the error message and &quot;OK&quot;, &quot;Retry&quot;, and &quot;Retry with manual response&quot; buttons. If the user clicks &quot;Retry&quot;, Tunnelblick will attempt to connect to the VPN again after the disconnection is complete. If the user clicks &quot;Retry with manual response&quot;, Tunnelblick will attempt to connect to the VPN again after the disconnection is complete but (for that one connection attempt only) will present the challenge to the user and obtain a response as if the script was not present.</p></li>
+</ul>
+<p>For more information about these and other scripts in <a href="cConfigT.html">Tunnelblick VPN Configurations</a>, see <a href="cUsingScripts.html">Using Scripts</a>.</p>
+
+
+
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+
+
+
+<div class="bottom-translation">
+  <span title="view in German or another language using Google Translate">               <a lang="de"      class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcMultiFactorAuthentication.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;         </a></span>
+  <span title="view in French or another language using Google Translate">               <a lang="fr"      class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcMultiFactorAuthentication.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;        </a></span>
+  <span title="view in Chinese (simplified) or another language using Google Translate"> <a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcMultiFactorAuthentication.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp; </a></span>
+  <span title="view in Russian or another language using Google Translate">              <a lang="ru"      class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcMultiFactorAuthentication.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;         </a></span>
+  <span title="view in Spanish or another language using Google Translate">              <a lang="es"      class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcMultiFactorAuthentication.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;         </a></span>
+  <span title="view in Japanese or another language using Google Translate">             <a lang="ja"      class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcMultiFactorAuthentication.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;           </a></span>
+  <span title="view in Italian or another language using Google Translate">              <a                class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcMultiFactorAuthentication.html&amp;sandbox=1">&nbsp;&nbsp;&hellip;&nbsp;&nbsp;        </a></span>
+</div>
+<div class="bottom-copyright">
+  Copyright &copy; 2015-2018 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;
+</div>
+</body>
+</html>
