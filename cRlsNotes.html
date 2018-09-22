@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-07-31 22:39:12 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-09-22 11:41:32 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
@@ -84,10 +84,28 @@
 
 
 
+<p><strong>3.7.7beta05 build 5130 (2018-09-22) </strong></p>
+<ul>
+<li>Includes OpenSSL 1.0.2p and 1.1.1 (see release notes for <a href="https://www.openssl.org/news/openssl-1.0.2-notes.html">1.0.2</a> and <a href="https://www.openssl.org/news/openssl-1.1.1-notes.html">1.1.1</a>).</li>
+<li>Supports macOS Mojave (10.14) &quot;Dark Mode&quot;.</li>
+<li>Adds the ability to export and import all Tunnelblick configurations in a single operation.</li>
+<li>Sets DNS servers and domain via networksetup when using 'Set nameserver (alternate 2)'.</li>
+<li>Improves security by using full paths for system utilities.</li>
+<li>Explains the cause of certain routing errors.</li>
+<li>Improves dialogs explaining why Tunnelblick needs a computer administrator's authorization.</li>
+<li>Adds 'D. Simeonidis' and 'Zack Strulovitch' to translator credits on the Info panel.</li>
+<li>Fixes a crash when non-default scripts are used and a connection exists when Tunnelblick is launched.</li>
+<li>Fixes a typo in a log message shown only when debugging.</li>
+<li>Fixes a problem that caused the 'on unexpected disconnect' button to be disabled.</li>
+<li>Fixes a problem that caused spurious warnings in the Console log.</li>
+<li>Fixes a problem that caused certain Console log messages to generate errors.</li>
+<li>Fixes a problem that caused errors in seriously damaged systems.</li>
+</ul>
+<hr />
 <p><strong>3.7.7beta04 build 5120 (2018-07-31) </strong></p>
 <ul>
 <li>Allows scripts to control challenge/response (useful for <a href="https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm">TOTP</a> and other authentication devices). See <a href="cMultiFactorAuthentication.html">Multi-factor and Two-factor Authentication</a> for details.</li>
-<li>Includes OpenVPN git master 57d6f10 dated 2018-07-25, which includes two patches (<a href="https://sourceforge.net/p/openvpn/mailman/openvpn-devel/thread/A7C436F7-3B7C-44B4-B783-71B098AE2ABB%40sparklabs.com/#msg36373788">1</a> and <a href="https://sourceforge.net/p/openvpn/mailman/openvpn-devel/thread/777939F9-A753-4A66-B40E-1346AFD588DE%40sparklabs.com/#msg36373787">2</a>) that have been proposed to fix gateway and IPv6 problems.</li>
+<li>Includes OpenVPN git master 57d6f10 dated 2018-07-25, and includes two patches (<a href="https://sourceforge.net/p/openvpn/mailman/openvpn-devel/thread/A7C436F7-3B7C-44B4-B783-71B098AE2ABB%40sparklabs.com/#msg36373788">1</a> and <a href="https://sourceforge.net/p/openvpn/mailman/openvpn-devel/thread/777939F9-A753-4A66-B40E-1346AFD588DE%40sparklabs.com/#msg36373787">2</a>) that have been proposed to fix gateway and IPv6 problems.</li>
 <li>Uses non-modal windows for more activities.</li>
 <li>Allows OpenVPN's 'management' option in configuration files (but always overrides it).</li>
 <li>Improves error handling for extremely unlikely errors.</li>
