@@ -1,0 +1,53 @@
+.footer-container {
+	background-color: #eaeaea;
+	padding: 30px 0;
+	.footer-details {
+		color:$bk-dark;
+		a {
+			color:$bk-dark;
+		}
+		.footer-left {
+			.copyright {
+				ul {
+					padding-left: 0.9375rem;
+					li {
+						display: inline-block;
+						&.float-right {
+							float: right;
+						}
+						margin-right: 20px;
+					}
+				}
+			}
+		}
+	}
+}
+
+#engadget-footer-sitemap-container {
+	max-width: 100%;
+	width: 100%;
+	margin: 0 auto;
+	margin-top: rem-calc(0);
+	background-color: $bk-dark-text;
+
+	#engadget-footer-sitemap {
+		@include grid-row();
+		color:$light-gray;
+		padding: rem-calc(60) 0;
+		a {
+			color:$light-gray !important;
+		}
+		.links {
+			@include breakpoint(small) {
+				@include grid-layout(2, '.link-column', $grid-column-gutter);
+			}
+			@include breakpoint(large) {
+				@include grid-layout(4, '.link-column', $grid-column-gutter);
+			}
+
+			.link-column:not(:last-child) {
+				border-right:1px solid $light-gray
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+.grid-container {
+	&.fluid {
+		&.summary {
+			background-color: $az-premium-blue;
+			padding-top: 0.25rem;
+			padding-bottom: 0.25rem;
+			.cell {
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				margin-bottom: 0;
+				h2 {
+					color: $white;
+					font-size: 12px;
+					letter-spacing: 0.81px;
+					font-family: $light-font-family;
+					margin: 0;
+				}
+			}
+			.location {
+				width: 25px;
+				&:first-child {
+					padding-bottom: 5px;
+				}
+			}
+			.top-bar {
+				background-color: $az-premium-blue;
+			}
+		}
+	}
+}
