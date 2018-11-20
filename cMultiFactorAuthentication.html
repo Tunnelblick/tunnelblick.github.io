@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-09-29 21:18:00 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-11-20 22:23:45 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
@@ -96,7 +96,7 @@
 <p>OpenVPN and Tunnelblick support two different types of challenge/response authentication, starting with Tunnelblick 3.7.7beta04:</p>
 <p><strong>Static challenge/response</strong> authentication is done using scripts on the OpenVPN server combined with a '--static-challenge' option in the OpenVPN client's configuration file.</p>
 <p>The --static-challenge option should be included in the client OpenVPN configuration file as</p>
-<pre><code>static-challenge  &lt;text&gt;  &lt;echo&gt;`</code></pre>
+<pre><code>static-challenge  &lt;text&gt;  &lt;echo&gt;</code></pre>
 <p>where <code>&lt;text&gt;</code> is the text that is presented to the user, and <code>&lt;echo&gt;</code> is <code>0</code> to indicate that the user's response should not be echoed, or <code>1</code> to indicate the user's response should be echoed. (The <code>&lt;text&gt;</code> should be quoted if it contains spaces or other special characters.)</p>
 <p>After asking for the username/password window or getting them from the Keychain, Tunnelblick will display a window with the <code>&lt;text&gt;</code> and a place to type in a response. The username, password, and response are then sent to the OpenVPN server and if the are accepted the connection attempt is allowed to continue.</p>
 <p><strong>Dynamic challenge/response</strong> authentication is done using scripts on the OpenVPN server <em>without anything special in the OpenVPN client's configuration file other than the usual '--auth-user-pass' option used for username/password authentication.</em> The scripts send a specially-formatted error message which causes Tunnelblick to display a window with challenge text from the error message and a place to type in a response. The response is then sent to the OpenVPN server and if it is accepted the connection is allowed to continue.</p>

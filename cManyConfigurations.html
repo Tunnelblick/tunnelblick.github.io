@@ -2,15 +2,15 @@
 <html>
 <head>
 	<meta charset="UTF-8" lang="en">
-	<meta name="description" content="Documentation - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+	<meta name="description" content="Managing a Large Number of Configurations - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
 	<meta name="referrer" content="never">
-	<title>Documentation - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X</title>
+	<title>Managing a Large Number of Configurations - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
 	<link rel="stylesheet" type="text/css"  href="/common/style.v5.css">
 	<link rel="icon"       type="image/png" href="/common/favicon.v1.png">
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-09-29 21:18:00 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-11-20 22:23:45 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
@@ -72,7 +72,34 @@
     
 
 
-<h2 id="managing-a-large-number-of-configurations">Managing a Large Number of Configurations</h2>
+<h1 id="managing-a-large-number-of-configurations">Managing a Large Number of Configurations</h1>
+<p>Several features can help you manage a large number of configurations:<br />
+<p class=toc>On This Page<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#install-multiple-configurations-at-one-time">Install Multiple Configurations at One Time</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#delete-multiple-configurations-at-at-one-time">Delete Multiple Configurations at at One Time</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#change-settings-for-multiple-configurations-at-one-time">Change Settings for Multiple Configurations at One Time</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#hide-configurations-so-they-dont-appear-on-the-menu.">Hide Configurations so They Don't Appear on the Menu.</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#use-credentials-for-multiple-configurations.">Use Credentials for Multiple Configurations.</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#arrange-configurations-in-a-folder-hierarchy">Arrange Configurations in a Folder Hierarchy</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#arranging-new-configurations">Arranging New Configurations</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#arranging-existing-configurations">Arranging Existing Configurations</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#procedure-1">Procedure #1</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#procedure-2">Procedure #2</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#standard-macos-shortcuts-for-selecting-multiple-items">Standard macOS Shortcuts for Selecting Multiple Items</a><br>
+</p> 
+<h2 id="install-multiple-configurations-at-one-time">Install Multiple Configurations at One Time</h2>
+<p>Use <a href="#standard-macos-shortcuts-for-selecting-multiple-items">standard macOS keyboard shortcuts</a> to select multiple configurations in Finder, then drag and drop them onto the Tunnelblick icon in the menu bar.</p>
+<h2 id="delete-multiple-configurations-at-at-one-time">Delete Multiple Configurations at at One Time</h2>
+<p>Use <a href="#standard-macos-shortcuts-for-selecting-multiple-items">standard macOS keyboard shortcuts</a> to select multiple entries in the list of configurations in the VPN Details window, then delete all of the selected configurations by clicking the little minus sign (&quot;-&quot;) below the list.</p>
+<h2 id="change-settings-for-multiple-configurations-at-one-time">Change Settings for Multiple Configurations at One Time</h2>
+<p>Use <a href="#standard-macos-shortcuts-for-selecting-multiple-items">standard macOS keyboard shortcuts</a> to select multiple entries in the list of configurations in the VPN Details window. Changes you make to settings (on the settings tab or in the Advanced Settings window) will be done to all of the selected configurations.</p>
+<h2 id="hide-configurations-so-they-dont-appear-on-the-menu.">Hide Configurations so They Don't Appear on the Menu.</h2>
+<p>Click on the little &quot;gear&quot; icon below the list of configurations in the VPN Details window, then click &quot;Show on Tunnelblick Menu&quot; or &quot;Do Not Show on Tunnelblick Menu&quot;. ()</p>
+<p>(You can do this with multiple configurations at one time, as with other settings.)</p>
+<h2 id="use-credentials-for-multiple-configurations.">Use Credentials for Multiple Configurations.</h2>
+<p>The &quot;VPN Credentials&quot; tab of the Advanced Settings window lets you specify configurations that share &quot;Common&quot; credentials, or you can create your own name for a set of credentials and specify configurations that share them.</p>
+<p>(You can do this with multiple configurations at one time, as with other settings.)</p>
+<h2 id="arrange-configurations-in-a-folder-hierarchy">Arrange Configurations in a Folder Hierarchy</h2>
 <p>You can manage a large number of configurations more easily if you arrange your configurations in folders in the same way you can arrange documents in folders. If you've done that:</p>
 <ul>
 <li><p>The Tunnelblick menu shows only the outermost level of configurations and folders. When you move the pointer to a folder in the menu, the folders and/or configurations inside that folder are shown. (You can override this behavior by unchecking &quot;Display connection submenus&quot; on the &quot;Appearance&quot; panel of Tunnelblick's &quot;VPN Details&quot; window).</p></li>
@@ -122,6 +149,11 @@
 <pre><code>   sudo /Applications/Tunnelblick.app/Contents/Resources/installer   4097 \
    &quot;/Library/Application Support/Tunnelblick/Shared/TCP Configurations/US/West Coast.tblk&quot; \
    &quot;/Library/Application Support/Tunnelblick/Shared/US-West Coast TCP.tblk&quot;</code></pre>
+<h2 id="standard-macos-shortcuts-for-selecting-multiple-items">Standard macOS Shortcuts for Selecting Multiple Items</h2>
+<ul>
+<li>If you hold down a &quot;Command&quot; key and click an item, it will be added or removed from the selected items.</li>
+<li>If you hold down a &quot;Shift&quot; key and click an item, all items from the last-selected item to the item will be selected.</li>
+</ul>
 
 
 

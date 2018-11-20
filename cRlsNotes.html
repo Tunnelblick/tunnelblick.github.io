@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-09-29 21:18:00 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-11-20 22:23:45 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
@@ -84,6 +84,30 @@
 
 
 
+<p><strong>3.7.8beta02 build 5170 (2018-11-20) </strong></p>
+<ul>
+<li>Includes OpenSSL 1.0.2q and 1.1.1a (see release notes for <a href="https://www.openssl.org/news/openssl-1.0.2-notes.html">1.0.2</a> and <a href="https://www.openssl.org/news/openssl-1.1.1-notes.html">1.1.1</a>).</li>
+<li>Includes OpenVPN git master commit 19d6d9c dated 2018-11-18.</li>
+<li>Runs up-prefix.sh, up-suffix.sh, down-prefix.sh, down-suffix.sh, route-pre-down-prefix.sh, and route-pre-down-suffix.sh before or after the corresponding Tunnelblick script, passing the arguments and including the environment variables the corresponding script was invoked with.</li>
+<li>Waits for the network to be set up before starting OpenVPN when the system starts.</li>
+<li>Warns when a VPN's security certificate has expired.</li>
+<li>Makes the display of the arguments OpenVPN was started with more readable.</li>
+<li>Refuses to connect a VPN if no network connection is available.</li>
+<li>Considers disconnections caused by computer restarts and shutdowns, logouts, and quitting Tunnelblick to be expected.</li>
+<li>Updates translations.</li>
+<li>Notifies mDNSResponderHelper that the DNS cache was flushed.</li>
+<li>Adds information on Network Services to the diagnostic info.</li>
+<li>Fixes a problem disabling and enabling IPv6.</li>
+<li>Fixes a problem in macOS Mojave's &quot;dark mode&quot;.</li>
+<li>Fixes a problem with resetting the primary interface.</li>
+<li>Fixes a problem launching Tunnelblick at login.</li>
+<li>Fixes a problem displaying newly-installed configurations on the Tunnelblick menu if there are more than 100 configurations.</li>
+<li>Fixes a problem exporting a Tunnelblick setup.</li>
+<li>Fixes a problem that caused a failure at the end of the client.down script.</li>
+<li>Fixes a problem that caused VPN status windows to persist after a disconnection.</li>
+<li>Fixes a problem that caused unreadable help text.</li>
+</ul>
+<hr />
 <p><strong>3.7.8beta01 build 5160 (2018-09-29) </strong></p>
 <ul>
 <li>Inhibits the announcement of a Tunnelblick update if &quot;Do Not Disturb&quot; is active.</li>

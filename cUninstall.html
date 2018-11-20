@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-09-29 21:18:00 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-11-20 22:23:45 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
@@ -75,11 +75,17 @@
 <h1 id="uninstalling-tunnelblick">Uninstalling Tunnelblick</h1>
 <p class=toc>On This Page<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#uninstalling">Uninstalling</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#uninstalling-on-macos-mojave">Uninstalling on macOS Mojave</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#backing-up-and-restoring-configurations-and-settings">Backing Up and Restoring Configurations and Settings</a><br>
 </p> 
 <hr />
 <h2 id="uninstalling">Uninstalling</h2>
-<p><em>Note: <strong>You do not need to uninstall Tunnelblick before updating or reinstalling</strong>. You should uninstall if you no longer want to use Tunnelblick, or if you are having problems and have been told to uninstall it.</em></p>
+<p>Notes:</p>
+<ol>
+<li><p><strong>You do not need to uninstall Tunnelblick before updating or reinstalling</strong>. You should uninstall if you no longer want to use Tunnelblick, or if you are having problems and have been told to uninstall it.</p></li>
+<li><p><strong>If you are alarmed by warnings when uninstalling Tunnelblick on macOS Mojave</strong>, please see<br />
+<a href="cUninstall.html#uninstalling-on-macos-mojave">Uninstalling on macOS Mojave</a>.</p></li>
+</ol>
 <p>If you intend to re-install Tunnelblick, be sure you have a backup of your Tunnelblick configurations and settings — the uninstall process will delete them. See <a href="#backing-up-and-restoring-configurations-and-settings">Backing Up and Restoring Configurations and Settings</a>, below.</p>
 <p>The uninstaller can do a &quot;test&quot;, which does not uninstall anything, but displays a log of what it would have done if it were uninstalling.</p>
 <p>Note: the uninstaller cannot be used to uninstall a <em>rebranded</em> version of Tunnelblick unless you have a copy of the rebranded version. The copy can be (but does not need to be) <em>installed</em>; it can simply be placed on the Desktop or in some other convenient location.</p>
@@ -104,7 +110,17 @@
 <p>Restarting your computer may not be necessary, but restart if it isn't too inconvenient.</p>
 <p><span class="red"><code>*</code></span> If you get a &quot;spinning beachball&quot; when you click the Tunnelblick icon, that usually means that Tunnelblick has a window open and is waiting for your response. Use macOS Exposé to find it or minimize or close the windows of all other applications (and in all Spaces) to expose the window. If Tunnelblick does not have an open window, you will have to force Tunnelblick to quit. Follow the procedure described in <a href="https://groups.google.com/d/topic/tunnelblick-discuss/CcqADLK5Ttg/discussion">this discussion</a> in the Tunnelblick Discussion Group.</p>
 <hr />
+<h2 id="uninstalling-on-macos-mojave">Uninstalling on macOS Mojave</h2>
+<p>When uninstalling Tunnelblick on macOS Mojave, the system will show three warning windows as shown below. You must click the &quot;OK&quot; button in each of the three windows to continue the uninstall.</p>
+<p>The first two windows displayed by macOS are correct:<br />
+<img src="/images/cUninstallMojave-warning-finder-2018-10-18.png" width="425" height="177" alt="window saying 'tunnelblick uninstaller wants access to control finder. Allowing control will provide access to documents and data in finder, and to perform actions within that app.', and two buttons labeled 'don't allow' and 'ok'."> <img src="/images/cUninstallMojave-warning-system-events-2018-10-18.png" width="421" height="176" alt="window saying 'tunnelblick uninstaller wants access to control system events. Allowing control will provide access to documents and data in system events, and to perform actions within that app.', and two buttons labeled 'don't allow' and 'ok'."><br>However, <span class="red">the third window displayed by macOS is incorrect</span>:<br />
+<img src="/images/cUninstallMojave-warning-contacts-2018-10-18.png" width="422" height="158" alt="window saying 'tunnelblick uninstaller would like to access your contacts', and two buttons labeled 'don't allow' and 'ok'."></p>
+<p>The first two windows displayed by macOS are correct: Tunnelblick Uninstaller does control Finder and System Events. It does that as part of the normal uninstall process, to access and delete files and information related to Tunnelblick.</p>
+<p><strong><span class="red">The third window displayed by macOS is completely wrong.</span></strong> Tunnelblick Uninstaller DOES NOT want to access your contacts, nor does it access your contacts or any other personal information except information you have entered in Tunnelblick settings and configurations. Tunnelblick Uninstaller <em>does</em> access some files and folders in your home directory, but only files and folders that Tunnelblick created or modified when it was installed. It also accesses corresponding files and folders of all of the other users you have created on your computer.</p>
+<p>We take your privacy very seriously. For more information, please see <a href="cPrivacy.html#tunnelblick-privacy">Tunnelblick Privacy</a>.</p>
+<hr />
 <h2 id="backing-up-and-restoring-configurations-and-settings">Backing Up and Restoring Configurations and Settings</h2>
+<p><strong><span class="red">Update: You can use &quot;Export Tunnelblick Setup&quot; to save a backup copy of your Tunnelblick settings.</span></strong> See <a href="cExportingAndImportingTunnelblickSetups.html">Exporting and Importing Tunnelblick Setups</a> for details.</p>
 <p>When you update Tunnelblick or install Tunnelblick &quot;on top of&quot; an existing installation your configurations and settings are preserved. However, if you completely uninstall Tunnelblick as described above, your configurations and settings will be lost. Here's how to back them up and then restore them:</p>
 <p><em>Note: These instructions do not backup or restore configurations for a &quot;Deployed&quot; version of Tunnelblick. &quot;Deployed&quot; versions contain their configurations inside the application itself, so you do not need to back them up or restore them; fresh versions of the configurations will be installed when you install the &quot;Deployed&quot; version of Tunnelblick.</em></p>
 <p><strong>To back up your configurations and settings before uninstalling:</strong></p>
