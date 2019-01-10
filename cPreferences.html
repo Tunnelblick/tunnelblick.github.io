@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-11-29 15:43:42 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-01-10 20:24:55 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
@@ -51,6 +51,7 @@
 
 
 <p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="/cNews.html">News</a><br>
 &nbsp;&nbsp;<a href="/cInstall.html">Installing Tunnelblick</a><br>
 &nbsp;&nbsp;<a href="/cUninstall.html">Uninstalling Tunnelblick</a><br>
 &nbsp;&nbsp;<a href="/cConfigT.html">Setting up Configurations</a><br>
@@ -128,7 +129,6 @@
 <li><strong>skipWarningThatCannotModifyConfigurationFile</strong> (Boolean): If set, Tunnelblick on Tiger or Leoaprd will not warn the user that any changes made to a configuration file will not be able to be saved. If cleared or not present, the warning will be displayed. Default is not present.</li>
 <li><strong>skipWarningThatNameChangeDisabledUpdates</strong> (Boolean): If set Tunnelblick will warn that an update will fail if the name of Tunnelblick.app has been changed by the user. If cleared or not present, the warning will be displayed. Default is not present.</li>
 <li><strong>skipWarningAboutNonAdminUpdatingTunnelblick</strong> (Boolean): If set, Tunnelblick will not warn a non-administrator user that an update will require an administrator username/password before the changed updated application can be used. If cleared or not present, the warning will be displayed. Default is not present.</li>
-<li><strong>useShadowConfigurationFiles</strong> (Boolean): If set, Tunnelblick will create and use &quot;shadow copies&quot; of configuration files on the local hard drive in a subfolder of <code>/Library/Application Support/Tunnelblick</code>. If cleared or not present, the original of each configuration file will be used. Configuration files must be owned by root and have permissions of &quot;644&quot; for security; if the configuration file is on a volume which does not allow this ownership and permissions, shadow copies must be used so the copies can be given the proper ownership and permissions. This happens automatically when the home folder is located on a network volume; it is not necessary to use this preference only when the home folder is on a non-network volume which doesn't allow the required ownership and permissions. The default is not present.</li>
 <li><strong>showConnectedDurations</strong> (Boolean): If set, the time that a configuration has been connected is displayed on the configuration's tab in the &quot;Details&quot; window. If cleared, the time is not displayed. The default is set.</li>
 <li><strong>haveDealtWithSparkle1dot5b6</strong> (Boolean): If set, Tunnelblick has reset the Sparkle Updater preferences for Sparkle version 1.5b6, so the user will be or has been asked about automatically checking for updates and including system profile information. If cleared, this has not been done yet. See the &quot;updateCheckAutomatically&quot; and &quot;updateSendProfileInfo&quot; preferences. The default is not present; Tunnelblick maintains this preference automatically. This preference is ignored if the &quot;updateCheckAutomatically&quot; and &quot;updateSendProfileInfo&quot; preferences are both forced (to any value).</li>
 <li><strong>detailsWindowFrame</strong>: The size and position of the &quot;OpenVPN Log” window when it was last closed.</li>
@@ -149,7 +149,7 @@
 <p>Here are some commonly-used per-configuration preferences:</p>
 <ul>
 <li><strong>autoConnect</strong> (Boolean): If set, Tunnelblick will connect using the configuration when it Tunnelblick is launched. If cleared or not present, the user must connect manually. The user may specify this using the &quot;Automatically Connect on Launch&quot; check box on the &quot;Details&quot; window tab for the configuration. The default is not present (check box not checked).</li>
-<li><strong>useDNS</strong> (Boolean): If set, Tunnelblick will use scripts before and after a connection is made to save and restore the computer's DNS and WINS settings. If cleared or not present, no save and restore will be done. The user may specify this using the &quot;Set Namserver&quot; check box on the &quot;Details&quot; window tab for the configuration. The default is set (check box checked).</li>
+<li><strong>useDNS</strong> (Integer): If zero, Tunnelblick does nothing about DNS or WINS while the VPN is connected. If non-zero, Tunnelblick will use scripts before and after a connection is made to save and restore the computer's DNS and WINS settings and set DNS and WINS according to OpenVPN's instructions. The user may specify this using &quot;Set DNS/WINS&quot; on the &quot;Settings&quot; tab of the &quot;Configurations&quot; panel of the &quot;VPN Details&quot; window tab. The default is &quot;Set nameserver&quot;. The value of the preference (1-5) indicates which set of scripts will be used, corresponding to the order they appear in &quot;Set DNS/WINS&quot;.</li>
 <li><strong>-notMonitoringConnection</strong> (Boolean): If set, Tunnelblick will monitor the network and restart the connection if changes to the network DNS or WINS configurations are detected. If cleared or not present, no monitoring will be done. The user may specify this using the &quot;Monitor Connection&quot; check box on the &quot;Details&quot; window tab for the configuration. This preference is ignored, and the check box is disabled, if the &quot;useDNS&quot; preference is not set (i.e., the &quot;Set Nameserver&quot; check box is not set). The default is set (check box checked).</li>
 <li><strong>disableEditConfiguration</strong> (Boolean): If set, the &quot;Edit Configuration&quot; button on the &quot;Details&quot; window tab for the configuration will be dimmed and disabled. If cleared or not present, the button will be enabled. The default is not present.</li>
 <li><strong>-useDownRootPlugin</strong> (Boolean): If set, Tunnelblick will use its built-in &quot;openvpn-down-root.so&quot; plugin to allow the configuration file to use the &quot;user&quot; and &quot;group&quot; options to stop running the OpenVPN process as root once a connection has been established (as a security measure). See <a href="czUsing.html">Using Tunnelblick</a> for details. The default is not present.</li>

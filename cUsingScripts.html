@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2018-11-29 15:43:42 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-01-10 20:24:55 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
@@ -51,6 +51,7 @@
 
 
 <p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="/cNews.html">News</a><br>
 &nbsp;&nbsp;<a href="/cInstall.html">Installing Tunnelblick</a><br>
 &nbsp;&nbsp;<a href="/cUninstall.html">Uninstalling Tunnelblick</a><br>
 &nbsp;&nbsp;<a href="/cConfigT.html">Setting up Configurations</a><br>
@@ -168,23 +169,17 @@ Only the static-challenge-response.sh and dynamic-challenge-response.sh scripts 
  (This applies when the OpenVPN <code>--persist-tun</code> option is not specified, see above.)</li>
 </ul>
 <h2 id="environment-variables">Environment Variables</h2>
-<p>Tunnelblick VPN Configuration scripts inherit the environment variables from Tunnelblick itself. By default (on OS X 10.8 &quot;Mountain Lion&quot;), they are:</p>
-<pre><code> SHELL=/bin/bash
- TMPDIR=/var/folders/***
- Apple_PubSub_Socket_Render=/tmp/***
- USER=***
- COMMAND_MODE=unix2003
- SSH_AUTH_SOCK=/tmp/launch-OVkVOl/Listeners
- __CF_USER_TEXT_ENCODING=0x1F5:0:0
- PATH=/usr/bin:/bin:/usr/sbin:/sbin
- PWD=/private/tmp
- SHLVL=1
- HOME=/Users/***
- LOGNAME=***
- DISPLAY=/tmp/***
- _=/usr/bin/env</code></pre>
-<p>(where &quot;<code>**``**``*</code>&quot; indicates information that varies from login to login or user to user.)</p>
-<p>OpenVPN scripts have environment variables set up as specified in the <a href="https://community.openvpn.net/openvpn/wiki/Openvpn22ManPage">OpenVPN 2.2 man page</a> or the <a href="https://community.openvpn.net/openvpn/wiki/Openvpn23ManPage">OpenVPN 2.3 man page</a>.</p>
+<p>Tunnelblick VPN Configuration scripts are run with a standard set of environment variables:</p>
+<p><code>PATH=/usr/bin:/bin:/usr/sbin:/sbin</code><br />
+<code>SHELL=/bin/bash</code><br />
+<code>COMMAND_MODE=unix2003</code><br />
+<code>USER=</code><em>short name of the logged-in user, from NSUserName()</em><br />
+<code>LOGNAME=</code><em>short name of the logged-in user, from NSUserName()</em><br />
+<code>HOME=</code><em>path to the home directory of the logged-in user, from NSHomeDirectory()</em><br />
+<code>TMPDIR=</code><em>path to the temporary directory for the logged-in user, from NSTemporaryDirectory()</em><br />
+<code>TUNNELBLICK_CONFIG_FOLDER=</code><em>path to the folder containing the OpenVPN configuration file</em></p>
+<p>(<code>TUNNELBLICK_CONFIG_FOLDER</code> is only provided for scripts for which it is available)</p>
+<p>OpenVPN scripts have environment variables set up as specified in the <a href="https://community.openvpn.net/openvpn/wiki/Openvpn24ManPage">OpenVPN 2.4 man page</a> or the <a href="https://community.openvpn.net/openvpn/wiki/Openvpn23ManPage">OpenVPN 2.3 man page</a>.</p>
 
 
 
