@@ -5,19 +5,19 @@
 	<meta name="description" content="Digitally Signing the application - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
 	<meta name="referrer" content="never">
 	<title>Digitally Signing the application - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
-	<link rel="stylesheet" type="text/css"  href="/common/style.v5.css">
+	<link rel="stylesheet" type="text/css"  href="/common/style.v6.css">
 	<link rel="icon"       type="image/png" href="/common/favicon.v1.png">
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-02-27 19:39:28 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-04-03 22:46:09 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
 		<tr>
 			<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
 			<td class="heading1">Tunnelblick</td>
-			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading2">free software for OpenVPN on macOS</td>
 			<td class="heading3">
                 <a href="/cLocalizeTranslate.html">We need translators for several languages&hellip;</a>
             </td>
@@ -97,10 +97,10 @@
 <p>To get an unsigned version of Tunnelblick or your rebranded version, build an &quot;Unsigned Release&quot; of the source code using the instructions at <a href="cBuild.html">Building From Source</a>.</p>
 <h3 id="code-signing-certificate">Code signing Certificate</h3>
 <p>The code signing certificate can be a &quot;self-signed&quot; certificate or a certificate from Apple. There is one difference: if you use a self-signed certificate, Gatekeeper in OS X 10.8 (&quot;Mountain Lion&quot;) and higher may not allow the first run of the self-signed application by double-clicking it. The user will need to Control-click or right-click and select &quot;Open&quot;. That is because the Gatekeeper default is to allow the first launch of an application only if it is signed by an Apple-recognized developer.</p>
-<p>To get a self-signed code signing certificate, use the OS X Keychain Assistant application. Apple used to have instructions on doing this but they have disappeared. They may be accessed from the Internet Archive using <a href="http://web.archive.org/web/20090119080759/http://developer.apple.com/documentation/Security/Conceptual/CodeSigningGuide/Procedures/chapter_3_section_2.html">this link</a>,</p>
+<p>To get a self-signed code signing certificate, use the macOS Keychain Assistant application. Apple used to have instructions on doing this but they have disappeared. They may be accessed from the Internet Archive using <a href="https://web.archive.org/web/20090119080759/http://developer.apple.com/documentation/Security/Conceptual/CodeSigningGuide/Procedures/chapter_3_section_2.html">this link</a>,</p>
 <p>To get an certificate from Apple, you must be an <a href="https://developer.apple.com">Apple Developer</a>. Request your Apple certificates and install them into your Keychain. You can do this from Xcode.</p>
 <h3 id="designated-requirement-binary">Designated Requirement Binary</h3>
-<p>You can use a &quot;designated requirement binary&quot; to set requirements for how an application is to be signed. For example, you can require that the Info.plist's CFBundleIdentifier be &quot;com.example.foo&quot;. Generating this binary can be done in Xcode, consult Apple's documentation. The only catch is that requirements created in some recent versions of Xcode are considered invalid by OS X 10.5 (&quot;Lion&quot;) and will cause problems. Tunnelblick uses a signing requirements binary created on an older version of Xcode that does not cause this problem. See <a href="http://fetchsoftworks.com/fetch/blog/gatekeeper-vs-leopard-an-ongoing-tale">Gatekeeper vs. Leopard: an ongoing tale</a>.</p>
+<p>You can use a &quot;designated requirement binary&quot; to set requirements for how an application is to be signed. For example, you can require that the Info.plist's CFBundleIdentifier be &quot;com.example.foo&quot;. Generating this binary can be done in Xcode, consult Apple's documentation. The only catch is that requirements created in some recent versions of Xcode are considered invalid by OS X 10.5 (&quot;Lion&quot;) and will cause problems. Tunnelblick uses a signing requirements binary created on an older version of Xcode that does not cause this problem. See <a href="https://fetchsoftworks.com/fetch/blog/gatekeeper-vs-leopard-an-ongoing-tale">Gatekeeper vs. Leopard: an ongoing tale</a>.</p>
 <h2 id="signing-script">SIGNING SCRIPT</h2>
 <p>Use following script to sign Tunnelblick or a rebranded version of Tunnelblick:</p>
 <pre><code>#!/bin/bash

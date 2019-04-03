@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" lang="en">
+	<meta name="description" content="Connect Manually vs. when Computer Starts vs. when Tunnelblick Launches - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+	<meta name="referrer" content="never">
+	<title>Connect Manually vs. when Computer Starts vs. when Tunnelblick Launches - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+	<link rel="stylesheet" type="text/css"  href="/common/style.v6.css">
+	<link rel="icon"       type="image/png" href="/common/favicon.v1.png">
+</head>
+
+<body>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-04-03 22:46:09 UTC</font></td></tr></table></center>
+
+<div class="heading">
+	<table>
+		<tr>
+			<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
+			<td class="heading1">Tunnelblick</td>
+			<td class="heading2">free software for OpenVPN on macOS</td>
+			<td class="heading3">
+                <a href="/cLocalizeTranslate.html">We need translators for several languages&hellip;</a>
+            </td>
+		</tr>
+	</table>
+</div>
+
+
+<div class="topnav">
+<table class="topnav"><tbody><tr>
+	<td class="topnav-normal"   ><a href="/index.html"      class="topnav">Home</a></td>
+	<td class="topnav-normal"   ><a href="/downloads.html"  class="topnav">Downloads</a></td>
+	<td class="topnav-normal"   ><a href="/support.html"    class="topnav">Support</a></td>
+	<td class="topnav-highlight"><a href="/documents.html"  class="topnav">Documents</a></td>
+	<td class="topnav-normal"   ><a href="/issues.html"     class="topnav">Issues</a></td>
+	<td class="topnav-normal"   ><a href="/source.html"     class="topnav">Source</a></td>
+	<td class="topnav-normal"   ><a href="/contribute.html" class="topnav">Contribute</a></td>
+	<td class="topnav-normal"   ><a href="/reachus.html"    class="topnav">Contact</a></td>
+	<td class="topnav-padding"  ></td>
+</tbody></table>
+</div>
+
+
+
+<div class="content">
+<div class="content-cConnectWhen">
+<table class="documents">
+  <tr>
+    <td class="documents-left">
+
+
+
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="/cNews.html">News</a><br>
+&nbsp;&nbsp;<a href="/cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="/czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="/cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="/cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="/cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="/cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="/cFAQ.html">FAQ</a></p>
+
+<p><strong><a href="https://groups.google.com/forum/#&#33;forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="/cBeforeYouPost.html">Read Before You Post</a></p>
+
+
+
+    </td>
+    <td class="documents-right">
+    
+
+
+<h1 id="connect-manually-vs.-when-computer-starts-vs.-when-tunnelblick-launches">Connect Manually vs. when Computer Starts vs. when Tunnelblick Launches</h1>
+<p>Tunnelblick can be set up to connect a VPN manually, when the computer starts, or when Tunnelblick launches.</p>
+<p>In most situations, the most appropriate choice is &quot;Manually&quot; or &quot;Connect when Tunnelblick launches&quot;.</p>
+<p><strong>Connect Manually</strong> means that you must click a &quot;Connect&quot; button or menu item to connect to the VPN.</p>
+<p><strong>Connect when computer starts</strong> and <strong>Connect when Tunnelblick launches</strong> seem similar, and on a computer set up to log in a user automatically when it starts up they behave similarly, but they actually do two different things:</p>
+<ul>
+<li><p><strong>Connect when computer starts</strong> connects the VPN when the computer starts, whether or not a user will be logged in. It is usually used for VPN servers, not clients. Because there is no one logged in, Tunnelblick will not be launched or running – only OpenVPN will be running. That means that certain features are not available, such as checking that the IP address changes when connected.</p></li>
+<li><p><strong>Connect when Tunnelblick launches</strong> connects the VPN when the Tunnelblick program launches (starts) – and that can only happen when someone is logged in. You can launch Tunnelblick manually, but under certain circumstances <a href="tunnelblickLaunchAtLogin.html">Tunnelblick will launch itself</a> when you log in. For example, if if you leave Tunnelblick running (with or without being connected to to a VPN) when you log out, Tunnelblick will be launched when you log back in. That's what most users do.</p></li>
+</ul>
+<p>Notes:</p>
+<ol>
+<li><p><strong>Connect when computer starts</strong> is only available for &quot;Shared&quot; configurations. It is not available for &quot;Private&quot; configurations.</p></li>
+<li><p>Although <strong>Connect when computer starts</strong> may seem to be a way to insure that all network traffic goes through the VPN, it doesn't really do that. That's because the process of making the VPN connection itself requires an Internet connection, and that connection is available to other programs running on your computer. So traffic to the Internet can &quot;leak&quot; outside of the VPN for seconds or tens of seconds until the VPN is actually connected. The only way to avoid such leaks is to set up a firewall such as <a href="https://en.wikipedia.org/wiki/PF_(firewall)">pf</a> to allow traffic only to/from the VPN server(s).</p></li>
+</ol>
+
+
+
+   </td>
+  </tr>
+</table>
+</div>
+</div>
+
+
+
+<div class="bottom-translation">
+  <span title="view in German or another language using Google Translate">               <a lang="de"      class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcConnectWhen.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;         </a></span>
+  <span title="view in French or another language using Google Translate">               <a lang="fr"      class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcConnectWhen.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;        </a></span>
+  <span title="view in Chinese (simplified) or another language using Google Translate"> <a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcConnectWhen.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp; </a></span>
+  <span title="view in Russian or another language using Google Translate">              <a lang="ru"      class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcConnectWhen.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;         </a></span>
+  <span title="view in Spanish or another language using Google Translate">              <a lang="es"      class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcConnectWhen.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;         </a></span>
+  <span title="view in Japanese or another language using Google Translate">             <a lang="ja"      class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcConnectWhen.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;           </a></span>
+  <span title="view in Italian or another language using Google Translate">              <a                class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcConnectWhen.html&amp;sandbox=1">&nbsp;&nbsp;&hellip;&nbsp;&nbsp;        </a></span>
+</div>
+<div class="bottom-copyright">
+  Copyright &copy; 2015-2019 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;
+</div>
+</body>
+</html>

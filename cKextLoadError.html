@@ -5,19 +5,19 @@
 	<meta name="description" content="Errors Loading Kexts (Device Drivers) - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
 	<meta name="referrer" content="never">
 	<title>Errors Loading Kexts (Device Drivers) - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
-	<link rel="stylesheet" type="text/css"  href="/common/style.v5.css">
+	<link rel="stylesheet" type="text/css"  href="/common/style.v6.css">
 	<link rel="icon"       type="image/png" href="/common/favicon.v1.png">
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-02-27 19:39:28 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-04-03 22:46:09 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
 		<tr>
 			<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
 			<td class="heading1">Tunnelblick</td>
-			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading2">free software for OpenVPN on macOS</td>
 			<td class="heading3">
                 <a href="/cLocalizeTranslate.html">We need translators for several languages&hellip;</a>
             </td>
@@ -74,25 +74,27 @@
 
 
 <h1 id="errors-loading-kexts-device-drivers">Errors Loading Kexts (Device Drivers)</h1>
+<p>Tunnelblick may try to load a kext to control the VPN tunnel.</p>
+<p><em><span class="red">Note: If you are using a &quot;tun&quot; VPN, you can avoid needing to load a kext by making sure your configuration file does not include a &quot;dev-type tun&quot; option (it should include a &quot;dev tun&quot; option). The &quot;dev-type tun&quot; option causes OpenVPN to use a &quot;tun&quot; device, which requires a kext to be loaded. If a &quot;dev-type tun&quot; option is not present, OpenVPN will use the &quot;utun&quot; device which is built into macOS 10.6.8 and higher and does not require a kext to be loaded. If you are using a &quot;tap&quot; VPN, you cannot avoid needing to load a system extension.</span></em></p>
 <p>If you see the following:</p>
 <p><strong>Tunnelblick was not able to load a device driver (kext) that is needed to connect...</strong></p>
-<p>There are two likely reasons:</p>
+<p>There are two possible reasons:</p>
 <hr>
 <p>(1) If you are using macOS High Sierra or higher, you may not have allowed Tunnelblick to load the kext. See <a href="cKextLoadErrorHighSierra.html">Errors Loading Kexts (Device Drivers) on macOS High Sierra (10.13) and higher</a>;</p>
 <hr>
-<p>(2) There may be incompatible kexts already loaded. Recent versions of Tunnelblick try to be &quot;good citizens&quot; by loading kexts only when needed, and unloading them when they are no longer needed. However, some other VPN clients (CiscoAnyConnect SSL VPN, for example) load their own, incompatible kexts when the computer is started and leave them loaded, whether or not a VPN connection is in use. (Some non-VPN software also loads incompatible kexts — for example, Pogoplug loads a &quot;com.pogoplug.xcetun&quot; tun kext which interferes with Tunnelblick's tun kext.)</p>
-<p>To find out if this is what is causing the problem, use the &quot;kextstat&quot; command in a Terminal window. It will list all of the loaded kexts. Usually the tun and/or tap kexts show up at or near the end of the list. Common tun/taps are:</p>
+<p>(2) There may be incompatible kexts already loaded. Recent versions of Tunnelblick try to be &quot;good citizens&quot; by loading kexts only when needed, and unloading them when they are no longer needed. However, some other VPN clients (CiscoAnyConnect SSL VPN, for example) load their own, incompatible kexts when the computer is started and leave them loaded, whether or not a VPN connection is in use. (Some non-VPN software also loads incompatible kexts — for example, Pogoplug loads a &quot;com.pogoplug.xcetun&quot; tun kext which interferes with Tunnelblick's tun kext. &quot;Security&quot; programs also may load incompatible kexts.)</p>
+<p>To find out if an incompatible kext is causing the problem, use the <code>kextstat | grep -v com.apple</code> command in a Terminal window. It will list all of the non-Apple kexts that are loaded. Usually the tun and/or tap kexts show up at or near the end of the list. Common tun/taps are:</p>
 <ul>
-<li>net.tunnelblick.tun and net.tunnelblick.tap: These are the kexts used by current versions of Tunnelblick. When needed, the appropriate one (tun or tap) is loaded when a connection is requested, and unloaded when it is disconnected. Since macOS 10.6.8, &quot;tun&quot; connections do not need to have a kext loaded unless they include a &quot;dev-type tun&quot; OpenVPN option. Tunnelblick uses customized versions of the kexts from <a href="http://tuntaposx.sourceforge.net/">tuntaposx</a>, modified to have a Tunnelblick bundle ID and version. Which version Tunnelblick uses depends on the version of macOS being used.</li>
+<li>net.tunnelblick.tun and net.tunnelblick.tap: These are the kexts used by current versions of Tunnelblick. When needed, the appropriate one (tun or tap) is loaded when a connection is requested, and unloaded when it is disconnected. Since macOS 10.6.8, &quot;tun&quot; connections do not need to have a kext loaded unless they include a &quot;dev-type tun&quot; OpenVPN option. Tunnelblick uses customized versions of the kexts from <a href="http://tuntaposx.sourceforge.net">tuntaposx</a>, modified to have a Tunnelblick bundle ID and version. Which version Tunnelblick uses depends on the version of macOS being used.</li>
 <li>foo.tun and foo.tap: These are kexts for obsolete Cisco and Tunnelblick VPN clients (and some others), loaded when a very version of Tunnelblick is launched (and unloaded when the computer restarts). If Tunnelblick detects them, it will offer to unload them before connecting.</li>
 <li>com.cisco.cscotun: This is CiscoAnyConnect SSL VPN kext. Cisco's installer causes it to be loaded when the computer starts.</li>
 <li>com.viscosityvpn.Viscosity.tun and com.viscosityvpn.Viscosity.tap: These are kexts used by the Viscosity VPN client.</li>
 <li>com.pogoplug.xcetun: This kext is associated with Pogoplug.</li>
 <li>anchorfree.tun: This kext is associated withHotSpot Shield VPN.</li>
-<li>net.sf.tuntaposx.tap and net.sf.tuntaposx.tun: These are from <a href="http://tuntaposx.sourceforge.net/">tuntaposx</a>.<br />
-But any non-Apple kext with &quot;tun&quot; or &quot;tap&quot; in its name is likely to be causing the problem.</li>
+<li>net.sf.tuntaposx.tap and net.sf.tuntaposx.tun: These are from <a href="http://tuntaposx.sourceforge.net">tuntaposx</a>.<br />
+But any non-Apple kext with &quot;tun&quot; or &quot;tap&quot; in its name is likely to be causing the problem, and kexts with other names might be causing the problem.</li>
 </ul>
-<p>To unload kexts and allow Tunnelblick to load its own kexts, use the 'kextunload&quot; Terminal command to unload each loaded tun and tap kext individually. For example, to unload com.viscosityvpn.Viscosity.tun, type the following:</p>
+<p>To unload kexts and allow Tunnelblick to load its own kexts, use the <code>kextunload</code> Terminal command to unload each loaded tun and tap kext individually. For example, to unload com.viscosityvpn.Viscosity.tun, type the following:</p>
 <p><code>sudo kextunload -b com.viscosityvpn.Viscosity.tun</code></p>
 <p>(The &quot;sudo&quot; is necessary because this command modifies the loading of a device driver. You will be asked for your administrator password, which will not appear (even as asterisks) when you type it.)</p>
 <p>If you find that restarting your computer reloads the kext you might need to find where it is being loaded from. Common locations are</p>

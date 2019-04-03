@@ -5,19 +5,19 @@
 	<meta name="description" content="Errors Loading Kexts (Device Drivers) on macOS High Sierra (10.13) and higher - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
 	<meta name="referrer" content="never">
 	<title>Errors Loading Kexts (Device Drivers) on macOS High Sierra (10.13) and higher - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
-	<link rel="stylesheet" type="text/css"  href="/common/style.v5.css">
+	<link rel="stylesheet" type="text/css"  href="/common/style.v6.css">
 	<link rel="icon"       type="image/png" href="/common/favicon.v1.png">
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-02-27 19:39:28 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-04-03 22:46:09 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
 		<tr>
 			<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
 			<td class="heading1">Tunnelblick</td>
-			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading2">free software for OpenVPN on macOS</td>
 			<td class="heading3">
                 <a href="/cLocalizeTranslate.html">We need translators for several languages&hellip;</a>
             </td>
@@ -74,22 +74,23 @@
 
 
 <h1 id="errors-loading-kexts-device-drivers-on-macos-high-sierra-10.13-and-higher">Errors Loading Kexts (Device Drivers) on macOS High Sierra (10.13) and higher</h1>
+<p>Tunnelblick may try to load a kext to control the VPN tunnel.</p>
+<p><em><span class="red">Note 1: If you are using a &quot;tun&quot; VPN, you can avoid needing to load a kext by making sure your configuration file does not include a &quot;dev-type tun&quot; option (it should include a &quot;dev tun&quot; option). The &quot;dev-type tun&quot; option causes OpenVPN to use a &quot;tun&quot; device, which requires a kext to be loaded. If a &quot;dev-type tun&quot; option is not present, OpenVPN will use the &quot;utun&quot; device which is built into macOS 10.6.8 and higher and does not require a kext to be loaded. If you are using a &quot;tap&quot; VPN, you cannot avoid needing to load a system extension.</span></em></p>
+<p><em><span class="red">Note 2: If you are NOT running on macOS Sierra or higher, please see <a href="cKextLoadError.html">Errors Loading Kexts (Device Drivers)</a>.</span></em></p>
+<hr>
 <p>If you see the following <em>on macOS High Sierra</em> and higher:</p>
 <p><strong>Tunnelblick was not able to load a device driver (kext) that is needed to connect...</strong></p>
-<p>there are two likely reasons:</p>
+<p>You may have encountered a new security feature in High Sierra and higher which restricts the loading of kexts (system extensions).</p>
+<p>If the following does not help, please see <a href="cKextLoadError.html">Errors Loading Kexts (Device Drivers)</a>.</p>
 <hr>
-<p>(1) You may have encountered a new security feature in High Sierra and higher which restricts the loading of kexts (system extensions).</p>
 <p>In some situations when you try to connect to a VPN, High Sierra and higher blocks Tunnelblick from loading a system extension. macOS pops up a window that looks like this:</p>
 <p><img src="/images/cHighSierra-kext-blocked-2017-10-06.png" alt="Screenshot of window with title 'System Extension Blocked' saying 'A program tried to load new system extension(s) signed by (blocked-by-red area). If you want to enable these extensions, go to the Security & Privacy System Preferences pane.'"></p>
 <p>(Tunnelblick's kexts are signed by &quot;Jonathan K. Bullard&quot;, so that's what would appear in the blocked-by-red area of the window.)</p>
 <p>The user then has 30 minutes to allow the new system extension to be loaded. As the window notes, that can be done on the &quot;Security &amp; Privacy&quot; pane of &quot;System Preferences&quot;. (The window doesn't say it, but it can only be done on the &quot;General&quot; tab of that pane.) Here is a screenshot:</p>
 <p><img src="/images/cHighSierra-kext-approval-2017-10-06.png" alt="Screenshot of the 'General' tab of the Security & Privacy System Preferences pane with a section reading 'system software from developer (blocked-by-red area) was blocked from loading' and an 'allow' button.'"></p>
 <p>(The &quot;System software developer&quot; in the blocked-by-red area will be &quot;Jonathan K. Bullard&quot; for Tunnelblick kexts.)</p>
-<p>If the user doesn't grant approval within 30 minutes, the ability to approve the kext disappears and will only reappear after trying to connect the VPN again. When that happens, the original window does not appear (it is only shown once) but the ability to approve the kext reappears for 30 more minutes.</p>
-<p>If you are using a &quot;tun&quot; VPN, you can avoid needing to load a system extension by making sure your configuration file does not include a &quot;dev-type tun&quot; option (it should include a &quot;dev tun&quot; option). The &quot;dev-type tun&quot; option causes OpenVPN to use a &quot;tun&quot; device, which requires a kext to be loaded. If a &quot;dev-type tun&quot; option is not present, OpenVPN will use a &quot;utun&quot; device which is built into macOS 10.6.8 and higher and does not require a kext to be loaded.</p>
-<p>If you are using a &quot;tap&quot; VPN, you cannot avoid needing to load a system extension.</p>
-<hr>
-<p>(2) If you are not running on macOS Sierra or higher, or if you approved the loading of the kext on High Sierra, please see <a href="cKextLoadError.html">Errors Loading Kexts (Device Drivers)</a>.</p>
+<p>If the user doesn't grant approval within 30 minutes, the ability to approve the kext disappears and will only reappear after trying to connect the VPN again. When that happens, the original window does not appear (it is only shown once) but the ability to approve the kext reappears in &quot;System Preferences&quot; for 30 more minutes.</p>
+<p>If the above does not help, please see <a href="cKextLoadError.html">Errors Loading Kexts (Device Drivers)</a>.</p>
 
 
 

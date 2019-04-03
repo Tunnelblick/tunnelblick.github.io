@@ -5,19 +5,19 @@
 	<meta name="description" content="XARA Vulnerabilities - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
 	<meta name="referrer" content="never">
 	<title>XARA Vulnerabilities - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
-	<link rel="stylesheet" type="text/css"  href="/common/style.v5.css">
+	<link rel="stylesheet" type="text/css"  href="/common/style.v6.css">
 	<link rel="icon"       type="image/png" href="/common/favicon.v1.png">
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-02-27 19:39:28 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-04-03 22:46:09 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
 		<tr>
 			<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
 			<td class="heading1">Tunnelblick</td>
-			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading2">free software for OpenVPN on macOS</td>
 			<td class="heading3">
                 <a href="/cLocalizeTranslate.html">We need translators for several languages&hellip;</a>
             </td>
@@ -75,7 +75,7 @@
 
 <h1 id="xara-vulnerabilities">XARA Vulnerabilities</h1>
 <h2 id="june-2015-os-x-and-application-vulnerabilities">June 2015 OS X and Application Vulnerabilities</h2>
-<p><strong>In June 2015, details of four vulnerabilities in OS X and iOS and many applications were released in <a href="http://arxiv.org/abs/1505.06836">Unauthorized Cross-App Resource Access on MAC OS X and iOS</a>.</strong></p>
+<p><strong>In June 2015, details of four vulnerabilities in OS X and iOS and many applications were released in <a href="https://arxiv.org/abs/1505.06836">Unauthorized Cross-App Resource Access on MAC OS X and iOS</a>.</strong></p>
 <p><strong><span class="red">Tunnelblick is not vulnerable to attacks based on any of these vulnerabilities.</span></strong></p>
 <h2 id="the-password-stealing-keychain-vulnerability">The &quot;password stealing&quot; (Keychain) vulnerability</h2>
 <p>This vulnerability is caused by applications that modify items stored in the Keychain without checking the access controls on the item. Tunnelblick never modifies an item stored in the Keychain and is thus not vulnerable. To modify an item stored in the Keychain, Tunnelblick deletes the old item and creates a new one with the proper access controls. If an attacker creates a new item after Tunnelblick deletes the old item but before creating the new one (attempting to exploit a possible race condition), Tunnelblick will be unable to create the new item and will report the failure, and the new item Tunnelblick was attempting to create will not be created.</p>

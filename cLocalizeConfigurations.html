@@ -5,19 +5,19 @@
 	<meta name="description" content="Localizing Tunnelblick Configurations - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
 	<meta name="referrer" content="never">
 	<title>Localizing Tunnelblick Configurations - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
-	<link rel="stylesheet" type="text/css"  href="/common/style.v5.css">
+	<link rel="stylesheet" type="text/css"  href="/common/style.v6.css">
 	<link rel="icon"       type="image/png" href="/common/favicon.v1.png">
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-02-27 19:39:28 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-04-03 22:46:09 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
 		<tr>
 			<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
 			<td class="heading1">Tunnelblick</td>
-			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading2">free software for OpenVPN on macOS</td>
 			<td class="heading3">
                 <a href="/cLocalizeTranslate.html">We need translators for several languages&hellip;</a>
             </td>
@@ -96,7 +96,7 @@
 </ul>
 <hr />
 <p>*&quot;.lproj&quot; folders&quot;</p>
-<p>Each &quot;lproj&quot; folder (except English) has as its name the <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">ISO-639-1</a> two-letter abbreviation of the language and an extension of &quot;lproj&quot;. For example, &quot;JA.lproj&quot; is the folder with Japanese strings, &quot;ES.lproj&quot; is the folder with Spanish strings, etc. One exception is English, which is named English.lproj. Other exceptions include Chinese and other languages for which there are multiple dilalects. See <a href="http://commons.oreilly.com/wiki/index.php/Learning_Cocoa_with_Objective-C/Miscellaneous_Topics/Localization">Localizing Resources</a> or examine the &quot;lproj&quot; folders in /Applications/Tunnelblick.app/Contents/Resources.</p>
+<p>Each &quot;lproj&quot; folder (except English) has as its name the <a href="https://www.loc.gov/standards/iso639-2/php/code_list.php">ISO-639-1</a> two-letter abbreviation of the language and an extension of &quot;lproj&quot;. For example, &quot;JA.lproj&quot; is the folder with Japanese strings, &quot;ES.lproj&quot; is the folder with Spanish strings, etc. One exception is English, which is named English.lproj. Other exceptions include Chinese and other languages for which there are multiple dilalects. See <a href="https://commons.oreilly.com/wiki/index.php/Learning_Cocoa_with_Objective-C/Miscellaneous_Topics/Localization">Localizing Resources</a> or examine the &quot;lproj&quot; folders in /Applications/Tunnelblick.app/Contents/Resources.</p>
 <p>Each &quot;lproj&quot; folder should contain a single file named &quot;Localizable.strings&quot;.</p>
 <p>Each &quot;Localizable.strings&quot; file should be a UTF-8 encoded text file with lines of the following format:</p>
 <p>&quot;file or folder name&quot;=&quot;translated name&quot;;</p>
@@ -114,7 +114,7 @@
 <hr />
 <h2 id="localizing-a-deployed-version">Localizing a Deployed Version</h2>
 <p>Deployed versions of Tunnelblick may also be localized. That can be done with per-configuration localization as described above, or with a single folder for each language containing translations for all configurations, folders, and added menu items. Programs launched by added menu items are sent the current language as an argument, so even simple scripts can be localized.</p>
-<p>To localize configuration and folder names and the names of added menu commands, the Deploy folder must contain an OS X bundle (a folder with a special structure) named &quot;Localization.bundle&quot;. That bundle must include a Contents folder, which must contain an Info.plist file with the three entries described above (no other entries are needed) and a &quot;Resources&quot; folder, which must contain one or more &quot;lproj&quot; folders. The &quot;lproj&quot; folders are as described above.</p>
+<p>To localize configuration and folder names and the names of added menu commands, the Deploy folder must contain a macOS bundle (a folder with a special structure) named &quot;Localization.bundle&quot;. That bundle must include a Contents folder, which must contain an Info.plist file with the three entries described above (no other entries are needed) and a &quot;Resources&quot; folder, which must contain one or more &quot;lproj&quot; folders. The &quot;lproj&quot; folders are as described above.</p>
 <p>To localize the names of added menu commands, include them in the &quot;Localized.bundle&quot; described above without any extensions (e.g., &quot;foo&quot;, not &quot;foo.addTo.Menu.executable&quot;). Programs launched by added menu commands will be launched with the a lower-case version of user's current language as the first argument — for example, &quot;english&quot;, &quot;cs&quot;, &quot;zh_cn&quot;. Programs launched at Tunnelblick launch will also have the language as the first argument, but programs launched upon connection will only have the language as the first argument if the &quot;Localized.bundle&quot; exists (so as to not break existing setups, which might expect other arguments).</p>
 <p>The &quot;Welcome Window&quot; can also be localized. The &quot;Welcome.bundle&quot; is similar to the &quot;Localized.bundle&quot;. It consists of a &quot;Contents&quot; folder which contains an Info.plist file with the three entries described above (no other entries are needed) and a &quot;Resources&quot; folder. The &quot;Resources&quot; folder should contain one or more &quot;lproj&quot; folders with names as described above. However, the contents of each &quot;lproj&quot; folder should be an &quot;index.html&quot; file which contains the &quot;Welcome&quot; page for a particular language (and any other files such as images that &quot;index.html&quot; refers to).</p>
 <p>Note: If a Deploy folder and an individual configuration contain conflicting localizations, the individual configuration's localization will be used.</p>

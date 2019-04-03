@@ -5,19 +5,19 @@
 	<meta name="description" content="System Folder Security - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
 	<meta name="referrer" content="never">
 	<title>System Folder Security - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
-	<link rel="stylesheet" type="text/css"  href="/common/style.v5.css">
+	<link rel="stylesheet" type="text/css"  href="/common/style.v6.css">
 	<link rel="icon"       type="image/png" href="/common/favicon.v1.png">
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-02-27 19:39:28 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-04-03 22:46:09 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
 		<tr>
 			<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
 			<td class="heading1">Tunnelblick</td>
-			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading2">free software for OpenVPN on macOS</td>
 			<td class="heading3">
                 <a href="/cLocalizeTranslate.html">We need translators for several languages&hellip;</a>
             </td>
@@ -74,13 +74,13 @@
 
 
 <h1 id="system-folder-security">System Folder Security</h1>
-<p>One aspect of computer security is the security of system files and folders — files and folders created by OS X to run your computer. The security is primarily controlled by the ownership and permissions of the files and folders that make up OS X and the applications and data on your computer.</p>
-<p>Tunnelblick checks the security of itself and of the parts of OS X that it uses. That sometimes results in Tunnelblick complaining that a system folder is not secure, and refusing to connect a VPN. For example, you might see the following message after launching Tunnelblick:</p>
+<p>One aspect of computer security is the security of system files and folders — files and folders created by macOS to run your computer. The security is primarily controlled by the ownership and permissions of the files and folders that make up macOS and the applications and data on your computer.</p>
+<p>Tunnelblick checks the security of itself and of the parts of macOS that it uses. That sometimes results in Tunnelblick complaining that a system folder is not secure, and refusing to connect a VPN. For example, you might see the following message after launching Tunnelblick:</p>
 <p><img src="https://www.tunnelblick.net/images/ApplicationsFolderNotSecure.png" width="50%" alt="window with title 'System Requirements Not Met' and 'Help', 'Continue', and 'Quit' buttons"><br></p>
 <p>Other problems with system folder security may only appear when you try to connect to a VPN.</p>
 <p>Tunnelblick repairs the security of all of its own files and folders, but does not repair files and folders that it does not create, such as system folders.</p>
 <h3 id="how-system-folders-become-insecure">How System Folders Become Insecure</h3>
-<p>System folders are secure when OS X is installed, and usually only become insecure as the result of a program installer behaving improperly. System folders could become insecure because of malware, but that is rare:</p>
+<p>System folders are secure when macOS is installed, and usually only become insecure as the result of a program installer behaving improperly. System folders could become insecure because of malware, but that is rare:</p>
 <ul>
 <li>In May 2014, Apple's iTunes 11.2 update caused each system boot to set insecure permissions on /Users and /Users/Shared. This was corrected in iTunes 11.2.1.</li>
 <li>There are reports that some older MacPorts installers makes /usr insecure, and that some SPSS and xQuartz installers and some player application installers for Vulkano streaming video make /Applications insecure.</li>
@@ -90,8 +90,8 @@
 <p>On OS X 10.11 and higher, some system folders are protected by &quot;System Integrity Protection&quot;. However, other folders are not, and the &quot;Disk Utility&quot; does not include &quot;Repair Disk Permissions&quot;.</p>
 <p>Disk Utility in OS X 10.5 and lower does not fix the ownership and permissions of system folders; they must be repaired manually using the Terminal application (/Applications/Utilities/Terminal).</p>
 <h3 id="correct-system-folder-ownership-and-permissions">Correct System Folder Ownership and Permissions</h3>
-<p>System folder ownership and permissions vary from folder to folder and from one version of OS X to another. The following table lists the standard (secure) ownership and permissions for selected system folders under various versions of OS X.</p>
-<p><strong>For OS X 10.11 and higher:</strong></p>
+<p>System folder ownership and permissions vary from folder to folder and from one version of macOS to another. The following table lists the standard (secure) ownership and permissions for selected system folders under various versions of OS X and macOS.</p>
+<p><strong>For OS X 10.11 and higher (including all versions of macOS):</strong></p>
 <table border="1">
 <tr><td> Folder                                   </td><td> Owner  </td><td> Group </td><td> Permissions </td><td> Octal </td><td>Terminal command to repair                                                                            </td></tr>
 <tr><td> /Applications                            </td><td> root   </td><td> admin </td><td> rwxrwxr-x   </td><td> 0775  </td><td> sudo chown root:admin /Applications; sudo chmod 0775 /Applications                                   </td></tr>

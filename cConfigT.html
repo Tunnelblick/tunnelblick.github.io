@@ -5,19 +5,19 @@
 	<meta name="description" content="Setting up Tunnelblick - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
 	<meta name="referrer" content="never">
 	<title>Setting up Tunnelblick - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
-	<link rel="stylesheet" type="text/css"  href="/common/style.v5.css">
+	<link rel="stylesheet" type="text/css"  href="/common/style.v6.css">
 	<link rel="icon"       type="image/png" href="/common/favicon.v1.png">
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-02-27 19:39:28 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-04-03 22:46:09 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
 		<tr>
 			<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
 			<td class="heading1">Tunnelblick</td>
-			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading2">free software for OpenVPN on macOS</td>
 			<td class="heading3">
                 <a href="/cLocalizeTranslate.html">We need translators for several languages&hellip;</a>
             </td>
@@ -139,14 +139,14 @@
 <h2 id="the-set-nameserver-check-box-and-dns-wins-settings">The &quot;Set Nameserver&quot; Check Box and DNS &amp; WINS Settings</h2>
 <p>If you are using DHCP, wish to use DNS and WINS servers at the far end of the tunnel when connected, and the VPN server you are connecting to &quot;pushes&quot; DNS and WINS settings to your client, select &quot;Set nameserver&quot;. (This is the situation for most users.)</p>
 <p>If you are using DHCP, wish to use your original DNS and WINS servers when connected, and the VPN server you are connecting to does not &quot;push&quot; DNS or WINS settings to your client, select &quot;Do not set nameserver&quot;.</p>
-<p>If you are using manual settings, different versions of OS X behave differently. This is due to a change in network behavior in Snow Leopard and is beyond the scope of this project to fix.</p>
+<p>If you are using manual settings, different versions of macOS behave differently. This is due to a change in network behavior in Snow Leopard and is beyond the scope of this project to fix.</p>
 <p>If you're using Leopard (OS X 10.5) or Tiger (OS X 10.4), then it is possible to use the VPN-server-supplied DNS and WINS settings <strong>in addition to</strong> your manual settings by selecting &quot;Set nameserver&quot;. However, your manual settings will always take precedence over any VPN server-supplied settings. If &quot;Do not set nameserver&quot; is selected, you will continue to use only your manually-configured settings and any VPN server-supplied settings will be ignored. &quot;Take precedence&quot; means that the manual DNS server will be used for all DNS queries unless it fails to answer, in which case the VPN server-supplied DNS server will be used.</p>
 <p>If you are using Snow Leopard (OS X 10.6) or later, then your usual DNS and WINS settings will <strong>always</strong> be used, and no aggregation of configurations will be performed.</p>
 <ul>
 <li><p>If you set your DNS servers manually, then regardless of the state of &quot;Set nameserver&quot;, your manual DNS servers, Search Domains, and WINS servers will always be the only ones used unless you set the configuration to &quot;Allow changes to manually-set network settings&quot;.</p></li>
 <li><p>Each of these settings is independent of the others: if &quot;Set nameserver&quot; is selected, those settings not configured manually will be replaced by the settings obtained from the VPN server. If &quot;Do not set nameserver&quot; is selected, then as with Leopard/Tiger, no DNS/WINS settings will be applied unless you set the configuration to &quot;Allow changes to manually-set network setttings&quot;.</p></li>
 </ul>
-<p><strong>If your situation is not described above</strong> (e.g., if you use manual DNS settings and wish to use DNS servers at the far end of a tunnel when connected, or you wish to use the OS X ability to use different nameservers for different domains), you must create your own up/down scripts and select &quot;Set nameserver&quot;.</p>
+<p><strong>If your situation is not described above</strong> (e.g., if you use manual DNS settings and wish to use DNS servers at the far end of a tunnel when connected, or you wish to use the macOS ability to use different nameservers for different domains), you must create your own up/down scripts and select &quot;Set nameserver&quot;.</p>
 <hr>
 <h2 id="the-openvpn---user-and---group-options-and-openvpn-down-root.so">The OpenVPN --user and --group options and openvpn-down-root.so</h2>
 <p>When using &quot;Set nameserver&quot; or your own down script for OpenVPN, it is usually necessary to avoid using the OpenVPN &quot;user&quot; and &quot;group&quot; options in the configuration file. These options cause OpenVPN to drop root privileges and take the privileges of the specified user and group (usually, &quot;nobody&quot;). If this is done, then the down script that handles restarting connections when there is a transient problem fails, because it is run without root privileges. OpenVPN usually fails, too, if your configuration performs any routing (most configurations do).</p>

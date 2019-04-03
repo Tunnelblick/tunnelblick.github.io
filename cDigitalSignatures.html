@@ -5,19 +5,19 @@
 	<meta name="description" content="Tunnelblick and Digital Signatures - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
 	<meta name="referrer" content="never">
 	<title>Tunnelblick and Digital Signatures - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
-	<link rel="stylesheet" type="text/css"  href="/common/style.v5.css">
+	<link rel="stylesheet" type="text/css"  href="/common/style.v6.css">
 	<link rel="icon"       type="image/png" href="/common/favicon.v1.png">
 </head>
 
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-02-27 19:39:28 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-04-03 22:46:09 UTC</font></td></tr></table></center>
 
 <div class="heading">
 	<table>
 		<tr>
 			<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
 			<td class="heading1">Tunnelblick</td>
-			<td class="heading2">free software for OpenVPN on OS&nbsp;X and macOS</td>
+			<td class="heading2">free software for OpenVPN on macOS</td>
 			<td class="heading3">
                 <a href="/cLocalizeTranslate.html">We need translators for several languages&hellip;</a>
             </td>
@@ -78,12 +78,12 @@
 <h2 id="digital-signatures">Digital Signatures</h2>
 <p>Tunnelblick uses two different types of digital signatures:</p>
 <ul>
-<li><strong>Application signature</strong> Tunnelblick.app may be digitally signed by the Tunnelblick Project with the Project's OS X digital signature. The signature is used in OS X 10.5 (&quot;Leopard&quot;) and higher to allow an updated application with the same signature as the original application to access Keychain items created by the original application without OS X prompting the user for permission.</li>
+<li><strong>Application signature</strong> Tunnelblick.app may be digitally signed by the Tunnelblick Project with the Project's macOS digital signature. The signature is used in OS X 10.5 (&quot;Leopard&quot;) and higher to allow an updated application with the same signature as the original application to access Keychain items created by the original application without macOS prompting the user for permission.</li>
 <li><strong>Update signature</strong> Updates to Tunnelblick are always digitally signed by the Tunnelblick Project. This is part of the update process, to ensure that updates to Tunnelblick are genuine and have not been tampered with or corrupted.</li>
 </ul>
 <h2 id="why-application-signatures-are-useful">Why Application Signatures Are Useful</h2>
 <p>If the user agrees, Tunnelblick stores usernames, passwords and passphrases for VPNs in the user's Keychain so that the user does not have to enter them each time a connection is made.</p>
-<p>For security reasons, OS X is careful when applications access the user's Keychain. Usually only the original application that created a Keychain item is allowed access to it. This means that when an application is updated, even though it has the same name, OS X will recognize that it is different and ask the user if the program may access the Keychain. In OS X 10.5 and higher, if the updated application is &quot;digitally signed&quot; by the same signer as the original application, OS X will allow it to access the Keychain without asking the user.</p>
+<p>For security reasons, macOS is careful when applications access the user's Keychain. Usually only the original application that created a Keychain item is allowed access to it. This means that when an application is updated, even though it has the same name, macOS will recognize that it is different and ask the user if the program may access the Keychain. In OS X 10.5 and higher, if the updated application is &quot;digitally signed&quot; by the same signer as the original application, macOS will allow it to access the Keychain without asking the user.</p>
 <p>Digital signatures are also used by the Gatekeeper on OS X 10.8 (&quot;Mountain Lion&quot;) and higher. By default, Gatekeeper allows the installation only of applications signed by developers recognized by Apple. Signed versions of Tunnelblick versions 3.3beta08 and higher are signed by such a developer so that they may be installed easily.</p>
 <h2 id="how-application-signatures-can-cause-problems-for-deployed-versions-of-tunnelblick">How Application Signatures Can Cause Problems for Deployed Versions of Tunnelblick</h2>
 <p>If an application is digitally signed, and a change is made to the application, the signature becomes invalid. That can cause problems for <a href="cCusDeployed.html">Deployed</a> versions of Tunnelblick, because the process of creating a Deployed version involves changing the application by adding a folder inside the application itself. If such a folder is added to a signed version of Tunnelblick, the signature becomes invalid. OS X 10.8 and higher will not allow the user to install Tunnelblick, and OS X 10.5 and higher will refuse the program access to it's Keychain items, without asking the user.</p>
