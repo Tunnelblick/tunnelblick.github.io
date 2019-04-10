@@ -1,55 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8" lang="en">
-	<meta name="description" content="Generating an HMAC Signature - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
-	<meta name="referrer" content="never">
-	<title>Generating an HMAC Signature - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
-	<link rel="stylesheet" type="text/css"  href="/common/style.v6.css">
-	<link rel="icon"       type="image/png" href="/common/favicon.v1.png">
+<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta charset="UTF-8" lang="en">
+<meta name="description" content="Generating an HMAC Signature - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+<meta name="referrer" content="never">
+<title>Generating an HMAC Signature - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+<link rel="stylesheet" type="text/css" href="/common/style.v6.css">
+<link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
-
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-04-03 22:46:09 UTC</font></td></tr></table></center>
-
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-04-10 23:17:51 UTC</font></td></tr></table></center>
 <div class="heading">
-	<table>
-		<tr>
-			<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
-			<td class="heading1">Tunnelblick</td>
-			<td class="heading2">free software for OpenVPN on macOS</td>
-			<td class="heading3">
-                <a href="/cLocalizeTranslate.html">We need translators for several languages&hellip;</a>
-            </td>
-		</tr>
-	</table>
+<table>
+<tr>
+<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
+<td class="heading1">Tunnelblick</td>
+<td class="heading2">free software for OpenVPN on macOS</td>
+<td class="heading3"><a href="/cLocalizeTranslate.html">We need translators for several languages…</a></td>
+</tr>
+</table>
 </div>
-
-
 <div class="topnav">
-<table class="topnav"><tbody><tr>
-	<td class="topnav-normal"   ><a href="/index.html"      class="topnav">Home</a></td>
-	<td class="topnav-normal"   ><a href="/downloads.html"  class="topnav">Downloads</a></td>
-	<td class="topnav-normal"   ><a href="/support.html"    class="topnav">Support</a></td>
-	<td class="topnav-highlight"><a href="/documents.html"  class="topnav">Documents</a></td>
-	<td class="topnav-normal"   ><a href="/issues.html"     class="topnav">Issues</a></td>
-	<td class="topnav-normal"   ><a href="/source.html"     class="topnav">Source</a></td>
-	<td class="topnav-normal"   ><a href="/contribute.html" class="topnav">Contribute</a></td>
-	<td class="topnav-normal"   ><a href="/reachus.html"    class="topnav">Contact</a></td>
-	<td class="topnav-padding"  ></td>
-</tbody></table>
+<table class="topnav">
+<tbody>
+<tr>
+<td class="topnav-normal"><a href="/index.html" class="topnav">Home</a></td>
+<td class="topnav-normal"><a href="/downloads.html" class="topnav">Downloads</a></td>
+<td class="topnav-normal"><a href="/support.html" class="topnav">Support</a></td>
+<td class="topnav-highlight"><a href="/documents.html" class="topnav">Documents</a></td>
+<td class="topnav-normal"><a href="/issues.html" class="topnav">Issues</a></td>
+<td class="topnav-normal"><a href="/source.html" class="topnav">Source</a></td>
+<td class="topnav-normal"><a href="/contribute.html" class="topnav">Contribute</a></td>
+<td class="topnav-normal"><a href="/reachus.html" class="topnav">Contact</a></td>
+<td class="topnav-padding"></td>
+</tr>
+</tbody>
+</table>
 </div>
-
-
-
 <div class="content">
 <div class="content-cHmacSignature">
 <table class="documents">
-  <tr>
-    <td class="documents-left">
-
-
-
+<tr>
+<td class="documents-left">
 <p><strong>Highlighted Articles</strong><br>
 &nbsp;&nbsp;<a href="/cNews.html">News</a><br>
 &nbsp;&nbsp;<a href="/cInstall.html">Installing Tunnelblick</a><br>
@@ -62,71 +55,64 @@
 &nbsp;&nbsp;<a href="/cRlsNotes.html">Release Notes</a><br>
 &nbsp;&nbsp;<a href="/cThanks.html">Thanks</a><br>
 &nbsp;&nbsp;<a href="/cFAQ.html">FAQ</a></p>
-
-<p><strong><a href="https://groups.google.com/forum/#&#33;forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+<p><strong><a href="https://groups.google.com/forum/#!forum/tunnelblick-discuss">Discussion Group</a></strong><br>
 &nbsp;&nbsp;<a href="/cBeforeYouPost.html">Read Before You Post</a></p>
-
-
-
-    </td>
-    <td class="documents-right">
-    
-
-
+</td>
+<td class="documents-right">
 <h1 id="generating-an-hmac-signature">Generating an HMAC Signature</h1>
-<p>If you are setting up your own OpenVPN server and clients, using the OpenVPN &quot;--tls-auth&quot; option is <a href="https://openvpn.net/community-resources/how-to/#hardening-openvpn-security">recommended</a> as one way of &quot;hardening&quot; the security of your OpenVPN setup. The option requires an HMAC signature file, which you can generate on your Mac using the OpenVPN program included in Tunnelblick.</p>
-<hr />
+<p>If you are setting up your own OpenVPN server and clients, using the OpenVPN "--tls-auth" option is <a href="https://openvpn.net/community-resources/how-to/#hardening-openvpn-security">recommended</a> as one way of "hardening" the security of your OpenVPN setup. The option requires an HMAC signature file, which you can generate on your Mac using the OpenVPN program included in Tunnelblick.</p>
+<hr>
 <h2 id="commands-to-generate-an-hmac-signature">Commands to Generate an HMAC Signature</h2>
 <p>First, install the latest beta version of Tunnelblick, then use the following commands:</p>
 <pre><code>     cd ~/Library/Application\ Support/Tunnelblick/easy-rsa/keys
      /Applications/Tunnelblick.app/Contents/Resources/openvpn/openvpn-2.3.4/openvpn --genkey --secret ta.key
      cd ..</code></pre>
-<p>Replacing &quot;2.3.4&quot; above with the version of OpenVPN that you want to use to create the key, if it isn't &quot;2.3.4&quot;. (OpenVPN version 2.3.4 is included in Tunnelblick 3.4beta36, the latest version as of this writing.)</p>
-<hr />
+<p>Replacing "2.3.4" above with the version of OpenVPN that you want to use to create the key, if it isn't "2.3.4". (OpenVPN version 2.3.4 is included in Tunnelblick 3.4beta36, the latest version as of this writing.)</p>
+<hr>
 <h2 id="very-detailed-instructions-to-generate-an-hmac-signature">Very Detailed Instructions to Generate an HMAC Signature</h2>
 <p>You need to figure out which version of OpenVPN to use to generate the key — most versions of Tunnelblick include at least two versions of OpenVPN. Probably you want to use the latest version of Tunnelblick and the latest version of OpenVPN.</p>
 <ol>
-<li><p>Make sure you have downloaded the latest beta version of Tunnelblick and installed it by double-clicking the Tunnelblick icon in the disk image.</p></li>
-<li><p>Open a Finder window, find the /Applications folder, and find Tunnelblick.app in /Applications. Control-click on Tunnelblick.app and click on &quot;Show Package Contents&quot;. That will show a &quot;Contents&quot; folder. Double-click &quot;Contents&quot;, double-click &quot;Resources&quot;, then double-click &quot;openvpn&quot;. That &quot;openvpn&quot; folder will contain a folder for each version of OpenVPN that your copy of Tunnelblick includes (and a symlink named &quot;default&quot; which you can ignore).</p></li>
-<li><p>Double-click the folder with the latest name (&quot;openvpn-2.3.4&quot;, currently). You will see two items, &quot;openvpn&quot; and &quot;openvpn-down-root.so&quot;.</p></li>
-<li><p>Open a Terminal window with the easy-rsa folder (for example, by using the &quot;Open easy-rsa in Terminal&quot; button on the &quot;Utilities&quot; panel of Tunnelbick's &quot;VPN Details&quot; window).</p></li>
-<li><p>Type the following into the Terminal window:</p>
+<li>
+<p>Make sure you have downloaded the latest beta version of Tunnelblick and installed it by Control-clicking the Tunnelblick icon in the disk image and clicking "Open".</p>
+</li>
+<li>
+<p>Open a Finder window, find the /Applications folder, and find Tunnelblick.app in /Applications. Control-click on Tunnelblick.app and click on "Show Package Contents". That will show a "Contents" folder. Double-click "Contents", double-click "Resources", then double-click "openvpn". That "openvpn" folder will contain a folder for each version of OpenVPN that your copy of Tunnelblick includes (and a symlink named "default" which you can ignore).</p>
+</li>
+<li>
+<p>Double-click the folder with the latest name ("openvpn-2.3.4", currently). You will see two items, "openvpn" and "openvpn-down-root.so".</p>
+</li>
+<li>
+<p>Open a Terminal window with the easy-rsa folder (for example, by using the "Open easy-rsa in Terminal" button on the "Utilities" panel of Tunnelbick's "VPN Details" window).</p>
+</li>
+<li>
+<p>Type the following into the Terminal window:</p>
 <pre><code> cd keys</code></pre>
-<p>followed by the &quot;Enter&quot; or &quot;Return&quot; key, so &quot;keys&quot; is the working directory.</p></li>
-<li><p>Drag the &quot;openvpn&quot; file from the Finder window to the Terminal window. That will copy the full path of the &quot;openvpn&quot; file and a space to the Terminal window.</p></li>
-<li><p>Copy/paste the following to the Terminal window:</p>
+<p>followed by the "Enter" or "Return" key, so "keys" is the working directory.</p>
+</li>
+<li>
+<p>Drag the "openvpn" file from the Finder window to the Terminal window. That will copy the full path of the "openvpn" file and a space to the Terminal window.</p>
+</li>
+<li>
+<p>Copy/paste the following to the Terminal window:</p>
 <pre><code> --genkey --secret ta.key</code></pre>
 <p>At that point, the line in Terminal will look like the following, with X.Y.Z replaced with digits:</p>
 <pre><code> /Applications/Tunnelblick.app/Contents/Resources/openvpn/openvpn-X.Y.Z/openvpn --genkey --secret ta.key</code></pre></li>
-<li><p>Press the &quot;enter&quot; or &quot;return&quot; key to start the key generation.</p></li>
-<li><p>When key generation is complete, type</p>
+<li>
+<p>Press the "enter" or "return" key to start the key generation.</p>
+</li>
+<li>
+<p>When key generation is complete, type</p>
 <pre><code> cd ..</code></pre>
-<p>to return to the easy-rsa folder.</p></li>
+<p>to return to the easy-rsa folder.</p>
+</li>
 </ol>
-<p>The &quot;ta.key&quot; file will be in the &quot;keys&quot; folder:</p>
-<pre><code>     /Users/YOUR-USERNAME/Library/Application\ Support/Tunnelblick/easy-rsa/keys</code></pre>
-
-
-
-   </td>
-  </tr>
+<p>The "ta.key" file will be in the "keys" folder:</p>
+<pre><code>     /Users/YOUR-USERNAME/Library/Application\ Support/Tunnelblick/easy-rsa/keys</code></pre></td>
+</tr>
 </table>
 </div>
 </div>
-
-
-
-<div class="bottom-translation">
-  <span title="view in German or another language using Google Translate">               <a lang="de"      class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcHmacSignature.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;         </a></span>
-  <span title="view in French or another language using Google Translate">               <a lang="fr"      class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcHmacSignature.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;        </a></span>
-  <span title="view in Chinese (simplified) or another language using Google Translate"> <a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcHmacSignature.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp; </a></span>
-  <span title="view in Russian or another language using Google Translate">              <a lang="ru"      class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcHmacSignature.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;         </a></span>
-  <span title="view in Spanish or another language using Google Translate">              <a lang="es"      class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcHmacSignature.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;         </a></span>
-  <span title="view in Japanese or another language using Google Translate">             <a lang="ja"      class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcHmacSignature.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;           </a></span>
-  <span title="view in Italian or another language using Google Translate">              <a                class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcHmacSignature.html&amp;sandbox=1">&nbsp;&nbsp;&hellip;&nbsp;&nbsp;        </a></span>
-</div>
-<div class="bottom-copyright">
-  Copyright &copy; 2015-2019 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;
-</div>
+<div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcHmacSignature.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcHmacSignature.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcHmacSignature.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcHmacSignature.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcHmacSignature.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcHmacSignature.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcHmacSignature.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
+<div class="bottom-copyright">Copyright © 2015-2019 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </body>
 </html>
