@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-04-25 23:02:27 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-04-28 01:38:43 UTC</font></td></tr></table></center>
 <div class="heading">
 <table>
 <tr>
@@ -47,20 +47,22 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#releases">Release Downloads</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#verifying-downloads">Verifying Downloads</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#user-contributions">User Contributions</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#sourceforge">Download Integrity</a><br></p>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#sourceforge">Download Integrity</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#mojave">Downloading and Installing on macOS Mojave</a><br></p>
 </td>
 <td class="downloads-right">
 <h2 id="releases">Release Downloads</h2>
 <p>To be notified of new releases, use Tunnelblick's built-in update mechanism or subscribe to the <a href="https://groups.google.com/forum/#!forum/tunnelblick-announce">Tunnelblick Announce Mailing List</a>.</p>
 <p><strong><span class="red">Beta versions are suitable for most users.</span></strong> See <a href="cStableBeta.html">Stable&nbsp;vs.&nbsp;Beta</a> for details.</p>
 <p><strong><span class="red">There have been false reports of malware in Tunnelblick.</span></strong> See <a href="cNoMalwareInTunnelblick.html">No&nbsp;Malware&nbsp;In&nbsp;Tunnelblick</a> for details.</p>
+<p><span class="red">See <a href="#mojave">Downloading and Installing on macOS Mojave</a> for information about <strong>a potential privacy violation</strong>.</span></p>
 <table>
 <tr>
 <td class="pad-right-1em" valign="top"><strong>Beta</strong></td>
-<td><strong><a href="https://github.com/Tunnelblick/Tunnelblick/releases/download/v3.7.9beta06/Tunnelblick_3.7.9beta06_build_5250.dmg">Tunnelblick 3.7.9beta06</a></strong> <span class="small">(build 5250, OS X 10.7.5+, Intel-64 only)</span> released 2019-04-19 <a href="cRlsNotes.html">Release Notes</a><br>
-<span class="small">SHA1:&nbsp;15d6cf10026c62cc43adb6b0615d1c3da970cfc7 MD5:&nbsp;cd7ad1c24c54f067455150109696bcff</span><br>
-<span class="small">SHA256:&nbsp;7ba50cfd99124698cfb8070c1c86db5dbb335bb8346891784ade3dfe451d66ff</span><br>
-<span class="small"><a href="/signatures/Tunnelblick_3.7.9beta06_build_5250.dmg.asc">GnuPG v2 signature</a></span></td>
+<td><strong><a href="https://github.com/Tunnelblick/Tunnelblick/releases/download/v3.7.9beta07/Tunnelblick_3.7.9beta07_build_5260.dmg">Tunnelblick 3.7.9beta07</a></strong> <span class="small">(build 5260, OS X 10.7.5+, Intel-64 only)</span> released 2019-04-27 <a href="cRlsNotes.html">Release Notes</a><br>
+<span class="small">SHA1:&nbsp;88bd6b7e120b872332e20f1603b07b41fb70b340 MD5:&nbsp;4af58963a013ba0395d41185524418c5</span><br>
+<span class="small">SHA256:&nbsp;3ec5b7ce0f2359acb461bad4a4cf0fed4c694dc27e70b765454aa96d76850ccc</span><br>
+<span class="small"><a href="/signatures/Tunnelblick_3.7.9beta07_build_5260.dmg.asc">GnuPG v2 signature</a></span></td>
 </tr>
 <tr>
 <td colspan="2">&nbsp;</td>
@@ -204,6 +206,22 @@ These scripts mount a volume after a configuration is connected and unmount it w
 <li>Updates are controlled by tunnelblick.net and all update data is transported via https:</li>
 <li>Update downloads contain digital signatures to verify they have not been modified. (This is in addition to the macOS digital signature of the Tunnelblick application itself.) See <a href="cDigitalSignatures.html">Digital Signatures</a>.</li>
 </ul>
+<hr>
+<h2 id="mojave">Downloading and Installing on macOS Mojave</h2>
+<p>When Tunnelblick is installed after being downloaded normally, <a href="https://lapcatsoftware.com/articles/notarization-privacy.html">MacOS Mojave sends information to Apple</a> (it "phones home") [1].</p>
+<p>This behavior is considered by some to be a violation of privacy. If you want to avoid having macOS Mojave "phone home" when you install Tunnelblick, you can do the following to download Tunnelblick to your Desktop:</p>
+<ol>
+<li>In your browser, instead of clicking on the link to download Tunnelblick, Control-click the link and select "Copy Link" (Safari), "Copy Link Location" (Firefox), or "Copy Link Address" (Chrome).</li>
+<li>Open the Terminal application located in /Applications/Utilities.</li>
+<li>Type (or copy/paste) "<code>curl --location --output ~/Desktop/Tunnelblick.dmg</code> " into Terminal without the quotation marks (notice the space after "<code>.dmg</code>").</li>
+<li>Paste (Command-V) into the Terminal window.</li>
+<li>Press the enter/return key on the keyboard</li>
+<li>You will see two or more progress bars showing the timing of downloads [2].</li>
+<li><a href="https://tunnelblick.net/downloads.html#verifying-downloads">Verify the download</a>.</li>
+</ol>
+<p>This will download the file to your Desktop without the flag that indicates the file was downloaded from the Internet. When that flag is present, macOS Mojave "phones home" when the downloaded file is double-clicked; when the flag is not present, macOS Mojave doesn't.</p>
+<p>[1] This isn't something peculiar to Tunnelblick – Mojave does this for any program or document downloaded from the Internet using most browsers and some other programs.</p>
+<p>[2] Tunnelblick downloads are redirected from the tunnelblick.net website to GitHub, which then redirects them further. Typically two or more tiny downloads (a few hundred bytes each) give information about the redirection, and the final larger download is the desired file.</p>
 </td>
 </tr>
 </table>
