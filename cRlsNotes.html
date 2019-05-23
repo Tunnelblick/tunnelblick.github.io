@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-05-14 00:39:17 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-05-23 01:10:59 UTC</font></td></tr></table></center>
 <div class="heading">
 <table>
 <tr>
@@ -61,11 +61,31 @@
 <td class="documents-right">
 <h1 id="release-notes">Release Notes</h1>
 <p class="toc">On This Page<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-3.8">Version 3.8</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-3.7">Version 3.7</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#older-versions-of-tunnelblick">Older Versions of Tunnelblick</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#uninstaller">Uninstaller</a><br></p>
 <hr>
+<h2 id="version-3.8">Version 3.8</h2>
+<p><strong>3.8.0beta01 build 5330 (2019-05-22) <span class='red'>(SECURITY UPDATE)</span></strong></p>
+<ul>
+<li>Includes a button to reveal or hide a password or passphrase as it is entered.</li>
+<li>By default, sets up DNS after routes have been set up.</li>
+<li>If available, uses OpenVPN-supplied DNS instead of DHCP-supplied DNS on tap connections.</li>
+</ul>
+<hr>
+<hr>
 <h2 id="version-3.7">Version 3.7</h2>
+<p><strong>3.7.9 build 5320 (2019-05-22) <span class='red'>(SECURITY UPDATE)</span></strong></p>
+<ul>
+<li>Disables IPv6 only if the OpenVPN server is not accessed via IPv6.</li>
+<li>Add warnings about common DHCP problems for tap connections.</li>
+<li>Includes a checkbox to always display the username and password dialog, even if both are saved in the Keychain. (Useful for some 2-factor authentication methods.)</li>
+<li>Updates translations to 40 languages.</li>
+<li>Displays environment variables when debugging the 'up' script.</li>
+<li>Fixes a bug that caused Tunnelblick entries to appear in the log in black.</li>
+</ul>
+<hr>
 <p><strong>3.7.9beta11 build 5310 (2019-05-13)</strong></p>
 <ul>
 <li>Tunnelblick is notarized: Apple verifies that it does not contain malware.</li>
@@ -557,6 +577,11 @@
 <p><a href="cRlsNotesOld.html">Old Release Notes</a> has release notes for older versions of Tunnelblick.</p>
 <hr>
 <h2 id="uninstaller">Uninstaller</h2>
+<p><strong>1.13 build 5330 (2019-05-22)</strong> <span class='red'>(SECURITY UPDATE)</span></p>
+<ul>
+<li>Tunnelblick Uninstaller is notarized: Apple verifies that it does not contain malware.</li>
+</ul>
+<hr>
 <p><strong>1.12 build 5090 (2018-06-26)</strong></p>
 <ul>
 <li>Fixes a problem when the user doesn't respond to the uninstall success/failure dialog within a few minutes.</li>
