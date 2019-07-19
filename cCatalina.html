@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-07-07 01:04:37 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-07-19 17:42:07 UTC</font></td></tr></table></center>
 <div class="heading">
 <table>
 <tr>
@@ -60,27 +60,33 @@
 </td>
 <td class="documents-right">
 <h1 id="tunnelblick-and-macos-catalina">Tunnelblick and macOS Catalina</h1>
-<p>The following issues have been identified when using Tunnelblick 3.7.8beta03 on macOS Catalina beta versions 2 and 3:</p>
-<p>(Last updated 2019-07-05)</p>
+<p>The following is the current status of issues that have been identified using Tunnelblick 3.7.8beta04 on macOS Catalina Beta 3 – "macOS Catalina Version 10.15 Beta (19A501i)"</p>
+<p>If you are not using the latest beta of macOS or Tunnelblick, please update them!</p>
 <hr>
-<p><span class="red"><strong>"Installation or repair took too long or failed"</strong> appears when trying to install Tunnelblick.</span></p>
-<p>This was reported as <a href="https://github.com/Tunnelblick/Tunnelblick/issues/559">Issue #559</a>.</p>
-<p>This happens only to some users.</p>
-<p>This message may also occur when installing any version of Tunnelblick in a virtual machine (e.g. using VirtualBox, Parallels, or VMWare).</p>
-<p><strong>Workaround 1</strong>: Copy the Tunnelblick disk image to the boot drive of the virtual machine and install from the copy.</p>
-<p><strong>Workaround 2</strong>: Use Finder to copy the Tunnelblick application from the disk image to the /Applications folder, then launch it by double-clicking the application in /Applications.</p>
-<p><strong>Workaround 3</strong>: Use the procedure detailed at <a href="https://tunnelblick.net/downloads.html#mojave">Downloading and Installing on macOS Mojave</a> to avoid Gatekeeper contacting Apple during the install.</p>
-<p><strong>If none of these workarounds help</strong>, please send the contents of /tmp/tunnelblick-installer-log.txt in a comment on <a href="https://github.com/Tunnelblick/Tunnelblick/issues/559">Issue #559</a> or in an email to <a href="mailto:developers@tunnelblick.net">developers@tunnelblick.net</a>.</p>
+<p><span class="red"><strong>OPEN: Restarting the computer is required by macOS before connecting some configurations for the first time.</strong></span></p>
+<p>If a configuration requires a "tun" or "tap" system extension, the first time Tunnelblick asks macOS to load the appropriate system extension, macOS will tell the user that they must give permission to load system extensions signed by "Jonathan Bullard" in System Preferences : Security & Privacy : General. If the user give such permission by clicking "Allow", macOS must restart the computer before the permission will be honored. After you have given the permission and restarted the computer, you may then connect the VPN configuration normally.</p>
+<p>Tests indicate that this is a "one time" requirement. Once permission has been granted and the computer restarted, no further action is needed. Tunnelblick will be able to load both "tun" and "tap" system extensions for any configuration without user interaction, and that ability will persist after computer restarts, "safe boots", and updates to Tunnelblick.</p>
+<p>Notes:</p>
+<ol>
+<li>This is a <span class="red">new requirement in Developer Beta 3</span>; it is not known if it will be included in the final version of Catalina.</li>
+<li><span class="red">If you are using a "tun" VPN, you can avoid needing to load the "tun" system extension.</span> See the note at the start of <a href="https://tunnelblick.net/cKextLoadError.html">Errors Loading Kexts (Device Drivers)</a>.</li>
+</ol>
 <hr>
-<p><span class="red"><strong>"System Requirements Not Met: the tmp system folder (/tmp) is not secure"</strong> appears each time Tunnelblick is launched.</span></p>
-<p><strong>This problem is fixed in Tunnelblick 3.8.0beta03.</strong></p>
+<p><span class="red"><strong>PARTIALLY RESOLVED: Catalina refuses to open a downloaded Tunnelblick disk image</strong>, saying it is "from an unidentified developer".</span></p>
+<p><strong>This problem was partially fixed in Catalina beta 3.</strong> Catalina beta 3 opens the disk image, but it fails to note that the disk image has been scanned and is free of malware.</p>
+<p>This is apparently a bug in Catalina beta 2. It doesn't happen on macOS Mojave and it doesn't happen on Catalina using disk images that are not notarized. It happens on Catalina with several notarized disk images, including Tunnelblick's and others.</p>
+<p><strong>Workaround</strong>: Open the disk image by Control-clicking it and selecting "Open". You'll again be told it is from an unidentified developer, but you can click the "Open" button to open the disk image. Once the disk image has been opened, you can double-click the Tunnelblick icon to install Tunnelblick without further warnings.</p>
+<hr>
+<p><span class="red"><strong>RESOLVED: "Installation or repair took too long or failed"</strong> appears when trying to install Tunnelblick.</span></p>
+<p><strong>This problem was fixed in Tunnelblick 3.8.0beta04.</strong> It was reported as <a href="https://github.com/Tunnelblick/Tunnelblick/issues/559">Issue #559</a>.</p>
+<p><strong>If you have this problem while trying to install Tunnelblick 3.8.0beta04</strong> , please send the contents of /tmp/tunnelblick-installer-log.txt in an email to <a href="mailto:developers@tunnelblick.net">developers@tunnelblick.net</a>.</p>
+<hr>
+<p><span class="red"><strong>RESOLVED: "System Requirements Not Met: the tmp system folder (/tmp) is not secure"</strong> appears each time Tunnelblick is launched.</span></p>
+<p><strong>This problem was fixed in Tunnelblick 3.8.0beta03.</strong></p>
 <p>See <a href="https://github.com/Tunnelblick/Tunnelblick/issues/554">Permissions check is broken for MacOS Catalina (<code>/tmp</code> folder stored in System Volume)</a>.</p>
 <p><strong>Workaround</strong>: Click "Continue".</p>
 <hr>
-<p><span class="red"><strong>Catalina refuses to open a downloaded Tunnelblick disk image</strong>, saying it is "from an unidentified developer".</span></p>
-<p><strong>This problem is partially fixed in Catalina beta 3.</strong> Catalina beta 3 opens the disk image, but it fails to note that the disk image has been scanned and is free of malware.</p>
-<p>This is apparently a bug in Catalina beta 2. It doesn't happen on macOS Mojave and it doesn't happen on Catalina using disk images that are not notarized. It happens on Catalina with several notarized disk images, including Tunnelblick's and others.</p>
-<p><strong>Workaround</strong>: Open the disk image by Control-clicking it and selecting "Open". You'll again be told it is from an unidentified developer, but you can click the "Open" button to open the disk image. Once the disk image has been opened, you can double-click the Tunnelblick icon to install Tunnelblick without further warnings.</p>
+<p>(This page was updated 2019-07-08.)</p>
 </td>
 </tr>
 </table>
