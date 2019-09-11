@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-09-06 03:03:59 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-09-11 21:35:32 UTC</font></td></tr></table></center>
 <div class="heading">
 <table>
 <tr>
@@ -60,30 +60,26 @@
 </td>
 <td class="documents-right">
 <h1 id="tunnelblick-and-macos-catalina">Tunnelblick and macOS Catalina</h1>
-<p>The following is the current status of issues that have been seen using Tunnelblick 3.8.1beta01 on macOS Catalina Beta 7 – "macOS Catalina Version 10.15 Beta (19A546d)"</p>
+<p>The following is the current status of issues that have been seen using Tunnelblick 3.8.1beta02 on macOS Catalina Beta 7 – "macOS Catalina Version 10.15 Beta (19A546d)"</p>
 <p>If you are not using the latest beta or the release of macOS Catalina or Tunnelblick, please update them!</p>
 <hr>
-<p><span class="red"><strong>NOT RESOLVED: Restarting the computer is required by macOS before connecting some configurations for the first time.</strong></span></p>
-<p>This is a new requirement in Catalina.</p>
-<p>If a configuration requires a "tun" or "tap" system extension, the first time Tunnelblick asks macOS to load the appropriate system extension, macOS will tell the user that they must give permission to load system extensions signed by "Jonathan Bullard" in System Preferences : Security & Privacy : General. If the user give such permission by clicking "Allow", macOS must restart the computer before the permission will be honored. After the permission has been given and the computer has been restarted, you may then connect the VPN configuration normally.</p>
-<p>Tests indicate that this is a "one time" requirement. Once permission has been granted and the computer restarted, no further action is needed. Tunnelblick will be able to either "tun" and "tap" system extensions for any configuration without user interaction, and that ability will persist after computer restarts, "safe boots", and updates to Tunnelblick.</p>
+<p><span class="red"><strong>NEW REQUIREMENT: Restarting the computer is required by macOS before connecting some configurations for the first time.</strong></span></p>
+<p>If a configuration requires a "tun" or "tap" system extension, the first time Tunnelblick asks macOS to load the appropriate system extension, macOS will tell the user that they must give permission to load system extensions signed by "Jonathan Bullard" in System Preferences : Security & Privacy : General. If the user give such permission by clicking "Allow", macOS must restart the computer before the permission will be honored. After the permission has been given and the computer has been restarted, you may then connect all VPN configurations normally.</p>
+<p>Tests indicate that this is a "one time" requirement. Once permission has been granted and the computer restarted, no further action is needed. Tunnelblick will be able to load "tun" and "tap" system extensions for any configuration without user interaction, and that ability will persist after computer restarts, "safe boots", and updates to Tunnelblick.</p>
 <p>Note: <span class="red">If you are using a "tun" VPN, you can avoid needing to load the "tun" system extension.</span> See the note at the start of <a href="https://tunnelblick.net/cKextLoadError.html">Errors Loading Kexts (Device Drivers)</a>.</p>
 <hr>
-<p><span class="red"><strong>NOT RESOLVED: Catalina fails to note that a downloaded Tunnelblick disk image and application have been scanned and are free of malware.</strong></span></p>
-<p>Because recent Tunnelblick disk images and the Tunnelblick application are "notarized", when opened on macOS Mojave, macOS notes that the application has been examined by Apple and did not contain malware. This no longer happens in Catalina and appears to be a bug in Catalina. It happens on Catalina with several notarized disk images, including Tunnelblick's and others.</p>
-<hr>
-<p><span class="red"><strong>RESOLVED: Catalina refuses to open a downloaded Tunnelblick disk image</strong>, saying it is "from an unidentified developer".</span></p>
+<p><span class="red"><strong>FIXED: Catalina refuses to open a downloaded Tunnelblick disk image</strong>, saying it is "from an unidentified developer".</span></p>
 <p><strong>This problem was fixed in Catalina beta 3.</strong></p>
-<p>This is apparently a bug in Catalina beta 2. It doesn't happen on macOS Mojave and it doesn't happen on Catalina using disk images that are not notarized. It happens on Catalina with several notarized disk images, including Tunnelblick's and others.</p>
+<p>This was a bug in Catalina beta 2.</p>
 <p><strong>Workaround</strong>: Open the disk image by Control-clicking it and selecting "Open". You'll again be told it is from an unidentified developer, but you can click the "Open" button to open the disk image. Once the disk image has been opened, you can double-click the Tunnelblick icon to install Tunnelblick without further warnings.</p>
 <hr>
-<p><span class="red"><strong>RESOLVED: "Installation or repair took too long or failed"</strong> appears when trying to install Tunnelblick.</span></p>
+<p><span class="red"><strong>FIXED: "Installation or repair took too long or failed"</strong> appears when trying to install Tunnelblick.</span></p>
 <p><strong>This problem was fixed in Tunnelblick 3.8.0beta04.</strong> It was reported as <a href="https://github.com/Tunnelblick/Tunnelblick/issues/559">Issue #559</a>.</p>
 <hr>
-<p><span class="red"><strong>RESOLVED: "System Requirements Not Met: the tmp system folder (/tmp) is not secure"</strong> appears each time Tunnelblick is launched.</span></p>
+<p><span class="red"><strong>FIXED: "System Requirements Not Met: the tmp system folder (/tmp) is not secure"</strong> appears each time Tunnelblick is launched.</span></p>
 <p><strong>This problem was fixed in Tunnelblick 3.8.0beta03.</strong> It was reported as <a href="https://github.com/Tunnelblick/Tunnelblick/issues/554">Issue 554</a>.</p>
 <hr>
-<p>(This page was updated 2019-09-03.)</p>
+<p>(This page was updated 2019-09-06.)</p>
 </td>
 </tr>
 </table>
