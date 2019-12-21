@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta charset="UTF-8" lang="en">
+<meta name="description" content="New Updatable Configurations - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+<meta name="referrer" content="never">
+<title>New Updatable Configurations - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+<link rel="stylesheet" type="text/css" href="/common/style.v6.css">
+<link rel="icon" type="image/png" href="/common/favicon.v1.png">
+</head>
+<body>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-12-21 01:06:50 UTC</font></td></tr></table></center>
+<div class="heading">
+<table>
+<tr>
+<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
+<td class="heading1">Tunnelblick</td>
+<td class="heading2">free software for OpenVPN on macOS</td>
+<td class="heading3"><a href="/cLocalizeTranslate.html">We need translators for several languages…</a></td>
+</tr>
+</table>
+</div>
+<div class="topnav">
+<table class="topnav">
+<tbody>
+<tr>
+<td class="topnav-normal"><a href="/index.html" class="topnav">Home</a></td>
+<td class="topnav-normal"><a href="/downloads.html" class="topnav">Downloads</a></td>
+<td class="topnav-normal"><a href="/support.html" class="topnav">Support</a></td>
+<td class="topnav-highlight"><a href="/documents.html" class="topnav">Documents</a></td>
+<td class="topnav-normal"><a href="/issues.html" class="topnav">Issues</a></td>
+<td class="topnav-normal"><a href="/source.html" class="topnav">Source</a></td>
+<td class="topnav-normal"><a href="/contribute.html" class="topnav">Contribute</a></td>
+<td class="topnav-normal"><a href="/reachus.html" class="topnav">Contact</a></td>
+<td class="topnav-padding"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="content">
+<div class="content-cNewUpdatableConfigurations">
+<table class="documents">
+<tr>
+<td class="documents-left">
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="/cNews.html">News</a><br>
+&nbsp;&nbsp;<a href="/cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="/czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="/cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="/cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="/cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="/cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="/cFAQ.html">FAQ</a></p>
+<p><strong><a href="https://groups.google.com/forum/#!forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="/cBeforeYouPost.html">Read Before You Post</a></p>
+</td>
+<td class="documents-right">
+<h1 id="new-updatable-configurations">New Updatable Configurations</h1>
+<p><strong>FEATURES DESCRIBED ON THIS PAGE ARE AVAILABLE ONLY IN TUNNELBLICK 3.8.2beta03 AND HIGHER</strong></p>
+<p class="toc">On This Page<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#introduction">Introduction</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#what-the-user-sees">What the User Sees</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#how-to-make-a-configuration-updatable">How to Make a Configuration Updatable</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#the-info.plist">The Info.plist</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#the-two-files">The two files</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version.txt">version.txt</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#config.tblk.zip">config.tblk.zip</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#the-.tblk">The .tblk</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#creating-a-.zip-file">Creating a .zip File</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#example">Example</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#debugging">Debugging</a><br></p>
+<h2 id="introduction">Introduction</h2>
+<p>A <a href="https://tunnelblick.net/cPkgs.html">Tunnelblick VPN Configuration</a> can be easily updated automatically.</p>
+<p>There are two separate methods for updating configurations:</p>
+<ul>
+<li>The "old" method, which is powerful and can update multiple configurations at one time but is complex to set up and administer; and</li>
+<li>The "new" method, which can only update a single configuration but is simple to set up and administer.</li>
+</ul>
+<p><strong>The rest of this page describes the new method.</strong><br>
+The old method is described <a href="cUpdatableConfigurations.html">here</a>.</p>
+<p>Using the new method, an update can be done by a "standard" user without a computer administrator's authorization if the "Require administrator authorization to install all configurations" checkbox on Tunnelblick's "Preferences" panel is not checked and the configuration complies with certain restrictions. See <a href="cNonAdminInstalls.html">Standard Users Installing or Replacing Configurations</a> for details about the restrictions. (The checkbox is checked by default and can only be changed by a computer administrator.)</p>
+<p>Otherwise (if the checkbox is checked or if the new configuration does not comply with the restrictions), a computer administrator's authorization is required to update the configuration.</p>
+<h2 id="what-the-user-sees">What the User Sees</h2>
+<p>Each time the user connects a VPN, Tunnelblick checks for an update to the configuration. If an update is available, the user is presented with a dialog asking what to do:</p>
+<ul>
+<li><strong>Update</strong> the configuration and connect to the VPN using the updated configuration); or</li>
+<li><strong>Skip</strong> the update and connect the VPN using the existing configuration; or</li>
+<li><strong>Cancel</strong> connecting to the VPN.</li>
+</ul>
+<p>If the user selects <strong>Update</strong>, the update will be done without further user interaction if the checkbox described above is not checked and the update complies with the restrictions noted in <a href="cNonAdminInstalls.html">Standard Users Installing or Replacing Configurations</a>. Otherwise a computer administrator's authorization will be required to install the update.</p>
+<h2 id="how-to-make-a-configuration-updatable">How to Make a Configuration Updatable</h2>
+<p>A VPN service provider needs to do two things to make a configuration updatable:</p>
+<ol>
+<li>Include in the configuration an Info.plist file with entries to identify the configuration's version number and a URL for obtaining update information; and</li>
+<li>Provide Internet access to two files.</li>
+</ol>
+<h3 id="the-info.plist">The Info.plist</h3>
+<p>The Info.plist file is a simple XML file containing keys and values. The specific entries required for updating are:</p>
+<ul>
+<li><strong>CFBundleVersion</strong>: the version number of the configuration. Must consist of digits and zero, one, or two periods, e.g. "104", "1.26", "1.33.6".</li>
+<li><strong>TBConfigurationUpdateURL</strong>: an https: URL used as the base URL for information about updates.</li>
+</ul>
+<p>The Info.plist file must also contain the following entry:</p>
+<ul>
+<li><strong>TBPackageVersion</strong>: a string containing "1".</li>
+</ul>
+<p>The following keys in the Info.plist will be ignored during the update process: TBMinimumTunnelblickVersion, TBMaximumTunnelblickVersion, TBReplaceIdentical, TBSharePackage, and TBKeepExistingFilesList.</p>
+<p>The Info.plist from the example Updatable.tblk (see <a href="#example">Example</a>, below) may be downloaded from <a href="https://tunnelblick.net/updatable-configs/config-1/Info.plist" class="uri">https://tunnelblick.net/updatable-configs/config-1/Info.plist</a>.</p>
+<h3 id="the-two-files">The two files</h3>
+<p>Two files must be available on the Internet:</p>
+<ul>
+<li>URL/version.txt</li>
+<li>URL/config.tblk.zip</li>
+</ul>
+<p>For example, if TBConfigurationUpdateURL is "<a href="https://example.com/updates/123" class="uri">https://example.com/updates/123</a>", a GET request to "<a href="https://example.com/updates/123/version.txt" class="uri">https://example.com/updates/123/version.txt</a>" must return the version number of the update, and a GET request to "<a href="https://example.com/updates/123/config.tblk.zip" class="uri">https://example.com/updates/123/config.tblk.zip</a>" must return a .zip of a Tunnelblick VPN Configuration (".tblk") containing the new configuration.</p>
+<h3 id="version.txt">version.txt</h3>
+<p>version.txt must contain only the version number, without a line terminator.</p>
+<h3 id="config.tblk.zip">config.tblk.zip</h3>
+<p>config.zip must contain a zipped copy of a .tblk.</p>
+<h3 id="the-.tblk">The .tblk</h3>
+<p>The .tblk from which the .zip file is created may have any name, but must have the following folder and file structure:</p>
+<pre>
+    whatever.tblk/
+        Contents/
+            Info.plist
+            Resources/
+                config.ovpn
+</pre>
+<p>The "Contents" and "Resources" folders and the "Info.plist" and "config.ovpn" files must have those exact names, but the "whatever.tblk" may have any name as long as it has a ".tblk" extension. When the user's configuration is updated, the update will keep the name of the user's configuration; it will <em>not</em> change the name of the user's configuration to the name of the .tblk. (The user may have changed the name of the configuration and the supplier of updates would not know about such changes.)</p>
+<p>All other files associated with the configuration, such as key and certificate files and scripts, must be in the "Resources" folder.</p>
+<h3 id="creating-a-.zip-file">Creating a .zip File</h3>
+<p>You can create a .zip of a .tblk in Finder by right-clicking (or Control-clicking) on the .tblk and selecting "Compress...". The name of the .zip file that will be created is the name of the .tblk with ".zip" added at the end. If your .tblk is not named "config.tblk", you must rename the .zip file to "config.tblk.zip" before uploading it to your webserver.</p>
+<p>You can also create a .zip using the command line:</p>
+<pre>
+    zip -r config.tblk.zip config-name.tblk
+</pre>
+<p>which will create config.tblk.zip containing a compressed copy of config-name.tblk, making it unnecessary to rename the .zip before uploading.</p>
+<h2 id="example">Example</h2>
+<p>The Tunnelblick website hosts an example:</p>
+<ul>
+<li>A .zip of an updatable configuration, version 1.1; and</li>
+<li>The two files with update information for updating to version 1.2.</li>
+</ul>
+<p>To use the example, download, expand, and install the Updatable.tblk at <a href="https://tunnelblick.net/updatable-configs/config-1/Updatable.tblk.zip" class="uri">https://tunnelblick.net/updatable-configs/config-1/Updatable.tblk.zip</a></p>
+<p><em>Note: Updatable.tblk is a dummy configuration that will not connect to a VPN server. Tunnelblick will display an error message when you try to connect it.</em></p>
+<p>When you attempt to connect Updatable.tblk:</p>
+<ol>
+<li>Tunnelblick will fetch the update version from <a href="https://tunnelblick.net/updatable-configs/config-1/version.txt" class="uri">https://tunnelblick.net/updatable-configs/config-1/version.txt</a>;</li>
+<li>Tunnelblick will compare that to the version in the installed configuration and detect that a newer version is available;</li>
+<li>Tunnelblick will ask the user if the user wants to update the configuration, skip the update, or cancel the connection attempt; and</li>
+<li>If the user elects to update, Tunnelblick will download a .zip of the updated configuration from <a href="https://tunnelblick.net/updatable-configs/config-1/config.tblk.zip" class="uri">https://tunnelblick.net/updatable-configs/config-1/config.tblk.zip</a>, expand the .zip, and install the update.</li>
+</ol>
+<p>As described in the Introduction, the update may be done without further user interaction or may require authorization from a computer administrator.</p>
+<p>Note: this .tblk contains a dummy configuration that will not connect to a VPN server.</p>
+<h2 id="debugging">Debugging</h2>
+<p>While developing updatable configurations, it may help to enable additional Tunnelblick logging about the update process. To do that, issue the following command in Terminal:</p>
+<pre>
+    defaults write net.tunnelblick.tunnelblick DB-UC -bool yes
+</pre>
+<p>to disable the extra logging, use</p>
+<pre>
+    defaults delete net.tunnelblick.tunnelblick DB-UC
+</pre></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcNewUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcNewUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcNewUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcNewUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcNewUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcNewUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcNewUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
+<div class="bottom-copyright">Copyright © 2015-2019 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+</body>
+</html>

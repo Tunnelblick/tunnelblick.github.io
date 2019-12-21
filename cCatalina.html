@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-11-01 11:43:19 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-12-21 01:06:50 UTC</font></td></tr></table></center>
 <div class="heading">
 <table>
 <tr>
@@ -60,12 +60,24 @@
 </td>
 <td class="documents-right">
 <h1 id="tunnelblick-and-macos-catalina">Tunnelblick and macOS Catalina</h1>
-<p>The following is the current status of issues that have been seen using Tunnelblick 3.8.1 on macOS Catalina.</p>
+<p>The following is the current status of issues that have been seen using the latest stable version of Tunnelblick on the latest version of macOS Catalina.</p>
 <hr>
-<p><span class="red"><strong>NEW REQUIREMENT: Restarting the computer is required by macOS before connecting some configurations for the first time.</strong></span></p>
+<p><span class="red"><strong>NEW macOS REQUIREMENT: Restarting the computer is required by macOS Catalina before connecting some configurations for the first time.</strong></span></p>
 <p>If a configuration requires a "tun" or "tap" system extension, the first time Tunnelblick asks macOS to load the appropriate system extension, macOS will tell the user that they must give permission to load system extensions signed by "Jonathan Bullard" in System Preferences : Security & Privacy : General. If the user give such permission by clicking "Allow", macOS must restart the computer before the permission will be honored. After the permission has been given and the computer has been restarted, you may then connect all VPN configurations normally.</p>
-<p>Tests indicate that this is a "one time" requirement. Once permission has been granted and the computer restarted, no further action is needed. Tunnelblick will be able to load "tun" and "tap" system extensions for any configuration without user interaction, and that ability will persist after computer restarts, "safe boots", and updates to Tunnelblick.</p>
+<p>This only needs to be done one time. Once permission to load system extensions signed by "Jonathan Bullard" has been granted and the computer restarted, no further action is needed. Tunnelblick will be able to load "tun" and "tap" system extensions for any configuration without user interaction, and that ability will persist after computer restarts, "safe boots", and updates to Tunnelblick.</p>
 <p>Note: <span class="red">If you are using a "tun" VPN, you can avoid needing to load the "tun" system extension.</span> See the note at the start of <a href="https://tunnelblick.net/cKextLoadError.html">Errors Loading Kexts (Device Drivers)</a>.</p>
+<hr>
+<p><span class="red"><strong>WON'T FIX: Sidecar does not work when a VPN is connected using Tunnelblick's default for a configuration.</strong></span></p>
+<p>Sidecar does not work if IPv6 is disabled. By default, Tunnelblick disables IPv6 while a VPN is connected. This is done to prevent information leaks in common VPN setups (see <a href="http://www.eecs.qmul.ac.uk/~tysong/files/PETS15.pdf">A Glance through the VPN Looking Glass: IPv6 Leakage and DNS Hijacking in Commercial VPN clients</a>).</p>
+<p>To fix this problem:</p>
+<ol>
+<li>Verify with your VPN service provider that no information is leaked if IPv6 traffic is allowed. <strong>If you cannot confirm that, you should not proceed and you will not be able to use Sidecar when your VPN is connected.</strong></li>
+<li>Launch Tunnelblick.</li>
+<li>Click the Tunnelblick icon in the menu bar and then click "VPN Details".</li>
+<li>Click on the large "Configurations" button at the top of the window.</li>
+<li>Select the configuration(s) you wish to modify.</li>
+<li>Remove the check from "Disable IPv6 unless the server is accessed via IPv6".</li>
+</ol>
 <hr>
 <p><span class="red"><strong>FIXED: Catalina refuses to open a downloaded Tunnelblick disk image</strong>, saying it is "from an unidentified developer".</span></p>
 <p><strong>This problem was fixed in Catalina beta 3.</strong></p>
@@ -78,7 +90,7 @@
 <p><span class="red"><strong>FIXED: "System Requirements Not Met: the tmp system folder (/tmp) is not secure"</strong> appears each time Tunnelblick is launched.</span></p>
 <p><strong>This problem was fixed in Tunnelblick 3.8.0beta03.</strong> It was reported as <a href="https://github.com/Tunnelblick/Tunnelblick/issues/554">Issue 554</a>.</p>
 <hr>
-<p>(This page was updated 2019-10-16.)</p>
+<p>(This page was updated 2019-11-03.)</p>
 </td>
 </tr>
 </table>

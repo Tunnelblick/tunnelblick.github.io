@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta charset="UTF-8" lang="en">
+<meta name="description" content="Standard Users Installing or Replacing Configurations - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+<meta name="referrer" content="never">
+<title>Standard Users Installing or Replacing Configurations - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+<link rel="stylesheet" type="text/css" href="/common/style.v6.css">
+<link rel="icon" type="image/png" href="/common/favicon.v1.png">
+</head>
+<body>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-12-21 01:06:50 UTC</font></td></tr></table></center>
+<div class="heading">
+<table>
+<tr>
+<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
+<td class="heading1">Tunnelblick</td>
+<td class="heading2">free software for OpenVPN on macOS</td>
+<td class="heading3"><a href="/cLocalizeTranslate.html">We need translators for several languages…</a></td>
+</tr>
+</table>
+</div>
+<div class="topnav">
+<table class="topnav">
+<tbody>
+<tr>
+<td class="topnav-normal"><a href="/index.html" class="topnav">Home</a></td>
+<td class="topnav-normal"><a href="/downloads.html" class="topnav">Downloads</a></td>
+<td class="topnav-normal"><a href="/support.html" class="topnav">Support</a></td>
+<td class="topnav-highlight"><a href="/documents.html" class="topnav">Documents</a></td>
+<td class="topnav-normal"><a href="/issues.html" class="topnav">Issues</a></td>
+<td class="topnav-normal"><a href="/source.html" class="topnav">Source</a></td>
+<td class="topnav-normal"><a href="/contribute.html" class="topnav">Contribute</a></td>
+<td class="topnav-normal"><a href="/reachus.html" class="topnav">Contact</a></td>
+<td class="topnav-padding"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="content">
+<div class="content-cNonAdminInstalls">
+<table class="documents">
+<tr>
+<td class="documents-left">
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="/cNews.html">News</a><br>
+&nbsp;&nbsp;<a href="/cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="/czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="/cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="/cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="/cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="/cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="/cFAQ.html">FAQ</a></p>
+<p><strong><a href="https://groups.google.com/forum/#!forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="/cBeforeYouPost.html">Read Before You Post</a></p>
+</td>
+<td class="documents-right">
+<h1 id="standard-users-installing-or-replacing-configurations">Standard Users Installing or Replacing Configurations</h1>
+<p><strong>FEATURES DESCRIBED ON THIS PAGE ARE AVAILABLE ONLY IN TUNNELBLICK 3.8.2beta03 AND HIGHER</strong></p>
+<p>Tunnelblick's "Require administrator authorization to install all configurations" checkbox is checked by default so that authorization by a computer administrator is required for any configuration to be installed or replaced.</p>
+<p>If the box is <em>not</em> checked, a standard user (i.e., a non-administrator) will be allowed to install private "non-admin" configurations and make certain updates to configurations without an administrator's authorization.</p>
+<p>The checkbox is on the "Preferences" panel of Tunnelblick's "OpenVPN Details" window.</p>
+<p><em>Changing the checkbox can only be done by a computer administrator.</em></p>
+<h2 id="vpn-configurations-can-be-a-security-risk">VPN Configurations Can be a Security Risk</h2>
+<p>VPN Configurations can contain commands or scripts. Because most commands and scripts are run as the 'root' user on macOS, if a standard user creates or modifies such a script they can make changes to the system that they would otherwise not be able to make. This is known as <a href="https://en.wikipedia.org/wiki/Privilege_escalation">vertical privilege escalation</a>. (Recent versions of macOS include features such as <a href="https://en.wikipedia.org/wiki/System_Integrity_Protection">System Integrity Protection</a> introduced in macOS El Capitan, and the dedicated read-only system volume introduced in macOS Catalina, which can limit <em>some</em> of the damage caused by such an escalation of privilege by a malicious user.)</p>
+<p>"Non-admin" configurations are configurations whose contents are restricted to avoid the possibility of vertical privilege escalation. However, they may make other changes that could be considered serious risks, including changes to routing and changes to the VPN server's URL. In addition, if the checkbox is not checked it is possible for malware running on the computer to silently create or modify configurations to make such changes. <strong>System administrators will need to consider those risks against the benefits of allowing standard users to install or replace configurations.</strong></p>
+<h2 id="installing-configurations">Installing Configurations</h2>
+<p>To install a VPN configuration, drag it to the Tunnelblick icon in the menu bar. To install several configurations at one time, select them in Finder and drag all of them at once to the Tunnelblick icon in the menu bar.</p>
+<p>A standard user will be allowed to install a new configuration if (A) the checkbox is not checked, (B) the configuration is being installed as a private configuration, and (C) the configuration does not contain any <a href="cUsingScripts.html#openvpn-scripts">OpenVPN commands or scripts</a>, references to such commands or scripts, or <a href="cUsingScripts.html#tunnelblick-vpn-configuration-scripts">Tunnelblick VPN Configuration scripts that run as root</a>. (Tunnelblick VPN Configuration scripts that run as the user are allowed.) OpenVPN options which invoke or reference scripts or commands include <code>auth-user-pass-verify</code>, <code>client-connect</code>, <code>client-disconnect</code>, <code>config</code>, <code>down</code>, <code>ipchange</code>, <code>iproute</code>, <code>learn-address</code>, <code>plugin</code>, <code>route-pre-down</code>, <code>route-up</code>, <code>tls-verify</code>, and <code>up</code>.</p>
+<h2 id="updating-or-replacing-configurations">Updating or Replacing Configurations</h2>
+<p>To replace or update VPN configuration(s), drag the new configuration(s) to the Tunnelblick icon in the menu bar.</p>
+<p>Normally when replacing a configuration, the old configuration is completely replaced by the new configuration.</p>
+<p>However, a standard user will be allowed to update or replace an existing configuration if (A) the checkbox is not checked, (B) the configuration is being installed as a private configuration, and (C) the new configuration includes only files which are the same as corresponding files already in the configuration except for changes to or the addition of:</p>
+<ul>
+<li>User-mode Tunnelblick scripts (which need not exist in the original configuration); and</li>
+<li>The Info.plist file (which need not exist in the original configuration); and/or</li>
+<li>Certificate and key files (which need not exist in the original configuration); and/or</li>
+<li>The OpenVPN configuration file, <em>but only if it does not contain any OpenVPN options which invoke commands or scripts (see above)</em>; and/or</li>
+<li>.DS_Store files, which are ignored.</li>
+</ul>
+<p>When updating or replacing configurations this way, the configuration is updated done on a file-by-file basis: each file in a "non-admin" replacement configuration will be copied into the original configuration, overwriting the corresponding file if there is one. Files in the existing configuration which do not appear in the update will be left untouched.</p>
+<p>This allows the initial installation by an administrator of a configuration that contains <a href="cUsingScripts.html#tunnelblick-vpn-configuration-scripts">Tunnelblick VPN Configuration scripts that run as root</a> or which otherwise require administrator authorization, but allows common updates to such a configuration to be done by a standard user. Common updates include changes to keys and certificates, changes to encryption, changes to OpenVPN server addresses, and changes to configuration version numbers.</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcNonAdminInstalls.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcNonAdminInstalls.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcNonAdminInstalls.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcNonAdminInstalls.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcNonAdminInstalls.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcNonAdminInstalls.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcNonAdminInstalls.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
+<div class="bottom-copyright">Copyright © 2015-2019 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+</body>
+</html>
