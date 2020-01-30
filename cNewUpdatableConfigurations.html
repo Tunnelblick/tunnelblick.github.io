@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-12-21 01:06:50 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-01-30 19:00:10 UTC</font></td></tr></table></center>
 <div class="heading">
 <table>
 <tr>
@@ -69,12 +69,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#the-two-files">The two files</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version.txt">version.txt</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#config.tblk.zip">config.tblk.zip</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#the-.tblk">The .tblk</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#creating-a-.zip-file">Creating a .zip File</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#example">Example</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#examples">Examples</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#debugging">Debugging</a><br></p>
 <h2 id="introduction">Introduction</h2>
-<p>A <a href="https://tunnelblick.net/cPkgs.html">Tunnelblick VPN Configuration</a> can be easily updated automatically.</p>
+<p>A single <a href="https://tunnelblick.net/cPkgs.html">Tunnelblick VPN Configuration</a> can be easily updated automatically.</p>
 <p>There are two separate methods for updating configurations:</p>
 <ul>
 <li>The "old" method, which is powerful and can update multiple configurations at one time but is complex to set up and administer; and</li>
@@ -95,34 +94,33 @@ The old method is described <a href="cUpdatableConfigurations.html">here</a>.</p
 <h2 id="how-to-make-a-configuration-updatable">How to Make a Configuration Updatable</h2>
 <p>A VPN service provider needs to do two things to make a configuration updatable:</p>
 <ol>
-<li>Include in the configuration an Info.plist file with entries to identify the configuration's version number and a URL for obtaining update information; and</li>
+<li>Include an Info.plist file in the configuration with entries to identify the configuration's version number and a URL for obtaining update information; and</li>
 <li>Provide Internet access to two files.</li>
 </ol>
 <h3 id="the-info.plist">The Info.plist</h3>
 <p>The Info.plist file is a simple XML file containing keys and values. The specific entries required for updating are:</p>
 <ul>
-<li><strong>CFBundleVersion</strong>: the version number of the configuration. Must consist of digits and zero, one, or two periods, e.g. "104", "1.26", "1.33.6".</li>
-<li><strong>TBConfigurationUpdateURL</strong>: an https: URL used as the base URL for information about updates.</li>
+<li><strong>CFBundleVersion</strong>: the version number of the configuration. It must consist of digits and zero, one, or two periods, e.g. "104", "1.26", "1.33.6". It must <strong>not</strong> include a line terminator.</li>
+<li><strong>TBConfigurationUpdateURL</strong>: an https: URL used as the base URL for information about updates, e.g. "<a href="https://tunnelblick.net/updatable-configs/config-1" class="uri">https://tunnelblick.net/updatable-configs/config-1</a>". It must <strong>not</strong> include a trailing slash or line terminator.</li>
 </ul>
 <p>The Info.plist file must also contain the following entry:</p>
 <ul>
 <li><strong>TBPackageVersion</strong>: a string containing "1".</li>
 </ul>
 <p>The following keys in the Info.plist will be ignored during the update process: TBMinimumTunnelblickVersion, TBMaximumTunnelblickVersion, TBReplaceIdentical, TBSharePackage, and TBKeepExistingFilesList.</p>
-<p>The Info.plist from the example Updatable.tblk (see <a href="#example">Example</a>, below) may be downloaded from <a href="https://tunnelblick.net/updatable-configs/config-1/Info.plist" class="uri">https://tunnelblick.net/updatable-configs/config-1/Info.plist</a>.</p>
+<p>The Info.plist from the first (simplest) example Updatable.tblk (see <a href="#example">Example</a>, below) may be downloaded from <a href="https://tunnelblick.net/updatable-configs/config-1/Info.plist" class="uri">https://tunnelblick.net/updatable-configs/config-1/Info.plist</a>. (This is the Info.plist <em>before</em> the configuration is updated.)</p>
 <h3 id="the-two-files">The two files</h3>
 <p>Two files must be available on the Internet:</p>
 <ul>
 <li>URL/version.txt</li>
 <li>URL/config.tblk.zip</li>
 </ul>
-<p>For example, if TBConfigurationUpdateURL is "<a href="https://example.com/updates/123" class="uri">https://example.com/updates/123</a>", a GET request to "<a href="https://example.com/updates/123/version.txt" class="uri">https://example.com/updates/123/version.txt</a>" must return the version number of the update, and a GET request to "<a href="https://example.com/updates/123/config.tblk.zip" class="uri">https://example.com/updates/123/config.tblk.zip</a>" must return a .zip of a Tunnelblick VPN Configuration (".tblk") containing the new configuration.</p>
+<p>For example, if TBConfigurationUpdateURL is "<a href="https://example.com/updates/123" class="uri">https://example.com/updates/123</a>", a GET request to "<a href="https://example.com/updates/123/version.txt" class="uri">https://example.com/updates/123/version.txt</a>" must return the version number of the update, and a GET request to "<a href="https://example.com/updates/123/config.tblk.zip" class="uri">https://example.com/updates/123/config.tblk.zip</a>" must return a .zip of a single Tunnelblick VPN Configuration (".tblk") of the new configuration.</p>
 <h3 id="version.txt">version.txt</h3>
-<p>version.txt must contain only the version number, without a line terminator.</p>
+<p>version.txt must contain only the version number. It must <strong>not</strong> include a line terminator.</p>
 <h3 id="config.tblk.zip">config.tblk.zip</h3>
-<p>config.zip must contain a zipped copy of a .tblk.</p>
-<h3 id="the-.tblk">The .tblk</h3>
-<p>The .tblk from which the .zip file is created may have any name, but must have the following folder and file structure:</p>
+<p>config.tblk.zip must contain a zipped copy of a .tblk.</p>
+<p>The .tblk from which config.tblk.zip is created can have any name; the name will not be used because the existing name for the configuration (which may have been modified by the user) will be preserved. For a configuration named "whatever", it must have the following folder and file structure:</p>
 <pre>
     whatever.tblk/
         Contents/
@@ -130,32 +128,51 @@ The old method is described <a href="cUpdatableConfigurations.html">here</a>.</p
             Resources/
                 config.ovpn
 </pre>
-<p>The "Contents" and "Resources" folders and the "Info.plist" and "config.ovpn" files must have those exact names, but the "whatever.tblk" may have any name as long as it has a ".tblk" extension. When the user's configuration is updated, the update will keep the name of the user's configuration; it will <em>not</em> change the name of the user's configuration to the name of the .tblk. (The user may have changed the name of the configuration and the supplier of updates would not know about such changes.)</p>
+<p><em>(Note: the "/" at the end of "Whatever.tblk/", "Contents/", and "Resources/" is used to indicate that they are folders. The "/" must <strong>not</strong> be included in the name of the folder.)</em></p>
+<p>The "Contents" and "Resources" folders and the "Info.plist" and "config.ovpn" files must have those exact names, but the "whatever.tblk" may have any name as long as it has a ".tblk" extension. When the user's configuration is updated, the update will keep the name of the user's configuration; it will <em>not</em> change the name of the user's configuration to the name of the .tblk. (The user may have changed the name of the configuration and the supplier of updates would not know about such a change.) Similarly, if the configuration being updated is in a folder, the updated configuration will remain in that folder. (The user may have moved the configuration into a folder or changed the name of a folder the configuration is already in and the supplier of updates would not know about such a change.)</p>
 <p>All other files associated with the configuration, such as key and certificate files and scripts, must be in the "Resources" folder.</p>
+<p>If a file (such as <code>user.key</code>) exists in the .tblk to be updated but not in the new, updating .tblk, the result will be different depending on how the update is being done:</p>
+<ul>
+<li>If the update is being done <strong>without</strong> a computer administrator's authorization, the final, updated .tblk will contain the original <code>user.key</code>; but</li>
+<li>If the update is done <strong>with</strong> a computer administrator's authorization, the final, updated .tblk will not contain the original <code>user.key</code> file.</li>
+</ul>
+<p>(That's because the "update" being done with a computer administrator's authorization is not really an "update", it is an "installation", and completely replaces the old configuration with the new one.)</p>
 <h3 id="creating-a-.zip-file">Creating a .zip File</h3>
-<p>You can create a .zip of a .tblk in Finder by right-clicking (or Control-clicking) on the .tblk and selecting "Compress...". The name of the .zip file that will be created is the name of the .tblk with ".zip" added at the end. If your .tblk is not named "config.tblk", you must rename the .zip file to "config.tblk.zip" before uploading it to your webserver.</p>
+<p>You can create config.tblk.zip in Finder by right-clicking (or Control-clicking) on the .tblk and selecting "Compress...", then renaming the file if necessary. The name of the .zip file that will be created is the name of the .tblk with ".zip" added at the end. If your .tblk is not named "config.tblk", you must rename the .zip file to "config.tblk.zip" before uploading it to your webserver.</p>
 <p>You can also create a .zip using the command line:</p>
 <pre>
-    zip -r config.tblk.zip config-name.tblk
+    zip -r config.tblk.zip whatever.tblk
 </pre>
-<p>which will create config.tblk.zip containing a compressed copy of config-name.tblk, making it unnecessary to rename the .zip before uploading.</p>
-<h2 id="example">Example</h2>
-<p>The Tunnelblick website hosts an example:</p>
+<p>which will create config.tblk.zip containing a compressed copy of whatever.tblk, making it unnecessary to rename the .zip before uploading.</p>
+<h2 id="examples">Examples</h2>
+<p>The Tunnelblick website hosts two examples:</p>
+<ul>
+<li>The simplest possible example; and</li>
+<li>An <em>slightly</em> more complicated example with the configuration enclosed in a folder.</li>
+</ul>
+<p>Each sample contains:</p>
 <ul>
 <li>A .zip of an updatable configuration, version 1.1; and</li>
+<li>The Info.plist from that updatable configuration (to show the proper structure of an Info.plist); and</li>
 <li>The two files with update information for updating to version 1.2.</li>
 </ul>
-<p>To use the example, download, expand, and install the Updatable.tblk at <a href="https://tunnelblick.net/updatable-configs/config-1/Updatable.tblk.zip" class="uri">https://tunnelblick.net/updatable-configs/config-1/Updatable.tblk.zip</a></p>
-<p><em>Note: Updatable.tblk is a dummy configuration that will not connect to a VPN server. Tunnelblick will display an error message when you try to connect it.</em></p>
-<p>When you attempt to connect Updatable.tblk:</p>
+<p>To use the simplest example, download, expand, and install the Updatable.tblk at <a href="https://tunnelblick.net/updatable-configs/config-1/Updatable.tblk.zip" class="uri">https://tunnelblick.net/updatable-configs/config-1/Updatable.tblk.zip</a>. It will create a configuration named "Updatable".</p>
+<p>To use the other example, download, expand, and install the Updatable.tblk at <a href="https://tunnelblick.net/updatable-configs/config-2/Updatable.tblk.zip" class="uri">https://tunnelblick.net/updatable-configs/config-2/Updatable.tblk.zip</a>. It will create a configuration named "DEF" inside a folder "SubfolderABC"; Tunnelblick will display the configuration name as "SubfolderABC/DEF".</p>
+<p><em>Note: Both configurations are dummy configurations that will not connect to a VPN server either before or after it is updated. Tunnelblick will display an error message when you try to connect.</em> The Tunnelblick log will show something similar to the following (the numbers at the start of each line will be different):</p>
+<pre>
+     Contents of the OpenVPN log:
+          1577452373.883541 40 disabling NCP mode (--ncp-disable) because not in P2MP client or server mode
+          1577452373.883704 b000 Options error: --auth-user-pass requires --pull
+          1577452373.883748 1040 Use --help for more information.
+</pre>
+<p>When you attempt to connect Updatable (or SubfolderABC/DEF):</p>
 <ol>
-<li>Tunnelblick will fetch the update version from <a href="https://tunnelblick.net/updatable-configs/config-1/version.txt" class="uri">https://tunnelblick.net/updatable-configs/config-1/version.txt</a>;</li>
+<li>Tunnelblick will fetch the update version from <a href="https://tunnelblick.net/updatable-configs/config-1/version.txt" class="uri">https://tunnelblick.net/updatable-configs/config-1/version.txt</a> (or …config-2.version.txt);</li>
 <li>Tunnelblick will compare that to the version in the installed configuration and detect that a newer version is available;</li>
 <li>Tunnelblick will ask the user if the user wants to update the configuration, skip the update, or cancel the connection attempt; and</li>
-<li>If the user elects to update, Tunnelblick will download a .zip of the updated configuration from <a href="https://tunnelblick.net/updatable-configs/config-1/config.tblk.zip" class="uri">https://tunnelblick.net/updatable-configs/config-1/config.tblk.zip</a>, expand the .zip, and install the update.</li>
+<li>If the user elects to update, Tunnelblick will download a .zip of the updated configuration from <a href="https://tunnelblick.net/updatable-configs/config-1/config.tblk.zip" class="uri">https://tunnelblick.net/updatable-configs/config-1/config.tblk.zip</a> (or …config-2.config.tblk.zip), expand the .zip, and install the update.</li>
 </ol>
-<p>As described in the Introduction, the update may be done without further user interaction or may require authorization from a computer administrator.</p>
-<p>Note: this .tblk contains a dummy configuration that will not connect to a VPN server.</p>
+<p>As described earlier, the update may be done without further user interaction or may require authorization from a computer administrator.</p>
 <h2 id="debugging">Debugging</h2>
 <p>While developing updatable configurations, it may help to enable additional Tunnelblick logging about the update process. To do that, issue the following command in Terminal:</p>
 <pre>
@@ -164,12 +181,19 @@ The old method is described <a href="cUpdatableConfigurations.html">here</a>.</p
 <p>to disable the extra logging, use</p>
 <pre>
     defaults delete net.tunnelblick.tunnelblick DB-UC
-</pre></td>
+</pre>
+<p>An error that looks like</p>
+<pre>
+     'tar' returned status = 1
+     stderr = 'tar: Error opening archive: Unrecognized archive format
+</pre>
+<p>usually indicates that the config.tblk.zip file was not found on the webserver (or there was some other error getting it), or that it was not a .zip file.</p>
+</td>
 </tr>
 </table>
 </div>
 </div>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcNewUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcNewUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcNewUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcNewUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcNewUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcNewUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcNewUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Copyright © 2015-2019 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Copyright © 2015-2020 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </body>
 </html>

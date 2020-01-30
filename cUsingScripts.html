@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-12-21 01:06:50 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-01-30 19:00:10 UTC</font></td></tr></table></center>
 <div class="heading">
 <table>
 <tr>
@@ -63,6 +63,7 @@
 <p class="toc">On This Page<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#tunnelblick-vpn-configuration-scripts">Tunnelblick VPN Configuration scripts</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#openvpn-scripts">OpenVPN scripts</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#scripts-run-at-the-start-and-end-of-the-standard-up-down-and-route-pre-down-scripts">Scripts Run at the Start and End of the Standard up, down, and route-pre-down Scripts</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#other-scripts-and-executable-files">Other Scripts and Executable Files</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#script-execution-order">Script Execution Order</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#environment-variables">Environment Variables</a><br></p>
@@ -78,7 +79,7 @@ Only the static-challenge-response.sh and dynamic-challenge-response.sh scripts 
 <li>They are only available in <a href="cConfigT.html">Tunnelblick VPN Configurations</a> (available in Tunnelblick 3.1beta06 or later).</li>
 <li>Tunnelblick does not include any of these scripts; see the <a href="downloads.html">Downloads page</a> for user-contributed scripts.</li>
 <li>They may be used in special circumstances — for example, to make modifications to the network configuration when a tunnel is active.</li>
-<li>The scripts are not run unless Tunnelblick is running, which may or may not be the case for 'connect when computer starts' configurations.</li>
+<li><strong>The scripts are not run unless Tunnelblick is running, so they are not invoked in 'connect when computer starts' configurations.&</strong></li>
 </ul>
 <p>The following scripts are run as "root". (<a href="#environment-variables">Environment variables</a> include the actual user's username.)</p>
 <ul>
@@ -128,6 +129,21 @@ Note that these scripts may have any name; the script name is given as a paramet
 <li>-d to cause restoration of expected DNS configuration if it changes to the pre-VPN configuration (via DHCP renewal, for example).</li>
 <li>The -w and -d options are specified if the boolean Tunnelblick preferences '-doNotRestoreOnDnsReset' and/or '-doNotRestoreOnWinsReset' are TRUE.</li>
 </ul>
+<h2 id="scripts-run-at-the-start-and-end-of-the-standard-up-down-and-route-pre-down-scripts">Scripts Run at the Start and End of the Standard up, down, and route-pre-down Scripts</h2>
+<p>If the standard Tunnelblick "up", "down", and "route-pre-down" scripts are used, that is, if "Set DNS/WINS" is set to "Set nameserver", then the following scripts are run as root if they are present:</p>
+<ul>
+<li>"up-prefix.sh" and "up-suffix.sh" are run at the start and end, respectively, of Tunnelblick's standard "up" script.</li>
+<li>"down-prefix.sh" and "down-suffix.sh" are run at the start and end, respectively, of Tunnelblick's standard "down" script.</li>
+<li>"route-pre-down-prefix.sh" and "route-pre-down-suffix.sh" are run at the start and end, respectively, of Tunnelblick's standard "route-pre-down" script.</li>
+</ul>
+<p>Each script is called with the arguments which with the main script is called. For example, "up-prefix.sh" is called with the arguments with which the standard "up" script is called. Each of the scripts is called with optional Tunnelblick arguments to the script first, followed by the OpenVPN arguments. Tunnelblick arguments all begin with a hyphen ("-") character, so they are easy for a script to distinguish. For an example of one way to do that, see the section of Tunnelblick's "client.up.tunnelblick.sh" script (currently at line 1472 of the script) that starts with</p>
+<p><code># Handle the arguments we know about by setting ARG_ script variables to their values, then shift them out</code></p>
+<p>Although the Tunnelblick arguments vary depending on Tunnelblick settings, the OpenVPN arguments to the "up" script (and thus also to "up-prefix.sh" and "up-suffix.sh") are as follows (from the <a href="https://openvpn.net/community-resources/reference-manual-for-openvpn-2-4">OpenVPN man page</a>):</p>
+<ul>
+<li>–dev tun: <code>tun_dev tun_mtu link_mtu ifconfig_local_ip ifconfig_remote_ip [ init | restart ]</code></li>
+<li>–dev tap: <code>tap_dev tap_mtu link_mtu ifconfig_local_ip ifconfig_netmask [ init | restart ]</code></li>
+</ul>
+<p>These scripts can be used in 'connect when computer starts' configurations because they are not run by Tunnelblick.</p>
 <h2 id="other-scripts-and-executable-files">Other Scripts and Executable Files</h2>
 <p>Tunnelblick uses other scripts, too:</p>
 <p><strong>leasewatch</strong> is a script that is run when a VPN is connected, "Monitor connections" is checked for the configuration, and a network configuration change is detected. It ignores the change, restarts the connection, or restores the VPN's DNS and WINS configuration as appropriate. It is located in Tunnelblick.app/Contents/Resources/leasewatch.</p>
@@ -173,6 +189,6 @@ Note that these scripts may have any name; the script name is given as a paramet
 </div>
 </div>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUsingScripts.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUsingScripts.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUsingScripts.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUsingScripts.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUsingScripts.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUsingScripts.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUsingScripts.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Copyright © 2015-2019 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Copyright © 2015-2020 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </body>
 </html>

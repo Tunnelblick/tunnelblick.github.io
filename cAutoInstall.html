@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2019-12-21 01:06:50 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-01-30 19:00:10 UTC</font></td></tr></table></center>
 <div class="heading">
 <table>
 <tr>
@@ -60,36 +60,115 @@
 </td>
 <td class="documents-right">
 <h1 id="auto-install-configurations">Auto-Install Configurations</h1>
-<p><span class="red"><strong>This feature does not work on macOS Sierra and higher because of "Gatekeeper Path Randomization", also known as "app translocation" and may be removed from Tunnelblick in the future.</strong></span></p>
-<p>You can distribute Tunnelblick with configurations that will be installed automatically when Tunnelblick itself is installed. This does not require rebranding and uses a standard, digitally-signed Tunnelblick.app, however, it cannot update configurations the way that a <a href="cCusDeployed.html">Deployed</a> version can.</p>
-<p>When Tunnelblick installs itself, it looks for configurations to install in the "auto-install" and ".auto-install" folders that are in the same location as Tunnelblick.app.</p>
+<p>Tunnelblick can install <a href="cPkgs.html">Tunnelblick VPN configurations</a> at the same time that Tunnelblick itself is installed, using the same computer administrator authorization. This will happen when the configurations are located in a folder named "auto-install" or ".auto-install" in the same location as the Tunnelblick application that is being installed.</p>
+<p>Since macOS 10.12, <a href="https://en.wikipedia.org/wiki/Gatekeeper_(macOS)#Path_randomization">Gatekeeper Path Randomisation</a> (known informally as "app translocation") makes this impossible because it moves Tunnelblick.app to a temporary location – away from the configurations – before running it. So when it is run, Tunnelblick does not see the "auto-install" or ".auto-install" folder.</p>
+<p>However, Gatekeeper Path Randomisation will not occur if Tunnelblick.app is located in a signed, notarized disk image. So the automatic installation of configurations will take place if you:</p>
 <ol>
-<li>Create a Tunnelblick VPN Configuration (".tblk") for each configuration that you wish to distribute. As usual, the name of the .tblk will be what is displayed to the user as the name of the configuration. (You may create a folder structure that contains some or all of the configurations in subfolders, see <a href="https://tunnelblick.net/cManyConfigurations.html">Managing a Large Number of Configurations</a>.)</li>
-<li>Create a folder, named "Configurations", and move all the Tunnelblick VPN Configurations into it. (Move the entire folder structure of configurations if you created one.)</li>
-<li>Rename the folder to "Configurations.tblk".</li>
-<li>Create a second folder, named "auto-install" and move "Configurations.tblk" into it. (Name the folder ".auto-install" if you want to hide it from your users.)</li>
-<li>Create a third folder, named "YOURNAME", and move "auto-install" or ".auto-install" into it.</li>
-<li>Download a Tunnelblick.dmg from the <a href="downloads.html">Tunnelblick Downloads page</a>.</li>
-<li>Double-click the .dmg to open it, and drag the Tunnelblick icon into the "YOURNAME" folder to copy Tunnelblick.app (the Tunnelblick application) into that folder.</li>
+<li>Create a folder with a signed copy of Tunnelblick;</li>
+<li>Add a subfolder named "auto-install" or ".auto-install" that contains one or more Tunnelblick VPN configurations;</li>
+<li>Create a disk image file (.dmg) from the folder;</li>
+<li>Sign the disk image file;</li>
+<li>Notarize the disk image file; and</li>
+<li>Distribute the signed disk image file.</li>
 </ol>
-<p>The "YOURNAME" folder now contains the following:<br>
-Tunnelblick.app<br>
-auto-install <em>(or .autoinstall)</em> folder</p>
-<p>The auto-install <em>(or .autoinstall)</em> folder contains your configurations, perhaps in subfolders</p>
-<p>Finally, create a .zip of the "YOURNAME" folder by Control-clicking the "YOURNAME folder and clicking on "Compress YOURNAME". A "YOURNAME.zip" file will be created.</p>
-<p>That "YOURNAME.zip" file is what users should download.</p>
-<p>(Or you can create a .dmg that contains the contents of the "YOURNAME" folder. That's more complicated and not explained here.)</p>
-<hr>
-<p>USER INSTRUCTIONS</p>
-<p>After downloading "YOURNAME.zip", users may need to double-click the .zip file to expand it (their browser may do that automatically).</p>
-<p>A Finder window will appear with two items: Tunnelblick.app and a folder named "autoinstall". To start the process, they need only Control-click Tunnelblick.app and click "Open".</p>
-<p>After finishing the installation, they may discard the "YOURNAME" folder and/or the "YOURNAME.zip" file if they wish.</p>
-</td>
+<p>(The requirement that the disk image file be notarized was added in macOS 10.15 "Catalina".)</p>
+<p>To help you do steps 3 - 5, here is a pseudocode script that performs steps 3-5. It omits important error checking and output parsing, so you should do the commands interactively, adjusting as needed to the output of the commands.</p>
+<pre><code># Pseudocode script to create, sign, and notarize a disk image file from a folder
+#
+# For more information, see https://developer.apple.com/developer-id.
+#
+# What you need:
+#
+# * Apple Developer account
+# * Apple signing identity stored in your keychain
+# * Apple ID (usually looks like an email address)
+# * app password for that Apple ID, for notarization.
+#     Create it on the Apple Developer site and
+#     store it in your Keychain under the name "altool_password".
+#
+# * macOS Mojave or higher
+# * Xcode 10.3 or higher
+# * Xcode tools installed
+#
+# A folder with a copy of the Tunnelblick application and an
+# "auto-install" folder of configurations
+#
+#
+# These are the "variables" that will be used in the pseudocode below:
+#
+# FOLDER_PATH="path to the folder from which the .dmg is to be created.
+#              This will be the name of the disk image and the volume"
+# DMG_PATH="path to the .dmg to be created, signed and notarized;
+#              this should end in '.dmg'"
+# NOTARIZATION_USERNAME="Apple ID username (usually an email address)"
+# NOTARIZATION_PASSWORD="altool_password, or whatever other name you used"
+# SIGNING_IDENTITY="signing identity; whatever name it has
+#              in your Keychain"
+
+
+
+#####
+# 1 #
+#####
+# Create a .dmg from the folder
+rm -f "$DMG_PATH"
+hdiutil create -noscrub -srcfolder "$FOLDER_PATH" "DMG_PATH"
+
+#####
+# 2 #
+#####
+# Sign the .dmg
+codesign --verbose              \
+         --timestamp            \
+         --options runtime      \
+         --deep                 \
+         -s "$SIGNING_IDENTITY" \
+         "$DMG_PATH"
+
+
+
+#####
+# 3 #
+#####
+# Upload the .dmg for notarization
+xcrun altool --notarize-app                                 \
+             --primary-bundle-id "$bundle_id"               \
+             --username          "$NOTARIZATION_USERNAME"   \
+             --password          "$NOTARIZATION_PASSWORD"   \
+             --file              "$DMG_PATH"
+
+
+
+#####
+# 4 #
+#####
+# Wait for the upload to complete, examine the output
+# for the UUID, which should appear as "RequestUUID"
+UUID="UUID-from-the-upload-output"
+
+
+
+#####
+# 5 #
+#####
+# (OPTIONAL) Get information about the notarization
+xcrun altool --notarization-info "$UUID"                    \
+             --username          "$NOTARIZATION_USERNAME"   \
+             --password          "@keychain:$NOTARIZATION_PASSWORD"
+
+#####
+# 6 #
+#####
+# Wait until the notarization is successful,
+# then staple the notarization to the .dmg.
+# (You'll be notified by an email from Apple
+# when the notarization is finished.)
+xcrun stapler staple -v "$DMG_PATH"</code></pre></td>
 </tr>
 </table>
 </div>
 </div>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcAutoInstall.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcAutoInstall.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcAutoInstall.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcAutoInstall.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcAutoInstall.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcAutoInstall.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcAutoInstall.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Copyright © 2015-2019 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Copyright © 2015-2020 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </body>
 </html>

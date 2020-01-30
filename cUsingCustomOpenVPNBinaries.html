@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta charset="UTF-8" lang="en">
+<meta name="description" content="Using Custom OpenVPN Binaries - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+<meta name="referrer" content="never">
+<title>Using Custom OpenVPN Binaries - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+<link rel="stylesheet" type="text/css" href="/common/style.v6.css">
+<link rel="icon" type="image/png" href="/common/favicon.v1.png">
+</head>
+<body>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-01-30 19:00:10 UTC</font></td></tr></table></center>
+<div class="heading">
+<table>
+<tr>
+<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
+<td class="heading1">Tunnelblick</td>
+<td class="heading2">free software for OpenVPN on macOS</td>
+<td class="heading3"><a href="/cLocalizeTranslate.html">We need translators for several languages…</a></td>
+</tr>
+</table>
+</div>
+<div class="topnav">
+<table class="topnav">
+<tbody>
+<tr>
+<td class="topnav-normal"><a href="/index.html" class="topnav">Home</a></td>
+<td class="topnav-normal"><a href="/downloads.html" class="topnav">Downloads</a></td>
+<td class="topnav-normal"><a href="/support.html" class="topnav">Support</a></td>
+<td class="topnav-highlight"><a href="/documents.html" class="topnav">Documents</a></td>
+<td class="topnav-normal"><a href="/issues.html" class="topnav">Issues</a></td>
+<td class="topnav-normal"><a href="/source.html" class="topnav">Source</a></td>
+<td class="topnav-normal"><a href="/contribute.html" class="topnav">Contribute</a></td>
+<td class="topnav-normal"><a href="/reachus.html" class="topnav">Contact</a></td>
+<td class="topnav-padding"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="content">
+<div class="content-cUsingCustomOpenVPNBinaries">
+<table class="documents">
+<tr>
+<td class="documents-left">
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="/cNews.html">News</a><br>
+&nbsp;&nbsp;<a href="/cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="/czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="/cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="/cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="/cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="/cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="/cFAQ.html">FAQ</a></p>
+<p><strong><a href="https://groups.google.com/forum/#!forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="/cBeforeYouPost.html">Read Before You Post</a></p>
+</td>
+<td class="documents-right">
+<h1 id="using-custom-openvpn-binaries">Using Custom OpenVPN Binaries</h1>
+<p><span class="red"><strong>THE FEATURE DESCRIBED ON THIS PAGE IS AVAILABLE ONLY IN TUNNELBLICK 3.8.2beta04 AND HIGHER</strong></span></p>
+<p>Although the Tunnelblick application includes several OpenVPN binaries, Tunnelblick 3.8.2beta04 adds the ability to use OpenVPN binaries that are not included in Tunnelblick.</p>
+<h2 id="how-to-use-your-own-openvpn-binary-in-tunnelblick">How To Use Your Own OpenVPN Binary in Tunnelblick</h2>
+<p>1) You need an OpenVPN binary. If your configurations use the "down-root" plugin, you need a binary of that, too.</p>
+<p>The files must have exactly the following names: "openvpn" and "openvpn-down-root.so".</p>
+<p>2) Create a folder named "Openvpn" on your Desktop or some other convenient place.</p>
+<p>3) In that folder, create a subfolder named "openvpn-VVV-NNN-SSS", where</p>
+<ul>
+<li>VVV is the version of OpenVPN (such as "2.4.8", or "2.5_git_57623b4")</li>
+<li>NNN is the name of the SSL library built into OpenVPN ("openssl", "libressl", "mbedtls", or "boringssl")</li>
+<li>SSS is the version of the SSL library (such as "1.0.2u" or "1.1.1d")</li>
+</ul>
+<p>Note that:</p>
+<ul>
+<li>The subfolder name should not contain hyphen characters ("-") other than the three hyphens separating the versions and names.</li>
+<li>The subfolder name should not contain spaces, but underscore characters ("_") will be shown as spaces when Tunnelblick displays the OpenVPN version.</li>
+<li>SSL library names will be shown "nicely" when Tunnelblick displays them.</li>
+<li>Additional text may be added at the end of the subfolder name to describe it more fully.</li>
+</ul>
+<p>So "openvpn-2.5_git_57623b4-openssl-1.0.2u_Without_scramble_patch" will be displayed as "OpenVPN 2.5 git 57623b4 OpenSSL 1.0.2u Without scramble patch"</p>
+<p>4) Move or copy your "openvpn" binary into the subfolder (and the "openvpn-down-root.so" binary, if needed).</p>
+<p>5) Create similarly-named subfolders for each OpenVPN binary you wish to use and copy the binaries into them.</p>
+<p>6) Optional:</p>
+<ul>
+<li>Set ownership of the "Openvpn" folder and all of its contents to root:wheel.</li>
+<li>Set permissions of the "Openvpn" folder and its subfolders to 0755.</li>
+<li>Set permissions on each "openvpn" binary to 0755.</li>
+<li>Set permissions on each "openvpn-down-root.so" binary to 0744.</li>
+</ul>
+<p>7) Move or copy the "Openvpn" folder to /Library/Application Support/Tunnelblick. (You will be asked by Finder for a computer administrator's authorization.)</p>
+<p>8) Quit Tunnelblick (if it is running) and launch it. If you did not set the ownership and permissions in step 6 above (or you set them incorrectly), Tunnelblick will ask for administrator authorization to secure Tunnelblick and will then set the ownership and permissions for you.</p>
+<p>You're done! You can specify which OpenVPN/SSL combination to use for each configuration in the "Settings" tab of Tunnelblick's "VPN Details" window. Note that changes made there are applied to all of the configurations selected on the left side of the window.</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUsingCustomOpenVPNBinaries.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUsingCustomOpenVPNBinaries.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUsingCustomOpenVPNBinaries.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUsingCustomOpenVPNBinaries.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUsingCustomOpenVPNBinaries.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUsingCustomOpenVPNBinaries.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcUsingCustomOpenVPNBinaries.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
+<div class="bottom-copyright">Copyright © 2015-2020 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+</body>
+</html>
