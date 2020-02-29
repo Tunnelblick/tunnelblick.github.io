@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-01-30 19:00:10 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-02-29 20:58:22 UTC</font></td></tr></table></center>
 <div class="heading">
 <table>
 <tr>
@@ -63,11 +63,11 @@
 <p>Tunnelblick may try to load a kext to control the VPN tunnel.</p>
 <p><em><span class="red">Note: If you are using a "tun" VPN, you can avoid needing to load a kext by doing the following:</span></em></p>
 <ol>
-<li><em><span class="red">Make sure your OpenVPN configuration file does not include a "dev-type tun" option;</span></em></li>
+<li><em><span class="red">Make sure your OpenVPN configuration file does not include a "dev-node tun" option;</span></em></li>
 <li><em><span class="red">Make sure your OpenVPN configuration file does include a "dev tun" option; and</span></em></li>
 <li><em><span class="red">Make sure you have not selected "Always load Tun driver" in the "Connecting & Disconnecting" tab of Tunnelblick's "Advanced" settings window.</span></em></li>
 </ol>
-<p><em><span class="red">The "dev-type tun" option causes OpenVPN to use a "tun" device, which requires a kext to be loaded. If a "dev-type tun" option is not present and a "dev tun" option is present, OpenVPN will use the "utun" device which is built into macOS and does not require a kext to be loaded.</span></em></p>
+<p><em><span class="red">The "dev-node tun" option causes OpenVPN to use a "tun" device, which requires a kext to be loaded. If a "dev-node tun" option is not present and a "dev tun" option is present, OpenVPN will use the "utun" device which is built into macOS and does not require a kext to be loaded.</span></em></p>
 <p><em><span class="red">If you are using a "tap" VPN, Tunnelblick must load a kext for your VPN to operate.</span></em></p>
 <hr>
 <p>If you see the following:</p>
@@ -81,7 +81,7 @@
 <p>(3) There may be incompatible kexts already loaded. Recent versions of Tunnelblick try to be "good citizens" by loading kexts only when needed, and unloading them when they are no longer needed. However, some other VPN clients (CiscoAnyConnect SSL VPN, for example) load their own, incompatible kexts when the computer is started and leave them loaded, whether or not a VPN connection is in use. (Some non-VPN software also loads incompatible kexts — for example, Pogoplug loads a "com.pogoplug.xcetun" tun kext which interferes with Tunnelblick's tun kext. "Security" programs also may load incompatible kexts.)</p>
 <p>To find out if an incompatible kext is causing the problem, use the <code>kextstat | grep -v com.apple</code> command in a Terminal window. It will list all of the non-Apple kexts that are loaded. Usually the tun and/or tap kexts show up at or near the end of the list. Common tun/taps are:</p>
 <ul>
-<li>net.tunnelblick.tun and net.tunnelblick.tap: These are the kexts used by current versions of Tunnelblick. When needed, the appropriate one (tun or tap) is loaded when a connection is requested, and unloaded when it is disconnected. Since macOS 10.6.8, "tun" connections do not need to have a kext loaded unless they include a "dev-type tun" OpenVPN option. Tunnelblick uses customized versions of the kexts from <a href="http://tuntaposx.sourceforge.net">tuntaposx</a>, modified to have a Tunnelblick bundle ID and version. Which version Tunnelblick uses depends on the version of macOS being used.</li>
+<li>net.tunnelblick.tun and net.tunnelblick.tap: These are the kexts used by current versions of Tunnelblick. When needed, the appropriate one (tun or tap) is loaded when a connection is requested, and unloaded when it is disconnected. Since macOS 10.6.8, "tun" connections do not need to have a kext loaded unless they include a "dev-node tun" OpenVPN option. Tunnelblick uses customized versions of the kexts from <a href="http://tuntaposx.sourceforge.net">tuntaposx</a>, modified to have a Tunnelblick bundle ID and version. Which version Tunnelblick uses depends on the version of macOS being used.</li>
 <li>foo.tun and foo.tap: These are kexts for obsolete Cisco and Tunnelblick VPN clients (and some others), loaded when a very version of Tunnelblick is launched (and unloaded when the computer restarts). If Tunnelblick detects them, it will offer to unload them before connecting.</li>
 <li>com.cisco.cscotun: This is CiscoAnyConnect SSL VPN kext. Cisco's installer causes it to be loaded when the computer starts.</li>
 <li>com.viscosityvpn.Viscosity.tun and com.viscosityvpn.Viscosity.tap: These are kexts used by the Viscosity VPN client.</li>

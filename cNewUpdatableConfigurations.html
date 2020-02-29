@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-01-30 19:00:10 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-02-29 20:58:22 UTC</font></td></tr></table></center>
 <div class="heading">
 <table>
 <tr>
@@ -76,8 +76,8 @@
 <p>A single <a href="https://tunnelblick.net/cPkgs.html">Tunnelblick VPN Configuration</a> can be easily updated automatically.</p>
 <p>There are two separate methods for updating configurations:</p>
 <ul>
-<li>The "old" method, which is powerful and can update multiple configurations at one time but is complex to set up and administer; and</li>
-<li>The "new" method, which can only update a single configuration but is simple to set up and administer.</li>
+<li>The "old" method, which is powerful and can update multiple configurations at a time but is complex to set up and administer; and</li>
+<li>The "new" method, which can only update a single configuration at a time but is simple to set up and administer.</li>
 </ul>
 <p><strong>The rest of this page describes the new method.</strong><br>
 The old method is described <a href="cUpdatableConfigurations.html">here</a>.</p>
@@ -86,7 +86,7 @@ The old method is described <a href="cUpdatableConfigurations.html">here</a>.</p
 <h2 id="what-the-user-sees">What the User Sees</h2>
 <p>Each time the user connects a VPN, Tunnelblick checks for an update to the configuration. If an update is available, the user is presented with a dialog asking what to do:</p>
 <ul>
-<li><strong>Update</strong> the configuration and connect to the VPN using the updated configuration); or</li>
+<li><strong>Update</strong> the configuration and connect to the VPN using the updated configuration; or</li>
 <li><strong>Skip</strong> the update and connect the VPN using the existing configuration; or</li>
 <li><strong>Cancel</strong> connecting to the VPN.</li>
 </ul>
@@ -120,7 +120,7 @@ The old method is described <a href="cUpdatableConfigurations.html">here</a>.</p
 <p>version.txt must contain only the version number. It must <strong>not</strong> include a line terminator.</p>
 <h3 id="config.tblk.zip">config.tblk.zip</h3>
 <p>config.tblk.zip must contain a zipped copy of a .tblk.</p>
-<p>The .tblk from which config.tblk.zip is created can have any name; the name will not be used because the existing name for the configuration (which may have been modified by the user) will be preserved. For a configuration named "whatever", it must have the following folder and file structure:</p>
+<p>The .tblk from which config.tblk.zip is created can have any name; the name will not be used because the existing name for the configuration (which may have been modified by the user) will be preserved. It must have the following folder and file structure:</p>
 <pre>
     whatever.tblk/
         Contents/
@@ -129,7 +129,7 @@ The old method is described <a href="cUpdatableConfigurations.html">here</a>.</p
                 config.ovpn
 </pre>
 <p><em>(Note: the "/" at the end of "Whatever.tblk/", "Contents/", and "Resources/" is used to indicate that they are folders. The "/" must <strong>not</strong> be included in the name of the folder.)</em></p>
-<p>The "Contents" and "Resources" folders and the "Info.plist" and "config.ovpn" files must have those exact names, but the "whatever.tblk" may have any name as long as it has a ".tblk" extension. When the user's configuration is updated, the update will keep the name of the user's configuration; it will <em>not</em> change the name of the user's configuration to the name of the .tblk. (The user may have changed the name of the configuration and the supplier of updates would not know about such a change.) Similarly, if the configuration being updated is in a folder, the updated configuration will remain in that folder. (The user may have moved the configuration into a folder or changed the name of a folder the configuration is already in and the supplier of updates would not know about such a change.)</p>
+<p>The "Contents" and "Resources" folders and the "Info.plist" and "config.ovpn" files must have those exact names, but the "whatever.tblk" may have any name as long as it has a ".tblk" extension. When the user's configuration is updated, the update will keep the name of the user's configuration; it will <em>not</em> change the name of the user's configuration. (The user may have changed the name of the configuration and the supplier of updates would not know about such a change.) Similarly, if the configuration being updated is in a folder, the updated configuration will remain in that folder. (The user may have moved the configuration into a folder or changed the name of a folder the configuration is already in and the supplier of updates would not know about such a change.)</p>
 <p>All other files associated with the configuration, such as key and certificate files and scripts, must be in the "Resources" folder.</p>
 <p>If a file (such as <code>user.key</code>) exists in the .tblk to be updated but not in the new, updating .tblk, the result will be different depending on how the update is being done:</p>
 <ul>
@@ -138,7 +138,7 @@ The old method is described <a href="cUpdatableConfigurations.html">here</a>.</p
 </ul>
 <p>(That's because the "update" being done with a computer administrator's authorization is not really an "update", it is an "installation", and completely replaces the old configuration with the new one.)</p>
 <h3 id="creating-a-.zip-file">Creating a .zip File</h3>
-<p>You can create config.tblk.zip in Finder by right-clicking (or Control-clicking) on the .tblk and selecting "Compress...", then renaming the file if necessary. The name of the .zip file that will be created is the name of the .tblk with ".zip" added at the end. If your .tblk is not named "config.tblk", you must rename the .zip file to "config.tblk.zip" before uploading it to your webserver.</p>
+<p>You can create config.tblk.zip in Finder by right-clicking (or Control-clicking) on the .tblk and selecting "Compress...", then renaming the file to "config.tblk.zip". (The name of the .zip file that will be created is the name of the .tblk with ".zip" added at the end, so unless it is named "config.tblk", you must rename the .zip file to "config.tblk.zip" before uploading it to your webserver.)</p>
 <p>You can also create a .zip using the command line:</p>
 <pre>
     zip -r config.tblk.zip whatever.tblk
@@ -165,7 +165,7 @@ The old method is described <a href="cUpdatableConfigurations.html">here</a>.</p
           1577452373.883704 b000 Options error: --auth-user-pass requires --pull
           1577452373.883748 1040 Use --help for more information.
 </pre>
-<p>When you attempt to connect Updatable (or SubfolderABC/DEF):</p>
+<p>When you attempt to connect Updatable or SubfolderABC/DEF:</p>
 <ol>
 <li>Tunnelblick will fetch the update version from <a href="https://tunnelblick.net/updatable-configs/config-1/version.txt" class="uri">https://tunnelblick.net/updatable-configs/config-1/version.txt</a> (or …config-2.version.txt);</li>
 <li>Tunnelblick will compare that to the version in the installed configuration and detect that a newer version is available;</li>
@@ -181,14 +181,7 @@ The old method is described <a href="cUpdatableConfigurations.html">here</a>.</p
 <p>to disable the extra logging, use</p>
 <pre>
     defaults delete net.tunnelblick.tunnelblick DB-UC
-</pre>
-<p>An error that looks like</p>
-<pre>
-     'tar' returned status = 1
-     stderr = 'tar: Error opening archive: Unrecognized archive format
-</pre>
-<p>usually indicates that the config.tblk.zip file was not found on the webserver (or there was some other error getting it), or that it was not a .zip file.</p>
-</td>
+</pre></td>
 </tr>
 </table>
 </div>
