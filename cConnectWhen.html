@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-02-29 20:58:22 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-03-12 21:48:49 UTC</font></td></tr></table></center>
 <div class="heading">
 <table>
 <tr>
@@ -76,6 +76,9 @@
 <ol>
 <li>
 <p><strong>Connect when computer starts</strong> is only available for "Shared" configurations. It is not available for "Private" configurations.</p>
+</li>
+<li>
+<p><strong>Connect when computer starts</strong> is only available for configurations that do not include the OpenVPN <code>auth-user-pass</code> option without parameters and do not have credentials saved in the Keychain. That's because there is nobody logged in when the computer starts, so no user can be asked for the credentials and no user's Keychain is available to access stored credentials. If your VPN requires a username/password, you can put them in a file. See the VPN Username/Password section of <a href="cServer.html">Using Tunnelblick as a VPN Server</a> for details of how to set this up.</p>
 </li>
 <li>
 <p>Although <strong>Connect when computer starts</strong> may seem to be a way to insure that all network traffic goes through the VPN, it doesn't really do that. That's because the process of making the VPN connection itself requires an Internet connection, and that connection is available to other programs running on your computer. So traffic to the Internet can "leak" outside of the VPN for seconds or tens of seconds until the VPN is actually connected. The only way to avoid such leaks is to set up a firewall such as <a href="https://en.wikipedia.org/wiki/PF_(firewall)">pf</a> to allow traffic only to/from the VPN server(s).</p>
