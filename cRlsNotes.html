@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-03-22 16:34:52 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-05-22 23:11:10 UTC</font></td></tr></table></center>
 <div class="heading">
 <table>
 <tr>
@@ -67,10 +67,41 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#uninstaller">Uninstaller</a><br></p>
 <hr>
 <h2 id="version-3.8">Version 3.8</h2>
+<p><strong>3.8.3beta02 build 5500 (2020-05-22) <span class='red'>(SECURITY UPDATE)</span></strong></p>
+<ul>
+<li>Adds the ability to create, delete, and rename folders containing configurations, and to copy and move folders and configurations into and out of folders using drag and drop.</li>
+<li>Replaces OpenVPN 2.4.8 with 2.4.9. See <a href="https://community.openvpn.net/openvpn/wiki/ChangesInOpenvpn24">Changes in OpenVPN v2.4</a>.</li>
+<li>Replaces OpenSSL 1.1.1e with 1.1.g. See <a href="https://www.openssl.org/news/openssl-1.1.1-notes.html">OpenSSL 1.1.1 Release Notes</a>.</li>
+<li>Updates OpenVPN git master version to commit cc76e177 dated 2020-05-19.</li>
+<li>Uses a secured copy of user's scripts.</li>
+<li>Simplifies use of the 'Rename Configuration' action item.</li>
+<li>Shows most warnings only once per Tunnelblick launch.</li>
+<li>Modernizes the splash screen.</li>
+<li>Adds the 'TunnelblickConfigurationName' variable (containing the configuration name) to the Environment for Tunnelblick scripts.</li>
+<li>Allows scripts to set or modify the password before it is sent to OpenVPN.</li>
+<li>Warns about tun and tap problems in a future version of macOS.</li>
+<li>Warns that the --secret option is deprecated in OpenVPN 2.4 and will be removed a future version.</li>
+<li>Includes updated translations.</li>
+<li>Fixes a problem that did not allow the use of OpenVPN 2.4 with OpenVPN configurations that include --max-routes.</li>
+<li>Fixes a problem that did not abandon a connection attempt when the user cancelled the username/password dialog.</li>
+<li>Fixes a problem that mistakenly considered 'utun' as a valid parameter of OpenVPN's --dev-type option.</li>
+<li>Fixes a problem that caused the Advanced button to not be disabled when the 'disableAdvancedButton' preference was true.</li>
+<li>Fixes a problem that failed to show an alert that the requested version of OpenVPN was not being used.</li>
+<li>Fixes a problem that warned too strongly about options that were ignored by OpenVPN.</li>
+<li>Fixes a problem that caused the informative tooltips to be editable.</li>
+<li>Fixes losing a saved username when renaming or duplicating a configuration if the password was not saved.</li>
+<li>Fixes losing preferences (settings) when renaming or duplicating a configuration.</li>
+</ul>
+<hr>
 <p><strong>3.8.3beta01 build 5490 (2020-03-22)</strong></p>
 <ul>
 <li>Clarifies pop-up help for 'Connect when computer starts'.</li>
 <li>Includes updated translations.</li>
+</ul>
+<hr>
+<p><strong>3.8.2a build 5481 (2020-05-22) <span class='red'>(SECURITY UPDATE)</span></strong></p>
+<ul>
+<li>Replaces OpenVPN 2.4.8 with 2.4.9. See <a href="https://community.openvpn.net/openvpn/wiki/ChangesInOpenvpn24">Changes in OpenVPN v2.4</a>.</li>
 </ul>
 <hr>
 <p><strong>3.8.2 build 5480 (2020-03-22) <span class='red'>(SECURITY UPDATE)</span></strong></p>

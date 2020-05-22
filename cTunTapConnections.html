@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta charset="UTF-8" lang="en">
+<meta name="description" content="The Future of Tun and Tap VPNs on macOS - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+<meta name="referrer" content="never">
+<title>The Future of Tun and Tap VPNs on macOS - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+<link rel="stylesheet" type="text/css" href="/common/style.v6.css">
+<link rel="icon" type="image/png" href="/common/favicon.v1.png">
+</head>
+<body>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-05-22 23:11:10 UTC</font></td></tr></table></center>
+<div class="heading">
+<table>
+<tr>
+<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
+<td class="heading1">Tunnelblick</td>
+<td class="heading2">free software for OpenVPN on macOS</td>
+<td class="heading3"><a href="/cLocalizeTranslate.html">We need translators for several languages…</a></td>
+</tr>
+</table>
+</div>
+<div class="topnav">
+<table class="topnav">
+<tbody>
+<tr>
+<td class="topnav-normal"><a href="/index.html" class="topnav">Home</a></td>
+<td class="topnav-normal"><a href="/downloads.html" class="topnav">Downloads</a></td>
+<td class="topnav-normal"><a href="/support.html" class="topnav">Support</a></td>
+<td class="topnav-highlight"><a href="/documents.html" class="topnav">Documents</a></td>
+<td class="topnav-normal"><a href="/issues.html" class="topnav">Issues</a></td>
+<td class="topnav-normal"><a href="/source.html" class="topnav">Source</a></td>
+<td class="topnav-normal"><a href="/contribute.html" class="topnav">Contribute</a></td>
+<td class="topnav-normal"><a href="/reachus.html" class="topnav">Contact</a></td>
+<td class="topnav-padding"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="content">
+<div class="content-cTunTapConnections">
+<table class="documents">
+<tr>
+<td class="documents-left">
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="/cNews.html">News</a><br>
+&nbsp;&nbsp;<a href="/cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="/czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="/cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="/cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="/cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="/cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="/cFAQ.html">FAQ</a></p>
+<p><strong><a href="https://groups.google.com/forum/#!forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="/cBeforeYouPost.html">Read Before You Post</a></p>
+</td>
+<td class="documents-right">
+<h1 id="the-future-of-tun-and-tap-vpns-on-macos">The Future of Tun and Tap VPNs on macOS</h1>
+<p class="toc">On This Page<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#the-problem">The Problem</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#how-to-tell-if-you-have-a-tap-vpn-or-a-tun-vpn">How to tell if you have a 'tap' VPN or a 'tun' VPN</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#when-will-this-happen">When will this happen?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#how-to-modify-a-tun-vpn-so-it-will-continue-to-work">How to modify a 'tun' VPN so it will continue to work</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#always-load-tun-or-always-load-tap">Always load tun or always load tap</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#if-macos-catalina-still-complains">If macOS Catalina still complains</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#what-apple-announced">What Apple announced</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#what-is-tunnelblick-doing-about-it">What is Tunnelblick doing about it?</a><br></p>
+<h3 id="the-problem">The Problem</h3>
+<p><a href="#what-apple-announced">Apple has announced</a> changes to macOS which affect most users of Tunnelblick.</p>
+<p>You might see a warning from Tunnelblick about this change, or you might see the following warning when connecting your VPN:</p>
+<p><img src="images/kextpocalypse3-warning-2020-04-02.png" width="532" height="284" alt="window showing the title 'Legacy System Extension' and the text 'existing software on your system loaded a system extension signed by Jonathan Bullard which will be incompatible with a future version of macOS. Contact the developer for support.'"></p>
+<p>What this means is:</p>
+<ul>
+<li>
+<p><span class="red">If you have a 'tap' VPN, a future version of macOS will cause your VPN to stop working.</span> (Apple's announcement to developers is worded differently and <em>may</em> mean that users will be able to use some mechanism to enable 'tap' VPNs to continue to work, but that interpretation is contradicted by the warning shown above. See <a href="#what-apple-announced">What Apple announced</a>, below.) You <em>may</em> be able to convert your 'tap' VPN to a 'tun' VPN which will work. However, that requires being able to change the OpenVPN configurations on both your computer and on the VPN server, and it may not provide all of the networking facilities that you are currently using. Consult OpenVPN experts and support for help with doing this.</p>
+</li>
+<li>
+<p><span class="red">If you have a 'tun' VPN, your configurations may continue to work in future version of macOS without you doing anything, or you might need to make a simple change to the OpenVPN configuration file so that the configuration will continue to work.</span> If your OpenVPN configuration file <em>does not</em> contain a "dev-node" option, you do not need to do anything and the configuration will continue to work. If your OpenVPN configuration file <em>does</em> contain a "dev-node" option, you will need to remove that option so the configuration continues to work (see below).</p>
+</li>
+</ul>
+<h3 id="how-to-tell-if-you-have-a-tap-vpn-or-a-tun-vpn">How to tell if you have a 'tap' VPN or a 'tun' VPN</h3>
+<ol>
+<li>Click to select a configuration in the left side of the "Configurations" panel of Tunnelblick's "VPN Details" window.</li>
+<li>Click on the little "gear" icon and click on either "Examine OpenVPN Configuration file…" or "Edit OpenVPN Configuration File…". The configuration file will open in a window or in Apple's "TextEdit" editor.</li>
+<li>Find a line that starts with "dev tun", "dev-type tun", or "dev-node tun". If you find one, you have a 'tun' VPN.</li>
+<li>Find a line that starts with "dev tap", "dev-type tap", or "dev-node tap". If you find one, you have a 'tap' VPN.</li>
+</ol>
+<p>If you can't find a line that starts with any of the above, ask for help from the <a href="https://groups.google.com/forum/#!forum/tunnelblick-discuss">Tunnelblick Discussion Group</a>.</p>
+<h3 id="when-will-this-happen">When will this happen?</h3>
+<p>Our best guess based on similar situations is that the earliest Apple will make this change is in the last version of macOS Catalina, which is expected to be released in June or July of 2020. However, it is also possible that Apple will make the change earlier, and it is possible that Tunnelblick's VPNs will continue to work for some period of time even after Apple makes the change.</p>
+<h3 id="how-to-modify-a-tun-vpn-so-it-will-continue-to-work">How to modify a 'tun' VPN so it will continue to work</h3>
+<p>You need to remove the dev-node option if it exists in the VPN's OpenVPN configuration file:</p>
+<ol>
+<li>Click to select a configuration in the left side of the "Configurations" panel of Tunnelblick's "VPN Details" window.</li>
+<li>Click on the little "gear" icon at the bottom of the list. If you can click "Make Configuration Private…", do so and have a computer administrator authorize the change. (If you can't click it, don't : )</li>
+<li>Click on the little "gear" icon and click on "Edit OpenVPN Configuration File…". The configuration file will open in Apple's "TextEdit" editor.</li>
+<li>Find a line that starts with "dev-node tun". If you find one, delete the line. If you dont find one, skip the next step.</li>
+<li>Look for a line that starts "dev tun" or "dev-type tun". If neither one exists in the file, add a new line that says "dev tun".</li>
+<li>Quit TextEdit, saving the changes if asked.</li>
+<li>If you previously made the configuration private, make it shared by clicking the little "gear" icon, clicking "Make Configuration Shared", and having the change authorized by a computer administrator.</li>
+</ol>
+<p>If you made changes to the file and did not change it from shared to private and back to shared, the next time you connect the configuration you will be asked to have a computer administrator authorize the changes.</p>
+<h3 id="always-load-tun-or-always-load-tap">Always load tun or always load tap</h3>
+<h3 id="if-macos-catalina-still-complains">If macOS Catalina still complains</h3>
+<p>If you have a 'tun' VPN which does not need to be modified, or has been modified as described above, and Tunnelblick or macOS Catalina still complains, then you have changed a Tunnelblick setting and should restore it to the default setting. All configurations should be set to "Load tun driver automatically" and "Load tap driver automatically". These settings are found on the "Connecting & Disconnecting" tab of the "Advanced" settings window.</p>
+<h3 id="what-apple-announced">What Apple announced</h3>
+<p><a href="https://developer.apple.com/support/kernel-extensions/">Apple has announced</a> that "future OS releases will no longer load kernel extensions that use deprecated KPIs by default". Tunnelblick includes, and for some configurations uses, two such extensions:</p>
+<ul>
+<li>'tap' configurations <em>always</em> require the use of one kernel extension.</li>
+<li>'tun' configurations <em>may</em> require the use of the other kernel extension but can easily be modified so no kernel extension is required.</li>
+</ul>
+<p>It isn't clear what Apple means by the phrase "by default". It <em>may</em> mean that Apple will provide a mechanism for users to allow loading of kernel extensions that use deprecated KPIs. However, Apple's practice has been to make such mechanisms very difficult to use, and the warning in macOS Catalina does not indicate such a mechanism will be provided.</p>
+<h3 id="what-is-tunnelblick-doing-about-it">What is Tunnelblick doing about it?</h3>
+<p>Nothing is planned. Apple proposes that programs such as Tunnelblick be modified to use a different method to accomplish the function that the kernel extensions currently perform. The current Tunnelblick developers do not have the time or expertise to use the new method Apple proposes and have no plans to do so. It is possible that someone else will develop such an alternative method and make it publicly available, but there is no way to know if or when that will happen. (If it does happen, we expect to include it in Tunnelblick.)</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcTunTapConnections.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcTunTapConnections.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcTunTapConnections.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcTunTapConnections.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcTunTapConnections.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcTunTapConnections.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcTunTapConnections.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
+<div class="bottom-copyright">Copyright © 2015-2020 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+</body>
+</html>

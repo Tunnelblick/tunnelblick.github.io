@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-03-22 16:34:52 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-05-22 23:11:10 UTC</font></td></tr></table></center>
 <div class="heading">
 <table>
 <tr>
@@ -60,6 +60,9 @@
 </td>
 <td class="documents-right">
 <h1 id="errors-loading-kexts-device-drivers-on-macos-high-sierra-10.13-and-higher">Errors Loading Kexts (Device Drivers) on macOS High Sierra (10.13) and higher</h1>
+<hr>
+<p><strong>Important: See <a href="cTunTapConnections.html">The Future of Tun and Tap VPNs on macOS</a> for information about changes to future versions of macOS.</strong></p>
+<hr>
 <p>Tunnelblick may try to load a kext to control the VPN tunnel.</p>
 <p><em><span class="red">Note: If you are using a "tun" VPN, you can avoid needing to load a kext by doing the following:</span></em></p>
 <ol>
@@ -77,10 +80,10 @@
 <hr>
 <p>In some situations when you try to connect to a VPN, High Sierra and higher blocks Tunnelblick from loading a system extension. macOS pops up a window that looks like this:</p>
 <p><img src="/images/cHighSierra-kext-blocked-2017-10-06.png" alt="Screenshot of window with title 'System Extension Blocked' saying 'A program tried to load new system extension(s) signed by (blocked-by-red area). If you want to enable these extensions, go to the Security &amp; Privacy System Preferences pane.'"></p>
-<p>(Tunnelblick's kexts are signed by "Jonathan K. Bullard", so that's what would appear in the blocked-by-red area of the window.)</p>
+<p>(Tunnelblick's kexts are signed by "Jonathan Bullard", so that's what would appear in the blocked-by-red area of the window.)</p>
 <p>The user then has 30 minutes to allow the new system extension to be loaded. As the window notes, that can be done on the "Security & Privacy" pane of "System Preferences". (The window doesn't say it, but it can only be done on the "General" tab of that pane.) Here is a screenshot:</p>
 <p><img src="/images/cHighSierra-kext-approval-2017-10-06.png" alt="Screenshot of the 'General' tab of the Security &amp; Privacy System Preferences pane with a section reading 'system software from developer (blocked-by-red area) was blocked from loading' and an 'allow' button.'"></p>
-<p>(The "System software developer" in the blocked-by-red area will be "Jonathan K. Bullard" for Tunnelblick kexts.)</p>
+<p>(The "System software developer" in the blocked-by-red area will be "Jonathan Bullard" for Tunnelblick kexts.)</p>
 <p>If the user doesn't grant approval within 30 minutes, the ability to approve the kext disappears and will only reappear after trying to connect the VPN again. When that happens, the original window does not appear (it is only shown once) but the ability to approve the kext reappears in "System Preferences" for 30 more minutes.</p>
 <p>If the above does not help, please see <a href="cKextLoadError.html">Errors Loading Kexts (Device Drivers)</a>.</p>
 </td>
