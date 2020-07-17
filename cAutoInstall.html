@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
 <meta charset="UTF-8" lang="en">
-<meta name="description" content="Auto-Install Configurations - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+<meta name="description" content="Automatically Install Configurations and Forced Preferences - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
 <meta name="referrer" content="never">
-<title>Auto-Install Configurations - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+<title>Automatically Install Configurations and Forced Preferences - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
 <link rel="stylesheet" type="text/css" href="/common/style.v6.css">
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-05-22 23:11:10 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-07-17 01:06:55 UTC</font></td></tr></table></center>
 <div class="heading">
 <table>
 <tr>
@@ -59,20 +59,20 @@
 &nbsp;&nbsp;<a href="/cBeforeYouPost.html">Read Before You Post</a></p>
 </td>
 <td class="documents-right">
-<h1 id="auto-install-configurations">Auto-Install Configurations</h1>
-<p>Tunnelblick can install <a href="cPkgs.html">Tunnelblick VPN configurations</a> at the same time that Tunnelblick itself is installed, using the same computer administrator authorization. This will happen when the configurations are located in a folder named "auto-install" or ".auto-install" in the same location as the Tunnelblick application that is being installed.</p>
-<p>Since macOS 10.12, <a href="https://en.wikipedia.org/wiki/Gatekeeper_(macOS)#Path_randomization">Gatekeeper Path Randomisation</a> (known informally as "app translocation") makes this impossible because it moves Tunnelblick.app to a temporary location – away from the configurations – before running it. So when it is run, Tunnelblick does not see the "auto-install" or ".auto-install" folder.</p>
-<p>However, Gatekeeper Path Randomisation will not occur if Tunnelblick.app is located in a signed, notarized disk image. So the automatic installation of configurations will take place if you:</p>
+<h1 id="automatically-install-configurations-and-forced-preferences">Automatically Install Configurations and Forced Preferences</h1>
+<p>Tunnelblick can install <a href="cPkgs.html">Tunnelblick VPN configurations</a> and forced preferences (preferences that cannot be modified by a standard user) at the same time that Tunnelblick itself is installed, using the same computer administrator authorization. This will happen when the configurations and/or preferences are located in a folder named "auto-install" or ".auto-install" in the same location as the Tunnelblick application that is being installed.</p>
+<p>This will only happen if the Tunnelblick.app and "auto-install" or ".auto-install" folder are in a signed, notarized disk image. To create such a disk image:</p>
 <ol>
 <li>Create a folder with a signed copy of Tunnelblick;</li>
-<li>Add a subfolder named "auto-install" or ".auto-install" that contains one or more Tunnelblick VPN configurations;</li>
+<li>Add a subfolder named "auto-install" or ".auto-install" that contains zero or more Tunnelblick VPN configurations;</li>
+<li>If desired, add a file named "forced-preferences.plist" containing the preferences to the subfolder;</li>
 <li>Create a disk image file (.dmg) from the folder;</li>
 <li>Sign the disk image file;</li>
 <li>Notarize the disk image file; and</li>
 <li>Distribute the signed disk image file.</li>
 </ol>
-<p>(The requirement that the disk image file be notarized was added in macOS 10.15 "Catalina".)</p>
-<p>To help you do steps 3 - 5, here is a pseudocode script that performs steps 3-5. It omits important error checking and output parsing, so you should do the commands interactively, adjusting as needed to the output of the commands.</p>
+<p>The "forced-preferences.plist" file in step 3 must be a <a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html">macOS property list</a> file.</p>
+<p>To help you do steps 4 - 6, here is a pseudocode script that performs steps 3-5. It omits important error checking and output parsing, so you should do the commands interactively, adjusting as needed to the output of the commands.</p>
 <pre><code># Pseudocode script to create, sign, and notarize a disk image file from a folder
 #
 # For more information, see https://developer.apple.com/developer-id.

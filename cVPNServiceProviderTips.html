@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
 <meta charset="UTF-8" lang="en">
@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-05-22 23:11:10 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-07-17 01:06:55 UTC</font></td></tr></table></center>
 <div class="heading">
 <table>
 <tr>
@@ -60,20 +60,64 @@
 </td>
 <td class="documents-right">
 <h2 id="tips-for-vpn-service-providers">Tips for VPN Service Providers</h2>
-<p><span class="red"><strong>SOME FEATURES DESCRIBED ON THIS PAGE ARE AVAILABLE ONLY IN TUNNELBLICK 3.8.2beta03 AND HIGHER</strong></span></p>
-<p>Tunnelblick has several features that VPN service providers should be aware of:</p>
-<ul>
-<li>Automatic installation of configurations when Tunnelblick is installed</li>
-<li>Non-administrator installations and updates of configurations</li>
-<li>Automatic updating of VPN configurations</li>
-<li>Automatic updating of Tunnelblick</li>
-</ul>
+<p class="toc">On This Page<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tips-for-vpn-service-providers">Tips for VPN Service Providers</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#automatic-installation-of-configurations-when-tunnelblick-is-installed">Automatic Installation of Configurations when Tunnelblick is Installed</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#automatic-installation-of-forced-preferences-when-tunnelblick-is-installed">Automatic Installation of Forced Preferences when Tunnelblick is Installed</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#non-administrator-installations-and-updates-of-vpn-configurations">Non-administrator Installations and Updates of VPN Configurations</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#nested-configurations-and-configurations-in-folders">Nested Configurations and Configurations in Folders</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tunnelblick-and-usernames-passwords-and-passphrases">Tunnelblick and Usernames, Passwords, and Passphrases</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#preferences-related-to-usernames-passwords-and-passphrases">Preferences Related to Usernames, Passwords, and Passphrases</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#named-credentials-sets">Named Credentials Sets</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#automatic-updating-of-vpn-configurations">Automatic Updating of VPN Configurations</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#automatic-updating-of-tunnelblick">Automatic Updating of Tunnelblick</a><br></p>
 <h3 id="automatic-installation-of-configurations-when-tunnelblick-is-installed">Automatic Installation of Configurations when Tunnelblick is Installed</h3>
-<p>Tunnelblick can install Tunnelblick VPN configurations at the same time that Tunnelblick itself is installed, using the same computer administrator authorization. For details, see <a href="cAutoInstall.html">Auto-Install Configurations</a>.</p>
+<p>Tunnelblick can install Tunnelblick VPN configurations at the same time that Tunnelblick itself is installed, using the same computer administrator authorization. For details, see <a href="cAutoInstall.html">Automatically Install Configurations and Forced Preferences</a>.</p>
+<h3 id="automatic-installation-of-forced-preferences-when-tunnelblick-is-installed">Automatic Installation of Forced Preferences when Tunnelblick is Installed</h3>
+<p>Tunnelblick can install "forced" preferences (settings that cannot be modified by a standard user) at the same time that Tunnelblick itself is installed, using the same computer administrator authorization. For details, see <a href="cAutoInstall.html">Automatically Install Configurations and Forced Preferences</a>.</p>
 <h3 id="non-administrator-installations-and-updates-of-vpn-configurations">Non-administrator Installations and Updates of VPN Configurations</h3>
-<p>By default, for security reasons Tunnelblick requires a computer administrator's authorization to install or update VPN configurations.</p>
+<p>For security reasons, by default Tunnelblick requires a computer administrator's authorization to install or update VPN configurations.</p>
 <p>However, configurations or changes which are not security sensitive may be installed by a standard user (without authorization by a computer administrator) if a computer administrator has previously un-checked the "Require computer administrator authorization to install all configurations" checkbox on the "Preferences" panel of Tunnelblick's "VPN Details" window.</p>
 <p>For details, see <a href="https://tunnelblick.net/cNonAdminInstalls.html">Standard Users Installing or Replacing Configurations</a>.</p>
+<h3 id="nested-configurations-and-configurations-in-folders">Nested Configurations and Configurations in Folders</h3>
+<p>Tunnelblick can include one level of configurations within a configuration, and configurations can be contained in folders and subfolders to any depth. For details, see <a href="https://tunnelblick.net/cPkgs.html#nested-configurations">Nested Configurations</a>.</p>
+<p>For example,the following single Tunnelblick VPN Configuration sets up six configurations contained in three folders:</p>
+<pre>
+    EnclosingConfiguration.tblk/
+        USA/
+            New York City.tblk
+            Miami.tblk
+            Los Angeles.tblk
+        France/
+            Paris/
+                UDP.tblk
+                TCP.tblk
+            Lyons.tblk
+</pre>
+<p>"EnclosingConfiguration.tblk" is used as a container for the folder structure that contains the actual VPN configurations. When combined with the "old" method of updating configurations (see below), this allows a single update to contain updates for all configurations.</p>
+<h3 id="tunnelblick-and-usernames-passwords-and-passphrases">Tunnelblick and Usernames, Passwords, and Passphrases</h3>
+<p>OpenVPN setups often use the <code>--auth-user-pass</code> option in client configurations to specify that a username and password are required to connect the VPN, and a passphrase may be required to unlock a private key. OpenVPN asks Tunnelblick for these items as needed. Tunnelblick in turn asks the user for them, and offers the option of saving them in the macOS Keychain so they can be retrieved later by Tunnelblick without asking the user for them. Note that Tunnelblick allows users to paste the username, password, or passphrase; they needn't type them.</p>
+<p>Tunnelblick stores the username, password, and/or passphrase for each configuration in the user's login Keychain as an "application" password. Each is saved as a separate Keychain item named "Tunnelblick-Auth-XYZ" where "XYZ" is the name of the configuration. The username is saved in account "username", the password is saved in account "password", and the passphrase is saved in account "privateKey".</p>
+<h3 id="preferences-related-to-usernames-passwords-and-passphrases">Preferences Related to Usernames, Passwords, and Passphrases</h3>
+<p>There are three per-configuration boolean preferences associated with usernames, passwords, and passphrases:</p>
+<ul>
+<li>-keychainHasUsername</li>
+<li>-keychainHasUsernameAndPassword</li>
+<li>-keychainHasPrivateKey</li>
+</ul>
+<p>Each should be prefixed by the name of the configuration to which it applies, e.g. "XYZ-keychainHasUsername".</p>
+<p>Note that:</p>
+<ul>
+<li>
+<p>If any or all of these preferences exist as "forced" preferences, the user is not allowed to save the corresponding item in the Keychain. Otherwise, each preference indicates the existence of the corresponding item or items in the Keychain and is used to avoid unnecessarily accessing the Keychain.</p>
+</li>
+<li>
+<p>If you store such items into the Keychain (in an installation script, for example), you should also set the corresponding preference to true so Tunnelblick will use the item.</p>
+</li>
+</ul>
+<h3 id="named-credentials-sets">Named Credentials Sets</h3>
+<p>Tunnelblick allows configurations to share credentials (usernames, passwords, and passphrases). The user can enter the credentials once for one configuration and save them in the Keychain. After that, other configurations with which the credentials are shared will automatically obtain them from the Keychain as needed without requesting them from the user.</p>
+<p>Credentials are shared on Tunnelblick's "Advanced" settings page. A simple checkbox allows <em>all</em> configurations to share the same credentials, or multiple sets of credentials can be created by giving them names, and then selected configurations set to use credentials with those names.</p>
 <h3 id="automatic-updating-of-vpn-configurations">Automatic Updating of VPN Configurations</h3>
 <p>Tunnelblick has two separate methods for updating configurations:</p>
 <ul>
