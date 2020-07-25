@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta charset="UTF-8" lang="en">
+<meta name="description" content="Tunnelblick on macOS Big Sur - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+<meta name="referrer" content="never">
+<title>Tunnelblick on macOS Big Sur - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+<link rel="stylesheet" type="text/css" href="/common/style.v6.css">
+<link rel="icon" type="image/png" href="/common/favicon.v1.png">
+</head>
+<body>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-07-25 01:04:05 UTC</font></td></tr></table></center>
+<div class="heading">
+<table>
+<tr>
+<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
+<td class="heading1">Tunnelblick</td>
+<td class="heading2">free software for OpenVPN on macOS</td>
+<td class="heading3"><a href="/cLocalizeTranslate.html">We need translators for several languages…</a></td>
+</tr>
+</table>
+</div>
+<div class="topnav">
+<table class="topnav">
+<tbody>
+<tr>
+<td class="topnav-normal"><a href="/index.html" class="topnav">Home</a></td>
+<td class="topnav-normal"><a href="/downloads.html" class="topnav">Downloads</a></td>
+<td class="topnav-normal"><a href="/support.html" class="topnav">Support</a></td>
+<td class="topnav-highlight"><a href="/documents.html" class="topnav">Documents</a></td>
+<td class="topnav-normal"><a href="/issues.html" class="topnav">Issues</a></td>
+<td class="topnav-normal"><a href="/source.html" class="topnav">Source</a></td>
+<td class="topnav-normal"><a href="/contribute.html" class="topnav">Contribute</a></td>
+<td class="topnav-normal"><a href="/reachus.html" class="topnav">Contact</a></td>
+<td class="topnav-padding"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="content">
+<div class="content-cBigSur">
+<table class="documents">
+<tr>
+<td class="documents-left">
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="/cNews.html">News</a><br>
+&nbsp;&nbsp;<a href="/cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="/czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="/cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="/cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="/cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="/cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="/cFAQ.html">FAQ</a></p>
+<p><strong><a href="https://groups.google.com/forum/#!forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="/cBeforeYouPost.html">Read Before You Post</a></p>
+</td>
+<td class="documents-right">
+<h1 id="tunnelblick-on-macos-big-sur">Tunnelblick on macOS Big Sur</h1>
+<p><span class="red"><strong>If you are using macOS 11 Big Sur, you should use the latest beta version of Tunnelblick.</strong></span> You should enable Tunnelblick to automatically check for updates to the latest beta version (on the "Preferences" panel of Tunnelblick's "VPN Details" window). You can also download the latest beta from <a href="downloads.html">Tunnelblick Downloads</a>.</p>
+<p>The following is the current status of issues that have been seen using the latest beta version of Tunnelblick on beta and release versions of macOS Big Sur.</p>
+<p>To report an issue, please follow the instructions at <a href="issues.html">Tunnelblick Issues</a>. Please include the build number of macOS Big Sur under which the problem occurs. To get the build number, click on the small Apple icon at the top left corner of the screen and then click "About This Mac". A window will appear with information about your computer. The build number is the string of numbers and letters that appears in parentheses after "Version 11". You may need to click on "Version 11" to see the build number.</p>
+<hr>
+<p><span class="red"><strong>Tunnelblick's Tun and Tap system extensions do not load.</strong></span></p>
+<p>macOS Big Sur 11.0 Developer Beta 2 (20A4300b) does not allow Tunnelblick to load its "tun" or "tap" system extensions. This appears be a feature of macOS Big Sur — see <a href="cTunTapConnections.html">The Future of Tun and Tap VPNs on macOS</a> for more information.</p>
+<p>Note: <span class="red">If you are using a "tun" VPN, you can modify your OpenVPN configuration file so it will work without the "tun" system extension.</span> See the note at the start of <a href="https://tunnelblick.net/cKextLoadError.html">Errors Loading Kexts (Device Drivers)</a>.</p>
+<p>If your configuration requires a "tun" or "tap" system extension, connecting to your VPN will fail if an appropriate system extension is not loaded. When running on Big Sur, Tunnelblick Beta 3.8.3beta03 forces the settings on Tunnelblick's "Advanced" settings window to "never load" system extensions. You can override this and allow the settings to act normally (if <em>your version</em> of Big Sur allows Tunnelblick to load the system extensions) by executing the following command in Terminal:</p>
+<pre>
+     defaults write net.tunnelblick.tunnelblick bigSurCanLoadKexts -bool yes
+</pre>
+<p>The override can be removed by executing:</p>
+<pre>
+     defaults delete net.tunnelblick.tunnelblick bigSurCanLoadKexts
+</pre>
+<hr>
+<p><span class="red"><strong>FIXED IN Tunnelblick 3.8.3beta03: Tunnelblick refuses to run.</strong></span></p>
+<p>Tunnelblick versions earlier than 3.8.3beta03 refuse to run on macOS Big Sur 11.0 Developer Beta 2 (20A4300b), <a href="https://github.com/Tunnelblick/Tunnelblick/issues/632">complaining that the ""/tmp" folder is not secure</a>. Tunnelblick 3.8.3beta03 includes <a href="https://github.com/Tunnelblick/Tunnelblick/commit/8e6e1d2d703002bfd0b51d761f9142c25a4d1f2c">a fix for this problem</a>.</p>
+<hr>
+<p><span class="red"><strong>WON'T FIX: Sidecar does not work when a VPN is connected using Tunnelblick's default for a configuration.</strong></span></p>
+<p><em>(This issue is not specific to Big Sur. It is present in all versions of Sidecar.)</em></p>
+<p>Sidecar does not work if IPv6 is disabled. By default, Tunnelblick disables IPv6 while a VPN is connected. This is done to prevent information leaks in common VPN setups (see <a href="http://www.eecs.qmul.ac.uk/~tysong/files/PETS15.pdf">A Glance through the VPN Looking Glass: IPv6 Leakage and DNS Hijacking in Commercial VPN clients</a>).</p>
+<p>To fix this problem:</p>
+<ol>
+<li>Verify with your VPN service provider that no information is leaked if IPv6 traffic is allowed. <strong>If you cannot confirm that, you should not proceed and you will not be able to use Sidecar when your VPN is connected.</strong></li>
+<li>Launch Tunnelblick.</li>
+<li>Click the Tunnelblick icon in the menu bar and then click "VPN Details".</li>
+<li>Click on the large "Configurations" button at the top of the window.</li>
+<li>Select the configuration(s) you wish to modify.</li>
+<li>Remove the check from "Disable IPv6 unless the server is accessed via IPv6".</li>
+</ol>
+<hr>
+<p>(This page was updated 2020-07-16.)</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Fwww.tunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
+<div class="bottom-copyright">Copyright © 2015-2020 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+</body>
+</html>

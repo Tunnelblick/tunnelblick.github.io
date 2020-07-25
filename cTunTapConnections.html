@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-07-17 01:06:55 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-07-25 01:04:05 UTC</font></td></tr></table></center>
 <div class="heading">
 <table>
 <tr>
@@ -67,8 +67,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#how-to-modify-a-tun-vpn-so-it-will-continue-to-work">How to modify a 'tun' VPN so it will continue to work</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#if-macos-catalina-still-complains">If macOS Catalina still complains</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#always-load-tun-or-always-load-tap">Always load tun or always load tap</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#old-versions-of-tunnelblick-will-not-help">Old versions of Tunnelblick will not help</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#what-apple-announced">What Apple announced</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#what-is-tunnelblick-doing-about-it">What is Tunnelblick doing about it?</a><br></p>
+<p><span class="red"><strong>For the latest information about Tun and Tap VPNs on macOS Big Sur, see <a href="cBigSur.html">Tunnelblick and macOS Big Sur</a>.</strong></span></p>
 <h3 id="the-problem">The Problem</h3>
 <p><a href="#what-apple-announced">Apple has announced</a> changes to macOS which affect many users of Tunnelblick.</p>
 <p>You might see a warning from Tunnelblick about this change, or you might see the following warning when connecting your VPN:</p>
@@ -91,7 +93,7 @@
 </ol>
 <p>If you can't find a line that starts with any of the above, ask for help from the <a href="https://groups.google.com/forum/#!forum/tunnelblick-discuss">Tunnelblick Discussion Group</a>.</p>
 <h3 id="when-will-this-happen">When will this happen?</h3>
-<p>Our best guess based on similar situations in the past is that the earliest Apple will make this change is in the last version of macOS Catalina, which is expected to be released in July or August of 2020. However, it is also possible that Apple will make the change earlier or later, and it is possible that Tunnelblick's VPNs will continue to work for some period of time even after Apple makes the change.</p>
+<p>Apple does not announce its intentions, so there will not be any specific prior notice to this change. Our best guess is that it will happen in macOS Big Sur. However, it is also possible that Apple will make the change earlier (in the last release of macOS Catalina) or later.</p>
 <h3 id="how-to-modify-a-tun-vpn-so-it-will-continue-to-work">How to modify a 'tun' VPN so it will continue to work</h3>
 <p>You need to remove the dev-node option if it exists in the VPN's OpenVPN configuration file:</p>
 <ol>
@@ -106,16 +108,34 @@
 <p>If you made changes to the file and did not change it from shared to private and back to shared, the next time you connect the configuration you will be asked to have a computer administrator authorize the changes.</p>
 <h3 id="if-macos-catalina-still-complains">If macOS Catalina still complains</h3>
 <h3 id="always-load-tun-or-always-load-tap">Always load tun or always load tap</h3>
-<p>If you have a 'tun' VPN which does not need to be modified, or has been modified as described above, and Tunnelblick or macOS Catalina still complains, then you have changed a Tunnelblick setting and should restore it to the default setting. All configurations should be set to "Load tun driver automatically" and "Load tap driver automatically". These settings are found on the "Connecting & Disconnecting" tab of the "Advanced" settings window.</p>
+<p>If you have a 'tun' VPN which does not need to be modified, or has been modified as described above, and Tunnelblick or macOS Catalina still complains, then you have changed a Tunnelblick setting and should restore it to the default setting. All configurations should be set to "Load tun driver automatically" and "Load tap driver automatically". These settings are found on the "Connecting & Disconnecting" tab of the "Advanced" settings window. Tunnelblick 3.8.3beta03 and later will automatically disable loading of "tun" and "tap" system extensions on versions of macOS that do not allow Tunnelblick to load them.</p>
+<h3 id="old-versions-of-tunnelblick-will-not-help">Old versions of Tunnelblick will not help</h3>
+<p>This situation is caused by a change in macOS, not a change in Tunnelblick, so older versions of Tunnelblick will not help. All Macs running OS X 7.5 or later should use the latest stable or beta version of Tunnelblick. See <a href="downloadsDeprecated.html">Deprecated Downloads</a> for a version of Tunnelblick that should be used on earlier versions of OS X and on all PowerPC Macs.</p>
 <h3 id="what-apple-announced">What Apple announced</h3>
-<p><a href="https://developer.apple.com/support/kernel-extensions/">Apple has announced</a> that "future OS releases will no longer load system extensions that use deprecated KPIs by default". Tunnelblick includes, and for some configurations uses, two such extensions:</p>
+<p><a href="https://developer.apple.com/support/kernel-extensions/">Apple has announced</a> that "future OS releases will no longer load system extensions that use deprecated KPIs by default". Tunnelblick includes, and for some configurations loads one of two such extensions:</p>
 <ul>
 <li>'tap' configurations <em>always</em> require the use of one system extension.</li>
 <li>'tun' configurations <em>may</em> require the use of the other system extension but can easily be modified so no system extension is required.</li>
 </ul>
 <p>It isn't clear what Apple means by the phrase "by default". It <em>may</em> mean that Apple will provide a mechanism for users to allow loading of system extensions that use deprecated KPIs. However, Apple's practice has been to make such mechanisms very difficult to use, and the warning in macOS Catalina does not indicate such a mechanism will be provided.</p>
 <h3 id="what-is-tunnelblick-doing-about-it">What is Tunnelblick doing about it?</h3>
-<p>Nothing is planned. Apple proposes that programs such as Tunnelblick be modified to use a different method to accomplish the function that the kernel extensions currently perform. The current Tunnelblick developers do not have the time or expertise to use the new method Apple proposes and have no plans to do so. It is possible that someone else will develop such an alternative method and make it publicly available, but there is no way to know if or when that will happen. (If it does happen, we expect to include it in Tunnelblick.)</p>
+<p>In the short term:</p>
+<ul>
+<li>
+<p>macOS Catalina 10.15.5 loads Tunnelblick's system extensions. Although system extensions signed by "Jonathan Bullard" must be interactively allowed by the user in the Security and Privacy window of System Preferences, macOS guides the user through the process.</p>
+</li>
+<li>
+<p>macOS Big Sur 11.0 Developer Beta 2 (20A4300b) refuses to load Tunnelblick's existing, notarized system extensions. It isn't known if this behavior will be present in future beta versions of Big Sur or in the final version of Big Sur. Apple's suggested workaround, using an "installer package", cannot be easily integrated into the Tunnelblick installation process. It is possible that someone else will develop an installer which can load Tunnelblick's system extensions and make it publicly available, but there is no way to know if or when that will happen. (If it does happen, we expect to link to the installer or installers on the <a href="downloads.html">Downloads page</a>.)</p>
+</li>
+<li>
+<p>Versions of Tunnelblick that are running on macOS Big Sur disable loading of system extensions.</p>
+</li>
+<li>
+<p>Apple proposes that programs such as Tunnelblick be modified to use a different method to accomplish the function that the system extensions currently perform. The current Tunnelblick developers do not have the time or expertise to use the new method Apple proposes and have no plans to do so. It is possible that someone else will develop such an alternative method and make it publicly available, but there is no way to know if or when that will happen. (If it does happen, we expect to include it in Tunnelblick.)</p>
+</li>
+</ul>
+<p>In the longer term:</p>
+<p>At some point in the future when Tunnelblick no longer supports versions of macOS earlier than Big Sur, system extension loading and unloading will probably be removed from Tunnelblick. Historically, Tunnelblick has supported several years of macOS releases. As of June 2020 Tunnelblick supports OS X and macOS versions as far back as 10.7.5, which was released in 2012, so it is anticipated that the removal will not take place until the mid- to late-2020s.</p>
 </td>
 </tr>
 </table>
