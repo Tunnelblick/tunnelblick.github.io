@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-09-07 16:14:38 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-09-12 13:48:31 UTC</font></td></tr></table></center>
 <div class="heading">
 <table>
 <tr>
@@ -95,7 +95,7 @@
 </ul>
 <p>means that the text "More info" should be displayed as a link to the web page at <a href="https://tunnelblick.net/cAppInfoPlaceNearSpotLightIconCheckbox.html">https://tunnelblick.net/cAppInfoPlaceNearSpotLightIconCheckbox.html</a>.</p>
 <p>As described in the Crowdin "context", the two "%@" in the HTML string will be replaced by images. (To ensure proper spacing, images are placed within paragraphs.)</p>
-<p>When you translate an HTML string, <strong>DO NOT TRANSLATE OR CHANGE THE TAGS THEMSELVES</strong>. Only translate the text between the tags. So in the above example, you would be translating the following as if they were separate strings:</p>
+<p>When you translate an HTML string, <strong>KEEP, BUT DO NOT TRANSLATE OR CHANGE THE TAGS THEMSELVES</strong>. Only translate the text between the tags. So in the above example, you would be translating the following as if they were separate strings:</p>
 <pre><code>"When checked"
 ", the Tunnelblick icon is positioned near the Spotlight icon:"
 "When not checked"
@@ -103,7 +103,14 @@
 "This checkbox is disabled"
 " on macOS Sierra because it is not needed, and on systems for which it is known to cause problems."
 "More info"</code></pre>
-<p>"When checked", "When not checked", and "This checkbox is disabled" will all be displayed as bold text; the rest of the text will be shown normally.</p>
+<p>So your translation would look something like:</p>
+<pre><code>    &lt;p&gt;&lt;strong&gt;若打勾&lt;/strong&gt;，Tunnelblick 图标位于搜索图标附近：&lt;/p&gt;
+    &lt;p&gt;%1$@&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;未打勾&lt;/strong&gt;，Tunnelblick 图标位于正常的位置：&lt;/p&gt;
+    &lt;p&gt;%2$@&lt;/p&gt;
+    &lt;p&gt;macOS Sierra 或更高版本并不需要该选项，而且有的计算机已发现该选项会导致故障，两者情况下&lt;strong&gt;该复选框已被禁用&lt;/strong&gt;。&lt;/p&gt;
+    &lt;p&gt;&lt;a href="https://tunnelblick.net/cAppInfoPlaceNearSpotLightIconCheckbox.html"&gt;了解详情&lt;/a&gt;&lt;/p&gt;</code></pre>
+<p>The translations of "When checked", "When not checked", and "This checkbox is disabled" will all be displayed as bold text; the rest of the text will be shown normally.</p>
 <p>Of course, a proper translation of the HTML string may require rearranging the tags and the rest of the text.</p>
 </td>
 </tr>
