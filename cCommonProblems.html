@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-11-10 01:32:54 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-12-14 17:37:03 UTC</font></td></tr></table></center>
 <div class="heading">
 <table>
 <tr>
@@ -127,7 +127,7 @@
 <code>WARNING: potential route subnet conflict between local LAN [192.168.1.0/255.255.255.0] and remote VPN [192.168.1.0/255.255.255.0]</code></p>
 <p>This means that both the remote network and your local network are using the 192.168.1.<code>**</code> range of IP addresses. So change your local network to use, for example, 192.168.5.<code>**</code>, or 192.168.23.<code>*</code>. If you get the same warning message, try another address range.</p>
 <h2 id="an-openvpn-log-entry-says-cannot-allocate-tuntap-dev-dynamically">An OpenVPN log entry says "Cannot allocate TUN/TAP dev dynamically"</h2>
-<p>This problem indicates a problem with the tun/tap kexts.</p>
+<p>This problem indicates a problem with the Tun and/or Tap system extensions.</p>
 <ul>
 <li>It can be caused by the following sequence in the configuration file:<br>
 dev-type tun<br>
@@ -135,18 +135,13 @@ dev-type tun<br>
 dev abcdefg<br>
 and a workaround is to replace both lines with the single line<br>
 dev tun<br>
-(substitute "tap" for "tun" in the above if you are using the tap interface.)</li>
-<li>It can be caused by extra "tun" or "tap" kexts being loaded. See the following entry.</li>
+(substitute "tap" for "tun" in the above if this is a Tap configuration.)</li>
+<li>It can be caused by extra Tun or Tap system extensions being loaded. See the following entry.</li>
 </ul>
 <h2 id="an-error-message-says-tunnelblick-was-not-able-to-load-a-device-driver-kext-that-is-needed-to-connect...">An error message says "Tunnelblick was not able to load a device driver (kext) that is needed to connect..."</h2>
-<p>If you are running macOS High Sierra, please see <a href="cKextLoadErrorHighSierra.html">Errors Loading Kexts (Device Drivers) on macOS High Sierra (10.13)</a>.</p>
-<p>Otherwise, please see <a href="cKextLoadError.html">Errors Loading Kexts (Device Drivers)</a>.</p>
 <h2 id="an-openvpn-log-entry-says-tunnelblick-openvpnstart-status-247-error-unable-to-load-tun-and-tap-kexts.-status-71">An OpenVPN log entry says "Tunnelblick: openvpnstart status #247: Error: Unable to load tun and tap kexts. Status = 71"</h2>
-<p>If you are running macOS High Sierra, please see <a href="cKextLoadErrorHighSierra.html">Errors Loading Kexts (Device Drivers) on macOS High Sierra (10.13)</a>.</p>
-<p>Otherwise, please see <a href="cKextLoadError.html">Errors Loading Kexts (Device Drivers)</a>.</p>
 <h2 id="an-openvpn-log-entry-says-tunnelblick-openvpnstart-status-247-error-unable-to-load-net.tunnelblick.tun-andor-net.tunnelblick.tap-kexts-in-5-tries.-status-71">An OpenVPN log entry says "Tunnelblick: openvpnstart status #247: Error: Unable to load net.tunnelblick.tun and/or net.tunnelblick.tap kexts in 5 tries. Status = 71"</h2>
-<p>If you are running macOS High Sierra, please see <a href="cKextLoadErrorHighSierra.html">Errors Loading Kexts (Device Drivers) on macOS High Sierra (10.13)</a>.</p>
-<p>Otherwise, please see <a href="cKextLoadError.html">Errors Loading Kexts (Device Drivers)</a>.</p>
+<p>Please see <a href="cKextLoadError.html">Errors Loading System Extensions</a>.</p>
 <h2 id="an-openvpn-log-entry-says-note-unable-to-redirect-default-gateway----cannot-read-current-default-gateway-from-system">An OpenVPN log entry says "Note: unable to redirect default gateway -- Cannot read current default gateway from system"</h2>
 <p>There is a problem (in macOS and/or OpenVPN) which causes OpenVPN to be unable to read the default gateway when you try to connect OpenVPN through an existing PPP connection; here is a workaround:</p>
 <blockquote>
@@ -201,6 +196,6 @@ sudo find . -type l -delete</code></pre>
 </div>
 </div>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCommonProblems.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCommonProblems.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCommonProblems.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCommonProblems.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCommonProblems.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCommonProblems.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCommonProblems.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Copyright © 2015-2020 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">This page was last updated&nbsp;2020-11-13.&nbsp;&nbsp;Copyright © 2015-2020 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </body>
 </html>
