@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-12-14 17:37:03 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2020-12-25 13:52:02 UTC</font></td></tr></table></center>
 <div class="heading">
 <table>
 <tr>
@@ -60,19 +60,32 @@
 </td>
 <td class="documents-right">
 <h1 id="tunnelblick-on-macos-big-sur">Tunnelblick on macOS Big Sur</h1>
-<p><span class="red"><strong>If you are using macOS 11 Big Sur, you should use the latest version of Tunnelblick.</strong></span> You should enable Tunnelblick to automatically check for updates (on the "Preferences" panel of Tunnelblick's "VPN Details" window). You can also download the latest version from <a href="downloads.html">Tunnelblick Downloads</a>.</p>
 <hr>
-<p>The following is the current status of issues that have been seen using the latest version of Tunnelblick on macOS Big Sur.</p>
+<p><strong>Important: See <a href="cTunTapConnections.html">The Future of Tun and Tap VPNs on macOS</a> for information about changes to future versions of macOS.</strong></p>
+<hr>
+<p><span class="red"><strong>If you are using macOS Big Sur, you should use the latest beta version of Tunnelblick.</strong></span> You should allow Tunnelblick to automatically check for updates on the "Preferences" panel of Tunnelblick's "VPN Details" window. Be sure to put a check in "Check for updates to beta versions".</p>
+<hr>
+<p>The following is the current status of issues that have been seen using Tunnelblick on macOS Big Sur.</p>
 <p>To report an issue, please follow the instructions at <a href="issues.html">Tunnelblick Issues</a>.</p>
 <hr>
-<p><span class="red"><strong>CAN'T FIX: Tunnelblick's Tun and Tap system extensions do not load.</strong></span></p>
+<p><span class="red"><strong>FIX PLANNED: Tunnelblick's Tun and Tap system extensions do not load.</strong></span></p>
 <p>If your configuration requires a Tun or Tap system extension, connecting to your VPN will fail if an appropriate system extension is not loaded.</p>
-<p>macOS Big Sur 11.0.1 does not allow Tunnelblick to load its Tun or Tap system extensions. Apple says that as a workaround "during development" one can temporarily <a href="cTunTapConnections.html#disabling-sip">disable System Integrity Protection</a> to allow these system extensions to load when logged in as an Admin user. This workaround may not work in a future version or update of Big Sur — see <a href="cTunTapConnections.html">The Future of Tun and Tap VPNs on macOS</a>.</p>
-<p><strong>Note: <span class="red">If you are using a Tun VPN, you can modify your OpenVPN configuration file so it will work without the "Tun" system extension.</span> See <a href="cTunTapConnections.html">The Future of Tun and Tap VPNs on macOS</a>.</strong></p>
+<ul>
+<li><span class="red">If you are using a Tun VPN, you can — and should — modify your OpenVPN configuration file so it will work without the "Tun" system extension.</span> See <a href="https://tunnelblick.net/cKextLoadError.html">Errors Loading System Extensions</a> for instructions.</li>
+<li>If you are using a Tap VPN, your configuration <em>requires</em> a Tap system extension.</li>
+</ul>
+<p>A future version of macOS will not allow the use of Tunnelblick's system extensions. See <a href="cTunTapConnections.html">The Future of Tun and Tap VPNs on macOS</a>.</p>
+<p><strong>On Intel Macs</strong>, Tunnelblick's system extensions can be used after doing the following (the process may be simplified in a future version of Tunnelblick):</p>
+<ol>
+<li>Use <a href="https://github.com/chris1111/Kext-Droplet-Big-Sur">Kext-Droplet-Big-Sur</a> to install and load Tunnelblick's system extensions. (Tunnelblick's system extensions are located in /Applications/Tunnelblick.app/Contents/Resources and are named tap-notarized.kext and tun-notarized.kext.)</li>
+<li>Tell Tunnelblick not to disable loading of Tun and Tap system extensions (see below); and</li>
+<li>Set Tunnelblick to "Never load Tun driver" and "Never load Tap driver" (in the "Advanced" settings window).</li>
+</ol>
+<p>You will also need to tell macOS that it should allow sytem extensions signed by "Jonathan Bullard", see <a href="cHighSierraMojave.html">Tunnelblick on macOS High Sierra and macOS Mojave</a>.</p>
+<p><strong>On Apple Silicon Macs</strong>, macOS does not allow Tunnelblick to use its system extensions because they are not built for ARM processors. The developers plan to release a version of Tunnelblick which will enable the use of Tap configurations. However, the process for enabling a Tap configuration will be cumbersome and complex because of restrictions that Apple has placed on system extensions.</p>
 <hr>
 <p><span class="red"><strong>FEATURE: Tunnelblick disables loading of Tun and Tap system extensions.</strong></span></p>
-<p><strong>This is actually, really, truly a feature, not a bug!</strong></p>
-<p>When running on macOS Big Sur, Tunnelblick forces the settings on Tunnelblick's "Advanced" settings window to "never load" system extensions. You can override that behavior and allow the settings to act normally, which is useful if you have disabled SIP and/or your version of Big Sur allows Tunnelblick to load the system extensions. You can override the behavior by executing the following command in Terminal:</p>
+<p>When running on macOS Big Sur 11.0.1 or later, Tunnelblick forces the settings on Tunnelblick's "Advanced" settings window to "never load" system extensions. (The developers plan to release a version of Tunnelblick which will be "smarter" about this.) You can override that behavior and allow the settings to act normally by executing the following command in Terminal:</p>
 <pre>
      defaults write net.tunnelblick.tunnelblick bigSurCanLoadKexts -bool yes
 </pre>
@@ -93,14 +106,12 @@
 <li>Select the configuration(s) you wish to modify.</li>
 <li>Remove the check from "Disable IPv6 unless the server is accessed via IPv6".</li>
 </ol>
-<hr>
-<p>(This page was updated 2020-07-16.)</p>
 </td>
 </tr>
 </table>
 </div>
 </div>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">This page was last updated&nbsp;2020-11-13.&nbsp;&nbsp;Copyright © 2015-2020 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">This page was last updated&nbsp;2020-12-22.&nbsp;&nbsp;Copyright © 2015-2020 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </body>
 </html>
