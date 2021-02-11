@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta charset="UTF-8" lang="en">
+<meta name="description" content="Installing System Extensions - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+<meta name="referrer" content="never">
+<title>Installing System Extensions - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+<link rel="stylesheet" type="text/css" href="/common/style.v6.css">
+<link rel="icon" type="image/png" href="/common/favicon.v1.png">
+</head>
+<body>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-02-11 20:12:30 UTC</font></td></tr></table></center>
+<div class="heading">
+<table>
+<tr>
+<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
+<td class="heading1">Tunnelblick</td>
+<td class="heading2">free software for OpenVPN on macOS</td>
+<td class="heading3"><a href="/cLocalizeTranslate.html">We need translators for several languages…</a></td>
+</tr>
+</table>
+</div>
+<div class="topnav">
+<table class="topnav">
+<tbody>
+<tr>
+<td class="topnav-normal"><a href="/index.html" class="topnav">Home</a></td>
+<td class="topnav-normal"><a href="/downloads.html" class="topnav">Downloads</a></td>
+<td class="topnav-normal"><a href="/support.html" class="topnav">Support</a></td>
+<td class="topnav-highlight"><a href="/documents.html" class="topnav">Documents</a></td>
+<td class="topnav-normal"><a href="/issues.html" class="topnav">Issues</a></td>
+<td class="topnav-normal"><a href="/source.html" class="topnav">Source</a></td>
+<td class="topnav-normal"><a href="/contribute.html" class="topnav">Contribute</a></td>
+<td class="topnav-normal"><a href="/reachus.html" class="topnav">Contact</a></td>
+<td class="topnav-padding"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="content">
+<div class="content-cKextsInstallation">
+<table class="documents">
+<tr>
+<td class="documents-left">
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="/cNews.html">News</a><br>
+&nbsp;&nbsp;<a href="/cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="/czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="/cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="/cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="/cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="/cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="/cFAQ.html">FAQ</a></p>
+<p><strong><a href="https://groups.google.com/forum/#!forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="/cBeforeYouPost.html">Read Before You Post</a></p>
+</td>
+<td class="documents-right">
+<h1 id="installing-system-extensions">Installing System Extensions</h1>
+<hr>
+<p><strong>Important: See <a href="cTunTapConnections.html">The Future of Tun and Tap VPNs on macOS</a> for information about changes to future versions of macOS.</strong></p>
+<p><em>Also see <a href="cBigSur.html">Tunnelblick on macOS Big Sur</a>, and, if you are using an Apple Silicon (M1) Mac, <a href="cAppleSilicon.html">Tunnelblick and Apple Silicon</a>.</em></p>
+<hr>
+<p><strong>IMPORTANT: You only need to install Tunnelblick's system extensions if you are</strong></p>
+<ul>
+<li><strong>Running on macOS Big Sur; and</strong></li>
+<li><strong>Using to a "Tap" VPN.</strong></li>
+</ul>
+<hr>
+<p>The process of installing Tunnelblick's system extensions on recent versions of macOS requires one or more restarts of your computer.</p>
+<p>The following describes the process when using Tunnelblick 3.8.5 beta03 (build 5630 and higher):</p>
+<ul>
+<li><a href="#m1-big-sur">For an M1 Mac using macOS Big Sur 11.1</a>.</li>
+<li><a href="#intel-big-sur">For an Intel Mac using macOS Big Sur</a>.</li>
+<li>For an Intel Mac using macOS Catalina or macOS Mojave 10.14.5 or 10.14.6, see <a href="cCatalina.html">Tunnelblick on macOS Catalina</a>.</li>
+<li>For an Intel Mac using macOS High Sierra or macOS Mojave 10.14.4 and below, see <a href="cHighSierraMojave.html">Tunnelblick on macOS High Sierra and macOS Mojave</a>.</li>
+</ul>
+<hr>
+<p><a id="m1-big-sur"></a></p>
+<h3>Installing Kexts on an M1 Mac Running macOS Big Sur 11.1</h3>
+<p>On an Apple Silicon (M1) Mac, the process of installing Tunnelblick's system extensions requires three restarts of your computer.</p>
+<ol>
+<li>Use the button on the "Utilities" panel to install Tunnelblick's Tun and Tap system extensions.</li>
+<li>After authorizing Tunnelblick to install the kexts, you will be prompted by macOS to open the Security & Privacy preference pane to allow the kexts to be loaded:<br>
+<br>
+<img src="images/a-program-tried-to-load-a-new-system-extension-2021-02-01.png" alt="screenshot of a window with headline 'System Extension Blocked', text 'A program tried to load new system extension(s) signed by Jonathan Bullard but your security settings do not allow system extensions. To enable them, open the Security &amp; Privacy preference pane', a button labelled 'ignore', and a button labelled 'open security preferences'"></li>
+<li>After opening the Security & Privacy preference pane, click the "Enable system extensions…" button:<br>
+<br>
+<img src="images/current-security-settings-prevent-installation-of-system-extensions-2021-02-01.png" alt="screenshot of the 'Security &amp; Privacy' preference pane, with text 'Your current security settings prevent the installation of system extensions' and a button labelled 'enable system extensions…'."></li>
+<li>You'll see the following instructions:<br>
+<br>
+<img src="images/you-need-to-modify-security-settings-in-recovery-2021-02-01.png" alt="screenshot of a window with headline 'to enable system extensions, you need to modify your security settings in the recovery environment', text 'to do this, shut down your system. then press and hold the Touch ID or power button to launch Startup Security Utility. In Startup Security Utility, enable kernel extensions from the Security Policy Button.', a button labelled 'not now', and a button labelled 'shutdown'"></li>
+<li>Shut down your computer, then start it up by pressing the power button and holding it down until your system starts in [macOS Recovery](https://support.apple.com/guide/mac-help/macos-recovery-a-mac-apple-silicon-mchl82829c17/mac) and you see the startup options page.</li>
+<li>Select "Options".</li>
+<li>Select Utilities &gt; Startup Security Utility.</li>
+<li>Select the system you want to use to set the security policy.</li>
+<li>If the disk is encrypted with FileVault, click Unlock, enter the password, then click Unlock.</li>
+<li>Click Security Policy.</li>
+<li>Click to select the “Allow user management of kernel extensions from identified developers” checkbox.</li>
+<li>Click OK.</li>
+<li>Restart your Mac for the changes to take effect.</li>
+<li>Go to the Security & Privacy preference pane; click on the "Allow" button:<br>
+<br>
+<img src="images/security-and-privacy-need-to-approve-install-2021-02-01.png" alt="screenshot of the 'Security &amp; Privacy' preference pane, with text 'System software from developer Jonathan Bullard was blocked from loading.' and a button labelled 'allow'."></li>
+<li>After authorizing the software, you will be prompted to restart your computer to be able to use the new system extensions:<br>
+<br>
+<img src="images/must-restart-before-system-extension-can-be-used-2021-02-01.png" alt="screenshot of a window with text 'A restart is required before new system extensions can be used', a button labelled 'not now', and a button labelled 'restart'"></li>
+<li>Restart your computer. You should now be able to use Tun and Tap configurations.</li>
+</ol>
+<hr>
+<p><a id="intel-big-sur"></a></p>
+<h3>Installing Kexts on an Intel Mac running macOS Big Sur</h3>
+<p>On an Intel Mac, the process of installing Tunnelblick's system extensions requires one restart of your computer.</p>
+<ol>
+<li>Use the button on the "Utilities" panel to install Tunnelblick's Tun and Tap system extensions.</li>
+<li>After authorizing Tunnelblick to install the kexts, you will be prompted by macOS to open the Security & Privacy preference pane to allow the kexts to be loaded:<br>
+<br>
+<img src="images/a-program-tried-to-load-a-new-system-extension-2021-02-01.png" alt="screenshot of a window with headline 'System Extension Blocked', text 'A program tried to load new system extension(s) signed by Jonathan Bullard but your security settings do not allow system extensions. To enable them, open the Security &amp; Privacy preference pane', a button labelled 'ignore', and a button labelled 'open security preferences'"></li>
+<li>After opening the Security & Privacy preference pane, click the "Allow" button:<br>
+<br>
+<img src="images/security-and-privacy-need-to-approve-install-2021-02-01.png" alt="screenshot of the 'Security &amp; Privacy' preference pane, with text 'System software from developer Jonathan Bullard was blocked from loading.' and a button labelled 'allow'."></li>
+<li>After authorizing the software, you will be prompted to restart your computer to be able to use the new system extensions:<br>
+<br>
+<img src="images/must-restart-before-system-extension-can-be-used-2021-02-01.png" alt="screenshot of a window with text 'A restart is required before new system extensions can be used', a button labelled 'not now', and a button labelled 'restart'"></li>
+<li>Restart your computer. You should now be able to use Tun and Tap configurations.</li>
+</ol>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcKextsInstallation.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcKextsInstallation.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcKextsInstallation.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcKextsInstallation.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcKextsInstallation.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcKextsInstallation.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcKextsInstallation.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
+<div class="bottom-copyright">This page was last updated&nbsp;2021-02-11.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+</body>
+</html>
