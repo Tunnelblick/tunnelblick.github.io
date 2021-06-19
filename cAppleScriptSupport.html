@@ -3,14 +3,16 @@
 <head>
 <meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
 <meta charset="UTF-8" lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="AppleScript Support - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
 <meta name="referrer" content="never">
 <title>AppleScript Support - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
-<link rel="stylesheet" type="text/css" href="/common/style.v6.css">
+<link rel="stylesheet" type="text/css" href="/common/style.v7.css">
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-04-23 00:31:09 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-06-19 16:09:58 UTC</font></td></tr></table></center>
+<header>
 <div class="heading">
 <table>
 <tr>
@@ -21,6 +23,8 @@
 </tr>
 </table>
 </div>
+</header>
+<nav>
 <div class="topnav">
 <table class="topnav">
 <tbody>
@@ -38,6 +42,8 @@
 </tbody>
 </table>
 </div>
+</nav>
+<main>
 <div class="content">
 <div class="content-cAppleScriptSupport">
 <table class="documents">
@@ -81,41 +87,7 @@
 <p>replacing <em>configuration-name</em> with the name of your configuration.</p>
 <hr>
 <h2 id="applescript-dictionary">AppleScript Dictionary</h2>
-<p><strong>application</strong> <em>n</em> :</p>
-<p>contains <em>configurations</em>.</p>
-<p><strong>configuration</strong> <em>n</em> : A VPN configuration.</p>
-<p>contained by <strong>application</strong>.</p>
-<p>properties</p>
-<p><strong>name</strong> (text, r/o) : Name of the configuration.</p>
-<p><strong>state</strong> (text, r/o) : State of the configuration.<br>
-'EXITING' means disconnecting or disconnected.<br>
-'CONNECTED' means connected.<br>
-Other values show progress towards a connection.</p>
-<p><strong>autoconnect</strong> (text, r/o):<br>
-'LAUNCH' means the configuration will be connected automatically when Tunnelblick launches.<br>
-'START' means the configuration will be connected automatically when the computer starts.<br>
-'NO' means the configuration will not be connected automatically.</p>
-<p><strong>bytesIn</strong> (text, r/o) :<br>
-The number of bytes that have come in through the connection since Tunnelblick was launched. (For client configurations only. This will return "0" for configurations that are functioning as a server.)</p>
-<p><strong>bytesOut</strong> (text, r/o) :<br>
-The number of bytes that have gone out through the connection since Tunnelblick was launched. (For client configurations only. This will return "0" for configurations that are functioning as a server.)</p>
-<p><strong>connect</strong> <em>v</em> : Connect a VPN configuration.</p>
-<p><strong>connect</strong> text : Name of configuration to connect.<br>
--&gt; boolean : Returns true if a connection is being attempted, false if the configuration is already connected.</p>
-<p><strong>disconnect</strong> <em>v</em> : Disconnect a VPN configuration.<br>
-disconnect text : Name of configuration to disconnect.<br>
--&gt; boolean : Returns true if a disconnection is being attempted, false if the configuration is already disconnected.</p>
-<p><strong>connect all</strong> <em>v</em> : Connect all unconnected VPN configurations.<br>
--&gt; integer : Returns the number of configurations for which a connection is being attempted.</p>
-<p><strong>disconnect all</strong> <em>v</em> : Disconnect all connected VPN configurations.<br>
--&gt; integer : Returns the number of configurations for which a disconnection is being attempted.</p>
-<p><strong>disconnect all except when computer starts</strong> <em>v</em> : Disconnect all connected VPN configurations except 'when computer starts' configurations.<br>
--&gt; integer : Returns the number of configurations for which a disconnection is being attempted.</p>
-<p><strong>added or removed configurations</strong> <em>v</em> : Tells Tunnelblick that configurations have been added or removed, so it can update the menu and the list of configurations in the "VPN Details" window.<br>
--&gt; boolean : Returns false.</p>
-<p><strong>changed openvpn configuration file for</strong> <em>v</em> : Tells Tunnelblick that an OpenVPN configuration file has been modified, so it can update settings in the "VPN Details" window.</p>
-<p><strong>changed openvpn configuration file for</strong> text : Name of configuration for which the OpenVPN configuration file has been modified.<br>
--&gt; boolean : Returns false.</p>
+<p>To display the AppleScript commands that are supported by Tunnelblick (or any application), open /Utilities/Script Editor, then click the "File", then "Open Dictionary", and select the application.</p>
 <hr>
 <h2 id="examples">Examples</h2>
 <p>tell application "Tunnelblick"</p>
@@ -147,13 +119,24 @@ connect "Work"<br>
 -&gt; {"EXITING", "EXITING", "EXITING", "EXITING"}</p>
 <p>get autoconnect of configurations<br>
 -&gt; {"NO", "NO", "NO", "NO"}</p>
+<p>set username "john.bull" for "Work"<br>
+-&gt; 1</p>
+<p>set password "password123" for "Work"<br>
+-&gt; 1</p>
+<p>save passphrase "passphrase123" for "Work"<br>
+-&gt; 1</p>
+<p>delete all credentials for "Work"<br>
+-&gt; 1</p>
 <p>end tell</p>
 </td>
 </tr>
 </table>
 </div>
 </div>
+</main>
+<footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAppleScriptSupport.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAppleScriptSupport.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAppleScriptSupport.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAppleScriptSupport.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAppleScriptSupport.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAppleScriptSupport.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAppleScriptSupport.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">This page was last updated&nbsp;2020-01-04.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2021-06-05.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+</footer>
 </body>
 </html>
