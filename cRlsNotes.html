@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Release Notes - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
 <meta name="referrer" content="never">
 <title>Release Notes - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
-<link rel="stylesheet" type="text/css" href="/common/style.v7.css">
+<link rel="stylesheet" type="text/css" href="/common/style.v8.css">
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-06-26 18:54:52 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-08-17 11:42:09 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -67,12 +67,19 @@
 <td class="documents-right">
 <h1 id="release-notes">Release Notes</h1>
 <p class="toc">On This Page<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-3.8">Version 3.8</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-3.7">Version 3.7</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-38">Version 3.8</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-37">Version 3.7</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#older-versions-of-tunnelblick">Older Versions of Tunnelblick</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#uninstaller">Uninstaller</a><br></p>
 <hr>
-<h2 id="version-3.8">Version 3.8</h2>
+<h2 id="version-38">Version 3.8</h2>
+<p><strong>3.8.6beta06 build 5707 (2021-08-17)</strong></p>
+<ul>
+<li><span class="red">PREVIEW: For testing only. Runs natively on M1 and Intel Macs.</span></li>
+<li>Fixes a failure to run post-disconnect.sh scripts when Tunnelblick shuts down.</li>
+<li>Fixes a problem that caused updates to fail.</li>
+</ul>
+<hr>
 <p><strong>3.8.6beta05 build 5706 (2021-06-26)</strong></p>
 <ul>
 <li><span class="red">PREVIEW: For testing only. Runs natively on M1 and Intel Macs.</span></li>
@@ -450,7 +457,7 @@
 </ul>
 <hr>
 <hr>
-<h2 id="version-3.7">Version 3.7</h2>
+<h2 id="version-37">Version 3.7</h2>
 <p><strong>3.7.9a build 5321 (2019-06-03) <span class='red'>(SECURITY UPDATE)</span></strong></p>
 <ul>
 <li>Fixes a failure to restore DNS settings after shutting down or restarting the computer while a VPN was connected.</li>
@@ -650,8 +657,7 @@
 <li>Fixes a problem re-enabling network access for certain devices.</li>
 </ul>
 <hr>
-<p><strong>3.7.7beta01 build 5070 (2018-06-09)</strong><br>
-<strong>3.7.6 build 5060 (2018-06-09)</strong></p>
+<p><strong>3.7.7beta01 build 5070 (2018-06-09)</strong> <strong>3.7.6 build 5060 (2018-06-09)</strong></p>
 <ul>
 <li>Makes a better choice of the version of OpenVPN to use when the requested version is not available.</li>
 <li>Warns if the Tunnelblick application is more than 180 days old.</li>
@@ -706,8 +712,7 @@
 <hr>
 <p><strong>3.7.5a build 5011 (2018-03-28) <span class='red'>(SECURITY UPDATE)</span></strong></p>
 <ul>
-<li>Includes OpenVPN 2.3.18, 2.4.4, and 2.5 git-master 849006b dated 2018-02-05, each with OpenSSL 1.0.2o and LibreSSL 2.7.1. See <a href="https://www.openssl.org/news/secadv/20180327.txt">OpenSSL Security Advisory 27 March 2017</a> and<br>
-<a href="https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.7.1-relnotes.txt">LibreSSL 2.7.1 Release Notes</a>.</li>
+<li>Includes OpenVPN 2.3.18, 2.4.4, and 2.5 git-master 849006b dated 2018-02-05, each with OpenSSL 1.0.2o and LibreSSL 2.7.1. See <a href="https://www.openssl.org/news/secadv/20180327.txt">OpenSSL Security Advisory 27 March 2017</a> and <a href="https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.7.1-relnotes.txt">LibreSSL 2.7.1 Release Notes</a>.</li>
 </ul>
 <hr>
 <p><strong>3.7.5 build 5010 (2018-03-03) <span class='red'>(SECURITY UPDATE)</span></strong></p>
@@ -957,8 +962,7 @@
 <p><a href="cRlsNotesOld.html">Old Release Notes</a> has release notes for older versions of Tunnelblick.</p>
 <hr>
 <h2 id="uninstaller">Uninstaller</h2>
-<p><span class="red">The Tunnelblick Uninstaller has been replaced by an "Uninstall" button on the "Utilities"<br>
-panel of Tunnelblick's "VPN Details" window as of Tunnelblick 3.8.5beta02.</span></p>
+<p><span class="red">The Tunnelblick Uninstaller has been replaced by an "Uninstall" button on the "Utilities" panel of Tunnelblick's "VPN Details" window as of Tunnelblick 3.8.5beta02.</span></p>
 <p><strong>1.13 build 5330 (2019-05-22)</strong> <span class='red'>(SECURITY UPDATE)</span></p>
 <ul>
 <li>Tunnelblick Uninstaller is notarized: Apple verifies that it does not contain malware.</li>
@@ -1051,7 +1055,7 @@ panel of Tunnelblick's "VPN Details" window as of Tunnelblick 3.8.5beta02.</span
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotes.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotes.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotes.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotes.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotes.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotes.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotes.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2021-06-26.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2021-08-17.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>
