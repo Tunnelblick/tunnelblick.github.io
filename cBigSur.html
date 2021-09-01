@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Tunnelblick on macOS Big Sur - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-08-24 18:29:21 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-09-01 23:43:00 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -68,24 +68,14 @@
 <h1 id="tunnelblick-on-macos-big-sur">Tunnelblick on macOS Big Sur</h1>
 <hr>
 <p><strong>Important: See <a href="cTunTapConnections.html">The Future of Tun and Tap VPNs on macOS</a> for information about changes to future versions of macOS.</strong></p>
-<p><em>If you have an M1 Mac, also see <a href="https://tunnelblick.net/cAppleSilicon.html">Tunnelblick and Apple Silicon</a>.</em></p>
 <hr>
-<p><span class="red"><strong>If you are using macOS Big Sur, you should use the latest beta version of Tunnelblick.</strong></span> You should allow Tunnelblick to automatically check for updates on the "Preferences" panel of Tunnelblick's "VPN Details" window. Be sure to put a check in "Check for updates to beta versions".</p>
+<p><span class="red"><strong>If you are using macOS Big Sur, you should use the latest version of Tunnelblick.</strong></span> You should allow Tunnelblick to automatically check for updates on the "Preferences" panel of Tunnelblick's "VPN Details" window.</p>
 <hr>
 <p>The following is the current status of issues that have been seen using Tunnelblick on macOS Big Sur.</p>
 <p>To report an issue, please follow the instructions at <a href="issues.html">Tunnelblick Issues</a>.</p>
 <hr>
-<p><span class="red"><strong>FIXED in Tunnelblick 3.8.5beta03: Tunnelblick's Tun and Tap system extensions do not load.</strong></span></p>
-<p>If your configuration requires a Tun or Tap system extension, connecting to your VPN will fail if an appropriate system extension is not installed.</p>
-<ul>
-<li><span class="red">If you are using a Tun VPN, you can — and should — modify your OpenVPN configuration file so it will work without the "Tun" system extension.</span> See <a href="https://tunnelblick.net/cKextLoadError.html">Errors Loading System Extensions</a> for instructions.</li>
-<li>If you are using a Tap VPN, your configuration <em>requires</em> a Tap system extension.</li>
-</ul>
-<p>A future version of macOS will not allow the use of Tunnelblick's system extensions. See <a href="cTunTapConnections.html">The Future of Tun and Tap VPNs on macOS</a>.</p>
-<p>See <a href="cKextsInstallation.html">Installing System Extensions</a> for detailed instructions on installing Tunnelblick's system extensions.</p>
-<hr>
-<p><span class="red"><strong>FIXED in Tunnelblick 3.8.5beta03: Tunnelblick disables loading of Tun and Tap system extensions.</strong></span></p>
-<p>When running on macOS Big Sur 11.0.1 or later, some versions of Tunnelblick force the settings on Tunnelblick's "Advanced" settings window to "never load" system extensions.</p>
+<p><span class="red"><strong>If your VPN <a href="cTunTapConnections.html#how-to-tell-if-a-vpn-requires-a-tun-or-tap-system-extension">requires a Tun or Tap system extension</a>, you must <a href="cKextsInstallation.html">install Tunnelblick's Tun and Tap system extensions</a> before connecting.</strong></span></p>
+<p><span class="red">If your VPN requires the Tun system extension, you can – and should – <a href="cTunTapConnections.html#how-to-modify-a-tun-vpn-so-it-will-not-require-the-tun-system-extension">modify your OpenVPN configuration file so the system extension will not be required</a>.</span></p>
 <hr>
 <p><span class="red"><strong>WON'T FIX: Sidecar does not work when a VPN is connected using Tunnelblick's default for a configuration.</strong></span></p>
 <p><em>(This issue is not specific to Big Sur. It is present in all versions of Sidecar.)</em></p>
@@ -107,7 +97,7 @@
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2021-02-11.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2021-08-26.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Tunnelblick on macOS Catalina - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-08-24 18:29:21 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-09-01 23:43:00 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -75,9 +75,9 @@
 <p>To report an issue, please follow the instructions at <a href="issues.html">Tunnelblick Issues</a>.</p>
 <hr>
 <p><span class="red"><strong>NEW macOS REQUIREMENT: Restarting the computer is required by macOS Catalina before connecting some configurations for the first time.</strong></span></p>
-<p>If a configuration requires a Tun or Tap system extension, the first time Tunnelblick asks macOS to load the appropriate system extension, macOS will tell the user that they must give permission to load system extensions signed by "Jonathan Bullard" in System Preferences : Security & Privacy : General. If the user gives such permission by clicking "Allow", macOS must restart the computer before the permission will be honored. After the permission has been given and the computer has been restarted, you may then connect all VPN configurations normally.</p>
+<p>If a configuration <a href="cTunTapConnections.html#how-to-tell-if-a-vpn-requires-a-tun-or-tap-system-extension">requires a Tun or Tap system extension</a>, the first time Tunnelblick asks macOS to load the appropriate system extension, macOS will tell the user that they must give permission to load system extensions signed by "Jonathan Bullard" in System Preferences : Security & Privacy : General. If the user gives such permission by clicking "Allow", macOS must restart the computer before the permission will be honored. After the permission has been given and the computer has been restarted, you may then connect all VPN configurations normally.</p>
 <p>This only needs to be done one time. Once permission to load system extensions signed by "Jonathan Bullard" has been granted and the computer has been restarted, no further action is needed. Tunnelblick will be able to load Tun and Tap system extensions for any configuration without user interaction, and that ability will persist after computer restarts, "safe boots", and updates to Tunnelblick.</p>
-<p><span class="red">If you are using a Tun VPN, you can — and should — modify your OpenVPN configuration file so it will work without the "Tun" system extension and avoid this problem.</span> See <a href="https://tunnelblick.net/cKextLoadError.html">Errors Loading System Extensions</a> for instructions.</p>
+<p><span class="red">If your VPN requires the Tun system extension, you can – and should – <a href="cTunTapConnections.html#how-to-modify-a-tun-vpn-so-it-will-not-require-the-tun-system-extension">modify your OpenVPN configuration file so the system extension will not be required</a>.</span></p>
 <hr>
 <p><span class="red"><strong>WON'T FIX: Sidecar does not work when a VPN is connected using Tunnelblick's default for a configuration.</strong></span></p>
 <p>Sidecar does not work if IPv6 is disabled. By default, Tunnelblick disables IPv6 while a VPN is connected. This is done to prevent information leaks in common VPN setups (see <a href="http://www.eecs.qmul.ac.uk/~tysong/files/PETS15.pdf">A Glance through the VPN Looking Glass: IPv6 Leakage and DNS Hijacking in Commercial VPN clients</a>).</p>
@@ -90,8 +90,6 @@
 <li>Select the configuration(s) you wish to modify.</li>
 <li>Remove the check from "Disable IPv6 unless the server is accessed via IPv6".</li>
 </ol>
-<hr>
-<p>(This page was updated 2020-07-12.)</p>
 </td>
 </tr>
 </table>
@@ -100,7 +98,7 @@
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCatalina.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCatalina.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCatalina.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCatalina.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCatalina.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCatalina.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCatalina.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2020-12-22.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2021-08-26.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

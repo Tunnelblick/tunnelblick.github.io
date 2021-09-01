@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="The Future of Tun and Tap VPNs on macOS - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-08-24 18:29:21 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-09-01 23:43:00 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -68,14 +68,12 @@
 <h1 id="the-future-of-tun-and-tap-vpns-on-macos">The Future of Tun and Tap VPNs on macOS</h1>
 <p class="toc">On This Page<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#background">Background</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#how-to-load-tunnelblicks-system-extensions">How to Load Tunnelblick's System Extensions</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#the-long-term-problem">The Long-Term Problem</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#how-to-tell-if-you-have-a-tap-vpn-or-a-tun-vpn">How to tell if you have a 'tap' VPN or a 'tun' VPN</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#when-will-this-happen">When will this happen?</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#how-to-modify-a-tun-vpn-so-it-will-continue-to-work">How to modify a 'tun' VPN so it will continue to work</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#how-to-tell-if-a-vpn-requires-a-tun-or-tap-system-extension">How to tell if a VPN requires a Tun or Tap System Extension</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#how-to-modify-a-tun-vpn-so-it-will-not-require-the-tun-system-extension">How to modify a Tun VPN so it will not require the Tun system extension</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#if-macos-still-complains">If macOS still complains</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#always-load-tun-or-always-load-tap">Always load tun or always load tap</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#disabling-sip">Disabling SIP</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#old-versions-of-tunnelblick-will-not-help">Old versions of Tunnelblick will not help</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#what-apple-announced">What Apple announced</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#what-is-tunnelblick-doing-about-it">What is Tunnelblick doing about it?</a><br></p>
@@ -83,51 +81,13 @@
 <p>To connect to a VPN, Tunnelblick needs to use a special kind of device driver:</p>
 <ul>
 <li>
-<p><strong>For a Tun VPN</strong>, macOS includes a built-in "utun" device driver which can be<br>
-used so that Tunnelblick's Tun system extension does not need to be loaded.<br>
-Most OpenVPN configuration files will automatically use the "utun" driver, but<br>
-some include options that require Tunnelblick to use its own Tun system<br>
-extension. Those configuration files should be modified so that the built-in<br>
-macOS "utun" device driver can be used. (For simple instructions to make such<br>
-modifications, see <a href="https://tunnelblick.net/cKextLoadError.html">Errors Loading System Extensions</a>.)</p>
+<p><strong>For a Tun VPN</strong>, macOS includes a built-in "utun" device driver which can be used so that Tunnelblick's Tun system extension does not need to be loaded. Most OpenVPN configuration files will automatically use the "utun" driver, but some include options that require Tunnelblick to use its own Tun system extension. Those configuration files should be modified so that the built-in macOS "utun" device driver can be used. (For simple instructions to make such modifications, see <a href="https://tunnelblick.net/cKextLoadError.html">Errors Loading System Extensions</a>.)</p>
 </li>
 <li>
-<p><strong>For a Tap VPN</strong>, Tunnelblick's Tap system extension must be loaded because<br>
-macOS does not have a built-in Tap device driver.</p>
+<p><strong>For a Tap VPN</strong>, Tunnelblick's Tap system extension must be loaded because macOS does not have a built-in Tap device driver.</p>
 </li>
 </ul>
-<p>Apple has made it more and more difficult to load system extensions with each<br>
-new version of macOS. They have also announced that in "a future version" of<br>
-macOS, you will not be able to use system extensions at all.</p>
-<h3 id="how-to-load-tunnelblicks-system-extensions">How to Load Tunnelblick's System Extensions</h3>
-<p><strong>If you are using any version of macOS up to and including macOS Sierra</strong>,<br>
-Tunneblick automatically loads and unloads its system extensions; you do not<br>
-need to do anything.</p>
-<p><strong>If you are using macOS High Sierra, Mojave, or Catalina</strong>, you need to</p>
-<ol>
-<li>Attempt to connect the configuration so Tunnelblick attempts to use the system extension;</li>
-<li>Open System Preferences &gt;&gt; Security & Privacy;</li>
-<li>Give permission to load system extensions signed by "Jonathan Bullard";</li>
-<li>Close System Preferences; and</li>
-<li>If you are using macOS Catalina**, restart your computer.</li>
-</ol>
-<p><strong>If you are using macOS Big Sur on an Intel Mac</strong>, you need to:</p>
-<ol>
-<li>Restart your computer in Recovery mode;</li>
-<li>Open /Applications/Utilities/Terminal;</li>
-<li>Execute "csrutil disable" command in Terminal;</li>
-<li>Restart your computer normally;</li>
-<li>Attempt to connect the configuration so Tunnelblick attempts to use the system extension;</li>
-<li>Open System Preferences &gt;&gt; Security & Privacy;</li>
-<li>Give permission to load system extensions signed by "Jonathan Bullard";</li>
-<li>Close System Preferences;</li>
-<li>Restart your computer normally;</li>
-<li>Restart your computer in Recovery mode;</li>
-<li>Open /Applications/Utilities/Terminal;</li>
-<li>Execute "csrutil enable" command in Terminal; and</li>
-<li>Restart your computer normally.</li>
-</ol>
-<p><strong>If you are using macOS Big Sur on an Apple Silicon Mac</strong>, you need to use the latest beta version of Tunnelblick. See <a href="cAppleSilicon.html">Tunnelblick and Apple Silicon</a> for details.</p>
+<p>Apple has made it more and more difficult to load system extensions with each new version of macOS. They have also announced that in "a future version" of macOS, you will not be able to use system extensions at all.</p>
 <h3 id="the-long-term-problem">The Long-Term Problem</h3>
 <p><a href="#what-apple-announced">Apple has announced</a> changes to macOS which affect many users of Tunnelblick.</p>
 <p>You might see a warning from Tunnelblick about this change, or you might see the following warning when connecting your VPN:</p>
@@ -135,31 +95,36 @@ need to do anything.</p>
 <p>What this means is:</p>
 <ul>
 <li>
-<p><span class="red">If you have a 'tap' VPN, a future version of macOS will cause your VPN to stop working.</span> (Apple's announcement to developers is worded differently and <em>may</em> mean that users will be able to use some mechanism to enable 'tap' VPNs to continue to work, but that interpretation is contradicted by the warning shown above. See <a href="#what-apple-announced">What Apple announced</a>, below.) You <em>may</em> be able to convert your 'tap' VPN to a 'tun' VPN which will work. However, that requires being able to change the OpenVPN configurations on both your computer and on the VPN server, and it may not provide all of the networking facilities that you are currently using. Consult your VPN service provider or OpenVPN experts and support for help with doing this.</p>
+<p><span class="red">If you have a Tap VPN, a future version of macOS will cause your VPN to stop working.</span> (Apple's announcement to developers is worded differently and <em>may</em> mean that users will be able to use some mechanism to enable Tap VPNs to continue to work, but that interpretation is contradicted by the warning shown above. See <a href="#what-apple-announced">What Apple announced</a>, below.) You <em>may</em> be able to convert your Tap VPN to a Tun VPN which will work. However, that requires being able to change the OpenVPN configurations on both your computer and on the VPN server, and it may not provide all of the networking facilities that you are currently using. Consult your VPN service provider or OpenVPN experts and support for help with doing this.</p>
 </li>
 <li>
-<p>On macOS Big Sur 11.0.1 you may be able to allow 'tap' VPNs to continue to work by <a href="#disabling-sip">disabling SIP</a>.</p>
+<p><span class="red">If you have a Tun VPN, your configurations may continue to work in future version of macOS without you doing anything, or you might need to make a simple change to the OpenVPN configuration file so that the configuration will continue to work.</span> If your OpenVPN configuration file <em>does not</em> contain a "dev-node" option, you do not need to do anything and the configuration will continue to work. If your OpenVPN configuration file <em>does</em> contain a "dev-node" option, you will need to remove that option so the configuration continues to work (see below).</p>
 </li>
-<li>
-<p>On macOS Big Sur 11.1.0 <a href="https://groups.google.com/g/tunnelblick-discuss/c/1xPXBYPJusw/m/OEq0kTenAwAJ">disabling SIP is not necessary</a>.</p>
-</li>
-<li>
-<p><span class="red">If you have a 'tun' VPN, your configurations may continue to work in future version of macOS without you doing anything, or you might need to make a simple change to the OpenVPN configuration file so that the configuration will continue to work.</span> If your OpenVPN configuration file <em>does not</em> contain a "dev-node" option, you do not need to do anything and the configuration will continue to work. If your OpenVPN configuration file <em>does</em> contain a "dev-node" option, you will need to remove that option so the configuration continues to work (see below).</p>
-</li>
-</ul>
-<h3 id="how-to-tell-if-you-have-a-tap-vpn-or-a-tun-vpn">How to tell if you have a 'tap' VPN or a 'tun' VPN</h3>
-<p>First, click to select a configuration in the left side of the "Configurations" panel of Tunnelblick's "VPN Details" window.</p>
-<p>Then, examine the title of the "VPN Details" window. If it includes:</p>
-<ul>
-<li>"- UTUN -": you have a 'tun' VPN but it does not require a system extension. You don't need to do anything.</li>
-<li>"- TUN -": you have a 'tun' VPN which requires a system extension. See below for instructions for modifying the OpenVPN configuration file so the system extension is not required.</li>
-<li>"- TAP -": you have a 'tap' VPN which requires a system extension. Contact your VPN service provider for help.</li>
 </ul>
 <h3 id="when-will-this-happen">When will this happen?</h3>
 <p>Apple does not announce its intentions in advance, so there may not be any prior notice of this change. It may appear in a version of macOS Big Sur, or may appear in a later version of macOS.</p>
 <p>For updated information about macOS Big Sur, see <a href="cBigSur.html">Tunnelblick on macOS Big Sur</a>.</p>
-<h3 id="how-to-modify-a-tun-vpn-so-it-will-continue-to-work">How to modify a 'tun' VPN so it will continue to work</h3>
-<p>You need to remove the dev-node option if it exists in the VPN's OpenVPN configuration file:</p>
+<h3 id="how-to-tell-if-a-vpn-requires-a-tun-or-tap-system-extension">How to tell if a VPN requires a Tun or Tap System Extension</h3>
+<p>Tunnelblick will warn you if one or more of your VPNs requires a Tun or Tap system extension, but you will not see this warning if you clicked "do not warn me about this again". You can "Reset Disabled Warnings" (on the "Preferences" panel of Tunnelblick's "VPN Details" window) and then quit and relaunch Tunnelblick to be warned about the problem, or you can do the following for each of your VPN configurations:</p>
+<ol>
+<li>Click to select the configuration in the left side of the "Configurations" panel of Tunnelblick's "VPN Details" window.</li>
+<li>Click on the little "gear" icon at the bottom of the list, then click "Edit OpenVPN Configuration File" or "Examine OpenVPN Configuration File".</li>
+<li>Look in the new window for lines that begin with "dev":</li>
+</ol>
+<ul>
+<li>
+<p>If a line begins with "dev tap" the VPN requires a Tap system extension.</p>
+</li>
+<li>
+<p>If a line begins with "dev-node tun", the VPN requires a Tun system extension, but you can modify the OepnVPN configuration file so the Tun system extension is not required; see below.</p>
+</li>
+<li>
+<p>Otherwise, the VPN does not require a Tun or Tap system extension.</p>
+</li>
+</ul>
+<h3 id="how-to-modify-a-tun-vpn-so-it-will-not-require-the-tun-system-extension">How to modify a Tun VPN so it will not require the Tun system extension</h3>
+<p>First, make sure the VPN does not have "Always load Tun driver" selected in the "Advanced" settings window.</p>
+<p>Then, you need to remove the dev-node option if it exists in the VPN's OpenVPN configuration file and make sure a "dev tun" option exists:</p>
 <ol>
 <li>Click to select a configuration in the left side of the "Configurations" panel of Tunnelblick's "VPN Details" window.</li>
 <li>Click on the little "gear" icon at the bottom of the list of configurations. If you can click "Make Configuration Private…", do so and have a computer administrator authorize the change. (If you can't click it, don't : )</li>
@@ -172,18 +137,14 @@ need to do anything.</p>
 <p>If you made changes to the file and did not change it from shared to private and back to shared, the next time you connect the configuration you will be asked to have a computer administrator authorize the changes.</p>
 <h3 id="if-macos-still-complains">If macOS still complains</h3>
 <h3 id="always-load-tun-or-always-load-tap">Always load tun or always load tap</h3>
-<p>If you have a 'tun' VPN which does not need to be modified, or has been modified as described above, and Tunnelblick or macOS Catalina still complains, then you have changed a Tunnelblick setting and should restore it to the default setting. All configurations should be set to "Load tun driver automatically" and "Load tap driver automatically". These settings are found on the "Connecting & Disconnecting" tab of the "Advanced" settings window. Recent versions of Tunnelblick will automatically disable loading of "tun" and "tap" system extensions on versions of macOS that do not allow Tunnelblick to load them.</p>
-<h3 id="disabling-sip">Disabling SIP</h3>
-<p>System Integrity Protection ("SIP") is a feature of macOS which helps keep your computer safe (see <a href="https://support.apple.com/HT204899">About System Integrity Protection on your Mac</a>).</p>
-<p>Although it is not recommended because it makes your computer less safe, if you are using macOS Big Sur 11.0.1, disabling SIP may allow your computer to connect a 'tap' VPN. See <a href="https://developer.apple.com/library/archive/documentation/Security/Conceptual/System_Integrity_Protection_Guide/ConfiguringSystemIntegrityProtection/ConfiguringSystemIntegrityProtection.html">Configuring System Integrity Protection</a> for instructions to disable SIP.</p>
-<p>It has been reported that on macOS Big Sur 11.1.0 <a href="https://groups.google.com/g/tunnelblick-discuss/c/1xPXBYPJusw/m/OEq0kTenAwAJ">disabling SIP is no longer necessary</a>. This has not been verified by the Tunnelblick developers.</p>
+<p>If you have a Tun VPN which does not need to be modified, or has been modified as described above, and Tunnelblick or macOS Catalina still complains, then you have changed a Tunnelblick setting and should restore it to the default setting. All configurations should be set to "Load tun driver automatically" and "Load tap driver automatically". These settings are found on the "Connecting & Disconnecting" tab of the "Advanced" settings window. Recent versions of Tunnelblick will automatically disable loading of "tun" and "tap" system extensions on versions of macOS that do not allow Tunnelblick to load them.</p>
 <h3 id="old-versions-of-tunnelblick-will-not-help">Old versions of Tunnelblick will not help</h3>
 <p>This situation is caused by changes in macOS, not a change in Tunnelblick, so older versions of Tunnelblick will not help. All Macs running OS X 7.5 or later should use the latest stable or beta version of Tunnelblick. See <a href="downloadsDeprecated.html">Deprecated Downloads</a> for a version of Tunnelblick that should be used on earlier versions of OS X and on all PowerPC Macs.</p>
 <h3 id="what-apple-announced">What Apple announced</h3>
 <p><a href="https://developer.apple.com/support/kernel-extensions/">Apple has announced</a> that "future OS releases will no longer load system extensions that use deprecated KPIs by default". Tunnelblick includes, and for some configurations loads one of two such extensions:</p>
 <ul>
-<li>'tap' configurations <em>always</em> require the use of one system extension.</li>
-<li>'tun' configurations <em>may</em> require the use of the other system extension but can easily be modified so no system extension is required.</li>
+<li>Tap configurations <em>always</em> require the use of one system extension.</li>
+<li>Tun configurations <em>may</em> require the use of the other system extension but can easily be modified so no system extension is required.</li>
 </ul>
 <p>It isn't clear what Apple means by the phrase "by default". It <em>may</em> mean that Apple will provide a mechanism for users to allow loading of system extensions that use deprecated KPIs. However, Apple's practice has been to make such mechanisms very difficult to use, and the warning in macOS Catalina does not indicate such a mechanism will be provided.</p>
 <p>Early versions of macOS Big Sur may allow system extensions to be loaded if <a href="#disabling-sip">SIP is disabled</a>, see <a href="cBigSur.html">Tunnelblick on macOS Big Sur</a>.</p>
@@ -214,7 +175,7 @@ need to do anything.</p>
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTunTapConnections.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTunTapConnections.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTunTapConnections.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTunTapConnections.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTunTapConnections.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTunTapConnections.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTunTapConnections.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2021-02-22.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2021-08-26.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

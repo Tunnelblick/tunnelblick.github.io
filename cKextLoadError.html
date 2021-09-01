@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Errors Loading System Extensions - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-08-24 18:29:21 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-09-01 23:43:00 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -70,22 +70,14 @@
 <p><strong>Important: See <a href="cTunTapConnections.html">The Future of Tun and Tap VPNs on macOS</a> for information about changes to future versions of macOS.</strong></p>
 <hr>
 <p>Tunnelblick may try to load a system extension to control the VPN tunnel. (Note: Apple previously used the terms "kext" and "kernel extension" but now uses the term "system extension".)</p>
+<p><span class="red">If your VPN requires the Tun system extension, you can – and should – <a href="cTunTapConnections.html#how-to-modify-a-tun-vpn-so-it-will-not-require-the-tun-system-extension">modify your OpenVPN configuration file so the system extension will not be required</a>.</span></p>
+<p>If you are using a Tap VPN, Tunnelblick <strong>must</strong> load a system extension for your VPN to operate.</p>
 <hr>
-<p><strong><span class="red">Note: If you are using a "tun" VPN, you can avoid needing to load a system extension by doing the following:</span></strong></p>
-<ol>
-<li><em>Make sure your OpenVPN configuration file does not include a "dev-node tun" option;</em></li>
-<li><em>Make sure your OpenVPN configuration file does include a "dev tun" option; and</em></li>
-<li><em>Make sure you have not selected "Always load Tun driver" in the "Connecting & Disconnecting" tab of Tunnelblick's "Advanced" settings window.</em></li>
-</ol>
-<p><em>The "dev-node tun" option causes OpenVPN to use a "tun" device, which requires a system extension to be loaded. If a "dev-node tun" option is not present and a "dev tun" option is present, OpenVPN will use the "utun" device which is built into macOS and does not require a system extension to be loaded.</em></p>
-<p>Also, see <a href="https://tunnelblick.net/cEditingOpenvpnConfigurationFile.html">Edit or Examine an OpenVPN Configuration File</a>.</p>
-<p>(If you are using a "tap" VPN, Tunnelblick <strong>must</strong> load a system extension for your VPN to operate.)</p>
-<hr>
+<h3 id="errors-messages-when-loading-system-extensions">Errors Messages When Loading System Extensions</h3>
 <p>If you see a message similar to one of the following:</p>
 <p><strong>Tunnelblick was not able to load a device driver (kext) that is needed to connect...</strong></p>
 <p><strong>Tunnelblick was not able to load a system extension that is needed to connect...</strong></p>
 <p>There are two possible causes for this message:</p>
-<hr>
 <p>(1) Your version of macOS did not allow the system extension to load or you did not give permission for the system extension to load:</p>
 <ul>
 <li>If you are using an Apple Silicon Mac, see <a href="cAppleSilicon.html">Tunnelblick and Apple Silicon</a>.</li>
@@ -93,20 +85,18 @@
 <li>If you are using macOS Catalina, see <a href="cCatalina.html">Tunnelblick on macOS Catalina</a>.</li>
 <li>If you are using macOS High Sierra or Mojave, see <a href="cHighSierraMojave.html">Tunnelblick on macOS High Sierra and macOS Mojave</a>.</li>
 </ul>
-<hr>
-<p>(2) There may be incompatible system extensions already loaded. Recent versions of Tunnelblick try to be "good citizens" by loading system extensions only when needed, and unloading them when they are no longer needed. However, some other VPN clients (CiscoAnyConnect SSL VPN, for example) load their own, incompatible system extensions when the computer is started and leave them loaded, whether or not a VPN connection is in use. (Some non-VPN software also loads incompatible system extensions — for example, Pogoplug loads a "com.pogoplug.xcetun" tun system extension which interferes with Tunnelblick's tun system extension. "Security" programs also may load incompatible system extensions.)</p>
-<p>To find out if an incompatible system extension is causing the problem, use the <code>kextstat | grep -v com.apple</code> command in a Terminal window. It will list all of the non-Apple system extensions that are loaded. Usually the tun and/or tap system extensions show up at or near the end of the list. Common tun/taps are:</p>
+<p>(2) There may be incompatible system extensions already loaded. Recent versions of Tunnelblick try to be "good citizens" by loading system extensions only when needed, and unloading them when they are no longer needed. However, some other VPN clients (CiscoAnyConnect SSL VPN, for example) load their own, incompatible system extensions when the computer is started and leave them loaded, whether or not a VPN connection is in use. (Some non-VPN software also loads incompatible system extensions — for example, Pogoplug loads a "com.pogoplug.xcetun" Tun system extension which interferes with Tunnelblick's Tun system extension. "Security" programs also may load incompatible system extensions.)</p>
+<p>To find out if an incompatible system extension is causing the problem, use the <code>kextstat | grep -v com.apple</code> command in a Terminal window. It will list all of the non-Apple system extensions that are loaded. Usually the Tun and/or tap system extensions show up at or near the end of the list. Common Tun/Tap system extensions are:</p>
 <ul>
-<li>net.tunnelblick.tun and net.tunnelblick.tap: These are the system extensions used by current versions of Tunnelblick. When needed, the appropriate one (tun or tap) is loaded when a connection is requested, and unloaded when it is disconnected. Since macOS 10.6.8, "tun" connections do not need to have a system extension loaded unless they include a "dev-node tun" OpenVPN option. Tunnelblick uses customized versions of the system extensions from <a href="http://tuntaposx.sourceforge.net">tuntaposx</a>, modified to have a Tunnelblick bundle ID and version. Which version Tunnelblick uses depends on the version of macOS being used.</li>
+<li>net.tunnelblick.tun and net.tunnelblick.tap: These are the system extensions used by current versions of Tunnelblick. When needed, the appropriate one (Tun or Tap) is loaded when a connection is requested, and unloaded when it is disconnected. Since macOS 10.6.8, Tun connections do not need to have a system extension loaded unless they include a "dev-node tun" OpenVPN option. Tunnelblick uses customized versions of the system extensions from <a href="http://tuntaposx.sourceforge.net">tuntaposx</a>, modified to have a Tunnelblick bundle ID and version. Which version Tunnelblick uses depends on the version of macOS being used.</li>
 <li>foo.tun and foo.tap: These are system extensions for obsolete Cisco and Tunnelblick VPN clients (and some others), loaded when a very old version of Tunnelblick is launched (and unloaded when the computer restarts). If Tunnelblick detects them, it will offer to unload them before connecting.</li>
 <li>com.cisco.cscotun: This is Cisco AnyConnect SSL VPN system extension. Cisco's installer causes it to be loaded when the computer starts.</li>
 <li>com.viscosityvpn.Viscosity.tun and com.viscosityvpn.Viscosity.tap: These are system extensions used by the Viscosity VPN client.</li>
 <li>com.pogoplug.xcetun: This system extension is associated with Pogoplug.</li>
 <li>anchorfree.tun: This system extension is associated withHotSpot Shield VPN.</li>
-<li>net.sf.tuntaposx.tap and net.sf.tuntaposx.tun: These are from <a href="http://tuntaposx.sourceforge.net">tuntaposx</a>.<br>
-But any non-Apple system extension with "tun" or "tap" in its name is likely to be causing the problem, and system extensions with other names might be causing the problem.</li>
+<li>net.sf.tuntaposx.tap and net.sf.tuntaposx.tun: These are from <a href="http://tuntaposx.sourceforge.net">tuntaposx</a>. But any non-Apple system extension with "tun" or "tap" in its name is likely to be causing the problem, and system extensions with other names might be causing the problem.</li>
 </ul>
-<p>To unload system extensions and allow Tunnelblick to load its own system extensions, use the <code>kextunload</code> Terminal command to unload each loaded tun and tap system extension individually. For example, to unload com.viscosityvpn.Viscosity.tun, type the following:</p>
+<p>To unload system extensions and allow Tunnelblick to load its own system extensions, use the <code>kextunload</code> Terminal command to unload each loaded Tun and Tap system extension individually. For example, to unload com.viscosityvpn.Viscosity.tun, type the following:</p>
 <p><code>sudo kextunload -b com.viscosityvpn.Viscosity.tun</code></p>
 <p>(The "sudo" is necessary because this command modifies the loading of a device driver. You will be asked for your administrator password, which will not appear (even as asterisks) when you type it.)</p>
 <p>If you find that restarting your computer reloads the system extension you might need to find where it is being loaded from. Common locations are</p>
@@ -127,7 +117,7 @@ But any non-Apple system extension with "tun" or "tap" in its name is likely to 
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcKextLoadError.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcKextLoadError.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcKextLoadError.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcKextLoadError.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcKextLoadError.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcKextLoadError.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcKextLoadError.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2020-12-22.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2021-08-26.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>
