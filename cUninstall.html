@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Uninstalling Tunnelblick - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-09-01 23:43:00 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-10-30 14:45:44 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -71,6 +71,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#to-use-the-uninstaller-included-in-tunnelblick">To Use the Uninstaller Included in Tunnelblick</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#to-use-the-separate-tunnelblick-uninstaller-program">To Use the Separate Tunnelblick Uninstaller Program</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#warnings-when-uninstalling">Warnings When Uninstalling</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#errors-when-uninstalling">Errors When Uninstalling</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#problem-tunnelblick-cannot-be-uninstalled-while-it-is-running">Problem: "Tunnelblick cannot be uninstalled while it is running"</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-disconnecting-all-vpns">1. Disconnecting all VPNs</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2-quitting-tunnelblick">2. Quitting Tunnelblick</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#backing-up-and-restoring-configurations-and-settings">Backing Up and Restoring Configurations and Settings</a><br></p>
 <hr>
 <h2 id="uninstalling-tunnelblick-1">Uninstalling Tunnelblick</h2>
@@ -83,8 +87,7 @@
 <p><strong>Don't uninstall Tunnelblick before updating or reinstalling</strong>. You should uninstall only if you no longer want to use Tunnelblick.</p>
 </li>
 <li>
-<p><strong>If you are alarmed by warnings when uninstalling Tunnelblick</strong>, please see<br>
-<a href="cUninstall.html#warnings-when-uninstalling">Warnings When Uninstalling</a>.</p>
+<p><strong>If you are alarmed by warnings when uninstalling Tunnelblick</strong>, please see <a href="cUninstall.html#warnings-when-uninstalling">Warnings When Uninstalling</a>.</p>
 </li>
 <li>
 <p><strong>If you intend to re-install Tunnelblick</strong>, be sure you have a backup of your Tunnelblick configurations and settings — the uninstall process will delete them. See <a href="#backing-up-and-restoring-configurations-and-settings">Backing Up and Restoring Configurations and Settings</a>, below.</p>
@@ -129,11 +132,39 @@
 <h3 id="warnings-when-uninstalling">Warnings When Uninstalling</h3>
 <p>When uninstalling Tunnelblick on some versions of macOS, the system will show warning windows. You must click the "OK" button in each of the windows to continue the uninstall:</p>
 <p><img src="/images/cUninstallMojave-warning-finder-2018-10-18.png" width="425" height="177" alt="window saying 'tunnelblick uninstaller wants access to control finder. Allowing control will provide access to documents and data in finder, and to perform actions within that app.', and two buttons labeled 'don't allow' and 'ok'.">&nbsp;<img src="/images/cUninstallMojave-warning-system-events-2018-10-18.png" width="421" height="176" alt="window saying 'tunnelblick uninstaller wants access to control system events. Allowing control will provide access to documents and data in system events, and to perform actions within that app.', and two buttons labeled 'don't allow' and 'ok'."><br>
-However, <span class="red">the third window displayed by macOS is incorrect</span>:<br>
-<img src="/images/cUninstallMojave-warning-contacts-2018-10-18.png" width="422" height="158" alt="window saying 'tunnelblick uninstaller would like to access your contacts', and two buttons labeled 'don't allow' and 'ok'."></p>
+However, <span class="red">the third window displayed by macOS is incorrect</span>: <img src="/images/cUninstallMojave-warning-contacts-2018-10-18.png" width="422" height="158" alt="window saying 'tunnelblick uninstaller would like to access your contacts', and two buttons labeled 'don't allow' and 'ok'."></p>
 <p>The first two warnings are correct: Tunnelblick Uninstaller does control Finder and System Events. It does that as part of the normal uninstall process, to access and delete files and information related to Tunnelblick.</p>
 <p><strong><span class="red">The third window displayed by macOS is completely wrong.</span></strong> Tunnelblick Uninstaller DOES NOT want to access your contacts, nor does it access your contacts or any other personal information except information you have entered in Tunnelblick settings and configurations. Tunnelblick Uninstaller <em>does</em> access some files and folders in your home directory, but only files and folders that Tunnelblick created or modified when it was installed. It also accesses corresponding files and folders of all of the other users you have created on your computer.</p>
 <p>We take your privacy very seriously. For more information, please see <a href="cPrivacy.html#tunnelblick-privacy">Tunnelblick Privacy</a>.</p>
+<hr>
+<h3 id="errors-when-uninstalling">Errors When Uninstalling</h3>
+<p>When uninstalling Tunnelblick on some versions of macOS, you may get one of the following errors:</p>
+<p><strong><em>Error in ProcessFile(): 'Not authorized to send Apple events to Finder.' (-1743)</em></strong></p>
+<p>This happens when you have previously answered "Don't Allow" when asked by macOS if you want to allow "Tunnelblick" (or "Tunnelblick Uninstaller") to control "Finder", as described above in <a href="cUninstall.html#warnings-when-uninstalling">Warnings When Uninstalling</a>. Tunnelblick must control Finder to perform some of the operations involved in uninstalling itself. To proceed with the uninstall, you must give Tunnelblick (or Tunnelblick Uninstaller) permission to control "Finder". You can do that in the System Preferences &gt;&gt; Security & Privacy &gt;&gt; Automation. Under "Tunnelblick" or "Tunnelblick Uninstaller", put a check in the box next to "Finder" and make sure there is a check next to "System Events" if it is also listed.</p>
+<p><strong><em>Error in ProcessFile(): 'Not authorized to send Apple events to System Events.' (-1743)</em></strong></p>
+<p>This happens when you have previously answered "Don't Allow" when asked by macOS if you want to allow "Tunnelblick" (or "Tunnelblick Uninstaller") to control "System Events", as described above in <a href="cUninstall.html#warnings-when-uninstalling">Warnings When Uninstalling</a>. Tunnelblick must control "System Events" to perform some of the operations involved in uninstalling itself. To proceed with the uninstall, you must give Tunnelblick (or Tunnelblick Uninstaller) permission to control "System Events". You can do that in the System Preferences &gt;&gt; Security & Privacy &gt;&gt; Automation. Under "Tunnelblick" or "Tunnelblick Uninstaller", put a check in the box next to "System Events", and make sure there is a check next to "Finder" if it is also listed.</p>
+<hr>
+<h3 id="problem-tunnelblick-cannot-be-uninstalled-while-it-is-running">Problem: "Tunnelblick cannot be uninstalled while it is running"</h3>
+<p>If you are using the separate uninstaller program, you must disconnect all VPNs and quit Tunnelblick before uninstalling.</p>
+<p>Note: you must disconnect all VPNs first, then quit Tunnelblick.</p>
+<h4 id="1-disconnecting-all-vpns">1. Disconnecting all VPNs</h4>
+<p>If you are unable to disconnect VPNS normally (from within Tunnelblick), you can disconnect them manually using Activity Monitor:</p>
+<ol>
+<li>Launch /Applications/Utilities/Activity Monitor.</li>
+<li>Click "View", then "All Processes".</li>
+<li>Sort the list by "Process Name" by clicking on the column heading "Process Name". (Reverse the order by clicking the heading again.)</li>
+<li>For each process named "openvpn", click on the "openvpn" name, click the "X" button in the toolbar, then click the "Quit" button in the new window.</li>
+</ol>
+<p><em>If, in step 4. above, all "openvpn" processes do not disappear from the list within 35 seconds, repeat step 4. but use the "Force Quit" button instead of the "Quit" button. If you do this, your network settings may be corrupted and you should restart your computer after uninstalling.</em></p>
+<h4 id="2-quitting-tunnelblick">2. Quitting Tunnelblick</h4>
+<p>if you are unable to quit Tunnelblick normally (by clicking the Tunnelblick icon in the menu bar and then clicking "Quit Tunnelblick"), you can quit Tunnelblick manually using Activity Monitor:</p>
+<ol>
+<li>Launch /Applications/Utilities/Activity Monitor.</li>
+<li>Click "View", then "All Processes".</li>
+<li>Sort the list by "Process Name" by clicking on the column heading "Process Name". (Reverse the order by clicking the heading again.)</li>
+<li>Click on the "Tunnelblick" name, click the "X" button in the toolbar, then click the "Quit" button in the new window.</li>
+</ol>
+<p><em>If, in step 4. above, the "Tunnelblick" process does not disappear from the list within 35 seconds, repeat step 4. but use the "Force Quit" button instead of the "Quit" button.</em></p>
 <hr>
 <h3 id="backing-up-and-restoring-configurations-and-settings">Backing Up and Restoring Configurations and Settings</h3>
 <p><strong><span class="red">You can use "Export Tunnelblick Setup" to save a backup copy of your Tunnelblick settings.</span></strong> See <a href="cExportingAndImportingTunnelblickSetups.html">Exporting and Importing Tunnelblick Setups</a> for details.</p>
@@ -145,7 +176,7 @@ However, <span class="red">the third window displayed by macOS is incorrect</spa
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUninstall.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUninstall.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUninstall.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUninstall.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUninstall.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUninstall.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUninstall.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2020-12-14.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2021-09-17.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>
