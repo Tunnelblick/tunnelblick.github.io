@@ -4,9 +4,9 @@
 <meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Tunnelblick on macOS Big Sur - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+<meta name="description" content="Tunnelblick on macOS Monterey - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
 <meta name="referrer" content="never">
-<title>Tunnelblick on macOS Big Sur - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+<title>Tunnelblick on macOS Monterey - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
 <link rel="stylesheet" type="text/css" href="/common/style.v8.css">
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
@@ -45,7 +45,7 @@
 </nav>
 <main>
 <div class="content">
-<div class="content-cBigSur">
+<div class="content-cMonterey">
 <table class="documents">
 <tr>
 <td class="documents-left">
@@ -65,20 +65,32 @@
 &nbsp;&nbsp;<a href="/cBeforeYouPost.html">Read Before You Post</a></p>
 </td>
 <td class="documents-right">
-<h1 id="tunnelblick-on-macos-big-sur">Tunnelblick on macOS Big Sur</h1>
+<h1 id="tunnelblick-on-macos-monterey">Tunnelblick on macOS Monterey</h1>
 <hr>
 <p><strong>Important: See <a href="cTunTapConnections.html">The Future of Tun and Tap VPNs on macOS</a> for information about changes to future versions of macOS.</strong></p>
 <hr>
-<p><span class="red"><strong>If you are using macOS Big Sur, you should use the latest version of Tunnelblick.</strong></span> You should allow Tunnelblick to automatically check for updates on the "Preferences" panel of Tunnelblick's "VPN Details" window.</p>
+<p><span class="red"><strong>If you are using macOS Monterey, you should use the latest BETA version of Tunnelblick.</strong></span> You should allow Tunnelblick to automatically check for updates on the "Preferences" panel of Tunnelblick's "VPN Details" window.</p>
 <hr>
-<p>The following is the current status of issues that have been seen using Tunnelblick on macOS Big Sur.</p>
+<p>The following is the current status of issues that have been seen using Tunnelblick on macOS Monterey.</p>
 <p>To report an issue, please follow the instructions at <a href="issues.html">Tunnelblick Issues</a>.</p>
 <hr>
 <p><span class="red"><strong>If your VPN <a href="cTunTapConnections.html#how-to-tell-if-a-vpn-requires-a-tun-or-tap-system-extension">requires a Tun or Tap system extension</a>, you must <a href="cKextsInstallation.html">install Tunnelblick's Tun and Tap system extensions</a> before connecting.</strong></span></p>
 <p><span class="red">If your VPN requires the Tun system extension, you can – and should – <a href="cTunTapConnections.html#how-to-modify-a-tun-vpn-so-it-will-not-require-the-tun-system-extension">modify your OpenVPN configuration file so the system extension will not be required</a>.</span></p>
 <hr>
+<p><span class="red"><strong>UNDER INVESTIGATION: macOS warns that Tunnelblick has "run out of application memory" or Tunnelblick becomes unresponsive and uses a huge amount of memory.</strong></span></p>
+<p>One user has reported Tunnelblick stopped responding and was using more than 50 GB of memory (about 1000 times more than is normal). This may be related to <a href="https://www.macrumors.com/2021/11/01/macos-monterey-memory-leak-user-reports/">similar problems with other applications including Apple's own Safari</a>.</p>
+<p>If this happens to you, please email <a href="mailto:developers@tunnelblick.net">developers@tunnelblick.net</a> and describe the situation.</p>
+<p>To recover from this problem, use /Applications/Utilities/Activity Monitor to quit the Tunnelblick process:</p>
+<ol>
+<li>Launch /Applications/Utilities/Activity Monitor.</li>
+<li>Click "View", then "All Processes".</li>
+<li>Sort the list by "Process Name" by clicking on the column heading "Process Name". (Reverse the order by clicking the heading again.)</li>
+<li>Click on the "Tunnelblick" name, click the "X" button in the toolbar, then click the "Quit" button in the new window.</li>
+</ol>
+<p>Quitting may take a long time. If it takes more than a few minutes, repeat step 4 but use the "Force Quit" button instead of the "Quit" button, and then restart your computer.</p>
+<hr>
 <p><span class="red"><strong>WON'T FIX: Sidecar does not work when a VPN is connected using Tunnelblick's default for a configuration.</strong></span></p>
-<p><em>(This issue is not specific to Big Sur. It is present in all versions of Sidecar.)</em></p>
+<p><em>(This issue is not specific to Monterey. It is present in all versions of Sidecar.)</em></p>
 <p>Sidecar does not work if IPv6 is disabled. By default, Tunnelblick disables IPv6 while a VPN is connected. This is done to prevent information leaks in common VPN setups (see <a href="http://www.eecs.qmul.ac.uk/~tysong/files/PETS15.pdf">A Glance through the VPN Looking Glass: IPv6 Leakage and DNS Hijacking in Commercial VPN clients</a>).</p>
 <p>To fix this problem:</p>
 <ol>
@@ -96,8 +108,8 @@
 </div>
 </main>
 <footer>
-<div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBigSur.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2021-08-26.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcMonterey.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcMonterey.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcMonterey.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcMonterey.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcMonterey.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcMonterey.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcMonterey.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
+<div class="bottom-copyright">Last updated&nbsp;2021-11-05.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>
