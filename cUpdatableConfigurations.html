@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Old Updatable Tunnelblick VPN Configurations - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-12-23 18:07:43 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2022-05-04 03:06:24 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -116,8 +116,7 @@ The new method is described <a href="cNewUpdatableConfigurations.html">here</a>.
 <li><strong>SUAllowsAutomaticUpdates</strong>: If present, must be a binary "NO".</li>
 <li><strong>SUEnableAutomaticChecks</strong>: If present, must be a binary "NO".</li>
 <li><strong>SUEnableSystemProfiling</strong>: If present, must be a binary "NO".</li>
-<li><strong>SUShowReleaseNotes</strong>: If present, must be a binary "YES".<br>
-(Some of these "must be" restrictions may be relaxed in a later version of Tunnelblick.)</li>
+<li><strong>SUShowReleaseNotes</strong>: If present, must be a binary "YES". (Some of these "must be" restrictions may be relaxed in a later version of Tunnelblick.)</li>
 </ul>
 <h2 id="nested-configurations">Nested Configurations</h2>
 <p>An updatable configuration should be constructed using "nested" configurations, that is, as VPN configurations inside the updatable configuration. A typical updatable configuration might have a structure like this, all inside <em>Name for the updatable configuration</em>.tblk:</p>
@@ -145,8 +144,7 @@ The new method is described <a href="cNewUpdatableConfigurations.html">here</a>.
 </ul>
 <p>The Info.plist of the nested configurations must include a CFBundleIdentifier which is distinct from the CFBundleIdentifier for the outer configuration, and must also include a CFBundleVersion entry, along with a TBPackageVersion entry.</p>
 <h2 id="the-update-server">The Update Server</h2>
-<p>The update mechanism uses a web server to provide update information. Minimally, that web server serves an "appcast" and,<br>
-for each available update:</p>
+<p>The update mechanism uses a web server to provide update information. Minimally, that web server serves an "appcast" and, for each available update:</p>
 <ul>
 <li>The release notes: An html page which is displayed to the user when the update is available.</li>
 <li>The updated configuration: A .zip or .dmg file of the updated Configuration, suitable for downloading.</li>
@@ -286,11 +284,7 @@ for each available update:</p>
 <p>First, make sure that your initial configuration installs correctly by dropping it on the Tunnelblick icon in the menu bar. Then make sure that your updated configuration installs properly (replacing the original) by dropping it on the Tunnelblick icon in the menu bar. Because the update process simulates a double-click on the update, these installs must work before updates will work. Making sure that the initial and update configurations work as configurations themselves, before trying to use them as updatable configurations will help isolate problems.</p>
 </li>
 <li>
-<p>Copy/paste the following command into Terminal to set a Tunnelblick preference which will add debugging info to the Console log:<br>
-<em>defaults write net.tunnelblick.tunnelblick DB-UC -bool yes</em><br>
-To remove the preference, copy/paste:<br>
-<em>defaults delete net.tunnelblick.tunnelblick DB-UC</em><br>
-The debugging information includes a lot of entries that are about the internal procedures that Tunnelblick uses to implement updatable configurations; most of these can be ignored.</p>
+<p>Copy/paste the following command into Terminal to set a Tunnelblick preference which will add debugging info to the Console log: <em>defaults write net.tunnelblick.tunnelblick DB-UC -bool yes</em> To remove the preference, copy/paste: <em>defaults delete net.tunnelblick.tunnelblick DB-UC</em> The debugging information includes a lot of entries that are about the internal procedures that Tunnelblick uses to implement updatable configurations; most of these can be ignored.</p>
 </li>
 <li>
 <p>Use the "Check Now" button on the "Preferences" panel of the "VPN Details" window to test for updates. Although Tunnelblick will check for updates when it is launched, when doing that update check Sparkle will ignore errors and not complain about them. If you do a "Check Now" check, you will get a window saying the item is up-to-date, a window offering an update, or a window indicating that an error occurred. Note: "Check Now" will first do a check for updates to the Tunnelblick application, and after you click "OK" to acknowledge that you have received that, it will check for configuration updates.</p>
@@ -324,7 +318,7 @@ The debugging information includes a lot of entries that are about the internal 
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2020-02-05.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2020-02-05.&nbsp;&nbsp;Copyright © 2015-2022 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

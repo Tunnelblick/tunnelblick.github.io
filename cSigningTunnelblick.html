@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Digitally Signing the application - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-12-23 18:07:43 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2022-05-04 03:06:24 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -68,10 +68,7 @@
 <h1 id="digitally-signing-the-application">Digitally Signing the application</h1>
 <p class="toc">On This Page<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#what-you-need">WHAT YOU NEED</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#os-x-10.9-mavericks-or-higher">OS X 10.9 ("Mavericks") or Higher</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#unsigned-application">Unsigned Application</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#code-signing-certificate">Code signing Certificate</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#designated-requirement-binary">Designated Requirement Binary</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#os-x-109-mavericks-or-higher">OS X 10.9 ("Mavericks") or Higher</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#signing-script">SIGNING SCRIPT</a><br></p>
 <p><em>Note: This page describes how to digitally sign the Tunnelblick application or a rebranded version. Please read <a href="cDigitalSignatures.html">Digital Signatures</a></em> before the rest of this page.</p>
 <h2 id="what-you-need">WHAT YOU NEED</h2>
@@ -82,15 +79,15 @@
 <li>A code signing certificate; and</li>
 <li>An optional "designated requirement" binary.</li>
 </ul>
-<h3 id="os-x-10.9-mavericks-or-higher">OS X 10.9 ("Mavericks") or Higher</h3>
+<h3 id="os-x-109-mavericks-or-higher">OS X 10.9 ("Mavericks") or Higher</h3>
 <p>You need Mac OS X 10.9 ("Mavericks") because OS X 10.10 ("Yosemite") requires applications to be signed using OS X 10.9.</p>
-<h3 id="unsigned-application">Unsigned Application</h3>
+<p>###Unsigned Application</p>
 <p>To get an unsigned version of Tunnelblick or your rebranded version, build an "Unsigned Release" of the source code using the instructions at <a href="cBuild.html">Building From Source</a>.</p>
-<h3 id="code-signing-certificate">Code signing Certificate</h3>
+<p>###Code signing Certificate</p>
 <p>The code signing certificate can be a "self-signed" certificate or a certificate from Apple. There is one difference: if you use a self-signed certificate, Gatekeeper in OS X 10.8 ("Mountain Lion") and higher may not allow the first run of the self-signed application by double-clicking it. The user will need to Control-click and click "Open". That is because the Gatekeeper default is to allow the first launch of an application only if it is signed by an Apple-recognized developer.</p>
 <p>To get a self-signed code signing certificate, use the macOS Keychain Assistant application. Apple used to have instructions on doing this but they have disappeared. They may be accessed from the Internet Archive using <a href="https://web.archive.org/web/20090119080759/http://developer.apple.com/documentation/Security/Conceptual/CodeSigningGuide/Procedures/chapter_3_section_2.html">this link</a>,</p>
 <p>To get an certificate from Apple, you must be an <a href="https://developer.apple.com">Apple Developer</a>. Request your Apple certificates and install them into your Keychain. You can do this from Xcode.</p>
-<h3 id="designated-requirement-binary">Designated Requirement Binary</h3>
+<p>###Designated Requirement Binary</p>
 <p>You can use a "designated requirement binary" to set requirements for how an application is to be signed. For example, you can require that the Info.plist's CFBundleIdentifier be "com.example.foo". Generating this binary can be done in Xcode, consult Apple's documentation. The only catch is that requirements created in some recent versions of Xcode are considered invalid by OS X 10.5 ("Lion") and will cause problems. Tunnelblick uses a signing requirements binary created on an older version of Xcode that does not cause this problem. See <a href="https://fetchsoftworks.com/fetch/blog/gatekeeper-vs-leopard-an-ongoing-tale">Gatekeeper vs. Leopard: an ongoing tale</a>.</p>
 <h2 id="signing-script">SIGNING SCRIPT</h2>
 <p>Use following script to sign Tunnelblick or a rebranded version of Tunnelblick:</p>
@@ -153,7 +150,7 @@ codesign -s "${certificate_name}"    -r "${requirements_path}"    "${app_path}"<
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcSigningTunnelblick.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcSigningTunnelblick.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcSigningTunnelblick.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcSigningTunnelblick.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcSigningTunnelblick.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcSigningTunnelblick.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcSigningTunnelblick.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2019-04-10.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2019-04-10.&nbsp;&nbsp;Copyright © 2015-2022 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

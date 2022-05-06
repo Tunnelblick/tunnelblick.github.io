@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
+<meta charset="UTF-8" lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Installing and Deleting VPN Configurations - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+<meta name="referrer" content="never">
+<title>Installing and Deleting VPN Configurations - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+<link rel="stylesheet" type="text/css" href="/common/style.v8.css">
+<link rel="icon" type="image/png" href="/common/favicon.v1.png">
+</head>
+<body>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2022-05-04 03:06:24 UTC</font></td></tr></table></center>
+<header>
+<div class="heading">
+<table>
+<tr>
+<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
+<td class="heading1">Tunnelblick</td>
+<td class="heading2">free software for OpenVPN on macOS</td>
+<td class="heading3"><a href="/cLocalizeTranslate.html">We need translators for several languages…</a></td>
+</tr>
+</table>
+</div>
+</header>
+<nav>
+<div class="topnav">
+<table class="topnav">
+<tbody>
+<tr>
+<td class="topnav-normal"><a href="/index.html" class="topnav">Home</a></td>
+<td class="topnav-normal"><a href="/downloads.html" class="topnav">Downloads</a></td>
+<td class="topnav-normal"><a href="/support.html" class="topnav">Support</a></td>
+<td class="topnav-highlight"><a href="/documents.html" class="topnav">Documents</a></td>
+<td class="topnav-normal"><a href="/issues.html" class="topnav">Issues</a></td>
+<td class="topnav-normal"><a href="/source.html" class="topnav">Source</a></td>
+<td class="topnav-normal"><a href="/contribute.html" class="topnav">Contribute</a></td>
+<td class="topnav-normal"><a href="/reachus.html" class="topnav">Contact</a></td>
+<td class="topnav-padding"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</nav>
+<main>
+<div class="content">
+<div class="content-cInstallConfigs">
+<table class="documents">
+<tr>
+<td class="documents-left">
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="/cNews.html">News</a><br>
+&nbsp;&nbsp;<a href="/cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="/czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="/cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="/cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="/cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="/cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="/cFAQ.html">FAQ</a></p>
+<p><strong><a href="https://groups.google.com/forum/#!forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="/cBeforeYouPost.html">Read Before You Post</a></p>
+</td>
+<td class="documents-right">
+<h1 id="installing-and-deleting-vpn-configurations">Installing and Deleting VPN Configurations</h1>
+<h2 id="installing-configurations">Installing Configurations</h2>
+<p>There are several ways to install VPN configurations:</p>
+<ol>
+<li>Drag an OpenVPN configuration file or a <a href="https://tunnelblick.net/cPkgs.html">Tunnelblick VPN Configuration</a> and drop it on the Tunnelblick icon in the menu bar.</li>
+<li>Execute a command to simulate the drag-and-drop described above.</li>
+<li>Install a Tunnelblick VPN Configuration at the same time Tunnelblick is installed.</li>
+<li>Install a Tunnelblick VPN Configuration from the command line.</li>
+</ol>
+<p>The first three methods require confirmation by the user and authorization from a computer administrator. The last method does not require any user interaction.</p>
+<h3 id="drag-and-drop">Drag and Drop</h3>
+<p>This is the usual way to install a VPN configuration. The user drags and drops one or more OpenVPN configuration files (".ovpn" files) or Tunnelblick VPN Configurations (".tblk" packages) onto the Tunnelblick icon in the menu bar.</p>
+<ul>
+<li>If there is not existing VPN configurations with the same name, the user will be asked if the configurations are to be shared or private.</li>
+<li>macOS asks for a computer administrator's authorization to install the configurations.</li>
+</ul>
+<h3 id="simulate-drag-and-drop">Simulate Drag and Drop</h3>
+<p>The drag and drop described above can be simulated with the following command:</p>
+<pre><code>     open   -a   /Applications/Tunnelblick.app   PATH...</code></pre>
+<p>where <code>PATH...</code> is the path or paths to the .ovpn files or .tblk configurations.</p>
+<h3 id="install-when-tunnelblick-is-installed">Install when Tunnelblick is Installed</h3>
+<p>Tunnelblick VPN Configurations can be installed at the same time Tunnelblick is installed, without requiring additional user interaction. See <a href="https://tunnelblick.net/cAutoInstall.html">Automatically Install Configurations and Forced Preferences</a>.</p>
+<h3 id="install-from-the-command-line">Install from the Command Line</h3>
+<p>Tunnelblick VPN Configurations can be installed without user interaction with a command executed as root.</p>
+<p>This method cannot be used to install an OpenVPN configuration file, but you can create a Tunnelblick VPN Configuration from an OpenVPN configuration file; see <a href="https://tunnelblick.net/cConfigT.html#creating-and-installing-a-tunnelblick-vpn-configuration">Creating and Installing a Tunnelblick VPN Configuration</a>.</p>
+<p>To install Tunnelblick VPN Configurations, execute the following command as root:</p>
+<p><code>/Applications/Tunnelblick.net/Contents/Resources/installer 0 PATH1 PATH2</code></p>
+<p>where <code>PATH1</code> is the path to a place to install the configuration:</p>
+<ul>
+<li>For a "private" configuration, ~/Library/Application Support/Tunnelblick/Configurations/NAME</li>
+<li>For a "shared" configuration, /Library/Application Support/Tunnelblick/Shared/NAME</li>
+</ul>
+<p>and <code>NAME</code> is the name you want the configuration to have, with ".tblk" added to the end of the name.</p>
+<p>and <code>PATH2</code> is the path to the Tunnelblick VPN Configuration.</p>
+<p>For example, after creating a Tunnelblick VPN Configuration at ~/Desktop/Office.tblk, you can install it as a shared configuration with</p>
+<pre><code>     /Applications/Tunnelblick.net/Contents/Resources/installer   0    /Library/Application\ Support/Tunnelblick/Shared/Office.tblk    ~/Desktop/Office.tblk</code></pre>
+<h2 id="deleting-configurations">Deleting Configurations</h2>
+<p>There are two ways to delete VPN configurations:</p>
+<ol>
+<li>Interactively from Tunnelblick's "VPN Details" window.</li>
+<li>From the command line.</li>
+</ol>
+<h3 id="deleting-configurations-interactively">Deleting Configurations Interactively</h3>
+<p>To delete configurations interactively:</p>
+<ol>
+<li>Select the configuration or configurations in the list on the left side of the "Configurations" panel of Tunnelblick's "VPN Details" window.</li>
+<li>Click the little minus-sign button ("-") at the bottom of the list .</li>
+</ol>
+<p>macOS will ask for a computer administrator's authorization to delete the configuration(s).</p>
+<h3 id="deleting-configurations-from-the-command-line">Deleting configurations from the Command Line</h3>
+<p>To delete a configuration from the command line without any user interaction, run the following command as root:</p>
+<p><code>/Applications/Tunnelblick.net/Contents/Resources/installer 8192 PATH</code></p>
+<p>where <code>PATH</code> is the path to the configuration. That path should either:</p>
+<ul>
+<li>For a "private" configuration, ~/Library/Application Support/Tunnelblick/Configurations/NAME</li>
+<li>For a "shared" configuration, /Library/Application Support/Tunnelblick/Shared/NAME</li>
+</ul>
+<p>and <code>NAME</code> is the name of the configuration, with ".tblk" added to the end of the name.</p>
+<p>For example, to delete a private configuration named "Office", execute the following command as root:</p>
+<pre><code>     /Applications/Tunnelblick.net/Contents/Resources/installer   8192    ~/Library/Application\ Support/Tunnelblick/Configurations/Office.tblk</code></pre>
+<h2 id="subfolders">Subfolders</h2>
+<p>When configurations are in subfolders, include the subfolders in the path to the configuration.</p>
+<p>For example, if a configuration to be deleted is a private configuration named "Office" which is in the "MegaCorp" subfolder of the "Clients" subfolder, use</p>
+<pre><code>     /Applications/Tunnelblick.net/Contents/Resources/installer   8192    ~/Library/Application\ Support/Tunnelblick/Configurations/Clients/MegaCorp/Office.tblk</code></pre></td>
+</tr>
+</table>
+</div>
+</div>
+</main>
+<footer>
+<div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstallConfigs.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstallConfigs.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstallConfigs.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstallConfigs.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstallConfigs.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstallConfigs.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstallConfigs.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
+<div class="bottom-copyright">Last updated&nbsp;2022-01-19.&nbsp;&nbsp;Copyright © 2015-2022 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+</footer>
+</body>
+</html>

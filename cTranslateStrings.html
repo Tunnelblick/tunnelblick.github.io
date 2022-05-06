@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Translating .strings Files - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-12-23 18:07:43 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2022-05-04 03:06:24 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -65,14 +65,14 @@
 &nbsp;&nbsp;<a href="/cBeforeYouPost.html">Read Before You Post</a></p>
 </td>
 <td class="documents-right">
-<h1 id="translating-.strings-files">Translating .strings Files</h1>
+<h1 id="translating-strings-files">Translating .strings Files</h1>
 <p>This document gives an overview of the <em>old</em> way to localize Tunnelblick, editing .strings files.</p>
 <p>For a description of the <em>new</em> way to localize Tunnelblick, see <a href="cLocalizeTranslate.html">Localizing Tunnelblick</a>.</p>
 <p>For notes about specific strings that are being translated, see <a href="cTranslationNotes.html">Translation Notes</a>.</p>
 <hr>
 <p class="toc">On This Page<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#strings-files">.strings Files</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#editing-.strings-files">Editing .strings Files</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#editing-strings-files">Editing .strings Files</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#doing-the-translations">Doing the Translations</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#if-a-string-is-the-same-in-both-languages">If a String is the Same in Both Languages</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#weird-characters-in-the-strings">Weird Characters in the Strings</a><br></p>
@@ -85,7 +85,7 @@
 </ul>
 <p>There may also be a "Removed.strings" file, which contains strings that were used in an old version of Tunnelblick but are no longer being used. They may contain useful translations.</p>
 <p>If you are the first translator for a language, you will be editing a Localizable.strings file. If you are working on a language that has been worked on before, you could be editing either aNeedsTranslation.strings file or a Localizable.strings file — it is your choice. But only edit one file, not both.</p>
-<h2 id="editing-.strings-files">Editing .strings Files</h2>
+<h2 id="editing-strings-files">Editing .strings Files</h2>
 <p>If you have Xcode, you can just double-click the files to open them in Xcode, which works fine.</p>
 <p><strong><span class="red">You can edit .strings files in <code>TextEdit</code>, but you need to open them a special way.</span></strong> If you double-click them, or just File | Open them, things might look OK, but they aren't. The .strings files are in a special format called UTF-8, and need to be opened, edited, and saved in that format or bad things happen (such as losing diacritical marks or changing characters into different characters!)</p>
 <p>To open one of the .strings files in <code>TextEdit</code>:</p>
@@ -121,9 +121,7 @@
 <p>Translation consists of replacing the second string on each line with the target language's equivalent, using the hint on the line above the strings. <strong>Please do not modify anything in the file outside of the second string.</strong></p>
 <p>"Localizable.strings" will have a "/<code>**</code> Needs Translation <code>**</code>/" comment before every line that appears to not have been translated. (A program we use to create these files decides that a line needs translating if the left-side and right-side strings are identical, which does not always mean they need translation, but is a reasonable guess.) You can (but do not need to) remove the "/<code>**</code> Needs Translation <code>**</code>/" comments on any strings that you have translated. If appropriate, it will be removed automatically when the .strings file is integrated into Tunnelblick.</p>
 <h2 id="if-a-string-is-the-same-in-both-languages">If a String is the Same in Both Languages</h2>
-<p>If a string is the same in both English and the target language, then put a hint of<br>
-<code>/** TRANSLATION SAME AS DEVELOPMENT **/</code><br>
-before the string. For example,</p>
+<p>If a string is the same in both English and the target language, then put a hint of <code>/** TRANSLATION SAME AS DEVELOPMENT **/</code> before the string. For example,</p>
 <pre><code>/** TRANSLATION SAME AS DEVELOPMENT **/ /** Button **/
 "OK" = "OK";</code></pre>
 <p>This helps the program which process the strings files understand that the string does not need translation.</p>
@@ -143,7 +141,7 @@ before the string. For example,</p>
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTranslateStrings.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTranslateStrings.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTranslateStrings.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTranslateStrings.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTranslateStrings.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTranslateStrings.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTranslateStrings.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2015-07-21.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2015-07-21.&nbsp;&nbsp;Copyright © 2015-2022 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

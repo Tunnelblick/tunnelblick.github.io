@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Frequently Asked Questions - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-12-23 18:07:43 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2022-05-04 03:06:24 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -92,9 +92,7 @@
 <ul>
 <li><strong>Explanation 1</strong>: Tunnelblick is a program that can be used to securely connect a Mac running macOS or OS X to a remote network or the Internet, bypassing untrusted networks, censorship, and eavesdropping. It does this by creating a "Virtual Private Network", or <a href="https://en.wiktionary.org/wiki/virtual_private_network">"VPN"</a> to a VPN server using a program named "OpenVPN", which is included within the Tunnelblick application. When you connect through a VPN, your computer sends all network traffic through a "tunnel" to the VPN server, which then passes on your network traffic to a local network or the Internet. It is as if you were connecting to the network or Internet through the VPN server instead of your computer. All traffic between your computer and the VPN server is encrypted.</li>
 </ul>
-<p>VPNs are primarily used two ways, or sometimes both ways simultaneously:<br>
-- To securely connect a computer to the Internet, even though it may be connecting through an untrusted network (a wireless network at a hotel or airport, for example); and<br>
-- To securely connect a computer to a company's internal network or some part of it (a branch office, for example).</p>
+<p>VPNs are primarily used two ways, or sometimes both ways simultaneously: - To securely connect a computer to the Internet, even though it may be connecting through an untrusted network (a wireless network at a hotel or airport, for example); and - To securely connect a computer to a company's internal network or some part of it (a branch office, for example).</p>
 <p>Please see <a href="https://tunnelblick.net/cPrivacy.html">Privacy and Security</a> for important information before you use Tunnelblick to attempt to make yourself anonymous on the Internet.</p>
 <p>In addition to Tunnelblick, you need access to a VPN server. Your company may provide one, or you can obtain VPN service from any of several VPN service providers, or you can use another one of your computers or a router to act as a VPN server. See <a href="cGettingVPNService.html">Getting VPN Service</a> for details.</p>
 <ul>
@@ -134,8 +132,7 @@
 <h2 id="how-do-i-install-tunnelblick">How do I install Tunnelblick?</h2>
 <p>Download the latest disk image. Double-click it and a window will open with the Tunnelblick icon and the words "Double-click to begin". Control-click the Tunnelblick icon and click "Open" to begin installation. Reinstalls, upgrades, and downgrades will be recognized and the old version of the program is moved to the Trash before installing the new version.</p>
 <h2 id="i-have-installed-tunnelblick---now-what">I have installed Tunnelblick - Now what?</h2>
-<p>Start Tunnelblick by double-clicking it in Applications. It will step you through the process of setting up configuration files. When Tunnelblick is running, it will display the Tunnelblick icon in the status bar at the top of the screen on the right. Usually, the icon is located immediately between the time display and the Spotlight icon.<br>
-Click on the Tunnelblick icon to reveal the Tunnelblick menu, then click on a configuration to connect using it, or click on "VPN Details" for a window with details for each configuration.</p>
+<p>Start Tunnelblick by double-clicking it in Applications. It will step you through the process of setting up configuration files. When Tunnelblick is running, it will display the Tunnelblick icon in the status bar at the top of the screen on the right. Usually, the icon is located immediately between the time display and the Spotlight icon. Click on the Tunnelblick icon to reveal the Tunnelblick menu, then click on a configuration to connect using it, or click on "VPN Details" for a window with details for each configuration.</p>
 <h2 id="how-do-i-uninstall-tunnelblick">How do I uninstall Tunnelblick?</h2>
 <p>See <a href="cUninstall.html">Uninstalling Tunnelblick</a>.</p>
 <h2 id="how-do-i-revert-to-an-earlier-version-of-tunnelblick">How do I revert to an earlier version of Tunnelblick?</h2>
@@ -166,13 +163,7 @@ Click on the Tunnelblick icon to reveal the Tunnelblick menu, then click on a co
 <p>You are probably using the 'user' or 'group' directive in your OpenVPN client configuration file. If you use it, the OpenVPN process will drop privileges after startup which is additional security measure. However, OpenVPN needs root privileges for restoring the route back to their original state. In short: don't use it.</p>
 <p>Tunnelblick contains the "openvpn-down-root.so" plugin for OpenVPN. Together with a per-configuration preference, this allows the use of 'user' and 'group' but it does not allow OpenVPN to restore the routes. See <a href="czUsing.html">Using Tunnelblick</a> for details on how to do this.</p>
 <h2 id="why-are-some-checkboxes-or-buttons-dimmed-and-disabled">Why are some checkboxes or buttons dimmed and disabled?</h2>
-<p>Under certain circumstances, checkboxes or buttons may be disabled and will appear dimmed — nothing happens when you click on them. Buttons and checkboxes are disabled when they cannot be used. Examples (from the VPN Details window):<br>
-- "Monitor connection" is disabled unless "Set nameserver" is selected, because "Set nameserver" is required in order to monitor the connection.<br>
-- "Share configuration" is disabled when the configuration is not a Tunnelblick VPN Configuration because only Tunnelblick VPN Configurations may be shared.<br>
-- "Disconnect" is disabled when a configuration is not connected, and "Connect" is disabled when it is already connected.<br>
-- "when computer starts" is disabled unless a configuration is shared or Deployed, because only shared or Deployed configurations may be automatically connected when the computer starts.<br>
-- "when Tunnelblick launches" and "when computer starts" are disabled unless "automatically connect" is checked, because they areonly have meaning when it is checked.<br>
-- "automatically connect", "Set nameserver", "Monitor connection", "Share configuration", and "Make configuration private" are disabled when "when computer starts" is selected. This is because you cannot directly modify them without administrator approval. To modify them, select "when Tunnelblick launches" (which will require an administrator username and password), change the settings to be the way you want, then select "when computer starts" (which will again require administrator approval).</p>
+<p>Under certain circumstances, checkboxes or buttons may be disabled and will appear dimmed — nothing happens when you click on them. Buttons and checkboxes are disabled when they cannot be used. Examples (from the VPN Details window): - "Monitor connection" is disabled unless "Set nameserver" is selected, because "Set nameserver" is required in order to monitor the connection. - "Share configuration" is disabled when the configuration is not a Tunnelblick VPN Configuration because only Tunnelblick VPN Configurations may be shared. - "Disconnect" is disabled when a configuration is not connected, and "Connect" is disabled when it is already connected. - "when computer starts" is disabled unless a configuration is shared or Deployed, because only shared or Deployed configurations may be automatically connected when the computer starts. - "when Tunnelblick launches" and "when computer starts" are disabled unless "automatically connect" is checked, because they areonly have meaning when it is checked. - "automatically connect", "Set nameserver", "Monitor connection", "Share configuration", and "Make configuration private" are disabled when "when computer starts" is selected. This is because you cannot directly modify them without administrator approval. To modify them, select "when Tunnelblick launches" (which will require an administrator username and password), change the settings to be the way you want, then select "when computer starts" (which will again require administrator approval).</p>
 <h2 id="why-are-some-checkboxes-or-buttons-missing">Why are some checkboxes or buttons missing?</h2>
 <ul>
 <li>You are using an older version of Tunnelblick which doesn't implement that checkbox or button; or</li>
@@ -196,7 +187,7 @@ Click on the Tunnelblick icon to reveal the Tunnelblick menu, then click on a co
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcFAQ.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcFAQ.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcFAQ.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcFAQ.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcFAQ.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcFAQ.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcFAQ.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2020-11-13.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2020-11-13.&nbsp;&nbsp;Copyright © 2015-2022 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

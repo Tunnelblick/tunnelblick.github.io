@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Tunnelblick VPN Configurations Details - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-12-23 18:07:43 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2022-05-04 03:06:24 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -73,14 +73,14 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#automatic-installation">Automatic Installation</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#nested-configurations">Nested Configurations</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#format">Format</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#info.plist">Info.plist</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#infoplist">Info.plist</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#preferences">Preferences</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#updown-scripts">Up/Down Scripts</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#tunnelblick-scripts">Tunnelblick Scripts</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cfbundleidentifier-conflicts">CFBundleIdentifier Conflicts</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#name-conflicts-during-installation">Name Conflicts During Installation</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#name-conflicts-after-installation">Name Conflicts After Installation</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#example-script-to-create-.tblks-with-ip-address-checking-disabled">Example Script to Create .tblks with IP Address Checking Disabled</a><br></p>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#example-script-to-create-tblks-with-ip-address-checking-disabled">Example Script to Create .tblks with IP Address Checking Disabled</a><br></p>
 <h2 id="introduction">Introduction</h2>
 <p>A Tunnelblick VPN Configuration (a "Configuration") is a folder with an extension of .tblk that contains information about one or more VPN configurations.</p>
 <ul>
@@ -129,7 +129,7 @@
                 (Optional) Tunnelblick scripts
                 (Optional, deprecated scripts) up.sh, down.sh, nomonitor.up.sh, and/or nomonitor.down.sh
                 (Optional) key, certificate, and/or other script files</code></pre>
-<h2 id="info.plist">Info.plist</h2>
+<h2 id="infoplist">Info.plist</h2>
 <p>Info.plist is optional. If it exists, it must be a <a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html">macOS property list</a> file, with keys from the following table. The only mandatory key is TBPackageVersion; all others are optional.</p>
 <table border="1px">
 <tr>
@@ -241,7 +241,7 @@
 <li>~/Library/Application Support/Tunnelblick/Configurations/<em>.ovpn and</em> .conf</li>
 </ul>
 <p>in that order. If a display name matches an earlier display name, the later configuration will be ignored and only the earlier display name will be displayed, making only the earlier configuration available.</p>
-<h2 id="example-script-to-create-.tblks-with-ip-address-checking-disabled">Example Script to Create .tblks with IP Address Checking Disabled</h2>
+<h2 id="example-script-to-create-tblks-with-ip-address-checking-disabled">Example Script to Create .tblks with IP Address Checking Disabled</h2>
 <p>Below is a bash script that creates .tblks from OpenVPN configuration files. Each .tblk includes an Info.plist that disables IP address checking. (The script can be modified to set different preferences for the configuration so IP address checking is enabled, or to enable or disable some other feature.)</p>
 <p>The .tblks can be installed (as usual) by dragging/dropping them onto the Tunnelblick icon in the menu bar. They may be dragged/dropped individually or as a group.</p>
 <p>Or the .tblks can be copied into a folder, and the folder renamed with an extension of .tblk. That (outer) .tblk can be compressed and sent to users as a single .zip file. After decompressing the .zip file, users could then drag/drop the (outer) .tblk onto the Tunnelblick icon in the menu bar to install all of the configurations at once.</p>
@@ -311,7 +311,7 @@ done</code></pre></td>
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcPkgs.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcPkgs.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcPkgs.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcPkgs.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcPkgs.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcPkgs.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcPkgs.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2020-04-02.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2020-04-02.&nbsp;&nbsp;Copyright © 2015-2022 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

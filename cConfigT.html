@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Setting up Tunnelblick - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-12-23 18:07:43 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2022-05-04 03:06:24 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -72,8 +72,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#creating-and-installing-a-tunnelblick-vpn-configuration">Creating and Installing a Tunnelblick VPN Configuration</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#modifying-a-tunnelblick-vpn-configuration">Modifying a Tunnelblick VPN Configuration</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#files-contained-in-a-tunnelblick-vpn-configuration">Files Contained in a Tunnelblick VPN Configuration</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#the-set-nameserver-check-box-and-dns-wins-settings">The "Set Nameserver" Check Box and DNS & WINS Settings</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#the-openvpn---user-and---group-options-and-openvpn-down-root.so">The OpenVPN --user and --group options and openvpn-down-root.so</a><br></p>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#the-set-nameserver-check-box-and-dns--wins-settings">The "Set Nameserver" Check Box and DNS & WINS Settings</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#the-openvpn---user-and---group-options-and-openvpn-down-rootso">The OpenVPN --user and --group options and openvpn-down-root.so</a><br></p>
 <hr>
 <p><span class="red">Stop</span> if you have a <a href="cCusDeployed.html">"Deployed" version</a> of Tunnelblick. It comes already set up — you do no need to do anything more. Just <a href="czUsing.html">start using it</a> and enjoy!</p>
 <p><span class="red">Stop</span> if you have purchased VPN service from a VPN service provider. They should provide you with configuration files and instructions on how to use them with Tunnelblick.</p>
@@ -121,12 +121,14 @@
 <li>
 <p>You can't change the contents of an installed OpenVPN configuration file that is installed as a Shared configuration. (You can convert it to be a Private configuration, edit it, and then change it back to be Shared.)</p>
 </li>
-<li>If you want to make other changes (to the key/certificate files, for example), you'll have to</li>
-</ul>
+<li>
+<p>If you want to make other changes (to the key/certificate files, for example), you'll have to</p>
 <ol>
 <li>Modify your original .tblk to include the changes (rename it to not end in ".tblk", then make the changes, then rename it to end in ".tblk" again);</li>
 <li>Drag and drop the modified .tblk onto the Tunnelblick icon in the menu bar to install it.</li>
 </ol>
+</li>
+</ul>
 <h3 id="files-contained-in-a-tunnelblick-vpn-configuration">Files Contained in a Tunnelblick VPN Configuration</h3>
 <p>The files that should be contained in a Tunnelblick VPN Configuration (the "files related to the connection" above) should all be "plain text" files:</p>
 <ul>
@@ -135,7 +137,7 @@
 <li>Any script files for the configurations. Script files must must have a .sh extension so that Tunnelblick can secure them and use them properly.</li>
 </ul>
 <hr>
-<h2 id="the-set-nameserver-check-box-and-dns-wins-settings">The "Set Nameserver" Check Box and DNS & WINS Settings</h2>
+<h2 id="the-set-nameserver-check-box-and-dns--wins-settings">The "Set Nameserver" Check Box and DNS & WINS Settings</h2>
 <p>If you are using DHCP, wish to use DNS and WINS servers at the far end of the tunnel when connected, and the VPN server you are connecting to "pushes" DNS and WINS settings to your client, select "Set nameserver". (This is the situation for most users.)</p>
 <p>If you are using DHCP, wish to use your original DNS and WINS servers when connected, and the VPN server you are connecting to does not "push" DNS or WINS settings to your client, select "Do not set nameserver".</p>
 <p>If you are using manual settings, different versions of macOS behave differently. This is due to a change in network behavior in Snow Leopard and is beyond the scope of this project to fix.</p>
@@ -151,7 +153,7 @@
 </ul>
 <p><strong>If your situation is not described above</strong> (e.g., if you use manual DNS settings and wish to use DNS servers at the far end of a tunnel when connected, or you wish to use the macOS ability to use different nameservers for different domains), you must create your own up/down scripts and select "Set nameserver".</p>
 <hr>
-<h2 id="the-openvpn---user-and---group-options-and-openvpn-down-root.so">The OpenVPN --user and --group options and openvpn-down-root.so</h2>
+<h2 id="the-openvpn---user-and---group-options-and-openvpn-down-rootso">The OpenVPN --user and --group options and openvpn-down-root.so</h2>
 <p>When using "Set nameserver" or your own down script for OpenVPN, it is usually necessary to avoid using the OpenVPN "user" and "group" options in the configuration file. These options cause OpenVPN to drop root privileges and take the privileges of the specified user and group (usually, "nobody"). If this is done, then the down script that handles restarting connections when there is a transient problem fails, because it is run without root privileges. OpenVPN usually fails, too, if your configuration performs any routing (most configurations do).</p>
 <p>However, Tunnelblick includes the "openvpn-down-root.so" plugin for OpenVPN. When this plugin is activated, OpenVPN still drops root privileges and runs as the specified user:group after a connection is made, but runs the down script run as root:wheel, so reconnecting after transient network problems can work if OpenVPN does not need to restore any routes.</p>
 <p>When you connect with a configuration that includes the "user" and/or "group" options in the configuration file, Tunnelblick will ask if you wish to use the openvpn-down-root plugin. Answer "yes" and Tunnelblick will use the plugin each time it makes a connection. OpenVPN will still be unable to make route changes after the initial connection; they have to be made in the your own customized scripts.</p>
@@ -163,7 +165,7 @@
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcConfigT.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcConfigT.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcConfigT.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcConfigT.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcConfigT.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcConfigT.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcConfigT.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2019-03-10.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2019-03-10.&nbsp;&nbsp;Copyright © 2015-2022 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Privacy and Security - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-12-23 18:07:43 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2022-05-04 03:06:24 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -68,14 +68,14 @@
 <h1 id="privacy-and-security">Privacy and Security</h1>
 <p class="toc">On This Page<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#tunnelblick-and-vpns-privacy-and-security">Tunnelblick and VPNs: Privacy and Security</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#vpns-and-anonymity-dont">VPNs and Anonymity — DON'T!</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#vpns-and-anonymity--dont">VPNs and Anonymity — DON'T!</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#vpns-and-disguised-ip-addresses">VPNs and Disguised IP Addresses</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#vpns-and-location-spoofing">VPNs and Location Spoofing</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#vpns-and-eavesdropping-and-man-in-the-middle-attacks">VPNs and Eavesdropping and Man-in-the-Middle Attacks</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#tunnelblick-privacy">Tunnelblick Privacy</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#internet-access-during-a-check-for-updates">Internet Access During a Check for Updates</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#internet-access-during-a-check-for-a-ip-address-changes">Internet Access During a Check for a IP Address Changes</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tunnelblick.net-privacy">tunnelblick.net Privacy</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tunnelblicknet-privacy">tunnelblick.net Privacy</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#general-data-protection-regulation-information">General Data Protection Regulation Information</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#logging">Logging</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#cookies">Cookies</a><br></p>
@@ -92,7 +92,7 @@
 </ul>
 <p>Tunnelblick and VPNs in general are great for the first four purposes, <strong><span class="red">but should not be used to provide anonymous Internet access.</span></strong></p>
 <p>For the rest of this document, when discussion VPNs in general, the term "VPN" will be used. When speaking of Tunnelblick in particular, "Tunnelblick" will be used.</p>
-<h3 id="vpns-and-anonymity-dont">VPNs and Anonymity — DON'T!</h3>
+<h3 id="vpns-and-anonymity--dont">VPNs and Anonymity — DON'T!</h3>
 <p>All a VPN can do to help you surf anonymously on the Internet is make your IP address appear to be something different and mix your traffic in with traffic from other users of the VPN. However, there are many ways other than the IP address that websites can use to track you and/or find out who you are. And if a government can access activity logs your VPN service provider keeps, your anonymity can be compromised that way. And powerful organizations that can "tap" the traffic to/from both you and the VPN serviced provider could, even without such logs, correlate your traffic to a VPN service provider and their outgoing traffic to the Internet.</p>
 <p>So, <strong><span class="red">DON'T USE ANY VPN FOR ANONYMITY.</span></strong> Use <a href="https://www.torproject.org">Tor</a> or something similar. (And be careful even then: <a href="https://www.schneier.com/blog/archives/2013/12/tor_user_identi.html">Tor User Identified by FBI</a>.)</p>
 <h3 id="vpns-and-disguised-ip-addresses">VPNs and Disguised IP Addresses</h3>
@@ -108,8 +108,7 @@
 <p>Note: Sufficiently powerful organizations could circumvent your https: encryption by spoofing security certificates.</p>
 <hr>
 <h2 id="tunnelblick-privacy">Tunnelblick Privacy</h2>
-<p><strong>Note: If you are alarmed by warnings when uninstalling Tunnelblick on macOS Mojave, please see<br>
-<a href="cUninstall.html#uninstalling-on-macos-mojave">Uninstalling on macOS Mojave</a>.</strong></p>
+<p><strong>Note: If you are alarmed by warnings when uninstalling Tunnelblick on macOS Mojave, please see <a href="cUninstall.html#uninstalling-on-macos-mojave">Uninstalling on macOS Mojave</a>.</strong></p>
 <p>In addition to using OpenVPN to access the Internet to set up, maintain, and tear down a VPN connection, Tunnelblick may access the Internet for two other purposes:</p>
 <ul>
 <li>During normal operation, to check for updates; and</li>
@@ -123,7 +122,7 @@
 <h3 id="internet-access-during-a-check-for-a-ip-address-changes">Internet Access During a Check for a IP Address Changes</h3>
 <p>Each Tunnelblick configuration has a setting to "Check if the apparent public IP address changed after connecting". If checked, Tunnelblick will send a request to the tunnelblick.net web server before the configuration is connected and will send another request after it is connected. These requests are done via https:, however, the fact that tunnelblick.net was accessed is available to any eavesdropper because the first request is made before a VPN connection has been established.</p>
 <hr>
-<h2 id="tunnelblick.net-privacy">tunnelblick.net Privacy</h2>
+<h2 id="tunnelblicknet-privacy">tunnelblick.net Privacy</h2>
 <p>tunnelblick.net is used for three purposes: as a website, to service update requests from the Tunnelblick application, and to service IP address check requests from the Tunnelblick application.</p>
 <h3 id="general-data-protection-regulation-information">General Data Protection Regulation Information</h3>
 <p>See <a href="https://tunnelblick.net/cGDPR.html">General Data Protection Regulation Information</a>.</p>
@@ -167,7 +166,7 @@
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcPrivacy.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcPrivacy.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcPrivacy.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcPrivacy.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcPrivacy.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcPrivacy.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcPrivacy.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2019-05-11.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2019-05-11.&nbsp;&nbsp;Copyright © 2015-2022 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

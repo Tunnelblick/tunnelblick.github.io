@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Preferences for version 3.3 - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-12-23 18:07:43 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2022-05-04 03:06:24 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -65,7 +65,7 @@
 &nbsp;&nbsp;<a href="/cBeforeYouPost.html">Read Before You Post</a></p>
 </td>
 <td class="documents-right">
-<h1 id="preferences-for-version-3.3">Preferences for version 3.3</h1>
+<h1 id="preferences-for-version-33">Preferences for version 3.3</h1>
 <p class="toc">On This Page<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#overview">Overview</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#preferences-in-the-vpn-details-window">Preferences in the "VPN Details" Window</a><br>
@@ -95,12 +95,12 @@
 <h2 id="modifying-preferences-that-are-not-in-the-vpn-details-window">Modifying Preferences That are Not in the "VPN Details" window</h2>
 <p>All other preferences can be modified by</p>
 <ul>
-<li>Forcing them (see <a href="cCusDeployed.html">"Deployed" Versions</a>).</li>
 <li>
-<p>Modifying them by using the "defaults" commands in Terminal.app. For example, to disable the display of the duration of connections in the VPN Details window, use<br>
-<code>defaults write net.tunnelblick.tunnelblick "showConnectedDurations" -bool no</code></p>
-<p>or, for Tunnelblick 3.2beta10 and earlier, use<br>
-<code>defaults write com.openvpn.tunnelblick "showConnectedDurations" -bool no</code></p>
+<p>Forcing them (see <a href="cCusDeployed.html">"Deployed" Versions</a>).</p>
+</li>
+<li>
+<p>Modifying them by using the "defaults" commands in Terminal.app. For example, to disable the display of the duration of connections in the VPN Details window, use <code>defaults write net.tunnelblick.tunnelblick "showConnectedDurations" -bool no</code></p>
+<p>or, for Tunnelblick 3.2beta10 and earlier, use <code>defaults write com.openvpn.tunnelblick "showConnectedDurations" -bool no</code></p>
 </li>
 </ul>
 <h2 id="preferences-that-control-what-tunnelblick-does">Preferences That Control What Tunnelblick Does</h2>
@@ -132,49 +132,127 @@
 </ul>
 <h2 id="preferences-that-control-what-the-user-sees">Preferences That Control What The User Sees</h2>
 <ul>
-<li><strong>menuIconSet</strong> (String): If set, specifies the name of the folder of icons that Tunnelblick should use to display the connection status in the status bar (usually, near the Spotlight icon). The default is "TunnelBlick.TBMenuIcons". The folder may appear in several locations; see <a href="cIconAnimation.html">Icon Animation</a>.</li>
-<li><strong>doNotShowOutlineViewOfConfigurations</strong> (Boolean): If set or if running on OS X 10.5 ("Leopard") or earlier, the contents of configuration folders in the "Configurations" panel will always be shown. If cleared or not present and running on OS X 10.6 ("Snow Leopard") or later, the contents of configuration folders can be hidden or shown by clicking on the disclosure triangle next to the name of the folder. The default is not present.</li>
-<li><strong>doNotShowConnectionSubmenus</strong> (Boolean): If set, each configuration is shown as a single menu item even if it is in a subfolder. (It is shown as "Connect folder1/folder2/config".). If cleared or not present, configurations in subfolders display only the subfolder name, and reveal contents of the subfolder only when moused-over. The default is not present.</li>
-<li><strong>doNotShowCheckForUpdatesNowMenuItem</strong> (Boolean): If set, the "Check for Updates Now" item on the "Options..." submenu will not be displayed. If cleared or not present, the item will be displayed. The default is not present.</li>
-<li><strong>doNotShowAddConfigurationMenuItem</strong> (Boolean): If set, the "Add a Configuration..." item on the "Options..." submenu will not be displayed. If cleared or not present, the item will be displayed. The default is not present.</li>
-<li><strong>doNotShowVpnDetailsMenuItem</strong> (Boolean): The default is not present.</li>
-<li><strong>doNotShowSuggestionOrBugReportMenuItem</strong> (Boolean): The default is not present.</li>
-<li><strong>doNotShowNotificationWindowOnMouseover</strong> (Boolean): The default is not present.</li>
-<li><strong>disableAdvancedButton</strong> (Boolean): The default is not present.</li>
-<li><strong>disableCheckNowButton</strong> (Boolean): The default is not present.</li>
-<li><strong>disableResetDisabledWarningsButton</strong> (Boolean): The default is not present.</li>
-<li><strong>disableCopyLogToClipboardButton</strong> (Boolean): The default is not present.</li>
-<li><strong>disableAddConfigurationButton</strong> (Boolean): If set, disables the '+' button. The default is not present.</li>
-<li><strong>disableRemoveConfigurationButton</strong> (Boolean): If set, disables the '-' button. The default is not present.</li>
-<li><strong>disableWorkOnConfigurationButton</strong> (Boolean): If set, disables the 'gear' button. The default is not present.</li>
-<li><strong>disableRenameConfigurationMenuItem</strong> (Boolean): The default is not present.</li>
-<li><strong>disableDuplicateConfigurationMenuItem</strong> (Boolean): The default is not present.</li>
-<li><strong>disableMakeConfigurationPrivateOrSharedMenuItem</strong> (Boolean): The default is not present.</li>
-<li><strong>disableExamineOpenVpnConfigurationFileMenuItem</strong> (Boolean): The default is not present.</li>
-<li><strong>disableShowOpenVpnLogInFinderMenuItem</strong> (Boolean): The default is not present.</li>
-<li><strong>disableDeleteConfigurationCredentialsInKeychainMenuItem</strong> (Boolean): The default is not present.</li>
-<li><strong>showConnectedDurations</strong> (Boolean): If set, the time that a configuration has been connected is displayed in the "VPN Details" window. If cleared, the time is not displayed. The default is set.</li>
-<li><strong>maximumNumberOfTabs</strong> (Number): (This preference is not used in Tunnelblick 3.2beta16 and later.) The maximum number of configurations that Tunnelblick will display in tabs (in the VPN Details window). If there are more than this many configurations, Tunnelblick will display them in a list on the left side of the VPN Details window.</li>
-<li><strong>connectionWindowDisplayCriteria</strong> (String): This controls the Notification Window display. It should have one of the following values (without the quote marks): "neverShow", "showWhenConnecting", or "showWhenChanges". The default is "showWhenConnecting".</li>
-<li><strong>welcomeURL</strong> (String): The URL for a web page that will be displayed as a welcome screen if no ...Tunnelblick.app/Contents/Resources/Deploy/Welcome/index.html file exists.</li>
-<li><strong>welcomeWidth</strong> (Number): The width of welcome display (defaults to 500 pixels).</li>
-<li><strong>welcomeHeight</strong> (Number): The height of welcome display (defaults to 500 pixels).</li>
-<li><strong>doNotShowWelcomeDoNotShowAgainCheckbox</strong> (Boolean): If present and true, the 'Do not show again' checkbox is not displayed on the welcome screen. The default is not present.</li>
-<li><strong>skipWelcomeScreen</strong> (Boolean): If present and true, the welcome screen is not displayed. The default is not present.</li>
-<li><strong>doNotShowDisconnectedNotificationWindows</strong> (Boolean): If present and true, notification (status) windows will not be displayed for configurations that are disconnected. The default is not present.</li>
+<li>
+<p><strong>menuIconSet</strong> (String): If set, specifies the name of the folder of icons that Tunnelblick should use to display the connection status in the status bar (usually, near the Spotlight icon). The default is "TunnelBlick.TBMenuIcons". The folder may appear in several locations; see <a href="cIconAnimation.html">Icon Animation</a>.</p>
+</li>
+<li>
+<p><strong>doNotShowOutlineViewOfConfigurations</strong> (Boolean): If set or if running on OS X 10.5 ("Leopard") or earlier, the contents of configuration folders in the "Configurations" panel will always be shown. If cleared or not present and running on OS X 10.6 ("Snow Leopard") or later, the contents of configuration folders can be hidden or shown by clicking on the disclosure triangle next to the name of the folder. The default is not present.</p>
+</li>
+<li>
+<p><strong>doNotShowConnectionSubmenus</strong> (Boolean): If set, each configuration is shown as a single menu item even if it is in a subfolder. (It is shown as "Connect folder1/folder2/config".). If cleared or not present, configurations in subfolders display only the subfolder name, and reveal contents of the subfolder only when moused-over. The default is not present.</p>
+</li>
+<li>
+<p><strong>doNotShowCheckForUpdatesNowMenuItem</strong> (Boolean): If set, the "Check for Updates Now" item on the "Options..." submenu will not be displayed. If cleared or not present, the item will be displayed. The default is not present.</p>
+</li>
+<li>
+<p><strong>doNotShowAddConfigurationMenuItem</strong> (Boolean): If set, the "Add a Configuration..." item on the "Options..." submenu will not be displayed. If cleared or not present, the item will be displayed. The default is not present.</p>
+</li>
+<li>
+<p><strong>doNotShowVpnDetailsMenuItem</strong> (Boolean): The default is not present.</p>
+</li>
+<li>
+<p><strong>doNotShowSuggestionOrBugReportMenuItem</strong> (Boolean): The default is not present.</p>
+</li>
+<li>
+<p><strong>doNotShowNotificationWindowOnMouseover</strong> (Boolean): The default is not present.</p>
+</li>
+<li>
+<p><strong>disableAdvancedButton</strong> (Boolean): The default is not present.</p>
+</li>
+<li>
+<p><strong>disableCheckNowButton</strong> (Boolean): The default is not present.</p>
+</li>
+<li>
+<p><strong>disableResetDisabledWarningsButton</strong> (Boolean): The default is not present.</p>
+</li>
+<li>
+<p><strong>disableCopyLogToClipboardButton</strong> (Boolean): The default is not present.</p>
+</li>
+<li>
+<p><strong>disableAddConfigurationButton</strong> (Boolean): If set, disables the '+' button. The default is not present.</p>
+</li>
+<li>
+<p><strong>disableRemoveConfigurationButton</strong> (Boolean): If set, disables the '-' button. The default is not present.</p>
+</li>
+<li>
+<p><strong>disableWorkOnConfigurationButton</strong> (Boolean): If set, disables the 'gear' button. The default is not present.</p>
+</li>
+<li>
+<p><strong>disableRenameConfigurationMenuItem</strong> (Boolean): The default is not present.</p>
+</li>
+<li>
+<p><strong>disableDuplicateConfigurationMenuItem</strong> (Boolean): The default is not present.</p>
+</li>
+<li>
+<p><strong>disableMakeConfigurationPrivateOrSharedMenuItem</strong> (Boolean): The default is not present.</p>
+</li>
+<li>
+<p><strong>disableExamineOpenVpnConfigurationFileMenuItem</strong> (Boolean): The default is not present.</p>
+</li>
+<li>
+<p><strong>disableShowOpenVpnLogInFinderMenuItem</strong> (Boolean): The default is not present.</p>
+</li>
+<li>
+<p><strong>disableDeleteConfigurationCredentialsInKeychainMenuItem</strong> (Boolean): The default is not present.</p>
+</li>
+<li>
+<p><strong>showConnectedDurations</strong> (Boolean): If set, the time that a configuration has been connected is displayed in the "VPN Details" window. If cleared, the time is not displayed. The default is set.</p>
+</li>
+<li>
+<p><strong>maximumNumberOfTabs</strong> (Number): (This preference is not used in Tunnelblick 3.2beta16 and later.) The maximum number of configurations that Tunnelblick will display in tabs (in the VPN Details window). If there are more than this many configurations, Tunnelblick will display them in a list on the left side of the VPN Details window.</p>
+</li>
+<li>
+<p><strong>connectionWindowDisplayCriteria</strong> (String): This controls the Notification Window display. It should have one of the following values (without the quote marks): "neverShow", "showWhenConnecting", or "showWhenChanges". The default is "showWhenConnecting".</p>
+</li>
+<li>
+<p><strong>welcomeURL</strong> (String): The URL for a web page that will be displayed as a welcome screen if no ...Tunnelblick.app/Contents/Resources/Deploy/Welcome/index.html file exists.</p>
+</li>
+<li>
+<p><strong>welcomeWidth</strong> (Number): The width of welcome display (defaults to 500 pixels).</p>
+</li>
+<li>
+<p><strong>welcomeHeight</strong> (Number): The height of welcome display (defaults to 500 pixels).</p>
+</li>
+<li>
+<p><strong>doNotShowWelcomeDoNotShowAgainCheckbox</strong> (Boolean): If present and true, the 'Do not show again' checkbox is not displayed on the welcome screen. The default is not present.</p>
+</li>
+<li>
+<p><strong>skipWelcomeScreen</strong> (Boolean): If present and true, the welcome screen is not displayed. The default is not present.</p>
+</li>
+<li>
+<p><strong>doNotShowDisconnectedNotificationWindows</strong> (Boolean): If present and true, notification (status) windows will not be displayed for configurations that are disconnected. The default is not present.</p>
+</li>
 <li>
 <p><strong>statusDisplayNumber</strong> (Number): If present and nonzero, a display number (generated by macOS) specifying on which display notification windows should be displayed. The default is not present, which causes notification windows to be displayed on the largest screen.</p>
 <h2 id="preferences-that-control-updates">Preferences That Control Updates</h2>
 </li>
-<li><strong>updateAutomatically</strong> (Boolean): If set, when Tunnelblick detects an update it will be downloaded and installed automatically. If cleared or not present, the user will be asked This preference may ONLY be forced; the user's normal preference is ignored because it can be changed at any time by a Sparkle check box. The default is not present.</li>
-<li><strong>updateCheckAutomatically</strong> (Boolean): If set, Tunnelblick checks for updates each time it is launched, and periodically thereafter. If cleared or not present, no checking is done. There is no default value; the user is asked if they want to enable automatic updates the first time Tunnelblick is launched and whenever the information that Tunnelblick sends when checking for an update changes (so the user can decide whether or not to include the information).</li>
-<li><strong>updateCheckInterval</strong> (String or Number): If set, the number of seconds between automatic checks for updates. If not present or empty, the default time (86,400 seconds = 24 hours) is used. If a time less than 3600 seconds (one hour) is specified, it will be changed to 3600 seconds. The default is not present.</li>
-<li><strong>updateFeedURL</strong> (String): If present, the URL to check for updates. If not present or blank, "<a href="https://tunnelblick.net/appcast.rss" class="uri">https://tunnelblick.net/appcast.rss</a>" (for Tunnelblick 3.0b24 and earlier) or "<a href="https://tunnelblick.net/updates/update.php" class="uri">https://tunnelblick.net/updates/update.php</a>" is used. This preference may ONLY be forced; the user's normal preference is ignored for security reasons. The default is not present.</li>
-<li><strong>updateSendProfileInfo</strong> (Boolean): If set, Tunnelblick will send "system profile" information to the Tunnelblick website when checking for updates. If cleared or not present, no such profile information will be sent when checking for updates. There is no default value; when the user is asked if they want to enable automatic updates the first time Tunnelblick is launched and whenever the information the profile information changes, a check box allows the user to set or clear this value.</li>
-<li><strong>updateSigned</strong> (Boolean): If set, forces Tunnelblick to update to a digitally signed version (see <a href="cDigitalSignatures.html">Tunnelblick and Digital Signatures</a>). If cleared or not present, Tunnelblick will choose a signed or unsigned version as appropriate. The default is not present.</li>
-<li><strong>updateUnsigned</strong> (Boolean): If set, forces Tunnelblick to update to a version that is <em>not</em> digitally signed (see <a href="cDigitalSignatures.html">Tunnelblick and Digital Signatures</a>). If cleared or not present, Tunnelblick will choose a signed or unsigned version as appropriate. The default is not present.</li>
-<li><strong>onlyAdminCanUpdate</strong> (Boolean): If set, update checking will be disabled unless the logged-in user is a member of the "administrator" group. If cleared or not present, update checking will be performed even if the user is not a member of the "administrator" gouger. After an update, an administrator username/password will be required to run Tunnelblick (so the new copy can secure itself). The default is not present.</li>
-<li><strong>updateUUID</strong>: This is an anonymous, unique ID string. If updateSendProfileInfo is set, this string is sent to the Tunnelblick update website when checking for updates. It allows the website to count the number of unique Tunnelblick users.</li>
+<li>
+<p><strong>updateAutomatically</strong> (Boolean): If set, when Tunnelblick detects an update it will be downloaded and installed automatically. If cleared or not present, the user will be asked This preference may ONLY be forced; the user's normal preference is ignored because it can be changed at any time by a Sparkle check box. The default is not present.</p>
+</li>
+<li>
+<p><strong>updateCheckAutomatically</strong> (Boolean): If set, Tunnelblick checks for updates each time it is launched, and periodically thereafter. If cleared or not present, no checking is done. There is no default value; the user is asked if they want to enable automatic updates the first time Tunnelblick is launched and whenever the information that Tunnelblick sends when checking for an update changes (so the user can decide whether or not to include the information).</p>
+</li>
+<li>
+<p><strong>updateCheckInterval</strong> (String or Number): If set, the number of seconds between automatic checks for updates. If not present or empty, the default time (86,400 seconds = 24 hours) is used. If a time less than 3600 seconds (one hour) is specified, it will be changed to 3600 seconds. The default is not present.</p>
+</li>
+<li>
+<p><strong>updateFeedURL</strong> (String): If present, the URL to check for updates. If not present or blank, "<a href="https://tunnelblick.net/appcast.rss" class="uri">https://tunnelblick.net/appcast.rss</a>" (for Tunnelblick 3.0b24 and earlier) or "<a href="https://tunnelblick.net/updates/update.php" class="uri">https://tunnelblick.net/updates/update.php</a>" is used. This preference may ONLY be forced; the user's normal preference is ignored for security reasons. The default is not present.</p>
+</li>
+<li>
+<p><strong>updateSendProfileInfo</strong> (Boolean): If set, Tunnelblick will send "system profile" information to the Tunnelblick website when checking for updates. If cleared or not present, no such profile information will be sent when checking for updates. There is no default value; when the user is asked if they want to enable automatic updates the first time Tunnelblick is launched and whenever the information the profile information changes, a check box allows the user to set or clear this value.</p>
+</li>
+<li>
+<p><strong>updateSigned</strong> (Boolean): If set, forces Tunnelblick to update to a digitally signed version (see <a href="cDigitalSignatures.html">Tunnelblick and Digital Signatures</a>). If cleared or not present, Tunnelblick will choose a signed or unsigned version as appropriate. The default is not present.</p>
+</li>
+<li>
+<p><strong>updateUnsigned</strong> (Boolean): If set, forces Tunnelblick to update to a version that is <em>not</em> digitally signed (see <a href="cDigitalSignatures.html">Tunnelblick and Digital Signatures</a>). If cleared or not present, Tunnelblick will choose a signed or unsigned version as appropriate. The default is not present.</p>
+</li>
+<li>
+<p><strong>onlyAdminCanUpdate</strong> (Boolean): If set, update checking will be disabled unless the logged-in user is a member of the "administrator" group. If cleared or not present, update checking will be performed even if the user is not a member of the "administrator" gouger. After an update, an administrator username/password will be required to run Tunnelblick (so the new copy can secure itself). The default is not present.</p>
+</li>
+<li>
+<p><strong>updateUUID</strong>: This is an anonymous, unique ID string. If updateSendProfileInfo is set, this string is sent to the Tunnelblick update website when checking for updates. It allows the website to count the number of unique Tunnelblick users.</p>
+</li>
 <li>
 <p><strong>doNotUnrebrandLicenseDescription</strong>: (Boolean): If set, skips the un-rebranding of the license description that appears in the Info panel. If cleared or not present, the un-rebranding will be undone although the rebranded name will be presented. Default is not present.</p>
 <h2 id="preferences-that-are-set-by-the-user-in-a-check-box">Preferences That are Set by the User in a Check Box</h2>
@@ -249,18 +327,26 @@
 </ul>
 <p>The following preferences control what happens when a setting changes to something else. All of them default to restart if not set.</p>
 <ul>
-<li><strong>-changeOtherDNSServersAction</strong> (String, as described above)</li>
-<li><strong>-changeOtherDomainAction</strong> (String, as described above)</li>
-<li><strong>-changeOtherSearchDomainAction</strong> (String, as described above)</li>
-<li><strong>-changeOtherWINSServersAction</strong> (String, as described above)</li>
-<li><strong>-changeOtherNetBIOSNameAction</strong> (String, as described above)</li>
+<li>
+<p><strong>-changeOtherDNSServersAction</strong> (String, as described above)</p>
+</li>
+<li>
+<p><strong>-changeOtherDomainAction</strong> (String, as described above)</p>
+</li>
+<li>
+<p><strong>-changeOtherSearchDomainAction</strong> (String, as described above)</p>
+</li>
+<li>
+<p><strong>-changeOtherWINSServersAction</strong> (String, as described above)</p>
+</li>
+<li>
+<p><strong>-changeOtherNetBIOSNameAction</strong> (String, as described above)</p>
+</li>
 <li>
 <p><strong>-changeOtherWorkgroupAction</strong> (String, as described above)</p>
 </li>
-<li><strong>-leasewatchOptions</strong> <span class="red">DEPRECATED</span> (String, available in Tunnelblick 3.2beta08 and later): If set, contains '-i' followed by letters indicating DNS/WINS changes that should be ignored. The default is not present. If not present and monitoring the connection, changes to the following parameters will be restored or cause a reconnection attempt:<br>
--DomainName<br>
--ServerAddresses<br>
--SearchDomains
+<li>
+<p><strong>-leasewatchOptions</strong> <span class="red">DEPRECATED</span> (String, available in Tunnelblick 3.2beta08 and later): If set, contains '-i' followed by letters indicating DNS/WINS changes that should be ignored. The default is not present. If not present and monitoring the connection, changes to the following parameters will be restored or cause a reconnection attempt: -DomainName -ServerAddresses -SearchDomains</p>
 <ul>
 <li>NetBIOSName</li>
 <li>Workgroup</li>
@@ -295,7 +381,7 @@
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2Fcz33Prefs.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2Fcz33Prefs.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2Fcz33Prefs.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2Fcz33Prefs.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2Fcz33Prefs.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2Fcz33Prefs.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2Fcz33Prefs.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2019-04-10.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2019-04-10.&nbsp;&nbsp;Copyright © 2015-2022 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Deploying Tunnelblick - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-12-23 18:07:43 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2022-05-04 03:06:24 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -118,12 +118,8 @@
 <ol>
 <li>If there is no <code>Contents/Resources/Deploy</code> folder and there is a backup folder for it, "Deploy" is restored from the backup without any user intervention. This happens when <code>Tunnelblick.app</code> is updated, either by the built-in update mechanism, or by reinstalling, upgrading, or downgrading Tunnelblick.</li>
 <li>If not already the owner, "root" is made the owner of everything in <code>Contents/Resources</code>, including "Deploy" and its contents, and of <code>Contents/Info.plist</code></li>
-<li>If not already set, the permissions of <code>Contents/Info.plist</code> and of all items within <code>Contents/Resources</code> are set to "644" (root can read/write, everyone else can read), except
+<li>If not already set, the permissions of <code>Contents/Info.plist</code> and of all items within <code>Contents/Resources</code> are set to "644" (root can read/write, everyone else can read), except - The permissions of <code>openvpnstart</code> are set to 4111 (setuid, anyone can execute) - The permissions of the standard up/down scripts, <code>installer</code>, <code>leasewatch</code>, and <code>openvpn</code> are set to 744 - The permissions of the <code>**.executable</code> files are set to 755 - The permissions of the following files in "Deploy" are given different permissions:
 <ul>
-<li>The permissions of <code>openvpnstart</code> are set to 4111 (setuid, anyone can execute)</li>
-<li>The permissions of the standard up/down scripts, <code>installer</code>, <code>leasewatch</code>, and <code>openvpn</code> are set to 744</li>
-<li>The permissions of the <code>**.executable</code> files are set to 755</li>
-<li>The permissions of the following files in "Deploy" are given different permissions:</li>
 <li><code>**.cer</code>, <code>**.crt</code>, <code>**.der</code>, <code>**.key</code>, <code>**.p12</code>, <code>**.p7b</code>, <code>**.p7c</code>, <code>**.pem</code>, and <code>**.pfx</code> files are given permissions of "600" (root can read/write, nobody else can read)</li>
 <li><code>**.sh</code> files are given permissions of "744" (root can read/write/execute, everyone else can read)</li>
 </ul>
@@ -180,23 +176,14 @@
 </ol>
 <h3 id="example">Example</h3>
 <p>If /Contents/Resources/Deploy/Menu/ contains:<br>
-<br>
 000*.runOnConnect.wait.executable<br>
-<br>
 000_.runOnLaunch.wait.executable<br>
-<br>
 001_First.addToMenu.executable<br>
-<br>
 002_Second.addToMenu.wait.executable<br>
-<br>
 003_Third.addToMenu.executable<br>
-<br>
 004_Fourth/<br>
-<br>
 Sub-1.addToMenu.executable<br>
-<br>
 Sub-2.addToMenu.executable<br>
-<br>
 005_Fifth.addToMenu.executable<br></p>
 <p>The bottom of the Tunnelblick menu will look like this:</p>
 <pre><code>    VPN Details
@@ -213,9 +200,7 @@ Sub-2.addToMenu.executable<br>
         --------
     Quit Tunnelblick</code></pre>
 <p>In this example, the prefixes <code>001_</code>, <code>002_</code>, etc. specify the order in which the items will be listed, but are removed (along with the extensions) before being displayed to the user.</p>
-<p>If the appropriate Localizable.strings file contains<br>
-“First” = “XXXXX”<br>
-“Second” = “YYYYY”</p>
+<p>If the appropriate Localizable.strings file contains “First” = “XXXXX” “Second” = “YYYYY”</p>
 <p>Then the bottom of the Tunnelblick menu will look like this:</p>
 <pre><code>    VPN Details
         --------
@@ -255,15 +240,7 @@ Sub-2.addToMenu.executable<br>
 <p>However, if <code>Contents/Resources/Deploy/</code><em><code>config-name</code></em><code>.up.sh</code>, <em><code>config-name</code></em><code>.down.sh</code>, <em><code>config-name</code></em><code>.nomonitor.up.sh</code>, or <em><code>config-name</code></em><code>.nomonitor.down.sh</code> exist, each will be used instead of the corresponding standard script.</p>
 <h2 id="what-is-needed-to-make-a-deployed-version">What is Needed to Make a Deployed Version</h2>
 <p>To make a deployed version of Tunnelblick, you need whatever is required to connect to your VPN.</p>
-<p>To be more specific, you need:<br>
-- A copy of the Tunnelblick .dmg file with Tunnelblick version 3.0b22 or later. The latest version may be downloaded from <a href="https://tunnelblick.net">the Tunnelblick website</a>.<br>
-- Use an unsigned version of the Tunnelblick .dmg if your users will store usernames/passwords/passphrases in the macOS Keychain; otherwise you may use and signed version.<br>
-- Optional: one or more OpenVPN configuration files, with extensions of ".ovpn" or ".conf".<br>
-- Optional: certificate and key files for authentication.<br>
-- Optional: shell script files, with extension ".sh", if you do not use Tunnelblick's "Set nameserver" feature. If you have shell files, they must have an extension of "sh"; otherwise they will not have execute permissions.<br>
-- Optional: "about.html" file, containing text that will be displayed in Tunnelblick's "about" window.<br>
-- Optional: "forced-preferences.plist" file, containing user preferences that you wish to override.<br>
-- Optional: other files that you want your configuration file or scripts to be able to use.</p>
+<p>To be more specific, you need: - A copy of the Tunnelblick .dmg file with Tunnelblick version 3.0b22 or later. The latest version may be downloaded from <a href="https://tunnelblick.net">the Tunnelblick website</a>. - Use an unsigned version of the Tunnelblick .dmg if your users will store usernames/passwords/passphrases in the macOS Keychain; otherwise you may use and signed version. - Optional: one or more OpenVPN configuration files, with extensions of ".ovpn" or ".conf". - Optional: certificate and key files for authentication. - Optional: shell script files, with extension ".sh", if you do not use Tunnelblick's "Set nameserver" feature. If you have shell files, they must have an extension of "sh"; otherwise they will not have execute permissions. - Optional: "about.html" file, containing text that will be displayed in Tunnelblick's "about" window. - Optional: "forced-preferences.plist" file, containing user preferences that you wish to override. - Optional: other files that you want your configuration file or scripts to be able to use.</p>
 <h2 id="how-to-make-a-deployed-version">How to Make a Deployed Version</h2>
 <pre><code>1. Create a new folder on your Desktop and rename it "Deploy"
 1. Copy any of the optional files you wish to use into the "Deploy" folder
@@ -283,9 +260,7 @@ Sub-2.addToMenu.executable<br>
 <li>Anyone with access to a deployed version of <code>Tunnelblick.app</code> can connect to its VPN(s). For example, if a deployed version of <code>Tunnelblick.app</code> is placed in /Applications, it can be accessed by any user of the computer, without requiring administrator credentials to set up secure configuration files in ~/Library/Application Support/Tunnelblick/Configurations — because ~/Library/Application Support/Tunnelblick/Configurations is not used and the configuration files are shared by all users with access to the application.</li>
 </ul>
 <h2 id="creating-a-zip-file-for-deployment">Creating a zip File for Deployment</h2>
-<p>To create a .zip file of your new version of Tunnelblick:<br>
-1. Control-click on your new version of Tunnelblick, and click "Compress Tunnelblick.app"<br>
-That's all. There is no step 2. Your .zip file has been created.</p>
+<p>To create a .zip file of your new version of Tunnelblick: 1. Control-click on your new version of Tunnelblick, and click "Compress Tunnelblick.app" That's all. There is no step 2. Your .zip file has been created.</p>
 <h2 id="creating-a-dmg-file-for-deployment">Creating a dmg File for Deployment</h2>
 <pre><code>1. Create a new folder on your Desktop and rename it "Tunnelblick"
 1. Copy whatever you want to include in the .dmg file into the folder, including your new version of `Tunnelblick.app`
@@ -304,7 +279,7 @@ That's all. There is no step 2. Your .zip file has been created.</p>
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCusDeployed.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCusDeployed.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCusDeployed.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCusDeployed.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCusDeployed.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCusDeployed.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCusDeployed.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2019-04-10.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2019-04-10.&nbsp;&nbsp;Copyright © 2015-2022 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

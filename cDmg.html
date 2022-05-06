@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Modifying the Tunnelblick Disk Image - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-12-23 18:07:43 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2022-05-04 03:06:24 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -81,8 +81,7 @@
 <h2 id="modifying-the-background-image">MODIFYING THE BACKGROUND IMAGE</h2>
 <p>To modify the background image, simply edit "background.rtf", take a screenshot (using Command-Shift-4) starting from the upper-left corner of the editing window, rename the screenshot to "background.png", and copy it into "tunnelblick/dmgFiles/background", overwriting the old version.</p>
 <h2 id="addingremoving-content-or-modifying-the-layout-of-icons-or-view-options">ADDING/REMOVING CONTENT OR MODIFYING THE LAYOUT OF ICONS OR VIEW OPTIONS</h2>
-<p>Note: According to <a href="https://www.araelium.com/dmgcanvas" class="uri">https://www.araelium.com/dmgcanvas</a>:<br>
-"In Mac OS X Snow Leopard, disk images created with background images do not display properly on Mac OS X Leopard and earlier. This is because of a change in Finder itself that affects all disk images created on Snow Leopard."</p>
+<p>Note: According to <a href="https://www.araelium.com/dmgcanvas" class="uri">https://www.araelium.com/dmgcanvas</a>: "In Mac OS X Snow Leopard, disk images created with background images do not display properly on Mac OS X Leopard and earlier. This is because of a change in Finder itself that affects all disk images created on Snow Leopard."</p>
 <p>However, setting the size of the window on Tiger/Leopard doesn't set it for Snow Leopard. So you need to use both Tiger/Leopard and Snow Leopard to adjust everything the way you want it!</p>
 <p>Do the following <strong>in Leopard or Tiger</strong>:</p>
 <ol>
@@ -95,13 +94,27 @@
 </ol>
 <p>Then, do the following <strong>in Snow Leopard:</strong></p>
 <ol>
-<li>Double-click the read-write image and then double-click the resulting Tunnelblick volume to open a window for it in the Finder.</li>
-<li>Manipulate the to resize it if necessary.</li>
-<li>Close the window.</li>
-<li>Eject the Tunnelblick volume</li>
-<li>Log out and log back in again or restart your computer. (The logout/login or restart seems to be necessary to flush the Finder's cache of data to the the .DS_Store file on the volume.)</li>
-<li>Use Disk Utility to convert TunnelblickRW.dmg to a "compressed" disk image named "TunnelblickC.dmg".</li>
-<li>Double-click Tunnelblick.dmg and verify that the window layout, view options, etc. are as desired.</li>
+<li>
+<p>Double-click the read-write image and then double-click the resulting Tunnelblick volume to open a window for it in the Finder.</p>
+</li>
+<li>
+<p>Manipulate the to resize it if necessary.</p>
+</li>
+<li>
+<p>Close the window.</p>
+</li>
+<li>
+<p>Eject the Tunnelblick volume</p>
+</li>
+<li>
+<p>Log out and log back in again or restart your computer. (The logout/login or restart seems to be necessary to flush the Finder's cache of data to the the .DS_Store file on the volume.)</p>
+</li>
+<li>
+<p>Use Disk Utility to convert TunnelblickRW.dmg to a "compressed" disk image named "TunnelblickC.dmg".</p>
+</li>
+<li>
+<p>Double-click Tunnelblick.dmg and verify that the window layout, view options, etc. are as desired.</p>
+</li>
 <li>
 <p>Use the following Terminal commands to (A) copy the volume's .DS_Store file and (B) make it visible. (Tip: drag and drop an item's icon from a Finder window to anywhere in the Terminal window to insert the absolute path to that item, followed by a space, at the Terminal window's insertion point.)</p>
 <p><code>cp -p /Volumes/Tunnelblick/.DS_Store</code> <em>path-to-dmgFiles/dotDS_Store</em></p>
@@ -121,7 +134,7 @@
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcDmg.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcDmg.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcDmg.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcDmg.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcDmg.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcDmg.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcDmg.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2019-03-11.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2019-03-11.&nbsp;&nbsp;Copyright © 2015-2022 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

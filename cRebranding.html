@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Rebranding Tunnelblick - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-12-23 18:07:43 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2022-05-04 03:06:24 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -82,13 +82,10 @@
 <p>Start Xcode 3.2.2 on Snow Leopard by double-clicking Tunnelblick.xcodeproj.</p>
 <p>Click on "Tunnelbick" at the top of the list in the left-most column to select it</p>
 <p>Project | Rename<br>
-<br>
 (wait for it to fill in the big box; there will be four items to change (for r3000, which is build 4000))</p>
 <p>Rename project to: NEWPROJECTNAME<br>
-<br>
 Click "Rename"</p>
 <p>(wait for it to finish)<br>
-<br>
 Click "OK"</p>
 <p>Close the window</p>
 <p>If Xcode says it failed to save NEWPROJECTNAME.xcodeproj, click "Close"</p>
@@ -99,58 +96,39 @@ Click "OK"</p>
 <p>In left pane, collapse Classes, Other Sources, and Resources, and then select all three.</p>
 <p>Edit | Find | Find in Project (opens "Project Find" window)</p>
 <p>Find: Tunnelblick<br>
-<br>
 Replace: NEWPROJECTNAME<br>
-<br>
 In Selected Project Items<br>
-<br>
 Textual<br>
-<br>
 Contains<br>
-<br>
 Un-check Ignore case<br>
-<br>
 Click "Find"</p>
 <p>(wait, it should find 12,035 occurrences (for r3000, which is build 4000))<br>
-<br>
 Click "Replace"</p>
 <p>Do you really want to replace 12,035 (of 12,035)...<br>
-<br>
 Click "Replace"</p>
 <p>(wait for it to finish)<br>
-<br>
 Quit Xcode, saving all changes (it is important to quit the PROGRAM completely, not just close all the windows).</p>
 <p>When rebranding Tunnelblick build 3957 and higher, also change the bundle identifier globally:</p>
 <p>Double-click NEWPROJECTNAME.xcodeproj</p>
 <p>In left pane, collapse and highlight Classes, Other Sources, and Resources</p>
 <p>Edit | Find | Find in Project (opens "Project Find" window)</p>
 <p>Find: net.tunnelblick.tunnelblick<br>
-<br>
 Replace: YOUR_OWN_BUNDLE_IDENTIFIER <em>(such as "com.example.mac-vpn-client")</em><br>
-<br>
 In Selected Project Items<br>
-<br>
 Textual<br>
-<br>
 Contains<br>
-<br>
 Un-check Ignore case<br>
-<br>
 Click "Find"</p>
 <p>(wait, it should get 108 occurrences (for r3000, which is build 4000))<br>
-<br>
 Click "Replace"</p>
 <p>Do you really want to replace 108 (of 108)...<br>
-<br>
 Click "Replace"</p>
 <p>(wait for it to finish)<br>
-<br>
 Quit Xcode, saving all changes (it is important to quit the PROGRAM completely, not just close all the windows).</p>
 <p>Deal with Sparkle update signatures (see <a href="cDigitalSignatures.html">Digital Signatures</a>):</p>
 <ul>
 <li>If you are signing the Sparkle updates, replace ....../tunnelblick/dsa_pub.pem file with your own file.</li>
-<li>If you are not signing the Sparkle updates, remove the "SUPublicDSAKeyFile" entry from ....../tunnelblick/Info.plist.<br>
-Finally, if you are not signing the application yourself, after you have built the rebranded application, copy "tun-signed.kext" and "tap-signed.kext" from the latest beta version of Tunnelblick into your application's "Contents/Resources" folder.</li>
+<li>If you are not signing the Sparkle updates, remove the "SUPublicDSAKeyFile" entry from ....../tunnelblick/Info.plist. Finally, if you are not signing the application yourself, after you have built the rebranded application, copy "tun-signed.kext" and "tap-signed.kext" from the latest beta version of Tunnelblick into your application's "Contents/Resources" folder.</li>
 </ul>
 </td>
 </tr>
@@ -160,7 +138,7 @@ Finally, if you are not signing the application yourself, after you have built t
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRebranding.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRebranding.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRebranding.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRebranding.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRebranding.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRebranding.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRebranding.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2016-09-18.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2016-09-18.&nbsp;&nbsp;Copyright © 2015-2022 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

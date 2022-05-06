@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="AppleScript Support - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-12-23 18:07:43 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2022-05-04 03:06:24 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -91,42 +91,21 @@
 <hr>
 <h2 id="examples">Examples</h2>
 <p>tell application "Tunnelblick"</p>
-<p>get configurations<br>
--&gt; {configuration "Work", configuration "Work-Development", configuration "Home", configuration "Test"}</p>
-<p>disconnect all<br>
--&gt; 0</p>
-<p>connect "Work-Development"<br>
--&gt; true</p>
-<p>disconnect (get name of second configuration)<br>
-get name of configuration 2<br>
--&gt; "Work-Development"<br>
-disconnect "Work-Development"<br>
--&gt; true</p>
-<p>connect (get name of first configuration where state = "EXITING")<br>
-get name of configuration 1 whose state = "EXITING"<br>
--&gt; "Work"<br>
-connect "Work"<br>
--&gt; true</p>
-<p>disconnect all except when computer starts<br>
--&gt; 1</p>
-<p>get state of second configuration<br>
--&gt; "EXITING"</p>
-<p>get state of first configuration where name = "Work"<br>
--&gt; "EXITING"</p>
-<p>get name of configurations<br>
--&gt; {"Work", "Work-Development", "Home", "Test"}</p>
-<p>get state of configurations<br>
--&gt; {"EXITING", "EXITING", "EXITING", "EXITING"}</p>
-<p>get autoconnect of configurations<br>
--&gt; {"NO", "NO", "NO", "NO"}</p>
-<p>save username "john.bull" for "Work"<br>
--&gt; 1</p>
-<p>save password "password123" for "Work"<br>
--&gt; 1</p>
-<p>save passphrase "passphrase123" for "Work"<br>
--&gt; 1</p>
-<p>delete all credentials for "Work"<br>
--&gt; 1</p>
+<p>get configurations -&gt; {configuration "Work", configuration "Work-Development", configuration "Home", configuration "Test"}</p>
+<p>disconnect all -&gt; 0</p>
+<p>connect "Work-Development" -&gt; true</p>
+<p>disconnect (get name of second configuration) get name of configuration 2 -&gt; "Work-Development" disconnect "Work-Development" -&gt; true</p>
+<p>connect (get name of first configuration where state = "EXITING") get name of configuration 1 whose state = "EXITING" -&gt; "Work" connect "Work" -&gt; true</p>
+<p>disconnect all except when computer starts -&gt; 1</p>
+<p>get state of second configuration -&gt; "EXITING"</p>
+<p>get state of first configuration where name = "Work" -&gt; "EXITING"</p>
+<p>get name of configurations -&gt; {"Work", "Work-Development", "Home", "Test"}</p>
+<p>get state of configurations -&gt; {"EXITING", "EXITING", "EXITING", "EXITING"}</p>
+<p>get autoconnect of configurations -&gt; {"NO", "NO", "NO", "NO"}</p>
+<p>save username "john.bull" for "Work" -&gt; 1</p>
+<p>save password "password123" for "Work" -&gt; 1</p>
+<p>save passphrase "passphrase123" for "Work" -&gt; 1</p>
+<p>delete all credentials for "Work" -&gt; 1</p>
 <p>end tell</p>
 </td>
 </tr>
@@ -136,7 +115,7 @@ connect "Work"<br>
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAppleScriptSupport.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAppleScriptSupport.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAppleScriptSupport.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAppleScriptSupport.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAppleScriptSupport.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAppleScriptSupport.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAppleScriptSupport.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2021-06-23.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2021-06-23.&nbsp;&nbsp;Copyright © 2015-2022 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

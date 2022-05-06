@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="New Updatable Configurations - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-12-23 18:07:43 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2022-05-04 03:06:24 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -71,11 +71,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#introduction">Introduction</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#what-the-user-sees">What the User Sees</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#how-to-make-a-configuration-updatable">How to Make a Configuration Updatable</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#the-info.plist">The Info.plist</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#the-infoplist">The Info.plist</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#the-two-files">The two files</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version.txt">version.txt</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#config.tblk.zip">config.tblk.zip</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#creating-a-.zip-file">Creating a .zip File</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#versiontxt">version.txt</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#configtblkzip">config.tblk.zip</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#creating-a-zip-file">Creating a .zip File</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#examples">Examples</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#debugging">Debugging</a><br></p>
 <h2 id="introduction">Introduction</h2>
@@ -103,7 +103,7 @@ The old method is described <a href="cUpdatableConfigurations.html">here</a>.</p
 <li>Include an Info.plist file in the configuration with entries to identify the configuration's version number and a URL for obtaining update information; and</li>
 <li>Provide Internet access to two files.</li>
 </ol>
-<h3 id="the-info.plist">The Info.plist</h3>
+<h3 id="the-infoplist">The Info.plist</h3>
 <p>The Info.plist file is a simple XML file containing keys and values. The specific entries required for updating are:</p>
 <ul>
 <li><strong>CFBundleVersion</strong>: the version number of the configuration. It must consist of digits and zero, one, or two periods, e.g. "104", "1.26", "1.33.6". It must <strong>not</strong> include a line terminator.</li>
@@ -122,9 +122,9 @@ The old method is described <a href="cUpdatableConfigurations.html">here</a>.</p
 <li>URL/config.tblk.zip</li>
 </ul>
 <p>For example, if TBConfigurationUpdateURL is "<a href="https://example.com/updates/123" class="uri">https://example.com/updates/123</a>", a GET request to "<a href="https://example.com/updates/123/version.txt" class="uri">https://example.com/updates/123/version.txt</a>" must return the version number of the update, and a GET request to "<a href="https://example.com/updates/123/config.tblk.zip" class="uri">https://example.com/updates/123/config.tblk.zip</a>" must return a .zip of a single Tunnelblick VPN Configuration (".tblk") of the new configuration.</p>
-<h3 id="version.txt">version.txt</h3>
+<h3 id="versiontxt">version.txt</h3>
 <p>version.txt must contain only the version number. It must <strong>not</strong> include a line terminator.</p>
-<h3 id="config.tblk.zip">config.tblk.zip</h3>
+<h3 id="configtblkzip">config.tblk.zip</h3>
 <p>config.tblk.zip must contain a zipped copy of a .tblk.</p>
 <p>The .tblk from which config.tblk.zip is created can have any name; the name will not be used because the existing name for the configuration (which may have been modified by the user) will be preserved. It must have the following folder and file structure:</p>
 <pre>
@@ -143,7 +143,7 @@ The old method is described <a href="cUpdatableConfigurations.html">here</a>.</p
 <li>If the update is done <strong>with</strong> a computer administrator's authorization, the final, updated .tblk will not contain the original <code>user.key</code> file.</li>
 </ul>
 <p>(That's because the "update" being done with a computer administrator's authorization is not really an "update", it is an "installation", and completely replaces the old configuration with the new one.)</p>
-<h3 id="creating-a-.zip-file">Creating a .zip File</h3>
+<h3 id="creating-a-zip-file">Creating a .zip File</h3>
 <p>You can create config.tblk.zip in Finder by right-clicking (or Control-clicking) on the .tblk and selecting "Compress...", then renaming the file to "config.tblk.zip". (The name of the .zip file that will be created is the name of the .tblk with ".zip" added at the end, so unless it is named "config.tblk", you must rename the .zip file to "config.tblk.zip" before uploading it to your webserver.)</p>
 <p>You can also create a .zip using the command line:</p>
 <pre>
@@ -195,7 +195,7 @@ The old method is described <a href="cUpdatableConfigurations.html">here</a>.</p
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcNewUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcNewUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcNewUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcNewUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcNewUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcNewUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcNewUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2020-02-06.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2020-02-06.&nbsp;&nbsp;Copyright © 2015-2022 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

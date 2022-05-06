@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Old Release Notes - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-12-23 18:07:43 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2022-05-04 03:06:24 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -68,18 +68,18 @@
 <h1 id="old-release-notes">Old Release Notes</h1>
 <p class="toc">On This Page<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#newer-versions">Newer Versions</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-3.6">Version 3.6</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-3.5">Version 3.5</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-3.4">Version 3.4</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-3.3">Version 3.3</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-3.2">Version 3.2</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-3.1">Version 3.1</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-3.0">Version 3.0</a><br></p>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-36">Version 3.6</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-35">Version 3.5</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-34">Version 3.4</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-33">Version 3.3</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-32">Version 3.2</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-31">Version 3.1</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-30">Version 3.0</a><br></p>
 <hr>
 <h2 id="newer-versions">Newer Versions</h2>
 <p>Release notes for newer versions are available on the <a href="cRlsNotes.html">Release Notes page</a>.</p>
 <hr>
-<h2 id="version-3.6">Version 3.6</h2>
+<h2 id="version-36">Version 3.6</h2>
 <p><strong>3.6.10 build 4760 (2017-01-16)</strong></p>
 <ul>
 <li>Includes updated translations.</li>
@@ -241,8 +241,7 @@
 <li>Fixes several bad links to Google Code.</li>
 </ul>
 <hr>
-<p><strong>3.6.6 build 4582 (2016-08-25)</strong><br>
-<strong>3.6.6beta02 build 4581 (2016-07-18)</strong></p>
+<p><strong>3.6.6 build 4582 (2016-08-25)</strong> <strong>3.6.6beta02 build 4581 (2016-07-18)</strong></p>
 <ul>
 <li>Enables strict transport security when accessing tunnelblick.net (for updates and IP address checks).</li>
 <li>Adds new popup help for the "Place icon near the Spotlight icon" checkbox.</li>
@@ -544,7 +543,7 @@
 <li>Fixes typos in help for the 'Appearances' panel.</li>
 </ul>
 <hr>
-<h2 id="version-3.5">Version 3.5</h2>
+<h2 id="version-35">Version 3.5</h2>
 <p><strong>3.5.25 build 4270.5160 (2018-09-29) <span class="red">(SECURITY UPDATE)</span></strong></p>
 <ul>
 <li>Includes <a href="https://www.openssl.org/news/openssl-1.0.2-notes.html">OpenSSL 1.0.2p</a> instead of 1.0.2o.</li>
@@ -766,7 +765,7 @@
 <li>Fixes a problem that caused the 'tun' kext to not be loaded even if 'dev-node tun' was specified in the OpenVPN configuration file.</li>
 </ul>
 <hr>
-<h2 id="version-3.4">Version 3.4</h2>
+<h2 id="version-34">Version 3.4</h2>
 <p><strong>3.4.4 build 4055.4236 (2015-03-19)</strong></p>
 <ul>
 <li>Includes OpenSSL 1.0.1m. See <a href="https://www.openssl.org/news/secadv_20150319.txt">OpenSSL Security Advisory 19 Mar 2015</a>.</li>
@@ -897,15 +896,19 @@
 <hr>
 <p><strong>3.4beta30 build 3893 (2014-07-08)</strong></p>
 <ul>
-<li>Includes major enhancements to installing configurations:
+<li>
+<p>Includes major enhancements to installing configurations:</p>
 <ul>
 <li>Installs OpenVPN configuration files ('.ovpn' or '.conf' files) when they are double-clicked.</li>
 <li>Installs OpenVPN configuration files automatically if they are in a 'auto-install' or '.auto-install' folder when Tunnelblick is installed.</li>
 <li>Multiple OpenVPN configuration files may be included in a Tunnelblick VPN Configuration ('.tblk'); when the .tblk is installed, each of the OpenVPN configurations will be installed as a separate configuration.</li>
-<li>Does more extensive checking of OpenVPN configuration files:</li>
+<li>Does more extensive checking of OpenVPN configuration files:
+<ul>
 <li>They must have correct paths (relative or absolute) to key, certificate, and other files.</li>
 <li>They must not contain 'Windows only' options.</li>
 <li>They must not contain options reserved for use by Tunnelblick.</li>
+</ul>
+</li>
 <li>Adds an 'Apply to all' checkbox when installing configurations.</li>
 <li>Allows non-printable characters (such as Unicode characters) anywhere in an OpenVPN configuration file.</li>
 </ul>
@@ -1207,10 +1210,12 @@
 <li>
 <p>Includes a new status icon (the icon in the menu bar) more in keeping with recent OS X aesthetics and which includes Retina images. (The old icon may be selected as the 'Tunnelblick 3.3 icon' on the Appearance panel of the 'VPN Details' window.)</p>
 </li>
-<li>Changes to Tunnelblick's handling of computer sleep:</li>
-<li>Adds a 'Disconnect when computer goes to sleep' checkbox on the 'Advanced' settings window; it is checked by default.</li>
 <li>
-<p>Before reconnecting any configurations after the computer wakes up from sleep, Tunnelblick waits for an Internet connection if checking that the IP address changed is allowed; or waits for a timeout period (the default is five seconds) if it is not.</p>
+<p>Changes to Tunnelblick's handling of computer sleep:</p>
+<ul>
+<li>Adds a 'Disconnect when computer goes to sleep' checkbox on the 'Advanced' settings window; it is checked by default.</li>
+<li>Before reconnecting any configurations after the computer wakes up from sleep, Tunnelblick waits for an Internet connection if checking that the IP address changed is allowed; or waits for a timeout period (the default is five seconds) if it is not.</li>
+</ul>
 </li>
 <li>
 <p>Allows selection of the display on which notification windows will be shown if multiple displays are available.</p>
@@ -1354,12 +1359,14 @@
 <hr>
 <p><strong>3.4beta10 build 3614 (2013-10-05)</strong></p>
 <ul>
-<li>Includes additional security checking when Tunnelblick is launched:</li>
+<li>
+<p>Includes additional security checking when Tunnelblick is launched:</p>
+<ul>
 <li>Verifies the digital signature of the Sparkle framework.</li>
 <li>Verifies that kexts and digital signatures are secured.</li>
 <li>Verifies that everything in the application is writable only by root.</li>
-<li>
-<p>Checks that the system folders used by Tunnelblick are secure.</p>
+<li>Checks that the system folders used by Tunnelblick are secure.</li>
+</ul>
 </li>
 <li>
 <p>Includes better error checking and reporting when installing a Tunnelblick VPN Configuration.</p>
@@ -1437,13 +1444,14 @@
 </ul>
 <p>Note: This feature may be used to revert to the latest stable version from a later beta version: if this is un-checked in a beta version, Tunnelblick will offer to install the latest stable version, which may be a 'downgrade' from the beta version to an earlier stable version.</p>
 <ul>
-<li>Uses new URLs when checking for updates:</li>
-<li>'<a href="https://www.tunnelblick.net/appcast-s.rss" class="uri">https://www.tunnelblick.net/appcast-s.rss</a>' to check for new stable versions,<br>
-and</li>
+<li>
+<p>Uses new URLs when checking for updates:</p>
+<ul>
+<li>'<a href="https://www.tunnelblick.net/appcast-s.rss" class="uri">https://www.tunnelblick.net/appcast-s.rss</a>' to check for new stable versions, and</li>
 <li>'<a href="https://www.tunnelblick.net/appcast-b.rss" class="uri">https://www.tunnelblick.net/appcast-b.rss</a>' to check for new beta versions.</li>
 </ul>
 <p>The URL of customized or Deployed versions of Tunnelblick that contain a non-standard update feed URL have '-s' or '-b' appended to the last component of the URL before the extension (e.g. '<a href="https://example.com/ccc.ddd" class="uri">https://example.com/ccc.ddd</a>' becomes '<a href="https://example.com/ccc-s.ddd" class="uri">https://example.com/ccc-s.ddd</a>' or '<a href="https://example.com/ccc-b.ddd" class="uri">https://example.com/ccc-b.ddd</a>' to check for stable and beta versions, respectively).</p>
-<ul>
+</li>
 <li>
 <p>Updates several Dutch (NL) translations; a Italian (IT) translation, and a Chinese (simplified) translation.</p>
 </li>
@@ -1495,7 +1503,7 @@ and</li>
 <p>Fixes a typo in message sent to the Console Log about 'login intems' (changed to 'login items').</p>
 </li>
 </ul>
-<h2 id="version-3.3">Version 3.3</h2>
+<h2 id="version-33">Version 3.3</h2>
 <p><strong>3.3.4 build 3518.3872 (2014-06-12)</strong></p>
 <ul>
 <li>Includes OpenSSL library version 1.0.1h, which fixes several security vulnerabilities (see <a href="https://www.openssl.org/news/secadv_20140605.txt">OpenSSL Security Advisory 05 Jun 2014</a>).</li>
@@ -1583,15 +1591,14 @@ and</li>
 <li>
 <p>Adds a new checkbox in the 'Updates' section of the 'Preferences' panel: 'Check for updates to beta versions', which controls the 'updateCheckBetas' preference. If checked, Tunnelblick will check for new beta versions of Tunnelblick that are available for update, otherwise, Tunnelblick will check for new stable versions. Checked by default when running a beta version, unchecked by default when running a stable version. Note: If this is un-checked in a beta version, Tunnelblick will offer to install the latest stable version, which may be a 'downgrade' from the beta version to an earlier stable version.</p>
 </li>
-<li>Uses new URLs when checking for updates:</li>
-<li>'<a href="https://www.tunnelblick.net/appcast-s.rss" class="uri">https://www.tunnelblick.net/appcast-s.rss</a>' to check for new stable versions,<br>
-and</li>
 <li>
-<p>'<a href="https://www.tunnelblick.net/appcast-b.rss" class="uri">https://www.tunnelblick.net/appcast-b.rss</a>' to check for new beta versions.</p>
-</li>
+<p>Uses new URLs when checking for updates:</p>
+<ul>
+<li>'<a href="https://www.tunnelblick.net/appcast-s.rss" class="uri">https://www.tunnelblick.net/appcast-s.rss</a>' to check for new stable versions, and</li>
+<li>'<a href="https://www.tunnelblick.net/appcast-b.rss" class="uri">https://www.tunnelblick.net/appcast-b.rss</a>' to check for new beta versions.</li>
 </ul>
 <p>The URL of customized or Deployed versions of Tunnelblick that contain a non- standard update feed URL have '-s' or '-b' appended to the last component of the URL before the extension (e.g. '<a href="https://example.com/ccc.ddd" class="uri">https://example.com/ccc.ddd</a>' becomes '<a href="https://example.com/ccc-s.ddd" class="uri">https://example.com/ccc-s.ddd</a>' or '<a href="https://example.com/ccc-b.ddd" class="uri">https://example.com/ccc-b.ddd</a>' to check for stable and beta versions, respectively).</p>
-<ul>
+</li>
 <li>
 <p>Removed unused files English.lproj/Description.rtf and English.lproj/Credits.rtf.</p>
 </li>
@@ -1776,12 +1783,14 @@ and</li>
 <hr>
 <p><strong>3.3beta52 build 3352 (2013-05-20)</strong></p>
 <ul>
-<li>Fixes problems converting an OpenVPN configuration file that:</li>
+<li>
+<p>Fixes problems converting an OpenVPN configuration file that:</p>
+<ul>
 <li>Uses files with extensions that Tunnelblick does not know how to secure properly; or</li>
 <li>Does not end with a linefeed; or</li>
 <li>Has '[options; or</li>
-<li>
-<p>Has a path component that starts with a dot (".").</p>
+<li>Has a path component that starts with a dot (".").</li>
+</ul>
 </li>
 <li>
 <p>Fixes a problem that caused Tunnelblick to be unable to install a Tunnelblick VPN Configuration (".tblk") that has a path component that starts with a dot (".").</p>
@@ -1824,12 +1833,14 @@ and</li>
 <hr>
 <p><strong>3.3beta48 build 3292 (2013-05-08)</strong></p>
 <ul>
-<li>Allows install and launch of a 'Deployed' version of Tunnelblick:</li>
+<li>
+<p>Allows install and launch of a 'Deployed' version of Tunnelblick:</p>
+<ul>
 <li>If it is a 'rebranded' version of Tunnelblick (source code modified to use a different name); and</li>
 <li>If Info.plist does not have 'tunnelblick.net' in the 'updateFeedURL' forced preference (or in SUFeedURL if there is no 'updateFeedURL' forced preference); and</li>
 <li>If Info.plist does not have 'net.tunnelblick' in the CFBundleIdentifier; and</li>
-<li>
-<p>All copies of the program include the Deploy folder. (Even updates must include the Deploy folder. Udpates did not previously require the Deploy folder because it would be restored from backups maintained by the program. The program no longer maintains backups.)</p>
+<li>All copies of the program include the Deploy folder. (Even updates must include the Deploy folder. Udpates did not previously require the Deploy folder because it would be restored from backups maintained by the program. The program no longer maintains backups.)</li>
+</ul>
 </li>
 <li>
 <p>Allows the 'skipWarningAboutNoSignature' preference to be forced. This preference inhibits warnings about the application not being digitally signed.</p>
@@ -1918,11 +1929,13 @@ and</li>
 <li>
 <p>Replaces OpenVPN version 2.3alpha1 with version 2.3.1, and runs OpenVPN, OpenSSL, and LZO in 64-bit mode when it is available (Intel only) — many thanks to HAROLD MOLINA-BULLA.</p>
 </li>
-<li>Enhances installation of Tunnelblick VPN Configurations with improved error detection and correction.</li>
+<li>
+<p>Enhances installation of Tunnelblick VPN Configurations with improved error detection and correction.</p>
+<ul>
 <li>The user can now replace an existing configuration with a new one.</li>
 <li>Tunnelblick now complains about files referenced in the OpenVPN configuration file that do not exist or are accessed via a path instead of just a filename.</li>
-<li>
-<p>Tunnelblick now removes CR characters from script files.</p>
+<li>Tunnelblick now removes CR characters from script files.</li>
+</ul>
 </li>
 <li>
 <p>Changes the 'Copy Log to Clipboard' button to the 'Copy Diagnostic Info to Clipboard' button. The info copied to the clipboard includes the configuration file contents, the log contents, and recent Console log output from Tunnelblick and OpenVPN. (Configuration file contents have inline data removed so as to not disclose private keys.)</p>
@@ -2189,11 +2202,13 @@ and</li>
 <hr>
 <p><strong>3.3beta22 build 3117 (2012-09-12)</strong></p>
 <ul>
-<li>Installs, and should be used, only if:</li>
+<li>
+<p>Installs, and should be used, only if:</p>
+<ul>
 <li>All private configurations are Tunnelblick VPN Configurations (.tblk files);</li>
 <li>It is not a Deployed version; and</li>
-<li>
-<p>No Deployed versions of Tunnelblick have previously been installed.</p>
+<li>No Deployed versions of Tunnelblick have previously been installed.</li>
+</ul>
 </li>
 <li>
 <p>Will install to, and may only be run from, /Applications.</p>
@@ -2218,13 +2233,15 @@ and</li>
 <hr>
 <p><strong>3.3beta21a build 3114.1 (2012-09-12)</strong></p>
 <ul>
-<li>New 'Welcome window' feature:</li>
+<li>
+<p>New 'Welcome window' feature:</p>
+<ul>
 <li>If a 'Welcome' folder exists as a subfolder of Deploy and contains an 'index.html' file, that file will be displayed as a welcome screen when Tunnelblick is launched.</li>
 <li>Otherwise, if a 'welcomeURL' preference exists and is being forced, that URL will be displayed as a welcome screen when Tunnelblick is launched.</li>
 <li>If a 'welcomeWidth' and/or 'welcomeHeight' preference exists, its numeric value will be used for the width or height of the HTML display area of the welcome screen (otherwise, the area will be 500 pixels square).</li>
 <li>If a 'doNotShowWelcomeDoNotShowAgainCheckbox' preference exists and is true, a 'Do not show this again' checkbox will appear in the welcome window.</li>
-<li>
-<p>If a 'skipWelcomeScreen' preference exists and is true, the welcome screen will not be shown.</p>
+<li>If a 'skipWelcomeScreen' preference exists and is true, the welcome screen will not be shown.</li>
+</ul>
 </li>
 <li>
 <p>Prevents the display of notification windows for configurations that are disconnected if the 'doNotShowDisconnectedNotificationWindows' preference is true.</p>
@@ -2389,22 +2406,34 @@ Note: this was not caused by a problem in Tunnelblick itself — it was caused b
 <hr>
 <p><strong>3.3beta02 (2012-03-16)</strong></p>
 <ul>
-<li>Includes several changes with respect to notification windows:</li>
-<li>Notification windows display the total amount of data uploaded and downloaded and recent up and down transfer rates for client connections.</li>
-<li>When the pointer (mouse) is over the Tunnelblick icon in the menu bar, the notification windows for all configurations that have been active since Tunnelblick was launched are displayed. (This may be changed on the 'Appearances' panel of the 'VPN Details' window.)</li>
-<li>Notification windows do not fade away if the pointer is over any notification window (or the Tunnelblick icon, as described above).</li>
-<li>Notification windows for disconnected configurations have a 'Connect' button.</li>
+<li>
+<p>Includes several changes with respect to notification windows:</p>
+</li>
+<li>
+<p>Notification windows display the total amount of data uploaded and downloaded and recent up and down transfer rates for client connections.</p>
+</li>
+<li>
+<p>When the pointer (mouse) is over the Tunnelblick icon in the menu bar, the notification windows for all configurations that have been active since Tunnelblick was launched are displayed. (This may be changed on the 'Appearances' panel of the 'VPN Details' window.)</p>
+</li>
+<li>
+<p>Notification windows do not fade away if the pointer is over any notification window (or the Tunnelblick icon, as described above).</p>
+</li>
+<li>
+<p>Notification windows for disconnected configurations have a 'Connect' button.</p>
+</li>
 <li>
 <p>Fixes a bug that caused notification windows to appear in Mission Control on Lion even though they were closed.</p>
 </li>
 <li>
 <p>Adds Openvpn 2.3alpha1, removes OpenVPN 2.1.4.</p>
 </li>
-<li>Adds a 'Utilities' tab to the VPN Details window. It includes:</li>
+<li>
+<p>Adds a 'Utilities' tab to the VPN Details window. It includes:</p>
+<ul>
 <li>A 'Terminate all OpenVPN processes' button.</li>
 <li>A 'Run easy-rsa in Terminal' button.</li>
-<li>
-<p>Click the '?' button on the tab for more information about these features.</p>
+<li>Click the '?' button on the tab for more information about these features.</li>
+</ul>
 </li>
 <li>
 <p>Adds the ability to have a 'route-pre-down.tunnelblick.sh' script that is run before closing a connection. Tunnelblick's 'Set Nameserver' scripts use this to release a TAP device's DHCP lease. This feature (and the DHCP lease release) is available only when using OpenVPN 2.3alpha1 and only in <a href="cPkgs.html">Tunnelblick VPN Configurations</a>.</p>
@@ -2468,7 +2497,7 @@ Note: this was not caused by a problem in Tunnelblick itself — it was caused b
 </li>
 </ul>
 <hr>
-<h2 id="version-3.2">Version 3.2</h2>
+<h2 id="version-32">Version 3.2</h2>
 <p><strong>3.2.9 (2013-05-14)</strong></p>
 <ul>
 <li>
@@ -2629,13 +2658,15 @@ Note: this was not caused by a problem in Tunnelblick itself — it was caused b
 <li>
 <p>Fixes a bug in the build process that causes an extra copy of a tun/tap kext to be stored inside each tun/tap kext when a build has already been done.</p>
 </li>
-<li>Fixes problems updating Tunnelblick caused by digital signatures on Deployed versions. When installing updates on a non-customized version of Tunnelblick (i.e., the Info.plist SUFeedURL entry is "<a href="https://tunnelblick.net/appcast.rss" class="uri">https://tunnelblick.net/appcast.rss</a>"):</li>
+<li>
+<p>Fixes problems updating Tunnelblick caused by digital signatures on Deployed versions. When installing updates on a non-customized version of Tunnelblick (i.e., the Info.plist SUFeedURL entry is "<a href="https://tunnelblick.net/appcast.rss" class="uri">https://tunnelblick.net/appcast.rss</a>"):</p>
+<ul>
 <li>If the "updateSigned" preference is set, the application will be updated with a signed version;</li>
 <li>Otherwise, if the "updateUnsigned" preference is set, the application will be updated with an unsigned version;</li>
 <li>Otherwise, versions before 3.2beta34 are updated with signed versions; versions 3.2beta34 and higher are updated with signed versions only if they are themselves signed, otherwise they are updated with unsigned versions.</li>
 <li>"Signed" does not refer to the update itself, which is always digitally signed for authenticity. It refers to the Tunnelblick.app application being signed so that the updated version can use Keychain items without OS X prompting the user for permission.</li>
-<li>
-<p>See <a href="cDigitalSignatures.html">Tunnelblick and Digital Signatures</a> for more details.</p>
+<li>See <a href="cDigitalSignatures.html">Tunnelblick and Digital Signatures</a> for more details.</li>
+</ul>
 </li>
 <li>
 <p>For an "Unsigned Release" build, " Unsigned" is appended to CFBundleShortVersionString (the marketing version string). Similarly, for a "Debug" build, " Debug" is appended.</p>
@@ -2684,40 +2715,51 @@ Note: this was not caused by a problem in Tunnelblick itself — it was caused b
 <li>
 <p>Translates the "Double-click to begin" message that appears in the disk image window to several more languages.</p>
 </li>
-<li>Several changes to preferences and forced-preferences:</li>
-<li>If the 'doNotShowAddConfigurationMenuItem' preference is set, the 'Add a Configuration' menu item will not be shown even if there are no configurations.</li>
-<li>Added the following preferences; each does what its name implies:
-<ul>
-<li>doNotShowVpnDetailsMenuItem</li>
-<li>disableAdvancedButton</li>
-<li>disableCheckNowButton</li>
-<li>disableResetDisabledWarningsButton</li>
-<li>disableCopyLogToClipboardButton</li>
-<li>disableAddConfigurationButton (disables the '+' button)</li>
-<li>disableRemoveConfigurationButton (disables the '-' button)</li>
-<li>disableWorkOnConfigurationButton (disables the 'gear' button)</li>
-<li>disableRenameConfigurationMenuItem</li>
-<li>disableDuplicateConfigurationMenuItem</li>
-<li>disableMakeConfigurationPrivateOrSharedMenuItem</li>
-<li>disableExamineOpenVpnConfigurationFileMenuItem</li>
-<li>disableShowOpenVpnLogInFinderMenuItem</li>
-<li>disableDeleteConfigurationCredentialsInKeychainMenuItem</li>
-</ul>
+<li>
+<p>Several changes to preferences and forced-preferences:</p>
 </li>
-<li>Removed the 'disableShareConfigurationButton' preference.</li>
-<li>Removed the 'doNotShowForcedPreferenceMenuItems' preference.</li>
-<li>Removed the 'doNotShowKeyboardShortcutSubmenu' preference.</li>
+<li>
+<p>If the 'doNotShowAddConfigurationMenuItem' preference is set, the 'Add a Configuration' menu item will not be shown even if there are no configurations.</p>
+</li>
+<li>
+<p>Added the following preferences; each does what its name implies: - doNotShowVpnDetailsMenuItem - disableAdvancedButton - disableCheckNowButton - disableResetDisabledWarningsButton - disableCopyLogToClipboardButton - disableAddConfigurationButton (disables the '+' button) - disableRemoveConfigurationButton (disables the '-' button) - disableWorkOnConfigurationButton (disables the 'gear' button) - disableRenameConfigurationMenuItem - disableDuplicateConfigurationMenuItem - disableMakeConfigurationPrivateOrSharedMenuItem - disableExamineOpenVpnConfigurationFileMenuItem - disableShowOpenVpnLogInFinderMenuItem - disableDeleteConfigurationCredentialsInKeychainMenuItem</p>
+</li>
+<li>
+<p>Removed the 'disableShareConfigurationButton' preference.</p>
+</li>
+<li>
+<p>Removed the 'doNotShowForcedPreferenceMenuItems' preference.</p>
+</li>
+<li>
+<p>Removed the 'doNotShowKeyboardShortcutSubmenu' preference.</p>
+</li>
 <li>
 <p>Removed the 'doNotShowOptionsSubmenu' preference.</p>
 </li>
-<li>Several bugfixes:</li>
-<li>Fixes a bug that caused the splash window to not be closed properly and thus appear in Exposé even after Tunnelblick has finished launching.</li>
-<li>Fixes a bug that caused abnormally high CPU usage after closing the 'VPN Details' window if it was displaying the 'Info' panel.</li>
-<li>Fixes a bug that tried to create a shadow copy of configuration files that were unsecured in Deploy or Shared. Now asks to secure them instead.</li>
-<li>Fixes a bug that caused problems for 'connect when computer starts' configurations when the configuration is in a subfolder or the configuration's name contains slashes, dashes, or periods.</li>
-<li>Fixes a bug that caused a forced 'updateFeedURL' preference to be ignored. (Note: this preference can only be forced; an 'updateFeedURL' user preference will be ignored for security reasons).</li>
-<li>Fixes a bug that caused the 'updateCheckInterval' preference to be ignored</li>
-<li>Fixes a bug that caused the 'Notification window' button to be enabled even if the 'connectionWindowDisplayCriteria' preference was forced.</li>
+<li>
+<p>Several bugfixes:</p>
+</li>
+<li>
+<p>Fixes a bug that caused the splash window to not be closed properly and thus appear in Exposé even after Tunnelblick has finished launching.</p>
+</li>
+<li>
+<p>Fixes a bug that caused abnormally high CPU usage after closing the 'VPN Details' window if it was displaying the 'Info' panel.</p>
+</li>
+<li>
+<p>Fixes a bug that tried to create a shadow copy of configuration files that were unsecured in Deploy or Shared. Now asks to secure them instead.</p>
+</li>
+<li>
+<p>Fixes a bug that caused problems for 'connect when computer starts' configurations when the configuration is in a subfolder or the configuration's name contains slashes, dashes, or periods.</p>
+</li>
+<li>
+<p>Fixes a bug that caused a forced 'updateFeedURL' preference to be ignored. (Note: this preference can only be forced; an 'updateFeedURL' user preference will be ignored for security reasons).</p>
+</li>
+<li>
+<p>Fixes a bug that caused the 'updateCheckInterval' preference to be ignored</p>
+</li>
+<li>
+<p>Fixes a bug that caused the 'Notification window' button to be enabled even if the 'connectionWindowDisplayCriteria' preference was forced.</p>
+</li>
 <li>
 <p>Fixes a bug that caused the Tunnelblick icon to continue to blink whenAppleScript was used to 'connect all', even after all connections had been successfully made.</p>
 </li>
@@ -2747,9 +2789,15 @@ Note: this was not caused by a problem in Tunnelblick itself — it was caused b
 <hr>
 <p><strong>3.2beta26 (2011-07-20)</strong></p>
 <ul>
-<li>Aleix Dorca has provided a complete Catalan localization.</li>
-<li>Emma Segev and Tjalling Soldatt have provided complete Dutch localization.</li>
-<li>Peter K. O'Connor has provided complete Chinese (simplified) localization.</li>
+<li>
+<p>Aleix Dorca has provided a complete Catalan localization.</p>
+</li>
+<li>
+<p>Emma Segev and Tjalling Soldatt have provided complete Dutch localization.</p>
+</li>
+<li>
+<p>Peter K. O'Connor has provided complete Chinese (simplified) localization.</p>
+</li>
 <li>
 <p>Dennis Ukhanov, Eugene Trufanov, Nail Gilmanov, & Victor Ptichkin have provided complete Russian localization.</p>
 </li>
@@ -2772,10 +2820,18 @@ Note: this was not caused by a problem in Tunnelblick itself — it was caused b
 <hr>
 <p><strong>3.2beta24 (2011-07-14)</strong></p>
 <ul>
-<li>Complete German localization by Marcus Schneider.</li>
-<li>Complete French localization by Jeremy Sherman.</li>
-<li>Complete Korean localization by Kyoungmin Kim.</li>
-<li>Complete Norwegian localization by Jon Luberth.</li>
+<li>
+<p>Complete German localization by Marcus Schneider.</p>
+</li>
+<li>
+<p>Complete French localization by Jeremy Sherman.</p>
+</li>
+<li>
+<p>Complete Korean localization by Kyoungmin Kim.</p>
+</li>
+<li>
+<p>Complete Norwegian localization by Jon Luberth.</p>
+</li>
 <li>
 <p>Complete Portuguese localization by Denis Volpato Martins.</p>
 </li>
@@ -2791,13 +2847,27 @@ Note: this was not caused by a problem in Tunnelblick itself — it was caused b
 <li>
 <p>The credits and license description on the Info panel are now localized.</p>
 </li>
-<li>Fixes a bug that didn't update 'Settings' tab items properly when a different configuration was selected in the 'Configurations' panel.</li>
-<li>Fixes a bug that caused several items to appear in English instead of the preferred language, even if a preferred language translation of the item was available.</li>
-<li>Fixes a bug that caused the 'Glass' sound to be used when a tunnel is established and the 'Basso' sound to be used when a tunnel was torn down if the preference for the sound was set to 'None'</li>
-<li>Fixes a bug that caused the 'Advanced' window to pop up in front of any other application's window when the notification window appears.</li>
-<li>Fixes a bug that ignored the Enter and Escape keys when entering a VPN username/password or passphrase.</li>
-<li>Fixes a bug that caused the 'Glass' sound to be used when a tunnel is established and the 'Basso' sound to be used when a tunnel was torn down if the preference for the sound was set to 'None'</li>
-<li>Fixes a bug that caused problems and failed to properly warn the user that a private configuration cannot be set to start when the computer starts.</li>
+<li>
+<p>Fixes a bug that didn't update 'Settings' tab items properly when a different configuration was selected in the 'Configurations' panel.</p>
+</li>
+<li>
+<p>Fixes a bug that caused several items to appear in English instead of the preferred language, even if a preferred language translation of the item was available.</p>
+</li>
+<li>
+<p>Fixes a bug that caused the 'Glass' sound to be used when a tunnel is established and the 'Basso' sound to be used when a tunnel was torn down if the preference for the sound was set to 'None'</p>
+</li>
+<li>
+<p>Fixes a bug that caused the 'Advanced' window to pop up in front of any other application's window when the notification window appears.</p>
+</li>
+<li>
+<p>Fixes a bug that ignored the Enter and Escape keys when entering a VPN username/password or passphrase.</p>
+</li>
+<li>
+<p>Fixes a bug that caused the 'Glass' sound to be used when a tunnel is established and the 'Basso' sound to be used when a tunnel was torn down if the preference for the sound was set to 'None'</p>
+</li>
+<li>
+<p>Fixes a bug that caused problems and failed to properly warn the user that a private configuration cannot be set to start when the computer starts.</p>
+</li>
 <li>
 <p>Fixes several small memory leaks.</p>
 </li>
@@ -2841,10 +2911,12 @@ Note: this was not caused by a problem in Tunnelblick itself — it was caused b
 <hr>
 <p><strong>3.2beta18 (2011-06-27)</strong></p>
 <ul>
-<li>Fixes problems with sounds "on connect" and "on unexpected disconnect":</li>
-<li>Shows default sounds as "None".</li>
 <li>
-<p>Changes to the sound settings take effect immediately.</p>
+<p>Fixes problems with sounds "on connect" and "on unexpected disconnect":</p>
+<ul>
+<li>Shows default sounds as "None".</li>
+<li>Changes to the sound settings take effect immediately.</li>
+</ul>
 </li>
 <li>
 <p>Shows a splash screen during installation.</p>
@@ -2907,20 +2979,36 @@ Note: this was not caused by a problem in Tunnelblick itself — it was caused b
 <li>
 <p>Implements a new simplified menu, which moves all options and preferences to a new 'VPN Details' window.</p>
 </li>
-<li>The new 'VPN Details' window:</li>
-<li>Allows easy management of configurations, including renaming, duplicating, and removing them, and the ability to remove a configuration's credentials from the Keychain.</li>
+<li>
+<p>The new 'VPN Details' window:</p>
+</li>
+<li>
+<p>Allows easy management of configurations, including renaming, duplicating, and removing them, and the ability to remove a configuration's credentials from the Keychain.</p>
+</li>
 <li>
 <p>Includes a new GUI for modifying configuration settings, program preferences, and the appearance of the Tunnelblick icon and menu.</p>
 </li>
 <li>
 <p>Optionally plays a sound when the connection is completed or unexpectedly terminated or restarted.</p>
 </li>
-<li>Implements a new facility for installing configurations at the time Tunnelblick is installed, and updating them at any time thereafter.</li>
-<li>Installation of these configurations is triggered by including them in 'Tunnelblick Configurations.bundle' in Tunnelblick.app/Contents/Resources/. Thus they can be distributed as part of the normal Tunnelblick update mechanism.</li>
-<li>The configurations are 'Tunnelblick VPN Configurations' (.tblk packages) and include all the options such configurations provide.</li>
-<li>The configurations may be updated automatically, separate from the application.</li>
-<li>Configuration updates (like Tunnelblick updates) must be digitally signed, or be transmitted over an SSL connection.</li>
-<li>Configuration updates do not modify Tunnelblick.app, so they do not require modifying the digital signature of Tunnelblick.app.</li>
+<li>
+<p>Implements a new facility for installing configurations at the time Tunnelblick is installed, and updating them at any time thereafter.</p>
+</li>
+<li>
+<p>Installation of these configurations is triggered by including them in 'Tunnelblick Configurations.bundle' in Tunnelblick.app/Contents/Resources/. Thus they can be distributed as part of the normal Tunnelblick update mechanism.</p>
+</li>
+<li>
+<p>The configurations are 'Tunnelblick VPN Configurations' (.tblk packages) and include all the options such configurations provide.</p>
+</li>
+<li>
+<p>The configurations may be updated automatically, separate from the application.</p>
+</li>
+<li>
+<p>Configuration updates (like Tunnelblick updates) must be digitally signed, or be transmitted over an SSL connection.</p>
+</li>
+<li>
+<p>Configuration updates do not modify Tunnelblick.app, so they do not require modifying the digital signature of Tunnelblick.app.</p>
+</li>
 <li>
 <p>The 'Tunnelblick Configurations.bundle' includes Info.plist entries that specify a URL for checking for and obtaining updates.</p>
 </li>
@@ -2965,20 +3053,24 @@ Note: this was not caused by a problem in Tunnelblick itself — it was caused b
 <li>
 <p>Tunnelblick optionally displays a new, animated 'connecting' window as a configuration is being connected or reconnected. When the connection succeeds the window disappears. Display of the window is controlled by a preference which is set in the new preference window.</p>
 </li>
-<li>Menu streamlining:</li>
+<li>
+<p>Menu streamlining:</p>
+<ul>
 <li>The 'Options...' submenu has been replaced by the 'Preferences...' item.</li>
 <li>The top line of the menu now allows the user to 'Disconnect All' configurations. It continues to display the number of active connections, and, if there is only one active connection, now displays the name of that connection.</li>
 <li>The 'Details' menu item has been renamed to 'VPN Details'.</li>
 <li>The 'Disconnect...' menu items now optionally display connection times.</li>
-<li>
-<p>The 'Add a Configuration...' menu item has been renamed to "Add a VPN..." and moved from the 'Options...' submenu to the main menu.</p>
+<li>The 'Add a Configuration...' menu item has been renamed to "Add a VPN..." and moved from the 'Options...' submenu to the main menu.</li>
+</ul>
 </li>
-<li>Preferences changes:</li>
+<li>
+<p>Preferences changes:</p>
+<ul>
 <li>Most preference changes take effect immediately; none require relaunching Tunnelblick.</li>
 <li>The keyboard shortcut may be any of Command-Option-F1 through Command-Option-F12.</li>
 <li>The 'skipWarningAboutNoTunOrTap' preference has been renamed to '-skipWarningAboutNoTunOrTap' (it was missing the '-').</li>
-<li>
-<p>Preferences are now stored in ~/Library/Application Support/Preferences/net.tunnelblick.tunnelblick.plist (because Tunnelblick's CFBundleIdentifier is now 'net.tunnelblick.tunnelblick'). The existing preferences file is renamed appropriately and a symbolic link to the new preferences file is put in its place when this version of Tunnelblick is first launched.</p>
+<li>Preferences are now stored in ~/Library/Application Support/Preferences/net.tunnelblick.tunnelblick.plist (because Tunnelblick's CFBundleIdentifier is now 'net.tunnelblick.tunnelblick'). The existing preferences file is renamed appropriately and a symbolic link to the new preferences file is put in its place when this version of Tunnelblick is first launched.</li>
+</ul>
 </li>
 <li>
 <p>Adds digital signatures to Tunnnelblick.app so that the popups each time Tunnelblick is updated that ask whether Tunnelblick can access the Keychain will no longer appear (after they do for this update). Note: this only works on OS 10.5 ("Leopard") and above.</p>
@@ -3054,18 +3146,36 @@ Note: this was not caused by a problem in Tunnelblick itself — it was caused b
 <li>
 <p>No longer uses the down-root plugin if there are no 'user' or 'group' options in the configuration file. (The 'XXX-useDownRootPlugin' preference is removed in this situation.)</p>
 </li>
-<li>'Monitor connection' is more tolerant of unimportant changes and is more flexible:</li>
-<li>Allows scutil's output keys to be in any order.</li>
-<li>Only monitorsDomainName,ServerAddresses, andSearchDomains for DNS and NetBIOSName, Workgroup, and WINSAddresses for WINS/SMB.</li>
-<li>New per-configration preference 'XXX-leasewatchOptions' (where XXX is the name of the configuration) consists of '-i' followed by the letters d, a, s, n, g, w to ignore theDomainName,ServerAddresses,SearchDomains, NetBIOSName, Workgroup, and WINSAddresses, respectively. If not present, all items are monitored. Example: to ignore all WINS/SMB changes, use '-ingw' (without the quotation marks).</li>
+<li>
+<p>'Monitor connection' is more tolerant of unimportant changes and is more flexible:</p>
+</li>
+<li>
+<p>Allows scutil's output keys to be in any order.</p>
+</li>
+<li>
+<p>Only monitorsDomainName,ServerAddresses, andSearchDomains for DNS and NetBIOSName, Workgroup, and WINSAddresses for WINS/SMB.</p>
+</li>
+<li>
+<p>New per-configration preference 'XXX-leasewatchOptions' (where XXX is the name of the configuration) consists of '-i' followed by the letters d, a, s, n, g, w to ignore theDomainName,ServerAddresses,SearchDomains, NetBIOSName, Workgroup, and WINSAddresses, respectively. If not present, all items are monitored. Example: to ignore all WINS/SMB changes, use '-ingw' (without the quotation marks).</p>
+</li>
 <li>
 <p>New 'Set nameserver (3.1)' setting allows use of older 'Set nameserver' scripts.</p>
 </li>
-<li>Higher 'verb' levels may be used without performance degradation:</li>
-<li>Tunnelblick doesn't process log files until you view the log in the Details window. So you can capture the log using high verb levels, disconnect, and then view the last 10,000 lines (approximately) of the log in Tunnelblick. If you need access to the entire log, you can find it in the /Library/Application Support/Tunnelblick/Logs folder. The log is overwritten each time you connect, and is deleted when Tunnelblick exits.</li>
-<li>Tunnelblick only tries to load the last 1,000,000 characters of the log file, so long log files don't take a long time to process.</li>
-<li>Tunnelblick rate-limits queueing of notifications when the log file changes.</li>
-<li>Tunnelblick 'chunks' additions to the log display.</li>
+<li>
+<p>Higher 'verb' levels may be used without performance degradation:</p>
+</li>
+<li>
+<p>Tunnelblick doesn't process log files until you view the log in the Details window. So you can capture the log using high verb levels, disconnect, and then view the last 10,000 lines (approximately) of the log in Tunnelblick. If you need access to the entire log, you can find it in the /Library/Application Support/Tunnelblick/Logs folder. The log is overwritten each time you connect, and is deleted when Tunnelblick exits.</p>
+</li>
+<li>
+<p>Tunnelblick only tries to load the last 1,000,000 characters of the log file, so long log files don't take a long time to process.</p>
+</li>
+<li>
+<p>Tunnelblick rate-limits queueing of notifications when the log file changes.</p>
+</li>
+<li>
+<p>Tunnelblick 'chunks' additions to the log display.</p>
+</li>
 <li>
 <p>The log is cleared before each connection attempt is made.</p>
 </li>
@@ -3140,10 +3250,12 @@ Note: this was not caused by a problem in Tunnelblick itself — it was caused b
 <li>
 <p>Unloading of the foo.tap and foo.tun kexts is now attempted only if they are already loaded (previously, it was always attempted and errors were ignored).</p>
 </li>
-<li>Fixes problems with fast user switching (previously, user switches were ignored, which caused problems if Tunnelblick was used by more than one user and could cause the icon to indicate no VPN connection when one existed):</li>
-<li>When a user is switched out, all configurations that are not set to "connect when computer starts" will be disconnected unless the per-connection "-doNotDisconnectOnFastUserSwitch" preference is set true.</li>
 <li>
-<p>When a user is switched in, Tunnelblick will attempt to connect any configurations that were connected at the time the user was switched out but are no longer connected unless the per-connection "-doNotReconnectOnFastUserSwitch" preference is set true.</p>
+<p>Fixes problems with fast user switching (previously, user switches were ignored, which caused problems if Tunnelblick was used by more than one user and could cause the icon to indicate no VPN connection when one existed):</p>
+<ul>
+<li>When a user is switched out, all configurations that are not set to "connect when computer starts" will be disconnected unless the per-connection "-doNotDisconnectOnFastUserSwitch" preference is set true.</li>
+<li>When a user is switched in, Tunnelblick will attempt to connect any configurations that were connected at the time the user was switched out but are no longer connected unless the per-connection "-doNotReconnectOnFastUserSwitch" preference is set true.</li>
+</ul>
 </li>
 <li>
 <p>Fixes potential race condition when computer wakes up.</p>
@@ -3161,13 +3273,15 @@ Note: this was not caused by a problem in Tunnelblick itself — it was caused b
 <hr>
 <p><strong>3.2beta02 (2011-02-02)</strong></p>
 <ul>
-<li>The following scripts may be included in a Tunnelblick VPN Configuration (.tblk package):</li>
+<li>
+<p>The following scripts may be included in a Tunnelblick VPN Configuration (.tblk package):</p>
+<ul>
 <li>The 'pre-connect.sh' script is executed (as root) before Tunnelblick would unload and/or load the tun or tap kexts (whether or not any unload or load takes place).</li>
 <li>The 'post-tun-tap-load.sh' script is executed (as root) after Tunnelblick unloads and/or loads the tun or tap kexts (whether or not any unload or load takes place). Thus, the script is executed immediately before starting OpenVPN.</li>
 <li>The 'connected.sh' script is executed (as root) when a configuration connects. This script is executed only if Tunnelblick is running at the time of the event, which may not be the case for 'when computer starts' configurations.</li>
 <li>The 'reconnecting.sh' script is executed (as root) when OpenVPN loses the VPN connection and is trying to reconnect. This script is executed only if Tunnelblick is running at the time of the event, which may not be the case for 'when computer starts' configurations.</li>
-<li>
-<p>The 'post-disconnect.sh' script is executed (as root) after OpenVPN has closed the connection. This script is executed only if Tunnelblick is running at the time of the event, which may not be the case for 'when computer starts' configurations.</p>
+<li>The 'post-disconnect.sh' script is executed (as root) after OpenVPN has closed the connection. This script is executed only if Tunnelblick is running at the time of the event, which may not be the case for 'when computer starts' configurations.</li>
+</ul>
 </li>
 <li>
 <p>Fixes problem installing Tunnelblick via double-click when the user's home folder is not on the same volume as /Applications/Tunnelblick.app</p>
@@ -3192,7 +3306,7 @@ Note: this was not caused by a problem in Tunnelblick itself — it was caused b
 </li>
 </ul>
 <hr>
-<h2 id="version-3.1">Version 3.1</h2>
+<h2 id="version-31">Version 3.1</h2>
 <hr>
 <p>*3.1.7 (2011-04-03)</p>
 <ul>
@@ -3226,8 +3340,12 @@ Note: this was not caused by a problem in Tunnelblick itself — it was caused b
 </ul>
 <p>This menu item is not displayed:</p>
 <ul>
-<li>If the 'doNotShowUseOriginalIconMenuItem' preference item exists and is true; or</li>
-<li>If Tunnelblick.app/Contents/Resources/IconSets/TunnelBlick-black-white.TBMenuIcons does not exist; or</li>
+<li>
+<p>If the 'doNotShowUseOriginalIconMenuItem' preference item exists and is true; or</p>
+</li>
+<li>
+<p>If Tunnelblick.app/Contents/Resources/IconSets/TunnelBlick-black-white.TBMenuIcons does not exist; or</p>
+</li>
 <li>
 <p>If the 'menuIconSet' preference exists and contains anything other than 'TunnelBlick.TBMenuIcons' or 'TunnelBlick-black-white.TBMenuIcons'.</p>
 </li>
@@ -3365,12 +3483,17 @@ Note: this was not caused by a problem in Tunnelblick itself — it was caused b
 <hr>
 <p><strong>3.1beta16 (2010-010-08)</strong></p>
 <ul>
-<li>Replaces the 'Set nameserver' checkbox with a drop-down list that can display additional choices to allow different up/down scripts to be used.
+<li>
+<p>Replaces the 'Set nameserver' checkbox with a drop-down list that can display additional choices to allow different up/down scripts to be used.</p>
 <ul>
-<li>The following choices will always be displayed:</li>
+<li>The following choices will always be displayed:
+<ul>
 <li>'Do not set nameserver' to not use any scripts (equivalent to not having a check in the old 'Set nameserver' checkbox')</li>
 <li>'Set nameserver' to use the standard Tunnelblick scripts (equivalent to having a check in the old 'Set nameserver' checkbox')</li>
-<li>The following two additional choices will be displayed only if custom scripts are not being used:</li>
+</ul>
+</li>
+<li>The following two additional choices will be displayed only if custom scripts are not being used:
+<ul>
 <li>'Set nameserver (3.0b10)' to use scripts from Tunnelblick 3.0b10 (for backward compatibility)</li>
 <li>'Set nameserver (alternate 1)' to use scripts based on <a href="https://openvpn.net/archive/openvpn-users/2006-10/msg00120.html">Ben Low's scripts</a>. These scripts:
 <ul>
@@ -3379,15 +3502,18 @@ Note: this was not caused by a problem in Tunnelblick itself — it was caused b
 <li>Do not implement 'Monitor connection'</li>
 </ul>
 </li>
+</ul>
+</li>
 <li>Note: Some Deployed versions of Tunnelblick and Tunnelblick VPN configurations may include custom scripts that will inhibit the display of these two additional choices.</li>
 <li>Running this version changes the 'useDNS' per-configuration preference from a boolean to a number. This is a downward-compatible change — earlier versions of Tunnelblick may be run after running this version and modifying the 'Set nameserver' selection. The earlier version will consider anything other than 'Do not set nameserver' as if the 'Set nameserver' checkbox were checked.</li>
 <li>Warning: If Build 2054 changes the setting to 'Set nameserver (3.0b10)' or 'Set nameserver (alternate 1)', using an earlier version of Tunnelblick to modify the checkbox so it is checked will revert the setting back to 'Set nameserver'.</li>
 </ul>
 </li>
-<li>Adds the ability to add menu items to the Tunnelblick menu to execute programs (e.g., scripts).</li>
 <li>
-<p>Adds the ability to specify programs that should be executed when Tunnelblick is launched or when a connection is attempted.<br>
-(See <a href="cCusDeployed.html#additional-menu-commands-and-programs">Additional Menu Commands and Programs</a> for details.)</p>
+<p>Adds the ability to add menu items to the Tunnelblick menu to execute programs (e.g., scripts).</p>
+</li>
+<li>
+<p>Adds the ability to specify programs that should be executed when Tunnelblick is launched or when a connection is attempted. (See <a href="cCusDeployed.html#additional-menu-commands-and-programs">Additional Menu Commands and Programs</a> for details.)</p>
 </li>
 <li>
 <p>Includes localization-related code tweaks by Stefan Bethke and additional German localization by Stefan Bethke, Marcus Schneider, and 'Dr Hok'.</p>
@@ -3413,162 +3539,93 @@ Note: this was not caused by a problem in Tunnelblick itself — it was caused b
 </li>
 <li>
 <p>Thanks to Mohammad A. Haque: Includes the OpenSSL v. 1.0.0a library imbedded into the included OpenVPN binary. This adds support for the following:</p>
+<p>Digests:<br>
+ecdsa-with-SHA1 160 bit digest size<br>
+MD2 128 bit digest size<br>
+RSA-MD2 128 bit digest size<br>
+RSA-SHA224 224 bit digest size<br>
+RSA-SHA256 256 bit digest size<br>
+RSA-SHA384 384 bit digest size<br>
+RSA-SHA512 512 bit digest size<br>
+SHA224 224 bit digest size<br>
+SHA256 256 bit digest size<br>
+SHA384 384 bit digest size<br>
+SHA512 512 bit digest size<br>
+whirlpool 512 bit digest size<br></p>
+<p>Ciphers: CAMELLIA-128-CBC 128 bit default key (fixed)<br>
+CAMELLIA-128-CFB 128 bit default key (fixed)<br>
+CAMELLIA-128-CFB1 128 bit default key (fixed)<br>
+CAMELLIA-128-CFB8 128 bit default key (fixed)<br>
+CAMELLIA-128-OFB 128 bit default key (fixed)<br>
+CAMELLIA-192-CBC 192 bit default key (fixed)<br>
+CAMELLIA-192-CFB 192 bit default key (fixed)<br>
+CAMELLIA-192-CFB1 192 bit default key (fixed)<br>
+CAMELLIA-192-CFB8 192 bit default key (fixed)<br>
+CAMELLIA-192-OFB 192 bit default key (fixed)<br>
+CAMELLIA-256-CBC 256 bit default key (fixed)<br>
+CAMELLIA-256-CFB 256 bit default key (fixed)<br>
+CAMELLIA-256-CFB1 256 bit default key (fixed)<br>
+CAMELLIA-256-CFB8 256 bit default key (fixed)<br>
+CAMELLIA-256-OFB 256 bit default key (fixed)<br>
+DES-EDE3-CFB1 192 bit default key (fixed)<br>
+DES-EDE3-CFB8 192 bit default key (fixed)<br>
+IDEA-CBC 128 bit default key (fixed)<br>
+IDEA-CFB 128 bit default key (fixed)<br>
+IDEA-OFB 128 bit default key (fixed)<br>
+RC5-CBC 128 bit default key (variable)<br>
+RC5-CFB 128 bit default key (variable)<br>
+RC5-OFB 128 bit default key (variable)<br>
+SEED-CBC 128 bit default key (fixed)<br>
+SEED-CFB 128 bit default key (fixed)<br>
+SEED-OFB 128 bit default key (fixed)<br></p>
+<p>TLS Ciphers: CAMELLIA128-SHA<br>
+CAMELLIA256-SHA<br>
+DHE-DSS-CAMELLIA128-SHA<br>
+DHE-DSS-CAMELLIA256-SHA<br>
+DHE-DSS-SEED-SHA<br>
+DHE-RSA-CAMELLIA128-SHA<br>
+DHE-RSA-CAMELLIA256-SHA<br>
+DHE-RSA-SEED-SHA<br>
+ECDH-ECDSA-AES128-SHA<br>
+ECDH-ECDSA-AES256-SHA<br>
+ECDH-ECDSA-DES-CBC3-SHA<br>
+ECDH-ECDSA-RC4-SHA<br>
+ECDH-RSA-AES128-SHA<br>
+ECDH-RSA-AES256-SHA<br>
+ECDH-RSA-DES-CBC3-SHA<br>
+ECDH-RSA-RC4-SHA<br>
+ECDHE-ECDSA-AES128-SHA<br>
+ECDHE-ECDSA-AES256-SHA<br>
+ECDHE-ECDSA-DES-CBC3-SHA<br>
+ECDHE-ECDSA-RC4-SHA<br>
+ECDHE-RSA-AES128-SHA<br>
+ECDHE-RSA-AES256-SHA<br>
+ECDHE-RSA-DES-CBC3-SHA<br>
+ECDHE-RSA-RC4-SHA<br>
+IDEA-CBC-SHA<br>
+PSK-3DES-EDE-CBC-SHA<br>
+PSK-AES128-CBC-SHA<br>
+PSK-AES256-CBC-SHA<br>
+PSK-RC4-SHA<br>
+SEED-SHA<br></p>
+<p>For a complete list of available digests, ciphers, and TLS ciphers, type the following into Terminal: {{{ sudo ./openvpn --show-digests --show-ciphers --show-tls }}}</p>
+<p>("sudo" is needed if Tunnelblick.app has been run at least once, because Tunnelblick secures the OpenVPN binary by making it owned and executable only by root.)</p>
 </li>
 </ul>
-<p>Digests:<br>
-<br>
-ecdsa-with-SHA1 160 bit digest size<br>
-<br>
-MD2 128 bit digest size<br>
-<br>
-RSA-MD2 128 bit digest size<br>
-<br>
-RSA-SHA224 224 bit digest size<br>
-<br>
-RSA-SHA256 256 bit digest size<br>
-<br>
-RSA-SHA384 384 bit digest size<br>
-<br>
-RSA-SHA512 512 bit digest size<br>
-<br>
-SHA224 224 bit digest size<br>
-<br>
-SHA256 256 bit digest size<br>
-<br>
-SHA384 384 bit digest size<br>
-<br>
-SHA512 512 bit digest size<br>
-<br>
-whirlpool 512 bit digest size<br></p>
-<p>Ciphers:<br>
-CAMELLIA-128-CBC 128 bit default key (fixed)<br>
-<br>
-CAMELLIA-128-CFB 128 bit default key (fixed)<br>
-<br>
-CAMELLIA-128-CFB1 128 bit default key (fixed)<br>
-<br>
-CAMELLIA-128-CFB8 128 bit default key (fixed)<br>
-<br>
-CAMELLIA-128-OFB 128 bit default key (fixed)<br>
-<br>
-CAMELLIA-192-CBC 192 bit default key (fixed)<br>
-<br>
-CAMELLIA-192-CFB 192 bit default key (fixed)<br>
-<br>
-CAMELLIA-192-CFB1 192 bit default key (fixed)<br>
-<br>
-CAMELLIA-192-CFB8 192 bit default key (fixed)<br>
-<br>
-CAMELLIA-192-OFB 192 bit default key (fixed)<br>
-<br>
-CAMELLIA-256-CBC 256 bit default key (fixed)<br>
-<br>
-CAMELLIA-256-CFB 256 bit default key (fixed)<br>
-<br>
-CAMELLIA-256-CFB1 256 bit default key (fixed)<br>
-<br>
-CAMELLIA-256-CFB8 256 bit default key (fixed)<br>
-<br>
-CAMELLIA-256-OFB 256 bit default key (fixed)<br>
-<br>
-DES-EDE3-CFB1 192 bit default key (fixed)<br>
-<br>
-DES-EDE3-CFB8 192 bit default key (fixed)<br>
-<br>
-IDEA-CBC 128 bit default key (fixed)<br>
-<br>
-IDEA-CFB 128 bit default key (fixed)<br>
-<br>
-IDEA-OFB 128 bit default key (fixed)<br>
-<br>
-RC5-CBC 128 bit default key (variable)<br>
-<br>
-RC5-CFB 128 bit default key (variable)<br>
-<br>
-RC5-OFB 128 bit default key (variable)<br>
-<br>
-SEED-CBC 128 bit default key (fixed)<br>
-<br>
-SEED-CFB 128 bit default key (fixed)<br>
-<br>
-SEED-OFB 128 bit default key (fixed)<br></p>
-<p>TLS Ciphers:<br>
-CAMELLIA128-SHA<br>
-<br>
-CAMELLIA256-SHA<br>
-<br>
-DHE-DSS-CAMELLIA128-SHA<br>
-<br>
-DHE-DSS-CAMELLIA256-SHA<br>
-<br>
-DHE-DSS-SEED-SHA<br>
-<br>
-DHE-RSA-CAMELLIA128-SHA<br>
-<br>
-DHE-RSA-CAMELLIA256-SHA<br>
-<br>
-DHE-RSA-SEED-SHA<br>
-<br>
-ECDH-ECDSA-AES128-SHA<br>
-<br>
-ECDH-ECDSA-AES256-SHA<br>
-<br>
-ECDH-ECDSA-DES-CBC3-SHA<br>
-<br>
-ECDH-ECDSA-RC4-SHA<br>
-<br>
-ECDH-RSA-AES128-SHA<br>
-<br>
-ECDH-RSA-AES256-SHA<br>
-<br>
-ECDH-RSA-DES-CBC3-SHA<br>
-<br>
-ECDH-RSA-RC4-SHA<br>
-<br>
-ECDHE-ECDSA-AES128-SHA<br>
-<br>
-ECDHE-ECDSA-AES256-SHA<br>
-<br>
-ECDHE-ECDSA-DES-CBC3-SHA<br>
-<br>
-ECDHE-ECDSA-RC4-SHA<br>
-<br>
-ECDHE-RSA-AES128-SHA<br>
-<br>
-ECDHE-RSA-AES256-SHA<br>
-<br>
-ECDHE-RSA-DES-CBC3-SHA<br>
-<br>
-ECDHE-RSA-RC4-SHA<br>
-<br>
-IDEA-CBC-SHA<br>
-<br>
-PSK-3DES-EDE-CBC-SHA<br>
-<br>
-PSK-AES128-CBC-SHA<br>
-<br>
-PSK-AES256-CBC-SHA<br>
-<br>
-PSK-RC4-SHA<br>
-<br>
-SEED-SHA<br></p>
-<p>For a complete list of available digests, ciphers, and TLS ciphers, type the following into Terminal:<br>
-{{{<br>
-sudo ./openvpn --show-digests --show-ciphers --show-tls<br>
-}}}</p>
-<p>("sudo" is needed if Tunnelblick.app has been run at least once, because Tunnelblick secures the OpenVPN binary by making it owned and executable only by root.)</p>
 <hr>
 <p><strong>3.1beta12 (2010-08-08)</strong></p>
 <ul>
 <li>
 <p>Includes Italian localization thanks to Pierpaolo Gulla (Grazie!).</p>
 </li>
-<li>Implements a single, system-wide keyboard shortcut (command-option-F1 by default) to expose the Tunnelblick menu.</li>
+<li>
+<p>Implements a single, system-wide keyboard shortcut (command-option-F1 by default) to expose the Tunnelblick menu.</p>
+<ul>
 <li>This make it possible to use Tunnelblick with only a keyboard.</li>
 <li>The keyboard shortcut may be used whenever Tunnelblick is running - it does not need to be the front-most application.</li>
 <li>A new submenu of the Options submenu has been added to allow the key to be changed to any of the function keys from F1 through F12. The display of the new submenu is inhibited if the 'doNotShowKeyboardShortcutSubmenu' preference is set to TRUE.</li>
-<li>
-<p>Two new unsigned integer preferences: 'keyboardShortcutKeyCode' contains the virtual keycode for the key, and 'keyboardShortcutModifiers' contains the code for the modifier keys.</p>
+<li>Two new unsigned integer preferences: 'keyboardShortcutKeyCode' contains the virtual keycode for the key, and 'keyboardShortcutModifiers' contains the code for the modifier keys.</li>
+</ul>
 </li>
 <li>
 <p>No longer displays Tooltips by default. They are displayed only if the 'showTooltips' preference is set to TRUE. This is necessary because tooltips on menu items interfere with the proper operation ofVoiceOver, OS X's built-in screen access solution.</p>
@@ -3636,13 +3693,13 @@ sudo ./openvpn --show-digests --show-ciphers --show-tls<br>
 </li>
 </ul>
 <hr>
-<p><strong>3.1beta08 (2010-07-10)</strong><br>
-<span class="red"><strong>IMPORTANT NOTE FOR THOSE USING "WHEN COMPUTER STARTS" WITH EARLY 3.1BETA VERSIONS:</strong></span> The first time that you update to Tunnelblick 3.1beta08 or above from 3.1beta02 - 3.1beta06, Tunnelblick will not recognize any <strong>running</strong> "when computer starts" configurations. Five to ten seconds after you start Tunnelblick, they will be identified as unknown OpenVPN processes and you will be given the choice to leave them alone or disconnect them. You should chose to disconnect them in this dialog and then manually connect them in Tunnelblick. (You do not need to do this immediately, but you will not be able to control them with Tunnelblick. The dialog will appear each time you start Tunnelblick if these connections are still active.) This need only be done once, and is not necessary if there are no "when computer starts" configurations that are connected at the time you update.</p>
+<p><strong>3.1beta08 (2010-07-10)</strong> <span class="red"><strong>IMPORTANT NOTE FOR THOSE USING "WHEN COMPUTER STARTS" WITH EARLY 3.1BETA VERSIONS:</strong></span> The first time that you update to Tunnelblick 3.1beta08 or above from 3.1beta02 - 3.1beta06, Tunnelblick will not recognize any <strong>running</strong> "when computer starts" configurations. Five to ten seconds after you start Tunnelblick, they will be identified as unknown OpenVPN processes and you will be given the choice to leave them alone or disconnect them. You should chose to disconnect them in this dialog and then manually connect them in Tunnelblick. (You do not need to do this immediately, but you will not be able to control them with Tunnelblick. The dialog will appear each time you start Tunnelblick if these connections are still active.) This need only be done once, and is not necessary if there are no "when computer starts" configurations that are connected at the time you update.</p>
 <ul>
 <li>
 <p>Benji Greig has created an updated Tunnelblick icon that looks great in Coverflow. He has also created a distinctive icon for Tunnelblick VPN Configurations, and a new background image for the Disk Image. Thanks, Benji!</p>
 </li>
-<li>Log processing and display have been rewritten:
+<li>
+<p>Log processing and display have been rewritten:</p>
 <ul>
 <li>OpenVPN log files are kept in /tmp/tunnelblick/logs using filenames encoded with the configuration file path, the management port number, and the arguments to openvpnstart when the connection was created.</li>
 <li>Script log files are kept in the same directory, using filenames encoded with the configuration file path.</li>
@@ -3750,14 +3807,18 @@ sudo ./openvpn --show-digests --show-ciphers --show-tls<br>
 <li>
 <p>A DHCP renew which restores the original DNS and/or WINS information no longer causes the connection to restart. This new behavior can reversed be by setting Tunnelblick the boolean preferences '-doNotRestoreOnDnsReset' and/or '-doNotRestoreOnWinsReset' to TRUE.</p>
 </li>
-<li>Modified the up, down, and leasewatch scripts:
+<li>
+<p>Modified the up, down, and leasewatch scripts:</p>
 <ul>
 <li>client.up.osx.s and client.nomonitor.up.osx.sh are replaced by client.up.tunnelblick.sh</li>
 <li>client.down.osx.s and client.nomonitor.down.osx.sh are replaced by client.down.tunnelblick.sh</li>
-<li>The up and down scripts may be called with optional arguments (before the standard OpenVPN-supplied arguments) that are prefixed by a '-'. The arguments are:</li>
+<li>The up and down scripts may be called with optional arguments (before the standard OpenVPN-supplied arguments) that are prefixed by a '-'. The arguments are:
+<ul>
 <li>-m to monitor the network configuration (reflects the 'Monitor connection' checkbox);</li>
 <li>-w to cause restoration of expected WINS configuration if it changes to the pre-VPN configuration (via DHCP renewal, for example); and</li>
 <li>-d to cause restoration of expected DNS configuration if it changes to the pre-VPN configuration (via DHCP renewal, for example).</li>
+</ul>
+</li>
 <li>The -w and -d options are specified if the boolean Tunnelblick preferences '-doNotRestoreOnDnsReset' and/or '-doNotRestoreOnWinsReset' are TRUE.</li>
 <li>The up script saves, and leasewatch and the down script access, additional parameters (the state of the optional arguments, network primary service ID, and logfile path) in the System Configuration database as /Network/OpenVPN/...</li>
 <li>The up script saves the pre-VPN WINS (SMB) configuration in the System Configuration database as /Network/OpenVPN/OldSMB</li>
@@ -3792,16 +3853,23 @@ sudo ./openvpn --show-digests --show-ciphers --show-tls<br>
 <hr>
 <p><strong>3.1beta02 (2010-05-14)</strong></p>
 <ul>
-<li>Polish (PL) localization by Grzegorz Danecki. Dziękuję bardzo!</li>
-<li>Additional Norwegian (Bokmål, NB) localization by Jon Luberth. Tusen takk!</li>
-<li>Additional French (FR) localisation by François Varas. Merci beaucoup!</li>
+<li>
+<p>Polish (PL) localization by Grzegorz Danecki. Dziękuję bardzo!</p>
+</li>
+<li>
+<p>Additional Norwegian (Bokmål, NB) localization by Jon Luberth. Tusen takk!</p>
+</li>
+<li>
+<p>Additional French (FR) localisation by François Varas. Merci beaucoup!</p>
+</li>
 <li>
 <p>Additional Catalan localization by Aleix Dorca. Moltes gràcies!</p>
 </li>
 <li>
 <p>Many thanks also to Michael Williams. Many new enhancements are possible due to the his work. He contributed code that allows configurations in more than one folder to be available simultaneously. This has triggered an overhaul of the way Tunnelblick handles configurations, adding many new features.</p>
 </li>
-<li>Configurations may now be shared among all users of a computer, or they may be private to a particular user.
+<li>
+<p>Configurations may now be shared among all users of a computer, or they may be private to a particular user.</p>
 <ul>
 <li>A new button in the 'Details' window makes changing the availability of a configuration easy. The button displays either 'Share configuration' or 'Make configuration private', as appropriate.</li>
 <li>To be shared, a configuration must be a 'Tunnelblick VPN Configuration' (see below).</li>
@@ -3809,7 +3877,8 @@ sudo ./openvpn --show-digests --show-ciphers --show-tls<br>
 <li>Shared configurations (like deployed configurations) may only be examined, not edited. (But you can make it private, edit it, and then share it).</li>
 </ul>
 </li>
-<li>A new kind of configuration, a 'Tunnelblick VPN Configuration', may be used and may be shared among all users of a computer, or remain private to an individual user (see <a href="cConfigT.html">Tunnelblick VPN Configurations</a> for details):
+<li>
+<p>A new kind of configuration, a 'Tunnelblick VPN Configuration', may be used and may be shared among all users of a computer, or remain private to an individual user (see <a href="cConfigT.html">Tunnelblick VPN Configurations</a> for details):</p>
 <ul>
 <li>A Tunnelblick VPN Configuration is an OS X folder with an extension of '.tblk'.</li>
 <li>A Tunnelblick VPN Configuration includes one .ovpn configuration file, and many include key and certificate files and shell scripts. It can also include default settings for per-configuration preferences and version information to help manage enterprise distribution of configurations.</li>
@@ -3817,7 +3886,8 @@ sudo ./openvpn --show-digests --show-ciphers --show-tls<br>
 <li>Tunnelblick VPN Configurations and their contents are secured. Key and certificate files, for example, may not be read by the user. (The protection is not as robust as that for Deployed configurations, so that users may edit the configuration, but they are secure in the sense that a user is never allowed to use a configuration that has not been authorized by a computer administrator.)</li>
 </ul>
 </li>
-<li>Tunnelblick can now start Tunnelblick VPN Connections (clients or servers) when the computer starts:
+<li>
+<p>Tunnelblick can now start Tunnelblick VPN Connections (clients or servers) when the computer starts:</p>
 <ul>
 <li>A new option in the Details window is available for Shared and Deployed .tblk packages: to connect automatically 'when the computer starts'.</li>
 <li>When Tunnelblick is launched, it attaches itself to any OpenVPN processes which were started because of that option and allows control (disconnect/connect) of them, and displays their logs.</li>
@@ -3826,7 +3896,8 @@ sudo ./openvpn --show-digests --show-ciphers --show-tls<br>
 <li>Note that these 'when the computer starts' configurations must not ask for usernames, passwords, or private keys. (There is no user to ask, and no Tunnelblick to pull them out of the Keychain and give to OpenVPN.)</li>
 </ul>
 </li>
-<li>Tunnelblick now deals with the .tun and .tap kexts more flexibly:
+<li>
+<p>Tunnelblick now deals with the .tun and .tap kexts more flexibly:</p>
 <ul>
 <li>Loads and unloads them on demand: loaded at connect, unloaded at disconnect. An load is ignored if the kext is already loaded and an unload is ignored if the kext is in use.</li>
 <li>Scans the configuration file to determine if 'tap' or 'tun' is being used, and loads only the appropriate kext at connect. (Tunnelblick uses whatever is specified in the first 'dev' option in the configuration file.)</li>
@@ -3900,7 +3971,7 @@ sudo ./openvpn --show-digests --show-ciphers --show-tls<br>
 </li>
 </ul>
 <hr>
-<h2 id="version-3.0">Version 3.0</h2>
+<h2 id="version-30">Version 3.0</h2>
 <hr>
 <p><strong>3.0.1 (2011-01-12)</strong></p>
 <ul>
@@ -4138,7 +4209,7 @@ sudo ./openvpn --show-digests --show-ciphers --show-tls<br>
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotesOld.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotesOld.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotesOld.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotesOld.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotesOld.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotesOld.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotesOld.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2021-03-28.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2021-03-28.&nbsp;&nbsp;Copyright © 2015-2022 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

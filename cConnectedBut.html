@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Connects to the VPN, but doesn't work - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2021-12-23 18:07:43 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2022-05-04 03:06:24 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -85,26 +85,21 @@
 <li>A problem with the VPN server</li>
 </ul>
 <p>Tunnelblick includes the ability to diagnose some DNS problems and will warn you about some common configuration problems.</p>
-<p><strong>Check for a DNS problem:</strong><br>
-If OpenVPN connected to the server properly, but you are having trouble connecting to websites, the first thing to find out is if there is a DNS problem. To check that, try to access a website by using its IP address instead of its name. If the IP address works, but the name doesn't, there is a DNS problem. (Consider the IP address to be "working" if any of the webpage loads.)</p>
+<p><strong>Check for a DNS problem:</strong> If OpenVPN connected to the server properly, but you are having trouble connecting to websites, the first thing to find out is if there is a DNS problem. To check that, try to access a website by using its IP address instead of its name. If the IP address works, but the name doesn't, there is a DNS problem. (Consider the IP address to be "working" if any of the webpage loads.)</p>
 <p><strong>If you don't have a DNS problem</strong> then there is something else going on. See the <a href="support.html">Support page</a> for guidance.</p>
 <p><strong>If you have a DNS problem:</strong></p>
 <ol>
 <li>
 <p>See if your network settings manually specify a DNS server. If they do, that server will be used even when the VPN is active unless you put a check in "Allow changes to manually-set network settings" on Tunnelblick's "Advanced" settings page. If the manual DNS server is your ISP's DNS server, it is probably set up to ignore queries that come from outside the network. When you are connected to the VPN, your queries come from the VPN server, which is probably outside the ISP's network, so the ISP's DNS server will ignore your request. You should set up your computer to use a free public DNS server (see <a href="#how-to-use-a-different-dns-server">How to use a different DNS server</a>, below) while the VPN is active.</p>
 </li>
-<li>If your DNS settings are specified by DHCP, check your DNS settings both before you connect to the VPN and while you are connected.
-<ul>
-<li>If the DNS settings are the same, try setting up your computer to use a free public DNS server (see <a href="#how-to-use-a-different-dns-server">How to use a different DNS server</a>, below).</li>
-<li>If the DNS settings are different, the VPN is using a DNS server specified by the VPN setup. Contact the person who maintains your VPN server to find out why that DNS server is not functioning properly.</li>
-</ul>
+<li>
+<p>If your DNS settings are specified by DHCP, check your DNS settings both before you connect to the VPN and while you are connected. - If the DNS settings are the same, try setting up your computer to use a free public DNS server (see <a href="#how-to-use-a-different-dns-server">How to use a different DNS server</a>, below). - If the DNS settings are different, the VPN is using a DNS server specified by the VPN setup. Contact the person who maintains your VPN server to find out why that DNS server is not functioning properly.</p>
 </li>
 </ol>
 <h3 id="how-to-check-your-dns-settings">How to check your DNS settings</h3>
 <ol>
 <li>Launch System Preferences,</li>
-<li>Click "Network"<br>
-Your DNS server list is one of the entries on the right. It is a list of IP addresses, separated by commas. macOS will use the first one unless it fails to respond to requests, in which case it will try the second, then the third, etc.</li>
+<li>Click "Network" Your DNS server list is one of the entries on the right. It is a list of IP addresses, separated by commas. macOS will use the first one unless it fails to respond to requests, in which case it will try the second, then the third, etc.</li>
 </ol>
 <p>Note: If the DNS server list is dimmed (grayed out), it was set via DHCP, not manually.</p>
 <h3 id="how-to-use-a-different-dns-server">How to use a different DNS server</h3>
@@ -145,7 +140,7 @@ Your DNS server list is one of the entries on the right. It is a list of IP addr
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="https://translate.google.com/translate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcConnectedBut.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="https://translate.google.com/translate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcConnectedBut.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="https://translate.google.com/translate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcConnectedBut.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="https://translate.google.com/translate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcConnectedBut.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="https://translate.google.com/translate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcConnectedBut.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="https://translate.google.com/translate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcConnectedBut.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="https://translate.google.com/translate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcConnectedBut.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2019-03-18.&nbsp;&nbsp;Copyright © 2015-2021 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2019-03-18.&nbsp;&nbsp;Copyright © 2015-2022 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>
