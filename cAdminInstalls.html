@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
+<meta charset="UTF-8" lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Administrator Authorization to Install Tunnelblick and Configurations - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+<meta name="referrer" content="never">
+<title>Administrator Authorization to Install Tunnelblick and Configurations - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+<link rel="stylesheet" type="text/css" href="/common/style.v8.css">
+<link rel="icon" type="image/png" href="/common/favicon.v1.png">
+</head>
+<body>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2023-09-11 22:24:09 UTC</font></td></tr></table></center>
+<header>
+<div class="heading">
+<table>
+<tr>
+<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
+<td class="heading1">Tunnelblick</td>
+<td class="heading2">free software for OpenVPN on macOS</td>
+<td class="heading3"><a href="/cLocalizeTranslate.html">We need translators for several languages…</a></td>
+</tr>
+</table>
+</div>
+</header>
+<nav>
+<div class="topnav">
+<table class="topnav">
+<tbody>
+<tr>
+<td class="topnav-normal"><a href="/index.html" class="topnav">Home</a></td>
+<td class="topnav-normal"><a href="/downloads.html" class="topnav">Downloads</a></td>
+<td class="topnav-normal"><a href="/support.html" class="topnav">Support</a></td>
+<td class="topnav-highlight"><a href="/documents.html" class="topnav">Documents</a></td>
+<td class="topnav-normal"><a href="/issues.html" class="topnav">Issues</a></td>
+<td class="topnav-normal"><a href="/source.html" class="topnav">Source</a></td>
+<td class="topnav-normal"><a href="/contribute.html" class="topnav">Contribute</a></td>
+<td class="topnav-normal"><a href="/reachus.html" class="topnav">Contact</a></td>
+<td class="topnav-padding"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</nav>
+<main>
+<div class="content">
+<div class="content-cAdminInstalls">
+<table class="documents">
+<tr>
+<td class="documents-left">
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="/cNews.html">News</a><br>
+&nbsp;&nbsp;<a href="/cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="/czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="/cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="/cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="/cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="/cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="/cFAQ.html">FAQ</a></p>
+<p><strong><a href="https://groups.google.com/forum/#!forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="/cBeforeYouPost.html">Read Before You Post</a></p>
+</td>
+<td class="documents-right">
+<h1 id="administrator-authorization-to-install-tunnelblick-and-configurations">Administrator Authorization to Install Tunnelblick and Configurations</h1>
+<h2 id="why-authorization-by-an-administrator-is-needed-to-install-tunnelblick">Why authorization by an administrator is needed to install Tunnelblick</h2>
+<p>Authorization by a computer administrator is required to install Tunnelblick because macOS requires elevated privileges to make changes to the network configuration. Some parts of Tunnelblick need to make changes to the network configuration to connect and disconnect VPNs, so those parts require elevated privileges. Those parts of Tunnelblick are run as root so macOS will allow the changes. To set up these parts of Tunnelblick to run as root, Tunnelblick needs authorization from a computer administrator.</p>
+<h2 id="why-authorization-by-an-administrator-may-be-needed-to-install-configurations">Why authorization by an administrator may be needed to install configurations</h2>
+<p>The parts of Tunnelblick that run as root include OpenVPN, and OpenVPN can run scripts specified by the configuration. These scripts also run as root, so if a standard user (a non-administrator user) is able to modify the configuration, they could set up the configuration to run scripts as root.</p>
+<p>Tunnelblick prevents this by always requiring authorization by a computer administrator to make changes to the configuration that could cause scripts to be run.</p>
+<p>Tunnelblick includes the ability allow standard users to install or make changes to "safe" configurations (configurations which do not run scripts) without a computer administrator's authorization. That ability is disabled by default, and is controlled by the "Require administrator authorization to install all configurations" checkbox. If it is unchecked, "safe" configurations can be installed or modified by a standard user; only "unsafe" configurations (those which run scripts) will require computer administrator authorization to be installed or modified. A computer administrator's authorization is required to change the checkbox.</p>
+<h2 id="how-tunnelblick-obtains-authorization">How Tunnelblick obtains authorization</h2>
+<h3 id="tunnelblick-does-not-ask-for-a-computer-administrators-password----macos-does">Tunnelblick does not ask for a computer administrator's password -- macOS does</h3>
+<p>When Tunnelblick requires authorization from a computer administrator, it asks macOS for that authorization. macOS presents the user with a window asking for the password (or, if the user is not an administrator, an administrator name and password). If the password is correct and for a computer administrator, macOS gives Tunnelblick an authorization token, and Tunnelblick uses that token to perform privileged operations. Tunnelblick itself does not have access to the password.</p>
+<h3 id="why-touch-id-cannot-be-used-for-authorization-by-tunnelblick">Why Touch ID cannot be used for authorization by Tunnelblick</h3>
+<p>Tunnelblick uses a macOS authorization mechanism that does not support Touch ID. (As described above, this mechanism is used so that Tunnelblick does not have access to passwords.)</p>
+<h3 id="tunnelblicks-admin-mode-allows-changes-to-be-made-for-five-minutes-without-further-authorization">Tunnelblick's "admin mode" allows changes to be made for five minutes without further authorization</h3>
+<p>Tunnelblick has an "admin mode" which, after obtaining authorization by a computer administrator, allows any changes that would usually require such authorization to be made for five minutes without further authorization. The limit of five minutes is imposed by macOS and cannot be changed by Tunnelblick.</p>
+<p>To enter admin mode, click the "Admin mode" button at the top of the "VPN Details" window. After obtaining authorization from a computer administrator, the button will display the time remaining in "admin mode". Click the button again to cancel the admin mode. If not cancelled manually, admin mode will be cancelled automatically five minutes after it started.</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</main>
+<footer>
+<div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="/iptranslate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAdminInstalls.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="/iptranslate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAdminInstalls.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="/iptranslate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAdminInstalls.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="/iptranslate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAdminInstalls.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="/iptranslate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAdminInstalls.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="/iptranslate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAdminInstalls.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="/iptranslate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAdminInstalls.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
+<div class="bottom-copyright">Last updated&nbsp;2023-09-11.&nbsp;&nbsp;Copyright © 2015-2022 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+</footer>
+</body>
+</html>
