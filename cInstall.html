@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2023-12-03 23:53:30 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2024-02-13 00:34:01 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -74,7 +74,7 @@
 <p><strong>Updating Tunnelblick</strong>: It is usually easiest to update using Tunnelblick's built-in updater (see the "Preferences" panel of Tunnelblick's "VPN Details" window), but you can install a new version of Tunnelblick without uninstalling the previous version; the previous version will be upgraded without disturbing your existing configurations and settings.</p>
 <h2 id="downloading-tunnelblick-and-verifying-the-download">Downloading Tunnelblick and Verifying the Download</h2>
 <p>First, download the latest disk image from the <a href="downloads.html">Downloads page</a>. If you need help deciding between the "stable" and "beta" versions, see <a href="cStableBeta.html">Stable vs. Beta</a>.</p>
-<p><em>Note: If you are using an older version of macOS (10.4 - 10.7.4) you should download an older version of Tunnelblick from the <a href="https://tunnelblick.net/downloadsDeprecated.html">Deprecated Downlaods page</a>.</em></p>
+<p><em>Note: If you are using an older version of macOS (10.4 -10.12) you should download an older version of Tunnelblick from the <a href="https://tunnelblick.net/downloadsDeprecated.html">Deprecated Downlaods page</a>.</em></p>
 <p>Next, <a href="downloads.html#verifying-downloads">verify the download</a>. This is an important step to ensure that the download was not damaged or deliberately modified en-route to your computer.</p>
 <h2 id="installing-tunnelblick">Installing Tunnelblick</h2>
 <p>Depending on your browser and its settings, you may need to double-click the downloaded disk image file to mount the disk image. A window similar to the following will appear:</p>
@@ -89,17 +89,6 @@
 <p><img src="/images/cinstall-06-from-internet-2013-07-27.png" alt="window with text 'Tunnelblick is an application downloaded from the Internet. Are you sure you want to open it?' with three buttons labeled 'Show Disk Image', 'Cancel', and 'Open'"></p>
 <p>then click the "Open" button to continue. The window will disappear and a new window will appear.</p>
 <hr>
-<p>If the window is similar to the following:</p>
-<p><img src="/images/cinstall-05-convert-configs-2013-07-27.png" alt="window with text 'you have one or more OpenVPN configurations that will not be available when using this version of Tunnelblick…' and three buttons labeled 'Ignore', 'Quit', and 'Convert Configurations'"></p>
-<p>then you have OpenVPN configurations that have not been converted to Tunnelblick VPN Configurations.</p>
-<p>Tunnelblick only uses Tunnelblick VPN Configurations because OpenVPN configurations are difficult to secure properly. When a configuration is converted, all of the original files used by the OpenVPN configuration are collected into the Tunnelblick VPN Configuration and then the Tunnelblick VPN Configuration is secured.</p>
-<ul>
-<li><strong>Ignore</strong> will ignore any OpenVPN configurations. They will not be available for use in Tunnelblick — they will not appear in the list of configurations.<br></li>
-<li><strong>Quit</strong> will quit Tunnelblick.<br></li>
-<li><strong>Convert Configurations</strong> will attempt to convert your configurations before installing Tunnelblick. If the conversion fails, Tunnelblick will not be installed.<br></li>
-</ul>
-<p>Click <strong>Ignore</strong> or <strong>Convert Configurations</strong>. The window will disappear and a new window will appear.</p>
-<hr>
 <p>A window similar to the following window should now be displayed:</p>
 <p><img src="/images/cinstall-02a-setup-options-2018-06-22.png" alt="window with text, two checkboxes labeled 'Check for updates' and 'check for IP address changes', and three buttons labeled 'more info', 'quit', and 'continue'."></p>
 <p>Specify whether or not you wish to have Tunnelblick check for updates each time it is launched. When an update is available, you will be given a choice of whether to install the update or not. <strong>Tunnelblick checks for updates by making a request to the tunnelblick.net website</strong> each time it is launched, and every 24 hours thereafter while it is running. As part of its normal website operation, the website keeps a log which includes information about such requests; see <a href="cPrivacy.html#tunnelblick.net-privacy">tunnelblick.net Privacy</a> for details.</p>
@@ -112,10 +101,8 @@
 <p><img src="/images/cinstall-03-must-be-in-apps-2015-07-27.png" alt="window with text 'Tunnelblick must be installed in Applications. Do you wish to install Tunnelblick. Type your password to allow this.' the window has two text boxes for entering a username and password, and two buttons labeled 'Cancel' and 'OK'"></p>
 <p>If you are reinstalling, upgrading, or downgrading Tunnelblick, the window will show the version number of the current copy and of the new copy. The current copy of Tunnelblick will be put in the Trash before it is replaced.</p>
 <p>The name and password of a computer administrator is needed to install Tunnelblick. Tunnelblick's imbedded OpenVPN needs root privileges because it needs to modify network settings by configuring new network devices, changing routes, and adding and removing nameservers. Because we don't want you to enter your administrator account name and password every time you start a VPN connection, Tunnelblick installs a program that allows it to start a VPN connection with super user rights. Tunnelblick uses your administrator account name and password so it can install this program. Tunnelblick also secures itself from being modified.</p>
-<p>Click the "OK" button to install Tunnelblick to your hard drive. Conversion of OpenVPN configurations to Tunnelblick VPN Configurations, if requested, will be done before the installation so that if they fail the installation will not take place and any existing Tunnelblick installation will not be changed.</p>
-<p>After the conversion and installation is complete (it should take only a couple of seconds to install Tunnelblick, but if conversions are done they can take tens of seconds), a new window will appear.</p>
-<hr>
-<p>If Tunnelblick is running, the window will look similar to the following:</p>
+<p>Click the "OK" button to install Tunnelblick to your hard drive. It should take only a few seconds to install Tunnelblick.</p>
+<p>When the installation is complete a new window should appear, similar to the following:</p>
 <p><img src="/images/using-tunnelblick-running-2010-02-06.png" alt="window with text 'Tunnelblick is currently running and two buttons labeled 'Cancel' and 'Close VPN Connections and Stop Tunnelblick'"></p>
 <p>(Note: Connections set to "automatically start when computer starts" <strong>will not be closed</strong> and may interfere with the installation. You must close them manually.)</p>
 <p>Click the "Close VPN Connections and Stop Tunnelblick" to continue. After all connections are closed and Tunnelblick has quit, the installation will proceed.</p>
@@ -128,7 +115,7 @@
 <hr>
 <h2 id="launching-tunnelblick">Launching Tunnelblick</h2>
 <p>To launch Tunnelblick after setting up configuration and other files, double-click Tunnelblick in the Applications folder.</p>
-<p>If Tunnelblick is running when you log out, shut down, or restart your computer, it will be launched automatically when you log in. It will also be launched automatically if any VPNs are active when you log in. Otherwise you will have to launch it manually when you need it.</p>
+<p>If Tunnelblick is running when you log out, shut down, or restart your computer, it will be launched automatically when you log in. It will also be launched automatically if any VPNs are active when you log in, or if Tunnelblick has disabled network access. Otherwise you will have to launch it manually when you need it.</p>
 <p>Tunnelblick requires few computer resources when no VPN is connected, so most people leave it running all the time.</p>
 </td>
 </tr>
@@ -138,7 +125,7 @@
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="/iptranslate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstall.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="/iptranslate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstall.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="/iptranslate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstall.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="/iptranslate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstall.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="/iptranslate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstall.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="/iptranslate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstall.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="/iptranslate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstall.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2019-04-10.&nbsp;&nbsp;Copyright © 2015-2022 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2023-12-30.&nbsp;&nbsp;Copyright © 2015-2024 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

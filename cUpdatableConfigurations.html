@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2023-12-03 23:53:30 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2024-02-13 00:34:01 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -99,7 +99,7 @@ The new method is described <a href="cNewUpdatableConfigurations.html">here</a>.
 <li><strong>CFBundleVersion</strong>, a string containing a version number consisting only of the digits 0-9 and periods. For example, "1.0", "1.3.1", etc.</li>
 <li><strong>TBPackageVersion</strong>, a string "1". (This is required in any Configuration Info.plist, whether or not it is updatable.)</li>
 <li><strong>SUFeedURL</strong>, a string with the URL for the "appcast" that gives information about updates to the Configuration. For example, <code>"https://example.com/tunnelblick/configs/001/appcast.rss"</code>. If this is not an "https:" URL, the SUPublicDSAKeyFile entry and associated file are required.</li>
-<li><strong>SUPublicDSAKeyFile</strong>: The filename and extension of a file containing the public DSA key. This key and file are required. The file must be contained in the Configuration, either directly in the .tblk, or in the .tblk/Contents/Resources folder. See <a href="#Signing_the_Update">Signing the Update</a> and <a href="Signing_the_Appcast.html">Signing the Appcast</a>.</li>
+<li><strong>SUPublicDSAKeyFile</strong>: The filename and extension of a file containing the public DSA key. This key and file are required. The file must be contained in the Configuration, either directly in the .tblk, or in the .tblk/Contents/Resources folder. See <a href="#signing_the_appcast_and_update">Signing the Appcast and Update</a>.</li>
 </ul>
 <p>Optional Info.plist entries include those normally allowed in the Info.plist of a Configuration — <strong>TBReplaceIdentical</strong>, <strong>TBSharePackage</strong>, etc.</p>
 <p>There are two optional Info.plist entries that are used only for updatable configurations:</p>
@@ -109,7 +109,7 @@ The new method is described <a href="cNewUpdatableConfigurations.html">here</a>.
 <li><strong><code>abc*</code></strong> matches any filename which starts with abc (e.g. "abc", "abcd", "abc.def.ghi.key", etc.)</li>
 <li><strong><code>abc*def.key</code></strong> matches any filename that starts with "abc" and ends with "def.key" (e.g. "abcdef.key", "abc.user12345.private.def.key", etc.</li>
 </ul>
-<p><strong>TBAppcastRequiresDSASignature</strong>. If true, update appcasts must be signed with a DSA signature (see <a href="#Signing_the_Appcast%20and_Update">Signing the Appcast and Update</a>). If false or not present, appcasts do not need to be signed.</p>
+<p><strong>TBAppcastRequiresDSASignature</strong>. If true, update appcasts must be signed with a DSA signature (see <a href="#signing_the_appcast_and_update">Signing the Appcast and Update</a>). If false or not present, appcasts do not need to be signed.</p>
 <p>The other optional Info.plist entries for an updatable Configuration are all <a href="https://sparkle-project.org">Sparkle Updater</a> entries. (Please note that Tunnelblick uses a customized version of Sparkle so some features in newer versions of Sparkle may not be available.) Here are comments on some entries:</p>
 <ul>
 <li><strong>SUScheduledCheckInterval</strong>: The time, in seconds, between checks. Minimum of 60; default is 3600 (one hour).</li>
@@ -239,7 +239,7 @@ The new method is described <a href="cNewUpdatableConfigurations.html">here</a>.
                 &lt;![CDATA[]]&gt;
             &lt;/description&gt;</code></pre>
 <p>and insert your release notes (an HTML fragement or an entire document including a "doctype" statement) between the <code>&lt;![CDATA[</code> and the <code>]]&gt;</code>.</p>
-<p>For more information about signing the appcast and update, see <a href="#Signing_the_Appcast_and_Update">Signing the Appcast</a>.</p>
+<p>For more information about signing the appcast and update, see <a href="#signing_the_appcast_and_update">Signing the Appcast and Update</a>.</p>
 <p>For more information on updates generally, see the <a href="https://sparkle-project.org">Sparkle Updater</a> documentation.</p>
 <p>Also, note that</p>
 <ul>
@@ -318,7 +318,7 @@ The new method is described <a href="cNewUpdatableConfigurations.html">here</a>.
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="/iptranslate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="/iptranslate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="/iptranslate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="/iptranslate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="/iptranslate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="/iptranslate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="/iptranslate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUpdatableConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2020-02-05.&nbsp;&nbsp;Copyright © 2015-2022 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2023-12-30.&nbsp;&nbsp;Copyright © 2015-2024 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

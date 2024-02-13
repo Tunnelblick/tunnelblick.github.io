@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2023-12-03 23:53:30 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2024-02-13 00:34:01 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -69,7 +69,7 @@
 <p class="toc">On This Page<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#what-is-tunnelblick">What is Tunnelblick?</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#where-is-the-documentation">Where is the documentation?</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#what-versions-of-macos-or-os-x-does-tunnelblick-work-on">What versions of macOS or OS X does Tunnelblick work on?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#what-versions-of-macos-does-tunnelblick-work-on">What versions of macOS does Tunnelblick work on?</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#what-else-do-i-need">What else do I need?</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#how-do-i-know-the-vpn-is-working">How do I know the VPN is working?</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#what-if-the-internet-doesnt-work-after-i-make-a-connection">What if the Internet doesn't work after I make a connection?</a><br>
@@ -98,12 +98,12 @@
 <ul>
 <li><strong>Explanation 2</strong>: Tunnelblick is a ready-to-use Graphic User Interface (GUI) for OpenVPN on macOS or OS X. It provides easy-to-use control of OpenVPN server and/or client connections.</li>
 </ul>
-<p>It runs on macOS or OS X only -- it does not run on iOS (iPhone, iPad, etc.). It comes as a ready-to-use application with all necessary binaries and drivers (including OpenVPN and Tun and Tap system extensions) included. No additional installation is necessary — just add your configuration and encryption information.</p>
+<p>It runs on macOS or OS X only -- it does not run on Windows, Linux, or iOS (iPhone, iPad, etc.). It comes as a ready-to-use application with all necessary binaries and drivers (including OpenVPN and Tun and Tap system extensions) included. No additional installation is necessary — just add your configuration and encryption information.</p>
 <p>Tunnelblick is free software made available under the <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU General Public License, version 2</a> and may be distributed only in accordance with the terms of that license.</p>
 <h2 id="where-is-the-documentation">Where is the documentation?</h2>
-<p>The Tunnelblick disk image includes a link to the <a href="documents.html">Tunnelblick Documentation</a>. There is also help available in Tunnelblick's windows by clicking on the question-mark ("?") button and by hovering the pointer over most buttons.</p>
-<h2 id="what-versions-of-macos-or-os-x-does-tunnelblick-work-on">What versions of macOS or OS X does Tunnelblick work on?</h2>
-<p><a href="downloads.html">Modern versions</a> of Tunnelblick run as 64-bit programs on Intel processors on macOS or macOS and OS X 10.7.5+ and higher.</p>
+<p>The Tunnelblick disk image includes a link to the <a href="documents.html">Tunnelblick Documentation</a>. There is also help available in Tunnelblick's windows by clicking on the question-mark ("?") button and by hovering the pointer over most buttons and checkboxes.</p>
+<h2 id="what-versions-of-macos-does-tunnelblick-work-on">What versions of macOS does Tunnelblick work on?</h2>
+<p><a href="downloads.html">Modern versions</a> of Tunnelblick run as 64-bit programs on Intel or Apple Silicon processors.</p>
 <p><a href="downloadsDeprecated.html">An older version of Tunnelblick</a> works on OS X 10.4 through 10.10. That version is a Universal 32-bit application, so it runs as an application in 32-bit mode on both Intel and PowerPC Macs under 32-bit and 64-bit kernels. It includes 32/64-bit versions of tun.kext and tap.kext. Tiger, Leopard, and Snow Leopard's 32-bit kernel use the 32-bit tun/tap, and Snow Leopard's 64-bit kernel, and Lion and higher, use the 64-bit tun/tap.</p>
 <h2 id="what-else-do-i-need">What else do I need?</h2>
 <p>You need a VPN server to connect to. It could be a server at your company or at a VPN service provider, or it could be a VPN that you have set up yourself at home. See <a href="cGettingVPNService.html">Getting VPN Service</a> for details.</p>
@@ -158,7 +158,7 @@
 <p>OpenVPN needs root privileges because it needs to modify network settings when configuring network devices, changing routes, and adding and removing nameservers. Because we don't want you to enter your computer administrator password every time you start a VPN connection, Tunnelblick comes with the "openvpnstart" setuid root binary that allows you to do exactly one thing: start a VPN connection with super user rights.</p>
 <p>Tunnelblick also needs root privileges to secure configuration files. The first time a configuration is used, or if it has been modified, Tunnelblick asks for an administrator username/password so it can change the file's ownership to root before making a connection using that configuration file.</p>
 <h2 id="why-does-tunnelblick-change-the-ownership-of-the-configuration-files-to-root">Why does Tunnelblick change the ownership of the configuration files to root?</h2>
-<p>This is a security issue. OpenVPN configuration files allow you to specify up/down scripts which will be executed with root privileges every time a VPN connection is started or stopped. If the configuration files were owned by the local user, anyone could execute arbitrary code as root by inserting an 'up' directive to the configuration file and pointing it to a (malicious) shell script. Therefore, when a configuration file is first used, Tunnelblick asks for a computer administrator's username and password and uses them to change the ownership of the configuration file to root, so it is protected against unnoticed and possibly malicious changes. If new configuration files are added, Tunnelblick will ask for a computer administrator's username and password to change the ownership of the new file to root before the first use of each new configuration file.</p>
+<p>This is a security issue. OpenVPN configuration files allow you to specify up/down scripts which will be executed with root privileges every time a VPN connection is started or stopped. If the configuration files were owned by the local user, anyone could execute arbitrary code as root by inserting an 'up' directive to the configuration file and pointing it to a (malicious) shell script. Therefore, when a configuration file is first used, Tunnelblick asks for a computer administrator's username and password and uses them to change the ownership of the configuration file to root, so it is protected against unnoticed and possibly malicious changes. If new configuration files are added, Tunnelblick will ask for a computer administrator's authorization to change the ownership of the new file to root before the first use of each new configuration file.</p>
 <h2 id="why-are-routes-not-restored-when-closing-my-vpn-connection">Why are routes not restored when closing my VPN connection?</h2>
 <p>You are probably using the 'user' or 'group' directive in your OpenVPN client configuration file. If you use it, the OpenVPN process will drop privileges after startup which is additional security measure. However, OpenVPN needs root privileges for restoring the route back to their original state. In short: don't use it.</p>
 <p>Tunnelblick contains the "openvpn-down-root.so" plugin for OpenVPN. Together with a per-configuration preference, this allows the use of 'user' and 'group' but it does not allow OpenVPN to restore the routes. See <a href="czUsing.html">Using Tunnelblick</a> for details on how to do this.</p>
@@ -170,7 +170,7 @@
 <li>You are using a "deployed" version of Tunnelblick, and the deployer has specified that that checkbox or button should not be available; or</li>
 <li>The button has a different label because it is being used for different purpose. Examples:
 <ul>
-<li>There is one button which displays "Edit configuration" or "Examine configuration" depending on whether you can edit (modify) the configuration, or only examine it. To edit a configuration, you must have write permissions on the folder which contains the configuration, and must be able to write to the configuration file. Non-administrator users of "Deployed" versions of Tunnelblick may be prevented from editing configurations by the deployer. Shared configurations may not be edited directly — make the configuration private, edit it, and then share it to have this effect.</li>
+<li>There is one button which displays "Edit configuration" or "Examine configuration", depending on whether you can edit (modify) the configuration, or only examine it. To edit a configuration, you must have write permissions on the folder which contains the configuration, and must be able to write to the configuration file. Non-administrator users of "Deployed" versions of Tunnelblick may be prevented from editing configurations by the deployer. Shared configurations may not be edited directly — make the configuration private, edit it, and then share it to have this effect.</li>
 <li>There is one button which displays either "Make configuration private" or "Share configuration". If the configuration is already being shared, it shows "Make configuration private". Otherwise, the button shows "Share configuration". Note that if the configuration is part of a "Deployed" version of Tunnelblick, or is not a Tunnelblick VPN Configuration, the button will be disabled (dimmed) because it cannot be shared.</li>
 </ul>
 </li>
@@ -187,7 +187,7 @@
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="/iptranslate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcFAQ.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="/iptranslate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcFAQ.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="/iptranslate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcFAQ.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="/iptranslate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcFAQ.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="/iptranslate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcFAQ.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="/iptranslate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcFAQ.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="/iptranslate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcFAQ.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2020-11-13.&nbsp;&nbsp;Copyright © 2015-2022 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2023-12-27.&nbsp;&nbsp;Copyright © 2015-2024 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

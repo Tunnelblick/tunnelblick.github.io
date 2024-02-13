@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2023-12-03 23:53:30 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2024-02-13 00:34:01 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -74,9 +74,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#use-credentials-for-multiple-configurations">Use Credentials for Multiple Configurations.</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#arrange-configurations-in-a-folder-hierarchy">Arrange Configurations in a Folder Hierarchy</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#arranging-new-configurations">Arranging New Configurations</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#arranging-existing-configurations">Arranging Existing Configurations</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#procedure-1">Procedure #1</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#procedure-2">Procedure #2</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#standard-macos-shortcuts-for-selecting-multiple-items">Standard macOS Shortcuts for Selecting Multiple Items</a><br></p>
 <h2 id="install-multiple-configurations-at-one-time">Install Multiple Configurations at One Time</h2>
 <p>Use <a href="#standard-macos-shortcuts-for-selecting-multiple-items">standard macOS keyboard shortcuts</a> to select multiple configurations in Finder, then drag and drop them onto the Tunnelblick icon in the menu bar.</p>
@@ -100,7 +97,7 @@
 <p>There is a disclosure triangle next to the name of each folder in the list of configurations in the "VPN Details" window. Click the triangle to show or hide the contents of the folder.</p>
 </li>
 </ul>
-<p>It's easiest to arrange your configurations <em>before</em> installing them, but with some work, existing configurations can be rearranged.</p>
+<p>It's easiest to arrange your configurations <em>before</em> installing them, but existing configurations can be rearranged by dragging and dropping them or using commands in the "gear" menu.</p>
 <hr>
 <h3 id="arranging-new-configurations">Arranging New Configurations</h3>
 <ol>
@@ -121,57 +118,6 @@
 </li>
 </ol>
 <p>You'll be asked to confirm the installation and whether the configurations should be private or shared.</p>
-<hr>
-<h3 id="arranging-existing-configurations">Arranging Existing Configurations</h3>
-<p>There are two different procedures to do this:</p>
-<h4 id="procedure-1">Procedure #1</h4>
-<p>The following procedure is easier, but <span class="red">you will lose all Tunnelblick settings for your configurations and lose all private key and username/passwords associated with your configurations that were saved in the Keychain</span>:</p>
-<ol>
-<li>
-<p>Create a folder named TBC on your Desktop.</p>
-</li>
-<li>
-<p>Copy the contents of /Library/Application Support/Tunnelblick/Shared into the folder. (These are the shared configurations.)</p>
-</li>
-<li>
-<p>Copy the contents of /Users/YOUR_USERNAME/Library/Application Support/Tunnelblick/Configurations into the folder. (These are the private configurations.)</p>
-</li>
-<li>
-<p>Rearrange the configurations in TBC, adding subfolders and putting configurations into them. (Subfolders of subfolders to any level are allowed.)</p>
-</li>
-<li>
-<p>Rename the TBC folder to TBC.tblk.</p>
-</li>
-<li>
-<p>Launch Tunnelblick, select all of your configurations in the list on the "VPN Details" window, and delete them by clicking the little minus sign ("-") below the list.</p>
-</li>
-<li>
-<p>Drag TBC.tblk and drop it onto the Tunnelblick icon in the menu bar.</p>
-</li>
-</ol>
-<h4 id="procedure-2">Procedure #2</h4>
-<p>The following procedure preserves all Tunnelblick settings all private key and username/passwords for your configurations. However, it uses the command line and the "sudo" command, which can be <span class="red">very dangerous</span> unless you understand what you are doing and are very careful.</p>
-<p><span class="red">Please BACK UP your computer before doing this so you can restore it if things go wrong.</span></p>
-<p>Note: this procedure will NOT allow you to change a shared configuration to a private configuration or vice-versa.</p>
-<ol>
-<li>
-<p>Create empty subfolders inside of /Library/Application Support/Tunnelblick/Shared and/or /Users/YOUR_USERNAME/Library/Application Support/Tunnelblick/Configurations to reflect the folder hierarchy that you want to end up with. The subfolders can themselves have subfolders to any level. Use simple names, avoiding special characters.</p>
-</li>
-<li>
-<p>For each configuration you want to move, execute the following command in Terminal:</p>
-</li>
-</ol>
-<pre><code>   sudo /Applications/Tunnelblick.app/Contents/Resources/installer   4097   "NEW"   "OLD"</code></pre>
-<p>where NEW is the absolute path to which the configuration should be moved, and OLD is the absolute path of the existing configuration.</p>
-<p>You'll need to execute the "sudo" command while logged in as an "administrator", not as a standard user. When you are asked for your password, enter your password and press the enter/return key. As you enter your password, nothing will appear — not even asterisks ("*").</p>
-<p>For example, to move a shared configuration named "US-West Coast TCP" into the "US" subfolder of the new "TCP Configurations" folder (the "\" lets you enter a single long command on multiple lines):</p>
-<pre><code>   sudo /Applications/Tunnelblick.app/Contents/Resources/installer   4097 \
-   "/Library/Application Support/Tunnelblick/Shared/TCP Configurations/US/US-West Coast TCP.tblk" \
-   "/Library/Application Support/Tunnelblick/Shared/US-West Coast TCP.tblk"</code></pre>
-<p>If you want to change the name of the configuration at the same time, you could instead use something like:</p>
-<pre><code>   sudo /Applications/Tunnelblick.app/Contents/Resources/installer   4097 \
-   "/Library/Application Support/Tunnelblick/Shared/TCP Configurations/US/West Coast.tblk" \
-   "/Library/Application Support/Tunnelblick/Shared/US-West Coast TCP.tblk"</code></pre>
 <h2 id="standard-macos-shortcuts-for-selecting-multiple-items">Standard macOS Shortcuts for Selecting Multiple Items</h2>
 <ul>
 <li>If you hold down a "Command" key and click an item, it will be added or removed from the selected items.</li>
@@ -185,7 +131,7 @@
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="/iptranslate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcManyConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="/iptranslate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcManyConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="/iptranslate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcManyConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="/iptranslate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcManyConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="/iptranslate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcManyConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="/iptranslate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcManyConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="/iptranslate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcManyConfigurations.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2018-11-16.&nbsp;&nbsp;Copyright © 2015-2022 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2023-12-27.&nbsp;&nbsp;Copyright © 2015-2024 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>
