@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
+<meta charset="UTF-8" lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Tunnelblick 4 - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+<meta name="referrer" content="never">
+<title>Tunnelblick 4 - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+<link rel="stylesheet" type="text/css" href="/common/style.v8.css">
+<link rel="icon" type="image/png" href="/common/favicon.v1.png">
+</head>
+<body>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2024-03-09 02:13:58 UTC</font></td></tr></table></center>
+<header>
+<div class="heading">
+<table>
+<tr>
+<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
+<td class="heading1">Tunnelblick</td>
+<td class="heading2">free software for OpenVPN on macOS</td>
+<td class="heading3"><a href="/cLocalizeTranslate.html">We need translators for several languages…</a></td>
+</tr>
+</table>
+</div>
+</header>
+<nav>
+<div class="topnav">
+<table class="topnav">
+<tbody>
+<tr>
+<td class="topnav-normal"><a href="/index.html" class="topnav">Home</a></td>
+<td class="topnav-normal"><a href="/downloads.html" class="topnav">Downloads</a></td>
+<td class="topnav-normal"><a href="/support.html" class="topnav">Support</a></td>
+<td class="topnav-highlight"><a href="/documents.html" class="topnav">Documents</a></td>
+<td class="topnav-normal"><a href="/issues.html" class="topnav">Issues</a></td>
+<td class="topnav-normal"><a href="/source.html" class="topnav">Source</a></td>
+<td class="topnav-normal"><a href="/contribute.html" class="topnav">Contribute</a></td>
+<td class="topnav-normal"><a href="/reachus.html" class="topnav">Contact</a></td>
+<td class="topnav-padding"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</nav>
+<main>
+<div class="content">
+<div class="content-cTunnelblick4">
+<table class="documents">
+<tr>
+<td class="documents-left">
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="/cNews.html">News</a><br>
+&nbsp;&nbsp;<a href="/cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="/czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="/cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="/cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="/cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="/cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="/cFAQ.html">FAQ</a></p>
+<p><strong><a href="https://groups.google.com/forum/#!forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="/cBeforeYouPost.html">Read Before You Post</a></p>
+</td>
+<td class="documents-right">
+<h1 id="tunnelblick-4">Tunnelblick 4</h1>
+<hr>
+<p>Major Changes in Tunnelblick 4:</p>
+<ul>
+<li>
+<p>Adds support for client-pending-auth with WEB_AUTH.</p>
+</li>
+<li>
+<p>Adds commands to install private and shared configurations from the command line. See <a href="https://tunnelblick.net/cInstallConfigs.html">Installing and Deleting VPN Configurations</a>.</p>
+</li>
+<li>
+<p>Changes the versions of OpenVPN/OpenSSL that were included in Tunnelblick 3.</p>
+</li>
+<li>
+<p>Changes the default version of OpenVPN/OpenSSL used for connecting.</p>
+</li>
+<li>
+<p>Includes several other improvements and fixes many problems.</p>
+</li>
+</ul>
+<hr>
+<p>Tunnelblick 4 changes the versions of OpenVPN/SSL that were included in Tunnelblick 3:</p>
+<ul>
+<li>
+<p><strong>OpenVPN 2.3 has been removed</strong>. It was last updated more than six years ago and is no longer supported by OpenVPN. (It had been include in Tunnelblick to allow connections to VPN servers in old hardware.)</p>
+</li>
+<li>
+<p><strong>OpenVPN 2.6 has been added</strong>. It is the current version of OpenVPN.</p>
+</li>
+</ul>
+<p>OpenVPN 2.4 and 2.5 are also included, for compatibility with older VPN servers, but <strong>will be removed in future versions of Tunnelblick</strong>. If your VPN requires them, it should be updated to be compatible with the current version, 2.6.</p>
+<ul>
+<li>OpenVPN 2.4 is no longer supported by OpenVPN.</li>
+<li>OpenVPN 2.5 will be supported by OpenVPN until 2024-07-01.</li>
+</ul>
+<hr>
+<p><strong>The default version of OpenVPN/SSL has changed</strong> from OpenVPN 2.5 with OpenSSL 1.1.v to OpenVPN 2.6 with OpenSSL 3.0.</p>
+<hr>
+<p><strong><span class="red">The newer version of OpenSSL can cause problems</span></strong> if the VPN setup has a very old setup and relies on insecure algorithms.</p>
+<p>The most common symptom is that the VPN doesn't connect and the status switches back and forth between "Authorizing" and "Waiting for server response".</p>
+<p>If that happens, examine the log. If you see the following error messages:</p>
+<pre><code> OpenSSL: error:0A00014D:SSL routines::legacy sigalg disallowed or unsupported</code></pre>
+<p>or</p>
+<pre><code> OpenSSL: error:0308010C:digital envelope routines::unsupported:Global default library context, Algorithm (RC2-40-CBC : 0)</code></pre>
+<p>or similar error messages from OpenSSL, <strong>try changing the version of OpenVPN/SSL</strong> to OpenVPN 2.6.9 - OpenSSL 1.1.1w.</p>
+<p><strong>If that works</strong> and the VPN connects, contact whoever gave you your VPN configurations. The configurations use an out-of-date encryption, hash, or signature algorithms that are no longer secure and are not supported by modern versions of OpenSSL.</p>
+<p><strong>At some point Tunnelblick will no longer include OpenSSL 1.1.1w</strong>. It is no longer supported by OpenSSL, and does not receive security updates, so you should get your configurations set up to be compatible with newer versions.</p>
+<p><strong>If that does not work</strong> and the VPN does not connect with OpenVPN 2.6.9 - OpenSSL 1.1.1w, try OpenVPN 2.5.9 and 2.4.12. If it connects with one of them, contact whoever gave you your VPN configurations. The configurations require an out-of-date version of OpenVPN and should be updated.</p>
+<p>At some point Tunnelblick will no longer include OpenVPN 2.5.9 and 2.4.12. They are no longer supported by OpenVPN. Your VPN setup should be updated to be compatible with the current version, 2.6.</p>
+<p><strong>If the VPN does not connect with <em>any</em> version of OpenVPN/OpenSSL</strong>, see</p>
+<ul>
+<li><a href="https://tunnelblick.net/cMonterey.html">Tunnelblick on macOS Monterey, Ventura, and Sonoma</a></li>
+<li><a href="https://tunnelblick.net/cBigSur.html">Tunnelblick on macOS Big Sur</a></li>
+<li><a href="https://tunnelblick.net/cCatalina.html">Tunnelblick on macOS Catalina</a></li>
+<li><a href="https://tunnelblick.net/cHighSierraMojave.html">Tunnelblick on macOS High Sierra and macOS Mojave</a></li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</main>
+<footer>
+<div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="/iptranslate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTunnelblick4.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="/iptranslate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTunnelblick4.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="/iptranslate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTunnelblick4.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="/iptranslate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTunnelblick4.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="/iptranslate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTunnelblick4.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="/iptranslate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTunnelblick4.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="/iptranslate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTunnelblick4.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
+<div class="bottom-copyright">Last updated&nbsp;2024-03-08.&nbsp;&nbsp;Copyright © 2015-2024 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+</footer>
+</body>
+</html>
