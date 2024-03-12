@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2024-03-09 02:13:58 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2024-03-12 19:57:38 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -90,10 +90,9 @@
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p>First, check to make sure you don't have a Tunnelblick "Login Item".</p>
 <ol>
-<li>Go to System Preferences : Users & Groups, select the user on the list on the left side of the window, then click on "Login Items" tab on the right side of the window.</li>
-<li>If you see Tunnelblick, click to select it, then click the minus sign ("-") at the bottom of the list on the left side of the window.</li>
+<li>Go to System Preferences and search for "login". Click "Login Items" in the search results on the left, and look at the "Open at Login" items on the right side of the window.</li>
+<li>If you see Tunnelblick, click to select it, then click the minus sign ("-") below it.</li>
 </ol>
-<p>(Note that the checkbox next to the application name is for "hiding" the application after it launches -- it is <strong>not</strong> for making the application launch at login.)</p>
 <p>Second, check that you do not have an active VPN:</p>
 <ol>
 <li>Launch /Applications/Utilities/Activity Monitor.</li>
@@ -106,7 +105,7 @@
 <h2 id="why-and-how-tunnelblick-does-not-use-login-items">Why and How Tunnelblick does not Use Login Items</h2>
 <p>Tunnelblick doesn't use "Login Items" because we think it is important that users are shown an indication that a VPN is active when they log in (if one is active, of course). The indication is that Tunnelblick launches, and that it displays a connecting or connected icon. A VPN may be active because a VPN configuration is set up to connect when the computer starts, or because a different user logs into the computer while another user has connected to a VPN, or because of a crash of Tunnelblick or one of its components, or for some other reason.</p>
 <p>Login items also don't allow Tunnelblick to launch at login if it had previously disabled all network access. That's important so it can ask the user if network access should be reenabled.</p>
-<p>To ensure that is done, the Tunnelblick installer sets up macOS to run <a href="https://github.com/Tunnelblick/Tunnelblick/blob/master/tunnelblick/launchAtLogin.sh">a very short script</a> once each time a user logs in. The script decides whether or not to launch Tunnelblick, does so if necessary, and then quits. The script has little impact on the time to startup or login (on a five-year-old MacBook Pro the script uses 0.293 seconds of CPU time and very little I/O).</p>
+<p>To ensure that is done, the Tunnelblick installer sets up macOS to run the Tunnelblick-LaunchAtLogin program once each time a user logs in. The program decides whether or not to launch Tunnelblick, does so if necessary, and then quits. The program has little impact on the time to startup or login (on a 2012 MacBook Pro the program uses less than a tenth of a second of CPU time and very little I/O).</p>
 <p>Another reason Tunnelblick doesn't use "Login Items" is that most users don't have Tunnelblick in the Dock (where it is easy to make it a Login Item by clicking "Options" : "Open at Login"). Instead, they leave Tunnelblick running all the time to make it easy to connect a VPN. When there is no active VPN, Tunnelblick uses few computer resources.</p>
 </td>
 </tr>
@@ -116,7 +115,7 @@
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="/iptranslate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcLaunchAtLogin.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="/iptranslate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcLaunchAtLogin.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="/iptranslate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcLaunchAtLogin.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="/iptranslate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcLaunchAtLogin.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="/iptranslate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcLaunchAtLogin.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="/iptranslate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcLaunchAtLogin.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="/iptranslate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcLaunchAtLogin.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2019-04-09.&nbsp;&nbsp;Copyright © 2015-2024 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2024-03-11.&nbsp;&nbsp;Copyright © 2015-2024 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>
