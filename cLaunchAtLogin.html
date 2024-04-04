@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2024-03-12 19:57:38 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2024-04-04 16:42:44 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -66,27 +66,21 @@
 </td>
 <td class="documents-right">
 <h1 id="tunnelblick-launches-at-startup-login">Tunnelblick Launches at Startup (Login)</h1>
-<p><strong>This is related to <a href="cVpnDetailsAtLogin.html">VPN Details Windows Appears at Startup (Login)</a>.</strong></p>
+<p><strong>This is related to <a href="cVpnDetailsAtLogin.html">VPN Details Windows Appears at Startup (Login)</a> and <a href="cBackgroundPrograms.html">Tunnelblick's Background Programs</a>.</strong></p>
 <p>Some users find that Tunnelblick runs when they don't expect it to or they don't want it to.</p>
-<p>That is probably because Tunnelblick does not use the standard macOS "Open at Login" ("Login Items") mechanism to control its behavior. (See <a href="#why-and-how-tunnelblick-does-not-use-login-items">Why and How Tunnelblick Doesn't Use Login Items</a> below.)</p>
+<p>That is probably because Tunnelblick does not use the standard macOS "Open at Login" mechanism. (See Why and How Tunnelblick Doesn't Use "Open at Login", below.)</p>
 <p>Instead, Tunnelblick is launched at login:</p>
 <ul>
 <li>If it was running when you last logged out; or</li>
 <li>If it detects a VPN either connected or in the process of connecting; or</li>
-<li>If it had previously disabled all network access.</li>
+<li>If Tunnelblick's "kill switch" had previously disabled all network access.</li>
 </ul>
 <p>On other words:</p>
 <ul>
-<li>If you quit Tunnelblick after using it, it should not launch when you next login or start your computer.</li>
+<li>If you quit Tunnelblick after using it, it should not launch when you next login or start your computer unless it needs to (see below).</li>
 <li>If you leave Tunnelblick running, it will launch when you next login.</li>
 </ul>
 <p>If this is not the behavior you are experiencing, please see <a href="#troubleshooting">Troubleshooting</a> below or ask for help on the <a href="https://groups.google.com/forum/#!forum/tunnelblick-discuss">Tunnelblick Discussion Group</a>.</p>
-<h2 id="to-stop-tunnelblick-from-launching-on-login">To Stop Tunnelblick from Launching on Login</h2>
-<p>You cannot stop Tunnelblick from launching on login if it detects an active VPN on login or if it had previously disabled network access unless you uninstall Tunnelblick (see <a href="#why-and-how-tunnelblick-does-not-use-login-items">Why and How Tunnelblick Doesn't Use Login Items</a> below for why).</p>
-<p>However, you can stop Tunnelblick from launching at login solely because it was running when you last logged out. To do that, copy/paste the following in /Applications/Utilities/Terminal, then press the enter/return key on the keyboard:</p>
-<pre><code>    defaults  write  net.tunnelblick.tunnelblick  doNotLaunchOnLogin  -bool  yes</code></pre>
-<p>To restore Tunnelblick's normal behavior, copy/paste the following, then press the enter/return key on the keyboard:</p>
-<pre><code>    defaults  delete  net.tunnelblick.tunnelblick  doNotLaunchOnLogin</code></pre>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p>First, check to make sure you don't have a Tunnelblick "Login Item".</p>
 <ol>
@@ -100,13 +94,20 @@
 <li>Click on the "Process Name" header to sort the list by process name.</li>
 </ol>
 <p>If you see a process named "tunnelblick-helper", that indicates that a VPN is being connected. If you see a process named "openvpn", it means that a VPN is being connected or is connected.</p>
-<p>If you don't have Tunnelblick login items, and you don't have a process named "tunnelblick-helper" or "openvpn", ask for help on the <a href="https://groups.google.com/forum/#!forum/tunnelblick-discuss">Tunnelblick Discussion Group</a>. Please include the output of the following Terminal commands in your post (you can copy/paste; it all goes on one line):</p>
+<p>Third, check to see that Tunnelblick's kill switch has not disabled network services. Click on the Tunnelblick icon. If you see a menu item to re-enable network services, they are disabled.</p>
+<p>If all of these checks are negative, ask for help on the <a href="https://groups.google.com/forum/#!forum/tunnelblick-discuss">Tunnelblick Discussion Group</a>. Please include the output of the following Terminal commands in your post (you can copy/paste; it all goes on one line):</p>
 <pre><code>ps -ef | grep -w openvpn | grep -v grep ; ps -ef | grep tunnelblick-helper | grep -v grep</code></pre>
-<h2 id="why-and-how-tunnelblick-does-not-use-login-items">Why and How Tunnelblick does not Use Login Items</h2>
-<p>Tunnelblick doesn't use "Login Items" because we think it is important that users are shown an indication that a VPN is active when they log in (if one is active, of course). The indication is that Tunnelblick launches, and that it displays a connecting or connected icon. A VPN may be active because a VPN configuration is set up to connect when the computer starts, or because a different user logs into the computer while another user has connected to a VPN, or because of a crash of Tunnelblick or one of its components, or for some other reason.</p>
-<p>Login items also don't allow Tunnelblick to launch at login if it had previously disabled all network access. That's important so it can ask the user if network access should be reenabled.</p>
-<p>To ensure that is done, the Tunnelblick installer sets up macOS to run the Tunnelblick-LaunchAtLogin program once each time a user logs in. The program decides whether or not to launch Tunnelblick, does so if necessary, and then quits. The program has little impact on the time to startup or login (on a 2012 MacBook Pro the program uses less than a tenth of a second of CPU time and very little I/O).</p>
-<p>Another reason Tunnelblick doesn't use "Login Items" is that most users don't have Tunnelblick in the Dock (where it is easy to make it a Login Item by clicking "Options" : "Open at Login"). Instead, they leave Tunnelblick running all the time to make it easy to connect a VPN. When there is no active VPN, Tunnelblick uses few computer resources.</p>
+<h2 id="to-stop-tunnelblick-from-launching-on-login">To Stop Tunnelblick from Launching on Login</h2>
+<p>You can stop Tunnelblick from launching at login solely because it was running when you last logged out. To do that, copy/paste the following in /Applications/Utilities/Terminal, then press the enter/return key on the keyboard:</p>
+<pre><code>    defaults  write  net.tunnelblick.tunnelblick  doNotLaunchOnLogin  -bool  yes</code></pre>
+<p>To restore Tunnelblick's normal behavior, copy/paste the following, then press the enter/return key on the keyboard:</p>
+<pre><code>    defaults  delete  net.tunnelblick.tunnelblick  doNotLaunchOnLogin</code></pre>
+<p>You can also <a href="cBackgroundPrograms.html#why-you-should-not-disallow-tunnelblicks-background-programs">but should not</a> stop Tunnelblick from launching on login if it detects an active VPN on login or if it had previously disabled network access by disallowing one of its two "Allow in the Background" items in System Settings &gt;&gt; General &gt;&gt; Login Items. Disallow the Tunnelblick item that is <em>not</em> labelled "affects all users".</p>
+<h2 id="why-and-how-tunnelblick-does-not-use-login-items">Why and How Tunnelblick does not Use "Login Items"</h2>
+<h2 id="why-and-how-tunnelblick-does-not-use-open-at-login">Why and How Tunnelblick does not Use "Open at Login"</h2>
+<p>Tunnelblick doesn't use what Apple used to call "Login Items" and now calls "Open at Login" items. Instead, Tunnelblick tells macOS to run a program each time the user logs in.</p>
+<p>(It's semantics: Apple lists a program that <em>the user asks</em> to be run at login an "Open at Login" program but if *an application asks** that the same program be run at login, Apple lists it as an "Allow in the Background" program.)</p>
+<p>Note that it isn't Tunnelblick itself that is run at login. Instead, the Tunnelblick installer sets up macOS to run a tiny program. The program decides whether or not to launch Tunnelblick, does so if necessary, and then quits. The program has little impact on the time to start up the computer or login.</p>
 </td>
 </tr>
 </table>
@@ -115,7 +116,7 @@
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="/iptranslate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcLaunchAtLogin.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="/iptranslate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcLaunchAtLogin.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="/iptranslate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcLaunchAtLogin.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="/iptranslate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcLaunchAtLogin.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="/iptranslate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcLaunchAtLogin.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="/iptranslate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcLaunchAtLogin.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="/iptranslate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcLaunchAtLogin.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2024-03-11.&nbsp;&nbsp;Copyright © 2015-2024 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2024-03-18.&nbsp;&nbsp;Copyright © 2015-2024 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

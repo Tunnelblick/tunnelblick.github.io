@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2024-03-12 19:57:38 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2024-04-04 16:42:44 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -69,20 +69,20 @@
 <hr>
 <h2 id="problems-connecting-with-tunnelblick-4">Problems Connecting with Tunnelblick 4</h2>
 <p>Tunnelblick 4 changes the version of OpenVPN/OpenSSL that is used by default, so you may not be able to connect with that default version. In addition, it does not include some old versions of OpenVPN/OpenSSL that are included in Tunnelblick 3, which may mean that you cannot use Tunnelblick 4 until your VPN has been updated to use newer versions of OpenVPN/OpenSSL.</p>
-<p><strong>If you can't connect with the default version of OpenVPN/OpenSSL</strong>, try connecting using each of the other, different versions of OpenVPN/OpenSSL in Tunnelblick 4. You can select a version from the "OpenVPN version" button on the "Configurations" panel of Tunnelblick's "VPN Details" window. Be sure to select the configuration you wish to connect in the list on the left before selecting a version of OpenVPN/OpenSSL to try.</p>
+<p><strong>If you can't connect with the default version of OpenVPN/OpenSSL</strong>, try connecting using each of the other, different versions of OpenVPN/OpenSSL in Tunnelblick 4. You can select a version from the "OpenVPN version" button on the "Configurations" panel of Tunnelblick's "VPN Details" window. Be sure to select the configuration or configurations you wish to connect in the list on the left before selecting a version of OpenVPN/OpenSSL to try.</p>
 <p><strong>If you can connect only with one or more of the other versions</strong></p>
 <ul>
 <li>Your VPN setup relies on insecure algorithms or programs. Future versions of Tunnelblick will not include these algorithms and programs. Contact your VPN service provider and have them update the VPN to be compatible with OpenVPN 2.6, which is the current version of OpenVPN, and OpenSSL 3.0, which is the Long Term Support version of OpenSSL.</li>
 </ul>
 <blockquote>
-<p>As a temporary workaround until that's done, you can continue to use OpenSSL 1.1.1w, or you can try adding the "providers legacy default" option to the OpenVPN configuration file, which will allow OpenSSL 3.0 to use insecure algorithms. (See <a href="https://tunnelblick.net/cEditingOpenvpnConfigurationFile.html">Edit or Examine an OpenVPN Configuration File</a>.)</p>
+<p>As a temporary workaround until that's done, you can continue to use earlier versions of OpenVPN with OpenSSL 1.1.1w, or you can try adding the "providers legacy default" option to the OpenVPN configuration file, which may in some circumstances allow OpenSSL 3.0 to use insecure algorithms. (See <a href="https://tunnelblick.net/cEditingOpenvpnConfigurationFile.html">Edit or Examine an OpenVPN Configuration File</a>.)</p>
 </blockquote>
 <ul>
 <li>If you are <strong>asked for a passphrase</strong> when using Tunnelblick 4's default version of OpenVPN/OpenSSL, but you are not asked for a passphrase when using OpenVPN 2.6.9 - OpenSSL 1.1.1w, please see <a href="https://github.com/Tunnelblick/Tunnelblick/issues/791">our Issue about this problem</a>. A critical tip was provided by Andrew:</li>
 </ul>
 <blockquote>
 <p>"It's worth noting that this error (OpenSSL unsupported RC2-40-CBC) and the repeated passphrase prompts can occur even when the server and all of the certs/keys use proper ciphers, but the PKCS#12 bundle containing the certs & keys uses legacy ciphers. This behavior also occurs with GUI frontends on other platforms, including the Windows OpenVPN GUI and the GNOME Network Manager plugin. And on all of these, you have no indication what the real problem is until you check the log...</p>
-<p>"Notably, the default .p12 output of all OpenSSL versions except OpenSSL 3 (OpenSSL &lt;= 1.1, LibreSSL, etc.) uses legacy ciphers RC2-40/3DES/SHA1 which OpenSSL 3 refuses to load without the -legacy option. It is possible to generate an OpenSSL 3-compliant .p12 bundle on OpenSSL 1.1 with the appropriate options; I submitted such a patch to EasyRSA. (It's been merged but not yet included in any release.)</p>
+<p>"Notably, the default .p12 output of all OpenSSL versions except OpenSSL 3 (OpenSSL &lt;= 1.1, LibreSSL, etc.) uses legacy ciphers RC2-40/3DES/SHA1 which OpenSSL 3 refuses to load without the -legacy option [which OpenVPN sends to OpenSSL 3 if the OpenVPN "providers legacy default" option is specified]. It is possible to generate an OpenSSL 3-compliant .p12 bundle on OpenSSL 1.1 with the appropriate options; I submitted such a patch to EasyRSA. (It's been merged but not yet included in any release.)</p>
 <p>"This was the case in my setup and after I created a new .p12 file with the same contents but using AES-256/SHA256 it now works with OpenVPN 2.6 + OpenSSL 3.</p>
 <p>"A workaround is to extract the certs & keys and use the appropriate separate config file options (ca, cert, key instead of p12). But as you say, it's really up to the server administrator to supply clients with compatible credentials."</p>
 </blockquote>
@@ -140,12 +140,11 @@
 <p><strong>If that works</strong> and the VPN connects, contact whoever gave you your VPN configurations. The configurations use an out-of-date encryption, hash, or signature algorithms that are no longer secure and are not supported by modern versions of OpenSSL.</p>
 <p><strong>At some point Tunnelblick will no longer include OpenSSL 1.1.1w</strong>. It is no longer supported by OpenSSL, and does not receive security updates, so you should get your configurations set up to be compatible with newer versions.</p>
 <p><strong>If that does not work</strong> and the VPN does not connect with OpenVPN 2.6.9 - OpenSSL 1.1.1w, try OpenVPN 2.5.9 and 2.4.12. If it connects with one of them, contact whoever gave you your VPN configurations. The configurations require an out-of-date version of OpenSSL and should be updated.</p>
-<p><strong>At some point Tunnelblick will no longer include OpenVPN 2.5.9 and 2.4.12</strong>. They are no longer supported by OpenVPN. Your VPN setup should be updated to be compatible with the current version, 2.6.</p>
+<p><strong>At some point Tunnelblick will no longer include OpenVPN 2.5.9 and 2.4.12</strong>. 2.4.12 is no longer supported by OpenVPN, and 2.5.9 will only be supported until 2024-07-01. Your VPN setup should be updated to be compatible with the current version, 2.6.</p>
 <p><strong>If no combination of OpenVPN/OpenSSL works</strong>, please post a report on the Tunnelblick Discussion Group by following the instructions at <a href="https://tunnelblick.net/cBeforeYouPost.html">Before You Post About a Problem</a>, then try Tunnelblick 3.8.8b, which can be found on our <a href="https://tunnelblick.net/downloadsDeprecated.html">Deprecated Downloads</a> page.</p>
-<hr>
-<p><strong><span class="red">The newer version of OpenVPN can cause problems</span></strong> if the VPN setup is very old.</p>
-<p>If the VPN does not connect with OpenVPN 2.6.9 - OpenSSL 3.0.13 or OpenVPN 2.6.9 - OpenSSL 1.1.1w, try OpenVPN 2.5.9 and 2.4.12. If it connects with one of them, contact whoever gave you your VPN configurations. The configurations require an out-of-date version of OpenVPN and should be updated.</p>
-<p><strong>At some point Tunnelblick will no longer include OpenVPN 2.5.9 and 2.4.12</strong>. They are no longer supported by OpenVPN. Your VPN setup should be updated to be compatible with the current version, 2.6.</p>
+<p><strong><span class="red">The newer, default version of OpenVPN can cause problems</span></strong> if the VPN setup is very old.</p>
+<p>If the VPN does not connect with OpenVPN 2.6.9 - OpenSSL 3.0.13 or OpenVPN 2.6.9 - OpenSSL 1.1.1w, try OpenVPN 2.5.9 and 2.4.12. If it connects with one of them, contact whoever gave you your VPN configurations. The configurations require an out-of-date version of OpenVPN and should be updated as soon as possible.</p>
+<p><strong>At some point Tunnelblick will no longer include OpenVPN 2.5.9 and 2.4.12</strong>. 2.4.12 is no longer supported by OpenVPN, and 2.5.9 will only be supported until 2024-07-01. Your VPN setup should be updated to be compatible with the current version, 2.6.</p>
 <p><strong>If no version of OpenVPN works</strong>, please post a report on the Tunnelblick Discussion Group by following the instructions at <a href="https://tunnelblick.net/cBeforeYouPost.html">Before You Post About a Problem</a>, then try Tunnelblick 3.8.8b, which can be found on our <a href="https://tunnelblick.net/downloadsDeprecated.html">Deprecated Downloads</a> page.</p>
 <p><strong>If the VPN does not connect with <em>any</em> version of OpenVPN/OpenSSL</strong>, see</p>
 <ul>
@@ -162,7 +161,7 @@
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="/iptranslate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTunnelblick4.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="/iptranslate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTunnelblick4.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="/iptranslate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTunnelblick4.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="/iptranslate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTunnelblick4.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="/iptranslate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTunnelblick4.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="/iptranslate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTunnelblick4.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="/iptranslate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcTunnelblick4.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2024-03-12.&nbsp;&nbsp;Copyright © 2015-2024 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2024-03-15.&nbsp;&nbsp;Copyright © 2015-2024 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

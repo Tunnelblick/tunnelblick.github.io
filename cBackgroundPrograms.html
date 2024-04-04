@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
+<meta charset="UTF-8" lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Tunnelblick's Background Programs - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+<meta name="referrer" content="never">
+<title>Tunnelblick's Background Programs - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+<link rel="stylesheet" type="text/css" href="/common/style.v8.css">
+<link rel="icon" type="image/png" href="/common/favicon.v1.png">
+</head>
+<body>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2024-04-04 16:42:44 UTC</font></td></tr></table></center>
+<header>
+<div class="heading">
+<table>
+<tr>
+<td><a href="/"><img src="/common/tb-icon-64x64.v1.png" alt="tunnelblick icon" width="64" height="64"></a></td>
+<td class="heading1">Tunnelblick</td>
+<td class="heading2">free software for OpenVPN on macOS</td>
+<td class="heading3"><a href="/cLocalizeTranslate.html">We need translators for several languages…</a></td>
+</tr>
+</table>
+</div>
+</header>
+<nav>
+<div class="topnav">
+<table class="topnav">
+<tbody>
+<tr>
+<td class="topnav-normal"><a href="/index.html" class="topnav">Home</a></td>
+<td class="topnav-normal"><a href="/downloads.html" class="topnav">Downloads</a></td>
+<td class="topnav-normal"><a href="/support.html" class="topnav">Support</a></td>
+<td class="topnav-highlight"><a href="/documents.html" class="topnav">Documents</a></td>
+<td class="topnav-normal"><a href="/issues.html" class="topnav">Issues</a></td>
+<td class="topnav-normal"><a href="/source.html" class="topnav">Source</a></td>
+<td class="topnav-normal"><a href="/contribute.html" class="topnav">Contribute</a></td>
+<td class="topnav-normal"><a href="/reachus.html" class="topnav">Contact</a></td>
+<td class="topnav-padding"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</nav>
+<main>
+<div class="content">
+<div class="content-cBackgroundPrograms">
+<table class="documents">
+<tr>
+<td class="documents-left">
+<p><strong>Highlighted Articles</strong><br>
+&nbsp;&nbsp;<a href="/cNews.html">News</a><br>
+&nbsp;&nbsp;<a href="/cInstall.html">Installing Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cUninstall.html">Uninstalling Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cConfigT.html">Setting up Configurations</a><br>
+&nbsp;&nbsp;<a href="/czUsing.html">Using Tunnelblick</a><br>
+&nbsp;&nbsp;<a href="/cGettingVPNService.html">Getting VPN Service</a><br>
+&nbsp;&nbsp;<a href="/cCommonProblems.html">Common Problems</a><br>
+&nbsp;&nbsp;<a href="/cConfigO.html">Configuring OpenVPN</a><br>
+&nbsp;&nbsp;<a href="/cRlsNotes.html">Release Notes</a><br>
+&nbsp;&nbsp;<a href="/cThanks.html">Thanks</a><br>
+&nbsp;&nbsp;<a href="/cFAQ.html">FAQ</a></p>
+<p><strong><a href="https://groups.google.com/forum/#!forum/tunnelblick-discuss">Discussion Group</a></strong><br>
+&nbsp;&nbsp;<a href="/cBeforeYouPost.html">Read Before You Post</a></p>
+</td>
+<td class="documents-right">
+<h1 id="tunnelblicks-background-programs">Tunnelblick's Background Programs</h1>
+<p class="toc">On This Page<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#what-are-background-programs">What Are Background Programs</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#controlling-background-programs-in-system-settings">Controlling Background Programs in System Settings</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tunnelblicks-background-programs-1">Tunnelblick's Background Programs</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#why-you-should-not-disallow-tunnelblicks-background-programs">Why You Should Not Disallow Tunnelblick's Background Programs</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#bugs-in-current-versions-of-tunnelblick">Bugs in current versions of Tunnelblick</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#apparent-bugs-in-macos-sonoma">Apparent bugs in macOS Sonoma</a><br></p>
+<hr>
+<h2 id="what-are-background-programs">What Are Background Programs</h2>
+<p>Background programs are programs or applications that run "in the background", that is, where you don't see them. They don't have windows (like Safari) and they don't appear on the menu bar (like the clock).</p>
+<p>They are used for many purposes, and macOS itself runs more than 150 programs in the background to perform tasks such as Time Machine backups, synchronizing Photos among your devices, responding to changes in the Wi-Fi network, mounting the volumes on a thumb drive when is plugged into a USB port, etc.</p>
+<p>Although background programs are said to be "running" in the background, that does not mean that they continuously use CPU time or memory. Most background programs are run only occasionally, on a schedule or when the situation that they are needed for happens. For example, Time Machine backups run automatically only once per hour, and Photos synchronizing between an iPhone and a Mac runs only at times such as when a new photograph is taken on your phone or a photo is deleted in Photos.</p>
+<h2 id="controlling-background-programs-in-system-settings">Controlling Background Programs in System Settings</h2>
+<p>Apple considers all programs that run in the background as "Login Items", even though some of them have nothing to do with being logged in, and might even be running before anyone is logged into a Mac and after everyone has logged out of a Mac.</p>
+<p>In macOS Sonoma, Apple lets the user control background programs in System Settings &gt;&gt; General &gt;&gt; Login Items.</p>
+<p>That panel divides programs into two categories:</p>
+<ul>
+<li>Programs that "Open at Login"</li>
+<li>Programs that you can "Allow in the Background"</li>
+</ul>
+<p>Users can add or remove "Open at Login" programs, and can allow or disallow "Allow in the Background" programs. (Adding Tunnelblick as an "Open at Login" program is not recommended or necessary; see below.)</p>
+<p>These two categories are misleading, however:</p>
+<ul>
+<li>
+<p><strong>Programs that "Open at Login"</strong> include only those applications that are <em>specified by a user</em> to do so using the Dock's Options &gt;&gt; Open at Login feature.</p>
+</li>
+<li>
+<p><strong>Programs that you can "Allow in the Background"</strong> include programs that are run when a user logs in, when the computer starts, or in response to an event such as a network change or new USB device being plugged in. Programs appear in this section when they are <em>specified by a program</em> to be run as background programs. Typically, that is specified when a program is installed.</p>
+</li>
+</ul>
+<h2 id="tunnelblicks-background-programs-1">Tunnelblick's Background Programs</h2>
+<p>Tunnelblick includes two background programs that both appear in the "Allow in the Background" list:</p>
+<ul>
+<li>
+<p><strong>tunnelblickd</strong>, which is set up to run when when needed as soon as the computer starts up. It runs as "root" (the "superuser") to perform actions that the Tunnelblick program is not allowed to do without special authorization. It does such things as start OpenVPN as root (so it can make changes to the network setup), or enable or disable network connections to implement Tunnelblick's "kill switch" feature). This program is also used by Tunnelblick so a VPN can be connected without anyone being logged into a computer.</p>
+</li>
+<li>
+<p><strong>Tunnelblick Launcher</strong>, which is set up to run each time a user logs in. It runs as if it were the user. It is a very small program that only decides whether or not Tunnelblick should be launched, and launches it if necessary. Then the program quits and is not usually run again until a user logs in again, although it is also run when the user changes the System Settings to allow it to run in the background if the user had previously disallowed that. (Other names for the program that does this in older versions of Tunnelblick are "LaunchAtLogin" and "Tunnelblick-LaunchAtLogin".)</p>
+</li>
+</ul>
+<p>The first program is described by System Settings as "affects all users" and macOS requires a computer administrator's authorization to be disabled (because it runs as root).</p>
+<p>The second program has no description and may be disabled and enabled by a user without any special authorization.</p>
+<p><strong>However…</strong></p>
+<h2 id="why-you-should-not-disallow-tunnelblicks-background-programs">Why You Should Not Disallow Tunnelblick's Background Programs</h2>
+<p>Tunnelblick's <strong>tunnelblickd</strong> background program is used by Tunnelblick to do things such as connect a VPN; if you disallow it you won't be able to do much of anything with Tunnelblick. <strong>Tunnelblick may refuse to launch if tunnelblickd is not allowed to run</strong>.</p>
+<p>Tunnelblick's <strong>Tunnelblick Launcher</strong> program makes sure that Tunnelblick launches when you log in if it decides that Tunnelblick needs to make sure that you know about certain things, such as that a VPN is connecting or connected, or if the computer's network has been disabled by Tunnelblick's "kill switch" (you'll need Tunnelblick to re-enable it). Because it is important for the user to be aware of these situations, and because it runs, briefly, only once when you log in or allow it after having previously disallowed it, and because it takes a negligible amount of CPU time, memory, or disk activity, <strong>it is strongly recommended that you not disallow it</strong>.</p>
+<p>For convenience, <strong>Tunnelblick Launcher</strong> also launches Tunnelblick if it was running when the user last logged out (or shut down or restarted the computer). If that's not convenient for you, <a href="cLaunchAtLogin.html#to-stop-tunnelblick-from-launching-on-login">you can disable it</a> without preventing Tunnelblick from launching if the network is disabled or a VPN is connecting or connected.</p>
+<h2 id="bugs-in-current-versions-of-tunnelblick">Bugs in current versions of Tunnelblick</h2>
+<p>The Tunnelblick Launcher program in current versions of Tunnelblick, 4.0.1 and 5.0.0beta01, are not properly identified in System Settings &gt;&gt; General &gt;&gt; Login Items. macOS identifies the programs as being from "Jonathan Bullard" rather than Tunnelblick. We are testing an updated version of Tunnelblick that fixes this problem; to get a copy of it to help with testing it, please email <a href="mailto:developers@tunnelblick.net" class="email">developers@tunnelblick.net</a>.</p>
+<h2 id="apparent-bugs-in-macos-sonoma">Apparent bugs in macOS Sonoma</h2>
+<p>There are apparently some bugs (perhaps Apple considers them features) in macOS Somona (and perhaps other versions of macOS): Each time Tunnelblick is installed, it overrides the user not allowing tunnelblickd to run, but System Settings &gt;&gt; General &gt;&gt; Login Items continues to show that it is <em>not</em> allowed even though it <em>is</em> allowed. The user can allow, then disallow it, and that will prevent again tunnelblickd from running until the next time Tunnelblick is installed. (Updating Tunnelblick may also override the user not allowing tunnelblickd to run; that has not been confirmed.)</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</main>
+<footer>
+<div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="/iptranslate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBackgroundPrograms.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="/iptranslate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBackgroundPrograms.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="/iptranslate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBackgroundPrograms.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="/iptranslate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBackgroundPrograms.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="/iptranslate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBackgroundPrograms.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="/iptranslate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBackgroundPrograms.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="/iptranslate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcBackgroundPrograms.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
+<div class="bottom-copyright">Last updated&nbsp;2024-04-03.&nbsp;&nbsp;Copyright © 2015-2024 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+</footer>
+</body>
+</html>

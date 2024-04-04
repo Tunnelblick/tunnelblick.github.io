@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2024-03-12 19:57:38 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2024-04-04 16:42:44 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -104,9 +104,9 @@
 <p>Tunnelblick VPN Configurations can be installed without user interaction with a command which must be executed as root.</p>
 <p>This method cannot be used to install an OpenVPN configuration file, but you can easily create a Tunnelblick VPN Configuration from an OpenVPN configuration file; see <a href="https://tunnelblick.net/cConfigT.html#creating-and-installing-a-tunnelblick-vpn-configuration">Creating and Installing a Tunnelblick VPN Configuration</a>.</p>
 <p>To install a <em>private</em> Tunnelblick VPN Configuration, execute the following command:</p>
-<p><code>sudo /Applications/Tunnelblick.net/Contents/Resources/installer 0x6001 USERNAME PATH-TO-.TBLK [SUBFOLDER]</code></p>
+<p><code>sudo /Applications/Tunnelblick.app/Contents/Resources/installer 0x6001 USERNAME PATH-TO-.TBLK [SUBFOLDER]</code></p>
 <p>To install a <em>shared</em> Tunnelblick VPN Configuration, execute the following command:</p>
-<p><code>sudo /Applications/Tunnelblick.net/Contents/Resources/installer 0x7001 PATH-TO-.TBLK [SUBFOLDER]</code></p>
+<p><code>sudo /Applications/Tunnelblick.app/Contents/Resources/installer 0x7001 PATH-TO-.TBLK [SUBFOLDER]</code></p>
 <p>where</p>
 <ul>
 <li><code>USERNAME</code> is the short username for the user for which the configuration is to be installed</li>
@@ -114,11 +114,11 @@
 <li><code>[SUBFOLDER]</code> is an optional folder in which the configuration is to be installed</li>
 </ul>
 <p>For example, after creating a Tunnelblick VPN Configuration at ~/Desktop/Office.tblk, you can install it as a shared configuration named 'Office' with</p>
-<p><code>sudo /Applications/Tunnelblick.net/Contents/Resources/installer 0x7001 ~/Desktop/Office.tblk</code></p>
+<p><code>sudo /Applications/Tunnelblick.app/Contents/Resources/installer 0x7001 ~/Desktop/Office.tblk</code></p>
 <p>Or you can install it named 'Client-1/Office' with</p>
-<p><code>sudo /Applications/Tunnelblick.net/Contents/Resources/installer 0x7001 ~/Desktop/Office.tblk Client-1</code></p>
+<p><code>sudo /Applications/Tunnelblick.app/Contents/Resources/installer 0x7001 ~/Desktop/Office.tblk Client-1</code></p>
 <p>Or you can install it as a private configuration named 'Client-1/Office' for user 'janedoe' with</p>
-<p><code>sudo /Applications/Tunnelblick.net/Contents/Resources/installer 0x6001 janedoe ~/Desktop/Office.tblk Client-1</code></p>
+<p><code>sudo /Applications/Tunnelblick.app/Contents/Resources/installer 0x6001 janedoe ~/Desktop/Office.tblk Client-1</code></p>
 <p>The first argument to installer is a number containing bit fields that control its operation. In the examples above, the 6 or 7 indicate the operation (install private or install shared) and the 1 instructs installer to clear its log before operating. For more information about what the bit fields do, see the <code>INSTALLER_</code> variables defined in Tunnelblick's source code file tunnelblick/defines.h.</p>
 <h2 id="deleting-configurations">Deleting Configurations</h2>
 <p>There are two ways to delete VPN configurations:</p>
@@ -135,7 +135,7 @@
 <p>macOS will ask for a computer administrator's authorization to delete the configuration(s).</p>
 <h3 id="deleting-configurations-from-the-command-line">Deleting configurations from the Command Line</h3>
 <p>To delete a configuration from the command line without any user interaction, run the following command:</p>
-<p><code>sudo /Applications/Tunnelblick.net/Contents/Resources/installer 0x2001 PATH</code></p>
+<p><code>sudo /Applications/Tunnelblick.app/Contents/Resources/installer 0x2001 PATH</code></p>
 <p>where <code>PATH</code> is the path to the configuration. That path should either:</p>
 <ul>
 <li>For a "private" configuration, ~/Library/Application Support/Tunnelblick/Configurations/NAME</li>
@@ -143,11 +143,11 @@
 </ul>
 <p>and <code>NAME</code> is the name of the configuration, with ".tblk" added to the end of the name.</p>
 <p>For example, to delete a private configuration named "Office", execute the following command:</p>
-<p><code>sudo /Applications/Tunnelblick.net/Contents/Resources/installer 0x2001 ~/Library/Application\ Support/Tunnelblick/Configurations/Office.tblk</code></p>
+<p><code>sudo /Applications/Tunnelblick.app/Contents/Resources/installer 0x2001 ~/Library/Application\ Support/Tunnelblick/Configurations/Office.tblk</code></p>
 <h2 id="subfolders">Subfolders</h2>
 <p>When configurations are in subfolders, include the subfolders in the path to the configuration.</p>
 <p>For example, if a configuration to be deleted is a private configuration named "Office" which is in the "MegaCorp" subfolder of the "Clients" subfolder, use</p>
-<p><code>sudo /Applications/Tunnelblick.net/Contents/Resources/installer 0x2001 ~/Library/Application\ Support/Tunnelblick/Configurations/Clients/MegaCorp/Office.tblk</code></p>
+<p><code>sudo /Applications/Tunnelblick.app/Contents/Resources/installer 0x2001 ~/Library/Application\ Support/Tunnelblick/Configurations/Clients/MegaCorp/Office.tblk</code></p>
 <p>The first argument to installer is a number containing bit fields that control its operation. In the examples above, the 2 indicates the operation (delete a configuration) and the 1 instructs installer to clear its log before operating. For more information about what the bit fields do, see the <code>INSTALLER_</code> variables defined in Tunnelblick's source code file tunnelblick/defines.h.</p>
 </td>
 </tr>
@@ -157,7 +157,7 @@
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="/iptranslate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstallConfigs.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="/iptranslate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstallConfigs.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="/iptranslate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstallConfigs.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="/iptranslate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstallConfigs.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="/iptranslate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstallConfigs.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="/iptranslate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstallConfigs.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="/iptranslate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstallConfigs.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2024-03-04.&nbsp;&nbsp;Copyright © 2015-2024 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2024-03-20.&nbsp;&nbsp;Copyright © 2015-2024 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>
