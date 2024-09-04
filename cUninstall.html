@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2024-08-09 23:57:24 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2024-09-04 13:30:14 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -72,6 +72,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#to-use-the-separate-tunnelblick-uninstaller-program">To Use the Separate Tunnelblick Uninstaller Program</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#warnings-when-uninstalling">Warnings When Uninstalling</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#errors-when-uninstalling">Errors When Uninstalling</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#problem-cant-uninstall-because-tunnelblick-hangs-or-crashes">Problem: Can't uninstall because Tunnelblick hangs or crashes</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#problem-tunnelblick-cannot-be-uninstalled-while-it-is-running">Problem: "Tunnelblick cannot be uninstalled while it is running"</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-disconnecting-all-vpns">1. Disconnecting all VPNs</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2-quitting-tunnelblick">2. Quitting Tunnelblick</a><br>
@@ -144,6 +145,17 @@ However, <span class="red">the third window displayed by macOS is incorrect</spa
 <p><strong><em>Error in ProcessFile(): 'Not authorized to send Apple events to System Events.' (-1743)</em></strong></p>
 <p>This happens when you have previously answered "Don't Allow" when asked by macOS if you want to allow "Tunnelblick" (or "Tunnelblick Uninstaller") to control "System Events", as described above in <a href="cUninstall.html#warnings-when-uninstalling">Warnings When Uninstalling</a>. Tunnelblick must control "System Events" to perform some of the operations involved in uninstalling itself. To proceed with the uninstall, you must give Tunnelblick (or Tunnelblick Uninstaller) permission to control "System Events". You can do that in the System Preferences &gt;&gt; Security & Privacy &gt;&gt; Automation. Under "Tunnelblick" or "Tunnelblick Uninstaller", put a check in the box next to "System Events", and make sure there is a check next to "Finder" if it is also listed.</p>
 <hr>
+<h3 id="problem-cant-uninstall-because-tunnelblick-hangs-or-crashes">Problem: Can't uninstall because Tunnelblick hangs or crashes</h3>
+<p>If you are running under OCLP you can successfully install Tunnelblick. However Tunnelblick itself does not work properly under OCLP, so you can't use the "Uninstall" button.</p>
+<p>You can uninstall Tunnelblick by:</p>
+<ol>
+<li>If any VPNs are connected, disconnect them.</li>
+<li>If Tunnelblick is running, quit it.</li>
+<li>If Tunnelblick is in the Dock, remove it.</li>
+<li>Copy/paste the following into /Applications/Utilities/Terminal:</li>
+</ol>
+<pre><code>     /usr/bin/osascript /Applications/Tunnelblick.app/Contents/Resources/tunnelblick-uninstaller.applescript</code></pre>
+<hr>
 <h3 id="problem-tunnelblick-cannot-be-uninstalled-while-it-is-running">Problem: "Tunnelblick cannot be uninstalled while it is running"</h3>
 <p>If you are using the separate uninstaller program, you must disconnect all VPNs and quit Tunnelblick before uninstalling.</p>
 <p>Note: you must disconnect all VPNs first, then quit Tunnelblick.</p>
@@ -176,7 +188,7 @@ However, <span class="red">the third window displayed by macOS is incorrect</spa
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="/iptranslate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUninstall.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="/iptranslate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUninstall.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="/iptranslate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUninstall.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="/iptranslate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUninstall.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="/iptranslate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUninstall.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="/iptranslate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUninstall.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="/iptranslate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUninstall.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2021-09-17.&nbsp;&nbsp;Copyright © 2015-2024 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2024-09-03.&nbsp;&nbsp;Copyright © 2015-2024 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>
