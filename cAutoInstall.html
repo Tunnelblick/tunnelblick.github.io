@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2025-02-26 03:39:19 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2025-04-22 01:09:00 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -66,6 +66,10 @@
 </td>
 <td class="documents-right">
 <h1 id="automatically-install-configurations-and-forced-preferences">Automatically Install Configurations and Forced Preferences</h1>
+<p class="toc">On This Page<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#creating-a-folder-hierarchy">Creating a folder hierarchy</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#sample-forced-preferencesplist-file">Sample forced-preferences.plist file</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#creating-a-signed-and-notarized-disk-image">Creating a signed and notarized disk image</a><br></p>
 <p>Tunnelblick can install <a href="cPkgs.html">Tunnelblick VPN configurations</a> and forced preferences (preferences that cannot be modified by a standard user) at the same time that Tunnelblick itself is installed, using the same computer administrator authorization.</p>
 <p>This will happen when</p>
 <ul>
@@ -76,15 +80,53 @@
 <p>To create such a signed, notarized disk image:</p>
 <ol>
 <li>Create a folder with a signed copy of Tunnelblick;</li>
-<li>Add a subfolder named "auto-install" or ".auto-install" that contains zero or more Tunnelblick VPN configurations;</li>
-<li>If desired, add a file named "forced-preferences.plist" containing the preferences to the subfolder;</li>
+<li>Add a subfolder named "auto-install" or ".auto-install" that contains zero or more Tunnelblick VPN configurations<sup>*</sup>;</li>
+<li>If desired, add a file named "forced-preferences.plist" containing the preferences to the subfolder<sup>**</sup>;</li>
 <li>Create a disk image file (.dmg) from the folder;</li>
 <li>Sign the disk image file;</li>
 <li>Notarize the disk image file; and</li>
 <li>Distribute the signed disk image file.</li>
 </ol>
-<p>The "forced-preferences.plist" file in step 3 must be a <a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html">macOS property list</a> file.</p>
-<p>To help you do steps 4 - 6, here is a pseudocode script that performs steps 3-5. It omits important error checking and output parsing, so you should do the commands interactively, adjusting as needed to the output of the commands.</p>
+<p><sup>*</sup> Configurations can be contained within a folder hierarchy; see <a href="cAutoInstall.html#creating-a-folder-hierarchy">Creating a folder hierarchy</a>, below.</p>
+<p><sup>**</sup> The "forced-preferences.plist" file must be a <a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html">macOS property list</a> file. See <a href="cAutoInstall.html#sample-forced-preferencesplist-file">Sample forced-preferences.plist file</a>, below.</p>
+<h2 id="creating-a-folder-hierarchy">Creating a folder hierarchy</h2>
+<p>To have configurations appear within a folder hierarchy, create a "container" .tblk and put the folders including the configurations inside the "Contents/Resources" folder of that .tblk, as follows:</p>
+<pre><code>    auto-install
+        forced-preferences.plist
+        FOO.tblk
+            Contents
+                Resources
+                    CONFIGURATION-ONE.tblk
+                    folderA
+                        CONFIGURATION-TWO.tblk
+                        folderB
+                            CONFIGURATION-THREE.tblk</code></pre>
+<p>Then the user will see</p>
+<pre><code>    CONFIGURATION-ONE
+    FolderA
+        CONFIGURATION-TWO
+        FolderB
+            CONFIGURATION-THREE</code></pre>
+<p>Note that both "forced-preferences.plist" and the FOO.tblk are optional. (But if you're not using either one, you're not installing anything!)</p>
+<h2 id="sample-forced-preferencesplist-file">Sample forced-preferences.plist file</h2>
+<p>The following sample file:</p>
+<ul>
+<li>Sets the "updateFeedURL" preference to "<a href="https://example.com/updates.rss" class="uri">https://example.com/updates.rss</a>"</li>
+<li>Sets the "-notOKToCheckThatIPAddressDidNotChangeAfterConnection" preference for all configurations to "true" (so it is not OK to check for IP address changes).</li>
+</ul>
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+&lt;dict&gt;
+    &lt;key&gt;TBPackageVersion&lt;/key&gt;&lt;string&gt;1&lt;/string&gt;
+    &lt;key&gt;updateFeedURL&lt;/key&gt;
+         &lt;string&gt;https://example.com/updates.rss&lt;/string&gt;
+    &lt;key&gt;*-notOKToCheckThatIPAddressDidNotChangeAfterConnection&lt;/key&gt;
+         &lt;true/&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;</code></pre>
+<h2 id="creating-a-signed-and-notarized-disk-image">Creating a signed and notarized disk image</h2>
+<p>To help you do steps 4 - 6, here is a pseudocode script that performs steps 3-5. It omits important error checking and output parsing, so you should do the commands interactively, adjusting as needed to the output of the commands, or in a script which does error checking and output parsing and polls to check notarization status or waits until the notarization is complete.</p>
 <pre><code># Pseudocode script to create, sign, and notarize a disk image file from a folder
 #
 # For more information, see https://developer.apple.com/developer-id.
@@ -183,7 +225,7 @@ xcrun stapler staple -v "$DMG_PATH"</code></pre></td>
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="/iptranslate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAutoInstall.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="/iptranslate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAutoInstall.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="/iptranslate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAutoInstall.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="/iptranslate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAutoInstall.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="/iptranslate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAutoInstall.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="/iptranslate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAutoInstall.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="/iptranslate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcAutoInstall.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2022-01-24.&nbsp;&nbsp;Copyright © 2015-2025 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2025-03-08.&nbsp;&nbsp;Copyright © 2015-2025 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

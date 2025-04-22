@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2025-02-26 03:39:19 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2025-04-22 01:09:00 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -67,6 +67,7 @@
 <td class="documents-right">
 <h1 id="release-notes">Release Notes</h1>
 <p class="toc">On This Page<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-7">Version 7</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-6">Version 6</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-5">Version 5</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-4">Version 4</a><br>
@@ -74,15 +75,37 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#older-versions-of-tunnelblick">Older Versions of Tunnelblick</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#uninstaller">Uninstaller</a><br></p>
 <hr>
+<h2 id="version-7">Version 7</h2>
+<p><strong>7.1beta01 build 6220 (2025-04-22) <span class='red'>(SECURITY UPDATE)</span></strong></p>
+<ul>
+<li>(No changes from Tunnelblick 7.0 build 6210)</li>
+</ul>
+<hr>
+<p><strong>7.0 build 6210 (2025-04-22) <span class='red'>(SECURITY UPDATE)</span></strong></p>
+<ul>
+<li>Updates OpenVPN to version 2.6.14 from 2.6.13 (also includes OpenVPN 2.5.9 and 2.4.11). OpenVPN 2.6.14 fixes a security vulnerability – see <a href="https://github.com/OpenVPN/openvpn/blob/release/2.6/Changes.rst">Changes in OpenVPN 2.6</a>.</li>
+<li>Fixes a serious <a href="cCVE-2025-43711.html">security vulnerability in Tunnelblick</a>.</li>
+<li>Stores the Tunnelblick application in, and runs it from, /Library/Application Support/Tunnelblick.</li>
+<li>Clarifies some log messages.</li>
+<li>Fixes #844 'More then one active network interface' warning when no DNS server is pushed by the OpenVPN server.</li>
+<li>Fixes a problem that caused the Tunnelblick icon in the menu/status bar to be too wide.</li>
+<li>Fixes a problem that caused illegible colors in status window.</li>
+<li>Fixes a problem that caused the status window icon not animating in dark mode.</li>
+<li>Fixes a problem that caused Tunnelblick to ignore the 'Check for updates to beta versions' checkbox and only check for beta updates when running a beta version of Tunnelblick.</li>
+<li>Fixes a problem that caused some deployment systems to deploy Tunnelblick on macOS versions that are not supported.</li>
+</ul>
+<hr>
+<hr>
 <h2 id="version-6">Version 6</h2>
 <p><strong>6.1beta2 build 6180 (2025-02-26)</strong></p>
 <ul>
-<li>(No changes)</li>
+<li>Fixes a problem that caused some deployment systems to deploy Tunnelblick on macOS versions that are not supported.</li>
+<li>Fixes a problem that caused Tunnelblick to ignore the "Check for updates to beta versions" checkbox and only check for beta updates when running a beta version of Tunnelblick.</li>
 </ul>
 <hr>
 <p><strong>6.1beta1 build 6170 (2025-02-25)</strong></p>
 <ul>
-<li>(No changes)</li>
+<li>(No changes from Tunnelblick 6.0 build 6160)</li>
 </ul>
 <hr>
 <p><strong>6.0.1 build 6161 (2025-02-26)</strong></p>
@@ -959,7 +982,7 @@
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="/iptranslate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotes.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="/iptranslate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotes.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="/iptranslate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotes.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="/iptranslate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotes.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="/iptranslate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotes.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="/iptranslate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotes.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="/iptranslate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotes.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2025-02-25.&nbsp;&nbsp;Copyright © 2015-2025 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2025-04-21.&nbsp;&nbsp;Copyright © 2015-2025 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

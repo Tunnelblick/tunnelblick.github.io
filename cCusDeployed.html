@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2025-02-26 03:39:19 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2025-04-22 01:09:00 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -231,10 +231,9 @@ Sub-2.addToMenu.executable<br>
 <p>Another example: forced preferences of <code>*ABCuseDNS</code>= TRUE, <code>*DEFuseDNS</code>= FALSE, configuration <code>configABC</code> will be forced to use DNS, and <code>configDEF</code> will be forced to not use DNS. The user will be able to change <code>useDNS</code> preferences for other configurations, if any.</p>
 <p>There are two <strong>exceptions</strong> to the way forced preferences work:</p>
 <ul>
-<li>All forced preferences with a key beginning with "SU" are ignored. These preferences are used privately by Sparkle Updater (which Tunnelblick uses to update itself), and should not be used. Tunnelblick provides preferences (which can be forced) which control the update process and override these Sparkle preferences.</li>
 <li>Forcing the <em>config-name</em>-keychainHasPrivateKey and <em>config-name</em>-keychainHasUsernameAndPassword preferences — regardless of value — prevent the user from storing or using passphrases, usernames, or passwords for that configuration in the Keychain. Dialog boxes will not include a "Save to Keychain" checkbox, and any passphrases, usernames, and passwords in the Keychain will be ignored.</li>
 </ul>
-<p>See<a href="cPreferences.html">Preferences</a> for a list of all preferences.</p>
+<p>See <a href="cPreferences.html">Preferences</a> for a list of all preferences.</p>
 <h2 id="up-and-down-scripts">Up and Down Scripts</h2>
 <p>If "Set nameserver" is selected, <code>Tunnelblick.app</code> starts OpenVPN with the "--up" and "--down" options specifying scripts to be run after the tunnel is established and before it is torn down. The standard scripts are <code>Contents/Resources/client.up.osx.sh</code> and <code>Contents/Resources/client.down.osx.sh</code> if "Monitor connection" is checked, and <code>Contents/Resources/client.nomonitor.up.osx.sh</code> and <code>Contents/Resources/client.nomonitor.down.osx.sh</code> if "Monitor connection" is not checked.</p>
 <p>However, if <code>Contents/Resources/Deploy/</code><em><code>config-name</code></em><code>.up.sh</code>, <em><code>config-name</code></em><code>.down.sh</code>, <em><code>config-name</code></em><code>.nomonitor.up.sh</code>, or <em><code>config-name</code></em><code>.nomonitor.down.sh</code> exist, each will be used instead of the corresponding standard script.</p>
@@ -279,7 +278,7 @@ Sub-2.addToMenu.executable<br>
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="/iptranslate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCusDeployed.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="/iptranslate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCusDeployed.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="/iptranslate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCusDeployed.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="/iptranslate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCusDeployed.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="/iptranslate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCusDeployed.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="/iptranslate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCusDeployed.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="/iptranslate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcCusDeployed.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2019-04-10.&nbsp;&nbsp;Copyright © 2015-2025 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2025-03-08.&nbsp;&nbsp;Copyright © 2015-2025 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>
