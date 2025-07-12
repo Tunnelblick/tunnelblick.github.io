@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2025-04-29 14:29:24 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2025-07-12 16:13:31 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -70,7 +70,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#signing-up-to-translate-for-tunnelblick">Signing Up to Translate for Tunnelblick</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#working-with-crowdin">Working with Crowdin</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#questions-or-comments">Questions or Comments</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#odd-characters-in-strings">Odd characters in Strings</a><br></p>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#odd-characters-in-strings">Odd Characters in Strings</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#voting-on-suggestions">Voting on Suggestions</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#finding-recent-translations">Finding Recent Translations</a><br></p>
 <hr>
 <h2 id="signing-up-to-translate-for-tunnelblick">Signing Up to Translate for Tunnelblick</h2>
 <p><em>Note: Tunnelblick translation is a</em> "private"* project on Crowdin, which means you need permission to join the project as a translator.*</p>
@@ -140,7 +142,7 @@
 <li>An "Unresolved Issue" may be marked "Resolved".</li>
 </ul>
 <hr>
-<h2 id="odd-characters-in-strings">Odd characters in Strings</h2>
+<h2 id="odd-characters-in-strings">Odd Characters in Strings</h2>
 <ul>
 <li>
 <p>Some of the strings have character sequences of "\n". This causes a line break when the text is displayed. A sequence of "\n\n" would cause a line break followed by an empty line.</p>
@@ -164,6 +166,28 @@
 <p>"Sometimes, %2$@ the %1$@ is."</p>
 <p>or possibly</p>
 <p>"%2$@ the %1$@ is, sometimes."</p>
+<hr>
+<h2 id="voting-on-suggestions">Voting on Suggestions</h2>
+<p>Voting on suggestions is how Crowdin helps produce high-quality translations. Each string can have many suggested translations. To help decide which suggestion is the best, can translators vote on each other's suggested translations.</p>
+<p>For each string, Tunnelblick uses the most-recent suggestion of all the suggestions with the highest number of votes. This can help make sure that a "worse" translation doesn't replace a "better" translation – but only if translators have voted for (or against) the translations. That's why your votes on translations are important.</p>
+<hr>
+<h2 id="finding-recent-translations">Finding Recent Translations</h2>
+<p>Crowdin usually shows strings that are not yet translated first, so it is easy to see what strings need translation. That helps our most urgent need – to get strings translated.</p>
+<p>But we also want to have good translations. To help with that, we use voting on suggestions (see above). Seeing a list of recently-made suggestions would be the best way to help you do that. Although Crowdin can't do that, it can list the most recent suggestions that will be used, which is the next-best thing. To do that, you can use Crowdin's "AI/CroQL" filter.</p>
+<p>While viewing the strings:</p>
+<ol>
+<li>Click the "Filter" icon above the list of strings on the left side of the editing window. (As you hold your pointer over an icon, its name will be displayed; you're looking for an icon named "Filter".)</li>
+<li>Click on "AI/CroQL Filter…". An "AI/CroQL Filter" box will appear in the editing window.</li>
+<li>In the window, copy/paste the following into the "CroQL expression" box (the lower box):</li>
+</ol>
+<pre>          count of translations = 0 or count of translations where (updated &gt;= 'now - 100 days') &gt; 0</pre>
+<p>which will show strings with no translations, and strings whose translations were updated within the last 100 days. (Due to a Crowdin limitation, the list is not in any particular order, but strings with no translations will be shown in red.)</p>
+<p>Then:</p>
+<ol>
+<li>Click the "Filter" button. The list of strings in the left side of the window will reflect the filter.</li>
+<li>If you wish, modify the "100" in the box to see more or fewer strings. (Remember that the list is not sorted, so the <strong>order</strong> of the strings is arbitrary.) Then click the "Filter" button again to refresh the list.</li>
+<li>When you are happy with the list of strings, click "Close" and the filter box.</li>
+</ol>
 </td>
 </tr>
 </table>
@@ -172,7 +196,7 @@
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="/iptranslate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUsingCrowdin.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="/iptranslate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUsingCrowdin.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="/iptranslate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUsingCrowdin.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="/iptranslate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUsingCrowdin.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="/iptranslate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUsingCrowdin.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="/iptranslate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUsingCrowdin.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="/iptranslate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUsingCrowdin.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2019-07-05.&nbsp;&nbsp;Copyright © 2015-2025 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2025-07-06.&nbsp;&nbsp;Copyright © 2015-2025 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>
