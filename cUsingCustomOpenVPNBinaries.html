@@ -4,14 +4,14 @@
 <meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <meta charset="UTF-8" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Using Custom OpenVPN Binaries - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
+<meta name="description" content="Using Other OpenVPN Binaries - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.. Includes OpenVPN, OpenSSL, easy-rsa, and drivers.">
 <meta name="referrer" content="never">
-<title>Using Custom OpenVPN Binaries - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
+<title>Using Other OpenVPN Binaries - Tunnelblick | Free open source OpenVPN VPN client server software GUI for Mac OS X.</title>
 <link rel="stylesheet" type="text/css" href="/common/style.v8.css">
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2025-07-13 17:40:10 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2026-01-28 14:05:24 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -65,9 +65,15 @@
 &nbsp;&nbsp;<a href="/cBeforeYouPost.html">Read Before You Post</a></p>
 </td>
 <td class="documents-right">
-<h1 id="using-custom-openvpn-binaries">Using Custom OpenVPN Binaries</h1>
-<p>Although the Tunnelblick application includes several OpenVPN binaries, Tunnelblick also has the ability to use OpenVPN binaries that are not included in Tunnelblick.</p>
-<h2 id="how-to-use-your-own-openvpn-binary-in-tunnelblick">How To Use Your Own OpenVPN Binary in Tunnelblick</h2>
+<h1 id="using-other-openvpn-binaries">Using Other OpenVPN Binaries</h1>
+<p class="toc">On This Page<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#how-to-use-your-own-openvpn-binary-in-tunnelblick">How to use your own OpenVPN binary in Tunnelblick</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#how-to-use-versions-of-openvpnopenssl-from-newer-or-older-versions-of-tunnelblick-in-your-version-of-tunnelblick">How to use versions of OpenVPN/OpenSSL from newer or older versions of Tunnelblick in your version of Tunnelblick</a><br></p>
+<hr>
+<p>Although the Tunnelblick application includes several OpenVPN binaries, Tunnelblick also has the ability to use OpenVPN binaries that are not included in Tunnelblick or were included in older or newer versions of Tunnelblick.</p>
+<p>Note that the binaries must contain executable code for the processor on which you are running Tunnelblick. For example, old binaries with only Intel code will not run on Apple Silicon Macs (even under Rosetta).</p>
+<hr>
+<h2 id="how-to-use-your-own-openvpn-binary-in-tunnelblick">How to use your own OpenVPN binary in Tunnelblick</h2>
 <p>1) You need an OpenVPN binary. If your configurations use the "down-root" plugin, you need a binary of that, too.</p>
 <p>The files must have exactly the following names: "openvpn" and "openvpn-down-root.so".</p>
 <p>2) Create a folder named "Openvpn" on your Desktop or some other convenient place.</p>
@@ -97,7 +103,192 @@
 <p>7) Move or copy the "Openvpn" folder to /Library/Application Support/Tunnelblick. (You will be asked by Finder for a computer administrator's authorization.)</p>
 <p>8) Quit Tunnelblick (if it is running) and launch it. If you did not set the ownership and permissions in step 6 above (or you set them incorrectly), Tunnelblick will ask for administrator authorization to secure Tunnelblick and will then set the ownership and permissions for you.</p>
 <p>You're done! You can specify which OpenVPN/SSL combination to use for each configuration in the "Settings" tab of Tunnelblick's "VPN Details" window. Note that changes made there are applied to all of the configurations selected on the left side of the window.</p>
-</td>
+<hr>
+<h2 id="how-to-use-versions-of-openvpnopenssl-from-newer-or-older-versions-of-tunnelblick-in-your-version-of-tunnelblick">How to use versions of OpenVPN/OpenSSL from newer or older versions of Tunnelblick in your version of Tunnelblick</h2>
+<p>Below is a script which automates copying OpenVPN binaries from a copy of Tunnelblick into /Library/Application Support/Tunnelblick/Openvpn so they can be used in the version of Tunnelblick you are using.</p>
+<p><span class="red">Note that older versions of OpenVPN/OpenSSL probably contain serious security vulnerabilities!</span></p>
+<hr>
+<pre><code>#!/bin/bash
+#
+# copy-openvpn-binaries-from-Tunnelblick.sh
+#
+# Copyright 2025 by Jonathan K. Bullard. All rights reserved.
+#
+# Script to copy OpenVPN binaries from Tunnelblick.app into /Library/Application Support/Tunnelblick/Openvpn.
+# Tunnelblick will use them starting the next time it is launched.
+#
+# Does not copy OpenVPN binaries that are already available to Tunnelblick.
+#
+# Returns a staus of 0 if there were no errors, or 1 if an error occurred.
+#
+# Usage:
+#
+#   copy-openvpn-binaries-from-Tunnelblick.sh    PATH
+#
+#     'PATH' is the path to the Tunnelblick.app that contains
+#     the copies of OpenVPN that you wish to add to Tunnelblick.
+
+
+function show_usage() {
+
+    echo "Usage:"
+    echo ""
+    echo "     copy-openvpn-binaries-from-Tunnelblick.sh    PATH"
+    echo ""
+    echo "     'PATH' is the path to the Tunnelblick.app that contains"
+    echo "     the copies of OpenVPN that you wish to add to Tunnelblick."
+}
+
+
+SOURCE_OPENVPN_PATH="$1/Contents/Resources/openvpn"
+
+TUNNELBLICK_OPENVPN_PATH="/Applications/Tunnelblick.app/Contents/Resources/openvpn"
+
+LIBRARY_OPENVPN_PATH="/Library/Application Support/Tunnelblick/Openvpn"
+
+
+#
+# Make sure a path was specified and it contains a folder of OpenVPN binaries
+#
+
+if [ -z "$1" ] \
+|| [ ! -d "$SOURCE_OPENVPN_PATH" ] ; then
+    show_usage
+    exit 0
+fi
+
+
+#
+# Create a list of names of the folders containing the binaries in
+# in /Applications/Tunnelblick.app.
+#
+
+declare -a VERSION_NAMES_IN_APP
+
+for full_path in "$TUNNELBLICK_OPENVPN_PATH"/* ; do
+    name="$( basename "$full_path" )"
+    # DON'T include the "default" symlink!
+    if [ "$name" != "default" ] ; then
+        VERSION_NAMES_IN_APP+=("$name")
+    fi
+done
+
+
+#
+# Create a list of names of the folders containing the binaries in
+# in /Library/Application Support/Tunnelblick/Openvpn.
+#
+
+declare -a VERSION_NAMES_IN_L_AS_T_O
+
+if [ -d "$LIBRARY_OPENVPN_PATH" ] ; then
+    for full_path in "$LIBRARY_OPENVPN_PATH"/* ; do
+        name="$( basename "$full_path" )"
+        VERSION_NAMES_IN_L_AS_T_O+=("$name")
+    done
+fi
+
+
+#
+# Create a list of paths of the folders containing the binaries to copy.
+# Don't include binaries that are already installed in /Applications/Tunnelblick.app
+# or /Library/Application Support/Tunnelblick/Openvpn.
+
+declare -a CONTAINER_PATHS
+
+for full_path in "$SOURCE_OPENVPN_PATH"/* ; do
+
+    name="$( basename "$full_path" )"
+     # DON'T include the "default" symlink!
+    if [ "$name" != "default" ] ; then
+
+        # DON'T include if already in VERSION_NAMES_IN_APP
+        not_found=true
+        for i in "${VERSION_NAMES_IN_APP[@]}" ; do
+            if [ "$i" == "$name" ] ; then
+                not_found=false
+            fi
+        done
+        if $not_found ; then
+
+            # DON'T include if already in VERSION_NAMES_IN_L_AS_T_O
+            not_found=true
+            for i in "${VERSION_NAMES_IN_L_AS_T_O[@]}" ; do
+                if [ "$i" == "$name" ] ; then
+                    not_found=false
+                fi
+            done
+            if $not_found ; then
+                CONTAINER_PATHS+=("$full_path")
+                echo "Will add $name"
+            fi
+        fi
+    fi
+done
+
+
+#
+# If there aren't any binaries to copy, announce that and exit success
+#
+
+if [ ${#CONTAINER_PATHS[@]} == "0" ] ; then
+    echo "All versions of OpenVPN in $1 are already available in Tunnelblick."
+    exit 0
+fi
+
+
+echo "If asked, please enter your macOS login password. It is needed to make secure copies of OpenVPN."
+
+#
+# Create /Library/Application Support/Tunnelblick/Openvpn if it doesn't already exist.
+# Enforce ownership and permissions of root:wheel and 0755.
+#
+
+if [ ! -d "$LIBRARY_OPENVPN_PATH" ] ; then
+    sudo mkdir "$LIBRARY_OPENVPN_PATH"
+    if [ $? -ne 0 ] ; then
+        echo "Failed: mkdir \"$LIBRARY_OPENVPN_PATH\""
+        exit 1
+    fi
+fi
+
+if [ "$( stat -f "%Su" "$LIBRARY_OPENVPN_PATH" )" != "root"  ] \
+|| [ "$( stat -f "%Sg" "$LIBRARY_OPENVPN_PATH" )" != "wheel" ]; then
+    sudo chown 0:0 "$LIBRARY_OPENVPN_PATH"
+    if [ $? -ne 0 ] ; then
+        echo "Failed: sudo chown 0:0 \"$LIBRARY_OPENVPN_PATH\""
+        exit 1
+    fi
+fi
+
+if [ "$(stat -f "%p" "$LIBRARY_OPENVPN_PATH" )" != "40755" ] ; then
+    sudo chmod 0755 "$LIBRARY_OPENVPN_PATH"
+    if [ $? -ne 0 ] ; then
+        echo "Failed: sudo chmod 0755 \"$LIBRARY_OPENVPN_PATH\""
+        exit 1
+    fi
+fi
+
+
+#
+# Copy the folders containing OpenVPN binaries
+#
+
+for full_path in "${CONTAINER_PATHS[@]}" ; do
+    sudo cp -pR "$full_path" "$LIBRARY_OPENVPN_PATH"
+done
+
+
+#
+# Set ownership of everything in /Library/Application Support/Tunnelblick/Openvpn.
+# Permmissions should be correct because the -p option was used in the 'sudo cp' command above
+#
+
+sudo chown -R 0:0 "$LIBRARY_OPENVPN_PATH"
+if [ $? -ne 0 ] ; then
+    echo "Failed: sudo chown -R 0:0 \"$LIBRARY_OPENVPN_PATH\""
+    exit 1
+fi</code></pre></td>
 </tr>
 </table>
 </div>
@@ -105,7 +296,7 @@
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="/iptranslate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUsingCustomOpenVPNBinaries.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="/iptranslate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUsingCustomOpenVPNBinaries.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="/iptranslate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUsingCustomOpenVPNBinaries.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="/iptranslate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUsingCustomOpenVPNBinaries.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="/iptranslate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUsingCustomOpenVPNBinaries.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="/iptranslate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUsingCustomOpenVPNBinaries.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="/iptranslate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcUsingCustomOpenVPNBinaries.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2023-12-28.&nbsp;&nbsp;Copyright © 2015-2025 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2025-07-31.&nbsp;&nbsp;Copyright © 2015-2026 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>

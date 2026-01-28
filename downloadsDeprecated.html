@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2025-07-13 17:40:10 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2026-01-28 14:05:24 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -68,6 +68,7 @@
 <h1 id="deprecated-downloads">Deprecated Downloads</h1>
 <p class="toc">On This Page<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#for-sequoia-sonoma-and-ventura-macos-13-through-macos-15">For Sequoia, Sonoma, and Ventura (macOS 13 through macOS 15)</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#using-newer-or-older-versions-of-openvpnopenssl-in-your-version-of-tunnelblick">Using newer or older versions of OpenVPN/OpenSSL in your version of Tunnelblick</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#for-monterey-big-sur-catalina-mojave-and-high-sierra-macos-1013-through-macos-12">For Monterey, Big Sur, Catalina, Mojave, and High Sierra (macOS 10.13 through macOS 12)</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#for-sierra-el-capitan-and-yosemite-os-x-1010-through-macos-1012">For Sierra, El Capitan, and Yosemite (OS X 10.10 through macOS 10.12)</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#for-mavericks-mountain-lion-lion-snow-leopard-and-tiger-os-x-104-through-os-x-109">For Mavericks, Mountain Lion, Lion, Snow Leopard, and Tiger (OS X 10.4 through OS X 10.9)</a><br>
@@ -84,6 +85,10 @@
 <p><span class="red">These versions contain serious security vulnerabilities.</span></p>
 <p>These are old stable versions or recent beta versions of Tunnelblick.<br>
 On Ventura (macOS 13) and higher, the latest stable or beta version from the <a href="downloads.html">Downloads</a> page should be used.</p>
+<p><strong><a href="https://github.com/Tunnelblick/Tunnelblick/releases/download/v8.1beta03/Tunnelblick_8.1beta03_build_6340.dmg">Tunnelblick 8.1beta03</a></strong> <span class="small">(build 6340, macOS 13+, Universal (Intel, Apple Silicon), notarized)</span> released 2025-07-13 <a href="cRlsNotes.html">Release Notes</a><br>
+<span class="small">SHA1:&nbsp;6b30ffc46fde7de249e766ec6734b4c4ca306278 MD5:&nbsp;8cc0655368c289d5c4233525c3640b02</span><br>
+<span class="small">SHA256:&nbsp;4c4f604fe64a355211b106f5e8bc08dcbf9339a2669c7174642e48cca754ec0c</span><br>
+<span class="small"><a href="/signatures/Tunnelblick_8.1beta03_build_6340.dmg.asc">GnuPG v2 signature</a></span></p>
 <p><strong><a href="https://github.com/Tunnelblick/Tunnelblick/releases/download/v8.1beta01/Tunnelblick_8.1beta01_build_6310.dmg">Tunnelblick 8.1beta01</a></strong> <span class="small">(build 6310, macOS 13+, Universal (Intel, Apple Silicon), notarized)</span> released 2025-04-29 <a href="cRlsNotes.html">Release Notes</a><br>
 <span class="small">SHA1:&nbsp;2953e1f9c0437e29e3978314861f1fadfc022bf2 MD5:&nbsp;14fd3ed8fe18d0a07cea0a4d61aec3e2</span><br>
 <span class="small">SHA256:&nbsp;1f69d90ade51934e24fd5a2d5ae38f87af43b3a842d508c25d21268e4ba1e3e2</span><br>
@@ -97,12 +102,16 @@ On Ventura (macOS 13) and higher, the latest stable or beta version from the <a 
 <span class="small">SHA256:&nbsp;403b0e9bb110dd9ce3251d8921cb81751e195623e6b579847b1db6fbb2e44031</span><br>
 <span class="small"><a href="/signatures/Tunnelblick_4.0.1_build_5971.dmg.asc">GnuPG v2 signature</a></span></p>
 <hr>
+<h2 id="using-newer-or-older-versions-of-openvpnopenssl-in-your-version-of-tunnelblick">Using newer or older versions of OpenVPN/OpenSSL in your version of Tunnelblick</h2>
+<p>Each version of Tunnelblick includes several versions of OpenVPN/OpenSSL to provide flexibility and easy migration to newer versions.</p>
+<p>But if the version of Tunnelblick that you use doesn't include the version of OpenVPN/OpenSSL that you need, you can use a newer or older version of OpenVPN/OpenSSL; see <a href="cUsingCustomOpenVPNBinaries.html">Using Other OpenVPN Binaries</a>.</p>
+<hr>
 <h2 id="for-monterey-big-sur-catalina-mojave-and-high-sierra-macos-1013-through-macos-12">For Monterey, Big Sur, Catalina, Mojave, and High Sierra (macOS 10.13 through macOS 12)</h2>
 <p><span class="red">These versions contains serious security vulnerabilities.</span></p>
-<p><strong><a href="https://github.com/Tunnelblick/Tunnelblick/releases/download/v3.8.8e/Tunnelblick_3.8.8e_build_5779.1.dmg">Tunnelblick 3.8.8e</a></strong> <span class="small">(build 5779.1, macOS 10.13-12, Universal (Intel, Apple Silicon), notarized)</span> released 2023-10-25 <a href="cRlsNotes.html">Release Notes</a><br>
-<span class="small">SHA1:&nbsp;685e06a930043d0cf4aee9eec6d09b33cdfe8e0e MD5:&nbsp;e0fd25c9d7a8bc3f7fb906f2d2b31295</span><br>
-<span class="small">SHA256:&nbsp;6eeecb9184c7587363bbd16032e9f1d17385f5da6cea9d6229c8127812783493</span><br>
-<span class="small"><a href="/signatures/Tunnelblick_3.8.8e_build_5779.1.dmg.asc">GnuPG v2 signature</a></span></p>
+<p><strong><a href="https://github.com/Tunnelblick/Tunnelblick/releases/download/v3.8.8g/Tunnelblick_3.8.8g_build_5779.3.dmg">Tunnelblick 3.8.8g</a></strong> <span class="small">(build 5779.3, macOS 10.13-12, Universal (Intel, Apple Silicon), notarized)</span> released 2023-12-03 <a href="cRlsNotes.html">Release Notes</a><br>
+<span class="small">SHA1:&nbsp;ba894c61f1733b7f6a6e8320f3ce1164f8321c5b MD5:&nbsp;d256718886991dae9412fa2d6006e828</span><br>
+<span class="small">SHA256:&nbsp;b3310a7435543c3047fd8500297fde7825f5ceb89e194f6adec0a3ee773d669d</span><br>
+<span class="small"><a href="/signatures/Tunnelblick_3.8.8g_build_5779.3.dmg.asc">GnuPG v2 signature</a></span></p>
 <hr>
 <h2 id="for-sierra-el-capitan-and-yosemite-os-x-1010-through-macos-1012">For Sierra, El Capitan, and Yosemite (OS X 10.10 through macOS 10.12)</h2>
 <p><span class="red">These versions contains serious security vulnerabilities.</span></p>
@@ -133,13 +142,11 @@ On Ventura (macOS 13) and higher, the latest stable or beta version from the <a 
 <h2 id="deprecated-uninstallers">Deprecated Uninstallers</h2>
 <p><span class="red">The Tunnelblick Uninstaller has been replaced by an "Uninstall" button on the "Utilities" panel of Tunnelblick's "VPN Details" window as of Tunnelblick 3.8.5beta02.</span></p>
 <p><strong><span class="red">For use on macOS 10.7.5 and higher:</span></strong></p>
-<p><span class="red">These versions contains serious security vulnerabilities. See <a href="2023-08-02-vulnerabilities.html">Assisted Local Privilege Escalation and Arbitrary File Overwrite Vulnerabilities</a> for details.</span></p>
-<p><strong><a href="https://github.com/Tunnelblick/Tunnelblick/releases/download/v1.1-Uninstaller/Tunnelblick_Uninstaller_1.12_build_5090.dmg">Tunnelblick Uninstaller 1.12</a></strong> <span class="small">(build 5090, macOS and OS X 10.7.5+, Intel-64 only, works on M1 using Rosetta)</span> released 2018-06-26 <a href="cRlsNotes.html">Release Notes</a><br>
+<p><strong><a href="https://github.com/Tunnelblick/Tunnelblick/releases/download/v1.1-Uninstaller/Tunnelblick_Uninstaller_1.12_build_5090.dmg">Tunnelblick Uninstaller 1.12</a></strong> <span class="small">(build 5090, macOS and OS X 10.7.5+, Intel-64 only, works on Apple Silicon using Rosetta)</span> released 2018-06-26 <a href="cRlsNotes.html">Release Notes</a><br>
 <span class="small">SHA1:&nbsp;c4503360e032877e1ab0c2742872250c646ba983 MD5:&nbsp;0b8c3f0898ca88f4bbe90fe61271d7ab</span><br>
 <span class="small">SHA256:&nbsp;62b528da3212fd78146c6bcf03d88f4f8653845068b61f4f62029a3af791ef42</span><br>
 <span class="small"><a href="/signatures/Tunnelblick_Uninstaller_1.12_build_5090.dmg.asc">GnuPG v2 signature</a></span></p>
 <p><strong><span class="red">For use on macOS 10.4 and higher:</span></strong></p>
-<p><span class="red">These versions contain serious security vulnerabilities. See <a href="2023-08-02-vulnerabilities.html">Assisted Local Privilege Escalation and Arbitrary File Overwrite Vulnerabilities</a> for details.</span></p>
 <p><strong><a href="https://github.com/Tunnelblick/Tunnelblick/releases/download/v1.8-Uninstaller/Tunnelblick_Uninstaller_1.8_build_4405.dmg">Tunnelblick Uninstaller 1.8</a></strong> <span class="small">(build 4405, macOS 10.4+)</span> released 2015-09-30 <a href="cRlsNotes.html#uninstaller">Release Notes</a><br>
 <span class="small">SHA1:&nbsp;c9d094ae2be444d4f63e5d00a45f829ea887a829 MD5:&nbsp;7b35e3ffd1361a96692c82f37c372d81</span><br>
 <span class="small">SHA256:&nbsp;464ac00596509e0d1c9acfeba902f19a4f8b17bbe2574ebb7edefb6a46ed4f2a</span><br></p>
@@ -154,7 +161,7 @@ On Ventura (macOS 13) and higher, the latest stable or beta version from the <a 
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="/iptranslate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FdownloadsDeprecated.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="/iptranslate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FdownloadsDeprecated.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="/iptranslate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FdownloadsDeprecated.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="/iptranslate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FdownloadsDeprecated.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="/iptranslate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FdownloadsDeprecated.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="/iptranslate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FdownloadsDeprecated.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="/iptranslate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FdownloadsDeprecated.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2025-07-13.&nbsp;&nbsp;Copyright © 2015-2025 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2026-01-28.&nbsp;&nbsp;Copyright © 2015-2026 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>
