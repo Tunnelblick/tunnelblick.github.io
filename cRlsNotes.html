@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2026-08-11 13:40:33 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2026-08-27 14:47:02 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -67,6 +67,7 @@
 <td class="documents-right">
 <h1 id="release-notes">Release Notes</h1>
 <p class="toc">On This Page<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-10">Version 10</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-9">Version 9</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-8">Version 8</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-7">Version 7</a><br>
@@ -77,7 +78,32 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#older-versions-of-tunnelblick">Older Versions of Tunnelblick</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#uninstaller">Uninstaller</a><br></p>
 <hr>
+<h2 id="version-10">Version 10</h2>
+<p><strong>10.0beta01 build 6500 (2026-08-27) <span class='red'>(SECURITY UPDATE)</span></strong></p>
+<ul>
+<li>Includes OpenSSL 3.5.8, 3.0.22, and 1.1.1w.</li>
+<li>Fixes a problem causing a crash when customized Tunnelblick icon sets.</li>
+<li>Fixes many other problems (special thanks to Sebastien Tardif).</li>
+</ul>
+<hr>
+<hr>
 <h2 id="version-9">Version 9</h2>
+<p><strong>9.0 build 6490 (2026-08-27) <span class='red'>(SECURITY UPDATE)</span></strong></p>
+<ul>
+<li>Includes OpenVPN 2.7.6, replacing 2.7.5 (see <a href="https://github.com/OpenVPN/openvpn/blob/release/2.7/Changes.rst">Changes in OpenVPN 2.7</a>).</li>
+<li>Includes OpenVPN 2.6.22, replacing 2.6.21 (see <a href="https://github.com/OpenVPN/openvpn/blob/release/2.6/Changes.rst">Changes in OpenVPN 2.6</a>).</li>
+<li>Includes OpenVPN 2.5.11 with changes through commit 37160ee. OpenVPN has not released a 2.5 version after 2.5.11 because 2.5 is no longer officially supported. However, the OpenVPN developers have published changes to the 2.5.11 source code to fix bugs and security vulnerabilities; this Tunnelblick version of OpenVPN, version 2.5_git_37160ee, includes those changes. See <a href="https://github.com/OpenVPN/openvpn/blob/release/2.5/Changes.rst">Changes in OpenVPN 2.5</a>.</li>
+<li>Includes OpenSSL 3.5.8, 3.0.22, and 1.1.1w.</li>
+<li>The Tunnelblick icon in the menu bar is now black/white/grey unless checkboxes on the "Appearance" panel of the "VPN Details" window enable colored indicators that a VPN is connected and/or that warnings are available for viewing.</li>
+<li>Adds a checkbox to enable/disable showing 'Connect' and 'Disconnect' with configuration names on the Tunnelblick menu, improving keyboard selection of a configuration to connect.</li>
+<li>Right-click or control-click on the Tunnelblick icon connects or disconnects the first (or only) configuration.</li>
+<li>Option-click on the Tunnelblick icon opens the "VPN Details" window.</li>
+<li>Improves security of the update process and of Tunnelblick and OpenVPN log files.</li>
+<li>Increases resistance to attacks by malicious OpenVPN servers and programs running locally.</li>
+<li>Fixes many bugs and several small annoyances.</li>
+</ul>
+<p>NOTE: Updating to this release from some versions of Tunnelblick may take 60 to 90 seconds. It may also require an additional authorization from a computer administrator after the update.</p>
+<hr>
 <p><strong>9.0beta09 build 6480 (2026-08-11) <span class='red'>(SECURITY UPDATE)</span></strong></p>
 <ul>
 <li>Includes OpenVPN 2.7.6, replacing 2.7.5 (see <a href="https://github.com/OpenVPN/openvpn/blob/release/2.7/Changes.rst">Changes in OpenVPN 2.7</a>).</li>
@@ -1134,7 +1160,7 @@
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="/iptranslate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotes.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="/iptranslate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotes.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="/iptranslate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotes.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="/iptranslate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotes.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="/iptranslate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotes.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="/iptranslate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotes.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="/iptranslate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcRlsNotes.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2026-08-11.&nbsp;&nbsp;Copyright © 2015-2026 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2026-08-27.&nbsp;&nbsp;Copyright © 2015-2026 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>
