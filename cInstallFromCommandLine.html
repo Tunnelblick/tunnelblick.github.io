@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="/common/favicon.v1.png">
 </head>
 <body>
-<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2026-10-17 01:25:49 UTC</font></td></tr></table></center>
+<center><table><tr><td><font color="red">THIS IS A COPY OF A PAGE AT <a href="https://tunnelblick.net">THE OFFICIAL TUNNELBLICK WEBSITE</a> AS OF 2026-10-26 18:01:25 UTC</font></td></tr></table></center>
 <header>
 <div class="heading">
 <table>
@@ -76,28 +76,32 @@
 <li>Tunnelblick's settings and configurations will not be modified.</li>
 <li>When replacing an existing copy of Tunnelblick.app, the old version will be moved from /Applications to the Trash.</li>
 </ul>
+<hr>
 <h2 id="installing-or-replacing-configurations-from-the-command-line">Installing or replacing configurations from the command line</h2>
 <p>Once Tunnelblick has been installed, the following commands can be used to install a configuration:</p>
-<p>Note:</p>
+<p>Notes:</p>
 <ul>
-<li><span class="red">These commands require Tunnelblick 4.0.0beta06 or higher.</span></li>
 <li>When replacing an existing configuration, settings for the configuration are not modified.</li>
+<li>When installing via the command line, the .tblk must be in its standard form, with most files in ____.tblk/Contents/Resources. See <a href="https://tunnelblick.net/cPkgs.html#format">Tunnelblick VPN Configurations Details</a>.</li>
 </ul>
 <h3 id="install-a-shared-configuration-one-which-can-be-used-by-all-users-of-the-computer">Install a Shared configuration (one which can be used by all users of the computer):</h3>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>sudo /Applications/Tunnelblick.app/Contents/Resources/installer 0x7000</code> &nbsp;&nbsp;&nbsp; <em>source-path</em> &nbsp;&nbsp;&nbsp; [<em>subfolder</em>]</p>
-<p>where <em>source-path</em> is the path to the .tblk to be installed and <em>subfolder</em> is an optional subfolder of the Tunnelblick configurations in which the configuration is to be installed.</p>
+<p><em>source-path</em> is the path to the .tblk to be installed. It should be located in /Library/Application Support/Tunnelblick/Temp or a subfolder of it, be owned by root:wheel, and not be writable by others.</p>
+<p><em>subfolder</em> is an optional subfolder in which the configuration is to be installed.</p>
 <p>Examples:</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>sudo /Applications/Tunnelblick.app/Contents/Resources/installer 0x7000 ~/Desktop/VPN1.tblk</code></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>sudo /Applications/Tunnelblick.app/Contents/Resources/installer 0x7000 "/Library/Application Support/Tunnelblick/Temp/VPN1.tblk"</code></p>
 <p>will install a configuration which will appear in Tunnelblick as "VPN1".</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>sudo /Applications/Tunnelblick.app/Contents/Resources/installer 0x7000 ~/Desktop/VPN1.tblk usa/michigan/detroit</code></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>sudo /Applications/Tunnelblick.app/Contents/Resources/installer 0x7000 "/Library/Application Support/Tunnelblick/Temp/VPN1.tblk" usa/michigan/detroit</code></p>
 <p>will install a configuration which will appear in Tunnelblick as "usa/michigan/detroit/VPN1".</p>
 <h3 id="install-a-private-configuration-one-which-can-be-used-only-by-one-user-of-the-computer">Install a Private configuration (one which can be used only by one user of the computer):</h3>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>sudo /Applications/Tunnelblick.app/Contents/Resources/installer 0x6000</code> &nbsp;&nbsp;&nbsp; <em>username</em> &nbsp;&nbsp;&nbsp; <em>source-path</em> &nbsp;&nbsp;&nbsp; [<em>subfolder</em>]</p>
-<p>where <em>username</em> is the short username of the user who will be able to use the configuration, <em>source-path</em> is the path to the .tblk to be installed, and <em>subfolder</em> is an optional subfolder of the Tunnelblick configurations in which the configuration is to be installed.</p>
+<p><em>username</em> is the short username of the user who will be able to use the configuration.</p>
+<p><em>source-path</em> is the path to the .tblk to be installed. It should be located in /Library/Application Support/Tunnelblick/Temp or a subfolder of it, be owned by root:wheel, and not be writable by others.</p>
+<p><em>subfolder</em> is an optional subfolder in which the configuration is to be installed.</p>
 <p>Examples:</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>sudo /Applications/Tunnelblick.app/Contents/Resources/installer 0x6000 johnsmith ~/Desktop/VPN1.tblk</code></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ` sudo /Applications/Tunnelblick.app/Contents/Resources/installer 0x6000 johnsmith "/Library/Application Support/Tunnelblick/Temp/VPN1.tblk"``</p>
 <p>will install a configuration which will appear in Tunnelblick as "VPN1" and which can be used only by user "johnsmith".</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>sudo /Applications/Tunnelblick.app/Contents/Resources/installer 0x6000 johnsmith ~/Desktop/VPN1.tblk usa/michigan/detroit</code></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>sudo /Applications/Tunnelblick.app/Contents/Resources/installer 0x6000 johnsmith "/Library/Application Support/Tunnelblick/Temp/VPN1.tblk" usa/michigan/detroit</code></p>
 <p>will install a configuration which will appear in Tunnelblick as "usa/michigan/detroit/VPN1" and which can be used only by user "johnsmith".</p>
 </td>
 </tr>
@@ -107,7 +111,7 @@
 </main>
 <footer>
 <div class="bottom-translation"><span title="view in German or another language using Google Translate"><a lang="de" class="bottom-translation" href="/iptranslate?hl=de&amp;sl=en&amp;tl=de&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstallFromCommandLine.html&amp;sandbox=1">&nbsp;&nbsp;Deutsch&nbsp;&nbsp;</a></span> <span title="view in French or another language using Google Translate"><a lang="fr" class="bottom-translation" href="/iptranslate?hl=fr&amp;sl=en&amp;tl=fr&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstallFromCommandLine.html&amp;sandbox=1">&nbsp;&nbsp;Français&nbsp;&nbsp;</a></span> <span title="view in Chinese (simplified) or another language using Google Translate"><a lang="zh-Hans" class="bottom-translation" href="/iptranslate?hl=zh-CN&amp;sl=en&amp;tl=zh-CN&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstallFromCommandLine.html&amp;sandbox=1">&nbsp;&nbsp;中文(简体)&nbsp;&nbsp;</a></span> <span title="view in Russian or another language using Google Translate"><a lang="ru" class="bottom-translation" href="/iptranslate?hl=ru&amp;sl=en&amp;tl=ru&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstallFromCommandLine.html&amp;sandbox=1">&nbsp;&nbsp;Русский&nbsp;&nbsp;</a></span> <span title="view in Spanish or another language using Google Translate"><a lang="es" class="bottom-translation" href="/iptranslate?hl=es&amp;sl=en&amp;tl=es&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstallFromCommandLine.html&amp;sandbox=1">&nbsp;&nbsp;Español&nbsp;&nbsp;</a></span> <span title="view in Japanese or another language using Google Translate"><a lang="ja" class="bottom-translation" href="/iptranslate?hl=ja&amp;sl=en&amp;tl=ja&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstallFromCommandLine.html&amp;sandbox=1">&nbsp;&nbsp;日本語&nbsp;&nbsp;</a></span> <span title="view in Italian or another language using Google Translate"><a class="bottom-translation" href="/iptranslate?hl=it&amp;sl=en&amp;tl=it&amp;u=https%3A%2F%2Ftunnelblick.net%2FcInstallFromCommandLine.html&amp;sandbox=1">&nbsp;&nbsp;…&nbsp;&nbsp;</a></span></div>
-<div class="bottom-copyright">Last updated&nbsp;2023-09-11.&nbsp;&nbsp;Copyright © 2015-2026 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
+<div class="bottom-copyright">Last updated&nbsp;2026-10-24.&nbsp;&nbsp;Copyright © 2015-2026 by The Tunnelblick Project.&nbsp;&nbsp;<a href="/cGDPR.html">GDPR Info</a>&nbsp;&nbsp;</div>
 </footer>
 </body>
 </html>
